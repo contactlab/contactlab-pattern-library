@@ -5,7 +5,8 @@ Configuration parameters
 var conf = {
 	scssSourcePath: './app/assets/scss/**/*.{scss,sass}',
 	localPort: 5792,
-	cssOutputPath: './dist/css/'
+	cssOutputPath: './app/assets/css/',
+	distCSS: './dist/css/'
 }
 
 
@@ -16,13 +17,23 @@ Imports
 var gulp = require('gulp'),
 	webserver = require('gulp-webserver'),
 	sass = require('gulp-sass'),
-	sourcemaps = require('gulp-sourcemaps');
+	sourcemaps = require('gulp-sourcemaps')
+	browserSync = require('browser-sync').create();
 
 
 /* 
 Taks definitions 
 ========================
 */
+
+// Live reload
+gulp.task('browser-sync', function() {
+    browserSync.init([conf.scssSourcePath],{
+        server: {
+            baseDir: "./app/"
+        }
+    });
+});
 
 // Create a webserver and open browser on location
 gulp.task('webserver', function() {
@@ -63,4 +74,4 @@ Actions
 */
 
 // Launch a webserver and watch for *.scss, *.js, *.jsx changes and recompiles in plain .css or .js in the /dist folder
-gulp.task('default', ['webserver', 'watch']); 
+gulp.task('default', ['browser-sync', 'watch']); 
