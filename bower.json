@@ -1,0 +1,15 @@
+{
+  "name": "project-starter-kit",
+  "version": "1.0.0",
+  "authors": [
+    "ContactLab Product Team"
+  ],
+  "license": "Apache",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

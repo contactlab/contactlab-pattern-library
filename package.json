@@ -1,0 +1,23 @@
+{
+  "name": "project-starter-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://salvatore_laisa@bitbucket.org/uy-scuti/project-starter-kit.git"
+  },
+  "author": "ContactLab Product Team",
+  "license": "Apache-2.0",
+  "homepage": "https://bitbucket.org/uy-scuti/project-starter-kit#readme",
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-webserver": "^0.9.1"
+  }
+}
