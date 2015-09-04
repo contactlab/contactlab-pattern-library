@@ -19,5 +19,8 @@
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {
+    "angular": "^1.4.5"
   }
 }
