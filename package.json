@@ -14,11 +14,15 @@
   "license": "Apache-2.0",
   "homepage": "https://bitbucket.org/uy-scuti/project-starter-kit#readme",
   "devDependencies": {
+    "babel-core": "^5.8.23",
+    "babel-loader": "^5.3.2",
     "browser-sync": "^2.9.1",
     "gulp": "^3.9.0",
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-webserver": "^0.9.1"
+    "gulp-util": "^3.0.6",
+    "gulp-webserver": "^0.9.1",
+    "webpack": "^1.12.1"
   },
   "dependencies": {
     "angular": "^1.4.5"

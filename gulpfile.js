@@ -3,10 +3,11 @@ Configuration parameters
 ========================
 */
 var conf = {
-	scssSourcePath: './app/assets/scss/**/*.{scss,sass}',
-	localPort: 5792,
-	cssOutputPath: './app/assets/css/',
-	distCSS: './dist/css/'
+  scssSourcePath: './app/assets/scss/**/*.{scss,sass}',
+  jsSourcePath: './app/**/*.{js,jsx}',
+  localPort: 5792,
+  cssOutputPath: './app/assets/css/',
+  distCSS: './dist/css/'
 }
 
 
@@ -15,16 +16,55 @@ Imports
 ========================
 */
 var gulp = require('gulp'),
-	webserver = require('gulp-webserver'),
-	sass = require('gulp-sass'),
-	sourcemaps = require('gulp-sourcemaps')
-	browserSync = require('browser-sync').create();
+    webserver = require('gulp-webserver'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps')
+    browserSync = require('browser-sync').create(),
+    gutil = require("gulp-util"),
+    webpack = require("webpack");
 
 
 /* 
 Taks definitions 
 ========================
 */
+
+// Webpack actions
+gulp.task("webpack", function(callback) {
+    // run webpack
+    webpack({
+        entry: './app/app.js',
+      output: {
+          filename: './app/assets/js/bundle.js',
+      },
+      module: {
+          loaders: [
+              {
+                test: /\.jsx?$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel'
+              },{
+                test: /masonry-layout/,
+                loader: 'imports?define=>false&this=>window'
+              }
+          ]
+      },
+      /*externals: {
+          //don't bundle the 'react' npm package with our bundle.js
+          //but get it from a global 'React' variable
+          'react': 'React'
+      },*/
+      resolve: {
+          extensions: ['', '.js', '.jsx']
+      }
+    }, function(err, stats) {
+        if(err) throw new gutil.PluginError("webpack", err);
+        gutil.log("[webpack]", stats.toString({
+            // output options
+        }));
+        callback();
+    });
+});
 
 // Live reload
 gulp.task('browser-sync', function() {
@@ -64,7 +104,7 @@ gulp.task('sass', function () {
 
 // Watch file changes
 gulp.task('watch', function() {
-  gulp.watch(conf.scssSourcePath, ['sass'])
+  gulp.watch([conf.scssSourcePath, conf.jsSourcePath], ['sass','webpack'])
 })
 
 
