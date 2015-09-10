@@ -13,7 +13,8 @@
     "tests"
   ],
   "dependencies": {
-    "susy": "~2.2.6"
+    "susy": "~2.2.6",
+    "compass": "~0.5.8"
   },
   "devDependencies": {
     "compass-breakpoint": "breakpoint-sass#~2.6.1"

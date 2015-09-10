@@ -25,6 +25,7 @@
     "webpack": "^1.12.1"
   },
   "dependencies": {
-    "angular": "^1.4.5"
+    "angular": "^1.4.5",
+    "gulp-compass": "^2.1.0"
   }
 }

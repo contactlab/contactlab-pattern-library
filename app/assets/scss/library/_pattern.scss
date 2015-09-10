@@ -1,0 +1,1797 @@
+
+
+// PATTERN LIBRARY
+
+// SPINNER
+
+.spinner {
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  font-size: 0px;
+
+    > div {
+    background-color: $dark-gray;
+    height: 100%;
+    width: 2px;
+    display: inline-block;
+    margin: 0 1px;
+    
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  }
+
+  &.white {
+    > div {
+      background-color: #FFFFFF;
+    }
+  }
+
+  .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+
+  .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+
+  .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+
+  .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+// GENERAL
+
+::selection {
+  background: $primary-color;
+  color: $primary-text-color;
+}
+::-moz-selection {
+  background: $primary-color;
+  color: $primary-text-color;
+}
+
+*{
+  font-family: $base-font-family;
+  &:focus {
+    outline: none !important;
+  }
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+body {
+  background: $base-background-color;
+  font-weight: $normal-weight;
+  font-size: $base-font-size;
+  color: $base-text-color;
+  line-height: 1.5;
+  font-family: $base-font-family;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  @include full;
+  margin-bottom: $base-spacing;
+  position: relative;
+}
+
+section {
+  @include full;
+  padding: $large-spacing 0;
+}
+
+.wrapper {
+  @include container;
+  padding: 0 $base-spacing;
+  @include clearfix;
+  position: relative;
+
+  @include susy-breakpoint(max-width 1320px) {
+    @include container(1200px);
+  }
+}
+
+p {
+  margin: 0 0 $base-spacing;
+}
+// Truncate
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Multiline truncate
+
+.multiline-truncate {
+  $font-size: $base-font-size;
+  $line-height: 1.4;
+  $lines-to-show: 3;
+
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: ($font-size*$line-height*$lines-to-show)+$base-spacing; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#lists {
+  ol,
+  ul {
+    @include gallery(6);
+  }
+}
+
+#cards {
+  .card {
+    @include gallery(4);
+  }
+}
+
+#test-modal {
+  display: none;
+}
+
+#tooltips {
+  li {
+    @include gallery(4);
+
+    span {
+      @include full;
+      line-height: 50px;
+      text-align: center;
+      background: $light-gray;
+    }
+  }
+}
+
+#features {
+  .feature {
+    @include gallery(4);
+  }
+}
+
+#header {
+  .header {
+    position: static;
+  }
+}
+
+// COLORS
+
+.pattern-color {
+  @include gallery(2);
+  padding: $base-spacing;
+  text-align: center;
+  margin-bottom: $base-spacing;
+
+  @each $type, $color in $default-status {
+    &.#{$type} {
+      background-color: nth($color, 1);
+      color: nth($color, 2);
+
+      .counter {
+        color: nth($color, 1);
+      }
+    }
+  }
+
+  &.link-color {
+    background: $link-color;
+    color: #FFFFFF;
+  }
+
+  &.lighter-gray {
+    background: $lighter-gray;
+  }
+
+  &.light-gray {
+    background: $light-gray;
+  }
+
+  &.gray {
+    background: $gray;
+  }
+
+  &.medium-gray {
+    background: $medium-gray;
+  }
+
+  &.dark-gray {
+    background: $dark-gray;
+    color: #FFFFFF;
+  }
+
+  &.darker-gray {
+    background: $darker-gray;
+    color: #FFFFFF;
+  }
+
+  &.disabled-color {
+    background: $disabled-color;
+  }
+
+}
+
+
+
+
+// TYPOGRAPHY
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-font-family;
+  line-height: 1.2;
+  margin-bottom: $base-spacing;
+  margin-top: 0;
+  font-weight: $normal-weight;
+  @include full;
+}
+
+
+h1 {
+  font-size: 3rem;
+  font-weight: $normal-weight;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+h4 {
+  font-size: 0.75rem;
+}
+
+
+
+// LABELS
+
+.label {
+  padding: $smaller-spacing/2 $small-spacing;
+  @include border-radius(2px);
+  background: $dark-gray;
+  font-size: 0.7em;
+  color: #FFFFFF;
+  display: inline-block;
+
+  .counter {
+    background: #FFFFFF;
+    color: $dark-gray;
+    padding: 0 $smaller-spacing;
+    @include border-radius(10px);
+    margin-left: 5px;
+  }
+
+  .remove {
+    color: rgba(255, 255, 255, 0.6);
+    padding: 3px 0px 3px 5px;
+    text-align: right;
+
+    &:hover {
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+  }
+
+
+
+  @each $type, $color in $default-status {
+    &.#{$type} {
+      background-color: nth($color, 1);
+      color: nth($color, 2);
+
+      .counter {
+        color: nth($color, 1);
+      }
+    }
+  }
+
+  &.default {
+    border: 1px solid $light-gray;
+    color: #FFFFFF;
+  }
+}
+
+
+// BADGES
+
+.badge {
+  @extend .label;
+  @include border-radius(7px);
+
+  &.default {
+    @include border-radius(7px);
+  }
+}
+
+
+// LISTS
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 $base-spacing;
+
+  li {
+    margin-bottom: $smaller-spacing;
+  }
+}
+
+ul.default,
+ol.default {
+  padding-left: 25px;
+  @include span(12);
+}
+
+ul.default {
+  list-style: disc;
+}
+
+ol.default {
+  list-style: decimal;
+}
+
+
+
+// TABLES
+
+.scrollable-table {
+  @include full;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  margin-bottom: $base-spacing;
+  font-family: $base-font-family;
+  border-spacing: 0px;
+  border-collapse: separate;
+
+  .operations {
+    text-align: center;
+    position: relative; 
+    min-width: 40px;
+  }
+
+  .menu-icon {
+    text-align: center;
+    @include user-select(none);
+    cursor: pointer
+  }
+}
+
+hr, td, th {
+  padding-left: $smaller-spacing;
+  padding-right: $smaller-spacing;
+}
+
+th {
+  text-align: left;
+  border-bottom: 1px solid $dark-gray;
+  padding: $small-spacing;
+}
+
+td {
+  border-bottom: 1px solid $light-gray;
+  padding: $small-spacing $small-spacing;
+}
+
+.striped-table {
+
+  hr, td {
+    border: none;
+  }
+
+  tr:nth-child(even) {
+    background: $table-striped-color;
+  }
+}
+
+.hover-table {
+  tr:hover td {
+    background: $table-hover-color;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+}
+
+
+
+// ALERTS
+
+.alert {
+  padding: $base-spacing;
+  width: 100%;
+  position: relative;
+
+  h3 {
+    font-weight: bold;
+    margin-bottom: $smaller-spacing;
+    font-size: 1.3em;
+  }
+
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  @each $type, $color in $default-status {
+    &.#{$type} {
+      background: lighten(nth($color, 1), 15%);
+      color: shade(nth($color, 1), 30%);
+
+      .close {
+        color: shade(nth($color, 1), 30%);
+
+        &:hover {
+          color: shade(nth($color, 1), 50%);
+        }
+      }
+
+      a {
+        color: shade(nth($color, 1), 40%);
+        text-decoration: underline;
+
+        &:hover {
+          color: shade(nth($color, 1), 60%);
+        }
+      }
+
+      .btn {
+        @extend %btn-style;
+
+        border: 1px solid shade(nth($color, 1), 30%);
+        color: shade(nth($color, 1), 30%);
+
+        &:hover {
+          border-color: shade(nth($color, 1), 15%);
+          color: shade(nth($color, 1), 15%);
+        }
+
+        &:focus {
+          background: transparent;
+        }
+
+        &:active {
+          border-color: nth($color, 1);
+          background: nth($color, 1);
+          color: nth($color, 2);
+        }
+      }
+
+      .btn.flat {
+        color: shade(nth($color, 1), 30%);
+        background: transparent;
+        border-color: transparent;
+
+        &:active {
+          background: nth($color, 1);
+          color: nth($color, 2);
+        }
+      }
+    }
+  }
+
+  &.error {
+    background: lighten($error-color, 10%);
+    color: shade($error-color, 35%);
+  }
+}
+
+// PANELS
+
+.panel {
+
+  .panel-header {
+    padding: $smaller-spacing $small-spacing;
+    background: $light-gray;
+    color: $dark-gray;
+  }
+
+  .panel-body {
+    padding: $small-spacing;
+    border: 1px solid $light-gray;
+    border-top: 0;
+  }
+
+  @each $type, $color in $default-status {
+    &.#{$type} {
+      .panel-header {
+        background: nth($color, 1);
+        color: #fff;
+      }
+    }
+  }
+}
+
+// EFFECTS
+
+.hover-effect {
+@include transition(all 200ms ease-in-out);
+
+  &:hover {
+    @include transition(all 200ms ease-in-out);
+    @include single-box-shadow(0, 4px, 10px, 0, rgba(0,0,0,0.15));
+  }
+}
+
+.saturation {
+  figure img {
+    @include filter(grayscale(90%));
+    @include transition(all 200ms ease-in-out);
+  }
+
+  &:hover figure img {
+    @include filter(grayscale(0%));
+    @include transition(all 200ms ease-in-out);
+  }
+}
+
+.blur {
+  figure img {
+    @include filter(blur(2px));
+    @include transition(all 200ms ease-in-out);
+  }
+
+  &:hover figure img {
+    @include filter(blur(0));
+    @include transition(all 200ms ease-in-out);
+  }
+}
+
+
+// CARDS
+
+.card {
+  @include single-box-shadow(0, 2px, 7px, 0, rgba(0,0,0,0.07));
+  @include clearfix;
+  @include full;
+  @extend .hover-effect;
+  @include border-radius(0 0 3px 3px);
+  background: #FFFFFF;
+  margin-bottom: $base-spacing;
+  position: relative;
+
+  &.dummy {
+    .card-title,
+    .card-title * {
+      font-family: 'BLOKKRegular';
+      color: $medium-gray;
+    }
+  } 
+
+  .dropdown-menu-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    z-index: 2;
+    cursor: pointer;
+    color: $base-text-color;
+  }
+
+  .card-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($base-background-color, 0.9);
+    z-index: 3;
+
+    .spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -12px 0 0 -12px;
+
+      
+    }
+  }
+
+  td:first-child {
+    padding-left: $base-spacing;
+  }
+
+  td:last-child {
+    padding-right: $base-spacing;
+  }
+
+  figure {
+    font-size: 0;
+    @include full;
+    position: relative;
+    overflow: auto;
+    text-align: center;
+
+    img {
+      width: 100%;
+    }
+
+    h2 {
+      margin: 0;
+      padding: $base-spacing;
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      color: #FFF;
+      font-size: 2rem;
+      line-height: 1;
+      text-align: left;
+      text-shadow: 0 1px 2px rgba($dark-gray,0.7);
+    }
+
+    &.icon {
+      font-size: 80px;
+    }
+  }
+
+  .card-title {
+    padding: $base-spacing $base-spacing $small-spacing;
+    font-size: 1.25rem;
+    border-bottom: 1px solid $light-gray;
+    position: relative;
+    color: $base-text-color;
+    @include clearfix;
+    @extend .truncate;
+
+    .icon {
+      font-size: 2rem;
+      margin-right: 5px;
+      max-width: 30px;
+      line-height: 0.5;
+    }
+
+    .subtitle {
+      font-weight: $bold-weight;
+      font-size: 0.8125rem;
+      line-height: 1;
+    }
+
+    .note {
+      font-size: 0.75rem;
+      line-height: 1;
+    }
+  }
+
+  .big-icon {
+    line-height: 105px;
+
+    .icon,
+    .circle {
+      position: absolute;
+      top: 45px;
+      right: $base-spacing;
+      font-size: 64px;
+      line-height: 1;
+    }
+
+    .circle {
+      color: $light-gray;
+    }
+
+    .icon {
+      font-size: 50px;
+      top: 25px;
+      right: $base-spacing*2;
+      z-index: 2;
+      max-width: 100%;
+      color: #000000;
+    }
+  }
+
+  
+
+  .card-body {
+    @include full;
+    padding: $base-spacing;
+    @include clearfix;
+    color: $base-text-color;
+  }
+
+  .card-actions {
+    @include full;
+    padding: $small-spacing;
+    text-align: right;
+
+    .btn {
+      margin: 0;
+    }
+  }
+}
+
+
+
+
+
+// BREADCRUMBS
+
+.breadcrumb {
+  li {
+    display: inline;
+
+    &:after {
+      content: '/';
+      color: $light-gray;
+      margin: 0 $smaller-spacing;
+    }
+
+    &:last-child:after {
+      content: '';
+    }
+  }
+}
+
+
+// PAGINATION
+
+.pagination {
+  text-align: right;
+  margin-top: $base-spacing;
+  @include full;
+
+  li {
+    color: $disabled-color;
+    display: inline;
+
+    a {
+      color: $base-text-color;
+      display: inline-block;
+      padding: $smaller-spacing $small-spacing;
+      line-height: 1;
+    }
+
+    span {
+      padding: $smaller-spacing $small-spacing;
+    }
+
+    a:hover {
+      color: $secondary-color;
+    }
+
+    &.first {
+      padding-right: 0;
+    }
+
+    &.last {
+      padding-left: 0;
+    }
+
+    &.active {
+
+      a {
+        background: $secondary-color;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+// ACCORDION
+
+.accordion {
+  @include full;
+  font-family: $base-font-family;
+  font-size: 1rem;
+
+  .ui-icon {
+    background-image: none !important;
+    text-indent: inherit;
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+  }
+
+  &.ui-accordion .ui-accordion-content {
+    padding: 0 $base-spacing $base-spacing $medium-spacing;
+  }
+
+  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background-image: none !important;
+    background: $base-background-color;
+    color: $base-text-color;
+  }
+
+  &.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+    margin-top: -10px;
+    left: 0;
+    text-align: center;
+  }
+
+  .ui-widget-content {
+    border: 0;
+    @include border-radius(0);
+    background: $base-background-color;
+  }
+
+  .ui-accordion-header {
+    @include border-radius(0);
+    padding: 0 0 0 $medium-spacing;
+    border: 0;
+    margin-bottom: $base-spacing;
+  }
+
+  .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    background: $base-background-color;
+    color: $primary-color;
+  }
+}
+
+
+
+// MODAL
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+  display: table;
+  height: 100%;
+  width: 100%;
+  display: table;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: $base-spacing;
+}
+
+
+.modal {
+  @extend .card;
+  background: $base-background-color;
+  text-align: left;
+  @include single-box-shadow(0, 2px, 7px, 5px, rgba(0,0,0,0.22));
+  color: $dark-gray;
+  width: 100%;
+  max-height: 100%;
+  max-width: 500px;
+  display: inline-block;
+  overflow: auto;
+  float: none;
+  margin-top: $base-spacing;
+
+  .actions {
+    text-align: right;
+  }
+
+  .modal-title {
+    @extend .card-title;
+  }
+
+  .modal-body {
+    @extend .card-body;
+    max-height: 500px;
+    overflow: auto;
+  }
+
+  .modal-actions {
+    @extend .card-actions;
+  }
+}
+
+
+// TABS
+
+.tabs {
+  font-size: 0;
+  border: 0;
+  @include full;
+  font-family: $base-font-family;
+
+  &.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    padding: $small-spacing $medium-spacing $small-spacing+2px;
+    display: inline-block;
+    color: $base-text-color;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &.ui-tabs .ui-tabs-nav .ui-tabs-active .ui-tabs-anchor {
+    color: $primary-color;
+    padding-bottom: $small-spacing;
+    @include single-box-shadow(0, 3px, 0, 0, $primary-color);
+  }
+
+  &.ui-tabs .ui-tabs-nav .ui-state-default.ui-state-disabled a {
+    color: $disabled-color;
+    cursor: not-allowed;
+
+    &:hover {
+      color: $disabled-color;
+    }
+  }
+
+
+
+  >ul>li, {
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .ui-widget-content,
+  .ui-widget-header,
+  .ui-state-default,
+  .ui-widget-content .ui-state-default,
+  .ui-widget-header .ui-state-default {
+    border: 0;
+    background: $base-background-color;
+    color: $base-text-color;
+    @include border-radius(0);
+    font-family: $base-font-family;
+  }
+
+  .ui-widget-header {
+    border-bottom: 1px solid $light-gray;
+  }
+}
+
+.tab-content {
+  @include full;
+  padding: $base-spacing 0;
+  font-size: $base-font-size;
+  border: 0;
+}
+
+// PILLS
+
+.pills {
+  @extend .tabs;
+
+  .ui-widget-header {
+    border: 0;
+  }
+
+  &.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    padding: $smaller-spacing $small-spacing;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &.ui-tabs .ui-tabs-nav .ui-tabs-active .ui-tabs-anchor {
+    background: $secondary-color;
+    color: $secondary-text-color;
+    @include single-box-shadow(0, 0, 0, 0, $primary-color);
+    padding: $smaller-spacing $small-spacing;
+  }
+
+}
+
+
+// TOOLTIPS
+
+.custom-theme {
+	@include border-radius(0);
+	border: 2px solid $darker-gray;
+	background: $darker-gray;
+	color: #fff;
+}
+
+.custom-theme .tooltipster-content {
+	font-size: 14px;
+	line-height: 16px;
+	padding: $small-spacing;
+}
+
+
+// DATEPICKER
+
+.ui-datepicker.ui-widget {
+	font-family: $base-font-family;
+	background: $dark-gray;
+	border: none;
+  z-index: 2 !important;
+	border-radius: 0;
+	@include border-radius(0);
+  @include single-box-shadow(0, 4px, 10px, 0, rgba(0,0,0,0.10));
+}
+
+.ui-datepicker {
+	padding: 0;
+}
+
+.ui-datepicker-header {
+	border: none;
+	background: transparent;
+	font-weight: normal;
+	font-size: 15px;
+}
+
+.ui-datepicker .ui-state-default, .ui-datepicker .ui-widget-content .ui-state-default {
+  border: 0;
+  background-image: none;
+  background-color: transparent;
+}
+
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+  color: $primary-color;
+  font-weight: bold;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  background: $primary-color;
+  color: #ffffff;
+}
+
+.ui-datepicker-header .ui-state-hover {
+	background: transparent;
+	border-color: transparent;
+	cursor: pointer;
+	border-radius: 0;
+	@include border-radius(0);
+}
+
+.ui-datepicker .ui-datepicker-title {
+	margin-top: .4em;
+	margin-bottom: .3em;
+	color: #e9f0f4;
+}
+
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover,
+.ui-datepicker .ui-datepicker-next,
+.ui-datepicker .ui-datepicker-prev {
+	top: .9em;
+	border:none;
+}
+
+.ui-datepicker .ui-datepicker-prev-hover {
+	left: 2px;
+}
+
+.ui-datepicker .ui-datepicker-next-hover {
+	right: 2px;
+}
+
+.ui-datepicker .ui-datepicker-next,
+.ui-datepicker .ui-datepicker-prev {
+
+  &:after {
+    font: normal normal normal 20px/1 FontAwesome;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    color: $light-gray;
+  }
+
+  &:hover:after {
+    color: #fff;
+  }
+}
+
+.ui-datepicker .ui-datepicker-next:after {
+  content: "\f105";
+}
+
+.ui-datepicker .ui-datepicker-prev:after {
+  content: "\f104";
+}
+
+.ui-datepicker .ui-datepicker-prev span,
+ .ui-datepicker .ui-datepicker-next span {
+	background-image: none;
+}
+
+.ui-datepicker table {
+	margin: 0;
+}
+
+.ui-datepicker th {
+	padding: 1em 0;
+	color: #ccc;
+	font-size: 13px;
+	font-weight: normal;
+	border: none;
+	border-top: 1px solid #3a414d;
+}
+
+.ui-datepicker td {
+	background: $lighter-gray;
+	border: none;
+	padding: 0;
+  line-height: 2em;
+
+  a {
+    text-align: center;
+  }
+}
+
+td .ui-state-default {
+	background: transparent;
+	border: none;
+	text-align: center;
+	padding: .5em;
+	margin: 0;
+	font-weight: normal;
+	color: #efefef;
+	font-size: 16px;
+}
+
+.ui-widget-content .ui-state-disabled  {
+	opacity: 1;
+}
+
+.ui-state-disabled .ui-state-default {
+	color: #fba49e;
+}
+
+td .ui-state-active,
+td .ui-state-hover {
+	background: #2e3641;
+}
+
+
+// PROGRESS BAR
+
+.progress-bar {
+  position: relative;
+  padding-top: 25px;
+
+  @each $type, $color in $default-status {
+    &.#{$type} section article {
+      background-color: nth($color, 1);
+    }
+  }
+
+  &.minimal section {
+    background-color: transparent;
+  }
+
+  section {
+    position: relative;
+    width: 100%;
+    background-color: $light-gray;
+    height: 3px;
+    text-align: right;
+    padding: 0 !important;
+    margin: 0 !important;
+
+
+
+    article {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $primary-color;
+      height: 3px;
+      text-align: center;
+      padding: 0 !important;
+    }
+
+    label {
+      @include full;
+      text-align: right;
+      @include simple-transform($trans-y: -25px, $origin-x: left, $origin-y: top);
+      white-space: nowrap;
+    }
+  }
+}
+
+
+
+
+.slider {
+  @include border-radius(0);
+  border: 0;
+  background: $light-gray;
+  height: 3px;
+
+  .ui-slider-range {
+    background: $primary-color;
+  }
+
+  .ui-state-default,
+  .ui-widget-content .ui-state-default,
+  .ui-widget-header .ui-state-default {
+    background: $primary-color;
+    border: 0;
+    @include border-radius(50%);
+  }
+}
+
+.ui-slider .ui-slider-handle {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  top: -6px;
+  margin-left: -5px;
+  @include simple-transform($scale: 1);
+  @include transition(transform 200ms ease-in-out);
+
+  &.ui-state-hover,
+  .ui-state-focus {
+    @include simple-transform($scale: 1.3);
+    @include transition(transform 200ms ease-in-out);
+  }
+
+  &.ui-state-active {
+    background: $primary-color-hover;
+    @include simple-transform($scale: 1.3);
+    @include transition(transform 200ms ease-in-out);
+  }
+}
+
+input[type=text].slider-value {
+  background-color: transparent;
+  border-bottom: 0;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  color: $base-text-color;
+}
+
+// TOAST
+.toast-wrapper {
+  position: fixed;
+  top: auto;
+  right: auto;
+  bottom: $base-spacing;
+  left: $base-spacing;
+  display: none;
+
+  &.right {
+    position: fixed;
+    top: auto;
+    right: $base-spacing;
+    bottom: $base-spacing;
+    left: auto;
+  }
+}
+
+.toast {
+  background: $darker-gray;
+  padding: $small-spacing $base-spacing;
+  color: #fff;
+  margin-top: $small-spacing;
+  @include single-box-shadow(0, 1px, 5px, 0, rgba(0, 0, 0, 0.1));
+  @include clearfix;
+  z-index: 10;
+
+  .toast-message,
+  .actions {
+    position: relative;
+    display: inline-block;
+  }
+
+  .actions {
+    padding-left: $base-spacing;
+  }
+}
+
+
+
+// STRUCTURE
+
+
+.heading {
+  text-align: center;
+  font-size: 1.125rem;
+  padding: $larger-spacing*1.5 $base-spacing;
+  margin-bottom: $medium-spacing;
+  color: #FFFFFF;
+  background: $primary-color none repeat center center;
+
+  h1 {
+    font-size: 2.438rem;
+    border-bottom: 0;
+    margin-bottom: $larger-spacing;
+    font-weight: 300;
+    float: none;
+
+    @include susy-breakpoint($smartphone) {
+      font-size: 2rem;
+      margin-bottom: $small-spacing;;
+
+      span {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .heading-icon {
+    margin-right: $base-spacing;
+  }
+
+  p {
+    margin: 0 auto;
+    max-width: 690px;
+    float: none;
+  }
+
+  &.internal {
+    text-align: left;
+    padding-top: $larger-spacing;
+    padding-bottom: $larger-spacing;
+
+    p {
+      max-width: 100%;
+    }
+
+    h1 {
+      margin-bottom: $medium-spacing;
+    }
+  }
+}
+
+
+
+// HEADER
+
+.fixed-header {
+  padding-top: 67px;
+
+  .header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+  }
+}
+
+.header {
+  @include full;
+  background: $dark-gray;
+  padding: $small-spacing 0 0;
+
+  @include susy-breakpoint($tablet) {
+    padding-bottom: $small-spacing;
+  }
+
+  .logo {
+    float: left;
+    font-size: 1.8rem;
+    line-height: 1;
+    margin-top: 15px;;
+
+    a {
+      color: #FFFFFF;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  #mobile-menu-button {
+    display: none;
+    float: right;
+    margin-top: 20px;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    line-height: 1;
+    width: 25px;
+    text-align: right;
+
+    @include susy-breakpoint($tablet) {
+      display: block;
+    }
+  }
+
+  .main-nav {
+    float: right;
+    color: #FFFFFF;
+    padding-top: 25px;
+    text-align: right;
+
+    @include susy-breakpoint($tablet) {
+      width: 100%;
+      display: none;
+    }
+
+    > ul {
+      margin: 0;
+
+      > li {
+        display: inline-block;
+        padding: 0 $smaller-spacing 5px;
+        margin-right: $base-spacing;
+        border-bottom: 3px solid transparent;
+        position: relative;
+        float: none;
+        width: auto;
+        margin-bottom: 0;
+
+        @include susy-breakpoint($tablet) {
+          width: 100%;
+          text-align: right;
+          padding: $smaller-spacing 0;
+          border-top: 1px solid darken($dark-gray, 3);
+        }
+
+        > ul {
+          padding-left: $base-spacing;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.active {
+          color: rgba(255, 255, 255, 1);
+          border-color: $primary-color;
+
+          a {
+            color: #FFFFFF;
+          }
+
+          @include susy-breakpoint($tablet) {
+            border-bottom: 0;
+            border-top-color: darken($dark-gray, 3);
+
+            a {
+              color: $primary-color;
+            }
+          }
+
+          
+        }
+
+        > ul {
+          display: none; 
+          position: absolute;
+          top: 32px;
+          left: -67px;
+          padding: $smaller-spacing 0;
+          background: $light-gray;
+          width: 200px;
+          text-align: center;
+          color: $base-text-color;
+
+          @include susy-breakpoint($tablet) {
+            position: static;
+            width: 100%;
+            text-align: right;
+            background: $dark-gray;
+
+            a {
+              color: #FFFFFF !important;
+            }
+          }
+
+          > li {
+            margin: 0;
+
+            a {
+              display: block;
+              padding: $smaller-spacing 0;
+              color: $base-text-color !important;
+
+              @include susy-breakpoint($tablet) {
+                color: #FFFFFF !important;
+              }
+
+              &:hover {
+                color: $primary-color !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0.8);
+
+      
+
+      
+
+      &:hover {
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
+  .search-button {
+    float: right;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 25px;
+    margin-left: $base-spacing;
+    cursor: pointer;
+
+    @include susy-breakpoint($tablet) {
+      margin-top: 20px;
+      margin-right: $base-spacing;
+    }
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+// FOOTER
+
+footer {
+  @include full;
+  padding: $large-spacing $base-spacing $larger-spacing;
+  color: #FFFFFF;
+
+  a {
+    color: rgba(255, 255, 255, 0.8);
+
+    &:hover {
+      color: #FFFFFF;
+    }
+  }
+
+  &.site-footer {
+    background-color: $dark-gray;
+  }
+
+  &.company-footer {
+    background-color: $darker-gray;
+  }
+
+  .contacts,
+  .copyright {
+    float: left;
+  }
+
+  .footer-nav,
+  .privacy {
+    float: right;
+
+    @include susy-breakpoint($tablet) {
+      float: left;
+      margin-top: $medium-spacing;
+    }
+  }
+
+  .footer-nav ul {
+    margin: 0;
+    li {
+      display: inline-block;
+      margin-left: $base-spacing;
+
+      @include susy-breakpoint($tablet) {
+      margin-left: 0;
+      margin-right: $medium-spacing;
+    }
+    }
+  }
+
+  @include susy-breakpoint($tablet) {
+    .footer-nav,
+    .privacy,
+    .contacts,
+    .copyright {
+      @include full;
+    }
+  }
+}
+
+
+// FEATURES
+
+// basic feature
+.feature {
+  @include full;
+  margin-bottom: $base-spacing;
+
+  &.product-index {
+    padding-left: $base-spacing;
+    border-left: 2px solid $light-gray;
+  }
+
+  @each $type, $color in $product-colors {
+    &.#{$type} {
+      border-color: nth($color, 1);
+    }
+  }
+
+  .icon {
+    float: left;
+    margin: 0;
+    width: 40px;
+    font-size: 40px;
+    line-height: 1;
+
+    img {
+      @include full;
+    }
+
+    &+.description {
+      padding-left: $base-spacing;
+    }
+  }
+
+  .description {
+    position: static;
+    @include clearfix;
+  }
+
+  h2,
+  p {
+    @include full;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  p {
+    color: $base-text-color;
+  }
+ 
+  &.big-icon {
+    .icon {
+      float: left;
+      margin: 0;
+      width: 80px;
+      font-size: 80px;
+    }
+  }
+
+  &.vertical {
+    .icon {
+      @include full;
+      text-align: center;
+      font-size: 4rem;
+    }
+
+    .description {
+      padding: $base-spacing 0;
+      @include full;
+    }
+  }
+}
+
+/* CONTENTS */
+main {
+  @include full;
+}
+
+main.with-sidebar {
+  padding-right: 220px+$base-spacing;
+
+  &.left {
+    padding-right: $base-spacing;
+    padding-left: 220px+$base-spacing;
+
+    @include susy-breakpoint($tablet) {
+      padding-left: 0;
+    }
+  }
+
+  @include susy-breakpoint($tablet) {
+    padding-right: 0;
+  }
+} 
+
+/* aside {
+  width: 220px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: $base-spacing;
+  overflow: auto;
+
+  @include susy-breakpoint($tablet) {
+    display: none;
+  }
+
+  &.left-sidebar {
+    right: auto;
+    left: 0;
+  }
+} */
+
+// DROPDOWN MENU
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  right: 5px;
+  border: 1px solid $light-gray;
+  background: $base-background-color;
+  @include single-box-shadow(0, 2px, 5px, 0, rgba(0,0,0,0.15));
+  display: none;
+  min-width: 150px;
+  z-index: 2;
+  text-align: left;
+  white-space: nowrap;
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  li a{
+    padding: $smaller-spacing $small-spacing;
+    display: block;
+    @include transition(none);
+    color: $base-text-color;
+
+    &:hover {
+      background: $primary-color;
+      color: #FFFFFF;
+      @include transition(none);
+    }
+
+    .icon {
+      margin-right: $small-spacing;
+    }
+
+    &.disabled {
+      color: $disabled-color;
+      cursor: not-allowed;
+    }
+
+    &.disabled:hover {
+      color: $disabled-color;
+      background: $base-background-color;
+    }
+  }
+}

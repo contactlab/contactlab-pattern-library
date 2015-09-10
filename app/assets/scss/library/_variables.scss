@@ -1,0 +1,95 @@
+// BREAKPOINTS
+$wider-desktop: max-width 100em;
+$wide-desktop: max-width 80em;
+$desktop: max-width 60em;
+$tablet: max-width 48em;
+$smartphone: max-width 30em;
+
+// COLORS
+$base-background-color: #FFFFFF;
+
+$base-gray: #353A3D;
+
+$lighter-gray: lighten($base-gray, 75);
+$light-gray: lighten($base-gray, 70);
+$gray: lighten($base-gray, 60);
+$medium-gray: lighten($base-gray, 45);
+$dark-gray: $base-gray;
+$darker-gray: shade($base-gray, 25);
+
+$info-color: #6ac7f1;
+$success-color: #61b769;
+$warning-color: #fd6b3c;
+$error-color: #f3594e;
+$disabled-color: #E0E0E0;
+
+$primary-color: #7cb746;
+$primary-color-hover:  shade($primary-color, 5%);
+$primary-text-color: #FFFFFF;
+$secondary-color: $medium-gray;
+$secondary-color-hover: shade($secondary-color, 5%);
+$secondary-text-color: #FFFFFF;
+$link-color: $primary-color;
+$link-color-hover: shade($link-color, 5%);
+
+// tables color
+$table-hover-color: $primary-color;
+$table-striped-color: $lighter-gray;
+
+// product colors
+$contactlab-color: #0072bc;
+$contacthub-color: #67c6dd;
+$smartrelay-color: #178e87;
+$hybris-color: #f7db20;
+$padiact-color: #d6951c;
+$magento-color: #ec3704;
+
+// FONTS
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,700,600,800);
+
+// family
+$title-font-family: 'Open Sans', sans-serif;
+$base-font-family: 'Open Sans', sans-serif;
+
+// sizes
+$base-font-size: 16px;
+
+// weight
+$light-weight: 300;
+$normal-weight: 400;
+$semibold-weight: 600;
+$bold-weight: 700;
+
+// colors
+$base-text-color: $dark-gray;
+
+
+// SPACING
+$base-spacing: 20px;
+$smaller-spacing: $base-spacing / 3;
+$small-spacing: $base-spacing / 2;
+$medium-spacing: $base-spacing * 1.5;
+$large-spacing: $base-spacing * 2;
+$larger-spacing: $base-spacing * 3;
+
+
+
+
+
+$default-status: (
+  primary: ($primary-color, $primary-text-color),
+  secondary: ($secondary-color, $secondary-text-color),
+  info: ($info-color, #FFFFFF),
+  success: ($success-color, #FFFFFF),
+  warning: ($warning-color, #FFFFFF),
+  error: ($error-color, #FFFFFF)
+);
+
+$product-colors: (
+  contactlab: ($contactlab-color),
+  contacthub: ($contacthub-color),
+  smartrelay: ($smartrelay-color),
+  hybris: ($hybris-color),
+  padiact: ($padiact-color),
+  magento: ($magento-color)
+);

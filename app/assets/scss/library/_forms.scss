@@ -1,0 +1,451 @@
+*{
+  font-family: $base-font-family;
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.static-input {
+  @include full;
+  padding-bottom: $small-spacing;
+  @include clearfix;
+
+  label {
+    font-weight: $semibold-weight;
+    font-size: 0.8em;
+    min-width: 150px;
+    display: inline-block;
+
+    @include susy-breakpoint($tablet) {
+      width: 100%;
+    }
+  }
+
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  textarea {
+    width: auto;
+    font-size: $base-font-size;
+    width: 40%;
+    margin-top: 1px;
+
+    @include susy-breakpoint($tablet) {
+      width: 100%;
+    }
+  }
+
+  .user-title {
+    @extend h1;
+  }
+
+  span {
+    display: inline-block;
+    padding: $smaller-spacing 0;
+  }
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: none;
+}
+
+input:read-only,
+input:-moz-read-only {
+  border-bottom: 0 !important;
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea {
+  border: 0px;
+  box-shadow: none;
+  border-bottom: 1px solid $light-gray;
+  padding: $smaller-spacing 0;
+  width: 100%;
+  color: $base-text-color;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  background: $base-background-color;
+  @include transition(border-color 200ms ease-in-out);
+  @include transition(box-shadow 200ms ease-in-out);
+
+
+  &:focus {
+    border-color: $primary-color;
+    @include transition(border-color 200ms ease-in-out);
+    @include box-shadow($primary-color 0 1px 0 0);
+    @include transition(box-shadow 200ms ease-in-out);
+  }
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: auto;
+}
+
+.input-group {
+  @include span(12);
+  position: relative;
+  padding: 15px 0 0 0;
+  margin-bottom: $base-spacing;
+
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  textarea,
+  .select2 {
+    margin-bottom: 0;
+    color: $base-text-color;
+    font-weight: $normal-weight;
+    background: transparent;
+
+    + label{
+      position: absolute;
+      top: 21px;
+      left: 0;
+      cursor: text;
+      @include transition(all 200ms ease-in-out);
+      font-weight: $normal-weight;
+    }
+
+    &:focus + label,
+    &.select2-container--open + label,
+    &.select2-container--focus + label {
+      color: $primary-color !important;
+      font-weight: $semibold-weight;
+      @include simple-transform($scale: 0.8, $trans-y: -25px, $origin-x: left, $origin-y: top);
+      @include transition(all, 200ms, ease-in-out);
+      border-color: $primary-color;
+    }
+
+    &.active + label {
+      color: $base-text-color;
+      font-weight: $semibold-weight;
+      @include single-transition(all, 200ms, ease-in-out);
+      @include simple-transform($scale: 0.8, $trans-y: -25px, $origin-x: left, $origin-y: top);
+      @include transition(all, 200ms, ease-in-out);
+    }
+  }
+
+  .note {
+    width: 100%;
+    font-size: 0.8em;
+  }
+
+
+
+  @each $type, $color in $default-status {
+    &.#{$type} {
+      input[type="color"],
+      input[type="date"],
+      input[type="datetime"],
+      input[type="datetime-local"],
+      input[type="email"],
+      input[type="month"],
+      input[type="number"],
+      input[type="password"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="text"],
+      input[type="time"],
+      input[type="url"],
+      input[type="week"],
+      textarea {
+        border-color: nth($color, 1);
+
+        &:focus {
+          @include box-shadow(nth($color, 1) 0 1px 0 0);
+        }
+
+        &:focus + label {
+          color: nth($color, 1) !important;
+        }
+
+        &.active + label {
+          color: nth($color, 1);
+        }
+      }
+
+      label,
+      .note {
+        color: nth($color, 1);
+      }
+    }
+  }
+}
+
+
+
+
+
+/*** custom checkboxes ***/
+
+input[type=checkbox],
+input[type=radio] {
+  display:none;
+
+  + label:before {
+    font-family: FontAwesome;
+    display: inline-block;
+    color: $dark-gray;
+    font-size: 15px;
+    vertical-align: middle;
+    margin-right: 5px;
+    cursor: pointer;
+    line-height: 1;
+    vertical-align: baseline;
+    padding-left: 1px;
+
+    // unchecked icon
+    content: "\f096";
+    width: 20px;
+
+    // space between checkbox and label
+    letter-spacing: 10px;
+  }
+}
+
+input[type=radio] + label:before {
+  content: "\f10c";
+}
+
+input[type=checkbox]:checked + label:before,
+input[type=radio]:checked + label:before {
+  // checked icon
+  content: "\f14a";
+
+  // allow space for check mark
+  letter-spacing: 5px;
+}
+
+input[type=checkbox]:checked + label:before {
+  font-size: 14px;
+  padding-top: 0px;
+  padding-bottom: 2px;
+}
+
+input[type=radio]:checked + label:before {
+  content: "\f111";
+}
+
+input[type=radio]:disabled + label,
+input[type=radio]:disabled + label:before,
+input[type=checkbox]:disabled + label,
+input[type=checkbox]:disabled + label:before {
+  color: $disabled-color;
+  cursor: not-allowed;
+}
+
+h2 + .form-row {
+  margin-top: $base-spacing;
+}
+
+// FILE
+
+input[type="file"] {
+  @include full;
+}
+
+.input-file-label {
+  font-size: 0.8rem;
+  font-weight: $semibold-weight;
+}
+
+.fileUpload {
+  overflow: hidden;
+  display:inline-block;
+  vertical-align:top;
+}
+.uploadBtn{
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    font-size: 1rem;
+    color: $base-text-color;
+}
+
+.file-name {
+  padding-right: 20px;
+}
+
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+
+// SELECT
+
+.select2-container {
+  text-align: left;
+}
+
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+  border: 0;
+  box-shadow: none;
+  border-bottom: 1px solid $light-gray;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  height: 36px;
+  background: transparent;
+  @include transition(all 200ms ease-in-out);
+}
+
+.select2-container--open .select2-selection--single,
+.select2-container--open .select2-selection--multiple {
+  border-color: $primary-color;
+  @include transition(all 200ms ease-in-out);
+  -webkit-box-shadow: 0 1px 0 0 $primary-color;
+  box-shadow: 0 1px 0 0 $primary-color;
+
+  &:focus {
+    border-color: $primary-color;
+  }
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple{
+  border: 0;
+  border-bottom: 1px solid $light-gray;
+
+  input:focus {
+    border-color: transparent;
+    -webkit-box-shadow: 0 0 0 0 $primary-color;
+    box-shadow: 0 0 0 0 $primary-color;
+  }
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: $primary-color;
+}
+
+.select2-container--default .select2-results__group {
+  font-weight: $semibold-weight;
+}
+
+.default.badge, .label.default, .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  padding: $smaller-spacing $small-spacing;
+  @include border-radius(2px);
+  background: $light-gray;
+  font-size: 0.7em;
+  color: #FFFFFF;
+  background-color: $primary-color;
+  border-color: darken($primary-color, 7%);
+  line-height: 12px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  color: #FFFFFF;
+
+  &:hover {
+    color: $light-gray;
+  }
+}
+
+.select2-selection__choice {
+  background-color: $primary-color;
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+  margin-top: 0;
+}
+
+.select2-results__option {
+  margin-bottom: 0;
+}
+
+span.select2-dropdown.select2-dropdown--below {
+  margin-top: 1px;
+  border-color: $light-gray;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  font-size: 1em;
+  color: $dark-gray;
+  white-space: nowrap;
+  @include single-box-shadow(0, 4px, 10px, 0, rgba(0,0,0,0.10));
+
+  input {
+    border: 0px;
+    padding: 0;
+    border-bottom: 1px solid $light-gray;
+    @include transition(all 200ms ease-in-out);
+    padding: 0 $smaller-spacing ;
+    background: #FFFFFF;
+
+
+    &:focus {
+      -webkit-box-shadow: 0 0 0 0 $primary-color;
+      box-shadow: 0 0 0 0 $primary-color;
+      border-color: $light-gray;
+    }
+  }
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered,
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+  height: 36px;
+  line-height: 36px;
+  padding: 0;
+  color: $base-text-color;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  top: 10px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow:before {
+  content: "\f107";
+  font-family: FontAwesome;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow:before {
+  content: "\f106";
+}

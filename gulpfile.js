@@ -21,13 +21,26 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps')
     browserSync = require('browser-sync').create(),
     gutil = require("gulp-util"),
-    webpack = require("webpack");
+    webpack = require("webpack"),
+    compass = require('gulp-compass');
 
 
 /* 
 Taks definitions 
 ========================
 */
+
+gulp.task('compass', function() {
+ gulp.src('./app/assets/scss/*.scss')
+   .pipe(sourcemaps.init())
+   .pipe(compass({
+     config_file: './config.rb',
+     css: './app/assets/css',
+     sass:'./app/assets/scss'
+   }))
+   .pipe(gulp.dest('./app/assets/css'));
+});
+
 
 // Webpack actions
 gulp.task("webpack", function(callback) {
@@ -96,6 +109,7 @@ gulp.task('sass', function () {
   gulp.src(conf.scssSourcePath)
   	.pipe(sourcemaps.init())
     .pipe(sass({
+      compass: true,
       errLogToConsole: true
     }))
     .pipe(sourcemaps.write())
@@ -104,7 +118,7 @@ gulp.task('sass', function () {
 
 // Watch file changes
 gulp.task('watch', function() {
-  gulp.watch([conf.scssSourcePath, conf.jsSourcePath], ['sass','webpack'])
+  gulp.watch([conf.scssSourcePath, conf.jsSourcePath], ['compass','webpack'])
 })
 
 
