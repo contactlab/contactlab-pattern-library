@@ -14,7 +14,9 @@
   ],
   "dependencies": {
     "susy": "~2.2.6",
-    "compass": "~0.5.8"
+    "compass": "~0.5.8",
+    "angular": "~1.4.5",
+    "angular-route": "~1.4.5"
   },
   "devDependencies": {
     "compass-breakpoint": "breakpoint-sass#~2.6.1"

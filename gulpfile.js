@@ -118,7 +118,7 @@ gulp.task('sass', function () {
 
 // Watch file changes
 gulp.task('watch', function() {
-  gulp.watch([conf.scssSourcePath, conf.jsSourcePath], ['compass','webpack'])
+  gulp.watch([conf.scssSourcePath, conf.jsSourcePath], ['compass'])
 })
 
 

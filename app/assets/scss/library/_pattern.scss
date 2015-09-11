@@ -64,6 +64,8 @@
   }
 }
 
+// END SPINNER
+
 // GENERAL
 
 ::selection {
@@ -110,7 +112,16 @@ body {
 
 section {
   @include full;
-  padding: $large-spacing 0;
+  padding: 0 0 $large-spacing 0;
+}
+
+article {
+  @include full;
+  padding: 0 0 $base-spacing 0;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 }
 
 .wrapper {
@@ -154,103 +165,8 @@ p {
   text-overflow: ellipsis;
 }
 
-#lists {
-  ol,
-  ul {
-    @include gallery(6);
-  }
-}
 
-#cards {
-  .card {
-    @include gallery(4);
-  }
-}
 
-#test-modal {
-  display: none;
-}
-
-#tooltips {
-  li {
-    @include gallery(4);
-
-    span {
-      @include full;
-      line-height: 50px;
-      text-align: center;
-      background: $light-gray;
-    }
-  }
-}
-
-#features {
-  .feature {
-    @include gallery(4);
-  }
-}
-
-#header {
-  .header {
-    position: static;
-  }
-}
-
-// COLORS
-
-.pattern-color {
-  @include gallery(2);
-  padding: $base-spacing;
-  text-align: center;
-  margin-bottom: $base-spacing;
-
-  @each $type, $color in $default-status {
-    &.#{$type} {
-      background-color: nth($color, 1);
-      color: nth($color, 2);
-
-      .counter {
-        color: nth($color, 1);
-      }
-    }
-  }
-
-  &.link-color {
-    background: $link-color;
-    color: #FFFFFF;
-  }
-
-  &.lighter-gray {
-    background: $lighter-gray;
-  }
-
-  &.light-gray {
-    background: $light-gray;
-  }
-
-  &.gray {
-    background: $gray;
-  }
-
-  &.medium-gray {
-    background: $medium-gray;
-  }
-
-  &.dark-gray {
-    background: $dark-gray;
-    color: #FFFFFF;
-  }
-
-  &.darker-gray {
-    background: $darker-gray;
-    color: #FFFFFF;
-  }
-
-  &.disabled-color {
-    background: $disabled-color;
-  }
-
-}
 
 
 
@@ -451,8 +367,9 @@ td {
 
 .alert {
   padding: $base-spacing;
-  width: 100%;
   position: relative;
+  @include full;
+  margin-bottom: $base-spacing;
 
   h3 {
     font-weight: bold;
@@ -492,12 +409,12 @@ td {
       .btn {
         @extend %btn-style;
 
-        border: 1px solid shade(nth($color, 1), 30%);
-        color: shade(nth($color, 1), 30%);
+        border: 1px solid shade(nth($color, 1), 30%) !important;
+        color: shade(nth($color, 1), 30%) !important;
 
         &:hover {
-          border-color: shade(nth($color, 1), 15%);
-          color: shade(nth($color, 1), 15%);
+          border-color: shade(nth($color, 1), 15%) !important;
+          color: shade(nth($color, 1), 15%) !important;
         }
 
         &:focus {
@@ -505,9 +422,9 @@ td {
         }
 
         &:active {
-          border-color: nth($color, 1);
-          background: nth($color, 1);
-          color: nth($color, 2);
+          border-color: nth($color, 1) !important;
+          background: nth($color, 1) !important;
+          color: nth($color, 2) !important;
         }
       }
 
@@ -533,6 +450,8 @@ td {
 // PANELS
 
 .panel {
+  @include full;
+  margin-bottom: $base-spacing;
 
   .panel-header {
     padding: $smaller-spacing $small-spacing;
@@ -743,6 +662,7 @@ td {
     padding: $base-spacing;
     @include clearfix;
     color: $base-text-color;
+    position: relative;
   }
 
   .card-actions {
@@ -1728,24 +1648,6 @@ main.with-sidebar {
     padding-right: 0;
   }
 } 
-
-/* aside {
-  width: 220px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: $base-spacing;
-  overflow: auto;
-
-  @include susy-breakpoint($tablet) {
-    display: none;
-  }
-
-  &.left-sidebar {
-    right: auto;
-    left: 0;
-  }
-} */
 
 // DROPDOWN MENU
 

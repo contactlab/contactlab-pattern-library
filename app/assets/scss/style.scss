@@ -26,3 +26,214 @@ $fa-font-path: "../bower/fontawesome/fonts";
 	@include transition(all 150ms ease-in-out);
 }
 
+main {
+	padding-right: 0;
+}
+
+header {
+	padding-left: $large-spacing;
+	padding-right: $large-spacing;
+
+	&.design {
+		background-color: $contactlab-color;
+		color: #FFFFFF;
+	}
+
+	&.ui {
+		background-color: $contacthub-primary-color;
+		color: #FFFFFF;
+	}
+}
+
+header {
+	h1 {
+		width: auto;
+	}
+
+	#product-switch {
+		float: right;
+		margin-top: 25px;
+	}
+}
+
+
+
+
+
+
+
+#lists {
+  ol,
+  ul {
+    @include gallery(6);
+  }
+}
+
+#cards {
+  .card {
+    @include gallery(4);
+
+    @include susy-breakpoint($desktop) {
+    	@include gallery(6);
+    }
+
+    @include susy-breakpoint($tablet) {
+    	@include gallery(12);
+    	clear: both !important;
+    }
+  }
+}
+
+#test-modal {
+  display: none;
+}
+
+#tooltips {
+  li {
+    @include gallery(4);
+
+    span {
+      @include full;
+      line-height: 50px;
+      text-align: center;
+      background: $light-gray;
+    }
+  }
+}
+
+#features {
+  .feature {
+    @include gallery(4);
+  }
+}
+
+#header {
+  .header {
+    position: static;
+  }
+}
+
+
+// COLORS
+
+.pattern-color {
+	@include gallery(3);
+
+	@include susy-breakpoint($tablet) {
+		@include gallery(4);
+	}
+
+	@include susy-breakpoint($smartphone) {
+		@include gallery(6);
+	}
+
+	figure {
+		height: 100px;
+
+		&.contactplan-primary {
+			background-color: $contactplan-primary-color;
+		}
+
+		&.contactplan-secondary {
+			background-color: $contactplan-secondary-color;
+		}
+
+		&.contacthub-primary {
+			background-color: $contacthub-primary-color;
+		}
+
+		&.contacthub-secondary {
+			background-color: $contacthub-secondary-color;
+		}
+
+		@each $type, $color in $default-status {
+			&.#{$type} {
+				background-color: nth($color, 1);
+				color: nth($color, 2);
+
+				.counter {
+					color: nth($color, 1);
+				}
+			}
+		}
+
+		&.lighter-gray {
+			background: $lighter-gray;
+		}
+
+		&.light-gray {
+			background: $light-gray;
+		}
+
+		&.gray {
+			background: $gray;
+		}
+
+		&.medium-gray {
+			background: $medium-gray;
+		}
+
+		&.dark-gray {
+			background: $dark-gray;
+			color: #FFFFFF;
+		}
+
+		&.darker-gray {
+			background: $darker-gray;
+			color: #FFFFFF;
+		}
+
+		&.disabled-color {
+			background: $disabled-color;
+		}
+	}
+}
+
+
+// TYPOGRAPHY
+
+.typography-card {
+	@include gallery(6);
+
+	.big-letter {
+		font-size: 5rem;
+		line-height: 1;
+		margin-right: $base-spacing;
+		position: absolute;
+		left: $base-spacing;
+		top: $base-spacing;
+		width: 100px;
+	}
+
+	.font-demo {
+		@include full;
+		padding-left: 120px;
+		font-size: 1.2rem;
+		word-break: break-all;
+	}
+
+	&.light .card-body {
+		font-weight: 300;
+	}
+
+	&.semibold .card-body {
+		font-weight: 600;
+	}
+
+	&.bold .card-body {
+		font-weight: 700;
+	}
+
+	&.italic .card-body {
+		font-style: italic;
+	}
+}
+
+.text-styles-card {
+	h1,
+	h2,
+	h3,
+	h4 {
+		margin-bottom: 0;
+	}
+}

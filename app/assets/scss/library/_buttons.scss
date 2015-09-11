@@ -160,8 +160,9 @@ button:disabled {
 
   &:disabled {
     border-color: $disabled-color !important;
-    color: $disabled-color !important;
-    background-color: transparent;
+    color: #FFFFFF !important; 
+    background-color: $disabled-color !important;
+    cursor: not-allowed;
   }
 
   &:active,
