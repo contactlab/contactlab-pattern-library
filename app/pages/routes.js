@@ -24,11 +24,29 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider, $locat
 		.when('/ui/panels', {
 			templateUrl: 'pages/panels/panels.html'
 		})
+		.when('/ui/spinner', {
+			templateUrl: 'pages/spinner/spinner.html'
+		})
 		.when('/ui/cards', {
 			templateUrl: 'pages/cards/cards.html'
 		})
 		.when('/ui/features', {
 			templateUrl: 'pages/features/features.html'
+		})
+		.when('/ui/breadcrumb', {
+			templateUrl: 'pages/breadcrumb/breadcrumb.html'
+		})
+		.when('/ui/lists', {
+			templateUrl: 'pages/lists/lists.html'
+		})
+		.when('/ui/forms', {
+			templateUrl: 'pages/forms/forms.html'
+		})
+		.when('/ui/pagination', {
+			templateUrl: 'pages/pagination/pagination.html'
+		})
+		.when('/ui/progress-bars', {
+			templateUrl: 'pages/progress-bars/progress-bars.html'
 		})
 		.otherwise({
 			redirectTo: '/colors'

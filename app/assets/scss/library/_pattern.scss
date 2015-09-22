@@ -4,14 +4,54 @@
 
 // SPINNER
 
+.spinner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.8);
+  @include user-selection(none);
+
+  &.dark {
+    background-color: rgba(0, 0, 0, 0.85);
+
+    .spinner > div {
+      background-color: $lighter-gray;
+    }
+  }
+
+  &.big {
+    .spinner {
+      width: 50px;
+      height: 50px;
+      margin: -25px 0 0 -25px;
+
+      > div {
+        width: 2px;
+        margin: 0 3px;
+      }
+    }
+  }
+}
+
 .spinner {
-  margin: 0;
+  margin: 0 auto;
   width: 24px;
   height: 24px;
   text-align: center;
   font-size: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -12px 0 0 -12px;
+  z-index: 3;
+  @include user-selection(none);
 
-    > div {
+
+
+  > div {
     background-color: $dark-gray;
     height: 100%;
     width: 2px;
@@ -20,12 +60,6 @@
     
     -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
     animation: sk-stretchdelay 1.2s infinite ease-in-out;
-  }
-
-  &.white {
-    > div {
-      background-color: #FFFFFF;
-    }
   }
 
   .rect2 {
@@ -1118,6 +1152,8 @@ td .ui-state-hover {
 .progress-bar {
   position: relative;
   padding-top: 25px;
+  @include full;
+  margin-bottom: $base-spacing;
 
   @each $type, $color in $default-status {
     &.#{$type} section article {
@@ -1144,7 +1180,7 @@ td .ui-state-hover {
       position: absolute;
       top: 0;
       left: 0;
-      background-color: $primary-color;
+      background-color: $dark-gray; 
       height: 3px;
       text-align: center;
       padding: 0 !important;

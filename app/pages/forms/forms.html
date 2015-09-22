@@ -1,0 +1,90 @@
+<h1>Forms</h1>
+<section id="forms">
+  	<!-- text inputs -->
+	<article>
+		<h2>Text inputs</h2>
+		<div class="input-group">
+			<input type="text" id="text_field">
+			<label for="text_field">Default</label>
+		</div>
+		<div class="input-group success">
+			<input type="text" id="success_field">
+			<label for="success_field">Success</label>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+		<div class="input-group warning">
+			<input type="text" id="warning-field">
+			<label for="warning-field">Warning</label>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+		<div class="input-group error">
+			<input type="text" id="error_field">
+			<label for="error_field">Error</label>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+		<div class="input-group info">
+			<input type="text" id="info_field">
+			<label for="info_field">Info</label>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+		<div class="input-group">
+			<textarea msd-elastic ng-model="foo" id="textarea-test"></textarea>
+			<label for="textarea-test">Textarea label</label>
+		</div>
+		<div class="input-group create-user-field picture">
+		    <label class="input-file-label" for="sign-url-file"><i class="fa fa-upload"></i> File label</label>
+			<label class="fileUpload">
+			    <input id="sign-url-file" type="file" class="upload" />
+			</label>
+			<input type="text" id="uploadFile-sign" class="file-name" placeholder="Choose File" disabled="disabled" />
+		</div>
+	</article>
+	<!-- radio & checkboxes -->
+	<h2>Radio Buttons</h2>
+	<article>
+		<!-- radio -->
+        <div class="row">
+			<input id="radio1" type="radio" name="radio_button"/>
+			<label for="radio1">radio 1</label>
+        </div>
+        <div class="row">
+			<input id="radio2" type="radio" name="radio_button" checked/>
+			<label for="radio2">radio 2</label>
+        </div>
+        <div class="row">
+			<input id="radio3" type="radio" name="radio_button_2" disabled/>
+			<label for="radio3">radio 3</label>
+        </div>
+        <div class="row">
+			<input id="radio4" type="radio" name="radio_button_2" disabled checked/>
+			<label for="radio4">radio 4</label>
+        </div>
+	</article>
+
+    <h2>Checkboxes</h2>
+	<article>
+        <!-- checkboxes -->
+        <div class="row">
+			<input id="check1" type="checkbox"/>
+			<label for="check1">checkbox 1</label>
+        </div>
+        <div class="row">
+			<input id="check2" type="checkbox" checked/>
+			<label for="check2">checkbox 2</label>
+        </div>
+        <div class="row">
+			<input id="check3" type="checkbox" disabled/>
+			<label for="check3">checkbox 3</label>
+        </div>
+        <div class="row">
+			<input id="check3" type="checkbox" disabled checked/>
+			<label for="check3">checkbox 3</label>
+        </div>
+	</article>
+	<!-- form buttons -->
+	<article>
+		<h2>Form inputs</h2>
+		<input type="reset" value="Reset" class="btn flat primary">
+		<input type="submit" value="Submit" class="btn primary">
+	</article>
+</section>

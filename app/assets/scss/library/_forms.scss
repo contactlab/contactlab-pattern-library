@@ -220,7 +220,7 @@ input[type=radio] {
   display:none;
 
   + label:before {
-    font-family: FontAwesome;
+    font-family: 'contactlab';
     display: inline-block;
     color: $dark-gray;
     font-size: 15px;
@@ -232,7 +232,7 @@ input[type=radio] {
     padding-left: 1px;
 
     // unchecked icon
-    content: "\f096";
+    content: "\e607";
     width: 20px;
 
     // space between checkbox and label
@@ -241,26 +241,25 @@ input[type=radio] {
 }
 
 input[type=radio] + label:before {
-  content: "\f10c";
+  content: "\e609";
 }
 
 input[type=checkbox]:checked + label:before,
 input[type=radio]:checked + label:before {
   // checked icon
-  content: "\f14a";
+  content: "\e608";
 
   // allow space for check mark
   letter-spacing: 5px;
 }
 
 input[type=checkbox]:checked + label:before {
-  font-size: 14px;
   padding-top: 0px;
   padding-bottom: 2px;
 }
 
 input[type=radio]:checked + label:before {
-  content: "\f111";
+  content: "\e60a";
 }
 
 input[type=radio]:disabled + label,
