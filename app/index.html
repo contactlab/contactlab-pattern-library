@@ -14,6 +14,12 @@
 	<script src="assets/bower/angular/angular.min.js"></script>
 	<script src="assets/bower/angular-route/angular-route.min.js"></script>
 	<script src="pages/routes.js"></script>
+
+	<script src="assets/bower/react/react.min.js"></script>
+	<script src="assets/bower/react/JSXTransformer.js"></script>
+	<script src="assets/bower/lodash/lodash.min.js"></script>
+	<script src="assets/bower/elekti/src/template.rt.js"></script>
+	<script src="assets/bower/elekti/src/Main.js"></script>
 </head>
 <body>
 	<aside id="main-sidebar">
@@ -78,4 +84,14 @@
 		</div>
 	</main>
 </body>
+
+<script type="text/jsx">
+	
+var item = document.querySelector('#product-switch');
+var string = 'contactplan,contacthub';
+
+React.render(<Elekti elems={string} label="Select product" /> ,item);
+
+</script>
+
 </html>
