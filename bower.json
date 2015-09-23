@@ -13,10 +13,14 @@
     "tests"
   ],
   "dependencies": {
-    "susy": "~2.2.6",
-    "compass": "~0.5.8",
     "angular": "~1.4.5",
-    "angular-route": "~1.4.5"
+    "angular-route": "~1.4.5",
+    "compass": "~0.5.8",
+    "elekti": "https://github.com/contactlab/elekti.git#bower",
+    "font-awesome": "fontawesome#~4.4.0",
+    "lodash": "~3.10.1",
+    "react": "~0.13.3",
+    "susy": "~2.2.6"
   },
   "devDependencies": {
     "compass-breakpoint": "breakpoint-sass#~2.6.1"
