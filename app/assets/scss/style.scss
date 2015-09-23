@@ -9,8 +9,8 @@
 }
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 @import "../bower/susy/sass/susy";
-$fa-font-path: "../bower/fontawesome/fonts";
-@import "../bower/fontawesome/scss/font-awesome";
+$fa-font-path: "../bower/font-awesome/fonts";
+@import "../bower/font-awesome/scss/font-awesome";
 @import "library/reset";
 @import "library/settings";
 @import 'compass';
