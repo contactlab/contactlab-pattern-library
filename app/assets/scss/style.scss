@@ -251,3 +251,32 @@ header {
 #progress-bars {
 	
 }
+
+// ICONOGRAPHY
+
+#iconography {
+	.icon-example {
+		@include gallery(4);
+		margin-bottom: $base-spacing;
+
+		.icon {
+			vertical-align: sub;
+			margin-right: 5px;
+		}
+	}
+}
+
+// MOTION
+
+#shadow {
+	.shadow-container {
+		@include gallery(2);
+		margin-bottom: $base-spacing;
+
+		.shadow {
+			width: 100px;
+			height: 100px;
+			background-color: $gray;
+		}
+	}
+}

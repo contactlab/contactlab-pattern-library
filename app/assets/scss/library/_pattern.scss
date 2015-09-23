@@ -1,6 +1,44 @@
+// SHADOW
+
+.depth-0 {
+  @include single-box-shadow(0, 0, 0, 0, rgba(0,0,0,0));
+}
+
+.depth-1 {
+  @include single-box-shadow(0, 2px, 5px, 0, rgba(0,0,0,0.16));
+}
+
+.depth-2 {
+  @include single-box-shadow(0, 8px, 17px, 0, rgba(0,0,0,0.19));
+}
+
+.depth-3 {
+  @include single-box-shadow(0, 12px, 15px, 0, rgba(0,0,0,0.24));
+}
+
+.depth-4 {
+  @include single-box-shadow(0, 16px, 28px, 0, rgba(0,0,0,0.22));
+}
+
+.depth-5 {
+  @include single-box-shadow(0, 27px, 24px, 0, rgba(0,0,0,0.2));
+}
 
 
-// PATTERN LIBRARY
+// ICONOGRAPHY
+
+.icon {
+  font-size: 24px;
+
+
+  &.icon-medium {
+    font-size: 36px;
+  }
+
+  &.icon-big {
+    font-size: 48px;
+  }
+}
 
 // SPINNER
 

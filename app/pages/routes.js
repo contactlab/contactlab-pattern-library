@@ -9,6 +9,12 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider, $locat
 		.when('/design/typography', {
 			templateUrl: 'pages/typography/typography.html'
 		})
+		.when('/design/iconography', {
+			templateUrl: 'pages/iconography/iconography.html'
+		})
+		.when('/design/motion', {
+			templateUrl: 'pages/motion/motion.html'
+		})
 		.when('/ui/buttons', {
 			templateUrl: 'pages/buttons/buttons.html'
 		})
