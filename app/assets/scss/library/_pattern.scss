@@ -1,27 +1,45 @@
+// TRANSITIONS
+
+.faster-transition {
+  @include transition(all 50ms ease-in-out);
+}
+
+.fast-transition {
+  @include transition(all 100ms ease-in-out);
+}
+
+.default-transition {
+  @include transition(all 200ms ease-in-out);
+}
+
+.slow-transition {
+  @include transition(all 300ms ease-in-out);
+}
+
 // SHADOW
 
 .depth-0 {
-  @include single-box-shadow(0, 0, 0, 0, rgba(0,0,0,0));
+  @include single-box-shadow(0, 0, 0, 0, rgba(0,0,0,0) !important);
 }
 
 .depth-1 {
-  @include single-box-shadow(0, 2px, 5px, 0, rgba(0,0,0,0.16));
+  @include single-box-shadow(0, 2px, 5px, 0, rgba(0,0,0,0.16) !important);
 }
 
 .depth-2 {
-  @include single-box-shadow(0, 8px, 17px, 0, rgba(0,0,0,0.19));
+  @include single-box-shadow(0, 8px, 17px, 0, rgba(0,0,0,0.19) !important);
 }
 
 .depth-3 {
-  @include single-box-shadow(0, 12px, 15px, 0, rgba(0,0,0,0.24));
+  @include single-box-shadow(0, 12px, 15px, 0, rgba(0,0,0,0.24) !important);
 }
 
 .depth-4 {
-  @include single-box-shadow(0, 16px, 28px, 0, rgba(0,0,0,0.22));
+  @include single-box-shadow(0, 16px, 28px, 0, rgba(0,0,0,0.22) !important);
 }
 
 .depth-5 {
-  @include single-box-shadow(0, 27px, 24px, 0, rgba(0,0,0,0.2));
+  @include single-box-shadow(0, 27px, 24px, 0, rgba(0,0,0,0.2) !important);
 }
 
 
@@ -550,35 +568,59 @@ td {
 // EFFECTS
 
 .hover-effect {
-@include transition(all 200ms ease-in-out);
+  @extend .default-transition;
 
   &:hover {
-    @include transition(all 200ms ease-in-out);
-    @include single-box-shadow(0, 4px, 10px, 0, rgba(0,0,0,0.15));
+    @extend .default-transition;
+    @extend .depth-2;
   }
 }
 
 .saturation {
   figure img {
     @include filter(grayscale(90%));
-    @include transition(all 200ms ease-in-out);
+    @extend .default-transition;
   }
 
   &:hover figure img {
     @include filter(grayscale(0%));
-    @include transition(all 200ms ease-in-out);
+    @extend .default-transition;
   }
 }
 
 .blur {
   figure img {
     @include filter(blur(2px));
-    @include transition(all 200ms ease-in-out);
+    @extend .default-transition;
   }
 
   &:hover figure img {
     @include filter(blur(0));
-    @include transition(all 200ms ease-in-out);
+    @extend .default-transition;
+  }
+}
+
+.zoom-in {
+  figure img {
+    @include simple-transform($scale: 1, $origin-x: center, $origin-y: center);
+    @extend .default-transition;
+  }
+
+  &:hover figure img {
+    @include simple-transform($scale: 1.1);
+    @extend .default-transition;
+  }
+}
+
+.zoom-out {
+  figure img {
+    @include simple-transform($scale: 1.1, $origin-x: center, $origin-y: center);
+    @extend .default-transition;
+  }
+
+  &:hover figure img {
+    @include simple-transform($scale: 1);
+    @extend .default-transition;
   }
 }
 
@@ -586,7 +628,7 @@ td {
 // CARDS
 
 .card {
-  @include single-box-shadow(0, 2px, 7px, 0, rgba(0,0,0,0.07));
+  @extend .depth-1;
   @include clearfix;
   @include full;
   @extend .hover-effect;
@@ -630,8 +672,6 @@ td {
       top: 50%;
       left: 50%;
       margin: -12px 0 0 -12px;
-
-      
     }
   }
 
@@ -647,7 +687,7 @@ td {
     font-size: 0;
     @include full;
     position: relative;
-    overflow: auto;
+    overflow: hidden;
     text-align: center;
 
     img {
@@ -1262,18 +1302,18 @@ td .ui-state-hover {
   top: -6px;
   margin-left: -5px;
   @include simple-transform($scale: 1);
-  @include transition(transform 200ms ease-in-out);
+  @extend .default-transition;
 
   &.ui-state-hover,
   .ui-state-focus {
     @include simple-transform($scale: 1.3);
-    @include transition(transform 200ms ease-in-out);
+    @extend .default-transition;
   }
 
   &.ui-state-active {
     background: $primary-color-hover;
     @include simple-transform($scale: 1.3);
-    @include transition(transform 200ms ease-in-out);
+    @extend .default-transition;
   }
 }
 

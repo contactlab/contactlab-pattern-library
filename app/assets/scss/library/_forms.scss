@@ -1,8 +1,5 @@
-*{
-  font-family: $base-font-family;
-  &:focus {
-    outline: none !important;
-  }
+textarea {
+  resize: vertical;
 }
 
 .static-input {
@@ -40,6 +37,7 @@
     font-size: $base-font-size;
     width: 40%;
     margin-top: 1px;
+    -webkit-appearance: none;
 
     @include susy-breakpoint($tablet) {
       width: 100%;
@@ -59,11 +57,6 @@
 input:focus,
 textarea:focus {
   box-shadow: none;
-}
-
-input:read-only,
-input:-moz-read-only {
-  border-bottom: 0 !important;
 }
 
 input[type="color"],
@@ -90,16 +83,16 @@ textarea {
   font-size: $base-font-size;
   font-family: $base-font-family;
   background: $base-background-color;
-  @include transition(border-color 200ms ease-in-out);
-  @include transition(box-shadow 200ms ease-in-out);
+  @extend .default-transition;
 
 
   &:focus {
     border-color: $primary-color;
-    @include transition(border-color 200ms ease-in-out);
     @include box-shadow($primary-color 0 1px 0 0);
-    @include transition(box-shadow 200ms ease-in-out);
+    @extend .default-transition;
   }
+
+  
 }
 
 input[type="submit"],
@@ -127,8 +120,7 @@ input[type="reset"] {
   input[type="time"],
   input[type="url"],
   input[type="week"],
-  textarea,
-  .select2 {
+  textarea {
     margin-bottom: 0;
     color: $base-text-color;
     font-weight: $normal-weight;
@@ -139,27 +131,25 @@ input[type="reset"] {
       top: 21px;
       left: 0;
       cursor: text;
-      @include transition(all 200ms ease-in-out);
+      @extend .default-transition;
       font-weight: $normal-weight;
     }
 
-    &:focus + label,
-    &.select2-container--open + label,
-    &.select2-container--focus + label {
+    &:focus + label{
       color: $primary-color !important;
       font-weight: $semibold-weight;
       @include simple-transform($scale: 0.8, $trans-y: -25px, $origin-x: left, $origin-y: top);
-      @include transition(all, 200ms, ease-in-out);
+      @extend .default-transition;
       border-color: $primary-color;
     }
 
     &.active + label {
       color: $base-text-color;
       font-weight: $semibold-weight;
-      @include single-transition(all, 200ms, ease-in-out);
       @include simple-transform($scale: 0.8, $trans-y: -25px, $origin-x: left, $origin-y: top);
-      @include transition(all, 200ms, ease-in-out);
+      @extend .default-transition;
     }
+
   }
 
   .note {
@@ -314,137 +304,45 @@ input[type="file"] {
   opacity: 0;
 }
 
+// ELEKTI
 
-// SELECT
-
-.select2-container {
-  text-align: left;
+.js-users-list-filter-message,
+.js-users-list-filter-counter,
+.js-users-list {
+  display: none;  
 }
 
-.select2-container--default .select2-selection--single,
-.select2-container--default .select2-selection--multiple {
-  border: 0;
-  box-shadow: none;
-  border-bottom: 1px solid $light-gray;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  height: 36px;
-  background: transparent;
-  @include transition(all 200ms ease-in-out);
+.filter-hidden {
+  opacity: .1;
 }
-
-.select2-container--open .select2-selection--single,
-.select2-container--open .select2-selection--multiple {
-  border-color: $primary-color;
-  @include transition(all 200ms ease-in-out);
-  -webkit-box-shadow: 0 1px 0 0 $primary-color;
-  box-shadow: 0 1px 0 0 $primary-color;
-
-  &:focus {
-    border-color: $primary-color;
-  }
-}
-
-.select2-container--default.select2-container--focus .select2-selection--multiple{
-  border: 0;
-  border-bottom: 1px solid $light-gray;
-
-  input:focus {
-    border-color: transparent;
-    -webkit-box-shadow: 0 0 0 0 $primary-color;
-    box-shadow: 0 0 0 0 $primary-color;
-  }
-}
-
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
-  background-color: $primary-color;
-}
-
-.select2-container--default .select2-results__group {
-  font-weight: $semibold-weight;
-}
-
-.default.badge, .label.default, .select2-container--default .select2-selection--multiple .select2-selection__choice {
-  padding: $smaller-spacing $small-spacing;
-  @include border-radius(2px);
-  background: $light-gray;
-  font-size: 0.7em;
-  color: #FFFFFF;
-  background-color: $primary-color;
-  border-color: darken($primary-color, 7%);
-  line-height: 12px;
-}
-
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-  color: #FFFFFF;
-
-  &:hover {
-    color: $light-gray;
-  }
-}
-
-.select2-selection__choice {
-  background-color: $primary-color;
-}
-
-.select2-container .select2-search--inline .select2-search__field {
-  margin-top: 0;
-}
-
-.select2-results__option {
-  margin-bottom: 0;
-}
-
-span.select2-dropdown.select2-dropdown--below {
-  margin-top: 1px;
-  border-color: $light-gray;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  font-size: 1em;
-  color: $dark-gray;
-  white-space: nowrap;
+.js-users-list{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
   @include single-box-shadow(0, 4px, 10px, 0, rgba(0,0,0,0.10));
 
-  input {
-    border: 0px;
-    padding: 0;
-    border-bottom: 1px solid $light-gray;
-    @include transition(all 200ms ease-in-out);
-    padding: 0 $smaller-spacing ;
-    background: #FFFFFF;
+  li,
+  .noResults {
+    background-color: white;
+    display: block;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
 
+    &.hide {
+      display: none;
+    }
 
-    &:focus {
-      -webkit-box-shadow: 0 0 0 0 $primary-color;
-      box-shadow: 0 0 0 0 $primary-color;
-      border-color: $light-gray;
+    &.selected {
+      color: $primary-color;
     }
   }
-}
 
-.select2-container--default .select2-selection--single .select2-selection__rendered,
-.select2-container--default .select2-selection--multiple .select2-selection__rendered {
-  height: 36px;
-  line-height: 36px;
-  padding: 0;
-  color: $base-text-color;
-}
+  &.visible {
+    display: block;
+  }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-  top: 10px;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow b {
-  border: 0;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow:before {
-  content: "\f107";
-  font-family: FontAwesome;
-}
-
-.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow:before {
-  content: "\f106";
+  .noResults {
+    cursor: initial;
+  }
 }

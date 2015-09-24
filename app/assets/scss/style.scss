@@ -19,12 +19,7 @@ $fa-font-path: "../bower/font-awesome/fonts";
 @import "library/pattern";
 @import "library/forms"; 
 @import "library/buttons";
-@import "library/layout";
- 
-// TRANSITIONS
-.default-transition {
-	@include transition(all 150ms ease-in-out);
-}
+@import "library/layout"; 
 
 main {
 	padding-right: 0;
@@ -52,7 +47,28 @@ header {
 
 	#product-switch {
 		float: right;
-		margin-top: 25px;
+		margin-top: 10px;
+
+		input[type="text"]{
+			color: #FFFFFF !important;
+			
+			&:focus {
+			    border-color: #FFFFFF;
+			    @include box-shadow(#FFFFFF 0 1px 0 0);
+
+			    + label { 
+		          color: #FFFFFF !important;
+		        }
+		  	}
+		}
+
+		input[type="text"].active + label {
+			color: #FFFFFF !important; 
+		}
+
+		ol {
+			color: $base-text-color;
+		}
 	}
 }
 

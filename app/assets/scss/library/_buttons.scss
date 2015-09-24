@@ -6,12 +6,12 @@ button:disabled {
   margin: 0 3px;
   padding: $small-spacing $base-spacing;
   cursor: pointer;
-  // text-transform: uppercase;
   background: transparent;
   color: $dark-gray;
   border: 1px solid $dark-gray;
   font-size: $base-font-size;
   font-family: $base-font-family;
+  @extend .faster-transition;
 
   &:first-of-type {
     margin-left: 0;
@@ -65,6 +65,7 @@ button:disabled {
     border-color: $dark-gray;
     color: #FFFFFF;
     background-color: $dark-gray;
+    @extend .faster-transition;
   }
 
   @each $type, $color in $default-status {
@@ -86,6 +87,7 @@ button:disabled {
         border-color: nth($color, 1);
         color: nth($color, 2);
         background-color: nth($color, 1);
+        @extend .faster-transition;
       }
     }
   }
@@ -268,6 +270,45 @@ button:disabled {
 
     &.bottom-right {
       bottom: -20px;
+    }
+  }
+}
+
+// BUTTONS GROUP
+
+.buttons-group {
+  
+  &.small .btn {
+    @extend .small;
+  }
+
+  .btn {
+    float: left;
+    margin: 0;
+    border-right: 0;
+
+    &:last-of-type {
+      border-right: 1px solid $dark-gray;
+    }
+
+    &.active {
+      @extend .full;
+      margin: 0;
+    }
+    
+  }
+
+  @each $type, $color in $default-status {
+    &.#{$type} {
+      .btn {
+        @extend .#{$type};
+
+        &:last-of-type {
+          border-right: 1px solid nth($color, 1);
+        }
+      }
+
+      
     }
   }
 }
