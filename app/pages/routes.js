@@ -61,13 +61,15 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider, $locat
 }]);
 
 app.controller('MainCtrl',function($scope,$location){
-	console.log('bella raga',location.hash);
-
 	$scope.checkActive = function(str,macro){
 		if(location.hash.search(str) > -1){
 			return true
 		}else{
 			return false;
 		}
+	}
+
+	$scope.navBlur = function(){
+		document.body.focus();
 	}
 });
