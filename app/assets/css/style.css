@@ -2707,14 +2707,14 @@ table {
   box-sizing: border-box;
 }
 
-.faster-transition, .alert.primary .btn, .buttons-group.primary .alert.btn .btn, .alert.secondary .btn, .buttons-group.secondary .alert.btn .btn, .alert.info .btn, .buttons-group.info .alert.btn .btn, .alert.success .btn, .buttons-group.success .alert.btn .btn, .alert.warning .btn, .buttons-group.warning .alert.btn .btn, .alert.error .btn, .buttons-group.error .alert.btn .btn, .btn, .btn.flat, .btn.full, .buttons-group .btn.active, .btn:active, .btn.active, .btn.primary:active, .buttons-group.primary .btn:active, .btn.primary.active, .btn.secondary:active, .buttons-group.secondary .btn:active, .btn.secondary.active, .btn.info:active, .buttons-group.info .btn:active, .btn.info.active, .btn.success:active, .buttons-group.success .btn:active, .btn.success.active, .btn.warning:active, .buttons-group.warning .btn:active, .btn.warning.active, .btn.error:active, .buttons-group.error .btn:active, .btn.error.active {
+.faster-transition, .alert.primary .btn, .buttons-group.primary .alert.btn .btn, .alert.secondary .btn, .buttons-group.secondary .alert.btn .btn, .alert.info .btn, .buttons-group.info .alert.btn .btn, .alert.success .btn, .buttons-group.success .alert.btn .btn, .alert.warning .btn, .buttons-group.warning .alert.btn .btn, .alert.error .btn, .buttons-group.error .alert.btn .btn, .btn, .btn.flat, .btn.full, .buttons-group .btn.active, .btn:active, .btn.active, .btn.primary:active, .buttons-group.primary .btn:active, .btn.primary.active, .btn.secondary:active, .buttons-group.secondary .btn:active, .btn.secondary.active, .btn.info:active, .buttons-group.info .btn:active, .btn.info.active, .btn.success:active, .buttons-group.success .btn:active, .btn.success.active, .btn.warning:active, .buttons-group.warning .btn:active, .btn.warning.active, .btn.error:active, .buttons-group.error .btn:active, .btn.error.active, .action-bar-button, #main-sidebar #reduce .icon, #secondary-sidebar #secondary-sidebar-label, .back, .action-bar-button:active, .back:active, .user-bar.active, .user-bar .picture img, .user-bar .actions .action, .user-bar .actions .action:active {
   -moz-transition: all 50ms ease-in-out;
   -o-transition: all 50ms ease-in-out;
   -webkit-transition: all 50ms ease-in-out;
   transition: all 50ms ease-in-out;
 }
 
-.fast-transition {
+.fast-transition, .user-bar {
   -moz-transition: all 100ms ease-in-out;
   -o-transition: all 100ms ease-in-out;
   -webkit-transition: all 100ms ease-in-out;
@@ -2792,7 +2792,7 @@ textarea:focus, .input-group input[type="color"] + label,
 .input-group input[type="time"].active + label,
 .input-group input[type="url"].active + label,
 .input-group input[type="week"].active + label,
-.input-group textarea.active + label, .search .search-input, .search .search-input.active, .user-bar {
+.input-group textarea.active + label, .search .search-input, .search .search-input.active {
   -moz-transition: all 200ms ease-in-out;
   -o-transition: all 200ms ease-in-out;
   -webkit-transition: all 200ms ease-in-out;
@@ -6526,17 +6526,16 @@ html {
 
 body {
   min-height: 100%;
-  font-family: 'Open Sans', sans-serif;
 }
 
-.action-bar-button, #main-sidebar #reduce .icon, #secondary-sidebar #secondary-sidebar-label, .toolbar .back {
+.action-bar-button, #main-sidebar #reduce .icon, #secondary-sidebar #secondary-sidebar-label, .back {
   width: 40px;
   height: 40px;
   line-height: 40px;
   text-align: center;
   font-size: 20px;
 }
-.action-bar-button:active, #main-sidebar #reduce .icon:active, #secondary-sidebar #secondary-sidebar-label:active, .toolbar .back:active {
+.action-bar-button:active, #main-sidebar #reduce .icon:active, #secondary-sidebar #secondary-sidebar-label:active, .back:active {
   background-color: #4caf50 !important;
   color: #FFFFFF;
 }
@@ -6553,7 +6552,7 @@ body {
 #main-sidebar a {
   color: #FFFFFF;
   display: block;
-  padding: 10px 20px;
+  padding: 8px 20px;
   text-decoration: none;
 }
 #main-sidebar #logo {
@@ -6564,7 +6563,25 @@ body {
   margin-right: 0;
   height: 80px;
   line-height: 80px;
-  font-size: 40px;
+  font-size: 14px;
+  text-align: center;
+}
+#main-sidebar #logo .sign {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  line-height: 1;
+  font-size: 20px;
+  color: #4caf50;
+}
+#main-sidebar #logo .name {
+  font-size: 25px;
+  font-weight: 300;
+  color: #4caf50;
+}
+#main-sidebar #logo .name b {
+  font-weight: 400;
+  color: #FFFFFF;
 }
 #main-sidebar #logo a {
   padding-top: 0;
@@ -6592,6 +6609,7 @@ body {
 #main-sidebar nav ul li > ul li.active a, #main-sidebar nav ul li > ul li.active a:hover {
   background-color: transparent;
   color: #FFFFFF;
+  border-color: transparent;
 }
 #main-sidebar nav {
   position: absolute;
@@ -6605,6 +6623,9 @@ body {
   font-size: 20px;
   margin-right: 20px;
 }
+#main-sidebar nav a {
+  border-left: 2px solid transparent;
+}
 #main-sidebar nav a:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -6612,6 +6633,7 @@ body {
 #main-sidebar nav .active > a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   color: #FFFFFF;
+  border-color: #4caf50;
 }
 #main-sidebar nav .menu-title {
   display: none;
@@ -6681,6 +6703,7 @@ header {
   width: 0;
   background-color: transparent;
   border-color: #cfd3d5;
+  padding: 0;
 }
 .search .search-input.active {
   width: 200px;
@@ -6689,6 +6712,9 @@ header {
 #user-menu-toggle {
   cursor: pointer;
   float: left;
+}
+#user-menu-toggle:active .picture img {
+  border-color: #4caf50;
 }
 
 .user-bar {
@@ -6700,10 +6726,6 @@ header {
 }
 .user-bar.active {
   right: 0;
-  -moz-transition: all 150ms ease-in-out;
-  -o-transition: all 150ms ease-in-out;
-  -webkit-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out;
 }
 .user-bar .name {
   line-height: 80px;
@@ -6713,8 +6735,8 @@ header {
   margin-right: 20px;
 }
 .user-bar .picture {
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   display: inline-block;
   vertical-align: top;
   font-size: 1rem;
@@ -6725,6 +6747,7 @@ header {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  border: 2px solid transparent;
 }
 .user-bar .actions {
   font-size: 1rem;
@@ -6769,6 +6792,7 @@ header {
   top: 80px;
   bottom: 0;
   background-color: #f8f8f9;
+  z-index: 2;
 }
 #secondary-sidebar #secondary-sidebar-label {
   position: absolute;
@@ -6786,22 +6810,18 @@ header {
   margin-left: 0;
   margin-right: 0;
   padding: 40px;
+  position: relative;
 }
 
-.toolbar {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  height: 40px;
-  padding: 0 40px;
-}
-.toolbar .back {
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: inline-block;
   color: #353A3D;
+  font-size: 15px;
 }
-.toolbar .back:active {
+.back:active {
   background-color: #4caf50;
   color: #FFFFFF;
 }
@@ -6824,14 +6844,19 @@ body.main-sidebar-small #main-sidebar #logo {
   text-align: center;
   font-size: 35px;
 }
-body.main-sidebar-small #main-sidebar #logo span {
+body.main-sidebar-small #main-sidebar #logo .name {
   display: none;
+}
+body.main-sidebar-small #main-sidebar #logo .sign {
+  display: block;
+  left: 12px;
+  top: 25px;
 }
 body.main-sidebar-small #main-sidebar a {
   padding: 0;
 }
 body.main-sidebar-small #main-sidebar a .icon {
-  width: 40px;
+  width: 38px;
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -6882,6 +6907,11 @@ body.secondary-sidebar-closed main {
   padding-right: 0;
 }
 
+@media (max-width: 1200px) {
+  main {
+    padding-right: 0;
+  }
+}
 @media (max-width: 48em) {
   .content {
     padding: 40px;
