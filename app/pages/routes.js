@@ -55,7 +55,19 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider, $locat
 			templateUrl: 'pages/progress-bars/progress-bars.html'
 		})
 		.otherwise({
-			redirectTo: '/colors'
+			redirectTo: '/design/colors'
 		});
 
 }]);
+
+app.controller('MainCtrl',function($scope,$location){
+	console.log('bella raga',location.hash);
+
+	$scope.checkActive = function(str,macro){
+		if(location.hash.search(str) > -1){
+			return true
+		}else{
+			return false;
+		}
+	}
+});
