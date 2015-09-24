@@ -16,12 +16,11 @@ Imports
 ========================
 */
 var gulp = require('gulp'),
-    webserver = require('gulp-webserver'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps')
-    browserSync = require('browser-sync').create(),
     gutil = require("gulp-util"),
     webpack = require("webpack"),
+    connect = require('gulp-connect'),
     compass = require('gulp-compass');
 
 
@@ -79,29 +78,13 @@ gulp.task("webpack", function(callback) {
     });
 });
 
-// Live reload
-gulp.task('browser-sync', function() {
-    browserSync.init([conf.scssSourcePath],{
-        server: {
-            baseDir: "./app/"
-        }
-    });
-});
-
-// Create a webserver and open browser on location
-gulp.task('webserver', function() {
-  gulp.src('./')
-    .pipe(webserver({
-      directoryListing:{
-		    enable:true,
-		    path: 'app/',
-		    fallback: 'index.html'
-		},
-		host: '0.0.0.0',
-		fallback: './app/index.html',
-		open: true,
-		port: conf.localPort
-    }));
+// Server
+gulp.task('connect', function () {
+  connect.server({
+    root: 'app',
+    port: 3000,
+    livereload: true
+  });
 });
 
 // Compiles SASS to CSS
@@ -128,4 +111,4 @@ Actions
 */
 
 // Launch a webserver and watch for *.scss, *.js, *.jsx changes and recompiles in plain .css or .js in the /dist folder
-gulp.task('default', ['browser-sync', 'watch']); 
+gulp.task('default', ['connect', 'watch']); 
