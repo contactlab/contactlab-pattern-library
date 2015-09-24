@@ -6611,6 +6611,12 @@ body {
   color: #FFFFFF;
   border-color: transparent;
 }
+#main-sidebar nav ul li > ul {
+  display: none;
+}
+#main-sidebar nav ul li.active > ul {
+  display: block;
+}
 #main-sidebar nav {
   position: absolute;
   top: 80px;
