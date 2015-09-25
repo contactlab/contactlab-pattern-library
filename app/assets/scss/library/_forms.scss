@@ -320,6 +320,8 @@ input[type="file"] {
   z-index: 1;
   width: 100%;
   @include single-box-shadow(0, 4px, 10px, 0, rgba(0,0,0,0.10));
+  max-height: 200px;
+  overflow: auto;
 
   li,
   .noResults {
