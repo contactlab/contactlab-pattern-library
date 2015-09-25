@@ -5833,7 +5833,7 @@ input[type=radio] {
 }
 input[type=checkbox] + label:before,
 input[type=radio] + label:before {
-  font-family: 'contactlab';
+  font-family: 'contactlab-icons';
   display: inline-block;
   color: #353A3D;
   font-size: 15px;
@@ -5843,18 +5843,18 @@ input[type=radio] + label:before {
   line-height: 1;
   vertical-align: baseline;
   padding-left: 1px;
-  content: "\e607";
+  content: "\e612";
   width: 20px;
   letter-spacing: 10px;
 }
 
 input[type=radio] + label:before {
-  content: "\e609";
+  content: "\e62e";
 }
 
 input[type=checkbox]:checked + label:before,
 input[type=radio]:checked + label:before {
-  content: "\e608";
+  content: "\e613";
   letter-spacing: 5px;
 }
 
@@ -5864,7 +5864,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 input[type=radio]:checked + label:before {
-  content: "\e60a";
+  content: "\e62f";
 }
 
 input[type=radio]:disabled + label,
