@@ -33,16 +33,8 @@ main {
 header {
 	padding-left: $large-spacing;
 	padding-right: $large-spacing;
-
-	&.design {
-		background-color: $contactlab-color;
-		color: #FFFFFF;
-	}
-
-	&.ui {
-		background-color: $contacthub-primary-color;
-		color: #FFFFFF;
-	}
+	background-color: $primary-color;
+	color: #FFFFFF;
 }
 
 header {
@@ -307,7 +299,7 @@ header {
 		@include gallery(4);
 		margin-bottom: $base-spacing;
 
-		.icon {
+		.clab {
 			vertical-align: sub;
 			margin-right: 5px;
 		}

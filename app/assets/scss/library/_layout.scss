@@ -157,22 +157,18 @@ body {
 
 		a {
 			padding: 0;
+			@extend .action-bar-button;
+			background-color: rgba(255, 255, 255, 0.1);
+			float: right;
+			cursor: pointer;
 		}
 
-		.icon {
-			vertical-align: middle;
-			@extend .action-bar-button;
-			font-size: 10px;
-			margin-left: $base-spacing;
-			background-color: rgba(255, 255, 255, 0.1);
+		.expand {
+			display: none;
+		}
 
-			&.expand {
-				display: none;
-			}
-
-			&.compress {
-				display: inline-block;
-			}
+		.compress {
+			display: inline-block;
 		}
 	}
 }
