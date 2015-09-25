@@ -26,7 +26,7 @@ Polymer({
 		document.body.classList.toggle('main-sidebar-small');
 	},
 	_computeTitleIcon: function(icon){
-		return ['fa',icon].join(' ');
+		return ['clab',icon].join(' ');
 	},
 	_computeReduceIcons: function(classes){
 		return classes;

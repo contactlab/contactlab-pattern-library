@@ -19,17 +19,15 @@
 	<link rel="import" href="components/elekti/component.html">
 	<link rel="import" href="components/spinner/view.html">
 	<link rel="import" href="components/progress-bar/view.html">
+	<link rel="import" href="components/alert/view.html">
+	<link rel="import" href="components/color-box/view.html">
+	<link rel="import" href="components/menu-sidebar/view.html">
 
 </head>
 <body ng-controller="MainCtrl" ng-click="navBlur()">
 	<aside id="main-sidebar">
-		<div id="logo">
-			<a href="#/">
-				<span class="sign"><i class="clab clab-icon-sign"></i></span>
-				<span class="name">pattern<b>library</b></span>
-			</a>
-		</div>
-		<nav>
+		<menu-sidebar title-icon="clab-icon-sign">
+			<span class="name">pattern<b>library</b></span>
 			<ul>
 				<li ng-class="{'active': checkActive('#/design')}"><a href="#/design/colors"><i class="fa fa-hand-rock-o icon"></i><span>Design</span></a>
 					<ul>
@@ -59,13 +57,7 @@
 					</ul></li>
 				<li><a href="#/"><i class="fa fa-hand-scissors-o icon"></i><span>Resources</span></a></li>
 			</ul>
-		</nav>
-		<div id="reduce">
-			<a>
-				<i class="clab clab-icon-resize compress"></i>
-				<i class="clab clab-icon-expand expand"></i>
-			</a>
-		</div>
+		</menu-sidebar>
 	</aside>
 	<header class="design">
 		<h1>{{contextTitle}}</h1>
