@@ -21,6 +21,11 @@ $fa-font-path: "../bower/font-awesome/fonts";
 @import "library/buttons";
 @import "library/layout"; 
 
+.dummy {
+	font-family: 'BLOKKRegular' !important;
+	color: $gray;
+}
+
 main {
 	padding-right: 0;
 }
@@ -123,12 +128,6 @@ header {
   }
 }
 
-#header {
-  .header {
-    position: static;
-  }
-}
-
 
 // COLORS
 
@@ -146,6 +145,14 @@ header {
 	figure {
 		height: 100px;
 
+		&.corporate-primary {
+			background-color: $primary-color;
+		}
+
+		&.corporate-secondary {
+			background-color: $secondary-color;
+		}
+
 		&.contactplan-primary {
 			background-color: $contactplan-primary-color;
 		}
@@ -160,6 +167,30 @@ header {
 
 		&.contacthub-secondary {
 			background-color: $contacthub-secondary-color;
+		}
+
+		&.contactsend-primary {
+			background-color: $contactsend-primary-color;
+		}
+
+		&.contactsend-secondary {
+			background-color: $contactsend-secondary-color;
+		}
+
+		&.contactscore-primary {
+			background-color: $contactscore-primary-color;
+		}
+
+		&.contactscore-secondary {
+			background-color: $contactscore-secondary-color;
+		}
+
+		&.contactanalytics-primary {
+			background-color: $contactanalytics-primary-color;
+		}
+
+		&.contactanalytics-secondary {
+			background-color: $contactanalytics-secondary-color;
 		}
 
 		@each $type, $color in $default-status {
@@ -260,6 +291,7 @@ header {
 	@include gallery(6);
 	height: 200px;
 	padding: $base-spacing;
+	@extend .dummy;
 }
 
 // PROGRESS BARS

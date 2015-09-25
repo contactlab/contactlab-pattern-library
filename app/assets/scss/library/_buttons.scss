@@ -291,9 +291,10 @@ button:disabled {
       border-right: 1px solid $dark-gray;
     }
 
-    &.active {
+    &:active {
       @extend .full;
       margin: 0;
+      border-right: 0;
     }
     
   }

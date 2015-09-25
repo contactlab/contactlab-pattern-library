@@ -24,23 +24,33 @@ $error-color: #f3594e;
 $disabled-color: #E0E0E0;
 
 // product colors
-$contactplan-primary-color: #4caf50;
+$contactplan-primary-color: #14C04D;
 $contactplan-secondary-color: #8bc34a;
 
 $contacthub-primary-color: #00BCD4;
 $contacthub-secondary-color: #B2EBF2;
+
+$contactsend-primary-color: #2C5AF5;
+$contactsend-secondary-color: #448AFF;
+
+$contactscore-primary-color: #FFBF02;
+$contactscore-secondary-color: #FFEB3B;
+
+$contactanalytics-primary-color: #F9615B;
+$contactanalytics-secondary-color: #FF9797;
+
 
 $contactlab-color: #0072bc;
 $contacthub-color: #67c6dd;
 $smartrelay-color: #178e87;
 $hybris-color: #f7db20;
 $padiact-color: #d6951c;
-$magento-color: #ec3704;
+$magento-color: #ec3704; 
 
-$primary-color: $contactplan-primary-color;
+$primary-color: #0072bc;
 $primary-color-hover:  shade($primary-color, 5%);
-$primary-text-color: #FFFFFF;
-$secondary-color: $contactplan-secondary-color;
+$primary-text-color: #FFFFFF; 
+$secondary-color: tint($primary-color, 30);
 $secondary-color-hover: shade($secondary-color, 5%);
 $secondary-text-color: #FFFFFF;
 $link-color: $primary-color;
