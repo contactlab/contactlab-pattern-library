@@ -33,10 +33,6 @@ $(document).ready(function(){
     $(".search-input").toggleClass('active');
   });
 
-  $( "#reduce" ).click(function() {
-    $("body").toggleClass('main-sidebar-small');
-  });
-
   $( "#secondary-sidebar-label" ).click(function() {
     $("body").toggleClass('secondary-sidebar-closed');
   });

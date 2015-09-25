@@ -15,11 +15,11 @@ Polymer({
 		},
 		reduceOpen:{
 			type: String,
-			value: 'contactlab-icon-compress-h icon compress'
+			value: 'clab clab-icon-expand expand'
 		},
 		reduceClose:{
 			type: String,
-			value: 'contactlab-icon-expand-h icon expand'
+			value: 'clab clab-icon-resize compress'
 		}
 	},
 	_reduce: function(){
