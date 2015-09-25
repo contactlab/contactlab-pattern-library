@@ -61,6 +61,8 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider, $locat
 }]);
 
 app.controller('MainCtrl',function($scope,$location){
+	$scope.contextTitle = 'Title';
+
 	$scope.checkActive = function(str,macro){
 		if(location.hash.search(str) > -1){
 			return true
@@ -68,6 +70,15 @@ app.controller('MainCtrl',function($scope,$location){
 			return false;
 		}
 	}
+
+	$scope.$on('$routeChangeSuccess', function(next, current) { 
+	   	if(location.hash.search('design') > -1){
+	   		$scope.contextTitle = 'Design';
+	   	}
+	   	if(location.hash.search('ui') > -1){
+	   		$scope.contextTitle = 'UI Components';
+	   	}
+	});
 
 	$scope.navBlur = function(){
 		document.body.focus();
