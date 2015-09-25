@@ -42,11 +42,11 @@ Polymer({
 	},
 	computeClass: function(minimal,color){
 		var vals = ['minimal','primary','secondary','info','success','warning','error'];
-		var str = '';
+		var classes = [];
 		for(var i = 0; i < arguments.length; i++){
-			arguments[i] ? str += (vals[i] + ' ') : str;
+			arguments[i] ? classes.push(vals[i]) : null;
 		}
-		return str;
+		return classes.join(' ');
 	},
 	percent: function(value){
 		return value + '%'

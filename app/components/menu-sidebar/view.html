@@ -1,0 +1,26 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="menu-sidebar">
+	<style></style>
+	
+	<template>
+		<div id="logo">
+			<a href="#">
+				<i class$="{{_computeTitleIcon(titleIcon)}}"></i>
+				<content select="#logo-title"></content>
+			</a>
+		</div>
+		<nav>
+			<content></content>
+		</nav>
+		<div id="reduce" on-click="_reduce">
+			<a>
+				<span>{{reduceText}}</span>
+				<i class$="{{_computeReduceIcons(reduceOpen)}}"></i>
+				<i class$="{{_computeReduceIcons(reduceClose)}}"></i>
+			</a>
+		</div>
+	</template>
+
+	<script src="script.js"></script>
+</dom-module>
