@@ -1,5 +1,5 @@
 Polymer({
-	is: 'menu-sidebar',
+	is: 'menu-clab',
 	properties: {
 		title: {
 			type: String,

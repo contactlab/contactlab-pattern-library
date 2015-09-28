@@ -1,5 +1,5 @@
 Polymer({
-	is: 'progress-bar',
+	is: 'progress-clab',
 	properties:{
 		value: {
 			type: Number,
@@ -34,15 +34,12 @@ Polymer({
 			value: false
 		}
 	},
-	attached: function(){
-		this.$.label.classList.remove('progress-bar');
-	},
 	computeProp: function(value){
 		return 'width:' + this.value + '%;';
 	},
 	computeClass: function(minimal,color){
 		var vals = ['minimal','primary','secondary','info','success','warning','error'];
-		var classes = [];
+		var classes = ['progress-bar'];
 		for(var i = 0; i < arguments.length; i++){
 			arguments[i] ? classes.push(vals[i]) : null;
 		}
