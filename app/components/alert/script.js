@@ -1,5 +1,5 @@
 Polymer({
-	is: 'alert-msg',
+	is: 'alert-clab',
 	properties: {
 		title: {
 			type: String,

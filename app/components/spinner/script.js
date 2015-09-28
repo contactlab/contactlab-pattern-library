@@ -1,5 +1,5 @@
 Polymer({
-	is: 'load-spinner',
+	is: 'spinner-clab',
 	properties: {
 		dark: {
 			type: Boolean,

@@ -27,7 +27,7 @@
 </head>
 <body ng-controller="MainCtrl" ng-click="navBlur()">
 	<aside id="main-sidebar">
-		<menu-sidebar title-icon="clab-icon-sign">
+		<menu-clab title-icon="clab-icon-sign">
 			<span class="name">pattern<b>library</b></span>
 			<ul>
 				<li ng-class="{'active': checkActive('#/design')}"><a href="#/design/colors"><i class="fa fa-hand-rock-o icon"></i><span>Design</span></a>
@@ -58,7 +58,7 @@
 					</ul></li>
 				<li><a href="#/"><i class="fa fa-hand-scissors-o icon"></i><span>Resources</span></a></li>
 			</ul>
-		</menu-sidebar>
+		</menu-clab>
 	</aside>
 	<header class="design">
 		<h1>{{contextTitle}}</h1>
