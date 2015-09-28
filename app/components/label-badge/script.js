@@ -1,5 +1,5 @@
 Polymer({
-	is: 'label-clb',
+	is: 'label-clab',
 	properties: {
 		type: {
 			type: String,
