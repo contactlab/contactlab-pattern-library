@@ -2707,7 +2707,7 @@ table {
   box-sizing: border-box;
 }
 
-.faster-transition, .alert.primary .btn, .buttons-group.primary .alert.btn .btn, .alert.secondary .btn, .buttons-group.secondary .alert.btn .btn, .alert.info .btn, .buttons-group.info .alert.btn .btn, .alert.success .btn, .buttons-group.success .alert.btn .btn, .alert.warning .btn, .buttons-group.warning .alert.btn .btn, .alert.error .btn, .buttons-group.error .alert.btn .btn, .btn, .btn.flat, .btn.full, .buttons-group .btn:active, .btn:active, .btn.active, .btn.primary:active, .btn.primary.active, .buttons-group.primary .btn.active, .btn.secondary:active, .btn.secondary.active, .buttons-group.secondary .btn.active, .btn.info:active, .btn.info.active, .buttons-group.info .btn.active, .btn.success:active, .btn.success.active, .buttons-group.success .btn.active, .btn.warning:active, .btn.warning.active, .buttons-group.warning .btn.active, .btn.error:active, .btn.error.active, .buttons-group.error .btn.active, .action-bar-button, #main-sidebar #reduce a, #secondary-sidebar #secondary-sidebar-label, .back, .action-bar-button:active, .back:active, .user-bar.active, .user-bar .picture img, .user-bar .actions .action, .user-bar .actions .action:active {
+.faster-transition, .alert.primary .btn, .buttons-group.primary .alert.btn .btn, .alert.secondary .btn, .buttons-group.secondary .alert.btn .btn, .alert.info .btn, .buttons-group.info .alert.btn .btn, .alert.success .btn, .buttons-group.success .alert.btn .btn, .alert.warning .btn, .buttons-group.warning .alert.btn .btn, .alert.error .btn, .buttons-group.error .alert.btn .btn, .btn, .btn.flat, .btn.full, .buttons-group .btn:active, .btn:active, .btn.active, .btn.primary:active, .btn.primary.active, .buttons-group.primary .btn.active, .btn.secondary:active, .btn.secondary.active, .buttons-group.secondary .btn.active, .btn.info:active, .btn.info.active, .buttons-group.info .btn.active, .btn.success:active, .btn.success.active, .buttons-group.success .btn.active, .btn.warning:active, .btn.warning.active, .buttons-group.warning .btn.active, .btn.error:active, .btn.error.active, .buttons-group.error .btn.active, .floating-button, .floating-button.primary:active, .floating-button.secondary:active, .floating-button.info:active, .floating-button.success:active, .floating-button.warning:active, .floating-button.error:active, .action-bar-button, #main-sidebar #reduce a, #secondary-sidebar #secondary-sidebar-label, .back, .action-bar-button:active, .back:active, .user-bar.active, .user-bar .picture img, .user-bar .actions .action, .user-bar .actions .action:active {
   -moz-transition: all 50ms ease-in-out;
   -o-transition: all 50ms ease-in-out;
   -webkit-transition: all 50ms ease-in-out;
@@ -5999,11 +5999,11 @@ button:disabled {
 .alert.primary .btn .icon, .buttons-group.primary .alert.btn .btn .icon, .alert.secondary .btn .icon, .buttons-group.secondary .alert.btn .btn .icon, .alert.info .btn .icon, .buttons-group.info .alert.btn .btn .icon, .alert.success .btn .icon, .buttons-group.success .alert.btn .btn .icon, .alert.warning .btn .icon, .buttons-group.warning .alert.btn .btn .icon, .alert.error .btn .icon, .buttons-group.error .alert.btn .btn .icon, .btn .icon, .buttons-group .btn:active .icon {
   margin-right: 10px;
   display: inline-block;
-  font-size: 1rem;
-  -moz-transform: scale(1.3, 1.3);
-  -ms-transform: scale(1.3, 1.3);
-  -webkit-transform: scale(1.3, 1.3);
-  transform: scale(1.3, 1.3);
+  font-size: 10px;
+  -moz-transform: scale(2, 2);
+  -ms-transform: scale(2, 2);
+  -webkit-transform: scale(2, 2);
+  transform: scale(2, 2);
   -moz-transform-origin: center;
   -webkit-transform-origin: center;
   transform-origin: center;
@@ -6384,6 +6384,7 @@ button:disabled {
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.22);
   cursor: pointer;
   display: inline-block;
+  border: 0;
 }
 .floating-button.primary, .buttons-group.primary .floating-button.btn {
   background-color: #0072bc;
@@ -6502,6 +6503,7 @@ button:disabled {
 }
 .floating-button.small i, .buttons-group.small .floating-button.btn i {
   line-height: 40px;
+  font-size: 20px;
 }
 .floating-button.small.top-right, .buttons-group.small .floating-button.top-right.btn {
   top: -20px;
@@ -6894,6 +6896,7 @@ body.main-sidebar-small #main-sidebar .menu-title {
 }
 body.main-sidebar-small #main-sidebar nav ul li {
   position: relative;
+  text-align: center;
 }
 body.main-sidebar-small #main-sidebar nav ul li:hover > ul {
   display: block;

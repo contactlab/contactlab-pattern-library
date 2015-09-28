@@ -23,6 +23,13 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+
+.clab-icon-sign-design:before {
+	content: "\e63f";
+}
+.clab-icon-sign-resources:before {
+	content: "\e640";
+}
 .clab-icon-cloud:before {
 	content: "\e600";
 }

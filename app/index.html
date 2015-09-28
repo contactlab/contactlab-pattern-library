@@ -24,6 +24,7 @@
 	<link rel="import" href="components/color-box/view.html">
 	<link rel="import" href="components/menu-sidebar/view.html">
 	<link rel="import" href="components/label-badge/view.html">
+	<link rel="import" href="components/button/view.html">
 
 </head>
 <body ng-controller="MainCtrl" ng-click="navBlur()">
@@ -31,7 +32,7 @@
 		<menu-sidebar title-icon="clab-icon-sign">
 			<span class="name">pattern<b>library</b></span>
 			<ul>
-				<li ng-class="{'active': checkActive('#/design')}"><a href="#/design/colors"><i class="fa fa-hand-rock-o icon"></i><span>Design</span></a>
+				<li ng-class="{'active': checkActive('#/design')}"><a href="#/design/colors"><i class="clab clab-icon-sign-design icon"></i><span>Design</span></a>
 					<ul>
 						<li class="menu-title">Design</li>
 						<li ng-class="{'active': checkActive('#/design/colors')}"><a href="#/design/colors">Colors</a></li>
@@ -40,7 +41,7 @@
 						<li ng-class="{'active': checkActive('#/design/motion')}"><a href="#/design/motion">Motion</a></li>
 					</ul>
 				</li>
-				<li ng-class="{'active': checkActive('#/ui')}"><a href="#/ui/buttons"><i class="fa fa-hand-paper-o icon"></i><span>Ui components</span></a>
+				<li ng-class="{'active': checkActive('#/ui')}"><a href="#/ui/buttons"><i class="clab clab-icon-sign icon"></i><span>Ui components</span></a>
 					<ul>
 						<li class="menu-title">Ui components</li>
 						<li  ng-class="{'active': checkActive('#/ui/buttons')}"><a href="#/ui/buttons">Buttons</a></li>
@@ -57,7 +58,7 @@
 						<li  ng-class="{'active': checkActive('#/ui/lists')}"><a href="#/ui/lists">Lists</a></li>
 						<li  ng-class="{'active': checkActive('#/ui/pagination')}"><a href="#/ui/pagination">Pagination</a></li>
 					</ul></li>
-				<li><a href="#/"><i class="fa fa-hand-scissors-o icon"></i><span>Resources</span></a></li>
+				<li><a href="#/"><i class="clab clab-icon-sign-resources icon"></i><span>Resources</span></a></li>
 			</ul>
 		</menu-sidebar>
 	</aside>
