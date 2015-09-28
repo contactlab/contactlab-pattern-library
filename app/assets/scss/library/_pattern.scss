@@ -321,6 +321,11 @@ h4 {
     color: rgba(255, 255, 255, 0.6);
     padding: 3px 0px 3px 5px;
     text-align: right;
+    font-size: 8px;
+
+    .clab {
+      font-size: 8px;
+    }
 
     &:hover {
       color: #FFFFFF;
@@ -472,6 +477,11 @@ td {
     top: 5px;
     right: 10px;
     cursor: pointer;
+    font-size: 13px;
+
+    .clab {
+      font-size: 13px;
+    }
   }
 
   @each $type, $color in $default-status {

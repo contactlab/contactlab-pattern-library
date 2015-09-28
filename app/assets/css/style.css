@@ -3123,6 +3123,10 @@ h4 {
   color: rgba(255, 255, 255, 0.6);
   padding: 3px 0px 3px 5px;
   text-align: right;
+  font-size: 8px;
+}
+.label .remove .clab, .badge .remove .clab {
+  font-size: 8px;
 }
 .label .remove:hover, .badge .remove:hover {
   color: #FFFFFF;
@@ -3293,6 +3297,10 @@ td {
   top: 5px;
   right: 10px;
   cursor: pointer;
+  font-size: 13px;
+}
+.alert .close .clab {
+  font-size: 13px;
 }
 .alert.primary, .buttons-group.primary .alert.btn {
   background: #0a9eff;
@@ -5939,6 +5947,8 @@ input[type="file"] {
   -moz-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow: auto;
 }
 .js-users-list li,
 .js-users-list .noResults {
