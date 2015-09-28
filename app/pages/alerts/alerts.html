@@ -1,69 +1,76 @@
 <h1>Alerts</h1>
 <section>
   	<article>
-		<div class="alert success">
-			<h3>Success!</h3>
-			<div class="close"><i class="fa fa-times"></i></div>
+  		<alert-msg title="Success!" visible>
 			<p>
 				<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
 				Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
 			</p>
-			<button class="btn flat default">Cancel</button> <button class="btn default">Confirm</button>
-		</div>
+  		</alert-msg>
 	</article>
 	<article>
-		<div class="alert warning">
-			<h3>Warning!</h3>
-			<div class="close"><i class="fa fa-times"></i></div>
+		<alert-msg title="Warning!" visible type="warning">
 			<p>
 				<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
 				Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
 			</p>
-			<button class="btn flat default">Cancel</button> <button class="btn default">Confirm</button>
-		</div>
+  		</alert-msg>
 	</article>
 	<article>
-		<div class="alert error">
-			<h3>Error!</h3>
-			<div class="close"><i class="fa fa-times"></i></div>
+		<alert-msg title="Error!" visible type="error">
 			<p>
 				<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
 				Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
 			</p>
-			<button class="btn flat default">Cancel</button> <button class="btn default">Confirm</button>
-		</div>
+  		</alert-msg>
 	</article>
 	<article>
-		<div class="alert info">
-			<h3>Info!</h3>
-			<div class="close"><i class="fa fa-times"></i></div>
+		<alert-msg title="Info!" visible type="info">
 			<p>
 				<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
 				Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
 			</p>
-			<button class="btn flat default">Cancel</button> <button class="btn default">Confirm</button>
-		</div>
+  		</alert-msg>
 	</article>
 	<article>
-		<div class="alert primary">
-			<h3>Primary!</h3>
-			<div class="close"><i class="fa fa-times"></i></div>
+		<alert-msg title="Primary!" visible type="primary">
 			<p>
 				<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
 				Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
 			</p>
-			<button class="btn flat default">Cancel</button> <button class="btn default">Confirm</button>
-		</div>
+  		</alert-msg>
 	</article>
 	<article>
-		<div class="alert secondary">
-			<h3>Secondary!</h3>
-			<div class="close"><i class="fa fa-times"></i></div>
+		<alert-msg title="Secondary!" visible type="secondary">
 			<p>
 				<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
 				Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
 			</p>
-			<button class="btn flat default">Cancel</button> <button class="btn default">Confirm</button>
-		</div>
+  		</alert-msg>
 	</article>
 </section>
+
+
+<script>
+	
+setTimeout(function(){
+
+	var els = document.querySelectorAll('alert-msg');
+	console.log(els);
+
+	function firstClick(){
+		alert('Confirm button clicked');
+	}
+	function secondClick(){
+		alert('Cancel button clicked');
+	}
+
+	for(var i = 0; i < els.length; i++){
+		els[i].addEventListener('primary',firstClick);
+		els[i].addEventListener('secondary',secondClick);
+	}
+
+}.bind(this),500);
+
+
+</script>
