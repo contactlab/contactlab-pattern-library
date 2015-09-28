@@ -83,7 +83,7 @@ header {
 }
 
 #cards {
-  .card {
+  .card-example {
     @include gallery(4);
 
     @include susy-breakpoint($desktop) {
