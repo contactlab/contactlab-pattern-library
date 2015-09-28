@@ -2,53 +2,22 @@
 <section id="cards">
 	<h2>Textual cards</h2>
 	<article>
-		<div class="card">
-			<div class="card-title">
-				Card title
-			</div>
-			<div class="card-body">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
-			</div>
-			<div class="card-actions">
-				<button class="btn flat">Decline</button>
-				<button class="btn primary">Accept</button>
-			</div>
-		</div>
-		<div class="card">
-			<div class="card-title">
-				<i class="fa fa-twitter icon"></i>
-				Card title with icon
-			</div>
-			<div class="card-body">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
-			</div>
-			<div class="card-actions">
-				<button class="btn flat">Decline</button>
-				<button class="btn primary">Accept</button>
-			</div>
-		</div>
-		<div class="card">
-			<div class="card-title big-icon">
-	          Card big title
-	          <div class="circle"><i class="fa fa-circle"></i></div>
-	          <div class="icon"><i class="fa fa-diamond"></i></div>
-	        </div>
-			<div class="card-body">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor.
-			</div>
-			<div class="card-actions">
-				<button class="btn flat">Decline</button>
-				<button class="btn primary">Accept</button>
-			</div>
-		</div>
+		<card-clab title="Card title" primary-label="Accept" secondary-label="Decline">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
+		</card-clab>
+
+		<card-clab title="Card title with icon" icon="fa fa-twitter icon" primary-label="Accept" secondary-label="Decline">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
+		</card-clab>
+		
+		<card-clab big title="Card big title" icon="fa fa-twitter icon" primary-label="Accept" secondary-label="Decline">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
+		</card-clab>
+
 	</article>
 	<h2>Structured cards</h2>
 	<article>
-		<div class="card">
-			<div class="card-title">
-				<i class="fa fa-table icon"></i>
-				Table card
-			</div>
+		<card-clab table title="Table card" icon="fa fa-table icon" primary-label="Accept" secondary-label="Decline">
 			<table class="striped-table">
 				<tr>
 					<th>Lorem</th>
@@ -81,75 +50,38 @@
 					<td>ipsum</td>
 				</tr>
 			</table>
-			<div class="card-actions">
-				<button class="btn flat">Decline</button>
-				<button class="btn primary">Accept</button>
-			</div>
-		</div>
+		</card-clab>
+
 	</article>
 	<h2>Image cards</h2>
 	<article>
-		<div class="card">
-			<figure>
-				<img src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708">
-				<h2>Basic</h2>
-			</figure>
-			<div class="card-body">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed odio in erat venenatis imperdiet.
-			</div>
-			<div class="card-actions">
-				<button class="btn flat default">Share</button><button class="btn flat primary">Explore</button>
-			</div>
-		</div>
-		<div class="card blur">
-			<figure>
-				<img src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708">
-				<h2>Blur effects</h2>
-			</figure>
-			<div class="card-body">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed odio in erat venenatis imperdiet.
-			</div>
-			<div class="card-actions">
-				<button class="btn flat default">Share</button><button class="btn flat primary">Explore</button>
-			</div>
-		</div>
-		<div class="card saturation">
-			<figure>
-				<img src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708">
-				<h2>Saturation effect</h2>
-			</figure>
-			<div class="card-body">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed odio in erat venenatis imperdiet.
-			</div>
-			<div class="card-actions">
-				<button class="btn flat default">Share</button><button class="btn flat primary">Explore</button>
-			</div>
-		</div>
+		<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" 
+		title="Basic" primary-label="Explore" secondary-label="Share">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
+		</card-clab>
+
+		<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" 
+		effect="blur" title="Blur effect" primary-label="Explore" secondary-label="Share">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
+		</card-clab>
+
+		<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" 
+		effect="saturation" title="Saturation effect" primary-label="Explore" secondary-label="Share">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
+		</card-clab>
+
 	</article>
 	<article>
-		<div class="card zoom-in">
-			<figure>
-				<img src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708">
-				<h2>Zoom-in effect</h2>
-			</figure>
-			<div class="card-body">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed odio in erat venenatis imperdiet.
-			</div>
-			<div class="card-actions">
-				<button class="btn flat default">Share</button><button class="btn flat primary">Explore</button>
-			</div>
-		</div>
-		<div class="card zoom-out">
-			<figure>
-				<img src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708">
-				<h2>Zoom-out effect</h2>
-			</figure>
-			<div class="card-body">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed odio in erat venenatis imperdiet.
-			</div>
-			<div class="card-actions">
-				<button class="btn flat default">Share</button><button class="btn flat primary">Explore</button>
-			</div>
-		</div>
+		
+		<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" 
+		effect="zoom-in" title="Zoom-in effect" primary-label="Explore" secondary-label="Share">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
+		</card-clab>
+
+		<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" 
+		effect="zoom-out" title="Zoom-out effect" primary-label="Explore" secondary-label="Share">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
+		</card-clab>
+
 	</article>
 </section>
