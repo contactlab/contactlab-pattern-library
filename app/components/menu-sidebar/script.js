@@ -24,7 +24,6 @@ Polymer({
 	},
 	attached: function(){
 		document.querySelector('body>main').addEventListener('click', function(){
-			console.log('ciao');
 			document.querySelector('#logo a').focus();
 		});
 	},
