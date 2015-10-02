@@ -22,6 +22,12 @@ Polymer({
 			value: 'clab clab-icon-resize compress'
 		}
 	},
+	attached: function(){
+		document.querySelector('body>main').addEventListener('click', function(){
+			console.log('ciao');
+			document.querySelector('#logo a').focus();
+		});
+	},
 	_reduce: function(){
 		document.body.classList.toggle('main-sidebar-small');
 	},
