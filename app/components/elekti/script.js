@@ -16,7 +16,7 @@ Polymer({
 			type: 'String',
 			readonly: true
 		},
-		noKeyboard: {
+		noSearch: {
 			type: Boolean,
 			value: false
 		}
@@ -66,7 +66,7 @@ Polymer({
 	},
 	dropOnly: function(){
 		var thisComp = this;
-		if(this.noKeyboard){
+		if(this.noSearch){
 			thisComp.$.list.classList.toggle('visible');
 			thisComp.highlightedElement();
 		}

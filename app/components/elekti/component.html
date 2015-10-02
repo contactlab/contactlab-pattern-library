@@ -6,7 +6,7 @@
 	<template>		
 		<div class="input-group" on-click="dropOnly">
 			<input id$="{{dashify(label)}}" type="text" class="js-users-list-filter" 
-			on-focus="handleListVisibility" on-blur="handleListVisibility" disabled="{{noKeyboard}}"
+			on-focus="handleListVisibility" on-blur="handleListVisibility" disabled="{{noSearch}}"
 			on-keyup="searchElement" on-change="updateValue" >
 			<label for$="{{dashify(label)}}">{{label}}</label>
 			<ol class="js-users-list" id="list">
