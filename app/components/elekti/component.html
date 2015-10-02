@@ -4,10 +4,10 @@
 	<style></style>
 	
 	<template>		
-		<div class="input-group">
+		<div class="input-group" on-click="dropOnly">
 			<input id$="{{dashify(label)}}" type="text" class="js-users-list-filter" 
-			on-focus="handleListVisibility" on-blur="handleListVisibility"
-			on-keyup="searchElement" on-change="updateValue">
+			on-focus="handleListVisibility" on-blur="handleListVisibility" disabled="{{noKeyboard}}"
+			on-keyup="searchElement" on-change="updateValue" >
 			<label for$="{{dashify(label)}}">{{label}}</label>
 			<ol class="js-users-list" id="list">
 				<template is="dom-repeat" items="{{options}}">

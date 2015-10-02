@@ -15,6 +15,10 @@ Polymer({
 		value: {
 			type: 'String',
 			readonly: true
+		},
+		noKeyboard: {
+			type: Boolean,
+			value: false
 		}
 	},
 	ready: function(){
@@ -29,13 +33,9 @@ Polymer({
 	dashify: function(str){
 		return str.replace(/ /g,'-');
 	},
-	scherzone: function(){
-		console.log('%c voglio fare l\'astruologooooooooo ', 'background: #222; color: #bada55');
-	},
 	updateValue: function(){
 		this.value = this.input.value;
 	},
-	
 	highlightedElement: function(){
 		var search = this.input.value.toLowerCase();
 		var elems = this.$.list.querySelectorAll('li');
@@ -63,6 +63,13 @@ Polymer({
 			thisComp.highlightedElement();
 		},150);
 		this.activeInput(evt.type);
+	},
+	dropOnly: function(){
+		var thisComp = this;
+		if(this.noKeyboard){
+			thisComp.$.list.classList.toggle('visible');
+			thisComp.highlightedElement();
+		}
 	},
 	searchElement: function(e){
 		var search = this.input.value.toLowerCase();
