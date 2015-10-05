@@ -15,7 +15,8 @@ var conf = {
 Imports
 ========================
 */
-var gulp = require('gulp'),
+// var gulp = require('gulp'),
+var gulp = require('gulp-param')(require('gulp'), process.argv),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps')
     gutil = require("gulp-util"),
@@ -79,10 +80,12 @@ gulp.task("webpack", function(callback) {
 });
 
 // Server
-gulp.task('connect', function () {
+gulp.task('connect', function (port) {
+  !port ? port = 3000 : port;
+  console.log(port);
   connect.server({
     root: 'app',
-    port: 3000,
+    port: port,
     livereload: true
   });
 });
