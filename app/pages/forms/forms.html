@@ -1,57 +1,98 @@
 <h1>Forms</h1>
-<section id="forms">
-  	<!-- text inputs -->
+<section>
+	<h2>Input text</h2>
 	<article>
-		<h2>Text inputs</h2>
-		<div class="input-group">
-			<input type="text" id="text_field">
-			<label for="text_field">Default</label>
-		</div>
-		<div class="input-group">
-			<input type="text" class="active" id="readonly_field" value="Value" readonly>
-			<label for="readonly_field">Read Only</label>
-		</div>
-		<div class="input-group success">
-			<input type="text" id="success_field">
-			<label for="success_field">Success</label>
+		<div class="input-wrapper">
+			<label for="field">Label</label>
+			<input type="text" id="field">
 			<div class="note">Lorem ipsum dolor sit.</div>
-		</div>
-		<div class="input-group warning">
-			<input type="text" id="warning-field">
-			<label for="warning-field">Warning</label>
-			<div class="note">Lorem ipsum dolor sit.</div>
-		</div>
-		<div class="input-group error">
-			<input type="text" id="error_field">
-			<label for="error_field">Error</label>
-			<div class="note">Lorem ipsum dolor sit.</div>
-		</div>
-		<div class="input-group info">
-			<input type="text" id="info_field">
-			<label for="info_field">Info</label>
-			<div class="note">Lorem ipsum dolor sit.</div>
-		</div>
-		<div class="input-group">
-			<textarea msd-elastic ng-model="foo" id="textarea-test"></textarea>
-			<label for="textarea-test">Textarea label</label>
-		</div>
-		<div class="input-group create-user-field picture">
-		    <label class="input-file-label" for="sign-url-file"><i class="fa fa-upload"></i> File label</label>
-			<label class="fileUpload">
-			    <input id="sign-url-file" type="file" class="upload" />
-			</label>
-			<input type="text" id="uploadFile-sign" class="file-name" placeholder="Choose File" disabled="disabled" />
 		</div>
 	</article>
-
+	<article>
+		<div class="input-wrapper success">
+			<label for="field-success">Success label</label>
+			<input type="text" id="field-success">
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper warning">
+			<label for="field-warning">Warning label</label>
+			<input type="text" id="field-warning">
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper error">
+			<label for="field-error">Error label</label>
+			<input type="text" id="field-error">
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper info">
+			<label for="field-info">Info label</label>
+			<input type="text" id="field-info">
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+</section>
+<section>
 	<h2>Select</h2>
 	<article>
-		<elekti-mer label="Select" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
-		
+		<div class="input-wrapper">
+			<elekti-mer label="Select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
 	</article>
+	<article>
+		<div class="input-wrapper success">
+			<elekti-mer label="Success select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper warning">
+			<elekti-mer label="Warning select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper error">
+			<elekti-mer label="Error select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper info">
+			<elekti-mer label="Info select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+</section>
+<section>
+	<h2>Input range</h2>
+	<article>
+		<input type="range">
+	</article>
+</section>
+<section>
+	<h2>Input file</h2>
+
+	<div class="input-wrapper">
+		<label for="field">Input file label</label>
+		<div class="input-icon-wrapper">
+			<input type="text" id="file-field">
+		</div>
+		<div class="note">Lorem ipsum dolor sit.</div>
+		<input type="file">
+	</div>
+</section>
+
+<section id="forms">
 
 	<!-- radio & checkboxes -->
-	<h2>Radio Buttons</h2>
+	<h2>Input radio</h2>
 	<article>
 		<!-- radio -->
         <div class="row">
@@ -72,7 +113,7 @@
         </div>
 	</article>
 
-    <h2>Checkboxes</h2>
+    <h2>Input checkbox</h2>
 	<article>
         <!-- checkboxes -->
         <div class="row">

@@ -47,7 +47,7 @@
 
 .clab {
   font-size: 24px;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 
   &.icon-medium {
     font-size: 36px;
@@ -183,6 +183,10 @@ a {
   }
 }
 
+b {
+  font-weight: $bold-weight;
+}
+
 body {
   background: $base-background-color;
   font-weight: $normal-weight;
@@ -282,6 +286,19 @@ h1 {
   font-size: 3rem;
   font-weight: $normal-weight;
   line-height: 1.5;
+
+  &.page-title {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      bottom: 0px;
+      width: 75px;
+      height: 3px;
+      content: ''; 
+      background-color: $primary-color;
+    }
+  }
 }
 
 h2 {
@@ -807,6 +824,9 @@ td {
 // BREADCRUMBS
 
 .breadcrumb {
+  @include full;
+  font-size: 0.875rem;
+
   li {
     display: inline;
 
@@ -991,14 +1011,14 @@ td {
     color: $base-text-color;
 
     &:hover {
-      color: $primary-color;
+      color: $secondary-color;
     }
   }
 
   &.ui-tabs .ui-tabs-nav .ui-tabs-active .ui-tabs-anchor {
-    color: $primary-color;
+    color: $secondary-color;
     padding-bottom: $small-spacing;
-    @include single-box-shadow(0, 3px, 0, 0, $primary-color);
+    @include single-box-shadow(0, 3px, 0, 0, $secondary-color);
   }
 
   &.ui-tabs .ui-tabs-nav .ui-state-default.ui-state-disabled a {
@@ -1071,40 +1091,40 @@ td {
 // TOOLTIPS
 
 .custom-theme {
-	@include border-radius(0);
-	border: 2px solid $darker-gray;
-	background: $darker-gray;
-	color: #fff;
+  @include border-radius(0);
+  border: 2px solid $darker-gray;
+  background: $darker-gray;
+  color: #fff;
 }
 
 .custom-theme .tooltipster-content {
-	font-size: 14px;
-	line-height: 16px;
-	padding: $small-spacing;
+  font-size: 14px;
+  line-height: 16px;
+  padding: $small-spacing;
 }
 
 
 // DATEPICKER
 
 .ui-datepicker.ui-widget {
-	font-family: $base-font-family;
-	background: $dark-gray;
-	border: none;
+  font-family: $base-font-family;
+  background: $dark-gray;
+  border: none;
   z-index: 2 !important;
-	border-radius: 0;
-	@include border-radius(0);
+  border-radius: 0;
+  @include border-radius(0);
   @include single-box-shadow(0, 4px, 10px, 0, rgba(0,0,0,0.10));
 }
 
 .ui-datepicker {
-	padding: 0;
+  padding: 0;
 }
 
 .ui-datepicker-header {
-	border: none;
-	background: transparent;
-	font-weight: normal;
-	font-size: 15px;
+  border: none;
+  background: transparent;
+  font-weight: normal;
+  font-size: 15px;
 }
 
 .ui-datepicker .ui-state-default, .ui-datepicker .ui-widget-content .ui-state-default {
@@ -1128,33 +1148,33 @@ td {
 }
 
 .ui-datepicker-header .ui-state-hover {
-	background: transparent;
-	border-color: transparent;
-	cursor: pointer;
-	border-radius: 0;
-	@include border-radius(0);
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  border-radius: 0;
+  @include border-radius(0);
 }
 
 .ui-datepicker .ui-datepicker-title {
-	margin-top: .4em;
-	margin-bottom: .3em;
-	color: #e9f0f4;
+  margin-top: .4em;
+  margin-bottom: .3em;
+  color: #e9f0f4;
 }
 
 .ui-datepicker .ui-datepicker-prev-hover,
 .ui-datepicker .ui-datepicker-next-hover,
 .ui-datepicker .ui-datepicker-next,
 .ui-datepicker .ui-datepicker-prev {
-	top: .9em;
-	border:none;
+  top: .9em;
+  border:none;
 }
 
 .ui-datepicker .ui-datepicker-prev-hover {
-	left: 2px;
+  left: 2px;
 }
 
 .ui-datepicker .ui-datepicker-next-hover {
-	right: 2px;
+  right: 2px;
 }
 
 .ui-datepicker .ui-datepicker-next,
@@ -1185,26 +1205,26 @@ td {
 
 .ui-datepicker .ui-datepicker-prev span,
  .ui-datepicker .ui-datepicker-next span {
-	background-image: none;
+  background-image: none;
 }
 
 .ui-datepicker table {
-	margin: 0;
+  margin: 0;
 }
 
 .ui-datepicker th {
-	padding: 1em 0;
-	color: #ccc;
-	font-size: 13px;
-	font-weight: normal;
-	border: none;
-	border-top: 1px solid #3a414d;
+  padding: 1em 0;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: normal;
+  border: none;
+  border-top: 1px solid #3a414d;
 }
 
 .ui-datepicker td {
-	background: $lighter-gray;
-	border: none;
-	padding: 0;
+  background: $lighter-gray;
+  border: none;
+  padding: 0;
   line-height: 2em;
 
   a {
@@ -1213,27 +1233,27 @@ td {
 }
 
 td .ui-state-default {
-	background: transparent;
-	border: none;
-	text-align: center;
-	padding: .5em;
-	margin: 0;
-	font-weight: normal;
-	color: #efefef;
-	font-size: 16px;
+  background: transparent;
+  border: none;
+  text-align: center;
+  padding: .5em;
+  margin: 0;
+  font-weight: normal;
+  color: #efefef;
+  font-size: 16px;
 }
 
 .ui-widget-content .ui-state-disabled  {
-	opacity: 1;
+  opacity: 1;
 }
 
 .ui-state-disabled .ui-state-default {
-	color: #fba49e;
+  color: #fba49e;
 }
 
 td .ui-state-active,
 td .ui-state-hover {
-	background: #2e3641;
+  background: #2e3641;
 }
 
 
@@ -1705,6 +1725,10 @@ footer {
     font-size: 40px;
     line-height: 1;
 
+    .clab {
+      font-size: 40px;
+    }
+
     img {
       @include full;
     }
@@ -1736,6 +1760,23 @@ footer {
       margin: 0;
       width: 80px;
       font-size: 80px;
+
+      .clab {
+        font-size: 80px;
+      }
+    }
+  }
+
+  &.small-icon {
+    .icon {
+      float: left;
+      margin: 0;
+      width: 24px;
+      font-size: 24px;
+
+      .clab {
+        font-size: 24px;
+      }
     }
   }
 

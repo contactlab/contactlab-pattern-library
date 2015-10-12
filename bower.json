@@ -20,8 +20,8 @@
     "lodash": "~3.10.1",
     "polymer": "~1.1.3",
     "susy": "~2.2.6",
-    "ki": "https://salvatore_laisa@bitbucket.org/product-team/ki.git",
-    "ui-components": "https://salvatore_laisa@bitbucket.org/product-team/ui-components.git"
+    "ki": "https://raoul-meroni@bitbucket.org/product-team/ki.git",
+    "zepto": "~1.1.6"
   },
   "devDependencies": {
     "compass-breakpoint": "breakpoint-sass#~2.6.1"

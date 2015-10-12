@@ -1,5 +1,5 @@
 $main-sidebar-width: 250px;
-$secondary-sidebar-width: 200px;
+$secondary-sidebar-width: 280px;
 $header-height: 80px;
 
 html{
@@ -36,13 +36,6 @@ body {
 	background-color: $darker-gray;
 	z-index: 10;
 
-	a {
-		color: #FFFFFF;
-		display: block;
-		padding: 8px $base-spacing;
-		text-decoration: none;
-	}
-
 	#logo {
 		@include full;
 		height: $header-height;
@@ -62,11 +55,14 @@ body {
 		.name {
 			font-size: 25px;
 			font-weight: $light-weight;
-			color: $primary-color;
+			color: #FFFFFF;
+			@include full;
+			padding-left: 45px;
+			text-align: left;
 
 			b {
 				font-weight: $normal-weight;
-				color: #FFFFFF;
+				color: $primary-color;
 			}
 		}
 
@@ -74,48 +70,25 @@ body {
 			padding-top: 0;
 			padding-bottom: 0;
 		}
-	}
+	}	
 
-	nav,
-	nav ul,
-	nav ul li {
-		@include full;
-		margin: 0;
-	}
+	// MENU
 
-	nav ul li > ul li {
-		a {
-			font-size: 0.875rem;
-			color: #AAA;
-			padding: $smaller-spacing $base-spacing $smaller-spacing $larger-spacing;
-
-			&:hover {
-				background-color: transparent;
-				color: #FFFFFF;
-			}
+	%hover-menu {
+		background-color: $darker-gray;
+		
+		li a {
+			padding-left: $base-spacing;
 		}
-
-		&.active a,
-		&.active a:hover {
-			background-color: transparent;
-			color: #FFFFFF;
-			border-color: transparent;
-		}
-	}
-
-	nav ul li > ul {
-		display: none;
-	}
-
-	nav ul li.active > ul {
-		display: block;
 	}
 
 	nav {
 		position: absolute;
 		top: $header-height;
 		left: 0;
+		right: 0;
 		bottom: 40px;
+		overflow: auto;
 
 		.icon {
 			width: 20px;
@@ -128,24 +101,137 @@ body {
 			border-left: 2px solid transparent;
 		}
 
-		a:hover {
+		a:active {
 			background-color: rgba(0, 0, 0, 0.3);
 		}
 
 		.active > a,
 		.active > a:hover{
-			background-color: rgba(255, 255, 255, 0.1);
+			background-color: rgba(255, 255, 255, 0.15);
 			color: #FFFFFF;
 			border-color: $primary-color;
 		}
 
 		.menu-title {
 			display: none;
-			line-height: 40px;
+			padding: 8px $base-spacing;
 			color: #FFFFFF;
-			padding-left: $base-spacing;
-			padding-right: $base-spacing;
-			background-color: rgba(255, 255, 255, 0.1);
+			background-color: rgba(255, 255, 255, 0.15);
+		}
+	}
+
+	.first-level-menu,
+	.second-level-menu,
+	.third-level-menu {
+		@include full;
+		margin: 0;
+
+		li {
+			cursor: pointer;
+			@include full;
+			margin: 0;
+			position: relative;
+			@include user-selection(none);
+		}
+
+		a {
+			color: #FFFFFF;
+			display: block;
+			padding: 8px $base-spacing;
+			text-decoration: none;
+		}
+	}
+
+	// FIRST LEVEL
+
+	.first-level-menu {
+
+		.active {
+			> a {
+				background-color: rgba(255, 255, 255, 0.15);
+			}
+		}
+		
+		.active,
+		.open {
+			.second-level-menu {
+				display: block;
+			}
+		}
+	}
+
+	// SECOND LEVEL
+
+	.second-level-menu {
+		display: none;
+		background-color: rgba(0, 0, 0, 0.3);
+		padding-bottom: $small-spacing;
+
+		a {
+			font-size: 0.875rem;
+			color: #AAA;
+			padding: $smaller-spacing $base-spacing $smaller-spacing $larger-spacing;
+		}
+
+		li:hover > a {
+			background-color: transparent;
+			color: #FFFFFF;
+		}
+
+		.active a,
+		.active a:hover {
+			background-color: transparent;
+			border-color: transparent;
+		}
+
+		li.active,
+		li.open {
+
+			> a {
+				color: #FFFFFF;
+			}
+
+			.third-level-menu  {
+				padding-bottom: $small-spacing;
+
+				&:before {
+					content: "\e614";
+				}
+
+				li {
+					display: block;
+				}
+			}
+		}
+	}
+
+	// THIRD LEVEL
+
+	.third-level-menu {
+		background-color: rgba(0, 0, 0, 0.5); 
+
+		li {
+			display: none;
+
+			a {
+				font-size: 0.80rem;
+				color: #AAAAAA;
+				padding-left: 80px;
+			}
+
+			&.active a {
+				color: #FFFFFF;
+			}
+		}
+
+		&:before {
+			font-family: 'contactlab-icons';
+			content: "\e62b";
+			position: absolute;
+			right: 10px;
+			top: 11px;
+			color: #FFFFFF;
+			font-size: 10px;
 		}
 	}
 
@@ -161,14 +247,17 @@ body {
 			background-color: rgba(255, 255, 255, 0.1);
 			float: right;
 			cursor: pointer;
+			color: #FFFFFF;
 		}
 
 		.expand {
 			display: none;
-		}
+			vertical-align: middle;
+		} 
 
 		.compress {
 			display: inline-block;
+			vertical-align: middle;
 		}
 	}
 }
@@ -178,8 +267,9 @@ body {
 main {
 	@include full;
 	padding-left: $main-sidebar-width;
-	padding-right: $secondary-sidebar-width;
+	padding-right: 0;
 	padding-top: $header-height;
+	max-width: 1500px;
 }
 
 // HEADER
@@ -194,57 +284,40 @@ header {
 	z-index: 4;
 }
 
-// search
+.app-switch {
+	position: absolute;
+	left: 0;
+	top: 25px;
 
-.search {
-	line-height: $header-height;
-	margin-left: $large-spacing;
-	float: left;
-	font-size: 20px;
+	.btn {
+		border-left: 0;
 
-	.search-icon {
-		cursor: pointer;
-	}
-
-	.search-input {
-		width: 0;
-		@extend .default-transition;
-		background-color: transparent;
-		border-color: $gray;
-		padding: 0;
-
-		&.active {
-			width: 200px;
-			@extend .default-transition;
+		.icon {
+			margin-right: 0;
 		}
 	}
 }
-
-// end search
 
 // user bar
 
 #user-menu-toggle {
 	cursor: pointer;
 	float: left;
+	padding-left: $base-spacing;
+	@include user-selection(none);
 
-	&:active .picture img {
-		border-color: $primary-color;
-	}
+	&:active,
+	&.active {
+		.picture img {
+			border-color: $primary-color;
+		}
+	} 
 }
 
 .user-bar {
-	position: absolute;
-	right: -$header-height/2;
-	top: 0;
+	float: right;
 	height: $header-height;
 	font-size: 0;
-	@extend .fast-transition; 
-
-	&.active {
-		right: 0;
-		@extend .faster-transition; 
-	}
 
 	.name {
 		line-height: $header-height;
@@ -261,6 +334,7 @@ header {
 		vertical-align: top;
 		font-size: 1rem;
 		margin: 15px $base-spacing 0 0;
+		position: relative;
 
 		img {
 			width: 100%;
@@ -269,44 +343,12 @@ header {
 			@extend .faster-transition;
 		}
 	}
-
-	.actions {
-		font-size: 1rem;
-		display: inline-block;
-		width: $header-height/2;
-		text-align: center;
-
-		.action {
-			float: left;
-			width: 100%;
-			height: $header-height/2;
-			line-height: $header-height/2;
-			color: $base-text-color;
-			font-size: 20px;
-			background-color: $lighter-gray;
-			@extend .faster-transition; 
-
-			&:active {
-				background-color: $primary-color;
-				color: $primary-text-color;
-				@extend .faster-transition; 
-			}
-		}
-	}
 }
 
-// end user bar
-
-
-
-// END HEADER
-
-// SECONDARY SIDEBAR
-
-.notifications {
+.notifications-badge {
 	position: absolute;
-	top: 5px;
-	left: 5px;
+	top: 0;
+	left: 0;
 	width: 15px;
 	height: 15px;
 	font-size: 12px;
@@ -317,23 +359,103 @@ header {
 	@include border-radius(50%); 
 }
 
+// end user bar
+
+// END HEADER
+
+// SECONDARY SIDEBAR
+
 #secondary-sidebar {
 	position: fixed;
 	width: $secondary-sidebar-width;
-	right: 0;
+	right: -$secondary-sidebar-width - 20px;
 	top: $header-height;
 	bottom: 0;
 	background-color: $lighter-gray;
 	z-index: 2;
+	padding: 0;
+	overflow: auto;
+	@extend .depth-1;
 
-	#secondary-sidebar-label {
-		position: absolute;
-		top: 0;
-		@extend .action-bar-button;
-		right: $secondary-sidebar-width;
-		z-index: 10;
-		cursor: pointer;
-		background-color: $lighter-gray;
+	.user-actions {
+		@include full;
+		text-align: right;
+		border-bottom: 1px solid $light-gray;
+		margin-bottom: $base-spacing;
+		font-size: 0;
+		padding-right: 12px;
+
+		.action {
+			@extend .action-bar-button;
+			width: 35px;
+			height: 35px;
+			line-height: 35px;
+			display: inline-block;
+			cursor: pointer;
+			font-size: 20px;
+
+			.clab {
+				font-size: 20px;
+			}
+		}
+	}
+
+	&.sidebar-open {
+		right: 0;
+	}
+
+	.notifications {
+		@include full;
+	}
+
+	.sidebar-tabs {
+		padding: 0 $base-spacing;
+
+		.pills .tab,
+		.tabs .tab {
+			font-size: 0.85rem;
+		}
+	}
+
+	.sidebar-block {
+		@include full;
+		padding: 0 $base-spacing $large-spacing;
+		font-size: 0.85rem;
+
+		h3 {
+			font-weight: $semibold-weight;
+		}
+
+		.feature {
+			position: relative;
+			.description {
+				padding-left: 10px;
+
+				p {
+					font-size: 0.85rem;
+				}
+			}
+		}
+
+		ul,
+		ul li {
+			@include full;
+		}
+
+		
+
+		&.notifications {
+			.highlighted:before {
+				content: '';
+				position: absolute;
+				left: -5px;
+				top: 0;
+				width: 5px;
+				height: 5px;
+				background-color: $primary-color;
+				@include border-radius(50%);
+			}
+		} 
 	}
 }
 
@@ -373,14 +495,20 @@ body.main-sidebar-small {
 	#main-sidebar {
 		width: $main-sidebar-width;
 
+		nav {
+			overflow: initial;
+		}
+
 		#reduce {
 
 			.expand {
 				display: inline-block;
+				vertical-align: middle;
 			}
 
 			.compress {
 				display: none;
+				vertical-align: middle;
 			}
 
 			@include susy-breakpoint($tablet) {
@@ -399,10 +527,11 @@ body.main-sidebar-small {
 
 			.sign {
 				display: block;
-				left: 12px;
-				top: 25px;
+				left: 8px;
 			}
 		}
+
+		// MENU
 
 		a {
 			padding: 0;
@@ -424,28 +553,54 @@ body.main-sidebar-small {
 			display: block;
 		}
 
-		nav ul li {
+		// FIRST LEVEL MENU
+
+		.first-level-menu li {
 			position: relative;
 			text-align: center;
 
-			&:hover > ul {
-				display: block;
+			@include susy-breakpoint($tablet) {
+				> ul {
+					/* max-height: 250px; */
+					/* overflow: auto; */
+				}
+			}
+
+			&.active {
+				.second-level-menu{
+					display: none;
+				}
+
+				&.open .second-level-menu {
+					display: block;
+				}
 			}
 		}
 
-		nav ul li ul {
+		// SECOND LEVEL MENU
+
+		.second-level-menu {
 			display: none;
 			position: absolute;
 			left: $main-sidebar-width;
 			top: 0;
 			background-color: $darker-gray;
 			width: 200px;
+			max-height: 200px;
+			overflow: auto;
+
+			li {
+				text-align: left; 
+			}
 
 			li a {
-				padding: 0 $base-spacing;
-				line-height: 40px;
-				font-size: 1rem;
+				padding: 5px $base-spacing;
+				font-size: 0.875rem;
 			}
+		}
+
+		.third-level-menu {
+			left: 200px;
 		}
 
 		#reduce .icon {
@@ -460,22 +615,22 @@ body.main-sidebar-small {
 	header
 	 {
 		left: $main-sidebar-width;
-	}
-}
 
-body.secondary-sidebar-closed {
- 
-	#secondary-sidebar {
-		right: - $secondary-sidebar-width;
-
-		#secondary-sidebar-label {
-			background-color: $base-background-color;
+		.app-switch {
+			top: 12px,
 		}
 	}
-	main {
-		padding-right: 0;
+}
+
+/* body.secondary-sidebar-open {
+
+	@include susy-breakpoint(1600px) {
+		.content {
+			padding-right: $large-spacing + $secondary-sidebar-width;
+		}
 	}
 }
+ */
 
 // tablet layout
 
@@ -522,6 +677,7 @@ body.secondary-sidebar-closed {
 			margin-right: $small-spacing;
 			width: $header-height - 10px;
 			height: $header-height - 10px;
+			position: relative;
 		}
 
 		.actions {
@@ -541,11 +697,6 @@ body.secondary-sidebar-closed {
 
 	main {
 		padding-top: $header-height;
-	}
-
-	body.secondary-sidebar-closed .content,
-	.content {
-		padding: $base-spacing $small-spacing;
 	}
 
 	.toolbar {

@@ -2,6 +2,122 @@ textarea {
   resize: vertical;
 }
 
+input:focus,
+textarea:focus {
+  box-shadow: none;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: auto;
+}
+
+.input-icon-wrapper {
+    @include full;
+    position: relative;
+
+    &:after {
+      font-family: 'contactlab-icons';
+      content: "\e62a";
+      position: absolute;
+      font-size: 18px;
+      right: $smaller-spacing;
+      top: 9px;
+      line-height: 1;
+    }
+
+    input {
+      padding-right: 30px !important;
+    }
+  }
+
+// INPUT STYLE
+
+.input-wrapper {
+  @include full;
+  position: relative;
+
+  label {
+    @include full;
+    font-weight: $semibold-weight;
+    font-size: 0.8rem;
+    padding-bottom: $smaller-spacing;
+    line-height: 1;
+  }
+
+  .note {
+    @include full;
+    font-size: 0.8rem;
+  }
+
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  textarea {
+    @include full;
+    background-color: rgba(255,255,255,0.6);
+    border: 0;
+    border-bottom: 1px solid $light-gray;
+    padding: $smaller-spacing;
+    font-size: 1rem;
+    height: 36px;
+    @extend .fast-transition;
+
+    &:focus {
+      border-color: $primary-color;
+      @include box-shadow($primary-color 0 1px 0 0);
+      @extend .fast-transition;
+      background-color: rgba(255,255,255,1);
+    }
+  }
+
+  @each $type, $color in $default-status {
+    &.#{$type} {
+      input[type="color"],
+      input[type="date"],
+      input[type="datetime"],
+      input[type="datetime-local"],
+      input[type="email"],
+      input[type="month"],
+      input[type="number"],
+      input[type="password"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="text"],
+      input[type="time"],
+      input[type="url"],
+      input[type="week"],
+      textarea {
+        border-bottom-color: nth($color, 1);
+
+        &:focus {
+          @include box-shadow(nth($color, 1) 0 1px 0 0);
+        }
+      }
+
+      label,
+      .note {
+        color: nth($color, 1);
+      }
+    }
+  }
+}
+
+
+
+// STATIC INPUT
+
 .static-input {
   @include full;
   padding-bottom: $small-spacing;
@@ -9,7 +125,7 @@ textarea {
 
   label {
     font-weight: $semibold-weight;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     min-width: 150px;
     display: inline-block;
 
@@ -52,158 +168,113 @@ textarea {
     display: inline-block;
     padding: $smaller-spacing 0;
   }
-}
+} 
 
-input:focus,
-textarea:focus {
-  box-shadow: none;
-}
 
-input[type="color"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
-textarea {
-  border: 0px;
-  box-shadow: none;
-  border-bottom: 1px solid $light-gray;
-  padding: $smaller-spacing 0;
+
+
+
+// CUSTOM RANGE
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 10px 0;
   width: 100%;
-  color: $base-text-color;
-  font-size: $base-font-size;
-  font-family: $base-font-family;
-  background: $base-background-color;
-  @extend .default-transition;
-
-
-  &:focus {
-    border-color: $primary-color;
-    @include box-shadow($primary-color 0 1px 0 0);
-    @extend .default-transition;
-  }
-
-  
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #eaeced;
+  border-radius: 0;
+  border: 0px solid #000101;
+}
+input[type=range]::-webkit-slider-thumb {
+  border: 0px solid #000000;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: $primary-color;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+  @include simple-transform($scale: 1);
+  @include transition(transform 200ms ease-in-out);
 }
 
-input[type="submit"],
-input[type="reset"] {
-  width: auto;
+input[type=range]:hover::-webkit-slider-thumb,
+input[type=range]:focus::-webkit-slider-thumb,
+input[type=range]:active::-webkit-slider-thumb {
+    @include simple-transform($scale: 1.3);
+    @include transition(transform 200ms ease-in-out);
 }
 
-.input-group {
-  @include span(12);
-  position: relative;
-  padding: 15px 0 0 0;
-  margin-bottom: $base-spacing;
-
-  input[type="color"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="email"],
-  input[type="month"],
-  input[type="number"],
-  input[type="password"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="text"],
-  input[type="time"],
-  input[type="url"],
-  input[type="week"],
-  textarea {
-    margin-bottom: 0;
-    color: $base-text-color;
-    font-weight: $normal-weight;
-    background: transparent;
-
-    + label{
-      position: absolute;
-      top: 21px;
-      left: 0;
-      cursor: text;
-      @extend .default-transition;
-      font-weight: $normal-weight;
-    }
-
-    &:focus + label{
-      color: $primary-color !important;
-      font-weight: $semibold-weight;
-      @include simple-transform($scale: 0.8, $trans-y: -25px, $origin-x: left, $origin-y: top);
-      @extend .default-transition;
-      border-color: $primary-color;
-    }
-
-    &.active + label {
-      color: $base-text-color;
-      font-weight: $semibold-weight;
-      @include simple-transform($scale: 0.8, $trans-y: -25px, $origin-x: left, $origin-y: top);
-      @extend .default-transition;
-    }
-
-  }
-
-  .note {
-    width: 100%;
-    font-size: 0.8em;
-  }
-
-
-
-  @each $type, $color in $default-status {
-    &.#{$type} {
-      input[type="color"],
-      input[type="date"],
-      input[type="datetime"],
-      input[type="datetime-local"],
-      input[type="email"],
-      input[type="month"],
-      input[type="number"],
-      input[type="password"],
-      input[type="search"],
-      input[type="tel"],
-      input[type="text"],
-      input[type="time"],
-      input[type="url"],
-      input[type="week"],
-      textarea {
-        border-color: nth($color, 1);
-
-        &:focus {
-          @include box-shadow(nth($color, 1) 0 1px 0 0);
-        }
-
-        &:focus + label {
-          color: nth($color, 1) !important;
-        }
-
-        &.active + label {
-          color: nth($color, 1);
-        }
-      }
-
-      label,
-      .note {
-        color: nth($color, 1);
-      }
-    }
-  }
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #eaeced;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 12.8px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #ac51b5;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 12.8px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 39px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #ac51b5;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #ac51b5;
 }
 
 
-
-
-
-/*** custom checkboxes ***/
+// CUSTOM CHECKBOXES
 
 input[type=checkbox],
 input[type=radio] {
@@ -266,45 +337,32 @@ h2 + .form-row {
 
 // FILE
 
-input[type="file"] {
-  @include full;
+.input-wrapper {
+  input[type="file"] {
+    display: none;
+  }
 }
 
-.input-file-label {
-  font-size: 0.8rem;
-  font-weight: $semibold-weight;
-}
-
-.fileUpload {
-  overflow: hidden;
-  display:inline-block;
-  vertical-align:top;
-}
-.uploadBtn{
-    position: absolute;
-    bottom: 5px;
-    right: 0;
-    font-size: 1rem;
-    color: $base-text-color;
-}
-
-.file-name {
-  padding-right: 20px;
-}
-
-.fileUpload input.upload {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  bottom: 0;
-  font-size: 20px;
-  cursor: pointer;
-  opacity: 0;
-}
 
 // ELEKTI
+.elekti-wrapper {
+  @include full;
+  position: relative;
+}
+
+.elekti-wrapper:after {
+  font-family: 'contactlab-icons';
+  content: "\e60c";
+  position: absolute;
+  top: 12px;
+  right: $smaller-spacing;
+  line-height: 1;
+  font-size: 12px;
+}
+
+input[type="text"].js-users-list-filter {
+  padding-right: 25px;
+}
 
 .js-users-list-filter-message,
 .js-users-list-filter-counter,
@@ -319,7 +377,8 @@ input[type="file"] {
   position: absolute;
   z-index: 1;
   width: 100%;
-  @include single-box-shadow(0, 4px, 10px, 0, rgba(0,0,0,0.10));
+  top: 37px;
+  @extend .depth-1;
   max-height: 200px;
   overflow: auto;
 

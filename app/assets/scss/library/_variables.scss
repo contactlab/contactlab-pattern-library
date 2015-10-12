@@ -6,7 +6,6 @@ $tablet: max-width 48em;
 $smartphone: max-width 30em;
 
 // COLORS
-$base-background-color: #FFFFFF;
 
 $base-gray: #353A3D;
 
@@ -16,6 +15,8 @@ $gray: lighten($base-gray, 60);
 $medium-gray: lighten($base-gray, 45);
 $dark-gray: $base-gray;
 $darker-gray: shade($base-gray, 25);
+
+$base-background-color: $lighter-gray;
 
 $info-color: #6ac7f1;
 $success-color: #61b769;
