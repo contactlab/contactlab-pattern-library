@@ -307,11 +307,11 @@ h2 {
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: $base-font-size;
 }
 
 h4 {
-  font-size: 0.75rem;
+  font-size: $small-font-size;
 }
 
 
@@ -744,7 +744,7 @@ td {
 
   .card-title {
     padding: $base-spacing $base-spacing $small-spacing;
-    font-size: 1.25rem;
+    font-size: $big-font-size;
     border-bottom: 1px solid $light-gray;
     position: relative;
     color: $base-text-color;
@@ -760,12 +760,12 @@ td {
 
     .subtitle {
       font-weight: $bold-weight;
-      font-size: 0.8125rem;
+      font-size: $small-font-size;
       line-height: 1;
     }
 
     .note {
-      font-size: 0.75rem;
+      font-size: $small-font-size;
       line-height: 1;
     }
   }
@@ -825,7 +825,7 @@ td {
 
 .breadcrumb {
   @include full;
-  font-size: 0.875rem;
+  font-size: $small-font-size;
 
   li {
     display: inline;
@@ -892,7 +892,7 @@ td {
 .accordion {
   @include full;
   font-family: $base-font-family;
-  font-size: 1rem;
+  font-size: $base-font-size;
 
   .ui-icon {
     background-image: none !important;
@@ -1403,7 +1403,7 @@ input[type=text].slider-value {
 
 .heading {
   text-align: center;
-  font-size: 1.125rem;
+  font-size: $medium-font-size;
   padding: $larger-spacing*1.5 $base-spacing;
   margin-bottom: $medium-spacing;
   color: #FFFFFF;

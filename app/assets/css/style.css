@@ -3066,11 +3066,11 @@ h2 {
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 h4 {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
 }
 
 .label, .badge {
@@ -3744,7 +3744,7 @@ td {
   line-height: 1;
 }
 .card .card-title .note, .modal .card-title .note, .modal .modal-title .note {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   line-height: 1;
 }
 .card .big-icon, .modal .big-icon {
@@ -3801,7 +3801,7 @@ td {
   float: left;
   margin-left: 0;
   margin-right: 0;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
 }
 .breadcrumb li {
   display: inline;
@@ -3858,7 +3858,7 @@ td {
   margin-left: 0;
   margin-right: 0;
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
 }
 .accordion .ui-icon {
   background-image: none !important;
@@ -4860,7 +4860,7 @@ input[type="reset"] {
   margin-left: 0;
   margin-right: 0;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.8125rem;
   padding-bottom: 6.66667px;
   line-height: 1;
 }
@@ -4870,7 +4870,7 @@ input[type="reset"] {
   float: left;
   margin-left: 0;
   margin-right: 0;
-  font-size: 0.8rem;
+  font-size: 0.8125rem;
 }
 .input-wrapper input[type="color"],
 .input-wrapper input[type="date"],
@@ -4896,7 +4896,7 @@ input[type="reset"] {
   border: 0;
   border-bottom: 1px solid #eaeced;
   padding: 6.66667px;
-  font-size: 1rem;
+  font-size: 16px;
   height: 36px;
 }
 .input-wrapper input[type="color"]:focus,
@@ -5347,7 +5347,7 @@ input[type="reset"] {
 }
 .static-input label {
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.8125rem;
   min-width: 150px;
   display: inline-block;
 }
@@ -6185,7 +6185,7 @@ button:disabled {
   margin: 0;
   border-right: 0;
 }
-.buttons-group .btn:last-of-type {
+.buttons-group .btn:last-of-type, .buttons-group .btn:last-of-type:active {
   border-right: 1px solid #353A3D;
 }
 .buttons-group .btn:active {
@@ -6359,7 +6359,7 @@ body {
   padding-bottom: 10px;
 }
 #main-sidebar .second-level-menu a {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: #AAA;
   padding: 6.66667px 20px 6.66667px 60px;
 }
@@ -6395,7 +6395,7 @@ body {
   display: none;
 }
 #main-sidebar .third-level-menu li a {
-  font-size: 0.80rem;
+  font-size: 0.8125rem;
   color: #AAAAAA;
   padding-left: 80px;
 }
@@ -6494,7 +6494,7 @@ header {
   line-height: 80px;
   display: inline-block;
   vertical-align: top;
-  font-size: 1rem;
+  font-size: 16px;
   margin-right: 20px;
 }
 .user-bar .picture {
@@ -6502,7 +6502,7 @@ header {
   height: 54px;
   display: inline-block;
   vertical-align: top;
-  font-size: 1rem;
+  font-size: 16px;
   margin: 15px 20px 0 0;
   position: relative;
 }
@@ -6580,7 +6580,7 @@ header {
 #secondary-sidebar .sidebar-tabs .pills .tab,
 #secondary-sidebar .sidebar-tabs .tabs .tab,
 #secondary-sidebar .sidebar-tabs .pills .tab {
-  font-size: 0.85rem;
+  font-size: 0.8125rem;
 }
 #secondary-sidebar .sidebar-block {
   clear: both;
@@ -6589,7 +6589,7 @@ header {
   margin-left: 0;
   margin-right: 0;
   padding: 0 20px 40px;
-  font-size: 0.85rem;
+  font-size: 0.8125rem;
 }
 #secondary-sidebar .sidebar-block h3 {
   font-weight: 600;
@@ -6601,7 +6601,7 @@ header {
   padding-left: 10px;
 }
 #secondary-sidebar .sidebar-block .feature .description p {
-  font-size: 0.85rem;
+  font-size: 0.8125rem;
 }
 #secondary-sidebar .sidebar-block ul,
 #secondary-sidebar .sidebar-block ul li {
@@ -6724,7 +6724,7 @@ body.main-sidebar-small #main-sidebar .second-level-menu li {
 }
 body.main-sidebar-small #main-sidebar .second-level-menu li a {
   padding: 5px 20px;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
 }
 body.main-sidebar-small #main-sidebar .third-level-menu {
   left: 200px;

@@ -291,7 +291,8 @@ button:disabled {
     margin: 0;
     border-right: 0;
 
-    &:last-of-type {
+    &:last-of-type,
+    &:last-of-type:active {
       border-right: 1px solid $dark-gray;
     }
 

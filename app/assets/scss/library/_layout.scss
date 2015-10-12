@@ -168,7 +168,7 @@ body {
 		padding-bottom: $small-spacing;
 
 		a {
-			font-size: 0.875rem;
+			font-size: $small-font-size;
 			color: #AAA;
 			padding: $smaller-spacing $base-spacing $smaller-spacing $larger-spacing;
 		}
@@ -214,7 +214,7 @@ body {
 			display: none;
 
 			a {
-				font-size: 0.80rem;
+				font-size: $small-font-size;
 				color: #AAAAAA;
 				padding-left: 80px;
 			}
@@ -323,7 +323,7 @@ header {
 		line-height: $header-height;
 		display: inline-block;
 		vertical-align: top;
-		font-size: 1rem;
+		font-size: $base-font-size;
 		margin-right: $base-spacing;
 	}
  
@@ -332,7 +332,7 @@ header {
 		height: $header-height - 26px;
 		display: inline-block;
 		vertical-align: top;
-		font-size: 1rem;
+		font-size: $base-font-size;
 		margin: 15px $base-spacing 0 0;
 		position: relative;
 
@@ -413,14 +413,14 @@ header {
 
 		.pills .tab,
 		.tabs .tab {
-			font-size: 0.85rem;
+			font-size: $small-font-size;
 		}
 	}
 
 	.sidebar-block {
 		@include full;
 		padding: 0 $base-spacing $large-spacing;
-		font-size: 0.85rem;
+		font-size: $small-font-size;
 
 		h3 {
 			font-weight: $semibold-weight;
@@ -432,7 +432,7 @@ header {
 				padding-left: 10px;
 
 				p {
-					font-size: 0.85rem;
+					font-size: $small-font-size;
 				}
 			}
 		}
@@ -595,7 +595,7 @@ body.main-sidebar-small {
 
 			li a {
 				padding: 5px $base-spacing;
-				font-size: 0.875rem;
+				font-size: $small-font-size;
 			}
 		}
 
