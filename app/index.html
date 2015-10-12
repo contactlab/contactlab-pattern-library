@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="PatternLibrary">
+<html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Pattern library</title>
@@ -8,18 +8,14 @@
 
 	<link rel="stylesheet" href="assets/css/icons.css">
 	<link rel="stylesheet" href="assets/css/style.css">
-
-	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
-	<script src="utils/ki.js"></script>-->
-	<script src="assets/bower/zepto/zepto.min.js"></script>
-	<script src="assets/bower/ki/dist/ki.js"></script>
-	<script type="text/javascript" src="app.js"></script>
-	<script src="assets/bower/angular/angular.min.js"></script>
-	<script src="assets/bower/angular-route/angular-route.min.js"></script>
-	<script src="pages/routes.js"></script>
-
-
+	
 	<script src="assets/bower/webcomponentsjs/webcomponents.min.js"></script>
+	<script src="assets/bower/zepto/zepto.min.js"></script>
+	<script src="assets/bower/es6-promise/promise.min.js"></script>
+	<script src="assets/bower/fetch/fetch.js"></script>
+	<script src="assets/bower/director/build/director.min.js"></script>
+
+	<link rel="import" href="components/app/view.html">
 	<link rel="import" href="assets/bower/ui-components/alert/view.html">
 	<link rel="import" href="assets/bower/ui-components/button/view.html">
 	<link rel="import" href="assets/bower/ui-components/button-group/view.html">
@@ -33,53 +29,24 @@
 	<link rel="import" href="assets/bower/ui-components/spinner/view.html">
 
 </head>
-<body ng-controller="MainCtrl" ng-click="navBlur()">
+<body>
+<library-clab>
 	<aside id="main-sidebar">
 		<menu-clab title-icon="clab-icon-sign">
 			<span class="name">pattern<b>library</b></span>
-			<ul>
-				<li ng-class="{'active': checkActive('#/design')}"><a href="#/design/colors"><i class="clab clab-icon-sign-design icon"></i><span>Design</span></a>
-					<ul>
-						<li class="menu-title">Design</li>
-						<li ng-class="{'active': checkActive('#/design/colors')}"><a href="#/design/colors">Colors</a></li>
-						<li ng-class="{'active': checkActive('#/design/typography')}"><a href="#/design/typography">Typography</a></li>
-						<li ng-class="{'active': checkActive('#/design/iconography')}"><a href="#/design/iconography">Iconography</a></li>
-						<li ng-class="{'active': checkActive('#/design/motion')}"><a href="#/design/motion">Motion</a></li>
-					</ul>
-				</li>
-				<li ng-class="{'active': checkActive('#/ui')}"><a href="#/ui/buttons"><i class="clab clab-icon-sign icon"></i><span>Ui components</span></a>
-					<ul>
-						<li class="menu-title">Ui components</li>
-						<li  ng-class="{'active': checkActive('#/ui/buttons')}"><a href="#/ui/buttons">Buttons</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/labels-badges')}"><a href="#/ui/labels-badges">Labels & badges</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/tables')}"><a href="#/ui/tables">Tables</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/alerts')}"><a href="#/ui/alerts">Alerts</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/panels')}"><a href="#/ui/panels">Panels</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/spinner')}"><a href="#/ui/spinner">Spinner</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/form')}"><a href="#/ui/forms">Forms</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/card')}"><a href="#/ui/cards">Cards</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/features')}"><a href="#/ui/features">Features</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/progress-bars')}"><a href="#/ui/progress-bars">Progress bars</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/breadcrumb')}"><a href="#/ui/breadcrumb">Breadcrumb</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/lists')}"><a href="#/ui/lists">Lists</a></li>
-						<li  ng-class="{'active': checkActive('#/ui/pagination')}"><a href="#/ui/pagination">Pagination</a></li>
-					</ul></li>
-				<li><a href="#/"><i class="clab clab-icon-sign-resources icon"></i><span>Resources</span></a></li>
-			</ul>
 		</menu-clab>
 	</aside>
 	<header class="design">
-		<h1>{{contextTitle}}</h1>
 		<div id="product-switch">
 			<elekti-mer default="0" no-search label="Switch style" options='["ContactHub","ContactPlan"]' class="floating-label"></elekti-mer>
 		</div>
 	</header>
 	<main>
 		<div class="content">
-			<ng-view></ng-view>
+			<div id="view"></div>
 		</div>
 	</main>
+
+</library-clab>
 </body>
-
-
 </html>
