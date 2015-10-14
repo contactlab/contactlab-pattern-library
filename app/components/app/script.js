@@ -14,6 +14,10 @@ Polymer({
 	    $("#user-menu-toggle").removeClass('active')
 	  }
 	},
+	_changePage: function(evt){
+		console.log(evt);
+		window.scroll(0,0);
+	},
 	attached: function(){
 		this._routing();
 
@@ -24,6 +28,8 @@ Polymer({
 		window.addEventListener('orientationchange', function () {
 		    this._layoutManager();
 		}.bind(this));
+
+		window.addEventListener('hashchange', this._changePage);
 
 		this._layoutManager();
 
