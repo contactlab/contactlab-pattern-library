@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+
+	<script src="./../../app/assets/bower/webcomponentsjs/webcomponents.min.js"></script>
+	<script src="./../../node_modules/web-component-tester/browser.js"></script>
+	<script src="./../../test-fixture-master/test-fixture-mocha.js"></script>
+
+	<link rel="import" href="./../../app/assets/bower/ui-components/button/view.html">
+	<link rel="import" href="./../../test-fixture-master/test-fixture.html">
+
+</head>
+<body>
+	
+<test-fixture id="button">
+	<template>
+	  <button-clab></button-clab>
+	</template>
+</test-fixture>
+
+
+<script>
+
+describe('<button-clab>', function() {
+  var button;
+
+  beforeEach(function() {
+	button = fixture('button');
+  });
+
+  context('props tests', function() {
+  	it('default properties', function() {
+		expect(button.type).to.be.equal('');
+		expect(button.appearance).to.be.equal('');
+		expect(button.size).to.be.equal('');
+		expect(button.icon).to.be.equal('');
+	});
+
+	it('change a random property', function() {
+		var arr = ['type','size','appearance','icon'];
+		var i = Math.floor(Math.random() * arr.length);
+		var str = 'prop value';
+		button[arr[i]] = str;
+		expect(button[arr[i]]).to.be.equal(str);
+	});
+  });
+
+});	
+
+</script>
+</body>
+</html>

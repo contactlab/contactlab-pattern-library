@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+
+	<script src="./../../app/assets/bower/webcomponentsjs/webcomponents.min.js"></script>
+	<script src="./../../node_modules/web-component-tester/browser.js"></script>
+	<script src="./../../test-fixture-master/test-fixture-mocha.js"></script>
+
+	<link rel="import" href="./../../app/assets/bower/ui-components/panel/view.html">
+	<link rel="import" href="./../../test-fixture-master/test-fixture.html">
+
+</head>
+<body>
+	
+<test-fixture id="panel">
+	<template>
+	  <panel-clab></panel-clab>
+	</template>
+</test-fixture>
+
+
+<script>
+
+describe('<panel-clab>', function() {
+  var panel;
+
+  beforeEach(function() {
+	panel = fixture('panel');
+  });
+
+  context('props tests', function() {
+  	it('default properties', function() {
+		expect(panel.type).to.be.equal('');
+		expect(panel.title).to.be.equal('Title');
+	});
+
+	it('change the title', function() {
+		var str = 'My new title';
+		panel.title = str;
+		expect(panel.title).to.be.equal(str);
+	});
+
+	it('change the type', function() {
+		var str = 'success';
+		panel.type = str;
+		expect(panel.type).to.be.equal(str);
+	});
+  });
+
+});	
+
+</script>
+</body>
+</html>
