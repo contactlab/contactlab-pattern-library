@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+
+	<script src="./../../app/assets/bower/webcomponentsjs/webcomponents.min.js"></script>
+	<script src="./../../node_modules/web-component-tester/browser.js"></script>
+	<script src="./../../test-fixture-master/test-fixture-mocha.js"></script>
+
+	<link rel="import" href="./../../app/assets/bower/ui-components/alert/view.html">
+	<link rel="import" href="./../../test-fixture-master/test-fixture.html">
+
+</head>
+<body>
+	
+<test-fixture id="alert">
+	<template>
+	  <alert-clab></alert-clab>
+	</template>
+</test-fixture>
+
+
+<script>
+
+describe('<alert-clab>', function() {
+  var alert;
+
+  beforeEach(function() {
+	alert = fixture('alert');
+  });
+
+  context('props tests', function() {
+  	it('default properties', function() {
+		expect(alert.visible).to.be.equal(false);
+		expect(alert.title).to.be.equal('Title');
+		expect(alert.type).to.be.equal('success');
+	});
+
+	it('change visibility', function() {
+		alert.visible = true;
+		expect(alert.visible).to.be.equal(true);
+	});
+
+	it('change type class', function() {
+		var style = 'error';
+		alert.type = style;
+		expect(alert.type).to.be.equal(style);
+	});
+
+	it('change type title', function() {
+		var title = 'A new title';
+		alert.title = title;
+		expect(alert.title).to.be.equal(title);
+	});
+  });
+
+  context('events tests', function() {
+	it('hiding the alert on click', function() {
+	  	alert.visible = true;
+	  	alert._close();
+	  	expect(alert.visible).to.be.equal(false);
+	});
+  });
+});	
+
+</script>
+</body>
+</html>

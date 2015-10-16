@@ -22,7 +22,11 @@
     "fetch": "~0.9.0",
     "director": "~1.2.8",
     "es6-promise": "~3.0.2",
+<<<<<<< HEAD
     "ui-components": "https://raoul-meroni@bitbucket.org/product-team/ui-components.git"
+=======
+    "ui-components": "git@bitbucket.org:product-team/ui-components.git"
+>>>>>>> 9d22a89dd49433f9aef814bd13e421e58d4ad846
   },
   "devDependencies": {
     "compass-breakpoint": "breakpoint-sass#~2.6.1"

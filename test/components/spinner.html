@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+
+	<script src="./../../app/assets/bower/webcomponentsjs/webcomponents.min.js"></script>
+	<script src="./../../node_modules/web-component-tester/browser.js"></script>
+	<script src="./../../test-fixture-master/test-fixture-mocha.js"></script>
+
+	<link rel="import" href="./../../app/assets/bower/ui-components/spinner/view.html">
+	<link rel="import" href="./../../test-fixture-master/test-fixture.html">
+
+</head>
+<body>
+	
+<test-fixture id="spinner">
+	<template>
+	  <spinner-clab></spinner-clab>
+	</template>
+</test-fixture>
+
+
+<script>
+
+describe('<spinner-clab>', function() {
+  var spinner;
+
+  beforeEach(function() {
+	spinner = fixture('spinner');
+  });
+
+  context('props tests', function() {
+  	it('default properties', function() {
+		expect(spinner.dark).to.be.equal(false);
+		expect(spinner.big).to.be.equal(false);
+	});
+
+	it('change a random property', function() {
+		var arr = ['big','dark'];
+		var i = Math.floor(Math.random() * arr.length);
+		var bool = true;
+		spinner[arr[i]] = bool;
+		expect(spinner[arr[i]]).to.be.equal(bool);
+	});
+  });
+
+});	
+
+</script>
+</body>
+</html>
