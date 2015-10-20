@@ -51,7 +51,10 @@ var AppRoutes = (function(){
 	    	view.load('pages/pagination/pagination.html');
 	    }],
 	    '/ui/progress-bars': [function() {
-	    	view.load('pages/error.html');
+	    	view.load('pages/progress-bars/progress-bars.html');
+	    }],
+	    '/ui/modals': [function() {
+	    	view.load('pages/modals/modals.html');
 	    }]
 	};
 

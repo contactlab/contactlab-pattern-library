@@ -999,36 +999,55 @@ td {
 
 // TABS
 
+// TABS
+
 .tabs {
   font-size: 0;
   border: 0;
   @include full;
+  margin-bottom: 0;
   font-family: $base-font-family;
+  @include user-selection(none);
 
-  &.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
-    padding: $small-spacing $medium-spacing $small-spacing+2px;
-    display: inline-block;
-    color: $base-text-color;
+  ul {
+    border-bottom: 1px solid $light-gray;
+  }
 
-    &:hover {
-      color: $secondary-color;
+  .tab {
+    margin-right: $medium-spacing;
+    line-height: 1;
+    margin-bottom: 0;
+
+    a {
+      padding: $small-spacing 0 $small-spacing+2px;
+      display: inline-block;
+      color: $base-text-color;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
-  }
 
-  &.ui-tabs .ui-tabs-nav .ui-tabs-active .ui-tabs-anchor {
-    color: $secondary-color;
-    padding-bottom: $small-spacing;
-    @include single-box-shadow(0, 3px, 0, 0, $secondary-color);
-  }
+    &.active a {
+      color: $primary-color;
+      padding-bottom: $small-spacing;
+      @include single-box-shadow(0, 3px, 0, 0, $primary-color);
+    }
 
-  &.ui-tabs .ui-tabs-nav .ui-state-default.ui-state-disabled a {
-    color: $disabled-color;
-    cursor: not-allowed;
-
-    &:hover {
+    &.disabled a {
       color: $disabled-color;
+      cursor: not-allowed;
+
+      &:hover {
+        color: $disabled-color;
+      }
     }
-  }
+
+  } 
+
+
+
+  
 
 
 
@@ -1066,25 +1085,32 @@ td {
 .pills {
   @extend .tabs;
 
+  ul {
+    border-bottom: 0;
+  }
+
   .ui-widget-header {
     border: 0;
   }
 
-  &.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
-    padding: $smaller-spacing $small-spacing;
+  .tab {
+    margin-right: 0;
 
-    &:hover {
-      color: $secondary-color;
+    a {
+      padding: $smaller-spacing $small-spacing;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+
+    &.active a {
+      background: $secondary-color;
+      color: $secondary-text-color;
+      @include single-box-shadow(0, 0, 0, 0, $primary-color);
+      padding: $smaller-spacing $small-spacing;
     }
   }
-
-  &.ui-tabs .ui-tabs-nav .ui-tabs-active .ui-tabs-anchor {
-    background: $secondary-color;
-    color: $secondary-text-color;
-    @include single-box-shadow(0, 0, 0, 0, $primary-color);
-    padding: $smaller-spacing $small-spacing;
-  }
-
 }
 
 
@@ -1104,156 +1130,148 @@ td {
 }
 
 
-// DATEPICKER
+// ROME CALENDAR
 
-.ui-datepicker.ui-widget {
-  font-family: $base-font-family;
-  background: $dark-gray;
-  border: none;
-  z-index: 2 !important;
-  border-radius: 0;
-  @include border-radius(0);
+.rd-container.rd-container-attachment {
+  z-index: 999;
+  position: absolute;
+}
+
+.rd-container {
   @include single-box-shadow(0, 4px, 10px, 0, rgba(0,0,0,0.10));
+  background-color: #FFFFFF;
+  width: 260px;
+  text-align: center;
+  background: $dark-gray;
 }
 
-.ui-datepicker {
-  padding: 0;
-}
+.rd-container {
+  .rd-date,
+  .rd-month {
+    @include full;
+  }
 
-.ui-datepicker-header {
-  border: none;
-  background: transparent;
-  font-weight: normal;
-  font-size: 15px;
-}
+  .rd-month {
+    position: relative;
+    background: $lighter-gray;
+  }
 
-.ui-datepicker .ui-state-default, .ui-datepicker .ui-widget-content .ui-state-default {
-  border: 0;
-  background-image: none;
-  background-color: transparent;
-}
+  .rd-back,
+  .rd-next {
+    background-color: transparent;
+    border: 0;
+  }
 
-.ui-state-highlight,
-.ui-widget-content .ui-state-highlight,
-.ui-widget-header .ui-state-highlight {
-  color: $primary-color;
-  font-weight: bold;
-}
+  .rd-back {
+    float: left;
+  }
 
-.ui-state-active,
-.ui-widget-content .ui-state-active,
-.ui-widget-header .ui-state-active {
-  background: $primary-color;
-  color: #ffffff;
-}
+  .rd-next {
+    float: right;
+  }
 
-.ui-datepicker-header .ui-state-hover {
-  background: transparent;
-  border-color: transparent;
-  cursor: pointer;
-  border-radius: 0;
-  @include border-radius(0);
-}
-
-.ui-datepicker .ui-datepicker-title {
-  margin-top: .4em;
-  margin-bottom: .3em;
-  color: #e9f0f4;
-}
-
-.ui-datepicker .ui-datepicker-prev-hover,
-.ui-datepicker .ui-datepicker-next-hover,
-.ui-datepicker .ui-datepicker-next,
-.ui-datepicker .ui-datepicker-prev {
-  top: .9em;
-  border:none;
-}
-
-.ui-datepicker .ui-datepicker-prev-hover {
-  left: 2px;
-}
-
-.ui-datepicker .ui-datepicker-next-hover {
-  right: 2px;
-}
-
-.ui-datepicker .ui-datepicker-next,
-.ui-datepicker .ui-datepicker-prev {
-
-  &:after {
+  .rd-back:after,
+  .rd-next:after {
     font: normal normal normal 20px/1 FontAwesome;
     position: absolute;
-    top: 0;
+    top: $small-spacing;
     left: 10px;
-    width: 20px;
+    width: 20px; 
     height: 20px;
-    color: $light-gray;
+    color: #eaeced;
+    cursor: pointer;
   }
 
-  &:hover:after {
-    color: #fff;
+  .rd-next:after {
+    content: "\f105";
+    right: 0;
+    left: auto;
   }
-}
 
-.ui-datepicker .ui-datepicker-next:after {
-  content: "\f105";
-}
+  .rd-back:after {
+    content: "\f104";
+    left: 0;
+  }
 
-.ui-datepicker .ui-datepicker-prev:after {
-  content: "\f104";
-}
-
-.ui-datepicker .ui-datepicker-prev span,
- .ui-datepicker .ui-datepicker-next span {
-  background-image: none;
-}
-
-.ui-datepicker table {
-  margin: 0;
-}
-
-.ui-datepicker th {
-  padding: 1em 0;
-  color: #ccc;
-  font-size: 13px;
-  font-weight: normal;
-  border: none;
-  border-top: 1px solid #3a414d;
-}
-
-.ui-datepicker td {
-  background: $lighter-gray;
-  border: none;
-  padding: 0;
-  line-height: 2em;
-
-  a {
+  .rd-month-label {
+    background: $dark-gray;
+    color: #FFFFFF;
+    border: none;
+    font-weight: normal;
+    font-size: 15px;
     text-align: center;
+    padding: $small-spacing $base-spacing;
   }
-}
 
-td .ui-state-default {
-  background: transparent;
-  border: none;
-  text-align: center;
-  padding: .5em;
-  margin: 0;
-  font-weight: normal;
-  color: #efefef;
-  font-size: 16px;
-}
+  .rd-days {
+    td {
+      border: 0;
+      text-align: center;
+      padding: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+  }
 
-.ui-widget-content .ui-state-disabled  {
-  opacity: 1;
-}
+  table {
+    margin: 0;
+    margin-bottom: $small-spacing;
+  }
 
-.ui-state-disabled .ui-state-default {
-  color: #fba49e;
-}
+  .rd-days-head {
+    padding: 1em 0;
+    color: #ccc;
+    font-size: 13px;
+    font-weight: normal;
+    border: none;
+    border-top: 1px solid #3a414d;
+    background: $dark-gray;
+    border-bottom: 0;
 
-td .ui-state-active,
-td .ui-state-hover {
-  background: #2e3641;
+    th {
+      font-weight: normal;
+      text-align: center;
+    }
+  }
+
+  .rd-day-selected {
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .rd-day-prev-month,
+  .rd-day-next-month {
+    color: $gray;
+  }
+
+  .rd-time {
+    position: relative;
+    display: inline-block;
+    min-width: 80px;
+    color: #FFFFFF;
+    font-size: $small-font-size;
+  }
+  .rd-time-list {
+    display: none;
+    position: absolute;
+    overflow-y: scroll;
+    max-height: 160px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    color: #333;
+    z-index: 10;
+  }
+  .rd-time-selected {
+    padding: 5px;
+  }
+  .rd-time-option {
+    padding: 5px;
+  }
+  .rd-day-concealed {
+    visibility: hidden;
+  }
+
 }
 
 

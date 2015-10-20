@@ -77,6 +77,10 @@ var AppFakeMenu = [
 			{
 				"label": "Pagination",
 				"url": "#/ui/pagination"
+			},
+			{
+				"label": "Modals",
+				"url": "#/ui/modals"
 			}
 		]
 	},{
