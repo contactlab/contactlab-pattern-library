@@ -1,5 +1,45 @@
 <h1>Toaster</h1>
 <section id="toaster">
-	
+	<button class="btn primary" id="toast-left-btn">TOAST LEFT</button>
+	<button class="btn primary" id="toast-right-btn">TOAST RIGHT</button>
+
+	<div class="toast-wrapper" id="toast-left">
+		<div class="toast">
+			<div class="toast-message">Message sent</div>
+			<div class="actions">
+				<button class="btn small flat success">OK</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="toast-wrapper right" id="toast-right">
+		<div class="toast">
+			<div class="toast-message">Mark as read</div>
+			<div class="actions">
+				<button class="btn small flat error">UNDO</button>
+			</div>
+		</div>
+	</div>
 	
 </section>
+
+<script>
+$(document).ready(function(){
+  $("#toast-left-btn").click(function(){
+    $('#toast-left').toggle();
+  })
+
+  $("#toast-left .btn").click(function(){
+    $('#toast-left').hide();
+  })
+
+  $("#toast-right-btn").click(function(){
+    $('#toast-right').toggle();
+  })
+
+  $("#toast-right .btn").click(function(){
+    $('#toast-right').hide();
+  })
+});
+
+</script>
