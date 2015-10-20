@@ -16,37 +16,57 @@
 	<article>
 		<input-clab type="info" label="Info label">Lorem ipsum dolor sit.</input-clab>
 	</article>
+	<article>
+		<input-clab label="Disabled label" value="Disabled input" disabled>Lorem ipsum dolor sit.</input-clab>
+	</article>
 </section>
 <section>
-	<h2>Select</h2>
-	<article>
+	<!-- <article>
 		<div class="input-wrapper">
-			<elekti-mer label="Select label" options='["Option1", "Option 2", "Option 3","Option1", "Option 2", "Option 3","Option1", "Option 2", "Option 3"]'></elekti-mer>
-			<div class="note">Lorem ipsum dolor sit.</div>
+			<elekti-mer  default="0" no-search options='["Option1", "Option 2", "Option 3"]' class="select-button"></elekti-mer>
+		</div>
+	</article> -->
+	<h2>Static input</h2>
+	<article>
+		<div class="input-wrapper static">
+			<label for="">Static label</label>
+			<input type="text">
+			<div class="note">Lorem ipsum dolor sit amet.</div>
 		</div>
 	</article>
 	<article>
-		<div class="input-wrapper success">
-			<elekti-mer label="Success select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
-			<div class="note">Lorem ipsum dolor sit.</div>
+		<div class="input-wrapper success static">
+			<label for="">Success static label</label>
+			<input type="text">
+			<div class="note">Lorem ipsum dolor sit amet.</div>
 		</div>
 	</article>
 	<article>
-		<div class="input-wrapper warning">
-			<elekti-mer label="Warning select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
-			<div class="note">Lorem ipsum dolor sit.</div>
+		<div class="input-wrapper warning static">
+			<label for="">Warning static label</label>
+			<input type="text">
+			<div class="note">Lorem ipsum dolor sit amet.</div>
 		</div>
 	</article>
 	<article>
-		<div class="input-wrapper error">
-			<elekti-mer label="Error select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
-			<div class="note">Lorem ipsum dolor sit.</div>
+		<div class="input-wrapper error static">
+			<label for="">Error static label</label>
+			<input type="text">
+			<div class="note">Lorem ipsum dolor sit amet.</div>
 		</div>
 	</article>
 	<article>
-		<div class="input-wrapper info">
-			<elekti-mer label="Info select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
-			<div class="note">Lorem ipsum dolor sit.</div>
+		<div class="input-wrapper info static">
+			<label for="">Info static label</label>
+			<input type="text">
+			<div class="note">Lorem ipsum dolor sit amet.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper static">
+			<label for="">Disabled static label</label>
+			<input type="text" disabled value="Disabled input">
+			<div class="note">Lorem ipsum dolor sit amet.</div>
 		</div>
 	</article>
 </section>
@@ -58,12 +78,26 @@
 </section>
 <section>
 	<h2>Input file</h2>
-
-	<file-clab></file-clab>
+	<div class="input-wrapper">
+		<label for="field">Input file label</label>
+		<div class="input-icon-wrapper">
+			<input type="text" id="file-field">
+		</div>
+		<div class="note">Lorem ipsum dolor sit.</div>
+		<input type="file">
+	</div>
+</section>
+<section>
+	<h2>Input calendar</h2>
+	<article>
+		<calendar-clab></calendar-clab>
+	</article>
+	<article>
+		<calendar-clab inline></calendar-clab>
+	</article>
 </section>
 
-<section id="forms">
-
+<section>
 	<!-- radio & checkboxes -->
 	<h2>Input radio</h2>
 	<article>
@@ -113,4 +147,62 @@
 		<input type="submit" value="Submit" class="btn primary">
 	</article>
 </section>
+<section>
+	<h2>Select</h2>
+	<article>
+		<div class="input-wrapper">
+			<elekti-mer label="Select label" options='["Option1", "Option 2", "Option 3","Option1", "Option 2", "Option 3","Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper">
+			<elekti-mer label="Select label no search" no-search options='["Option1", "Option 2", "Option 3","Option1", "Option 2", "Option 3","Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper success">
+			<elekti-mer label="Success select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper warning">
+			<elekti-mer label="Warning select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper error">
+			<elekti-mer label="Error select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<article>
+		<div class="input-wrapper info">
+			<elekti-mer label="Info select label" options='["Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<div class="note">Lorem ipsum dolor sit.</div>
+		</div>
+	</article>
+	<h2>Multiple select</h2>
+	<article>
+		<div class="input-wrapper">
+			<label for="">Multiple select label</label>
+		</div>
+		<select multiple>
+			<option value="">option01</option>
+			<option value="">option02</option>
+			<option value="">option03</option>
+			<option value="">option04</option>
+			<option value="">option05</option>
+			<option value="">option06</option>
+			<option value="">option07</option>
+			<option value="">option08</option>
+			<option value="">option09</option>
+			<option value="">option10</option>
+		</select>
+	</article>
+</section>
+
 

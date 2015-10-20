@@ -80,6 +80,11 @@ input[type="reset"] {
       @extend .fast-transition;
       background-color: rgba(255,255,255,1);
     }
+
+    &:disabled {
+      color: $disabled-color;
+      cursor: not-allowed;
+    }
   }
 
   @each $type, $color in $default-status {
@@ -114,61 +119,31 @@ input[type="reset"] {
   }
 }
 
+// INPUT WITH BUTTONS
 
+.input-wrapper.static {
+  $static-input-width: 150px;
 
-// STATIC INPUT
-
-.static-input {
-  @include full;
-  padding-bottom: $small-spacing;
-  @include clearfix;
+  padding-left: $static-input-width;
 
   label {
-    font-weight: $semibold-weight;
-    font-size: $small-font-size;
-    min-width: 150px;
-    display: inline-block;
-
-    @include susy-breakpoint($tablet) {
-      width: 100%;
-    }
+    width: $static-input-width;
+    text-align: right;
+    vertical-align: middle;
+    padding-bottom: 0;
+    padding-right: $base-spacing;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 10px;
   }
 
-  input[type="color"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="email"],
-  input[type="month"],
-  input[type="number"],
-  input[type="password"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="text"],
-  input[type="time"],
-  input[type="url"],
-  input[type="week"],
-  textarea {
-    width: auto;
-    font-size: $base-font-size;
-    width: 40%;
-    margin-top: 1px;
-    -webkit-appearance: none;
+  .note {
 
-    @include susy-breakpoint($tablet) {
-      width: 100%;
-    }
   }
+}
 
-  .user-title {
-    @extend h1;
-  }
-
-  span {
-    display: inline-block;
-    padding: $smaller-spacing 0;
-  }
-} 
+// STATIC INPUT
 
 
 
@@ -343,67 +318,97 @@ h2 + .form-row {
   }
 }
 
+// MULTIPLE SELECT
+select[multiple] {
+    @include full;
+    background-color: rgba(255,255,255,0.6);
+    border: 0;
+    border-bottom: 1px solid $light-gray;
+    padding: $smaller-spacing 0;
+    font-size: $base-font-size;
+    @extend .fast-transition;
+}
+
 
 // ELEKTI
 .elekti-wrapper {
   @include full;
   position: relative;
-}
 
-.elekti-wrapper:after {
-  font-family: 'contactlab-icons';
-  content: "\e60c";
-  position: absolute;
-  top: 12px;
-  right: $smaller-spacing;
-  line-height: 1;
-  font-size: 12px;
-}
+  &:after {
+    font-family: 'contactlab-icons';
+    content: "\e60c";
+    position: absolute;
+    top: 12px;
+    right: $smaller-spacing;
+    line-height: 1;
+    font-size: 12px;
+    @extend .fast-transition;
+  }
 
-input[type="text"].js-users-list-filter {
-  padding-right: 25px;
-}
+  &.active:after {
+    @include transform(rotate(180deg));
+    @extend .fast-transition;
+  }
 
-.js-users-list-filter-message,
-.js-users-list-filter-counter,
-.js-users-list {
-  display: none;  
-}
+  input[type="text"].js-users-list-filter {
+    padding-right: 25px;
+  }
 
-.filter-hidden {
-  opacity: .1;
-}
-.js-users-list{
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  top: 37px;
-  @extend .depth-1;
-  max-height: 200px;
-  overflow: auto;
+  .js-users-list-filter-message,
+  .js-users-list-filter-counter,
+  .js-users-list {
+    display: none;  
+  }
 
-  li,
-  .noResults {
-    background-color: white;
-    display: block;
-    padding: 10px;
-    margin: 0;
-    cursor: pointer;
+  .filter-hidden {
+    opacity: .1;
+  }
+  .js-users-list{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 37px;
+    @extend .depth-1;
+    max-height: 200px;
+    overflow: auto;
+    @extend .fast-transition;
 
-    &.hide {
-      display: none;
+    li,
+    .noResults {
+      background-color: white;
+      display: block;
+      padding: 10px;
+      margin: 0;
+      cursor: pointer;
+
+      &.hide {
+        display: none;
+      }
+
+      &.selected {
+        color: $primary-color;
+      }
     }
 
-    &.selected {
-      color: $primary-color;
+    &.visible {
+      display: block;
+    }
+
+    .noResults {
+      cursor: initial;
     }
   }
+}
 
-  &.visible {
-    display: block;
-  }
 
-  .noResults {
-    cursor: initial;
+
+.select-button .elekti-wrapper {
+  width: auto;
+
+  input[type="text"].js-users-list-filter {
+    @extend .btn;
+    width: auto;
   }
 }
+
