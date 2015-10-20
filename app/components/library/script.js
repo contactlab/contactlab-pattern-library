@@ -15,7 +15,6 @@ Polymer({
 	  }
 	},
 	_changePage: function(evt){
-		console.log(evt);
 		window.scroll(0,0);
 	},
 	attached: function(){
