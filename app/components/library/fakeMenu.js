@@ -81,6 +81,22 @@ var AppFakeMenu = [
 			{
 				"label": "Modals",
 				"url": "#/ui/modals"
+			},
+			{
+				"label": "Tabs & pills",
+				"url": "#/ui/tabs-pills"
+			},
+			{
+				"label": "Accordion",
+				"url": "#/ui/accordion"
+			},
+			{
+				"label": "Tooltips",
+				"url": "#/ui/tooltips"
+			},
+			{
+				"label": "Toaster",
+				"url": "#/ui/toaster"
 			}
 		]
 	},{

@@ -55,6 +55,18 @@ var AppRoutes = (function(){
 	    }],
 	    '/ui/modals': [function() {
 	    	view.load('pages/modals/modals.html');
+	    }],
+	    '/ui/tabs-pills': [function() {
+	    	view.load('pages/tabs-pills/tabs-pills.html');
+	    }],
+	    '/ui/accordion': [function() {
+	    	view.load('pages/accordion/accordion.html');
+	    }],
+	    '/ui/tooltips': [function() {
+	    	view.load('pages/tooltips/tooltips.html');
+	    }],
+	    '/ui/toaster': [function() {
+	    	view.load('pages/toaster/toaster.html');
 	    }]
 	};
 
