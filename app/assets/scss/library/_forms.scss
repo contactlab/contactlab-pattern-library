@@ -12,6 +12,7 @@ input[type="reset"] {
   width: auto;
 }
 
+
 .input-icon-wrapper {
     @include full;
     position: relative;
@@ -29,7 +30,11 @@ input[type="reset"] {
     input {
       padding-right: 30px !important;
     }
-  }
+
+    &.calendar:after {
+      content: "\e610";
+    }
+}
 
 // INPUT STYLE
 
@@ -39,10 +44,11 @@ input[type="reset"] {
 
   label {
     @include full;
-    font-weight: $semibold-weight;
+    font-weight: $bold-weight;
     font-size: $small-font-size;
     padding-bottom: $smaller-spacing;
     line-height: 1;
+    text-align: left;
   }
 
   .note {
@@ -74,7 +80,7 @@ input[type="reset"] {
     height: 36px;
     @extend .fast-transition;
 
-    &:focus {
+    &:focus { 
       border-color: $primary-color;
       @include box-shadow($primary-color 0 1px 0 0);
       @extend .fast-transition;
@@ -117,6 +123,57 @@ input[type="reset"] {
       }
     }
   }
+}
+
+.input-wrapper.small-input,
+.input-wrapper.default-input,
+.input-wrapper.big-input,
+.small-input,
+.default-input,
+.big-input {
+  float: left;
+  margin-right: $small-spacing;
+}
+
+.input-wrapper.small-input,
+.small-input{
+  width: 150px;
+}
+
+.input-wrapper.default-input,
+.default-input {
+  width: 200px;
+}
+
+.input-wrapper.big-input,
+.big-input {
+  width: 250px;
+}
+
+.card {
+  .input-wrapper {
+    input[type="color"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="month"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="time"],
+    input[type="url"],
+    input[type="week"],
+    textarea {
+      background-color: shade(#FFFFFF, 2);
+
+      &:focus {
+        background-color: $lighter-gray;
+      }
+    }
+  } 
 }
 
 // INPUT WITH BUTTONS

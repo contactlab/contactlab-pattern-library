@@ -14,7 +14,7 @@
 
 .slow-transition {
   @include transition(all 300ms ease-in-out);
-}
+} 
 
 // SHADOW
 
@@ -307,7 +307,8 @@ h2 {
 }
 
 h3 {
-  font-size: $base-font-size;
+  font-size: $medium-font-size;
+  font-weight: $semibold-weight;
 }
 
 h4 {
@@ -322,6 +323,7 @@ h4 {
   padding: $smaller-spacing/2 $small-spacing;
   @include border-radius(2px);
   background: $dark-gray;
+  border: 1px solid $dark-gray;
   font-size: 0.7em;
   color: #FFFFFF;
   display: inline-block;
@@ -332,6 +334,25 @@ h4 {
     padding: 0 $smaller-spacing;
     @include border-radius(10px);
     margin-left: 5px;
+  }
+
+  &.empty {
+    background-color: transparent;
+    color: $dark-gray;
+    border: 1px solid $dark-gray;
+
+    .counter {
+      background-color: $dark-gray;
+      color: #FFFFFF;
+    }
+
+    .remove {
+      color: rgba($dark-gray, 0.6);
+
+      &:hover {
+        color: $dark-gray;
+      }
+    }
   }
 
   .remove {
@@ -350,15 +371,33 @@ h4 {
     }
   }
 
-
-
   @each $type, $color in $default-status {
     &.#{$type} {
       background-color: nth($color, 1);
+      border-color: nth($color, 1);
       color: nth($color, 2);
 
       .counter {
         color: nth($color, 1);
+      }
+
+      &.empty {
+        background-color: transparent;
+        color: nth($color, 1);
+        border: 1px solid nth($color, 1);
+
+        .counter {
+          background-color: nth($color, 1);
+          color: nth($color, 2);
+        }
+
+          .remove {
+            color: rgba(nth($color, 1), 0.6);
+
+            &:hover {
+              color: nth($color, 1);
+            }
+          }
       }
     }
   }
@@ -436,6 +475,10 @@ table {
     @include user-select(none);
     cursor: pointer
   }
+
+  + .pagination {
+    margin-top: 0;
+  }
 }
 
 hr, td, th {
@@ -460,7 +503,7 @@ td {
     border: none;
   }
 
-  tr:nth-child(even) {
+  tr:nth-child(odd) td {
     background: $table-striped-color;
   }
 }
@@ -663,6 +706,7 @@ td {
   background: #FFFFFF;
   margin-bottom: $base-spacing;
   position: relative;
+  overflow: initial;
 
   &.dummy {
     .card-title,
@@ -804,6 +848,7 @@ td {
     @include clearfix;
     color: $base-text-color;
     position: relative;
+    overflow: initial;
   }
 
   .card-actions {
@@ -888,54 +933,6 @@ td {
 }
 
 // ACCORDION
-/* 
-.accordion {
-  @include full;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-
-  .ui-icon {
-    background-image: none !important;
-    text-indent: inherit;
-    font-size: 20px;
-    height: 20px;
-    width: 20px;
-  }
-
-  &.ui-accordion .ui-accordion-content {
-    padding: 0 $base-spacing $base-spacing $medium-spacing;
-  }
-
-  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    background-image: none !important;
-    background: $base-background-color;
-    color: $base-text-color;
-  }
-
-  &.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
-    margin-top: -10px;
-    left: 0;
-    text-align: center;
-  }
-
-  .ui-widget-content {
-    border: 0;
-    @include border-radius(0);
-    background: $base-background-color;
-  }
-
-  .ui-accordion-header {
-    @include border-radius(0);
-    padding: 0 0 0 $medium-spacing;
-    border: 0;
-    margin-bottom: $base-spacing;
-  }
-
-  .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
-    background: $base-background-color;
-    color: $primary-color;
-  }
-} */
 
 .accordion {
   @include full;
@@ -1054,8 +1051,15 @@ td {
   }
 }
 
+.fullscreen-modal {
+  .modal {
+    max-width: 90%;
 
-// TABS
+    .modal-body {
+      max-height: 100%;
+    }
+  }
+}
 
 // TABS
 
@@ -1072,7 +1076,7 @@ td {
   }
 
   .tab {
-    margin-right: $medium-spacing;
+    margin-right: $base-spacing;
     line-height: 1;
     margin-bottom: 0;
 
@@ -1174,17 +1178,14 @@ td {
 
 // TOOLTIPS
 
-.custom-theme {
-  @include border-radius(0);
-  border: 2px solid $darker-gray;
-  background: $darker-gray;
-  color: #fff;
-}
-
-.custom-theme .tooltipster-content {
-  font-size: 14px;
-  line-height: 16px;
-  padding: $small-spacing;
+.tooltip {
+  background-color: $dark-gray;
+  display: inline-block;
+  color: #FFFFFF;
+  font-size: $small-font-size;
+  padding: $smaller-spacing;
+  line-height: 1;
+  @include border-radius(2px);
 }
 
 
@@ -1337,7 +1338,7 @@ td {
 
 .progress-bar {
   position: relative;
-  padding-top: 25px;
+  padding-top: 20px;
   @include full;
   margin-bottom: $base-spacing;
 
@@ -1375,8 +1376,9 @@ td {
     label {
       @include full;
       text-align: right;
-      @include simple-transform($trans-y: -25px, $origin-x: left, $origin-y: top);
+      @include simple-transform($trans-y: -20px, $origin-x: left, $origin-y: top);
       white-space: nowrap;
+      font-size: $small-font-size;
     }
   }
 }
