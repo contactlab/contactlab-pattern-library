@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "test": "node_modules/web-component-tester/bin/wct"
+    "test": "node node_modules/web-component-tester/bin/wct"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.6",
-    "web-component-tester": "^3.3.25",
+    "web-component-tester": "^3.3.30",
     "webpack": "^1.12.1"
   },
   "dependencies": {
