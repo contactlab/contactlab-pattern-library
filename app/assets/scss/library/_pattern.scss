@@ -1832,6 +1832,19 @@ footer {
   p {
     color: $base-text-color;
   }
+
+  &.medium-icon {
+    .icon {
+      float: left;
+      margin: 0;
+      width: 55px;
+      font-size: 55px;
+
+      .clab {
+        font-size: 55px;
+      }
+    }
+  }
  
   &.big-icon {
     .icon {

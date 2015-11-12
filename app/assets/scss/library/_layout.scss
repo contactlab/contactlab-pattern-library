@@ -1,6 +1,6 @@
-$main-sidebar-width: 250px;
+$main-sidebar-width: 200px;
 $secondary-sidebar-width: 280px;
-$header-height: 80px;
+$header-height: 60px;
 
 html{
   height: 100%;
@@ -88,7 +88,7 @@ body {
 		left: 0;
 		right: 0;
 		bottom: 40px;
-		overflow: auto;
+		overflow: initial;
 
 		.icon {
 			width: 20px;
@@ -149,7 +149,24 @@ body {
 		.active {
 			> a {
 				background-color: rgba(255, 255, 255, 0.15);
+				background-color: lighten($darker-gray, 10);
+
+				&:hover {
+					background-color: lighten($darker-gray, 10);
+				}
 			}
+		}
+
+		> .active:after {
+			width: 0; 
+			height: 0; 
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			content: '';
+			border-left: 8px solid lighten($darker-gray, 10);
+			position: absolute;
+			top: 13px;
+			right: -8px;
 		}
 		
 		.active,
@@ -287,7 +304,7 @@ header {
 .app-switch {
 	position: absolute;
 	left: 0;
-	top: 25px;
+	top: 0;
 
 	.btn {
 		border-left: 0;
@@ -463,7 +480,7 @@ header {
 
 .content {
 	@include full;
-	padding: $large-spacing ;
+	padding: $medium-spacing ;
 	position: relative;
 }
 
@@ -615,22 +632,8 @@ body.main-sidebar-small {
 	header
 	 {
 		left: $main-sidebar-width;
-
-		.app-switch {
-			top: 12px,
-		}
 	}
 }
-
-/* body.secondary-sidebar-open {
-
-	@include susy-breakpoint(1600px) {
-		.content {
-			padding-right: $large-spacing + $secondary-sidebar-width;
-		}
-	}
-}
- */
 
 // tablet layout
 

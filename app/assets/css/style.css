@@ -3356,7 +3356,7 @@ td {
   border: none;
 }
 .striped-table tr:nth-child(odd) td {
-  background: #f8f8f9;
+  background: #FFF;
 }
 
 .hover-table tr:hover td {
@@ -4820,6 +4820,15 @@ footer .footer-nav ul li {
 }
 .feature p {
   color: #353A3D;
+}
+.feature.medium-icon .icon {
+  float: left;
+  margin: 0;
+  width: 55px;
+  font-size: 55px;
+}
+.feature.medium-icon .icon .clab {
+  font-size: 55px;
 }
 .feature.big-icon .icon {
   float: left;
@@ -6787,7 +6796,7 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 250px;
+  width: 200px;
   background-color: #282c2e;
   z-index: 10;
 }
@@ -6797,8 +6806,8 @@ body {
   float: left;
   margin-left: 0;
   margin-right: 0;
-  height: 80px;
-  line-height: 80px;
+  height: 60px;
+  line-height: 60px;
   font-size: 14px;
   text-align: center;
 }
@@ -6832,11 +6841,11 @@ body {
 }
 #main-sidebar nav {
   position: absolute;
-  top: 80px;
+  top: 60px;
   left: 0;
   right: 0;
   bottom: 40px;
-  overflow: auto;
+  overflow: initial;
 }
 #main-sidebar nav .icon {
   width: 20px;
@@ -6899,6 +6908,21 @@ body {
 }
 #main-sidebar .first-level-menu .active > a {
   background-color: rgba(255, 255, 255, 0.15);
+  background-color: #404649;
+}
+#main-sidebar .first-level-menu .active > a:hover {
+  background-color: #404649;
+}
+#main-sidebar .first-level-menu > .active:after {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  content: '';
+  border-left: 8px solid #404649;
+  position: absolute;
+  top: 13px;
+  right: -8px;
 }
 #main-sidebar .first-level-menu .active .second-level-menu,
 #main-sidebar .first-level-menu .open .second-level-menu {
@@ -6994,9 +7018,9 @@ main {
   float: left;
   margin-left: 0;
   margin-right: 0;
-  padding-left: 250px;
+  padding-left: 200px;
   padding-right: 0;
-  padding-top: 80px;
+  padding-top: 60px;
   max-width: 1500px;
 }
 
@@ -7004,16 +7028,16 @@ header {
   position: fixed;
   top: 0;
   right: 0;
-  left: 250px;
+  left: 200px;
   background-color: #eaeced;
-  height: 80px;
+  height: 60px;
   z-index: 4;
 }
 
 .app-switch {
   position: absolute;
   left: 0;
-  top: 25px;
+  top: 0;
 }
 .app-switch .btn, .app-switch .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .app-switch input[type="text"].js-users-list-filter {
   border-left: 0;
@@ -7038,19 +7062,19 @@ header {
 
 .user-bar {
   float: right;
-  height: 80px;
+  height: 60px;
   font-size: 0;
 }
 .user-bar .name {
-  line-height: 80px;
+  line-height: 60px;
   display: inline-block;
   vertical-align: top;
   font-size: 14px;
   margin-right: 20px;
 }
 .user-bar .picture {
-  width: 54px;
-  height: 54px;
+  width: 34px;
+  height: 34px;
   display: inline-block;
   vertical-align: top;
   font-size: 14px;
@@ -7085,7 +7109,7 @@ header {
   position: fixed;
   width: 280px;
   right: -300px;
-  top: 80px;
+  top: 60px;
   bottom: 0;
   background-color: #f8f8f9;
   z-index: 2;
@@ -7181,7 +7205,7 @@ header {
   float: left;
   margin-left: 0;
   margin-right: 0;
-  padding: 40px;
+  padding: 30px;
   position: relative;
 }
 
@@ -7289,19 +7313,7 @@ body.main-sidebar-small main {
 body.main-sidebar-small header {
   left: 40px;
 }
-body.main-sidebar-small header .app-switch {
-  top: 12px;
-}
 
-/* body.secondary-sidebar-open {
-
-	@include susy-breakpoint(1600px) {
-		.content {
-			padding-right: $large-spacing + $secondary-sidebar-width;
-		}
-	}
-}
- */
 @media (max-width: 1200px) {
   main {
     padding-right: 0;
