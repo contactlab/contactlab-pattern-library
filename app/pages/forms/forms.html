@@ -1,13 +1,15 @@
 <h1>Forms</h1>
-<p>
+<!-- <p>
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos temporibus, quos sapiente alias assumenda unde reprehenderit numquam. Velit nesciunt modi officiis possimus iste minima veniam praesentium sed tenetur voluptatum!
-</p>
+</p> -->
 <h1>Input text</h1>
 <h2>Syntax</h2>
 <section>
-	<p><code>&lt;alert-clab title="lorem ipsum" visible&gt; <i class="italic">content</i> &lt;/alert-clab&gt;</code></p>
+	<p><pre><code class="html">
+		&lt;input-clab&gt; <i class="italic">content</i> &lt;/input-clab&gt;
+	</code></pre></p>
 </section>
-<h2>Attributes</h2>
+<h2>Attributes &lt;input-clab&gt;</h2>
 <section>
 	<table class="striped-table">
 		<thead>
@@ -20,16 +22,40 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>label</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>none</td>
 			</tr>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>name</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>'textinput'</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>string</td>
+				<td>none, 'success', 'warning', 'error', 'info', 'disabled'</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>value</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>disabled</td>
+				<td>boolean</td>
+				<td>true/false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>placeholder</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>none</td>
 			</tr>
 		</tbody>
 	</table>
@@ -110,7 +136,9 @@
 <h1>Input range</h1>
 <h2>Syntax</h2>
 <section>
-	<p><code>&lt;input type="range"&gt; <i class="italic"></code></p>
+	<p><pre><code class="html">
+		&lt;input type="range"&gt;
+	</code></pre></p>
 </section>
 <h2>Example</h2>
 <section>
@@ -122,9 +150,18 @@
 <h1>Input file</h1>
 <h2>Syntax</h2>
 <section>
-	<p><code></code></p>
+	<p><pre><code class="html">
+		&lt;div class="input-wrapper"&gt;
+			&lt;label for="field"&gt;Input file label&lt;/label&gt;
+			&lt;div class="input-icon-wrapper"&gt;
+				&lt;input type="text" id="file-field"&gt;
+			&lt;/div&gt;
+			&lt;div class="note"&gt;Lorem ipsum dolor sit.&lt;/div&gt;
+			&lt;input type="file"&gt;
+		&lt;/div&gt;
+	</code></pre></p>
 </section>
-<h2>Attributes</h2>
+<!-- <h2>Attributes</h2>
 <section>
 	<table class="striped-table">
 		<thead>
@@ -150,7 +187,7 @@
 			</tr>
 		</tbody>
 	</table>
-</section>
+</section> -->
 
 <h2>Example</h2>
 <section>
@@ -168,9 +205,11 @@
 <h1>Input calendar</h1>
 <h2>Syntax</h2>
 <section>
-	<p><code>&lt;calendar-clab&gt;&lt;/calendar-clab&gt;</code></p>
+	<p><pre><code class="html">
+		&lt;calendar-clab&gt;&lt;/calendar-clab&gt;
+	</code></pre></p>
 </section>
-<h2>Attributes</h2>
+<h2>Attributes &lt;calendar-clab&gt;</h2>
 <section>
 	<table class="striped-table">
 		<thead>
@@ -183,16 +222,46 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>label</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>none</td>
 			</tr>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>value</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>disable</td>
+				<td>boolean</td>
+				<td>true/false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>inline</td>
+				<td>boolean</td>
+				<td>true/false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>options</td>
+				<td>object</td>
+				<td>any valid object</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>placeholder</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>none</td>
 			</tr>
 		</tbody>
 	</table>
@@ -211,6 +280,13 @@
 <section>
 	<!-- radio & checkboxes -->
 	<h1>Input radio</h1>
+	<section>
+		<p><pre><code class="html">
+			&lt;input id="radio" type="radio" name="radio_button"/&gt;
+			&lt;label for="radio"&gt;radio&lt;/label&gt;
+		</code></pre></p>
+	</section>
+	<h2>Examples</h2>
 	<article>
 		<!-- radio -->
         <div class="row">
@@ -232,6 +308,13 @@
 	</article>
 
     <h1>Input checkbox</h1>
+    <section>
+		<p><pre><code class="html">
+			&lt;input id="check" type="checkbox"/&gt;
+			&lt;label for="check"&gt;checkbox&lt;/label&gt;
+		</code></pre></p>
+	</section>
+	<h2>Examples</h2>
 	<article>
         <!-- checkboxes -->
         <div class="row">
@@ -253,7 +336,79 @@
 	</article>
 </section>
 <section>
-	<h1>Select</h1>
+<h1>Select</h1>
+<section>
+	<p><pre><code class="html">
+		&lt;elekti-mer label="Select label" options='["Option1", "Option 2", ..."]'&gt;&lt;/elekti-mer&gt;
+	</code></pre></p>
+</section>
+<h2>Attributes  &lt;elekti-mer&gt;</h2>
+<section>
+	<table class="striped-table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Values</th>
+				<th>Default</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>label</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>name</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>'elekti'</td>
+			</tr>
+			<tr>
+				<td>options</td>
+				<td>array</td>
+				<td>
+					[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, ...]
+				</td>
+				<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, {<b>value</b>: 'B', <b>label</b>: 'Option 2'}]</td>
+			</tr>
+			<tr>
+				<td>default</td>
+				<td>number</td>
+				<td>any valid number</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>value</td>
+				<td>object</td>
+				<td>
+					{<b>value</b>: ' ', <b>label</b>: ' '}
+				</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>open</td>
+				<td>boolean</td>
+				<td>true/false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>no-search</td>
+				<td>boolean</td>
+				<td>true/false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>no-results</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>'No results found'</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
 	<article>
 		<div class="input-wrapper">
 			<elekti-mer label="Select label" options='["Option1", "Option 2", "Option 3","Option1", "Option 2", "Option 3","Option1", "Option 2", "Option 3"]'></elekti-mer>
@@ -290,7 +445,19 @@
 			<div class="note">Lorem ipsum dolor sit.</div>
 		</div>
 	</article>
+
+
 	<h1>Multiple select</h1>
+	<section>
+		<p><pre><code class="html">
+			&lt;select multiple&gt;
+				&lt;option value=""&gt;option01&lt;/option&gt;
+				&lt;option value=""&gt;option02&lt;/option&gt;
+				...
+			&lt;/select&gt;
+		</code></pre></p>
+	</section>
+	<h2>Examples</h2>
 	<article>
 		<div class="input-wrapper">
 			<label for="">Multiple select label</label>

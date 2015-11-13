@@ -1,12 +1,22 @@
 <h1>Lists</h1>
-<p>
+<!-- <p>
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos temporibus, quos sapiente alias assumenda unde reprehenderit numquam. Velit nesciunt modi officiis possimus iste minima veniam praesentium sed tenetur voluptatum!
-</p>
+</p> -->
 <h2>Syntax</h2>
 <section>
-	<p><code></code></p>
+	<p><pre><code class="html">
+		&lt;ol class="default"&gt;
+			&lt;li&gt;&lt;/li&gt;
+		&lt;/ol&gt;
+	</code></pre></p>
+
+	<p><pre><code class="html">
+		&lt;ul class="default"&gt;
+			&lt;li&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	</code></pre></p>
 </section>
-<h2>Attributes</h2>
+<h2>Attributes &lt;ol&gt;</h2>
 <section>
 	<table class="striped-table">
 		<thead>
@@ -19,16 +29,37 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>class</td>
+				<td>string</td>
+				<td>
+					none: without numbers
+					<br><b>'default'</b>: with numbers
+				</td>
+				<td>none</td>
 			</tr>
+		</tbody>
+	</table>
+</section>
+<h2>Attributes &lt;ul&gt;</h2>
+<section>
+	<table class="striped-table">
+		<thead>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Values</th>
+				<th>Default</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>class</td>
+				<td>string</td>
+				<td>
+					none: without bullet points
+					<br><b>'default'</b>: with bullet points
+				</td>
+				<td>none</td>
 			</tr>
 		</tbody>
 	</table>

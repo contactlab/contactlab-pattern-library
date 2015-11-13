@@ -1,12 +1,49 @@
 <h1>Features</h1>
-<p>
+<!-- <p>
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos temporibus, quos sapiente alias assumenda unde reprehenderit numquam. Velit nesciunt modi officiis possimus iste minima veniam praesentium sed tenetur voluptatum!
-</p>
-<h2>Syntax</h2>
-<section>
-	<p><code></code></p>
+</p> -->
+<h2>Syntax</h2><section>
+	<p><pre><code class="html">
+
+		&lt;div class="feature"&gt;
+		    	&lt;div class="description"&gt;
+		        	&lt;a href="#"&gt;
+		            		&lt;h2&gt; <i class="italic">Default</i> &lt;/h2&gt;
+		            		&lt;p&gt; <i class="italic">text</i> &lt;/p&gt;
+		        	&lt;/a&gt;
+		        &lt;/div&gt;
+	      	&lt;/div&gt;
+	</code></pre></p>
+	<p><pre><code class="html">
+      	
+		&lt;div class="feature"&gt;
+			&lt;div class="icon"&gt;
+		         	&lt;i class="fa fa-cloud-upload"&gt;&lt;/i&gt;
+		        &lt;/div&gt;
+		        &lt;div class="description"&gt;
+		         	&lt;a href="#"&gt;
+			            	&lt;h2&gt; <i class="italic">Default with icon</i> &lt;/h2&gt;
+			            	&lt;p&gt; <i class="italic">text</i> &lt;/p&gt;
+		         	&lt;/a&gt;
+		        &lt;/div&gt;
+	      	&lt;/div&gt;
+	</code></pre></p>
+	<p><pre><code class="html">
+
+	    &lt;div class="feature"&gt;
+			&lt;div class="icon"&gt;
+		         	&lt;img src="#"&gt;
+		        &lt;/div&gt;
+		        &lt;div class="description"&gt;
+		         	&lt;a href="#"&gt;
+			            	&lt;h2&gt; <i class="italic">Default with image</i> &lt;/h2&gt;
+			            	&lt;p&gt; <i class="italic">text</i> &lt;/p&gt;
+		         	&lt;/a&gt;
+		        &lt;/div&gt;
+	      	&lt;/div&gt;
+	</code></pre></p>
 </section>
-<h2>Attributes</h2>
+<h2>Attributes &lt;div class="feature"&gt;</h2>
 <section>
 	<table class="striped-table">
 		<thead>
@@ -19,16 +56,14 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>class</td>
+				<td>string</td>
+				<td>
+					<b>feature</b>
+					<br><b>feature big-icon</b>: big image or icon
+					<br><b>feature medium-icon</b>: medium image
+				</td>
+				<td>feature</td>
 			</tr>
 		</tbody>
 	</table>

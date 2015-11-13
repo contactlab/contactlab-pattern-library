@@ -4,9 +4,13 @@
 </p>
 <h2>Syntax</h2>
 <section>
-	<p><code>&lt;card-clab title="Card title" primary-label="Accept" secondary-label="Decline"&gt; <i class="italic">content</i> &lt;/card-clab&gt;</code></p>
+	<p><pre><code class="html">
+		&lt;card-clab title="Card title" primary-label="Accept" secondary-label="Decline"&gt; 
+			<i class="italic">content</i> 
+		&lt;/card-clab&gt;
+	</code></pre></p>
 </section>
-<h2>Attributes</h2>
+<h2>Attributes &lt;card-clab&gt;</h2>
 <section>
 	<table class="striped-table">
 		<thead>
@@ -19,16 +23,52 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>title</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>Title</td>
 			</tr>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>primary-label</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>Ok</td>
+			</tr>
+			<tr>
+				<td>secondary-label</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>Cancel</td>
+			</tr>
+			<tr>
+				<td>icon</td>
+				<td>string</td>
+				<td>any valid icon class</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>big</td>
+				<td>boolean</td>
+				<td>true/false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>table</td>
+				<td>boolean</td>
+				<td>true/false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>figure</td>
+				<td>string</td>
+				<td>any valid image url</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>effect</td>
+				<td>string</td>
+				<td>none, 'blur', 'saturation', 'zoom-in', 'zoom-out'</td>
+				<td>none</td>
 			</tr>
 		</tbody>
 	</table>
