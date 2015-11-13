@@ -4,9 +4,16 @@
 </p>
 <h2>Syntax</h2>
 <section>
-	<p><code>&lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt;</code></p>
+	<p><pre><code class="html">&lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt;
+
+&lt;group-clab&gt;
+	&lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt;
+	&lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt;
+	...
+&lt;/group-clab&gt;
+</pre></p>
 </section>
-<h2>Attributes</h2>
+<h2>Attributes &lt;button-clab /&gt;</h2>
 <section>
 	<table class="striped-table">
 		<thead>
@@ -48,6 +55,34 @@
 				<td>none, 'primary', 'secondary', 'info', 'success', 'warning', 'error'</td>
 				<td>none</td>
 			</tr>
+			<tr>
+				<td>disabled</td>
+				<td>boolean</td>
+				<td>true/false</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<h2>Attributes &lt;group-clab /&gt;</h2>
+<section>
+	<table class="striped-table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Values</th>
+				<th>Default</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>small</td>
+				<td>boolean</td>
+				<td>true/false</td>
+				<td>false</td>
+			</tr>
 		</tbody>
 	</table>
 </section>
@@ -73,16 +108,16 @@
 	</article>
 	<article>
 		<group-clab>
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 	<article>
 		<group-clab small value="1">
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 </section>
@@ -107,16 +142,16 @@
 	</article>
 	<article>
 		<group-clab type="primary" value="2">
-			<button class="btn">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 	<article>
 		<group-clab type="primary" small value="1">
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 </section>
@@ -141,16 +176,16 @@
 	</article>
 	<article>
 		<group-clab type="secondary">
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 	<article>
 		<group-clab type="secondary" small>
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 </section>
@@ -175,16 +210,16 @@
 	</article>
 	<article>
 		<group-clab type="info">
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 	<article>
 		<group-clab type="info" small>
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 </section>
@@ -209,16 +244,16 @@
 	</article>
 	<article>
 		<group-clab type="success">
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 	<article>
 		<group-clab type="success" small>
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 </section>
@@ -243,16 +278,16 @@
 	</article>
 	<article>
 		<group-clab type="warning">
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 	<article>
 		<group-clab type="warning" small>
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 </section>
@@ -277,16 +312,16 @@
 	</article>
 	<article>
 		<group-clab type="error">
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 	<article>
 		<group-clab type="error" small>
-			<button class="btn full">Left</button>
-			<button class="btn">Middle</button>
-			<button class="btn">Right</button>
+			<button-clab>Left</button-clab>
+			<button-clab>Middle</button-clab>
+			<button-clab>Right</button-clab>
 		</group-clab>
 	</article>
 </section>

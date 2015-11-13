@@ -18,6 +18,7 @@ Polymer({
 		window.scroll(0,0);
 	},
 	attached: function(){
+
 		this._routing();
 
 		window.addEventListener('resize', function () {
