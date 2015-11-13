@@ -14,8 +14,16 @@ Polymer({
 	    $("#user-menu-toggle").removeClass('active')
 	  }
 	},
+	_highlightCode: function(){
+		setTimeout(function(){
+			$('.html').each(function(i, block) {
+			    hljs.highlightBlock(block);
+			});
+		},500);
+	},
 	_changePage: function(evt){
 		window.scroll(0,0);
+		this._highlightCode();
 	},
 	attached: function(){
 
@@ -29,10 +37,14 @@ Polymer({
 		    this._layoutManager();
 		}.bind(this));
 
-		window.addEventListener('hashchange', this._changePage);
+		window.addEventListener('hashchange', this._changePage.bind(this));
 
 		this._layoutManager();
 
 		document.querySelector('menu-clab').menu = AppFakeMenu;
+	},
+
+	ready: function(){
+		this._highlightCode();
 	}
 });
