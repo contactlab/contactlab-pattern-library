@@ -1,0 +1,31 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="header-clab">
+	<style>
+
+	</style>
+	
+	<template>		
+		<ul>
+		<li>{{prova}}</li>
+			<template is="dom-repeat" items="[[listOfAnchors]]">
+				<li class="group">
+					<span>[[item.title]]</span>
+					<ul>
+						<template is="dom-if" if="[[item.syntax]]">
+							<li><a href$="[[item.syntax]]" on-click="_anchorScroll">Syntax</a></li>
+						</template>
+						<template is="dom-if" if="[[item.attrs]]">
+							<li><a href$="[[item.attrs]]" on-click="_anchorScroll">Attributes</a></li>
+						</template>
+						<template is="dom-if" if="[[item.examples]]">
+							<li><a href$="[[item.examples]]" on-click="_anchorScroll">Examples</a></li>
+						</template>
+					</ul>
+				</li>
+			</template>
+		</ul>
+	</template>
+	
+	<script src="script.js"></script>
+</dom-module>

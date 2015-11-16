@@ -16,6 +16,7 @@
 	<script src="assets/bower/director/build/director.min.js"></script>
 
 	<link rel="import" href="components/library/view.html">
+	<link rel="import" href="components/header/view.html">
 	<link rel="import" href="assets/bower/ui-components/alert/view.html">
 	<link rel="import" href="assets/bower/ui-components/button/view.html">
 	<link rel="import" href="assets/bower/ui-components/button-group/view.html">
@@ -32,6 +33,39 @@
 	<link rel="import" href="assets/bower/ui-components/file/view.html">
 	<link rel="import" href="assets/bower/ui-components/modal/view.html">
 
+	<style>
+
+		header a{
+			color: white;
+		}
+		header a:hover{
+			color: white;
+			text-decoration: underline;
+		}
+
+		header ul{
+			margin: 0;
+		}
+
+		header .group{
+			float: left;
+			clear: none;
+			padding-left: 10px;
+			border-left: 1px solid #191990;
+			font-size: 14px;
+		}
+		header .group span{
+			display: block;
+			color: #191990;
+    		font-size: .95em;
+		}
+		header .group li{
+			display: inline-block;
+			margin-right: 10px;
+		}
+
+	</style>
+
 </head>
 <body>
 <library-clab>
@@ -41,6 +75,7 @@
 		</menu-clab>
 	</aside>
 	<header class="design">
+		<header-clab></header-clab>
 		<!-- <div id="product-switch">
 			<elekti-mer default="0" no-search label="Switch style" options='[{"label":"ContactHub", "value": 0}, {"label":"ContactPlan", "value": "1"}]' class="floating-label"></elekti-mer>
 		</div> -->

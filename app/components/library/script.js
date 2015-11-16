@@ -29,7 +29,7 @@ Polymer({
 		    this._layoutManager();
 		}.bind(this));
 
-		window.addEventListener('hashchange', this._changePage);
+		window.addEventListener('hashchange', this._changePage.bind(this));
 
 		this._layoutManager();
 
