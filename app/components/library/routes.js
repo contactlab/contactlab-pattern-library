@@ -71,9 +71,36 @@ var AppRoutes = (function(){
 	};
 
 	var highlight = function(){
-		var n = document.querySelectorAll('pre code').length;
-		n ? hljs.highlightBlock(document.querySelector('pre code')) : null;
+		/*var n = document.querySelectorAll('pre code').length;
+		n ? hljs.highlightBlock(document.querySelector('pre code')) : null;*/
+		$('.html').each(function(i, block) {
+			hljs.highlightBlock(block);
+		});
+
+		_generateAnchors();
 	}
+
+	var _generateAnchors = function(){
+		var list = [];
+		if($('[id^=title]').length!=0){
+
+			for(var n=0; n<$('[id^=title]').length; n++){
+				var i = n+1;
+				var obj = {};
+
+				obj.title = $('#title'+i).html();
+				if($('#syntax'+i).length!=0)
+					obj.syntax = '#syntax'+i;
+				if($('#attrs'+i).length!=0)
+					obj.attrs = '#attrs'+i;
+				if($('#examples'+i).length!=0)
+					obj.examples = '#examples'+i;
+
+				list.push(obj);
+			}
+		}
+		this.fire('headready', list);
+	}.bind(this);
 
 	var router = Router(routes).configure({
 		notfound: function(){
