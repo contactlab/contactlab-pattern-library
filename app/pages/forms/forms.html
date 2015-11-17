@@ -230,7 +230,7 @@
 			<tr>
 				<td>value</td>
 				<td>string</td>
-				<td>any valid string</td>
+				<td>a date format string</td>
 				<td>none</td>
 			</tr>
 			<tr>
@@ -248,7 +248,7 @@
 			<tr>
 				<td>options</td>
 				<td>object</td>
-				<td>any valid object</td>
+				<td>a <a href="https://github.com/bevacqua/rome" target="_blank">Rome options</a> object</td>
 				<td>none</td>
 			</tr>
 			<tr>
@@ -260,8 +260,51 @@
 			<tr>
 				<td>type</td>
 				<td>string</td>
-				<td>any valid string</td>
+				<td>none, 'success', 'warning', 'error', 'info', 'disabled'</td>
 				<td>none</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<h2 id="events4">Events &lt;calendar-clab&gt;</h2>
+<section>
+	<table class="striped-table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Emitted when</th>
+				<th>Custom data</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>datechange</td>
+				<td>Date is changed from the widget or in the linked text input</td>
+				<td><ul>
+					<li><b>date:</b> the value of the linked text input</li>
+					<li><b>dateISO:</b> the value of the linked text input formatted as ISO</li>
+				</ul></td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<h2 id="methods4">Methods &lt;calendar-clab&gt;</h2>
+<section>
+	<table class="striped-table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Arguments</th>
+				<th>Returns</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>getRomeInstance()</td>
+				<td>N/A</td>
+				<td>the Rome instance for the current component</td>
 			</tr>
 		</tbody>
 	</table>
@@ -408,6 +451,35 @@
 				<td>string</td>
 				<td>any valid string</td>
 				<td>'No results found'</td>
+			</tr>
+			<tr>
+				<td>optionsFn</td>
+				<td>function</td>
+				<td>a function returning a Javascript promise that returns the options array</td>
+				<td>non</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<h2 id="events7">Events &lt;elekti-mer&gt;</h2>
+<section>
+	<table class="striped-table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Emitted when</th>
+				<th>Custom data</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>change</td>
+				<td>When a new value is selected from dropdown</td>
+				<td><ul>
+					<li><b>newValue:</b> the object representing the new value that has been selected</li>
+					<li><b>oldValue:</b> the object representing the previous value selected</li>
+				</ul></td>
 			</tr>
 		</tbody>
 	</table>
