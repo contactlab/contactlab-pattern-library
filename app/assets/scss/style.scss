@@ -30,9 +30,13 @@ main {
 	padding-right: 0;
 }
 
+#main-sidebar #logo .name {
+	font-size: 20px;
+}
+
 header {
-	padding-left: $large-spacing;
-	padding-right: $large-spacing;
+	padding-left: $medium-spacing;
+	padding-right: $medium-spacing;
 	background-color: $primary-color;
 	color: #FFFFFF;
 }
@@ -45,23 +49,6 @@ header {
 	#product-switch {
 		float: right;
 		margin-top: 10px;
-
-		/* input[type="text"]{
-			color: #FFFFFF !important;
-			
-			&:focus {
-			    border-color: #FFFFFF;
-			    @include box-shadow(#FFFFFF 0 1px 0 0);
-
-			    + label { 
-		          color: #FFFFFF !important;
-		        }
-		  	}
-		}
-
-		input[type="text"].active + label {
-			color: #FFFFFF !important; 
-		} */
 
 		input[type="text"] {
 			background-color: transparent !important;
@@ -81,6 +68,21 @@ header {
 			color: $base-text-color;
 		}
 	}
+
+
+	.page-nav {
+
+		li {
+			float: left;
+			margin-right: $base-spacing;
+		}
+
+		a {
+			color: #FFFFFF;
+		}
+	}
+	
+
 }
 
 
