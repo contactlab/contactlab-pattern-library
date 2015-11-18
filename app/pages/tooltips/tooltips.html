@@ -5,10 +5,10 @@
 <h2 id="syntax1">Syntax</h2>
 <section>
 	<p><pre><code class="html">
-		<!-- &lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt; -->
+		&lt;tooltip-clab content="Here goes the tooltip content"&gt; <i class="italic">span content</i> &lt;/tooltip-clab&gt;
 	</code></pre></p>
 </section>
-<h2 id="attrs1">Attributes</h2>
+<h2 id="attrs1">Attributes tooltip-clab</h2>
 <section>
 	<table class="striped-table">
 		<thead>
@@ -21,16 +21,22 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>content</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>'The content'</td>
 			</tr>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>type</td>
+				<td>string</td>
+				<td>any custom class for the span element</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>tt-type</td>
+				<td>string</td>
+				<td>none, 'primary', 'secondary', 'info', 'success', 'warning', 'error'</td>
+				<td>none</td>
 			</tr>
 		</tbody>
 	</table>
@@ -38,5 +44,26 @@
 <h2 id="examples1">Examples</h2>
 <section id="tooltips">
 	
+	<tooltip-clab content="Default">
+		Default tooltip
+	</tooltip-clab>
+	<tooltip-clab content="Primary" tt-type="primary">
+		Primary tooltip
+	</tooltip-clab>
+	<tooltip-clab content="Secondary" tt-type="secondary">
+		Secondary tooltip
+	</tooltip-clab>
+	<tooltip-clab content="Info" tt-type="info">
+		Info tooltip
+	</tooltip-clab>
+	<tooltip-clab content="Success" tt-type="success">
+		Success tooltip
+	</tooltip-clab>
+	<tooltip-clab content="Warning" tt-type="warning">
+		Warning tooltip
+	</tooltip-clab>
+	<tooltip-clab content="Error" tt-type="error">
+		Error tooltip
+	</tooltip-clab>
 	
 </section>
