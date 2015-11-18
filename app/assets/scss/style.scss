@@ -336,3 +336,16 @@ header {
 		}
 	}
 }
+
+// TOOLTIPS
+
+#tooltips {
+
+	.tooltip {
+		background-color: $gray;
+		padding: $base-spacing;
+		margin-right: $base-spacing;
+		float: left;
+		margin-bottom: $base-spacing;
+	}
+}
