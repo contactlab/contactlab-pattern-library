@@ -286,31 +286,54 @@ button:disabled {
     @extend .small;
   }
 
-  .btn {
-    float: left;
-    margin: 0;
-    border-right: 0;
+  .group-item {
 
-    &:last-of-type,
-    &:last-of-type:active {
-      border-right: 1px solid $dark-gray;
+    &:last-of-type .btn,
+    &:last-of-type:active .btn {
+      border-right: 1px solid $medium-gray;
     }
 
-    &:active {
-      @extend .full;
+    .btn {
+      float: left;
       margin: 0;
       border-right: 0;
+      border-color: $dark-gray;
+
+      &:active {
+        background-color: shade($dark-gray, 10);
+      }
+
+      &.full {
+        background-color: $dark-gray;
+        border-color: $dark-gray;
+      }
+      
     }
-    
   }
 
   @each $type, $color in $default-status {
     &.#{$type} {
-      .btn {
-        @extend .#{$type};
 
-        &:last-of-type {
-          border-right: 1px solid nth($color, 1);
+      
+      .group-item {
+
+        &:last-of-type .btn,
+        &:last-of-type:active .btn {
+           border-right: 1px solid nth($color, 1);
+        }
+
+        .btn {
+          border-color: nth($color, 1);
+
+          &:active {
+            background-color: shade(nth($color, 1), 10);
+          }
+
+          &.full {
+            background-color: nth($color, 1);
+            border-color: nth($color, 1);
+          }
+          
         }
       }
 

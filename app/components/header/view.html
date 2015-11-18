@@ -6,11 +6,10 @@
 	</style>
 	
 	<template>		
-		<ul>
-		<li>{{prova}}</li>
-			<template is="dom-repeat" items="[[listOfAnchors]]">
-				<li class="group">
-					<span>[[item.title]]</span>
+		<template is="dom-repeat" items="[[listOfAnchors]]">
+			<ul class="page-nav">
+				<li>
+					<!-- <span>[[item.title]]</span> -->
 					<ul>
 						<template is="dom-if" if="[[item.syntax]]">
 							<li><a href$="[[item.syntax]]" on-click="_anchorScroll">Syntax</a></li>
@@ -23,8 +22,8 @@
 						</template>
 					</ul>
 				</li>
-			</template>
-		</ul>
+			</ul>
+		</template>
 	</template>
 	
 	<script src="script.js"></script>
