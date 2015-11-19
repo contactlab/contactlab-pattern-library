@@ -123,12 +123,11 @@
 setTimeout(function(){
 
 	var els = document.querySelectorAll('alert-clab');
-	console.log(els);
 
 	function firstClick(){
 		alert('Confirm button clicked');
 	}
-	function secondClick(){
+	function secondClick(evt){
 		alert('Cancel button clicked');
 	}
 

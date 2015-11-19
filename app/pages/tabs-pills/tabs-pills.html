@@ -7,9 +7,14 @@
 	<p><pre><code class="html">
 		<!-- &lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt; -->
 
+		&lt;tabs-clab active="1"&gt;
+			&lt;div class="tab-content"&gt; <i class="italic">tab 1 content</i> &lt;/div&gt;
+			&lt;div class="tab-content"&gt; <i class="italic">tab 2 content</i> &lt;/div&gt;
+		&lt;/tabs-clab&gt;
+
 	</code></pre></p>
 </section>
-<h2 id="attrs1">Attributes</h2>
+<h2 id="attrs1">Attributes &lt;tabs-clab&gt;</h2>
 <section>
 	<table class="striped-table">
 		<thead>
@@ -22,16 +27,22 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>labels</td>
+				<td>array</td>
+				<td>array of strings</td>
+				<td>'Tab [tab index]'</td>
 			</tr>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>pills</td>
+				<td>boolean</td>
+				<td>true/false</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>active</td>
+				<td>number</td>
+				<td>index of the tab to be displayed at first</td>
+				<td>0</td>
 			</tr>
 		</tbody>
 	</table>
@@ -39,5 +50,17 @@
 <h2 id="examples1">Examples</h2>
 <section id="tabs-pills">
 	
+	<h3>Default</h3>
+	<tabs-clab active="1" labels='["Music", "Photos", "Messages"]'>
+		<div class="tab-content">First tab Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit illo mollitia odio quam necessitatibus veritatis sed placeat.</div>
+		<div class="tab-content">Second tab repellat ratione nisi quisquam quod, quo deleniti eveniet asperiores rerum veniam delectus. Voluptas. </div>
+		<div class="tab-content">Second tab repellat ratione nisi quisquam quod, quo deleniti eveniet asperiores rerum veniam delectus. Voluptas. </div>
+	</tabs-clab>
+
+	<h3>Pills</h3>
+	<tabs-clab active="0" pills>
+		<div class="tab-content">First tab Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit illo mollitia odio quam necessitatibus veritatis sed placeat.</div>
+		<div class="tab-content">Second tab repellat ratione nisi quisquam quod, quo deleniti eveniet asperiores rerum veniam delectus. Voluptas. </div>
+	</tabs-clab>
 	
 </section>
