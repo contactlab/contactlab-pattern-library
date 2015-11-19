@@ -4178,16 +4178,71 @@ td {
   padding: 6.66667px 10px;
 }
 
-.tooltip {
-  background-color: #353A3D;
+/* .tooltip {
+  background-color: $dark-gray;
   display: inline-block;
   color: #FFFFFF;
+  font-size: $small-font-size;
+  padding: $smaller-spacing;
+  line-height: 1;
+  @include border-radius(2px);
+} */
+.kawo-tooltip {
+  background-color: #353A3D;
   font-size: 0.8125rem;
   padding: 6.66667px;
   line-height: 1;
+  color: #FFFFFF;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
+}
+.kawo-tooltip a {
+  color: #FFFFFF;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.kawo-tooltip.primary {
+  background-color: #0072bc;
+  color: #FFFFFF;
+}
+.kawo-tooltip.primary a {
+  color: #FFFFFF;
+}
+.kawo-tooltip.secondary {
+  background-color: #4d9cd0;
+  color: #FFFFFF;
+}
+.kawo-tooltip.secondary a {
+  color: #FFFFFF;
+}
+.kawo-tooltip.info {
+  background-color: #6ac7f1;
+  color: #FFFFFF;
+}
+.kawo-tooltip.info a {
+  color: #FFFFFF;
+}
+.kawo-tooltip.success {
+  background-color: #61b769;
+  color: #FFFFFF;
+}
+.kawo-tooltip.success a {
+  color: #FFFFFF;
+}
+.kawo-tooltip.warning {
+  background-color: #fd6b3c;
+  color: #FFFFFF;
+}
+.kawo-tooltip.warning a {
+  color: #FFFFFF;
+}
+.kawo-tooltip.error {
+  background-color: #f3594e;
+  color: #FFFFFF;
+}
+.kawo-tooltip.error a {
+  color: #FFFFFF;
 }
 
 .rd-container.rd-container-attachment {
@@ -7395,4 +7450,12 @@ header .page-nav a {
   width: 100px;
   height: 100px;
   background-color: #cfd3d5;
+}
+
+#tooltips .tooltip {
+  background-color: #cfd3d5;
+  padding: 20px;
+  margin-right: 20px;
+  float: left;
+  margin-bottom: 20px;
 }
