@@ -134,12 +134,73 @@
 <h1 id="title2">Input range</h1>
 <h2 id="syntax2">Syntax</h2>
 <section>
-	<p><pre><code class="html">&lt;input type="range"&gt;</code></pre></p>
+	<p><pre><code class="html">&lt;range-clab label="Your label" value="5" min="0" max="10" step="1"&gt;&lt;/range-clab&gt;</code></pre></p>
 </section>
+
+<h2 id="attrs2">Attributes &lt;range-clab&gt;</h2>
+<section>
+	<table class="striped-table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Values</th>
+				<th>Default</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>label</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>name</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>rangeinput</td>
+			</tr>
+			<tr>
+				<td>value</td>
+				<td>number</td>
+				<td>any valid number inside the range you set</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>min</td>
+				<td>number</td>
+				<td>minimum value</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>max</td>
+				<td>number</td>
+				<td>maximum value</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>step</td>
+				<td>number</td>
+				<td>step value</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>show-details</td>
+				<td>boolean</td>
+				<td>true/false</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
 <h2 id="examples2">Example</h2>
 <section>
 	<article>
-		<input type="range">
+		<range-clab label="My wonderful range input label" value="5" min="0" max="10" step="1"></range-clab>
+		<br><br>
+		<range-clab label="What is your age?" value="20" min="18" max="33" step="1" show-details></range-clab>
 	</article>
 </section>
 
