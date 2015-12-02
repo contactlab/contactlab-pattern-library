@@ -5,7 +5,7 @@
 <h1 id="title1">Input text</h1>
 <h2 id="syntax1">Syntax</h2>
 <section>
-	<p><pre><code class="html">&lt;input-clab label="input label"&gt; <i class="italic">optional string as caption</i> &lt;/input-clab&gt;</code></pre></p>
+	<p><pre><code class="html">&lt;input-clab label="input label"&gt; <i class="italic">optional string as note</i> &lt;/input-clab&gt;</code></pre></p>
 </section>
 <h2 id="attrs1">Attributes &lt;input-clab&gt;</h2>
 <section>
@@ -53,6 +53,12 @@
 				<td>placeholder</td>
 				<td>string</td>
 				<td>any valid string</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>note-type</td>
+				<td>string</td>
+				<td>optional additional class for the note</td>
 				<td>none</td>
 			</tr>
 		</tbody>
@@ -207,7 +213,7 @@
 <h1 id="title3">Input file</h1>
 <h2 id="syntax3">Syntax</h2>
 <section>
-	<p><pre><code class="html">&lt;file-clab label="input label"&gt; <i class="italic">optional string as caption</i> &lt;/file-clab&gt;</code></pre></p>
+	<p><pre><code class="html">&lt;file-clab label="input label"&gt; <i class="italic">optional string as note</i> &lt;/file-clab&gt;</code></pre></p>
 </section>
 <h2 id="attrs3">Attributes &lt;file-clab&gt;</h2>
 <section>
@@ -245,20 +251,31 @@
 				<td>true/false</td>
 				<td>false</td>
 			</tr>
+			<tr>
+				<td>type</td>
+				<td>string</td>
+				<td>none, 'success', 'warning', 'error', 'info', 'disabled'</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>note-type</td>
+				<td>string</td>
+				<td>optional additional class for the note</td>
+				<td>none</td>
+			</tr>
 		</tbody>
 	</table>
 </section>
 
 <h2 id="examples3">Example</h2>
 <section>
-
-	<file-clab label="Input file label">Lorem ipsum dolor sit amet</file-clab>
+	<file-clab label="Input file label" type="success">This is a note</file-clab>
 </section>
 
 <h1 id="title4">Input calendar</h1>
 <h2 id="syntax4">Syntax</h2>
 <section>
-	<p><pre><code class="html">&lt;calendar-clab&gt;&lt;/calendar-clab&gt;</code></pre></p>
+	<p><pre><code class="html">&lt;calendar-clab&gt; <i class="italic">optional string as note</i> &lt;/calendar-clab&gt;</code></pre></p>
 </section>
 <h2 id="attrs4">Attributes &lt;calendar-clab&gt;</h2>
 <section>
@@ -278,12 +295,12 @@
 				<td>any valid string</td>
 				<td>none</td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td>value</td>
 				<td>string</td>
 				<td>a date format string</td>
 				<td>none</td>
-			</tr>
+			</tr> -->
 			<tr>
 				<td>disable</td>
 				<td>boolean</td>
@@ -312,6 +329,12 @@
 				<td>type</td>
 				<td>string</td>
 				<td>none, 'success', 'warning', 'error', 'info', 'disabled'</td>
+				<td>none</td>
+			</tr>
+			<tr>
+				<td>note-type</td>
+				<td>string</td>
+				<td>optional additional class for the note</td>
 				<td>none</td>
 			</tr>
 		</tbody>
@@ -375,19 +398,63 @@
 </section>
 
 <section>
-	<!-- radio & checkboxes -->
 	<h1 id="title5">Input radio</h1>
 	<h2 id="syntax5">Syntax</h2>
 	<section>
 		<p><pre><code class="html">&lt;radio-clab labels='["radio 1", "radio 2"]' name="group1"&gt;&lt;/radio-clab&gt;</code></pre></p>
 	</section>
+	<h2 id="attrs5">Attributes &lt;radio-clab&gt;</h2>
+		<section>
+			<table class="striped-table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Values</th>
+						<th>Default</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>labels</td>
+						<td>array</td>
+						<td>an array of labels for the radio inputs creation</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>name</td>
+						<td>string</td>
+						<td>the name for the group of radio inputs</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>wrapper-type</td>
+						<td>string</td>
+						<td>optional classes for the wrapper div</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>active</td>
+						<td>number</td>
+						<td>index of the active radio input</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>disabled</td>
+						<td>array</td>
+						<td>an array of indexes of the disabled radio inputs</td>
+						<td>none</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
 	<h2 id="examples5">Examples</h2>
 	<article>
 		<div class="row">
 			<radio-clab labels='["radio 1", "radio 2", "radio 3"]' name="group1"></radio-clab>
 		</div>
 		<div class="row"><radio-clab labels='["radio 4", "radio 5"]' name="group2" active="0"></radio-clab></div>
-		<div class="row"><radio-clab labels='["radio 6", "radio 7"]' name="group3" active="1" disabled='[0,1]'></radio-clab></div>
+		<div class="row"><radio-clab labels='["radio 6", "radio 7", "radio 8"]' name="group3" active="1" disabled='[1]'></radio-clab></div>
 	</article>
 
     <h1 id="title6">Input checkbox</h1>
@@ -395,6 +462,45 @@
     <section>
 		<p><pre><code class="html">&lt;checkbox-clab labels='["checkbox 1", "checkbox 2"]' name="group1"&gt;&lt;/checkbox-clab&gt;</code></pre></p>
 	</section>
+	<h2 id="attrs6">Attributes &lt;checkbox-clab&gt;</h2>
+		<section>
+			<table class="striped-table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Values</th>
+						<th>Default</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>labels</td>
+						<td>array</td>
+						<td>an array of labels for the checkboxes creation</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>wrapper-type</td>
+						<td>string</td>
+						<td>optional classes for the wrapper div</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>active</td>
+						<td>number</td>
+						<td>index of the active checkbox</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>disabled</td>
+						<td>array</td>
+						<td>an array of indexes of the disabled checkboxes</td>
+						<td>none</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
 	<h2 id="examples6">Examples</h2>
 	<article>
 		<div class="row">
@@ -404,7 +510,7 @@
 			<checkbox-clab labels='["checkbox 4", "checkbox 5", "checkbox 6"]' active="0"></checkbox-clab>
 		</div>
 		<div class="row">
-			<checkbox-clab labels='["checkbox 7", "checkbox 8"]' active="1" disabled='[0,1]'></checkbox-clab>
+			<checkbox-clab labels='["checkbox 7", "checkbox 8"]' active="1" disabled='[0]'></checkbox-clab>
 		</div>
 	</article>
 </section>
@@ -412,7 +518,7 @@
 <h1 id="title7">Select</h1>
 <h2 id="syntax7">Syntax</h2>
 <section>
-	<p><pre><code class="html">&lt;elekti-mer label="Select label" options='["Option1", "Option 2", ..."]'&gt;&lt;/elekti-mer&gt;</code></pre></p>
+	<p><pre><code class="html">&lt;elekti-mer label="Select label" options='[{"value": "A", "label": "Option 1"}, ...]'&gt;&lt;/elekti-mer&gt;</code></pre></p>
 </section>
 <h2 id="attrs7">Attributes  &lt;elekti-mer&gt;</h2>
 <section>
@@ -448,9 +554,15 @@
 			</tr>
 			<tr>
 				<td>default</td>
-				<td>number</td>
-				<td>any valid number</td>
+				<td>string</td>
+				<td>the label of one of the options</td>
 				<td>none</td>
+			</tr>
+			<tr>
+				<td>placeholder</td>
+				<td>string</td>
+				<td>any valid string</td>
+				<td>Select...</td>
 			</tr>
 			<tr>
 				<td>value</td>
@@ -482,7 +594,7 @@
 				<td>optionsFn</td>
 				<td>function</td>
 				<td>a function returning a Javascript promise that returns the options array</td>
-				<td>non</td>
+				<td>none</td>
 			</tr>
 		</tbody>
 	</table>
