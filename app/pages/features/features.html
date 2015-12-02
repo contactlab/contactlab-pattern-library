@@ -3,38 +3,9 @@
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos temporibus, quos sapiente alias assumenda unde reprehenderit numquam. Velit nesciunt modi officiis possimus iste minima veniam praesentium sed tenetur voluptatum!
 </p> -->
 <h2 id="syntax1">Syntax</h2><section>
-	<p><pre><code class="html">&lt;div class="feature"&gt;
-	&lt;div class="description"&gt;
-		&lt;a href="#"&gt;
-	    		&lt;h2&gt; <i class="italic">Default</i> &lt;/h2&gt;
-	    		&lt;p&gt; <i class="italic">text</i> &lt;/p&gt;
-		&lt;/a&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</code></pre></p>
-	<p><pre><code class="html">&lt;div class="feature"&gt;
-	&lt;div class="icon"&gt;
-		&lt;i class="fa fa-cloud-upload"&gt;&lt;/i&gt;
-	&lt;/div&gt;
-	&lt;div class="description"&gt;
-		&lt;a href="#"&gt;
-			&lt;h2&gt; <i class="italic">Default with icon</i> &lt;/h2&gt;
-			&lt;p&gt; <i class="italic">text</i> &lt;/p&gt;
-		&lt;/a&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</code></pre></p>
-	<p><pre><code class="html">&lt;div class="feature"&gt;
-	&lt;div class="icon"&gt;
- 		&lt;img src="#"&gt;
-	&lt;/div&gt;
-	&lt;div class="description"&gt;
-		&lt;a href="#"&gt;
-			&lt;h2&gt; <i class="italic">Default with image</i> &lt;/h2&gt;
-			&lt;p&gt; <i class="italic">text</i> &lt;/p&gt;
-		&lt;/a&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</code></pre></p>
+	<p><pre><code class="html">&lt;feature-clab&gt; <i class="italic">html content</i> &lt;/feature-clab&gt;</code></pre></p>
 </section>
-<h2 id="attrs1">Attributes &lt;div class="feature"&gt;</h2>
+<!-- <h2 id="attrs1">Attributes &lt;feature-clab&gt;</h2>
 <section>
 	<table class="striped-table">
 		<thead>
@@ -58,120 +29,67 @@
 			</tr>
 		</tbody>
 	</table>
-</section>
+</section> -->
 <h2 id="examples1">Examples</h2>
 <section id="features">
 	<h3>Icons</h3>
 	<article>
-		<div class="feature">
-	        <div class="description">
-	          <a href="#">
-	            <h2>Default</h2>
+		<feature-clab>
+			<h2>Default</h2>
 	            <p>
 	              Lorem ipsum dolor sit amet
 	            </p>
-	          </a>
-	        </div>
-      	</div>
-		<div class="feature">
-	        <div class="icon">
-	          <i class="fa fa-cloud-upload"></i>
-	        </div>
-	        <div class="description">
-	          <a href="#">
-	            <h2>Default with icon</h2>
+		</feature-clab>
+		<feature-clab icon-class="fa fa-cloud-upload">
+			<h2>Default with icon</h2>
 	            <p>
 	              Lorem ipsum dolor sit amet
 	            </p>
-	          </a>
-	        </div>
-      	</div>
-      	<div class="feature big-icon">
-	        <div class="icon">
-	          <i class="fa fa-cloud-upload"></i>
-	        </div>
-	        <div class="description">
-	          <a href="#">
-	            <h2>Big icon with icon</h2>
+		</feature-clab>
+		<feature-clab icon-class="fa fa-cloud-upload" size="big">
+			<h2>Default with icon</h2>
 	            <p>
 	              Lorem ipsum dolor sit amet
 	            </p>
-	          </a>
-	        </div>
-      	</div>
+		</feature-clab>
   	</article>
 
   	<h3>Images</h3>
   	<article>
-		<div class="feature">
-	        <div class="icon">
-	          <img src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" alt="">
-	        </div>
-	        <div class="description">
-	          <a href="#">
-	            <h2>Default with image</h2>
+  		<feature-clab src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708">
+			<h2>Default with image</h2>
 	            <p>
 	              Lorem ipsum dolor sit amet
 	            </p>
-	          </a>
-	        </div>
-      	</div>
-		<div class="feature medium-icon">
-	        <div class="icon">
-	          <img src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" alt="">
-	        </div>
-	        <div class="description">
-	          <a href="#">
-	            <h2>Medium with image</h2>
+		</feature-clab>
+  		<feature-clab src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" size="medium">
+			<h2>Default with medium image</h2>
 	            <p>
 	              Lorem ipsum dolor sit amet
 	            </p>
-	          </a>
-	        </div>
-      	</div>
-      	<div class="feature big-icon">
-	        <div class="icon">
-	          <img src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" alt="">
-	        </div>
-	        <div class="description">
-	          <a href="#">
-	            <h2>Big icon with image</h2>
+		</feature-clab>
+  		<feature-clab src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" size="big">
+			<h2>Default with big image</h2>
 	            <p>
 	              Lorem ipsum dolor sit amet
 	            </p>
-	          </a>
-	        </div>
-      	</div>
+		</feature-clab>
   	</article>
 
   	<h3>Vertical</h3>
 	<article>
-      	<div class="feature vertical">
-	        <div class="icon">
-	          <img src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" alt="">
-	        </div>
-	        <div class="description">
-	          <a href="#">
-	            <h2>Vertical with icon</h2>
+  		<feature-clab src="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" vertical>
+			<h2>Vertical with image</h2>
 	            <p>
 	              Lorem ipsum dolor sit amet
 	            </p>
-	          </a>
-	        </div>
-      	</div>
+		</feature-clab>
 
-      	<div class="feature vertical">
-	        <div class="icon">
-	          <i class="fa fa-cloud-upload"></i>
-	        </div>
-	        <div class="description">
-	          <a href="#">
-	            <h2>SOAP API - PHP client</h2>
+  		<feature-clab icon-class="fa fa-cloud-upload" vertical>
+			<h2>SOAP API - PHP client</h2>
 	            <p>
 	              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quaerat perspiciatis, labore sequi. Vel dolores non, aliquam voluptates mollitia quos.
 	            </p>
-	          </a>
-	        </div>
-      	</div>
+		</feature-clab>
 	</article>	
 </section>

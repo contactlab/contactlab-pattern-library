@@ -318,55 +318,33 @@
 	<h1 id="title5">Input radio</h1>
 	<h2 id="syntax5">Syntax</h2>
 	<section>
-		<p><pre><code class="html">&lt;input id="radio" type="radio" name="radio_button"/&gt;
-&lt;label for="radio"&gt;radio&lt;/label&gt;</code></pre></p>
+		<p><pre><code class="html">&lt;radio-clab labels='["radio 1", "radio 2"]' name="group1"&gt;&lt;/radio-clab&gt;</code></pre></p>
 	</section>
 	<h2 id="examples5">Examples</h2>
 	<article>
-		<!-- radio -->
-        <div class="row">
-			<input id="radio1" type="radio" name="radio_button"/>
-			<label for="radio1">radio 1</label>
-        </div>
-        <div class="row">
-			<input id="radio2" type="radio" name="radio_button" checked/>
-			<label for="radio2">radio 2</label>
-        </div>
-        <div class="row">
-			<input id="radio3" type="radio" name="radio_button_2" disabled/>
-			<label for="radio3">radio 3</label>
-        </div>
-        <div class="row">
-			<input id="radio4" type="radio" name="radio_button_2" disabled checked/>
-			<label for="radio4">radio 4</label>
-        </div>
+		<div class="row">
+			<radio-clab labels='["radio 1", "radio 2", "radio 3"]' name="group1"></radio-clab>
+		</div>
+		<div class="row"><radio-clab labels='["radio 4", "radio 5"]' name="group2" active="0"></radio-clab></div>
+		<div class="row"><radio-clab labels='["radio 6", "radio 7"]' name="group3" active="1" disabled='[0,1]'></radio-clab></div>
 	</article>
 
     <h1 id="title6">Input checkbox</h1>
     <h2 id="syntax6">Syntax</h2>
     <section>
-		<p><pre><code class="html">&lt;input id="check" type="checkbox"/&gt;
-&lt;label for="check"&gt;checkbox&lt;/label&gt;</code></pre></p>
+		<p><pre><code class="html">&lt;checkbox-clab labels='["checkbox 1", "checkbox 2"]' name="group1"&gt;&lt;/checkbox-clab&gt;</code></pre></p>
 	</section>
 	<h2 id="examples6">Examples</h2>
 	<article>
-        <!-- checkboxes -->
-        <div class="row">
-			<input id="check1" type="checkbox"/>
-			<label for="check1">checkbox 1</label>
-        </div>
-        <div class="row">
-			<input id="check2" type="checkbox" checked/>
-			<label for="check2">checkbox 2</label>
-        </div>
-        <div class="row">
-			<input id="check3" type="checkbox" disabled/>
-			<label for="check3">checkbox 3</label>
-        </div>
-        <div class="row">
-			<input id="check3" type="checkbox" disabled checked/>
-			<label for="check3">checkbox 3</label>
-        </div>
+		<div class="row">
+			<checkbox-clab labels='["checkbox 1", "checkbox 2", "checkbox 3"]'></checkbox-clab>
+		</div>
+		<div class="row">
+			<checkbox-clab labels='["checkbox 4", "checkbox 5", "checkbox 6"]' active="0"></checkbox-clab>
+		</div>
+		<div class="row">
+			<checkbox-clab labels='["checkbox 7", "checkbox 8"]' active="1" disabled='[0,1]'></checkbox-clab>
+		</div>
 	</article>
 </section>
 <section>
@@ -475,7 +453,7 @@
 	<h2 id="examples7">Examples</h2>
 	<article>
 		<div class="input-wrapper">
-			<elekti-mer label="Select label" options='["Option1", "Option 2", "Option 3","Option1", "Option 2", "Option 3","Option1", "Option 2", "Option 3"]'></elekti-mer>
+			<elekti-mer label="Select label" options='[{"label":"ciccio", "value":"ciccio"},{"label":"puzzo raga", "value":"puzzo raga"},{"label":"bella", "value":"bella"},{"label":"raga", "value":"raga"},{"label":"tutto raga", "value":"tutto raga"},{"label":"tutto rego", "value":"tutto rego"}]'></elekti-mer>
 			<div class="note">Lorem ipsum dolor sit.</div>
 		</div>
 	</article>

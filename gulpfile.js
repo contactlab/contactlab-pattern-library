@@ -82,7 +82,7 @@ gulp.task("webpack", function(callback) {
 // Server
 gulp.task('connect', function (port) {
   !port ? port = 3000 : port;
-  console.log(port); -
+  console.log(port);
   connect.server({
     root: 'app',
     port: port,

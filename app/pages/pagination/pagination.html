@@ -4,24 +4,9 @@
 </p> -->
 <h2 id="syntax1">Syntax</h2>
 <section>
-	<p><pre><code class="html">&lt;ul class="pagination"&gt;
-	&lt;li class="first"&gt;
-		&lt;a href="#"&gt;&lt;i class="fa fa-angle-double-left"&gt;&lt;/i&gt;&lt;/a&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a href="#"&gt;&lt;i class="fa fa-angle-left"&gt;&lt;/i&gt;&lt;/a&gt;
-	&lt;/li&gt;
-	&lt;li class="active"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
-		&lt;a href="#"&gt;&lt;i class="fa fa-angle-right"&gt;&lt;/i&gt;&lt;/a&gt;
-	&lt;/li&gt;
-	&lt;li class="last"&gt;
-		&lt;a href="#"&gt;&lt;i class="fa fa-angle-double-right"&gt;&lt;/i&gt;&lt;/a&gt;
-	&lt;/li&gt;
-&lt;/ul&gt;</code></pre></p>
+	<p><pre><code class="html">&lt;pagination-clab pages='["#1", "#2", "#3", "#4"]'&gt;&lt;/pagination-clab&gt;</code></pre></p>
 </section>
-<!-- <h2>Attributes</h2>
+<h2>Attributes</h2>
 <section>
 	<table class="striped-table">
 		<thead>
@@ -34,41 +19,23 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>pages</td>
+				<td>array</td>
+				<td>valid array of anchors/urls</td>
+				<td>none</td>
 			</tr>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td>current-page</td>
+				<td>number</td>
+				<td>valid page number</td>
+				<td>1</td>
 			</tr>
 		</tbody>
 	</table>
-</section> -->
+</section>
 <h2 id="examples1">Examples</h2>
 <section id="pagination">
 	<div class="row">
-		<ul class="pagination">
-			<li class="first">
-				<a href="#"><i class="fa fa-angle-double-left"></i></a>
-			</li>
-		    <li>
-		      <a href="#"><i class="fa fa-angle-left"></i></a>
-		    </li>
-		    <li class="active"><a href="#">1</a></li>
-		    <li><a href="#">2</a></li>
-		    <li><a href="#">3</a></li>
-		    <li><a href="#">4</a></li>
-		    <li><span>5</span></li>
-		    <li>
-		      <a href="#"><i class="fa fa-angle-right"></i></a>
-		    </li>
-			<li class="last">
-		      <a href="#"><i class="fa fa-angle-double-right"></i></a>
-		    </li>
-		 </ul>
+		<pagination-clab pages='["#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8"]' current-page="3"></pagination-clab>
 	</div>
 </section>
