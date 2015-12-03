@@ -690,3 +690,12 @@
 		</select>
 	</article>
 </section>
+
+
+<script>
+	// Calendar
+	var calendars = document.querySelectorAll('calendar-clab');
+	for(var i=0; i<calendars.length; i++){
+		calendars[i].options = {time: false, inputFormat: "DD/MM/YYYY"};
+	}
+</script>
