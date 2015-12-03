@@ -1,198 +1,242 @@
-<h1>Forms</h1>
-<!-- <p>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos temporibus, quos sapiente alias assumenda unde reprehenderit numquam. Velit nesciunt modi officiis possimus iste minima veniam praesentium sed tenetur voluptatum!
-</p> -->
-<h1 id="title1">Input text</h1>
-<h2 id="syntax1">Syntax</h2>
-<section>
-	<p><pre><code class="html">&lt;input-clab label="input label"&gt; <i class="italic">optional string as caption</i> &lt;/input-clab&gt;</code></pre></p>
-</section>
-<h2 id="attrs1">Attributes &lt;input-clab&gt;</h2>
-<section>
-	<table class="striped-table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Values</th>
-				<th>Default</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>label</td>
-				<td>string</td>
-				<td>any valid string</td>
-				<td>none</td>
-			</tr>
-			<tr>
-				<td>name</td>
-				<td>string</td>
-				<td>any valid string</td>
-				<td>'textinput'</td>
-			</tr>
-			<tr>
-				<td>type</td>
-				<td>string</td>
-				<td>none, 'success', 'warning', 'error', 'info', 'disabled'</td>
-				<td>none</td>
-			</tr>
-			<tr>
-				<td>value</td>
-				<td>string</td>
-				<td>any valid string</td>
-				<td>none</td>
-			</tr>
-			<tr>
-				<td>disabled</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>placeholder</td>
-				<td>string</td>
-				<td>any valid string</td>
-				<td>none</td>
-			</tr>
-		</tbody>
-	</table>
-</section>
+<div class="component-intro">
+	<div class="category">UI components</div>
+	<h1>Forms</h1>
+</div>
+<div class="content">
+	<section>
+		<h2 class="component-name">
+			Text input
+		</h2>
+		<div class="component-example">
+			<article>
+				<label for="input1">Label</label>
+				<input type="text" id="input1">
+				<div class="input-note">Lorem ipsum dolor sit.</div>
+			</article>
 
-<h2 id="examples1">Examples</h2>
-<section>
-	<article>
-		<input-clab>Lorem ipsum dolor sit.</input-clab>
-	</article>
-	<article>
-		<input-clab type="success" label="Success label">Lorem ipsum dolor sit.</input-clab>
-	</article>
-	<article>
-		<input-clab type="warning" label="Warning label">Lorem ipsum dolor sit.</input-clab>
-	</article>
-	<article>
-		<input-clab type="error" label="Error label">Lorem ipsum dolor sit.</input-clab>
-	</article>
-	<article>
-		<input-clab type="info" label="Info label">Lorem ipsum dolor sit.</input-clab>
-	</article>
-	<article>
-		<input-clab label="Disabled label" value="Disabled input" disabled>Lorem ipsum dolor sit.</input-clab>
-	</article>
-</section>
-<section>
-	<!-- <article>
-		<div class="input-wrapper">
-			<elekti-mer  default="0" no-search options='["Option1", "Option 2", "Option 3"]' class="select-button"></elekti-mer>
-		</div>
-	</article> -->
-	<h2>Static input</h2>
-	<article>
-		<div class="input-wrapper static">
-			<label for="">Static label</label>
-			<input type="text">
-			<div class="note">Lorem ipsum dolor sit amet.</div>
-		</div>
-	</article>
-	<article>
-		<div class="input-wrapper success static">
-			<label for="">Success static label</label>
-			<input type="text">
-			<div class="note">Lorem ipsum dolor sit amet.</div>
-		</div>
-	</article>
-	<article>
-		<div class="input-wrapper warning static">
-			<label for="">Warning static label</label>
-			<input type="text">
-			<div class="note">Lorem ipsum dolor sit amet.</div>
-		</div>
-	</article>
-	<article>
-		<div class="input-wrapper error static">
-			<label for="">Error static label</label>
-			<input type="text">
-			<div class="note">Lorem ipsum dolor sit amet.</div>
-		</div>
-	</article>
-	<article>
-		<div class="input-wrapper info static">
-			<label for="">Info static label</label>
-			<input type="text">
-			<div class="note">Lorem ipsum dolor sit amet.</div>
-		</div>
-	</article>
-	<article>
-		<div class="input-wrapper static">
-			<label for="">Disabled static label</label>
-			<input type="text" disabled value="Disabled input">
-			<div class="note">Lorem ipsum dolor sit amet.</div>
-		</div>
-	</article>
-</section>
+			<article>
+				<label for="input2" class="success">Label success</label>
+				<input type="text" id="input2" class="success">
+				<div class="input-note success">Lorem ipsum dolor sit.</div>
+			</article>
 
-<h1 id="title2">Input range</h1>
-<h2 id="syntax2">Syntax</h2>
-<section>
-	<p><pre><code class="html">&lt;input type="range"&gt;</code></pre></p>
-</section>
-<h2 id="examples2">Example</h2>
-<section>
-	<article>
-		<input type="range">
-	</article>
-</section>
+			<article>
+				<label for="input3" class="warning">Label warning</label>
+				<input type="text" class="warning" id="input3">
+				<div class="input-note warning">Lorem ipsum dolor sit.</div>
+			</article>
 
-<h1 id="title3">Input file</h1>
-<h2 id="syntax3">Syntax</h2>
-<section>
-	<p><pre><code class="html">&lt;file-clab label="input label"&gt; <i class="italic">optional string as caption</i> &lt;/file-clab&gt;</code></pre></p>
-</section>
-<h2 id="attrs3">Attributes &lt;file-clab&gt;</h2>
-<section>
-	<table class="striped-table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Values</th>
-				<th>Default</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>label</td>
-				<td>string</td>
-				<td>any valid string</td>
-				<td>none</td>
-			</tr>
-			<tr>
-				<td>name</td>
-				<td>string</td>
-				<td>any valid string</td>
-				<td>'textinput'</td>
-			</tr>
-			<tr>
-				<td>value</td>
-				<td>string</td>
-				<td>any valid string</td>
-				<td>none</td>
-			</tr>
-			<tr>
-				<td>multiple</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-		</tbody>
-	</table>
-</section>
+			<article>
+				<label for="input4" class="error">Label error</label>
+				<input type="text" id="input4">
+				<div class="input-note">Lorem ipsum dolor sit.</div>
+			</article>
 
-<h2 id="examples3">Example</h2>
-<section>
+			<article>
+				<label for="input5" class="info">Label info</label>
+				<input type="text" id="input5">
+				<div class="input-note">Lorem ipsum dolor sit.</div>
+			</article>
 
-	<file-clab label="Input file label">Lorem ipsum dolor sit amet</file-clab>
-</section>
+			<article>
+				<label for="input6" class="disabled">Label info</label>
+				<input type="text" id="input6" disabled>
+				<div class="input-note disabled">Lorem ipsum dolor sit.</div>
+			</article>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&#x3C;label for=&#x22;input2&#x22; class=&#x22;success&#x22;&#x3E;Label success&#x3C;/label&#x3E;
+&#x3C;input type=&#x22;text&#x22; id=&#x22;input2&#x22; class=&#x22;success&#x22;&#x3E;
+&#x3C;div class=&#x22;input-note success&#x22;&#x3E;Lorem ipsum dolor sit.&#x3C;/div&#x3E;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&#x3C;input-clab label=&#x22;input label&#x22;&#x3E; optional string as caption &#x3C;/input-clab&#x3E;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>label</td>
+								<td>string</td>
+								<td>any valid string</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>name</td>
+								<td>string</td>
+								<td>any valid string</td>
+								<td>'textinput'</td>
+							</tr>
+							<tr>
+								<td>type</td>
+								<td>string</td>
+								<td>none, 'success', 'warning', 'error', 'info', 'disabled'</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>value</td>
+								<td>string</td>
+								<td>any valid string</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>disabled</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>placeholder</td>
+								<td>string</td>
+								<td>any valid string</td>
+								<td>none</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="component-name">
+			file input
+		</h2>
+		<div class="component-example">
+			<file-clab label="Input file label">Lorem ipsum dolor sit amet</file-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;file-clab label="input label"&gt; <i class="italic">optional string as caption</i> &lt;/file-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>label</td>
+								<td>string</td>
+								<td>any valid string</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>name</td>
+								<td>string</td>
+								<td>any valid string</td>
+								<td>'textinput'</td>
+							</tr>
+							<tr>
+								<td>value</td>
+								<td>string</td>
+								<td>any valid string</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>multiple</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="component-name">
+			Radio
+		</h2>
+		<div class="component-example">
+	        <div class="row">
+				<input id="radio1" type="radio" name="radio_button"/>
+				<label for="radio1">radio 1</label>
+	        </div>
+	        <div class="row">
+				<input id="radio2" type="radio" name="radio_button" checked/>
+				<label for="radio2">radio 2</label>
+	        </div>
+	        <div class="row">
+				<input id="radio3" type="radio" name="radio_button_2" disabled/>
+				<label for="radio3">radio 3</label>
+	        </div>
+	        <div class="row">
+				<input id="radio4" type="radio" name="radio_button_2" disabled checked/>
+				<label for="radio4">radio 4</label>
+	        </div>
+			
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;input id="radio" type="radio" name="radio_button"/&gt;
+&lt;label for="radio"&gt;radio&lt;/label&gt;</code></pre>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="component-name">
+			Checkbox
+		</h2>
+		<div class="component-example">
+	        <div class="row">
+				<input id="check1" type="checkbox"/>
+				<label for="check1">checkbox 1</label>
+	        </div>
+	        <div class="row">
+				<input id="check2" type="checkbox" checked/>
+				<label for="check2">checkbox 2</label>
+	        </div>
+	        <div class="row">
+				<input id="check3" type="checkbox" disabled/>
+				<label for="check3">checkbox 3</label>
+	        </div>
+	        <div class="row">
+				<input id="check3" type="checkbox" disabled checked/>
+				<label for="check3">checkbox 3</label>
+	        </div>
+			
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;input id="check" type="checkbox"/&gt;
+&lt;label for="check"&gt;checkbox&lt;/label&gt;</code></pre>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+
+
+
+</div>
+
+
+
+
+
 
 <h1 id="title4">Input calendar</h1>
 <h2 id="syntax4">Syntax</h2>
@@ -313,62 +357,15 @@
 	</article>
 </section>
 
-<section>
-	<!-- radio & checkboxes -->
-	<h1 id="title5">Input radio</h1>
-	<h2 id="syntax5">Syntax</h2>
-	<section>
-		<p><pre><code class="html">&lt;input id="radio" type="radio" name="radio_button"/&gt;
-&lt;label for="radio"&gt;radio&lt;/label&gt;</code></pre></p>
-	</section>
-	<h2 id="examples5">Examples</h2>
-	<article>
-		<!-- radio -->
-        <div class="row">
-			<input id="radio1" type="radio" name="radio_button"/>
-			<label for="radio1">radio 1</label>
-        </div>
-        <div class="row">
-			<input id="radio2" type="radio" name="radio_button" checked/>
-			<label for="radio2">radio 2</label>
-        </div>
-        <div class="row">
-			<input id="radio3" type="radio" name="radio_button_2" disabled/>
-			<label for="radio3">radio 3</label>
-        </div>
-        <div class="row">
-			<input id="radio4" type="radio" name="radio_button_2" disabled checked/>
-			<label for="radio4">radio 4</label>
-        </div>
-	</article>
 
-    <h1 id="title6">Input checkbox</h1>
-    <h2 id="syntax6">Syntax</h2>
-    <section>
-		<p><pre><code class="html">&lt;input id="check" type="checkbox"/&gt;
-&lt;label for="check"&gt;checkbox&lt;/label&gt;</code></pre></p>
-	</section>
-	<h2 id="examples6">Examples</h2>
-	<article>
-        <!-- checkboxes -->
-        <div class="row">
-			<input id="check1" type="checkbox"/>
-			<label for="check1">checkbox 1</label>
-        </div>
-        <div class="row">
-			<input id="check2" type="checkbox" checked/>
-			<label for="check2">checkbox 2</label>
-        </div>
-        <div class="row">
-			<input id="check3" type="checkbox" disabled/>
-			<label for="check3">checkbox 3</label>
-        </div>
-        <div class="row">
-			<input id="check3" type="checkbox" disabled checked/>
-			<label for="check3">checkbox 3</label>
-        </div>
-	</article>
-</section>
+
+
+
+
+
+
+
+
 <section>
 <h1 id="title7">Select</h1>
 <h2 id="syntax7">Syntax</h2>

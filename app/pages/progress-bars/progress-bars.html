@@ -1,110 +1,692 @@
-<h1 id="title1">Progress bars</h1>
-<!-- <p>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos temporibus, quos sapiente alias assumenda unde reprehenderit numquam. Velit nesciunt modi officiis possimus iste minima veniam praesentium sed tenetur voluptatum!
-</p> -->
-<h2 id="syntax1">Syntax</h2>
-<section>
-	<p><pre><code class="html">&lt;progress-clab value="50"&gt;&lt;/progress-clab&gt;</code></pre></p>
-</section>
-<h2 id="attrs1">Attributes &lt;progress-clab&gt;</h2>
-<section>
-	<table class="striped-table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Values</th>
-				<th>Default</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>value</td>
-				<td>number</td>
-				<td>any integer number</td>
-				<td>0</td>
-			</tr>
-			<tr>
-				<td>minimal</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>primary</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>secondary</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>info</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>success</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>warning</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>error</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-		</tbody>
-	</table>
-</section>
-<h2 id="examples1">Examples</h2>
-<section id="progress-clabs">
-	<h2>Default</h2>
-	<article>
-		<progress-clab value="50"></progress-clab>
-		<progress-clab value="30" minimal></progress-clab>
-	</article>
-	<h2>Primary</h2>
-	<article>
-		<progress-clab value="50" primary></progress-clab>
-		<progress-clab value="30" minimal primary></progress-clab>
-	</article>
-	<h2>Secondary</h2>
-	<article>
-		<progress-clab value="50" secondary></progress-clab>
-		<progress-clab value="30" minimal secondary></progress-clab>
-	</article>
-	<h2>Info</h2>
-	<article>
-		<progress-clab value="50" info></progress-clab>
-		<progress-clab value="30" minimal info></progress-clab>
-	</article>
-	<h2>Success</h2>
-	<article>
-		<progress-clab value="50" success></progress-clab>
-		<progress-clab value="30" minimal success></progress-clab>
-	</article>
-	<h2>Warning</h2>
-	<article>
-		<progress-clab value="50" warning></progress-clab>
-		<progress-clab value="30" minimal warning></progress-clab>
-	</article>
-	<h2>Error</h2>
-	<article>
-		<progress-clab value="50" error></progress-clab>
-		<progress-clab value="30" minimal error></progress-clab>
-	</article>
+<div class="component-intro">
+	<div class="category">UI components</div>
+	<h1>Progress bars</h1>
+</div>
+<div class="content">
+	<section>
+		<h2 class="component-name">
+			Base progress bar
+		</h2>
+		<div class="component-example">
+			<progress-clab value="50"></progress-clab>
+			<progress-clab value="30" minimal></progress-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- base progress bar --&gt;
+&lt;div class=&quot;progress-bar&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:50%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;50%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;&#x9;&#x9;&#x9;
+&#x9;&#x9;&#x9;
+&lt;!-- minimal progress bar --&gt;
+&lt;div class=&quot;progress-bar minimal&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:30%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;30%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;progress-clab value=&quot;50&quot;&gt;&lt;/progress-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>value</td>
+								<td>number</td>
+								<td>any integer number</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>minimal</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>primary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>secondary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>info</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>success</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>warning</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>error</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
 
-</section>
+	<section>
+		<h2 class="component-name">
+			Primary progress bar
+		</h2>
+		<div class="component-example">
+			<progress-clab value="50" primary="true"></progress-clab>
+			<progress-clab value="30" primary="true" minimal></progress-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- base progress bar --&gt;
+&lt;div class=&quot;progress-bar primary&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:50%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;50%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;&#x9;&#x9;&#x9;
+&#x9;&#x9;&#x9;
+&lt;!-- minimal progress bar --&gt;
+&lt;div class=&quot;progress-bar primary minimal&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:30%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;30%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;progress-clab primary="true" value=&quot;50&quot;&gt;&lt;/progress-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>value</td>
+								<td>number</td>
+								<td>any integer number</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>minimal</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>primary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>secondary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>info</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>success</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>warning</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>error</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="component-name">
+			Secondary progress bar
+		</h2>
+		<div class="component-example">
+			<progress-clab value="50" secondary="true"></progress-clab>
+			<progress-clab value="30" secondary="true" minimal></progress-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- base progress bar --&gt;
+&lt;div class=&quot;progress-bar secondary&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:50%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;50%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;&#x9;&#x9;&#x9;
+&#x9;&#x9;&#x9;
+&lt;!-- minimal progress bar --&gt;
+&lt;div class=&quot;progress-bar secondary minimal&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:30%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;30%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;progress-clab secondary="true" value=&quot;50&quot;&gt;&lt;/progress-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>value</td>
+								<td>number</td>
+								<td>any integer number</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>minimal</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>primary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>secondary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>info</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>success</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>warning</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>error</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="component-name">
+			Success progress bar
+		</h2>
+		<div class="component-example">
+			<progress-clab value="50" success="true"></progress-clab>
+			<progress-clab value="30" success="true" minimal></progress-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- base progress bar --&gt;
+&lt;div class=&quot;progress-bar success&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:50%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;50%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;&#x9;&#x9;&#x9;
+&#x9;&#x9;&#x9;
+&lt;!-- minimal progress bar --&gt;
+&lt;div class=&quot;progress-bar success minimal&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:30%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;30%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;progress-clab success="true" value=&quot;50&quot;&gt;&lt;/progress-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>value</td>
+								<td>number</td>
+								<td>any integer number</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>minimal</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>primary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>secondary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>info</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>success</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>warning</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>error</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="component-name">
+			Warning progress bar
+		</h2>
+		<div class="component-example">
+			<progress-clab value="50" warning="true"></progress-clab>
+			<progress-clab value="30" warning="true" minimal></progress-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- base progress bar --&gt;
+&lt;div class=&quot;progress-bar warning&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:50%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;50%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;&#x9;&#x9;&#x9;
+&#x9;&#x9;&#x9;
+&lt;!-- minimal progress bar --&gt;
+&lt;div class=&quot;progress-bar warning minimal&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:30%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;30%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;progress-clab warning="true" value=&quot;50&quot;&gt;&lt;/progress-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>value</td>
+								<td>number</td>
+								<td>any integer number</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>minimal</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>primary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>secondary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>info</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>success</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>warning</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>error</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="component-name">
+			Error progress bar
+		</h2>
+		<div class="component-example">
+			<progress-clab value="50" error="true"></progress-clab>
+			<progress-clab value="30" error="true" minimal></progress-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- base progress bar --&gt;
+&lt;div class=&quot;progress-bar error&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:50%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;50%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;&#x9;&#x9;&#x9;
+&#x9;&#x9;&#x9;
+&lt;!-- minimal progress bar --&gt;
+&lt;div class=&quot;progress-bar error minimal&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:30%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;30%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;progress-clab error="true" value=&quot;50&quot;&gt;&lt;/progress-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>value</td>
+								<td>number</td>
+								<td>any integer number</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>minimal</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>primary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>secondary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>info</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>success</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>warning</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>error</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="component-name">
+			Info progress bar
+		</h2>
+		<div class="component-example">
+			<progress-clab value="50" info="true"></progress-clab>
+			<progress-clab value="30" info="true" minimal></progress-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- base progress bar --&gt;
+&lt;div class=&quot;progress-bar info&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:50%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;50%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;&#x9;&#x9;&#x9;
+&#x9;&#x9;&#x9;
+&lt;!-- minimal progress bar --&gt;
+&lt;div class=&quot;progress-bar info minimal&quot;&gt;
+&#x9;&lt;section&gt;
+&#x9;&#x9;&lt;article style=&quot;width:30%;&quot;&gt;
+&#x9;&#x9;&#x9;&lt;label id=&quot;label&quot;&gt;30%&lt;/label&gt;
+&#x9;&#x9;&lt;/article&gt;
+&#x9;&lt;/section&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;progress-clab info="true" value=&quot;50&quot;&gt;&lt;/progress-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>value</td>
+								<td>number</td>
+								<td>any integer number</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>minimal</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>primary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>secondary</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>info</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>success</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>warning</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>error</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+</div>
+

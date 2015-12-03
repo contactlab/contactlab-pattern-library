@@ -1,383 +1,1023 @@
-<h1 id="title1">Buttons</h1>
-<!-- <p>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos temporibus, quos sapiente alias assumenda unde reprehenderit numquam. Velit nesciunt modi officiis possimus iste minima veniam praesentium sed tenetur voluptatum!
-</p> -->
-<h2 id="syntax1">Syntax</h2>
-<section>
-	<p><pre><code class="html">&lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt;
+<div class="component-intro">
+	<div class="category">UI components</div>
+	<h1>Buttons</h1>
+</div>
+<div class="content">
+	<div class="component-description">
+		Buttons are used as triggers for actions. They are used in forms, toolbars, dialog footers and as stand-alone action triggers. Buttons should rarely, if ever, be used for navigation.<br/>
+		Actions are operations that are performed on objects.<br/>
+		Navigation changes the screen or view or takes you to another context in the application.
+	</div>
+
+	<!-- BOTTONE DI BASE -->
+	<section>
+		<h2 class="component-name">
+			Basic buttons
+		</h2>
+		<div class="component-example">
+			<button-clab>Button</button-clab>
+			<button-clab disabled>Button</button-clab>
+			<button-clab icon="clab clab-icon-sign">Button</button-clab>
+			<button-clab appearance="full">Button</button-clab>
+			<button-clab appearance="flat">Button</button-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Standard button --&gt;
+&lt;button class="btn"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- disabled button --&gt;
+&lt;button class="btn" disabled&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Standard button with icon --&gt;
+&lt;button class="btn"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full button --&gt;
+&lt;button class="btn full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat button --&gt;
+&lt;button class="btn flat"&gt;content&lt;/button&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Standard button --&gt;
+&lt;button-clab&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- disabled button --&gt;
+&lt;button-clab disabled&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Standard button with icon --&gt;
+&lt;button-clab icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full button --&gt;
+&lt;button-clab appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat button --&gt;
+&lt;button-clab appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>appearance</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: bordered button
+									<br><b>'full'</b>: button filled with background color
+									<br><b>'flat'</b>: button without borders
+								</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>icon</td>
+								<td>string</td>
+								<td>any valid icon class</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>size</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: regular size button
+									<br><b>'small'</b>: smaller button</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>disabled</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
 	
-&lt;group-clab&gt;
-	&lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt;
-	&lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt;
-	...
-&lt;/group-clab&gt;</code></pre></p>
-</section>
-<h2 id="attrs1">Attributes &lt;button-clab /&gt;</h2>
-<section>
-	<table class="striped-table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Values</th>
-				<th>Default</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>appearance</td>
-				<td>string</td>
-				<td>
-					<b>none</b>: bordered button
-					<br><b>'full'</b>: button filled with background color
-					<br><b>'flat'</b>: button without borders
-				</td>
-				<td>none</td>
-			</tr>
-			<tr>
-				<td>icon</td>
-				<td>string</td>
-				<td>any valid icon class</td>
-				<td>none</td>
-			</tr>
-			<tr>
-				<td>size</td>
-				<td>string</td>
-				<td>
-					<b>none</b>: regular size button
-					<br><b>'small'</b>: smaller button</td>
-				<td>none</td>
-			</tr>
-			<tr>
-				<td>type</td>
-				<td>string</td>
-				<td>none, 'primary', 'secondary', 'info', 'success', 'warning', 'error'</td>
-				<td>none</td>
-			</tr>
-			<tr>
-				<td>disabled</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-		</tbody>
-	</table>
-</section>
 
-<h2>Attributes &lt;group-clab /&gt;</h2>
-<section>
-	<table class="striped-table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Values</th>
-				<th>Default</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>small</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-		</tbody>
-	</table>
-</section>
-
-<h2 id="examples1">Examples</h2>
-<h3>Default</h3>
-<section>
-	<article>
-		<button-clab appearance="full">Button</button-clab>
-		<button-clab appearance="full" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab>Button</button-clab>
-		<button-clab icon="clab clab-icon-download">Button</button-clab>
-		<button-clab appearance="flat">Button</button-clab>
-		<button-clab appearance="flat" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<button-clab appearance="full" size="small">Button</button-clab>
-		<button-clab appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab size="small">Button</button-clab>
-		<button-clab size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab appearance="flat" size="small">Button</button-clab>
-		<button-clab appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<group-clab>
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-	<article>
-		<group-clab small value="1">
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-</section>
-
-<h3>Primary</h3>
-<section>
-	<article>
-		<button-clab type="primary" appearance="full">Button</button-clab>
-		<button-clab type="primary" appearance="full" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="primary">Button</button-clab>
-		<button-clab type="primary" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="primary" appearance="flat">Button</button-clab>
-		<button-clab type="primary" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<button-clab type="primary" appearance="full" size="small">Button</button-clab>
-		<button-clab type="primary" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="primary" size="small">Button</button-clab>
-		<button-clab type="primary" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="primary" appearance="flat" size="small">Button</button-clab>
-		<button-clab type="primary" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<group-clab type="primary" value="2">
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-	<article>
-		<group-clab type="primary" small value="1">
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-</section>
-
-<h3>Secondary</h3>
-<section>
-	<article>
-		<button-clab type="secondary" appearance="full">Button</button-clab>
-		<button-clab type="secondary" appearance="full" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="secondary">Button</button-clab>
-		<button-clab type="secondary" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="secondary" appearance="flat">Button</button-clab>
-		<button-clab type="secondary" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<button-clab type="secondary" appearance="full" size="small">Button</button-clab>
-		<button-clab type="secondary" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="secondary" size="small">Button</button-clab>
-		<button-clab type="secondary" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="secondary" appearance="flat" size="small">Button</button-clab>
-		<button-clab type="secondary" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<group-clab type="secondary">
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-	<article>
-		<group-clab type="secondary" small>
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-</section>
-
-<h3>Info</h3>
-<section>
-	<article>
-		<button-clab type="info" appearance="full">Button</button-clab>
-		<button-clab type="info" appearance="full" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="info">Button</button-clab>
-		<button-clab type="info" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="info" appearance="flat">Button</button-clab>
-		<button-clab type="info" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<button-clab type="info" appearance="full" size="small">Button</button-clab>
-		<button-clab type="info" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="info" size="small">Button</button-clab>
-		<button-clab type="info" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="info" appearance="flat" size="small">Button</button-clab>
-		<button-clab type="info" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<group-clab type="info">
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-	<article>
-		<group-clab type="info" small>
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-</section>
-
-<h3>Success</h3>
-<section>
-	<article>
-		<button-clab type="success" appearance="full">Button</button-clab>
-		<button-clab type="success" appearance="full" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="success">Button</button-clab>
-		<button-clab type="success" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="success" appearance="flat">Button</button-clab>
-		<button-clab type="success" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<button-clab type="success" appearance="full" size="small">Button</button-clab>
-		<button-clab type="success" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="success" size="small">Button</button-clab>
-		<button-clab type="success" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="success" appearance="flat" size="small">Button</button-clab>
-		<button-clab type="success" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<group-clab type="success">
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-	<article>
-		<group-clab type="success" small>
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-</section>
-
-<h3>Warning</h3>
-<section>
-	<article>
-		<button-clab type="warning" appearance="full">Button</button-clab>
-		<button-clab type="warning" appearance="full" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="warning">Button</button-clab>
-		<button-clab type="warning" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="warning" appearance="flat">Button</button-clab>
-		<button-clab type="warning" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<button-clab type="warning" appearance="full" size="small">Button</button-clab>
-		<button-clab type="warning" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="warning" size="small">Button</button-clab>
-		<button-clab type="warning" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="warning" appearance="flat" size="small">Button</button-clab>
-		<button-clab type="warning" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<group-clab type="warning">
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-	<article>
-		<group-clab type="warning" small>
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-</section>
-
-<h3>Error</h3>
-<section>
-	<article>
-		<button-clab type="error" appearance="full">Button</button-clab>
-		<button-clab type="error" appearance="full" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="error">Button</button-clab>
-		<button-clab type="error" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="error" appearance="flat">Button</button-clab>
-		<button-clab type="error" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<button-clab type="error" appearance="full" size="small">Button</button-clab>
-		<button-clab type="error" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="error" size="small">Button</button-clab>
-		<button-clab type="error" size="small" icon="clab clab-icon-download">Button</button-clab>
-		<button-clab type="error" appearance="flat" size="small">Button</button-clab>
-		<button-clab type="error" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
-	</article>
-	<article>
-		<group-clab type="error">
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-	<article>
-		<group-clab type="error" small>
-			<button-clab>Left</button-clab>
-			<button-clab>Middle</button-clab>
-			<button-clab>Right</button-clab>
-		</group-clab>
-	</article>
-</section>
-
-
-
-<h3>Disabled buttons</h3>
-<section>
-	<article>
-		<button class="btn full" disabled>button</button>
-		<button class="btn full" disabled><i class="clab clab-icon-download icon"></i>button</button>
-		<button class="btn" disabled>button</button>
-		<button class="btn" disabled><i class="clab clab-icon-download icon"></i>button</button>
-		<button class="btn flat" disabled>button</button>
-		<button class="btn flat" disabled><i class="clab clab-icon-download icon"></i>button</button>
-	</article>
-	<article>
-		<button class="btn small full" disabled>button</button>
-		<button class="btn small full" disabled><i class="clab clab-icon-download icon"></i>button</button>
-		<button class="btn small" disabled>button</button>
-		<button class="btn small" disabled><i class="clab clab-icon-download icon"></i>button</button>
-		<button class="btn small flat" disabled>button</button>
-		<button class="btn small flat" disabled><i class="clab clab-icon-download icon"></i>button</button>
-	</article>
-	<article>
-		<div class="buttons-group">
-			<button class="btn full" disabled>Left</button>
-			<button class="btn" disabled>Middle</button>
-			<button class="btn" disabled>Right</button>
+	<!-- BOTTONI PRIMARY -->
+	<section>
+		<h2 class="component-name">
+			Primary buttons
+		</h2>
+		<div class="component-example">
+			<button-clab type="primary">Button</button-clab>
+			<button-clab type="primary"icon="clab clab-icon-sign">Button</button-clab>
+			<button-clab type="primary"appearance="full">Button</button-clab>
+			<button-clab type="primary"appearance="flat">Button</button-clab>
 		</div>
-	</article>
-	<article>
-		<div class="buttons-group small">
-			<button class="btn full" disabled>Left</button>
-			<button class="btn" disabled>Middle</button>
-			<button class="btn" disabled>Right</button>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Primary button --&gt;
+&lt;button class="btn primary"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Primary button with icon --&gt;
+&lt;button class="btn primary"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full primary button --&gt;
+&lt;button class="btn primary full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat primary button --&gt;
+&lt;button class="btn primary flat"&gt;content&lt;/button&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Primary button --&gt;
+&lt;button-clab type="primary"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Primary button with icon --&gt;
+&lt;button-clab type="primary" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full primary button --&gt;
+&lt;button-clab type="primary" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat primary button --&gt;
+&lt;button-clab type="primary" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>appearance</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: bordered button
+									<br><b>'full'</b>: button filled with background color
+									<br><b>'flat'</b>: button without borders
+								</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>icon</td>
+								<td>string</td>
+								<td>any valid icon class</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>size</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: regular size button
+									<br><b>'small'</b>: smaller button</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>disabled</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
 		</div>
-	</article>
-</section>
+	</section>
 
-<h3>Floating buttons</h3>
-<section>
-	<article>
-		<button class="floating-button primary"><i class="clab clab-icon-download"></i></button>
-		<button class="floating-button primary small"><i class="clab clab-icon-download"></i></button>
-		<button class="floating-button secondary"><i class="clab clab-icon-download"></i></button>
-		<button class="floating-button secondary small"><i class="clab clab-icon-download"></i></button>
-		<button class="floating-button success"><i class="clab clab-icon-download"></i></button>
-		<button class="floating-button success small"><i class="clab clab-icon-download"></i></button>
-		<button class="floating-button warning"><i class="clab clab-icon-download"></i></button>
-		<button class="floating-button warning small"><i class="clab clab-icon-download"></i></button>
-		<button class="floating-button error"><i class="clab clab-icon-download"></i></button>
-		<button class="floating-button error small"><i class="clab clab-icon-download"></i></button>
-		<button class="floating-button info"><i class="clab clab-icon-download"></i></button>
-		<button class="floating-button info small"><i class="clab clab-icon-download"></i></button>
-	</article>
-</section>
+	<!-- BOTTONI SECONDRY -->
+	<section>
+		<h2 class="component-name">
+			Secondary buttons
+		</h2>
+		<div class="component-example">
+			<button-clab type="secondary">Button</button-clab>
+			<button-clab type="secondary"icon="clab clab-icon-sign">Button</button-clab>
+			<button-clab type="secondary"appearance="full">Button</button-clab>
+			<button-clab type="secondary"appearance="flat">Button</button-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Secondary button --&gt;
+&lt;button class="btn secondary"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Secondary button with icon --&gt;
+&lt;button class="btn secondary"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full secondary button --&gt;
+&lt;button class="btn secondary full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat secondary button --&gt;
+&lt;button class="btn secondary flat"&gt;content&lt;/button&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Secondary button --&gt;
+&lt;button-clab type="secondary"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Secondary button with icon --&gt;
+&lt;button-clab type="secondary" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full secondary button --&gt;
+&lt;button-clab type="secondary" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat secondary button --&gt;
+&lt;button-clab type="secondary" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>appearance</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: bordered button
+									<br><b>'full'</b>: button filled with background color
+									<br><b>'flat'</b>: button without borders
+								</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>icon</td>
+								<td>string</td>
+								<td>any valid icon class</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>size</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: regular size button
+									<br><b>'small'</b>: smaller button</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>disabled</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<!-- BOTTONI SUCCESS -->
+	<section>
+		<h2 class="component-name">
+			Success buttons
+		</h2>
+		<div class="component-example">
+			<button-clab type="success">Button</button-clab>
+			<button-clab type="success"icon="clab clab-icon-sign">Button</button-clab>
+			<button-clab type="success"appearance="full">Button</button-clab>
+			<button-clab type="success"appearance="flat">Button</button-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Success button --&gt;
+&lt;button class="btn success"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Success button with icon --&gt;
+&lt;button class="btn success"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full success button --&gt;
+&lt;button class="btn success full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat success button --&gt;
+&lt;button class="btn success flat"&gt;content&lt;/button&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Success button --&gt;
+&lt;button-clab type="success"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Success button with icon --&gt;
+&lt;button-clab type="success" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full success button --&gt;
+&lt;button-clab type="success" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat success button --&gt;
+&lt;button-clab type="success" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>appearance</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: bordered button
+									<br><b>'full'</b>: button filled with background color
+									<br><b>'flat'</b>: button without borders
+								</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>icon</td>
+								<td>string</td>
+								<td>any valid icon class</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>size</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: regular size button
+									<br><b>'small'</b>: smaller button</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>disabled</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<!-- BOTTONI WARNING -->
+	<section>
+		<h2 class="component-name">
+			Warning buttons
+		</h2>
+		<div class="component-example">
+			<button-clab type="warning">Button</button-clab>
+			<button-clab type="warning"icon="clab clab-icon-sign">Button</button-clab>
+			<button-clab type="warning"appearance="full">Button</button-clab>
+			<button-clab type="warning"appearance="flat">Button</button-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Warning button --&gt;
+&lt;button class="btn warning"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Warning button with icon --&gt;
+&lt;button class="btn warning"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full warning button --&gt;
+&lt;button class="btn warning full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat warning button --&gt;
+&lt;button class="btn warning flat"&gt;content&lt;/button&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Warning button --&gt;
+&lt;button-clab type="warning"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Warning button with icon --&gt;
+&lt;button-clab type="warning" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full warning button --&gt;
+&lt;button-clab type="warning" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat warning button --&gt;
+&lt;button-clab type="warning" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>appearance</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: bordered button
+									<br><b>'full'</b>: button filled with background color
+									<br><b>'flat'</b>: button without borders
+								</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>icon</td>
+								<td>string</td>
+								<td>any valid icon class</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>size</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: regular size button
+									<br><b>'small'</b>: smaller button</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>disabled</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<!-- BOTTONI ERROR -->
+	<section>
+		<h2 class="component-name">
+			Error buttons
+		</h2>
+		<div class="component-example">
+			<button-clab type="error">Button</button-clab>
+			<button-clab type="error"icon="clab clab-icon-sign">Button</button-clab>
+			<button-clab type="error"appearance="full">Button</button-clab>
+			<button-clab type="error"appearance="flat">Button</button-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Error button --&gt;
+&lt;button class="btn error"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Error button with icon --&gt;
+&lt;button class="btn error"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full error button --&gt;
+&lt;button class="btn error full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat error button --&gt;
+&lt;button class="btn error flat"&gt;content&lt;/button&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Error button --&gt;
+&lt;button-clab type="error"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Error button with icon --&gt;
+&lt;button-clab type="error" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full error button --&gt;
+&lt;button-clab type="error" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat error button --&gt;
+&lt;button-clab type="error" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>appearance</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: bordered button
+									<br><b>'full'</b>: button filled with background color
+									<br><b>'flat'</b>: button without borders
+								</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>icon</td>
+								<td>string</td>
+								<td>any valid icon class</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>size</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: regular size button
+									<br><b>'small'</b>: smaller button</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>disabled</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<!-- BOTTONI INFO -->
+	<section>
+		<h2 class="component-name">
+			Info buttons
+		</h2>
+		<div class="component-example">
+			<button-clab type="info">Button</button-clab>
+			<button-clab type="info"icon="clab clab-icon-sign">Button</button-clab>
+			<button-clab type="info"appearance="full">Button</button-clab>
+			<button-clab type="info"appearance="flat">Button</button-clab>
+		</div>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Info button --&gt;
+&lt;button class="btn info"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Info button with icon --&gt;
+&lt;button class="btn info"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full info button --&gt;
+&lt;button class="btn info full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat info button --&gt;
+&lt;button class="btn info flat"&gt;content&lt;/button&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Info button --&gt;
+&lt;button-clab type="info"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Info button with icon --&gt;
+&lt;button-clab type="info" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full info button --&gt;
+&lt;button-clab type="info" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat info button --&gt;
+&lt;button-clab type="info" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>appearance</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: bordered button
+									<br><b>'full'</b>: button filled with background color
+									<br><b>'flat'</b>: button without borders
+								</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>icon</td>
+								<td>string</td>
+								<td>any valid icon class</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>size</td>
+								<td>string</td>
+								<td>
+									<b>none</b>: regular size button
+									<br><b>'small'</b>: smaller button</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>disabled</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+
+</div>
+	
 
 
 
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="content">
+ 	<h2 id="syntax1">Syntax</h2>
+	<section>
+		<p><pre><code class="html">&lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt;
+		
+	&lt;group-clab&gt;
+		&lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt;
+		&lt;button-clab&gt; <i class="italic">content</i> &lt;/button-clab&gt;
+		...
+	&lt;/group-clab&gt;</code></pre></p>
+	</section>
+	<h2 id="attrs1">Attributes &lt;button-clab /&gt;</h2>
+	<section>
+		<table class="striped-table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Values</th>
+					<th>Default</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>appearance</td>
+					<td>string</td>
+					<td>
+						<b>none</b>: bordered button
+						<br><b>'full'</b>: button filled with background color
+						<br><b>'flat'</b>: button without borders
+					</td>
+					<td>none</td>
+				</tr>
+				<tr>
+					<td>icon</td>
+					<td>string</td>
+					<td>any valid icon class</td>
+					<td>none</td>
+				</tr>
+				<tr>
+					<td>size</td>
+					<td>string</td>
+					<td>
+						<b>none</b>: regular size button
+						<br><b>'small'</b>: smaller button</td>
+					<td>none</td>
+				</tr>
+				<tr>
+					<td>type</td>
+					<td>string</td>
+					<td>none, 'primary', 'secondary', 'info', 'success', 'warning', 'error'</td>
+					<td>none</td>
+				</tr>
+				<tr>
+					<td>disabled</td>
+					<td>boolean</td>
+					<td>true/false</td>
+					<td>false</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<h2>Attributes &lt;group-clab /&gt;</h2>
+	<section>
+		<table class="striped-table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Values</th>
+					<th>Default</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>small</td>
+					<td>boolean</td>
+					<td>true/false</td>
+					<td>false</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<h2 id="examples1">Examples</h2>
+	<h3>Default</h3>
+	<section>
+		<article>
+			<button-clab appearance="full">Button</button-clab>
+			<button-clab appearance="full" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab>Button</button-clab>
+			<button-clab icon="clab clab-icon-download">Button</button-clab>
+			<button-clab appearance="flat">Button</button-clab>
+			<button-clab appearance="flat" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<button-clab appearance="full" size="small">Button</button-clab>
+			<button-clab appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab size="small">Button</button-clab>
+			<button-clab size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab appearance="flat" size="small">Button</button-clab>
+			<button-clab appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<group-clab>
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+		<article>
+			<group-clab small value="1">
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+	</section>
+
+	<h3>Primary</h3>
+	<section>
+		<article>
+			<button-clab type="primary" appearance="full">Button</button-clab>
+			<button-clab type="primary" appearance="full" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="primary">Button</button-clab>
+			<button-clab type="primary" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="primary" appearance="flat">Button</button-clab>
+			<button-clab type="primary" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<button-clab type="primary" appearance="full" size="small">Button</button-clab>
+			<button-clab type="primary" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="primary" size="small">Button</button-clab>
+			<button-clab type="primary" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="primary" appearance="flat" size="small">Button</button-clab>
+			<button-clab type="primary" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<group-clab type="primary" value="2">
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+		<article>
+			<group-clab type="primary" small value="1">
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+	</section>
+
+	<h3>Secondary</h3>
+	<section>
+		<article>
+			<button-clab type="secondary" appearance="full">Button</button-clab>
+			<button-clab type="secondary" appearance="full" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="secondary">Button</button-clab>
+			<button-clab type="secondary" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="secondary" appearance="flat">Button</button-clab>
+			<button-clab type="secondary" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<button-clab type="secondary" appearance="full" size="small">Button</button-clab>
+			<button-clab type="secondary" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="secondary" size="small">Button</button-clab>
+			<button-clab type="secondary" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="secondary" appearance="flat" size="small">Button</button-clab>
+			<button-clab type="secondary" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<group-clab type="secondary">
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+		<article>
+			<group-clab type="secondary" small>
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+	</section>
+
+	<h3>Info</h3>
+	<section>
+		<article>
+			<button-clab type="info" appearance="full">Button</button-clab>
+			<button-clab type="info" appearance="full" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="info">Button</button-clab>
+			<button-clab type="info" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="info" appearance="flat">Button</button-clab>
+			<button-clab type="info" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<button-clab type="info" appearance="full" size="small">Button</button-clab>
+			<button-clab type="info" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="info" size="small">Button</button-clab>
+			<button-clab type="info" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="info" appearance="flat" size="small">Button</button-clab>
+			<button-clab type="info" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<group-clab type="info">
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+		<article>
+			<group-clab type="info" small>
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+	</section>
+
+	<h3>Success</h3>
+	<section>
+		<article>
+			<button-clab type="success" appearance="full">Button</button-clab>
+			<button-clab type="success" appearance="full" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="success">Button</button-clab>
+			<button-clab type="success" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="success" appearance="flat">Button</button-clab>
+			<button-clab type="success" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<button-clab type="success" appearance="full" size="small">Button</button-clab>
+			<button-clab type="success" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="success" size="small">Button</button-clab>
+			<button-clab type="success" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="success" appearance="flat" size="small">Button</button-clab>
+			<button-clab type="success" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<group-clab type="success">
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+		<article>
+			<group-clab type="success" small>
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+	</section>
+
+	<h3>Warning</h3>
+	<section>
+		<article>
+			<button-clab type="warning" appearance="full">Button</button-clab>
+			<button-clab type="warning" appearance="full" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="warning">Button</button-clab>
+			<button-clab type="warning" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="warning" appearance="flat">Button</button-clab>
+			<button-clab type="warning" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<button-clab type="warning" appearance="full" size="small">Button</button-clab>
+			<button-clab type="warning" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="warning" size="small">Button</button-clab>
+			<button-clab type="warning" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="warning" appearance="flat" size="small">Button</button-clab>
+			<button-clab type="warning" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<group-clab type="warning">
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+		<article>
+			<group-clab type="warning" small>
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+	</section>
+
+	<h3>Error</h3>
+	<section>
+		<article>
+			<button-clab type="error" appearance="full">Button</button-clab>
+			<button-clab type="error" appearance="full" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="error">Button</button-clab>
+			<button-clab type="error" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="error" appearance="flat">Button</button-clab>
+			<button-clab type="error" appearance="flat" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<button-clab type="error" appearance="full" size="small">Button</button-clab>
+			<button-clab type="error" appearance="full" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="error" size="small">Button</button-clab>
+			<button-clab type="error" size="small" icon="clab clab-icon-download">Button</button-clab>
+			<button-clab type="error" appearance="flat" size="small">Button</button-clab>
+			<button-clab type="error" appearance="flat" size="small" icon="clab clab-icon-download">Button</button-clab>
+		</article>
+		<article>
+			<group-clab type="error">
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+		<article>
+			<group-clab type="error" small>
+				<button-clab>Left</button-clab>
+				<button-clab>Middle</button-clab>
+				<button-clab>Right</button-clab>
+			</group-clab>
+		</article>
+	</section>
+
+
+
+	<h3>Disabled buttons</h3>
+	<section>
+		<article>
+			<button class="btn full" disabled>button</button>
+			<button class="btn full" disabled><i class="clab clab-icon-download icon"></i>button</button>
+			<button class="btn" disabled>button</button>
+			<button class="btn" disabled><i class="clab clab-icon-download icon"></i>button</button>
+			<button class="btn flat" disabled>button</button>
+			<button class="btn flat" disabled><i class="clab clab-icon-download icon"></i>button</button>
+		</article>
+		<article>
+			<button class="btn small full" disabled>button</button>
+			<button class="btn small full" disabled><i class="clab clab-icon-download icon"></i>button</button>
+			<button class="btn small" disabled>button</button>
+			<button class="btn small" disabled><i class="clab clab-icon-download icon"></i>button</button>
+			<button class="btn small flat" disabled>button</button>
+			<button class="btn small flat" disabled><i class="clab clab-icon-download icon"></i>button</button>
+		</article>
+		<article>
+			<div class="buttons-group">
+				<button class="btn full" disabled>Left</button>
+				<button class="btn" disabled>Middle</button>
+				<button class="btn" disabled>Right</button>
+			</div>
+		</article>
+		<article>
+			<div class="buttons-group small">
+				<button class="btn full" disabled>Left</button>
+				<button class="btn" disabled>Middle</button>
+				<button class="btn" disabled>Right</button>
+			</div>
+		</article>
+	</section>
+
+	<h3>Floating buttons</h3>
+	<section>
+		<article>
+			<button class="floating-button primary"><i class="clab clab-icon-download"></i></button>
+			<button class="floating-button primary small"><i class="clab clab-icon-download"></i></button>
+			<button class="floating-button secondary"><i class="clab clab-icon-download"></i></button>
+			<button class="floating-button secondary small"><i class="clab clab-icon-download"></i></button>
+			<button class="floating-button success"><i class="clab clab-icon-download"></i></button>
+			<button class="floating-button success small"><i class="clab clab-icon-download"></i></button>
+			<button class="floating-button warning"><i class="clab clab-icon-download"></i></button>
+			<button class="floating-button warning small"><i class="clab clab-icon-download"></i></button>
+			<button class="floating-button error"><i class="clab clab-icon-download"></i></button>
+			<button class="floating-button error small"><i class="clab clab-icon-download"></i></button>
+			<button class="floating-button info"><i class="clab clab-icon-download"></i></button>
+			<button class="floating-button info small"><i class="clab clab-icon-download"></i></button>
+		</article>
+	</section>
+</div>
+ -->

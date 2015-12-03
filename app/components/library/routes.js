@@ -17,6 +17,9 @@ var AppRoutes = (function(){
 	    '/ui/buttons': [function() {
 	    	view.load('pages/buttons/buttons.html', highlight);
 	    }],
+	    '/ui/buttons-group': [function() {
+	    	view.load('pages/buttons-group/buttons-group.html', highlight);
+	    }],
 	    '/ui/labels-badges': [function() {
 	    	view.load('pages/labels-badges/labels-badges.html', highlight);
 	    }],
@@ -46,6 +49,12 @@ var AppRoutes = (function(){
 	    }],
 	    '/ui/forms': [function() {
 	    	view.load('pages/forms/forms.html', highlight);
+	    }],
+	    '/ui/select': [function() {
+	    	view.load('pages/select/select.html', highlight);
+	    }],
+	    '/ui/datepicker': [function() {
+	    	view.load('pages/datepicker/datepicker.html', highlight);
 	    }],
 	    '/ui/pagination': [function() {
 	    	view.load('pages/pagination/pagination.html', highlight);

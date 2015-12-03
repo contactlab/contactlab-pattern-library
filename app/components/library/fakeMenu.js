@@ -31,6 +31,10 @@ var AppFakeMenu = [
 				"url": "#/ui/buttons"
 			},
 			{
+				"label": "Buttons group",
+				"url": "#/ui/buttons-group"
+			},
+			{
 				"label": "Labels & badges",
 				"url": "#/ui/labels-badges"
 			},
@@ -43,16 +47,20 @@ var AppFakeMenu = [
 				"url": "#/ui/alerts"
 			},
 			{
-				"label": "Panels",
-				"url": "#/ui/panels"
-			},
-			{
 				"label": "Spinner",
 				"url": "#/ui/spinner"
 			},
 			{
 				"label": "Forms",
 				"url": "#/ui/forms"
+			},
+			{
+				"label": "Select",
+				"url": "#/ui/select"
+			},
+			{
+				"label": "Datepicker",
+				"url": "#/ui/datepicker"
 			},
 			{
 				"label": "Cards",
@@ -93,10 +101,6 @@ var AppFakeMenu = [
 			{
 				"label": "Tooltips",
 				"url": "#/ui/tooltips"
-			},
-			{
-				"label": "Toaster",
-				"url": "#/ui/toaster"
 			}
 		]
 	},{

@@ -28,73 +28,77 @@ $fa-font-path: "../bower/font-awesome/fonts";
 
 main {
 	padding-right: 0;
+	padding-top: 0;
 }
 
-#main-sidebar #logo .name {
-	font-size: 20px;
-}
+/* #main-sidebar {
+	background-color: #FFFFFF;
 
-header {
-	padding-left: $medium-spacing;
-	padding-right: $medium-spacing;
+	.first-level-menu a {
+		color: $base-text-color;
+	}
+}
+ */
+.component-intro { 
 	background-color: $primary-color;
-	color: #FFFFFF;
-}
+	color: $primary-text-color;
+	@include full;
+	padding: $large-spacing $base-spacing;
 
-header {
+	.category {
+		color: rgba(255,255,255,0.8);
+	}
+
 	h1 {
-		width: auto;
+		line-height: 1;
+		margin-bottom: 0;
+	}
+}
+
+// STRUTTURA PATTERN LIBRARY PAGES
+
+.component-name,
+.component-description,
+.component-example,
+.component-specs {
+	@include full;
+	margin-bottom: $base-spacing;
+}
+
+.component-specs {
+	.tab-content {
+		background-color: #FFFFFF;
+		border: 1px solid $light-gray;
+		border-top: 0;
+		padding: $base-spacing;
 	}
 
-	#product-switch {
-		float: right;
-		margin-top: 10px;
+	pre {
+		padding-bottom: $small-spacing;
 
-		input[type="text"] {
-			background-color: transparent !important;
-			color: #FFFFFF !important;
-
-			&:focus {
-			    border-color: #FFFFFF;
-			    @include box-shadow(#FFFFFF 0 1px 0 0);
-
-			    + label { 
-		          color: #FFFFFF !important;
-		        }
-		  	}
-		}
-
-		ol {
-			color: $base-text-color;
+		&:last-child {
+			padding-bottom: 0;
 		}
 	}
 
-
-	.page-nav {
-
-		li {
-			float: left;
-			margin-right: $base-spacing;
-		}
-
-		a {
-			color: #FFFFFF;
-		}
+	.hljs {
+		padding: 0 !important;
+		background: transparent;
+		padding-bottom: $small-spacing;
 	}
-	
-
 }
 
 
 
 
+// FINE STRUTTURA PATTERN LIBRARY PAGES
 
 
 
 #lists {
   ol,
   ul {
-    @include gallery(6);
+    @include gallery(4);
   }
 }
 
@@ -118,16 +122,20 @@ header {
 }
 
 #tooltips {
-  li {
-    @include gallery(4);
 
-    span {
-      @include full;
-      line-height: 50px;
-      text-align: center;
-      background: $light-gray;
-    }
-  }
+	.component-example {
+		li {
+		    @include gallery(4);
+
+		    span {
+		      @include full;
+		      line-height: 50px;
+		      text-align: center;
+		      background: $light-gray;
+		    }
+	  	}
+	}
+  
 }
 
 #features {
