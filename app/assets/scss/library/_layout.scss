@@ -286,7 +286,6 @@ main {
 	padding-left: $main-sidebar-width;
 	padding-right: 0;
 	padding-top: $header-height;
-	max-width: 1500px;
 }
 
 // HEADER
@@ -473,7 +472,7 @@ header {
 				@include border-radius(50%);
 			}
 		} 
-	}
+	} 
 }
 
 // END SECONDARY SIDEBAR
@@ -482,6 +481,7 @@ header {
 	@include full;
 	padding: $medium-spacing ;
 	position: relative;
+	max-width: 1500px;
 }
 
 

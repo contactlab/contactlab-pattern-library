@@ -1,61 +1,112 @@
-<h1 id="title1">Tabs & pills</h1>
-<!-- <p>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos temporibus, quos sapiente alias assumenda unde reprehenderit numquam. Velit nesciunt modi officiis possimus iste minima veniam praesentium sed tenetur voluptatum!
-</p> -->
-<h2 id="syntax1">Syntax</h2>
-<section>
-	<p><pre><code class="html">&lt;tabs-clab active="1"&gt;
-	&lt;div class="tab-content"&gt; <i class="italic">tab 1 content</i> &lt;/div&gt;
-	&lt;div class="tab-content"&gt; <i class="italic">tab 2 content</i> &lt;/div&gt;
-&lt;/tabs-clab&gt;</code></pre></p>
-</section>
-<h2 id="attrs1">Attributes &lt;tabs-clab&gt;</h2>
-<section>
-	<table class="striped-table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Values</th>
-				<th>Default</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>labels</td>
-				<td>array</td>
-				<td>array of strings</td>
-				<td>'Tab [index]'</td>
-			</tr>
-			<tr>
-				<td>pills</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>active</td>
-				<td>number</td>
-				<td>index of the tab to be displayed at first</td>
-				<td>0</td>
-			</tr>
-		</tbody>
-	</table>
-</section>
-<h2 id="examples1">Examples</h2>
-<section id="tabs-pills">
-	
-	<h3>Default</h3>
-	<tabs-clab active="1" labels='["Music", "Photos", "Messages"]'>
-		<div class="tab-content">First tab Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit illo mollitia odio quam necessitatibus veritatis sed placeat.</div>
-		<div class="tab-content">Second tab repellat ratione nisi quisquam quod, quo deleniti eveniet asperiores rerum veniam delectus. Voluptas. </div>
-		<div class="tab-content">Third tab Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quae cum eum excepturi ullam odio repellendus dolor architecto qui rerum veniam optio, nobis fugit recusandae libero eligendi, impedit numquam voluptatum. </div>
-	</tabs-clab>
+<div class="component-intro">
+	<div class="category">UI components</div>
+	<h1>Tabs & pills</h1>
+</div>
+<div class="content">
+	<div class="component-description">
+		Tabs & pills are used for alternating between views within the same context, not to navigate to different areas. For navigation refer to the horizontal navigation guidelines.
+	</div>
+	<section>
+		<h2 class="component-name">
+			Tabs
+		</h2>
+		<div class="component-example">
+			<tabs-clab labels='["Tab 1", "Tab 2", "Tab 3"]'>
+				<div class="tab-content">Tab 1 content</div>
+				<div class="tab-content">Tab 2 content</div>
+				<div class="tab-content">Tab 3 content</div>
+			</tabs-clab>
+			
+		</div>
 
-	<h3>Pills</h3>
-	<tabs-clab active="0" pills>
-		<div class="tab-content">First tab Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit illo mollitia odio quam necessitatibus veritatis sed placeat.</div>
-		<div class="tab-content">Second tab repellat ratione nisi quisquam quod, quo deleniti eveniet asperiores rerum veniam delectus. Voluptas. </div>
-	</tabs-clab>
-	
-</section>
+		<div class="component-specs">
+			<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html"></code>&lt;tabs-clab labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
+&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
+&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
+&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
+&lt;/tabs-clab&gt;</pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>labels</td>
+								<td>array</td>
+								<td>array of strings</td>
+								<td>'Tab [index]'</td>
+							</tr>
+							<tr>
+								<td>active</td>
+								<td>number</td>
+								<td>index of the tab to be displayed at first</td>
+								<td>0</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="component-name">
+			Pills
+		</h2>
+		<div class="component-example">
+			<tabs-clab pills labels='["Pill 1", "Pill 2", "Pill 3"]'>
+				<div class="tab-content">Pill 1 content</div>
+				<div class="tab-content">Pill 2 content</div>
+				<div class="tab-content">Pill 3 content</div>
+			</tabs-clab>
+			
+		</div>
+
+		<div class="component-specs">
+			<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html"></code>&lt;tabs-clab pills active=&quot;1&quot; labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
+&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
+&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
+&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
+&lt;/tabs-clab&gt;</pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>labels</td>
+								<td>array</td>
+								<td>array of strings</td>
+								<td>'Tab [index]'</td>
+							</tr>
+							<tr>
+								<td>active</td>
+								<td>number</td>
+								<td>index of the tab to be displayed at first</td>
+								<td>0</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
+		</div>
+	</section>
+</div>

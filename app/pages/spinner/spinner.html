@@ -1,60 +1,163 @@
-<h1 id="title1">Spinner</h1>
-<!-- <p>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos temporibus, quos sapiente alias assumenda unde reprehenderit numquam. Velit nesciunt modi officiis possimus iste minima veniam praesentium sed tenetur voluptatum!
-</p> -->
-<h2 id="syntax1">Syntax</h2>
-<section>
-	<p><pre><code class="html">&lt;spinner-clab&gt;&lt;/spinner-clab&gt;</code></pre></p>
-</section>
-<h2 id="attrs1">Attributes &lt;spinner-clab&gt;</h2>
-<section>
-	<table class="striped-table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Values</th>
-				<th>Default</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>dark</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-			<tr>
-				<td>big</td>
-				<td>boolean</td>
-				<td>true/false</td>
-				<td>false</td>
-			</tr>
-		</tbody>
-	</table>
-</section>
-<h2 id="examples1">Examples</h2>
-<section id="spinner">
-	<h3>Default</h3>
-	<article>
-		<div class="card spinner-example">
-			Lorem ipsum dolor sit amet
-			<spinner-clab></spinner-clab>
+<div class="component-intro">
+	<div class="category">UI components</div>
+	<h1>Spinner</h1>
+</div>
+<div class="content" id="spinner">
+	<section>
+		<h2 class="component-name">
+			Base spinner
+		</h2>
+		<div class="component-example">
+			<article>
+				<div class="card spinner-example">
+					Lorem ipsum dolor sit amet
+					<spinner-clab></spinner-clab>
+				</div>
+				<div class="card spinner-example">
+					Lorem ipsum dolor sit amet
+					<spinner-clab big></spinner-clab>
+				</div>
+			</article>
+			
 		</div>
-		<div class="card spinner-example">
-			Lorem ipsum dolor sit amet
-			<spinner-clab dark></spinner-clab>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Base spinner --&gt;
+&lt;div class=&quot;spinner-overlay&quot;&gt;
+&#x9;&lt;div class=&quot;spinner&quot;&gt;
+&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+&#x9;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Base big spinner --&gt;
+&lt;div class=&quot;spinner-overlay big&quot;&gt;
+&#x9;&lt;div class=&quot;spinner&quot;&gt;
+&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+&#x9;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Base spinner --&gt;
+&lt;spinner-clab&gt;&lt;/spinner-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Base big spinner --&gt;
+&lt;spinner-clab big&gt;&lt;/spinner-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>dark</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>big</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
 		</div>
-	</article>
-	<h3>Big</h3>
-	<article>
-		<div class="card spinner-example">
-			Lorem ipsum dolor sit amet
-			<spinner-clab big></spinner-clab>
+	</section>
+
+	<section>
+		<h2 class="component-name">
+			Dark spinner
+		</h2>
+		<div class="component-example">
+			<article>
+				<div class="card spinner-example">
+					Lorem ipsum dolor sit amet
+					<spinner-clab dark></spinner-clab>
+				</div>
+				<div class="card spinner-example">
+					Lorem ipsum dolor sit amet
+					<spinner-clab big dark></spinner-clab>
+				</div>
+			</article>
+			
 		</div>
-		<div class="card spinner-example">
-			Lorem ipsum dolor sit amet
-			<spinner-clab big dark></spinner-clab>
+		<div class="component-specs">
+			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Dark spinner --&gt;
+&lt;div class=&quot;spinner-overlay dark&quot;&gt;
+&#x9;&lt;div class=&quot;spinner&quot;&gt;
+&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+&#x9;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Dark big spinner --&gt;
+&lt;div class=&quot;spinner-overlay dark big&quot;&gt;
+&#x9;&lt;div class=&quot;spinner&quot;&gt;
+&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+&#x9;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+<pre><code class="html">&lt;!-- Dark spinner --&gt;
+&lt;spinner-clab&gt;&lt;/spinner-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Dark big spinner --&gt;
+&lt;spinner-clab big&gt;&lt;/spinner-clab&gt;</code></pre>
+				</div>
+				<div class="tab-content">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Values</th>
+								<th>Default</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>dark</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
+								<td>big</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tabs-clab>
 		</div>
-	</article>
-</section>
+	</section>
+</div>

@@ -38,92 +38,104 @@ input[type="reset"] {
 
 // INPUT STYLE
 
-.input-wrapper {
+
+
+label {
   @include full;
-  position: relative;
+  font-weight: $bold-weight;
+  font-size: $small-font-size;
+  padding-bottom: $smaller-spacing;
+  line-height: 1;
+  text-align: left;
 
-  label {
-    @include full;
-    font-weight: $bold-weight;
-    font-size: $small-font-size;
-    padding-bottom: $smaller-spacing;
-    line-height: 1;
-    text-align: left;
-  }
-
-  .note {
-    @include full;
-    font-size: $small-font-size;
-  }
-
-  input[type="color"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="email"],
-  input[type="month"],
-  input[type="number"],
-  input[type="password"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="text"],
-  input[type="time"],
-  input[type="url"],
-  input[type="week"],
-  textarea {
-    @include full;
-    background-color: rgba(255,255,255,0.6);
-    border: 0;
-    border-bottom: 1px solid $light-gray;
-    padding: $smaller-spacing;
-    font-size: $base-font-size;
-    height: 36px;
-    @extend .fast-transition;
-
-    &:focus { 
-      border-color: $primary-color;
-      @include box-shadow($primary-color 0 1px 0 0);
-      @extend .fast-transition;
-      background-color: rgba(255,255,255,1);
-    }
-
-    &:disabled {
-      color: $disabled-color;
-      cursor: not-allowed;
-    }
+  &.disabled {
+    color: $disabled-color;
   }
 
   @each $type, $color in $default-status {
     &.#{$type} {
-      input[type="color"],
-      input[type="date"],
-      input[type="datetime"],
-      input[type="datetime-local"],
-      input[type="email"],
-      input[type="month"],
-      input[type="number"],
-      input[type="password"],
-      input[type="search"],
-      input[type="tel"],
-      input[type="text"],
-      input[type="time"],
-      input[type="url"],
-      input[type="week"],
-      textarea {
-        border-bottom-color: nth($color, 1);
-
-        &:focus {
-          @include box-shadow(nth($color, 1) 0 1px 0 0);
-        }
-      }
-
-      label,
-      .note {
         color: nth($color, 1);
+
+        + input[type="text"] {
+          border-bottom-color: nth($color, 1);
+
+          &:focus {
+            @include box-shadow(nth($color, 1) 0 1px 0 0);
+          }
+
+          + .input-note {
+            color: nth($color, 1);
+          }
+        }
+
+    }
+  }
+}
+
+.input-note {
+  @include full;
+  font-size: $small-font-size;
+
+  @each $type, $color in $default-status {
+    &.#{$type} {
+      color: nth($color, 1);
+    }
+  }
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea {
+  @include full;
+  background-color: rgba(255,255,255,0.6);
+  border: 0;
+  border-bottom: 1px solid $light-gray;
+  padding: $smaller-spacing;
+  font-size: $base-font-size;
+  height: 36px;
+  @extend .fast-transition;
+
+  &:focus { 
+    border-color: $primary-color;
+    @include box-shadow($primary-color 0 1px 0 0);
+    @extend .fast-transition;
+    background-color: rgba(255,255,255,1);
+  }
+
+  &:disabled {
+    color: $disabled-color;
+    cursor: not-allowed;
+  }
+
+  @each $type, $color in $default-status {
+    &.#{$type} {
+      border-bottom-color: nth($color, 1);
+
+      &:focus {
+        @include box-shadow(nth($color, 1) 0 1px 0 0);
       }
     }
   }
 }
+
+
+
+
+
+
+
 
 .input-wrapper.small-input,
 .input-wrapper.default-input,
@@ -312,6 +324,12 @@ input[type=checkbox],
 input[type=radio] {
   display:none;
 
+  + label {
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: normal;
+  }
+
   + label:before {
     font-family: 'contactlab-icons';
     display: inline-block;
@@ -430,6 +448,7 @@ select[multiple] {
     max-height: 200px;
     overflow: auto;
     @extend .fast-transition;
+    background-color: #FFFFFF;
 
     li,
     .noResults {
@@ -469,3 +488,30 @@ select[multiple] {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// NEW
+
+
+  
