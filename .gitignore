@@ -2,3 +2,5 @@ node_modules
 .sass-cache
 bower_components
 app/assets/bower
+**/*.sublime-project
+**/*.sublime-workspace
