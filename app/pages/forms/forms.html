@@ -665,29 +665,57 @@
 	<h1 id="title8">Multiple select</h1>
 	<h2 id="syntax8">Syntax</h2>
 	<section>
-		<p><pre><code class="html">&lt;select multiple&gt;
-	&lt;option value=""&gt;option01&lt;/option&gt;
-	&lt;option value=""&gt;option02&lt;/option&gt;
-	...
-&lt;/select&gt;</code></pre></p>
+		<p><pre><code class="html">&lt;multi-sel-clab label="Label for the select"&gt;&lt;/multi-sel-clab&gt;</code></pre></p>
 	</section>
+
+	<h2 id="attrs7">Attributes &lt;multi-sel-clab&gt;</h2>
+	<section>
+		<table class="striped-table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Values</th>
+					<th>Default</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>name</td>
+					<td>string</td>
+					<td>a name for the select</td>
+					<td>'multiple select'</td>
+				</tr>
+				<tr>
+					<td>options</td>
+					<td>array</td>
+					<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, ...]</td>
+					<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, {<b>value</b>: 'B', <b>label</b>: 'Option 2'}, ...]</td>
+				<tr>
+					<td>type</td>
+					<td>string</td>
+					<td>none, 'primary', 'secondary', 'success', 'warning', 'error', 'info', 'disabled'</td>
+					<td>'primary'</td>
+				</tr>
+				<tr>
+					<td>label</td>
+					<td>string</td>
+					<td>a label for the select</td>
+					<td>none</td>
+				</tr>
+				<tr>
+					<td>disabled</td>
+					<td>boolean</td>
+					<td>true/false</td>
+					<td>false</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
 	<h2 id="examples8">Examples</h2>
 	<article>
-		<div class="input-wrapper">
-			<label for="">Multiple select label</label>
-		</div>
-		<select multiple>
-			<option value="">option01</option>
-			<option value="">option02</option>
-			<option value="">option03</option>
-			<option value="">option04</option>
-			<option value="">option05</option>
-			<option value="">option06</option>
-			<option value="">option07</option>
-			<option value="">option08</option>
-			<option value="">option09</option>
-			<option value="">option10</option>
-		</select>
+		<multi-sel-clab label="Multiple select label"></multi-sel-clab>
 	</article>
 </section>
 

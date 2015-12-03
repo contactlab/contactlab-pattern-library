@@ -96,17 +96,22 @@
 	[
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app",
-		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages",
-		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/accordion",
-		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/toaster"
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages"
 	],
 	"file_history":
 	[
-		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/.gitignore",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/toaster/toaster.html",
-		"/C/Users/laura.santalucia/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/accordion/accordion.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/features/features.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/index.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/progress-bars/progress-bars.html",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/forms/forms.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/bower.json",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/scss/style.scss",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/scss/library/_pattern.scss",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/css/style.scss",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/.gitignore",
+		"/C/Users/laura.santalucia/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/elekti/script.js",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/alerts/alerts.html",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/alert/script.es6.js",
@@ -164,7 +169,6 @@
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/pagination/pagination.html",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/pagination/script.es6.js",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/pagination/script.js",
-		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/features/features.html",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/radio/script.js",
 		"/C/Users/laura.santalucia/Work/ui-components/ui-components/range/view.html",
 		"/C/Users/laura.santalucia/Work/ui-components/ui-components/range/script.es6.js",
@@ -188,13 +192,11 @@
 		"/C/Users/laura.santalucia/Work/ng-prototype/app/product.json",
 		"/C/Users/laura.santalucia/Work/ng-prototype/app/user.json",
 		"/C/Users/laura.santalucia/Work/ng-prototype/bower.json",
-		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/index.html",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/components/library/view.html",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/components/library/script.js",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/buttons/buttons.html",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/modals/modals.html",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/lists/lists.html",
-		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/progress-bars/progress-bars.html",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/breadcrumb/breadcrumb.html",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/cards/cards.html",
 		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/spinner/spinner.html",
@@ -225,15 +227,11 @@
 		"/C/Users/laura.santalucia/Work/ui-components/ui-components/spinner/script.js",
 		"/C/Users/laura.santalucia/Work/ui-components/ui-components/spinner/script.es6.js",
 		"/C/Users/laura.santalucia/Work/ui-components/ui-components/package.json",
-		"/C/Users/laura.santalucia/Work/ui-components/ui-components/starter/script.js",
-		"/C/Users/laura.santalucia/Work/ui-components/ui-components/starter/script.es6.js",
-		"/C/Users/laura.santalucia/Work/ui-components/ui-components/progress-bar/script.es6.js",
-		"/C/Users/laura.santalucia/Work/ui-components/ui-components/progress-bar/script.js",
-		"/C/Users/laura.santalucia/Work/ui-components/ui-components/panel/script.es6.js"
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/starter/script.js"
 	],
 	"find":
 	{
-		"height": 55.0
+		"height": 73.0
 	},
 	"find_in_files":
 	{
@@ -252,6 +250,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"input-wrapper",
 			"elekti",
 			"HEAD",
 			"liHeight",
@@ -387,7 +386,7 @@
 		[
 			[
 				"",
-				"C:\\Users\\laura.santalucia\\Work\\ui-components\\ui-components\\ui-components.sublime-project"
+				"C:\\Users\\laura.santalucia\\Work\\contactlab-pattern-library\\pattern-library.sublime-project"
 			]
 		],
 		"width": 380.0
