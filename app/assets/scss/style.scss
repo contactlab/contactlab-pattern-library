@@ -20,6 +20,121 @@ $fa-font-path: "../bower/font-awesome/fonts";
 @import "library/forms"; 
 @import "library/buttons";
 @import "library/layout"; 
+
+
+
+// COVER
+
+.centered-wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 $base-spacing;
+}
+
+#cover-heading {
+	@include full;
+	background-color: $primary-color;
+	color: #FFFFFF;
+	@include clearfix;
+	background-image: url("../img/bg-cover.png");
+	background-position: right bottom;
+	background-repeat: no-repeat;
+
+	.logo {
+		float: left;
+		max-width: 150px;
+		margin: $large-spacing 0 0 $large-spacing;
+
+		img {
+			width: 100%;
+		}
+	} 
+
+	.cover-title {
+		margin-top: $larger-spacing*2;
+		@include full;
+		max-width: 50%;
+		font-size: 5rem;
+		font-weight: $light-weight;
+	}
+
+	.cover-description {
+		margin: $larger-spacing 0 $larger-spacing*2;
+		@include full;
+		max-width: 50%;
+	}
+}
+
+.cover-content {
+	@include full;
+	padding: $larger-spacing 0;
+
+	.intro,
+	.sections {
+		@include full;
+	}
+
+	.sections {
+		margin-top: $larger-spacing;
+	}
+
+	.sections .card {
+		@include gallery(4);
+		text-align: center;
+
+		figure {
+			padding: $base-spacing 0;
+		}
+
+		.card-body {
+			color: $primary-color;
+			font-size: 2.5rem;
+			line-height: 1;
+			font-weight: $light-weight;
+		}
+
+		.card-actions {
+			text-align: center;
+		}
+	}
+}
+
+.cover-footer {
+	@include full;
+	padding-bottom: $base-spacing;
+
+	.powered {
+		float: left;
+	}
+
+	.release {
+		float: right;
+		font-weight: $bold-weight; 
+	}
+}
+
+
+#draft-ribbon{
+  width: 200px;
+  background: #e43;
+  position: fixed;
+  top: 25px;
+  right: -50px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  @extend .depth-1;
+}
+
+// END COVER
+
+
+
+
  
 .dummy {
 	font-family: 'BLOKKRegular' !important;
