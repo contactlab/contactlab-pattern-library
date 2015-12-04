@@ -8,11 +8,6 @@
 			Text input
 		</h2>
 		<div class="component-example">
-			<!-- <article>
-				<label for="input1">Label</label>
-				<input type="text" id="input1">
-				<div class="input-note">Lorem ipsum dolor sit.</div>
-			</article> -->
 			<article>
 				<input-clab label="label">
 					Lorem ipsum dolor sit.
@@ -39,16 +34,10 @@
 				</input-clab>
 			</article>
 			<article>
-				<input-clab label="label" type="disabled" disabled>
+				<input-clab label="label" disabled>
 					Lorem ipsum dolor sit.
 				</input-clab>
 			</article>
-
-			<!-- <article>
-				<label for="input6" class="disabled">Label info</label>
-				<input type="text" id="input6" disabled>
-				<div class="input-note disabled">Lorem ipsum dolor sit.</div>
-			</article> -->
 		</div>
 		<div class="component-specs">
 			<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
@@ -86,7 +75,7 @@
 							<tr>
 								<td>type</td>
 								<td>string</td>
-								<td>none, 'success', 'warning', 'error', 'info', 'disabled'</td>
+								<td>none, 'success', 'warning', 'error', 'info'</td>
 								<td>none</td>
 							</tr>
 							<tr>
@@ -156,16 +145,34 @@
 								<td>'fileinput'</td>
 							</tr>
 							<tr>
+								<td>type</td>
+								<td>string</td>
+								<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+								<td>none</td>
+							</tr>
+							<tr>
 								<td>value</td>
 								<td>string</td>
 								<td>any valid string</td>
 								<td>none</td>
 							</tr>
 							<tr>
+								<td>disabled</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
 								<td>multiple</td>
 								<td>boolean</td>
 								<td>true/false</td>
 								<td>false</td>
+							</tr>
+							<tr>
+								<td>note-type</td>
+								<td>string</td>
+								<td>optional additional class for the note</td>
+								<td>none</td>
 							</tr>
 						</tbody>
 					</table>
@@ -179,22 +186,6 @@
 			Radio
 		</h2>
 		<div class="component-example">
-	        <!-- <div class="row">
-				<input id="radio1" type="radio" name="radio_button"/>
-				<label for="radio1">radio 1</label>
-	        </div>
-	        <div class="row">
-				<input id="radio2" type="radio" name="radio_button" checked/>
-				<label for="radio2">radio 2</label>
-	        </div>
-	        <div class="row">
-				<input id="radio3" type="radio" name="radio_button_2" disabled/>
-				<label for="radio3">radio 3</label>
-	        </div>
-	        <div class="row">
-				<input id="radio4" type="radio" name="radio_button_2" disabled checked/>
-				<label for="radio4">radio 4</label>
-	        </div> -->
 			<div class="row"><radio-clab labels='["radio 1", "radio 2", "radio 3"]' name="group1"></radio-clab></div>
 			<div class="row"><radio-clab labels='["radio 4", "radio 5"]' name="group2" active="0"></radio-clab></div>
 			<div class="row"><radio-clab labels='["radio 6", "radio 7", "radio 8"]' name="group3" active="1" disabled='[1]'></radio-clab></div>
@@ -262,23 +253,6 @@
 			Checkbox
 		</h2>
 		<div class="component-example">
-	        <!-- <div class="row">
-				<input id="check1" type="checkbox"/>
-				<label for="check1">checkbox 1</label>
-	        </div>
-	        <div class="row">
-				<input id="check2" type="checkbox" checked/>
-				<label for="check2">checkbox 2</label>
-	        </div>
-	        <div class="row">
-				<input id="check3" type="checkbox" disabled/>
-				<label for="check3">checkbox 3</label>
-	        </div>
-	        <div class="row">
-				<input id="check3" type="checkbox" disabled checked/>
-				<label for="check3">checkbox 3</label>
-	        </div> -->
-
 	        <div class="row">
 				<checkbox-clab labels='["checkbox 1", "checkbox 2", "checkbox 3"]'></checkbox-clab>
 			</div>
@@ -347,7 +321,7 @@
 		</h2>
 		<div class="component-example">
 			<article>
-				<range-clab label="My wonderful range input label" value="5" min="0" max="10" step="1"></range-clab>
+				<range-clab label="My wonderful range input label" value="5" min="0" max="10" step="1" disabled></range-clab>
 				<br><br>
 				<range-clab label="How old are you?" value="20" min="18" max="33" step="1" show-details></range-clab>
 			</article>
@@ -381,6 +355,12 @@
 								<td>rangeinput</td>
 							</tr>
 							<tr>
+								<td>type</td>
+								<td>string</td>
+								<td>none, 'success', 'warning', 'error', 'info'</td>
+								<td>none</td>
+							</tr>
+							<tr>
 								<td>value</td>
 								<td>number</td>
 								<td>any valid number inside the range you set</td>
@@ -403,6 +383,12 @@
 								<td>number</td>
 								<td>step value</td>
 								<td>none</td>
+							</tr>
+							<tr>
+								<td>disabled</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
 							</tr>
 							<tr>
 								<td>show-details</td>

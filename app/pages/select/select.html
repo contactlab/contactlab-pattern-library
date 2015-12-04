@@ -9,33 +9,31 @@
 		</h2>
 		<div class="component-example">
 			<article>
-					<elekti-mer label="Select label" options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]'></elekti-mer>
-					<div class="note">Lorem ipsum dolor sit.</div>
+					<elekti-mer label="Select label" options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]'>Lorem ipsum dolor sit.</elekti-mer>
 				
 			</article>
 			<article>
-					<elekti-mer label="Select label no search" no-search options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]'></elekti-mer>
-					<div class="note">Lorem ipsum dolor sit.</div>
+					<elekti-mer label="Select label no search" no-search options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]'>Lorem ipsum dolor sit.</elekti-mer>
 				
 			</article>
 			<article>
-					<elekti-mer label="Success select label" type="success"></elekti-mer>
-					<div class="note">Lorem ipsum dolor sit.</div>
+					<elekti-mer label="Success select label" type="success">Lorem ipsum dolor sit.</elekti-mer>
 				
 			</article>
 			<article>
-					<elekti-mer label="Warning select label" type="warning"></elekti-mer>
-					<div class="note">Lorem ipsum dolor sit.</div>
+					<elekti-mer label="Warning select label" type="warning">Lorem ipsum dolor sit.</elekti-mer>
 				
 			</article>
 			<article>
-					<elekti-mer label="Error select label" type="error"></elekti-mer>
-					<div class="note">Lorem ipsum dolor sit.</div>
+					<elekti-mer label="Error select label" type="error">Lorem ipsum dolor sit.</elekti-mer>
 				
 			</article>
 			<article>
-					<elekti-mer label="Info select label" type="info"></elekti-mer>
-					<div class="note">Lorem ipsum dolor sit.</div>
+					<elekti-mer label="Info select label" type="info">Lorem ipsum dolor sit.</elekti-mer>
+				
+			</article>
+			<article>
+					<elekti-mer label="Disabled select label" disabled>Lorem ipsum dolor sit.</elekti-mer>
 				
 			</article>
 		</div>
@@ -66,6 +64,12 @@
 								<td>string</td>
 								<td>any valid string</td>
 								<td>'elekti'</td>
+							</tr>
+							<tr>
+								<td>type</td>
+								<td>string</td>
+								<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+								<td>none</td>
 							</tr>
 							<tr>
 								<td>options</td>
@@ -102,6 +106,12 @@
 								<td>false</td>
 							</tr>
 							<tr>
+								<td>disabled</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
+							</tr>
+							<tr>
 								<td>no-search</td>
 								<td>boolean</td>
 								<td>true/false</td>
@@ -117,6 +127,12 @@
 								<td>optionsFn</td>
 								<td>function</td>
 								<td>a function returning a Javascript promise that returns the options array</td>
+								<td>none</td>
+							</tr>
+							<tr>
+								<td>note-type</td>
+								<td>string</td>
+								<td>optional additional class for the note</td>
 								<td>none</td>
 							</tr>
 						</tbody>
@@ -153,7 +169,7 @@
 		</h2>
 		<div class="component-example">
 			<article>
-				<multi-sel-clab label="Multiple select label"></multi-sel-clab>
+				<multi-sel-clab label="Multiple select label">Lorem ipsum dolor</multi-sel-clab>
 			</article>
 		</div>
 		<div class="component-specs">
@@ -174,7 +190,7 @@
 &#x3C;/select&#x3E;</code></pre>
 				</div>
 				<div class="tab-content">
-					<pre><code class="html">&lt;multi-sel-clab label="Label for the select"&gt;&lt;/multi-sel-clab&gt;</code></pre>
+					<pre><code class="html">&lt;multi-sel-clab label="Label for the select" options='[{"value": "A", "label": "Option 1"}, ...]'&gt;&lt;/multi-sel-clab&gt;</code></pre>
 				</div>
 				<div class="tab-content">
 					<table class="striped-table">
@@ -215,6 +231,12 @@
 								<td>boolean</td>
 								<td>true/false</td>
 								<td>false</td>
+							</tr>
+							<tr>
+								<td>note-type</td>
+								<td>string</td>
+								<td>optional additional class for the note</td>
+								<td>none</td>
 							</tr>
 						</tbody>
 					</table>

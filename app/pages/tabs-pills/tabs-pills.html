@@ -22,11 +22,11 @@
 		<div class="component-specs">
 			<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
 				<div class="tab-content">
-<pre><code class="html"></code>&lt;tabs-clab labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
+<pre><code class="html">&lt;tabs-clab labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
 &#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
 &#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
 &#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
-&lt;/tabs-clab&gt;</pre>
+&lt;/tabs-clab&gt;</code></pre>
 				</div>
 				<div class="tab-content">
 					<table>
@@ -48,8 +48,14 @@
 							<tr>
 								<td>active</td>
 								<td>number</td>
-								<td>index of the tab to be displayed at first</td>
+								<td>index of the tab to be displayed from the start</td>
 								<td>0</td>
+							</tr>
+							<tr>
+								<td>pills</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
 							</tr>
 						</tbody>
 					</table>
@@ -63,7 +69,7 @@
 			Pills
 		</h2>
 		<div class="component-example">
-			<tabs-clab pills labels='["Pill 1", "Pill 2", "Pill 3"]'>
+			<tabs-clab pills active="1" labels='["Pill 1", "Pill 2", "Pill 3"]'>
 				<div class="tab-content">Pill 1 content</div>
 				<div class="tab-content">Pill 2 content</div>
 				<div class="tab-content">Pill 3 content</div>
@@ -74,11 +80,11 @@
 		<div class="component-specs">
 			<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
 				<div class="tab-content">
-<pre><code class="html"></code>&lt;tabs-clab pills active=&quot;1&quot; labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
+<pre><code class="html">&lt;tabs-clab pills active=&quot;1&quot; labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
 &#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
 &#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
 &#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
-&lt;/tabs-clab&gt;</pre>
+&lt;/tabs-clab&gt;</code></pre>
 				</div>
 				<div class="tab-content">
 					<table>
@@ -100,8 +106,14 @@
 							<tr>
 								<td>active</td>
 								<td>number</td>
-								<td>index of the tab to be displayed at first</td>
+								<td>index of the tab to be displayed from the start</td>
 								<td>0</td>
+							</tr>
+							<tr>
+								<td>pills</td>
+								<td>boolean</td>
+								<td>true/false</td>
+								<td>false</td>
 							</tr>
 						</tbody>
 					</table>
