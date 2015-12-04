@@ -76,6 +76,12 @@ var AppRoutes = (function(){
 	    }],
 	    '/ui/toaster': [function() {
 	    	view.load('pages/toaster/toaster.html', highlight);
+	    }],
+	    '/product-brand/our-logo': [function() {
+	    	view.load('pages/our-logo/our-logo.html', highlight);
+	    }],
+	    '/product-brand/brand-book': [function() {
+	    	view.load('pages/brand-book/brand-book.html', highlight);
 	    }]
 	};
 

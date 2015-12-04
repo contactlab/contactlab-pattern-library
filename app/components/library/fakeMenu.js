@@ -104,6 +104,20 @@ var AppFakeMenu = [
 			}
 		]
 	},{
+		"label": "Product brand",
+		"url": "#/product-brand",
+		"icon": "clab clab-icon-sign-resources icon",
+		"submenu": [
+			{
+				"label": "Our logo",
+				"url": "#/product-brand/our-logo"
+			},
+			{
+				"label": "Brand Book",
+				"url": "#/product-brand/brand-book"
+			}
+		]
+	},{
 		"label": "Resources",
 		"url": "#/resoruces",
 		"icon": "clab clab-icon-sign-resources icon"

@@ -16,7 +16,6 @@
 	<script src="assets/bower/director/build/director.min.js"></script>
 	<script src="assets/bower/lodash/lodash.min.js"></script>
 
-	<link rel="import" href="components/library/view.html">
 	<link rel="import" href="components/header/view.html">
 	<link rel="import" href="assets/bower/ui-components/alert/view.html">
 	<link rel="import" href="assets/bower/ui-components/button/view.html">
@@ -44,22 +43,75 @@
 
 </head>
 <body>
-<library-clab>
-	<aside id="main-sidebar">
-		<menu-clab title-icon="clab-icon-sign">
-			<span class="name">contact<b>lab</b></span>
-		</menu-clab>
-	</aside>
-	<!-- <header class="design">
-		<header-clab></header-clab>
-		<div id="product-switch">
-			<elekti-mer default="0" no-search label="Switch style" options='[{"label":"ContactHub", "value": 0}, {"label":"ContactPlan", "value": "1"}]' class="floating-label"></elekti-mer>
-		</div>
-	</header> -->
-	<main>
-		<div id="view"></div>
-	</main>
 
-</library-clab>
+<div id="draft-ribbon">
+	BETA
+</div>
+
+<div id="cover-heading">
+	<div class="logo">
+		<img src="assets/img/logoCLAB.svg" alt="">
+	</div>
+	<div class="centered-wrapper">
+		<div class="cover-title">
+			Pattern Library
+		</div>
+		<div class="cover-description">
+			Open source UI components and visual style guide to create consistency and
+			beautiful user experiences.<br/>
+			In order to achieve this, we need to have a single point of reference for all
+			the patterns we use, so that everyone internally can refer to them.<br/>
+			We also need a shared vocabulary of UI elements and code, to allow teams
+			to communicate with each other in the most efficient way.
+		</div>
+	</div>
+</div>
+<div class="cover-content">
+	<div class="centered-wrapper">
+		<div class="intro">
+			<p>We created this pattern library with several goals in mind:</p>
+			<ul class="default">
+				<li>to ensure a consistent use of patterns and UI elements</li>
+				<li>to provide guidance on correct usage of the patterns</li>
+				<li>to encourage re-use of code, reducing redundancy to a minimum</li>
+			</ul>
+			<p>It is a “living document” and should be updated when the code underlying the feature changes or when a new pattern is introduced.</p>
+		</div>
+		<div class="sections">
+			<div class="card">
+				<figure><img src="assets/img/pattern-library.png" alt=""></figure>
+				<div class="card-body">UX<br/>Pattern Library</div>
+				<div class="card-actions">
+					<a href="/library.html#/design/colors" class="btn primary">EXPLORE</a>
+				</div>
+			</div>
+			<div class="card">
+				<figure><img src="assets/img/product-brand.png" alt=""></figure>
+				<div class="card-body">Products<br/>Brand</div>
+				<div class="card-actions">
+					<a href="/library.html#/product-brand/our-logo" class="btn primary">EXPLORE</a>
+				</div>
+			</div>
+			<div class="card">
+				<figure><img src="assets/img/release-notes.png" alt=""></figure>
+				<div class="card-body">Release<br/>Notes</div>
+				<div class="card-actions">
+					<a href="#" class="btn primary">EXPLORE</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="cover-footer">
+	<div class="centered-wrapper">
+		<div class="powered">
+			© ContactLab 2015. Designed and developed by ContactLab. developer@contactlab.com
+		</div>
+		<div class="release">
+			Current release: 0.0.1
+		</div>
+	</div>
+</div>
 </body>
 </html>
