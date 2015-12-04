@@ -82,6 +82,9 @@ var AppRoutes = (function(){
 	    }],
 	    '/product-brand/brand-book': [function() {
 	    	view.load('pages/brand-book/brand-book.html', highlight);
+	    }],
+	    '/documentation/release-notes': [function() {
+	    	view.load('pages/release-notes/release-notes.html', highlight);
 	    }]
 	};
 

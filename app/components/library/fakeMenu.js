@@ -118,8 +118,18 @@ var AppFakeMenu = [
 			}
 		]
 	},{
-		"label": "Resources",
-		"url": "#/resoruces",
-		"icon": "clab clab-icon-sign-resources icon"
+		"label": "Documentation",
+		"url": "#/documentation",
+		"icon": "clab clab-icon-sign-resources icon",
+		"submenu": [
+			/*{
+				"label": "Getting started",
+				"url": "#/documentation/our-logo"
+			},*/
+			{
+				"label": "Release notes",
+				"url": "#/documentation/release-notes"
+			}
+		]
 	}
 ]

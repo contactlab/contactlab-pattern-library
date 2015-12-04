@@ -7176,11 +7176,12 @@ body.main-sidebar-small header {
   top: 25px;
   right: -50px;
   text-align: center;
-  line-height: 50px;
+  line-height: 40px;
   letter-spacing: 1px;
   color: #f0f0f0;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+  z-index: 3;
 }
 
 .dummy, #spinner .spinner-example {
@@ -7247,6 +7248,29 @@ main {
   padding: 0 !important;
   background: transparent;
   padding-bottom: 10px;
+}
+
+#release-notes .release {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 20px 0;
+  border-bottom: 1px solid #eaeced;
+}
+#release-notes .release .number {
+  float: left;
+  width: 5%;
+  color: #a6adb2;
+}
+#release-notes .release .date {
+  float: left;
+  width: 10%;
+}
+#release-notes .release .description {
+  float: left;
+  width: 85%;
 }
 
 #lists ol,

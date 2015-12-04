@@ -122,13 +122,16 @@ $fa-font-path: "../bower/font-awesome/fonts";
   top: 25px;
   right: -50px;
   text-align: center;
-  line-height: 50px;
+  line-height: 40px;
   letter-spacing: 1px;
   color: #f0f0f0;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   @extend .depth-1;
+  z-index: 3;
 }
+
+
 
 // END COVER
 
@@ -208,6 +211,36 @@ main {
 
 // FINE STRUTTURA PATTERN LIBRARY PAGES
 
+
+// RELEASE NOTES
+
+#release-notes {
+	.release {
+		@include full;
+		padding: $base-spacing 0;
+		border-bottom: 1px solid $light-gray;
+
+		.number {
+			float: left;
+			width: 5%;
+			color: $medium-gray;
+		}
+
+		.date {
+			float: left;
+			width: 10%;
+		}
+
+		.description {
+			float: left;
+			width: 85%;
+		}
+
+
+	}
+}
+
+// END RELEASE NOTES
 
 
 #lists {
