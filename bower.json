@@ -15,8 +15,7 @@
   "dependencies": {
     "compass": "~0.5.8",
     "font-awesome": "~4.4.0",
-    "lodash": "~3.10.1",
-    "polymer": "~1.1.3",
+    "polymer": "#^1.2.0",
     "susy": "~2.2.6",
     "zepto": "~1.1.6",
     "fetch": "~0.9.0",
@@ -24,8 +23,7 @@
     "es6-promise": "~3.0.2",
     "ui-components": "https://bitbucket.org/product-team/ui-components.git#develop",
     "highlightjs": "~8.9.1",
-    "iron-pages": "PolymerElements/iron-pages#~1.0.4",
-    "page": "page.js#~1.6.4"
+    "iron-pages": "PolymerElements/iron-pages#~1.0.4"
   },
   "devDependencies": {
     "compass-breakpoint": "breakpoint-sass#~2.6.1"
