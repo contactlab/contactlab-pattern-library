@@ -1,5 +1,5 @@
 Polymer({
-	is: 'library-clab',
+	is: 'main-clab',
 	_routing: Routing,
 	_layoutManager: function (){
 	  if ($(window).width() < 1024) {

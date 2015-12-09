@@ -1,5 +1,5 @@
 Polymer({
-	is: 'ui-clab',
+	is: 'library-clab',
 	properties:{
 		page:{
 			type:String,
