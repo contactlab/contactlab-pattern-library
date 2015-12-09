@@ -1,15 +1,15 @@
 <link rel="import" href="../../assets/bower/polymer/polymer.html">
-<link rel="stylesheet" href="./../../assets/bower/highlightjs/styles/github.css">
 
 <dom-module id="library-clab">
 	<style></style>
 	
-	<template>		
-		<content></content>
+	<template>	
+		<iron-pages attr-for-selected="data-route">
+			<cover-clab data-route="home"></cover-clab>
+			<ui-clab data-route="ui"></ui-clab>
+		</iron-pages>
 	</template>
 	
-	<script src="./../../assets/bower/highlightjs/highlight.pack.min.js"></script>
-	<script src="fakeMenu.js"></script>
-	<script src="routes.js"></script>
+	<script src="routing.js"></script>
 	<script src="script.js"></script>
 </dom-module>

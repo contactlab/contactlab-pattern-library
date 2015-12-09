@@ -1,0 +1,114 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="page-toaster">
+	<style></style>
+	
+	<template>
+		<div class="component-intro">
+			<div class="category">UI components</div>
+			<h1>Toaster</h1>
+		</div>
+		<div class="content">
+			<div class="component-description">
+				Buttons are used as triggers for actions. They are used in forms, toolbars, dialog footers and as stand-alone action triggers. Buttons should rarely, if ever, be used for navigation.<br/>
+				Actions are operations that are performed on objects.<br/>
+				Navigation changes the screen or view or takes you to another context in the application.
+			</div>
+			<section>
+				<h2 class="component-name">
+					Striped table
+				</h2>
+				<div class="component-example">
+					
+					
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+		<pre><code class="html"></code></pre>
+						</div>
+						<div class="tab-content">
+		<pre><code class="html"></code></pre>
+						</div>
+						<div class="tab-content">
+							ATTRIBUTES
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+		</div>
+
+
+
+
+		<h1 id="title1">Toaster</h1>
+		<!-- <p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dignissimos temporibus, quos sapiente alias assumenda unde reprehenderit numquam. Velit nesciunt modi officiis possimus iste minima veniam praesentium sed tenetur voluptatum!
+		</p> -->
+		<h2 id="syntax1">Syntax</h2>
+		<section>
+			<p><pre><code class="html">&lt;toaster-clab message="toaster message"&gt;&lt;/toaster-clab&gt;</code></pre></p>
+		</section>
+		<h2 id="attrs1">Attributes &lt;toaster-clab&gt;</h2>
+		<section>
+			<table class="striped-table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Values</th>
+						<th>Default</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>right</td>
+						<td>boolean</td>
+						<td>true/false</td>
+						<td>false</td>
+					</tr>
+					<tr>
+						<td>message</td>
+						<td>string</td>
+						<td>any valid string</td>
+						<td>none</td>
+					</tr>
+					<tr>
+						<td>caller-type</td>
+						<td>string</td>
+						<td>none, 'primary', 'secondary', 'info', 'success', 'warning', 'error'</td>
+						<td>'primary'</td>
+					</tr>
+					<tr>
+						<td>action-type</td>
+						<td>string</td>
+						<td>none, 'primary', 'secondary', 'info', 'success', 'warning', 'error'</td>
+						<td>'success'</td>
+					</tr>
+					<tr>
+						<td>action-text</td>
+						<td>string</td>
+						<td>any valid string</td>
+						<td>OK</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<h2 id="examples1">Examples</h2>
+		<section id="toaster">
+
+			<toaster-clab message="Message sent"></toaster-clab>
+			<toaster-clab right message="Mark as read" action-type="error" action-text="UNDO"></toaster-clab>
+			
+		</section>
+
+	</template>
+
+	<script>
+
+		Polymer({
+			is:'page-toaster'
+		});
+
+	</script>
+</dom-module>

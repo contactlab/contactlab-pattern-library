@@ -23,7 +23,9 @@
     "director": "~1.2.8",
     "es6-promise": "~3.0.2",
     "ui-components": "https://bitbucket.org/product-team/ui-components.git#develop",
-    "highlightjs": "~8.9.1"
+    "highlightjs": "~8.9.1",
+    "iron-pages": "PolymerElements/iron-pages#~1.0.4",
+    "page": "page.js#~1.6.4"
   },
   "devDependencies": {
     "compass-breakpoint": "breakpoint-sass#~2.6.1"

@@ -1,0 +1,140 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="page-tabs-pills">
+	<style></style>
+	
+	<template>
+		<div class="component-intro">
+			<div class="category">UI components</div>
+			<h1>Tabs & pills</h1>
+		</div>
+		<div class="content">
+			<div class="component-description">
+				Tabs & pills are used for alternating between views within the same context, not to navigate to different areas. For navigation refer to the horizontal navigation guidelines.
+			</div>
+			<section>
+				<h2 class="component-name">
+					Tabs
+				</h2>
+				<div class="component-example">
+					<tabs-clab labels='["Tab 1", "Tab 2", "Tab 3"]'>
+						<div class="tab-content">Tab 1 content</div>
+						<div class="tab-content">Tab 2 content</div>
+						<div class="tab-content">Tab 3 content</div>
+					</tabs-clab>
+					
+				</div>
+
+				<div class="component-specs">
+					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+		<pre><code class="html">&lt;tabs-clab labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
+		&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
+		&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
+		&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
+		&lt;/tabs-clab&gt;</code></pre>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>labels</td>
+										<td>array</td>
+										<td>array of strings</td>
+										<td>'Tab [index]'</td>
+									</tr>
+									<tr>
+										<td>active</td>
+										<td>number</td>
+										<td>index of the tab to be displayed from the start</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>pills</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="component-name">
+					Pills
+				</h2>
+				<div class="component-example">
+					<tabs-clab pills active="1" labels='["Pill 1", "Pill 2", "Pill 3"]'>
+						<div class="tab-content">Pill 1 content</div>
+						<div class="tab-content">Pill 2 content</div>
+						<div class="tab-content">Pill 3 content</div>
+					</tabs-clab>
+					
+				</div>
+
+				<div class="component-specs">
+					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+		<pre><code class="html">&lt;tabs-clab pills active=&quot;1&quot; labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
+		&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
+		&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
+		&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
+		&lt;/tabs-clab&gt;</code></pre>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>labels</td>
+										<td>array</td>
+										<td>array of strings</td>
+										<td>'Tab [index]'</td>
+									</tr>
+									<tr>
+										<td>active</td>
+										<td>number</td>
+										<td>index of the tab to be displayed from the start</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>pills</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+		</div>
+	</template>
+
+	<script>
+
+		Polymer({
+			is:'page-tabs-pills'
+		});
+
+	</script>
+</dom-module>

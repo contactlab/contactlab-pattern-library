@@ -1,0 +1,84 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+<link rel="stylesheet" href="./../../assets/bower/highlightjs/styles/github.css">
+
+<link rel="import" href="../../pages/accordion/view.html">
+<link rel="import" href="../../pages/alerts/view.html">
+<link rel="import" href="../../pages/brand-book/view.html">
+<link rel="import" href="../../pages/breadcrumb/view.html">
+<link rel="import" href="../../pages/buttons/view.html">
+<link rel="import" href="../../pages/buttons-group/view.html">
+<link rel="import" href="../../pages/cards/view.html">
+<link rel="import" href="../../pages/colors/view.html">
+<link rel="import" href="../../pages/datepicker/view.html">
+<link rel="import" href="../../pages/features/view.html">
+<link rel="import" href="../../pages/forms/view.html">
+<link rel="import" href="../../pages/iconography/view.html">
+<link rel="import" href="../../pages/labels-badges/view.html">
+<link rel="import" href="../../pages/lists/view.html">
+<link rel="import" href="../../pages/modals/view.html">
+<link rel="import" href="../../pages/motion/view.html">
+<link rel="import" href="../../pages/our-logo/view.html">
+<link rel="import" href="../../pages/pagination/view.html">
+<link rel="import" href="../../pages/panels/view.html">
+<link rel="import" href="../../pages/progress-bars/view.html">
+<link rel="import" href="../../pages/select/view.html">
+<link rel="import" href="../../pages/spinner/view.html">
+<link rel="import" href="../../pages/tables/view.html">
+<link rel="import" href="../../pages/tabs-pills/view.html">
+<link rel="import" href="../../pages/toaster/view.html">
+<link rel="import" href="../../pages/tooltips/view.html">
+<link rel="import" href="../../pages/typography/view.html">
+
+<dom-module id="ui-clab">
+	<style></style>
+	
+	<template>		
+		<aside id="main-sidebar">
+			<menu-clab title-icon="clab-icon-sign" link="#/">
+				<span class="name">contact<b>lab</b></span>
+			</menu-clab>
+		</aside>
+		<!-- <header class="design">
+			<header-clab></header-clab>
+			<div id="product-switch">
+				<elekti-mer default="0" no-search label="Switch style" options='[{"label":"ContactHub", "value": 0}, {"label":"ContactPlan", "value": "1"}]' class="floating-label"></elekti-mer>
+			</div>
+		</header> -->
+		<main>
+			<iron-pages attr-for-selected="data-page" selected=[[page]]>
+				<page-colors data-page="colors"></page-colors>
+				<page-typography data-page="typography"></page-typography>
+				<page-iconography data-page="iconography"></page-iconography>
+				<page-motion data-page="motion"></page-motion>
+				<page-buttons data-page="buttons"></page-buttons>
+				<page-buttons-group data-page="buttons-group"></page-buttons-group>
+				<page-labels-badges data-page="labels-badges"></page-labels-badges>
+				<page-tables data-page="tables"></page-tables>
+				<page-alerts data-page="alerts"></page-alerts>
+				<page-panels data-page="panels"></page-panels>
+				<page-spinner data-page="spinner"></page-spinner>
+				<page-cards data-page="cards"></page-cards>
+				<page-features data-page="features"></page-features>
+				<page-breadcrumb data-page="breadcrumb"></page-breadcrumb>
+				<page-lists data-page="lists"></page-lists>
+				<page-forms data-page="forms"></page-forms>
+				<page-select data-page="select"></page-select>
+				<page-datepicker data-page="datepicker"></page-datepicker>
+				<page-pagination data-page="pagination"></page-pagination>
+				<page-progress-bars data-page="progress-bars"></page-progress-bars>
+				<page-modals data-page="modals"></page-modals>
+				<page-tabs-pills data-page="tabs-pills"></page-tabs-pills>
+				<page-accordion data-page="accordion"></page-accordion>
+				<page-tooltips data-page="tooltips"></page-tooltips>
+				<page-toaster data-page="toaster"></page-toaster>
+				<page-our-logo data-page="our-logo"></page-our-logo>
+				<page-brand-book data-page="brand-book"></page-brand-book>
+			</iron-pages>
+		</main>
+	</template>
+
+	
+	<script src="./../../assets/bower/highlightjs/highlight.pack.min.js"></script>
+	<script src="menu.js"></script>
+	<script src="script.js"></script>
+</dom-module>

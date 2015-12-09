@@ -1,0 +1,179 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="page-spinner">
+	<style></style>
+	
+	<template>
+		<div class="component-intro">
+			<div class="category">UI components</div>
+			<h1>Spinner</h1>
+		</div>
+		<div class="content" id="spinner">
+			<section>
+				<h2 class="component-name">
+					Base spinner
+				</h2>
+				<div class="component-example">
+					<article>
+						<div class="card spinner-example">
+							Lorem ipsum dolor sit amet
+							<spinner-clab></spinner-clab>
+						</div>
+						<div class="card spinner-example">
+							Lorem ipsum dolor sit amet
+							<spinner-clab big></spinner-clab>
+						</div>
+					</article>
+					
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+		<pre><code class="html">&lt;!-- Base spinner --&gt;
+		&lt;div class=&quot;spinner-overlay&quot;&gt;
+		&#x9;&lt;div class=&quot;spinner&quot;&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+		&#x9;&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+
+		<pre><code class="html">&lt;!-- Base big spinner --&gt;
+		&lt;div class=&quot;spinner-overlay big&quot;&gt;
+		&#x9;&lt;div class=&quot;spinner&quot;&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+		&#x9;&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+						</div>
+						<div class="tab-content">
+		<pre><code class="html">&lt;!-- Base spinner --&gt;
+		&lt;spinner-clab&gt;&lt;/spinner-clab&gt;</code></pre>
+
+		<pre><code class="html">&lt;!-- Base big spinner --&gt;
+		&lt;spinner-clab big&gt;&lt;/spinner-clab&gt;</code></pre>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>dark</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>big</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="component-name">
+					Dark spinner
+				</h2>
+				<div class="component-example">
+					<article>
+						<div class="card spinner-example">
+							Lorem ipsum dolor sit amet
+							<spinner-clab dark></spinner-clab>
+						</div>
+						<div class="card spinner-example">
+							Lorem ipsum dolor sit amet
+							<spinner-clab big dark></spinner-clab>
+						</div>
+					</article>
+					
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+		<pre><code class="html">&lt;!-- Dark spinner --&gt;
+		&lt;div class=&quot;spinner-overlay dark&quot;&gt;
+		&#x9;&lt;div class=&quot;spinner&quot;&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+		&#x9;&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+
+		<pre><code class="html">&lt;!-- Dark big spinner --&gt;
+		&lt;div class=&quot;spinner-overlay dark big&quot;&gt;
+		&#x9;&lt;div class=&quot;spinner&quot;&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+		&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+		&#x9;&lt;/div&gt;
+		&lt;/div&gt;</code></pre>
+						</div>
+						<div class="tab-content">
+		<pre><code class="html">&lt;!-- Dark spinner --&gt;
+		&lt;spinner-clab&gt;&lt;/spinner-clab&gt;</code></pre>
+
+		<pre><code class="html">&lt;!-- Dark big spinner --&gt;
+		&lt;spinner-clab big&gt;&lt;/spinner-clab&gt;</code></pre>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>dark</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>big</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+		</div>
+	</template>
+
+	<script>
+
+		Polymer({
+			is:'page-spinner'
+		});
+
+	</script>
+</dom-module>

@@ -1,5 +1,9 @@
 var AppRoutes = (function(){
-	var view = $('#view');
+
+
+
+
+	/*var view = $('#view');
 
 	var routes = {
 	    '/design/colors': [function() {
@@ -86,13 +90,13 @@ var AppRoutes = (function(){
 	};
 
 	var highlight = function(){
-		/*var n = document.querySelectorAll('pre code').length;
-		n ? hljs.highlightBlock(document.querySelector('pre code')) : null;*/
+		var n = document.querySelectorAll('pre code').length;
+		n ? hljs.highlightBlock(document.querySelector('pre code')) : null;
 		$('.html').each(function(i, block) {
 			hljs.highlightBlock(block);
 		});
 
-		_generateAnchors();
+		//_generateAnchors();
 	}
 
 	var _generateAnchors = function(){
@@ -122,6 +126,7 @@ var AppRoutes = (function(){
 			view.load('pages/error.html');
 		},
 		on: function(){
+			document.querySelector('library-clab').home=false;
 			$('menu-clab .first-level-menu>li>a').each(function(i, e){					
 				if(location.hash.search(e.getAttribute('href')) > -1){
 					e.parentNode.classList.add('active');
@@ -132,6 +137,6 @@ var AppRoutes = (function(){
 		}
 	});
 
-	router.init('/design/colors');
+	router.init('/').bind(this);*/
 
 });
