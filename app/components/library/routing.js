@@ -113,6 +113,10 @@ var Routing =(function(){
 	    '/product-brand/brand-book': function() {
 	    	pages.selected='ui';
 	    	ui.page = 'brand-book';
+	    },
+	    '/documentation/release-notes': function() {
+	    	pages.selected='ui';
+	    	ui.page = 'release-notes';
 	    }
 	};
 

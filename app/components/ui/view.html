@@ -28,11 +28,14 @@
 <link rel="import" href="../../pages/toaster/view.html">
 <link rel="import" href="../../pages/tooltips/view.html">
 <link rel="import" href="../../pages/typography/view.html">
+<link rel="import" href="../../pages/release-notes/view.html">
 
 <dom-module id="ui-clab">
 	<style></style>
 	
-	<template>		
+	<template>	
+		<div id="draft-ribbon">BETA</div>
+			
 		<aside id="main-sidebar">
 			<menu-clab title-icon="clab-icon-sign" link="#/">
 				<span class="name">contact<b>lab</b></span>
@@ -73,6 +76,7 @@
 				<page-toaster data-page="toaster"></page-toaster>
 				<page-our-logo data-page="our-logo"></page-our-logo>
 				<page-brand-book data-page="brand-book"></page-brand-book>
+				<page-release-notes data-page="release-notes"></page-release-notes>
 			</iron-pages>
 		</main>
 	</template>

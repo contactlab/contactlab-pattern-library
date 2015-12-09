@@ -118,8 +118,14 @@ var AppMenu = [
 			}
 		]
 	},{
-		"label": "Resources",
-		"url": "#/resoruces",
-		"icon": "clab clab-icon-sign-resources icon"
+		"label": "Documentation",
+		"url": "#/documentation",
+		"icon": "clab clab-icon-sign-resources icon",
+		"submenu": [
+			{
+				"label": "Release notes",
+				"url": "#/documentation/release-notes"
+			}
+		]
 	}
 ]
