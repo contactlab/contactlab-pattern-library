@@ -6,6 +6,7 @@ var conf = {
   scssSourcePath: './app/assets/scss/**/*.{scss,sass}',
   jsSourcePath: './app/**/*.{js,jsx}',
   localPort: 5792,
+  es6SourcePath: './app/**/*es6.js',
   cssOutputPath: './app/assets/css/',
   distCSS: './dist/css/'
 }
@@ -22,25 +23,18 @@ var gulp = require('gulp-param')(require('gulp'), process.argv),
     gutil = require("gulp-util"),
     webpack = require("webpack"),
     connect = require('gulp-connect'),
-    compass = require('gulp-compass');
+    compass = require('gulp-compass'),
+    path = require("path"),
+    babel = require("gulp-babel"),
+    watch = require('gulp-watch'),
+    rename = require("gulp-rename"),
+    plumber = require('gulp-plumber');
 
 
 /* 
 Taks definitions 
 ========================
 */
-
-gulp.task('compass', function() {
- gulp.src('./app/assets/scss/*.scss')
-   .pipe(sourcemaps.init())
-   .pipe(compass({
-     config_file: './config.rb',
-     css: './app/assets/css',
-     sass:'./app/assets/scss'
-   }))
-   .pipe(gulp.dest('./app/assets/css'));
-});
-
 
 // Webpack actions
 gulp.task("webpack", function(callback) {
@@ -102,10 +96,35 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(conf.cssOutputPath));
 });
 
-// Watch file changes
-gulp.task('watch', function() {
-  gulp.watch([conf.scssSourcePath, conf.jsSourcePath], ['compass'])
-})
+gulp.task('compass', function() {
+ gulp.src('./app/assets/scss/*.scss')
+   .pipe(sourcemaps.init())
+   .pipe(compass({
+     config_file: './config.rb',
+     css: './app/assets/css',
+     sass:'./app/assets/scss'
+   }))
+   .pipe(gulp.dest(conf.cssOutputPath));
+});
+
+
+
+
+gulp.task('watch-sass', function() {
+  gulp.watch([conf.scssSourcePath], ['compass'])
+});
+
+gulp.task('watch-es6', function() {
+  return gulp.src(conf.es6SourcePath)
+    .pipe(plumber())
+    .pipe(watch(conf.es6SourcePath))
+    .pipe(babel())
+    .pipe(rename(function(path){
+        path.basename = path.basename.replace(/.es6$/, '');
+        console.log('updated: '+path.basename);
+    }))
+    .pipe(gulp.dest('./app'));
+});
 
 
 /* 
@@ -114,4 +133,6 @@ Actions
 */
 
 // Launch a webserver and watch for *.scss, *.js, *.jsx changes and recompiles in plain .css or .js in the /dist folder
-gulp.task('default', ['connect', 'watch']); 
+gulp.task('default', ['connect']); 
+gulp.task('ux', ['connect', 'watch-sass']);
+gulp.task('dev', ['connect', 'watch-es6']);
