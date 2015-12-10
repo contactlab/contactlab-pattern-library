@@ -6,7 +6,9 @@ Polymer({
 			observer: '_pageChanged'
 		}
 	},
+
 	attached:function(){
+		
 		this.querySelector('menu-clab').menu = AppMenu;
 
 		var n = document.querySelectorAll('pre code').length;
@@ -14,7 +16,9 @@ Polymer({
 		$('.html').each(function(i, block) {
 			hljs.highlightBlock(block);
 		});
+		
 	},
+
 	_pageChanged:function(){
 		//console.log(this.page);
 		window.scroll(0,0);

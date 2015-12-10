@@ -39,7 +39,10 @@
 				<div class="component-specs">
 					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
 						<div class="tab-content">
-		<pre><code class="html">&lt;tooltip-clab content=&quot;Tooltip content&quot; tt-type=&quot;primary&quot;&gt;&lt;/tooltip-clab&gt;</code></pre>
+							<button-clab type="primary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;tooltip-clab content=&quot;Tooltip content&quot; tt-type=&quot;primary&quot;&gt;&lt;/tooltip-clab&gt;</code></pre>
+							</div>
 						</div>
 						<div class="tab-content">
 							<table>
@@ -82,7 +85,8 @@
 	<script>
 
 		Polymer({
-			is:'page-tooltips'
+			is:'page-tooltips',
+			behaviors: [ClipboardBehav]
 		});
 
 	</script>

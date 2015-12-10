@@ -23,11 +23,14 @@
 				<div class="component-specs">
 					<tabs-clab  labels='["HTML"]' active="0">
 						<div class="tab-content">
+							<button-clab type="primary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
 		<pre><code class="html">&lt;ol class="breadcrumb"&gt;
 			&lt;li&gt;&lt;a href="#"&gt;item1&lt;/a&gt;&lt;/li&gt;
 			&lt;li&gt;&lt;a href="#"&gt;item2&lt;/a&gt;&lt;/li&gt;
 			&lt;li class="active"&gt;item3&lt;/li&gt;
 		&lt;/ol&gt;</code></pre>
+							</div>
 						</div>
 					</tabs-clab>
 				</div>
@@ -47,11 +50,14 @@
 				<div class="component-specs">
 					<tabs-clab  labels='["HTML"]' active="0">
 						<div class="tab-content">
+							<button-clab type="primary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
 		<pre><code class="html">&lt;ol class="breadcrumb"&gt;
 			&lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt; item1 &lt;/a&gt;&lt;/li&gt;
 			&lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-book"&gt;&lt;/i&gt; item2 &lt;/a&gt;&lt;/li&gt;
 			&lt;li class="active"&gt;&lt;i class="fa fa-cog"&gt;&lt;/i&gt; item3 &lt;/li&gt;
-		&lt;/ol&gt;</code></pre
+		&lt;/ol&gt;</code></pre>
+							</div>
 						</div>
 					</tabs-clab>
 				</div>
@@ -61,9 +67,10 @@
 
 	<script>
 
-	Polymer({
-		is:'page-breadcrumb'
-	});
+		Polymer({
+			is:'page-breadcrumb',
+			behaviors: [ClipboardBehav]
+		});
 
 	</script>
 </dom-module>
