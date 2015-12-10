@@ -1,0 +1,157 @@
+class MainClab {
+	beforeRegister(){
+		this.is = "main-clab";
+	}
+
+	attached(){
+		this._routing();
+
+		window.addEventListener('resize', ()=> {
+		    this._layoutManager();
+		});
+		window.addEventListener('orientationchange', ()=> {
+		    this._layoutManager();
+		});
+
+		this._layoutManager();
+	}
+
+	_routing(){ 
+		let pages = this.querySelector('iron-pages');
+		let library = this.querySelector('library-clab');
+
+		this.handleRouting=function(){
+			let url = this.router.getRoute();
+			if(url[0]===''){
+				pages.selected='home';
+			} else {
+				pages.selected='library';
+				library.page=url[1];
+			} 
+		};
+
+		this.routes = {
+		    '/': ()=>{
+		    	this.handleRouting();
+		    },
+		    '/design/colors': ()=>{
+		    	this.handleRouting();
+		    },
+		    '/design/typography': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/design/iconography': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/design/motion': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/buttons': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/buttons-group': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/labels-badges': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/tables': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/alerts': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/panels': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/spinner': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/cards': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/features': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/breadcrumb': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/lists': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/forms': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/select': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/datepicker': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/pagination': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/progress-bars': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/modals': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/tabs-pills': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/accordion': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/tooltips': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/toaster': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/product-brand/our-logo': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/product-brand/brand-book': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/documentation/release-notes': ()=> {
+		    	this.handleRouting();
+		    }
+		};	
+
+		this.router = Router(this.routes).configure({
+			notfound: ()=>{
+				pages.selected='library';
+		    	library.page = 'not-found';
+			},
+			on: ()=>{
+				$('menu-clab .first-level-menu>li>a').each(function(i, e){					
+					if(location.hash.search(e.getAttribute('href')) > -1){
+						e.parentNode.classList.add('active');
+					}else{
+						e.parentNode.classList.remove('active');
+					}
+				});
+			}
+		});
+
+		this.router.init('/');
+	}
+
+	_layoutManager(){
+	  if ($(window).width() < 1024) {
+	    document.querySelector('body').classList.add('main-sidebar-small');
+	  } else if ($(window).width() > 1780){
+		document.querySelector('body').classList.add('secondary-sidebar-open');
+		//document.querySelector('#secondary-sidebar').classList.add('sidebar-open');
+		//document.querySelector('#user-menu-toggle').classList.add('active');
+	  } else {
+	    document.querySelector('body').classList.remove('main-sidebar-small')
+	    //document.querySelector('#secondary-sidebar').classList.remove('sidebar-open');
+	    //document.querySelector('#user-menu-toggle').classList.remove('active');
+	  }
+	}
+}
+
+Polymer(MainClab);
