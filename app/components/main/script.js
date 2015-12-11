@@ -13,6 +13,13 @@ var MainClab = (function () {
 		key: 'beforeRegister',
 		value: function beforeRegister() {
 			this.is = "main-clab";
+			this.properties = {
+				currentModule: {
+					type: String,
+					value: null,
+					readonly: true
+				}
+			};
 		}
 	}, {
 		key: 'attached',
@@ -33,108 +40,140 @@ var MainClab = (function () {
 	}, {
 		key: '_routing',
 		value: function _routing() {
-			var _this2 = this;
-
-			var pages = this.querySelector('iron-pages');
-			var library = this.querySelector('library-clab');
+			var _this3 = this;
 
 			this.handleRouting = function () {
+				var _this2 = this;
+
 				var url = this.router.getRoute();
 				if (url[0] === '') {
-					pages.selected = 'home';
+					this.querySelector('iron-pages').selected = this.currentModule = 'home';
 				} else {
-					pages.selected = 'library';
-					library.page = url[1];
+					this.querySelector('iron-pages').selected = this.currentModule = 'library';
+
+					if (!this.querySelector('library-clab')) {
+						window.addEventListener('libraryLoaded', function (evt) {
+							_this2.querySelector('library-clab').page = url[1];
+							window.removeEventListener('libraryLoaded');
+						});
+					} else {
+						this.querySelector('library-clab').page = url[1];
+					}
+
+					//this.currentPage=this.querySelector('.library-clab.iron-selected');
 				}
+
+				/*console.log('current: ', this.currentPage);
+    if(oldPage){
+    	console.log('old: ', oldPage);
+    	/*let elSaved=oldPage.outerHTML;
+    	console.log(elSaved);
+    	//this.querySelector(oldPage.tagName.toLowerCase()).outerHTML=oldPage.outerHTML;
+    	this.querySelector(oldPage.tagName.toLowerCase()).remove();
+    	this.querySelector().createElement(oldPage.outerHTML);*/
+
+				// Find all the CLAB custom elements in the page and reset each one of them
+				/*Array.from(oldPage.querySelectorAll('[class*="style-scope"]')).forEach((el)=>{
+    		let name = el.tagName.toLowerCase();
+    		if(name.indexOf('clab')>-1){
+    			customTags.push(el);
+    			let proto = this.getNativePrototype(name);
+    			//console.log(name);
+    			console.log(proto);
+    			console.log(proto.properties);
+    		}
+    });
+    }
+    	oldPage=this.currentPage;*/
 			};
 
 			this.routes = {
 				'/': function _() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/design/colors': function designColors() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/design/typography': function designTypography() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/design/iconography': function designIconography() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/design/motion': function designMotion() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/buttons': function uiButtons() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/buttons-group': function uiButtonsGroup() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/labels-badges': function uiLabelsBadges() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/tables': function uiTables() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/alerts': function uiAlerts() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/panels': function uiPanels() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/spinner': function uiSpinner() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/cards': function uiCards() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/features': function uiFeatures() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/breadcrumb': function uiBreadcrumb() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/lists': function uiLists() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/forms': function uiForms() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/select': function uiSelect() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/datepicker': function uiDatepicker() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/pagination': function uiPagination() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/progress-bars': function uiProgressBars() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/modals': function uiModals() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/tabs-pills': function uiTabsPills() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/accordion': function uiAccordion() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/tooltips': function uiTooltips() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/ui/toaster': function uiToaster() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/product-brand/our-logo': function productBrandOurLogo() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/product-brand/brand-book': function productBrandBrandBook() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				},
 				'/documentation/release-notes': function documentationReleaseNotes() {
-					_this2.handleRouting();
+					_this3.handleRouting();
 				}
 			};
 
@@ -155,6 +194,11 @@ var MainClab = (function () {
 			});
 
 			this.router.init('/');
+		}
+	}, {
+		key: '_isPage',
+		value: function _isPage(cur, page) {
+			return cur === page;
 		}
 	}, {
 		key: '_layoutManager',

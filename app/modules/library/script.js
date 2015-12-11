@@ -30,12 +30,19 @@ var LibraryClab = (function () {
 			Array.from(document.querySelectorAll('.html')).forEach(function (el) {
 				hljs.highlightBlock(el);
 			});
+
+			this.fire('libraryLoaded');
 		}
 	}, {
 		key: '_pageChanged',
 		value: function _pageChanged() {
 			//console.log(this.page);
 			window.scroll(0, 0);
+		}
+	}, {
+		key: '_isPage',
+		value: function _isPage(cur, page) {
+			return cur === page;
 		}
 	}]);
 

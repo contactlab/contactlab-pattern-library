@@ -5,10 +5,13 @@
 	
 	<template>	
 		<iron-pages attr-for-selected="data-route">
-			<cover-clab data-route="home"></cover-clab>
-			<library-clab data-route="library"></library-clab>
+			<template is="dom-if" if="[[_isPage(currentModule, 'home')]]" restamp="true">
+				<cover-clab data-route="home"></cover-clab>
+			</template>
+			<template is="dom-if" if="[[_isPage(currentModule, 'library')]]" restamp="true">
+				<library-clab data-route="library"></library-clab>
+			</template>
 		</iron-pages>
 	</template>
 	
 	<script src="script.js"></script>
-</dom-module>

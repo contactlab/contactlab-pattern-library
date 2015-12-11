@@ -135,13 +135,12 @@
 
 		Polymer({
 			is:'page-datepicker',
-			behaviors: [ClipboardBehav]
-		});
-
-		document.addEventListener('WebComponentsReady', function(){
-			var cals = document.querySelectorAll('calendar-clab');
-			for(var i=0; i<cals.length; i++){
-				cals[i].options = {time: false, inputFormat: "DD/MM/YYYY"};
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				var cals = document.querySelectorAll('calendar-clab');
+				for(var i=0; i<cals.length; i++){
+					cals[i].options = {time: false, inputFormat: "DD/MM/YYYY"};
+				}
 			}
 		});
 

@@ -120,24 +120,22 @@
 
 		Polymer({
 			is:'page-modals',
-			behaviors: [ClipboardBehav]
-		});
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				var modal = document.querySelector('modal-clab');
 
-		document.addEventListener('WebComponentsReady', function(){
-			// MODAL
-			var modal = document.querySelector('modal-clab');
+				document.querySelector('#openModal').addEventListener('click',function(){
+					modal.visible = true;
+				});
 
-			document.querySelector('#openModal').addEventListener('click',function(){
-				modal.visible = true;
-			});
+				modal.addEventListener('modal-primary',function(){
+					alert('Clicked');
+				});
 
-			modal.addEventListener('modal-primary',function(){
-				alert('Clicked');
-			});
-
-			modal.addEventListener('modal-secondary',function(){
-				modal.visible = false;
-			});
+				modal.addEventListener('modal-secondary',function(){
+					modal.visible = false;
+				});
+			}
 		});
 
 	</script>

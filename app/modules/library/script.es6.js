@@ -17,11 +17,17 @@ class LibraryClab {
 		Array.from(document.querySelectorAll('.html')).forEach((el) => {
 			hljs.highlightBlock(el);
 		});
+
+		this.fire('libraryLoaded');
 	}
 
 	_pageChanged(){
 		//console.log(this.page);
 		window.scroll(0,0);
+	}
+
+	_isPage(cur, page){
+		return cur === page;
 	}
 }
 
