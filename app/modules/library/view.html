@@ -49,95 +49,93 @@
 			</div>
 		</header> -->
 		<main>
-			<iron-pages attr-for-selected="data-page" selected=[[page]]>
 				<template is="dom-if" if="[[_isPage(page, 'colors')]]" restamp="true">
-					<page-colors data-page="colors"></page-colors>
+					<page-colors></page-colors>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'typography')]]" restamp="true">
-					<page-typography data-page="typography"></page-typography>
+					<page-typography></page-typography>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'iconography')]]" restamp="true">
-					<page-iconography data-page="iconography"></page-iconography>
+					<page-iconography></page-iconography>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'motion')]]" restamp="true">
-					<page-motion data-page="motion"></page-motion>
+					<page-motion></page-motion>
 				</template>
-				<template is="dom-if" if="[[_isPage(page, 'motion')]]" restamp="true">
-					<page-buttons data-page="motion"></page-buttons>
+				<template is="dom-if" if="[[_isPage(page, 'buttons')]]" restamp="true">
+					<page-buttons></page-buttons>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'buttons-group')]]" restamp="true">
-					<page-buttons-group data-page="buttons-group"></page-buttons-group>
+					<page-buttons-group></page-buttons-group>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'labels-badges')]]" restamp="true">
-					<page-labels-badges data-page="labels-badges"></page-labels-badges>
+					<page-labels-badges></page-labels-badges>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'tables')]]" restamp="true">
-					<page-tables data-page="tables"></page-tables>
+					<page-tables></page-tables>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'alerts')]]" restamp="true">
-					<page-alerts data-page="alerts"></page-alerts>
+					<page-alerts></page-alerts>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'panels')]]" restamp="true">
-					<page-panels data-page="panels"></page-panels>
+					<page-panels></page-panels>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'spinner')]]" restamp="true">
-					<page-spinner data-page="spinner"></page-spinner>
+					<page-spinner></page-spinner>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'cards')]]" restamp="true">
-					<page-cards data-page="cards"></page-cards>
+					<page-cards></page-cards>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'features')]]" restamp="true">
-					<page-features data-page="features"></page-features>
+					<page-features></page-features>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'breadcrumb')]]" restamp="true">
-					<page-breadcrumb data-page="breadcrumb"></page-breadcrumb>
+					<page-breadcrumb></page-breadcrumb>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'lists')]]" restamp="true">
-					<page-lists data-page="lists"></page-lists>
+					<page-lists></page-lists>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'forms')]]" restamp="true">
-					<page-forms data-page="forms"></page-forms>
+					<page-forms></page-forms>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'select')]]" restamp="true">
-					<page-select data-page="select"></page-select>
+					<page-select></page-select>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'datepicker')]]" restamp="true">
-					<page-datepicker data-page="datepicker"></page-datepicker>
+					<page-datepicker></page-datepicker>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'pagination')]]" restamp="true">
-					<page-pagination data-page="pagination"></page-pagination>
+					<page-pagination></page-pagination>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'progress-bars')]]" restamp="true">
-					<page-progress-bars data-page="progress-bars"></page-progress-bars>
+					<page-progress-bars></page-progress-bars>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'modals')]]" restamp="true">
-					<page-modals data-page="modals"></page-modals>
+					<page-modals></page-modals>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'tabs-pills')]]" restamp="true">
-					<page-tabs-pills data-page="tabs-pills"></page-tabs-pills>
+					<page-tabs-pills></page-tabs-pills>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'accordion')]]" restamp="true">
-					<page-accordion data-page="accordion"></page-accordion>
+					<page-accordion></page-accordion>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'tooltips')]]" restamp="true">
-					<page-tooltips data-page="tooltips"></page-tooltips>
+					<page-tooltips></page-tooltips>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'toaster')]]" restamp="true">
-					<page-toaster data-page="toaster"></page-toaster>
+					<page-toaster></page-toaster>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'our-logo')]]" restamp="true">
-					<page-our-logo data-page="our-logo"></page-our-logo>
+					<page-our-logo></page-our-logo>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'brand-book')]]" restamp="true">
-					<page-brand-book data-page="brand-book"></page-brand-book>
+					<page-brand-book></page-brand-book>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'release-notes')]]" restamp="true">
-					<page-release-notes data-page="release-notes"></page-release-notes>
+					<page-release-notes></page-release-notes>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'not-found')]]" restamp="true">
-					<page-not-found data-page="not-found"></page-not-found>
+					<page-not-found></page-not-found>
 				</template>
-			</iron-pages>
 		</main>
 	</template>
 
