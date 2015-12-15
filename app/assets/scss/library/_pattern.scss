@@ -1834,6 +1834,7 @@ footer {
     width: 40px;
     font-size: 40px;
     line-height: 1;
+    margin-right: $base-spacing;
 
     .clab {
       font-size: 40px;
@@ -1841,10 +1842,6 @@ footer {
 
     img {
       @include full;
-    }
-
-    &+.description {
-      padding-left: $base-spacing;
     }
   }
 
@@ -1870,6 +1867,7 @@ footer {
       margin: 0;
       width: 55px;
       font-size: 55px;
+      margin-right: $base-spacing;
 
       .clab {
         font-size: 55px;
@@ -1883,6 +1881,7 @@ footer {
       margin: 0;
       width: 80px;
       font-size: 80px;
+      margin-right: $base-spacing;
 
       .clab {
         font-size: 80px;

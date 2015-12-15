@@ -297,15 +297,15 @@ button:disabled {
       float: left;
       margin: 0;
       border-right: 0;
-      border-color: $dark-gray;
+      border-color: $medium-gray;
 
       &:active {
-        background-color: shade($dark-gray, 10);
+        background-color: shade($medium-gray, 10);
       }
 
       &.full {
-        background-color: $dark-gray;
-        border-color: $dark-gray;
+        background-color: $medium-gray;
+        border-color: $medium-gray;
       }
       
     }

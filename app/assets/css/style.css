@@ -4845,6 +4845,7 @@ footer .footer-nav ul li {
   width: 40px;
   font-size: 40px;
   line-height: 1;
+  margin-right: 20px;
 }
 .feature .icon .clab {
   font-size: 40px;
@@ -4855,9 +4856,6 @@ footer .footer-nav ul li {
   float: left;
   margin-left: 0;
   margin-right: 0;
-}
-.feature .icon + .description {
-  padding-left: 20px;
 }
 .feature .description {
   position: static;
@@ -4882,6 +4880,7 @@ footer .footer-nav ul li {
   margin: 0;
   width: 55px;
   font-size: 55px;
+  margin-right: 20px;
 }
 .feature.medium-icon .icon .clab {
   font-size: 55px;
@@ -4891,6 +4890,7 @@ footer .footer-nav ul li {
   margin: 0;
   width: 80px;
   font-size: 80px;
+  margin-right: 20px;
 }
 .feature.big-icon .icon .clab {
   font-size: 80px;
@@ -6363,14 +6363,14 @@ button:disabled {
   float: left;
   margin: 0;
   border-right: 0;
-  border-color: #353A3D;
+  border-color: #a6adb2;
 }
 .buttons-group .group-item .btn:active, .buttons-group .group-item .select-button .elekti-wrapper input[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item input[type="text"].js-users-list-filter:active {
-  background-color: #303437;
+  background-color: #959ca0;
 }
 .buttons-group .group-item .btn.full, .buttons-group .group-item .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.full[type="text"].js-users-list-filter {
-  background-color: #353A3D;
-  border-color: #353A3D;
+  background-color: #a6adb2;
+  border-color: #a6adb2;
 }
 .buttons-group.primary .group-item:last-of-type .btn, .buttons-group.primary .group-item:last-of-type .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.primary .group-item:last-of-type input[type="text"].js-users-list-filter, .buttons-group.primary .group-item:last-of-type:active .btn, .buttons-group.primary .group-item:last-of-type:active .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.primary .group-item:last-of-type:active input[type="text"].js-users-list-filter {
   border-right: 1px solid #0072bc;
@@ -6525,7 +6525,7 @@ body {
   left: 0;
   right: 0;
   bottom: 40px;
-  overflow: initial;
+  overflow: auto;
 }
 #main-sidebar nav .icon {
   width: 20px;
@@ -6586,23 +6586,25 @@ body {
   padding: 8px 20px;
   text-decoration: none;
 }
+#main-sidebar .first-level-menu {
+  /* > .active:after {
+  	width: 0; 
+  	height: 0; 
+  	border-top: 8px solid transparent;
+  	border-bottom: 8px solid transparent;
+  	content: '';
+  	border-left: 8px solid lighten($darker-gray, 10);
+  	position: absolute;
+  	top: 13px;
+  	right: -8px;
+  } */
+}
 #main-sidebar .first-level-menu .active > a {
   background-color: rgba(255, 255, 255, 0.15);
   background-color: #404649;
 }
 #main-sidebar .first-level-menu .active > a:hover {
   background-color: #404649;
-}
-#main-sidebar .first-level-menu > .active:after {
-  width: 0;
-  height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  content: '';
-  border-left: 8px solid #404649;
-  position: absolute;
-  top: 13px;
-  right: -8px;
 }
 #main-sidebar .first-level-menu .active .second-level-menu,
 #main-sidebar .first-level-menu .open .second-level-menu {
@@ -7237,6 +7239,12 @@ main {
   border: 1px solid #eaeced;
   border-top: 0;
   padding: 20px;
+  position: relative;
+}
+.component-specs .clipboard {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .component-specs pre {
   padding-bottom: 10px;
@@ -7383,22 +7391,22 @@ main {
   background: #eaeced;
 }
 
-#features .feature {
+.feature-item {
   width: 32.20339%;
   float: left;
 }
-#features .feature:nth-child(3n + 1) {
+.feature-item:nth-child(3n + 1) {
   margin-left: 0;
   margin-right: -100%;
   clear: both;
   margin-left: 0;
 }
-#features .feature:nth-child(3n + 2) {
+.feature-item:nth-child(3n + 2) {
   margin-left: 33.89831%;
   margin-right: -100%;
   clear: none;
 }
-#features .feature:nth-child(3n + 3) {
+.feature-item:nth-child(3n + 3) {
   margin-left: 67.79661%;
   margin-right: -100%;
   clear: none;

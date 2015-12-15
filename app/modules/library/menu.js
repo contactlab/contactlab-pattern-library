@@ -82,7 +82,7 @@ var AppMenu = [{
 }, {
 	"label": "Product brand",
 	"url": "#/product-brand",
-	"icon": "clab clab-icon-sign-resources icon",
+	"icon": "clab clab-icon-sign-brand icon",
 	"submenu": [{
 		"label": "Our logo",
 		"url": "#/product-brand/our-logo"

@@ -28,5 +28,8 @@
   },
   "devDependencies": {
     "compass-breakpoint": "breakpoint-sass#~2.6.1"
+  },
+  "resolutions": {
+    "polymer": "^1.2.0"
   }
 }

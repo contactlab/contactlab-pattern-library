@@ -189,11 +189,18 @@ main {
 		border: 1px solid $light-gray;
 		border-top: 0;
 		padding: $base-spacing;
+		position: relative; 
 	}
 
+	.clipboard {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+ 
 	pre {
 		padding-bottom: $small-spacing;
-
+ 
 		&:last-child {
 			padding-bottom: 0;
 		}
@@ -286,12 +293,13 @@ main {
   
 }
 
-#features {
-  .feature {
-    @include gallery(4);
-  }
+#page-features {
+	
 }
 
+.feature-item {
+		@include gallery(4);
+	}
 
 // COLORS
 
