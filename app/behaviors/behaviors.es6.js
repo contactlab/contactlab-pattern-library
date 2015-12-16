@@ -3,10 +3,13 @@ var ClipboardBehav = {
 		let textToCopy = evt.target._composedParent.nextElementSibling.innerText;
 		clipboard.copy(textToCopy).then(
 				()=>{
-					console.log('copied');
+					evt.target.classList.add('copied');
+					setTimeout(()=>{
+						evt.target.classList.remove('copied');
+					},800);
 				},
 				err=>{
-					console.log('Unable to copy this on clipboard', err);
+					console.warn('Unable to copy on clipboard', err);
 				}
 			);
 	}
