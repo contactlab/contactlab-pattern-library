@@ -44,8 +44,8 @@ label {
   @include full;
   font-weight: $bold-weight;
   font-size: $small-font-size;
-  padding-bottom: $smaller-spacing;
-  line-height: 1;
+  padding-bottom: 7px;
+  line-height: 14px;
   text-align: left;
 
   &.disabled {
@@ -81,6 +81,10 @@ label {
       color: nth($color, 1);
     }
   }
+}
+
+.no-label-input {
+  margin-top: 20px;
 }
 
 input[type="color"],
@@ -326,8 +330,16 @@ input[type=radio] {
 
   + label {
     font-weight: normal;
-    font-size: 1rem;
+    font-size: $base-font-size;
     line-height: normal;
+
+    &.inline-checkbox,
+    &.inline-radio {
+      float: left;
+      width: auto;
+      clear: none;
+      margin-right: $base-spacing;
+    }
   }
 
   + label:before {
@@ -387,8 +399,10 @@ h2 + .form-row {
 
 // FILE
 
-input[type="file"] {
-  display: none;
+.input-wrapper {
+  input[type="file"] {
+    display: none;
+  }
 }
 
 // MULTIPLE SELECT

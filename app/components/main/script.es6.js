@@ -157,6 +157,9 @@ class MainClab {
 		    },
 		    '/documentation/release-notes': ()=> {
 		    	this.handleRouting();
+		    },
+		    '/documentation/getting-started': ()=> {
+		    	this.handleRouting();
 		    }
 		};	
 

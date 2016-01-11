@@ -1,0 +1,119 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="page-getting-started">
+	<style></style>
+	
+	<template>
+		
+		<div class="component-intro">
+			<div class="category">Documentation</div>
+			<h1>Getting started</h1>
+		</div>
+		<div class="content" id="getting-started-notes">
+			<section>
+				<h2>Install with Bower</h2>
+				<p>
+					You can also install and manage contactlab's pattern library using <a href="http://bower.io/" target="_blank">bower</a>
+				</p>
+				<div class="component-specs">
+					<div class="tab-content">
+						<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+						<div class="copy">
+	<pre><code class="language-bash">$ bower install ui-components</code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>CSS inclusions</h2>
+				<div class="component-specs">
+					<div class="tab-content">
+						<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+						<div class="copy">
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;path/ui-components/icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;path/ui-components/pattern.css&quot;&gt;</code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Webcomponent polyfill</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus assumenda voluptas libero ipsum minima itaque, necessitatibus in nam soluta nulla!</p>
+				<div class="component-specs">
+					<div class="tab-content">
+						<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+						<div class="copy">
+<pre><code class="html">&lt;script src=&quot;path/webcomponentsjs/webcomponents.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section>
+				<h2>Components import</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, et.</p>
+				<div class="component-specs">
+					<div class="tab-content">
+						<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+						<div class="copy">
+<pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;path/ui-components/clab-components.html&quot;&gt;</code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h1>Basic template</h1>
+				<p>
+					Start with this basic HTML template, or modify these examples. We hope you'll customize our templates and examples, adapting them to suit your needs.
+				</p>
+				<div class="component-specs">
+					<div class="tab-content">
+						<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+						<div class="copy">
+<pre><code class="html">&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+&#x3C;head&#x3E;
+&#x9;&#x3C;meta http-equiv=&#x22;Content-Type&#x22; content=&#x22;text/html; charset=UTF-8&#x22; /&#x3E;
+&#x9;&#x3C;title&#x3E;Title&#x3C;/title&#x3E;
+&#x9;&#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0&#x22;&#x3E;
+&#x9;&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;assets/css/icons.css&#x22;&#x3E;
+&#x9;&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;assets/css/style.css&#x22;&#x3E;
+&#x9;&#x3C;script src=&#x22;assets/bower/webcomponentsjs/webcomponents.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x9;&#x3C;link rel=&#x22;import&#x22; href=&#x22;/assets/bower/ui-components/clab-components.html&#x22;&#x3E;
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+&#x9;&#x3C;aside id=&#x22;main-sidebar&#x22;&#x3E;
+&#x9;&#x9;&#x3C;menu-clab title-icon=&#x22;clab-icon-sign&#x22; link=&#x22;#/&#x22;&#x3E;
+&#x9;&#x9;&#x9;&#x3C;span class=&#x22;name&#x22;&#x3E;contact&#x3C;b&#x3E;lab&#x3C;/b&#x3E;&#x3C;/span&#x3E;
+&#x9;&#x9;&#x3C;/menu-clab&#x3E;
+&#x9;&#x3C;/aside&#x3E;
+&#x9;&#x3C;main&#x3E;
+&#x9;&#x9;&#x3C;h1&#x3E;contactlab starter template&#x3C;/h1&#x3E;
+&#x9;&#x9;&#x3C;p&#x3E;
+&#x9;&#x9;&#x9;Use this document as a way to quickly start any new project.&#x3C;br/&#x3E;
+&#x9;&#x9;&#x9;All you get is this text and a mostly barebones HTML document.
+&#x9;&#x9;&#x3C;/p&#x3E;
+&#x9;&#x3C;/main&#x3E;
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;</code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+	</template>
+
+	<script>
+
+	Polymer({
+		is:'page-getting-started',
+		behaviors: [ClipboardBehav]
+	});
+
+
+	</script>
+</dom-module>

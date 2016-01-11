@@ -45,11 +45,15 @@ body {
 
 		.sign {
 			position: absolute;
-			top: 15px;
+			top: 10px;
 			left: $base-spacing;
 			line-height: 1;
 			font-size: 20px;
 			color: $primary-color;
+
+			.clab {
+				font-size: 20px;
+			}
 		}
 
 		.name {
@@ -57,7 +61,7 @@ body {
 			font-weight: $light-weight;
 			color: #FFFFFF;
 			@include full;
-			padding-left: 45px;
+			padding-left: 40px;
 			text-align: left;
 
 			b {
@@ -295,7 +299,7 @@ header {
 	top: 0;
 	right: 0;
 	left: $main-sidebar-width;
-	background-color: $light-gray;
+	background-color: #FFFFFF;
 	height: $header-height;
 	z-index: 4;
 }
@@ -387,7 +391,7 @@ header {
 	right: -$secondary-sidebar-width - 20px;
 	top: $header-height;
 	bottom: 0;
-	background-color: $lighter-gray;
+	background-color: #FFFFFF;
 	z-index: 2;
 	padding: 0;
 	overflow: auto;
@@ -481,7 +485,7 @@ header {
 	@include full;
 	padding: $medium-spacing ;
 	position: relative;
-	max-width: 1500px;
+	max-width: 1420px;
 }
 
 

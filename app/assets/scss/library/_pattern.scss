@@ -260,11 +260,6 @@ p {
 }
 
 
-
-
-
-
-
 // TYPOGRAPHY
 
 h1,
@@ -279,6 +274,10 @@ h6 {
   margin-top: 0;
   font-weight: $normal-weight;
   @include full;
+
+  &.no-spacing-title {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -495,6 +494,7 @@ th {
 td {
   border-bottom: 1px solid $light-gray;
   padding: $small-spacing $small-spacing;
+  vertical-align: top;
 }
 
 .striped-table {

@@ -125,6 +125,10 @@ var AppMenu = [
 			{
 				"label": "Release notes",
 				"url": "#/documentation/release-notes"
+			},
+			{
+				"label": "Getting started",
+				"url": "#/documentation/getting-started"
 			}
 		]
 	}

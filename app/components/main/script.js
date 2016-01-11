@@ -174,6 +174,9 @@ var MainClab = (function () {
 				},
 				'/documentation/release-notes': function documentationReleaseNotes() {
 					_this3.handleRouting();
+				},
+				'/documentation/getting-started': function documentationGettingStarted() {
+					_this3.handleRouting();
 				}
 			};
 
