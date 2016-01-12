@@ -32,24 +32,27 @@
 
 <main-clab></main-clab>
 <script>
-	$( document ).ready(function() {
-		$( ".main-menu li" ).click(function() {
-		  $(this).toggleClass("active");
-		});
+	//setTimeout(function(){
+	//	$( document ).ready(function() {
+			$(document).on('click',".main-menu li", function() {
+			  $(this).toggleClass("active");
+			});
 
-	    $( ".submenu" ).click(function() {
-		  $( ".submenu ul" ).toggle();
-		});
+			$(document).on('click',".submenu", function() {
+		    //$(".submenu").click(function() {
+			  $(this).find("ul").toggle();
+			});
 
-	    $( ".menu-toggle" ).click(function() {
-		  $( ".main-menu" ).fadeToggle(75);
-		  console.log("ciao");
-		});
+			$(document).on('click',".menu-toggle", function() {
+			  $(".main-menu").fadeToggle(75);
+			});
 
-	    $( ".mobile-nav-toggle" ).click(function() {
-		  $( ".contextual-menu > ul" ).toggle();
-		});
-	});
+	    	$(document).on('click',".mobile-nav-toggle", function() {
+			  $(".contextual-menu > ul").toggle();
+			});
+	//	});
+	//},500);
+	
 </script>
 </body>
 </html>

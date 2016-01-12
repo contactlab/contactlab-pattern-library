@@ -12,41 +12,51 @@
 					Navigation <i class="clab clab-icon-arrow-down arrow"></i>
 				</div>
 				<ul>
-					<li><a href="#/ui/accordion">Accordion</a></li>
-					<li><a href="#/ui/alerts">Alerts</a></li>
-					<li class="active"><a href="#/ui/breadcrumb">Breadcrumb</a></li>
-					<li><a href="#/ui/buttons">Buttons</a></li>
-					<li><a href="#/ui/buttons-group">Buttons group</a></li>
-					<li><a href="#/ui/cards">Cards</a></li>
-					<li><a href="#/ui/datepicker">Datepicker</a></li>
-					<li><a href="#/ui/features">Features</a></li>
-					<li><a href="#/ui/forms">Forms</a></li>
-					<li><a href="#/ui/labels-badges">Labels & badges</a></li>
-					<li><a href="#/ui/lists">Lists</a></li>
-					<li><a href="#/ui/modals">Modals</a></li>
-					<li><a href="#/ui/pagination">Pagination</a></li>
-					<li><a href="#/ui/progress-bars">Progress bars</a></li>
-					<li><a href="#/ui/select">Select</a></li>
-					<li><a href="#/ui/spinner">Spinner</a></li>
-					<li><a href="#/ui/tables">Tables</a></li>
-					<li><a href="#/ui/tabs-pills">Tabs & Pills</a></li>
-					<li><a href="#/ui/tooltips">Tooltips</a></li>
-					<!-- <li class="submenu">
-						<a>Buttons <i class="clab clab-icon-arrow-down arrow"></i></a>
+					<li class="submenu">
+						<a>CSS <i class="clab clab-icon-arrow-down arrow"></i></a>
 						<ul>
-							<li><a href="#">Buttons</a></li>
-							<li><a href="#">Buttons group</a></li>
+							<li><a href="#/ui/alerts">Alerts</a></li>
+							<li><a href="#/ui/buttons">Buttons</a></li>
+							<li><a href="#/ui/cards">Cards</a></li>
+							<li><a href="#/ui/features">Features</a></li>
+							<li><a href="#/ui/forms">Forms</a></li>
+							<li><a href="#/ui/lists">Lists</a></li>
+							<li><a href="#/ui/tables">Tables</a></li>
 						</ul>
-					</li> -->
+					</li>
+					
+					<li class="submenu">
+						<a>Components <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<ul>
+							<li class="active"><a href="#/ui/breadcrumb">Breadcrumb</a></li>
+							<li><a href="#/ui/buttons-group">Buttons group</a></li>
+							<li><a href="#/ui/labels-badges">Labels & badges</a></li>
+							<li><a href="#/ui/pagination">Pagination</a></li>
+							<li><a href="#/ui/spinner">Spinner</a></li>
+						</ul>
+					</li>
+
+					<li class="submenu">
+						<a>JavaScript <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<ul>
+							<li><a href="#/ui/accordion">Accordion</a></li>
+							<li><a href="#/ui/datepicker">Datepicker</a></li>
+							<li><a href="#/ui/modals">Modals</a></li>
+							<li><a href="#/ui/progress-bars">Progress bars</a></li>
+							<li><a href="#/ui/select">Select</a></li>
+							<li><a href="#/ui/tabs-pills">Tabs & Pills</a></li>
+							<li><a href="#/ui/tooltips">Tooltips</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 			<!-- END SUBMENU -->
 			<div class="content">
-				<h1>Breadcrumb</h1>
+				<h2>Breadcrumb</h2>
 				<section>
-					<h2 class="component-name">
+					<h3 class="component-name">
 						Basic breadcrumb
-					</h2>
+					</h3>
 					<div class="component-example">
 						<ol class="breadcrumb">
 							<li><a href="#">Home</a></li>
@@ -59,11 +69,11 @@
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
-	<pre><code class="html">&lt;ol class="breadcrumb"&gt;
-		&lt;li&gt;&lt;a href="#"&gt;item1&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="#"&gt;item2&lt;/a&gt;&lt;/li&gt;
-		&lt;li class="active"&gt;item3&lt;/li&gt;
-	&lt;/ol&gt;</code></pre>
+<pre><code class="html">&lt;ol class="breadcrumb"&gt;
+	&lt;li&gt;&lt;a href="#"&gt;item1&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;item2&lt;/a&gt;&lt;/li&gt;
+	&lt;li class="active"&gt;item3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
 								</div>
 							</div>
 						</tabs-clab>
@@ -71,9 +81,9 @@
 				</section>
 
 				<section>
-					<h2 class="component-name">
+					<h3 class="component-name">
 						Icons breadcrumb
-					</h2>
+					</h3>
 					<div class="component-example">
 						<ol class="breadcrumb">
 							<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
@@ -86,11 +96,11 @@
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
-	<pre><code class="html">&lt;ol class="breadcrumb"&gt;
-		&lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt; item1 &lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-book"&gt;&lt;/i&gt; item2 &lt;/a&gt;&lt;/li&gt;
-		&lt;li class="active"&gt;&lt;i class="fa fa-cog"&gt;&lt;/i&gt; item3 &lt;/li&gt;
-	&lt;/ol&gt;</code></pre>
+<pre><code class="html">&lt;ol class="breadcrumb"&gt;
+	&lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt; item1 &lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-book"&gt;&lt;/i&gt; item2 &lt;/a&gt;&lt;/li&gt;
+	&lt;li class="active"&gt;&lt;i class="fa fa-cog"&gt;&lt;/i&gt; item3 &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
 								</div>
 							</div>
 						</tabs-clab>

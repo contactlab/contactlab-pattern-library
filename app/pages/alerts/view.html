@@ -12,45 +12,55 @@
 					Navigation <i class="clab clab-icon-arrow-down arrow"></i>
 				</div>
 				<ul>
-					<li><a href="#/ui/accordion">Accordion</a></li>
-					<li class="active"><a href="#/ui/alerts">Alerts</a></li>
-					<li><a href="#/ui/breadcrumb">Breadcrumb</a></li>
-					<li><a href="#/ui/buttons">Buttons</a></li>
-					<li><a href="#/ui/buttons-group">Buttons group</a></li>
-					<li><a href="#/ui/cards">Cards</a></li>
-					<li><a href="#/ui/datepicker">Datepicker</a></li>
-					<li><a href="#/ui/features">Features</a></li>
-					<li><a href="#/ui/forms">Forms</a></li>
-					<li><a href="#/ui/labels-badges">Labels & badges</a></li>
-					<li><a href="#/ui/lists">Lists</a></li>
-					<li><a href="#/ui/modals">Modals</a></li>
-					<li><a href="#/ui/pagination">Pagination</a></li>
-					<li><a href="#/ui/progress-bars">Progress bars</a></li>
-					<li><a href="#/ui/select">Select</a></li>
-					<li><a href="#/ui/spinner">Spinner</a></li>
-					<li><a href="#/ui/tables">Tables</a></li>
-					<li><a href="#/ui/tabs-pills">Tabs & Pills</a></li>
-					<li><a href="#/ui/tooltips">Tooltips</a></li>
-					<!-- <li class="submenu">
-						<a>Buttons <i class="clab clab-icon-arrow-down arrow"></i></a>
+					<li class="submenu">
+						<a>CSS <i class="clab clab-icon-arrow-down arrow"></i></a>
 						<ul>
-							<li><a href="#">Buttons</a></li>
-							<li><a href="#">Buttons group</a></li>
+							<li class="active"><a href="#/ui/alerts">Alerts</a></li>
+							<li><a href="#/ui/buttons">Buttons</a></li>
+							<li><a href="#/ui/cards">Cards</a></li>
+							<li><a href="#/ui/features">Features</a></li>
+							<li><a href="#/ui/forms">Forms</a></li>
+							<li><a href="#/ui/lists">Lists</a></li>
+							<li><a href="#/ui/tables">Tables</a></li>
 						</ul>
-					</li> -->
+					</li>
+
+					<li class="submenu">
+						<a>Components <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<ul>
+							<li><a href="#/ui/breadcrumb">Breadcrumb</a></li>
+							<li><a href="#/ui/buttons-group">Buttons group</a></li>
+							<li><a href="#/ui/labels-badges">Labels & badges</a></li>
+							<li><a href="#/ui/pagination">Pagination</a></li>
+							<li><a href="#/ui/spinner">Spinner</a></li>
+						</ul>
+					</li>
+
+					<li class="submenu">
+						<a>JavaScript <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<ul>
+							<li><a href="#/ui/accordion">Accordion</a></li>
+							<li><a href="#/ui/datepicker">Datepicker</a></li>
+							<li><a href="#/ui/modals">Modals</a></li>
+							<li><a href="#/ui/progress-bars">Progress bars</a></li>
+							<li><a href="#/ui/select">Select</a></li>
+							<li><a href="#/ui/tabs-pills">Tabs & Pills</a></li>
+							<li><a href="#/ui/tooltips">Tooltips</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 			<!-- END SUBMENU -->
 			
 			<div class="content">
-				<h1>Alerts</h1>
+				<h2>Alerts</h2>
 				<div class="component-description">
 					Messages are the primary method for providing system feedback in the product user interface. Messages include notifications of various kinds: alerts, confirmations, notices, warnings, info and errors.
 				</div>
 				<section>
-					<h2 class="component-name">
+					<h3 class="component-name">
 						Primary alert
-					</h2>
+					</h3>
 					<div class="component-example">
 						<alert-clab title="Primary!" visible type="primary">
 							<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
@@ -62,13 +72,13 @@
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
-	<pre><code class="html">&lt;div class=&quot;alert primary &quot;&gt;
-	&#x9;&lt;h3 class=&quot;&quot;&gt;Primary!&lt;/h3&gt;
-	&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
-	&#x9;&lt;p&gt;Content&lt;/p&gt;
-	&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
-	&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
-	&lt;/div&gt;</code></pre>
+<pre><code class="html">&lt;div class=&quot;alert primary &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;Primary!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 								</div>
 							</div>
 							<div class="tab-content">
@@ -149,9 +159,9 @@
 				</section>
 
 				<section>
-					<h2 class="component-name">
+					<h3 class="component-name">
 						Secondary alert
-					</h2>
+					</h3>
 					<div class="component-example">
 						<alert-clab title="Secondary!" visible type="secondary">
 							<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
@@ -163,13 +173,13 @@
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
-	<pre><code class="html">&lt;div class=&quot;alert secondary &quot;&gt;
-	&#x9;&lt;h3 class=&quot;&quot;&gt;secondary!&lt;/h3&gt;
-	&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
-	&#x9;&lt;p&gt;Content&lt;/p&gt;
-	&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
-	&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
-	&lt;/div&gt;</code></pre>
+<pre><code class="html">&lt;div class=&quot;alert secondary &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;secondary!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 								</div>
 							</div>
 							<div class="tab-content">
@@ -250,9 +260,9 @@
 				</section>
 
 				<section>
-					<h2 class="component-name">
+					<h3 class="component-name">
 						Success alert
-					</h2>
+					</h3>
 					<div class="component-example">
 						<alert-clab title="Success!" visible type="success">
 							<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
@@ -264,13 +274,13 @@
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
-	<pre><code class="html">&lt;div class=&quot;alert success &quot;&gt;
-	&#x9;&lt;h3 class=&quot;&quot;&gt;success!&lt;/h3&gt;
-	&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
-	&#x9;&lt;p&gt;Content&lt;/p&gt;
-	&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
-	&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
-	&lt;/div&gt;</code></pre>
+<pre><code class="html">&lt;div class=&quot;alert success &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;success!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 								</div>
 							</div>
 							<div class="tab-content">
@@ -351,9 +361,9 @@
 				</section>
 
 				<section>
-					<h2 class="component-name">
+					<h3 class="component-name">
 						Warning alert
-					</h2>
+					</h3>
 					<div class="component-example">
 						<alert-clab title="Warning!" visible type="warning">
 							<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
@@ -365,13 +375,13 @@
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
-	<pre><code class="html">&lt;div class=&quot;alert warning &quot;&gt;
-	&#x9;&lt;h3 class=&quot;&quot;&gt;warning!&lt;/h3&gt;
-	&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
-	&#x9;&lt;p&gt;Content&lt;/p&gt;
-	&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
-	&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
-	&lt;/div&gt;</code></pre>
+<pre><code class="html">&lt;div class=&quot;alert warning &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;warning!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 								</div>
 							</div>
 							<div class="tab-content">
@@ -452,9 +462,9 @@
 				</section>
 
 				<section>
-					<h2 class="component-name">
+					<h3 class="component-name">
 						Error alert
-					</h2>
+					</h3>
 					<div class="component-example">
 						<alert-clab title="Error!" visible type="error">
 							<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
@@ -466,13 +476,13 @@
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
-	<pre><code class="html">&lt;div class=&quot;alert error &quot;&gt;
-	&#x9;&lt;h3 class=&quot;&quot;&gt;error!&lt;/h3&gt;
-	&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
-	&#x9;&lt;p&gt;Content&lt;/p&gt;
-	&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
-	&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
-	&lt;/div&gt;</code></pre>
+<pre><code class="html">&lt;div class=&quot;alert error &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;error!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 								</div>
 							</div>
 							<div class="tab-content">
@@ -553,9 +563,9 @@
 				</section>
 
 				<section>
-					<h2 class="component-name">
+					<h3 class="component-name">
 						Info alert
-					</h2>
+					</h3>
 					<div class="component-example">
 						<alert-clab title="Info!" visible type="info">
 							<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
@@ -567,13 +577,13 @@
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
-	<pre><code class="html">&lt;div class=&quot;alert info &quot;&gt;
-	&#x9;&lt;h3 class=&quot;&quot;&gt;info!&lt;/h3&gt;
-	&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
-	&#x9;&lt;p&gt;Content&lt;/p&gt;
-	&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
-	&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
-	&lt;/div&gt;</code></pre>
+<pre><code class="html">&lt;div class=&quot;alert info &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;info!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 								</div>
 							</div>
 							<div class="tab-content">

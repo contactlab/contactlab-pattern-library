@@ -301,16 +301,21 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.5;
 }
 
 h3 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+h4 {
   font-size: $medium-font-size;
   font-weight: $semibold-weight;
 }
 
-h4 {
+h5 {
   font-size: $small-font-size;
 }
 
@@ -698,15 +703,16 @@ td {
 // CARDS
 
 .card {
-  @extend .depth-1;
+  /* @extend .depth-1; */
   @include clearfix;
   @include full;
-  @extend .hover-effect;
+  /* @extend .hover-effect; */
   @include border-radius(0 0 3px 3px);
   background: #FFFFFF;
   margin-bottom: $base-spacing;
   position: relative;
   overflow: initial;
+  border: 1px solid $light-gray;
 
   &.dummy {
     .card-title,
@@ -1842,6 +1848,10 @@ footer {
 
     img {
       @include full;
+    }
+
+    &+.description {
+      padding-left: $base-spacing;
     }
   }
 

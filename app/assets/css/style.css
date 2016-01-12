@@ -2748,7 +2748,7 @@ textarea:focus, select[multiple], .elekti-wrapper:after, .elekti-wrapper.active:
   transition: all 100ms ease-in-out;
 }
 
-.default-transition, .hover-effect, .card, .modal, .hover-effect:hover, .card:hover, .modal:hover, .saturation figure img, .saturation:hover figure img, .blur figure img, .blur:hover figure img, .zoom-in figure img, .zoom-in:hover figure img, .zoom-out figure img, .zoom-out:hover figure img, .accordion .accordion-block, .accordion .accordion-block.active, .accordion .accordion-block.active .accordion-content, .accordion .accordion-content, .ui-slider .ui-slider-handle, .ui-slider .ui-slider-handle.ui-state-hover,
+.default-transition, .hover-effect, .hover-effect:hover, .saturation figure img, .saturation:hover figure img, .blur figure img, .blur:hover figure img, .zoom-in figure img, .zoom-in:hover figure img, .zoom-out figure img, .zoom-out:hover figure img, .accordion .accordion-block, .accordion .accordion-block.active, .accordion .accordion-block.active .accordion-content, .accordion .accordion-content, .ui-slider .ui-slider-handle, .ui-slider .ui-slider-handle.ui-state-hover,
 .ui-slider .ui-slider-handle .ui-state-focus, .ui-slider .ui-slider-handle.ui-state-active {
   -moz-transition: all 200ms ease-in-out;
   -o-transition: all 200ms ease-in-out;
@@ -2769,13 +2769,13 @@ textarea:focus, select[multiple], .elekti-wrapper:after, .elekti-wrapper.active:
   box-shadow: 0 0 0 0 transparent !important;
 }
 
-.depth-1, .card, .modal, .accordion .accordion-block.active, .elekti-wrapper .js-users-list, #draft-ribbon {
+.depth-1, .accordion .accordion-block.active, .elekti-wrapper .js-users-list, #draft-ribbon {
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16) !important;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16) !important;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16) !important;
 }
 
-.depth-2, .hover-effect:hover, .card:hover, .modal:hover {
+.depth-2, .hover-effect:hover {
   -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.19) !important;
   -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.19) !important;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.19) !important;
@@ -3068,16 +3068,21 @@ h1.page-title:before {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.5;
 }
 
 h3 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+h4 {
   font-size: 1.125rem;
   font-weight: 600;
 }
 
-h4 {
+h5 {
   font-size: 0.8125rem;
 }
 
@@ -3752,6 +3757,7 @@ td {
 }
 
 .card, .modal {
+  /* @extend .depth-1; */
   overflow: hidden;
   *zoom: 1;
   clear: both;
@@ -3759,6 +3765,7 @@ td {
   float: left;
   margin-left: 0;
   margin-right: 0;
+  /* @extend .hover-effect; */
   -moz-border-radius: 0 0 3px 3px;
   -webkit-border-radius: 0;
   border-radius: 0 0 3px 3px;
@@ -3766,6 +3773,7 @@ td {
   margin-bottom: 20px;
   position: relative;
   overflow: initial;
+  border: 1px solid #eaeced;
 }
 .card.dummy .card-title, .dummy.modal .card-title, #spinner .modal.spinner-example .card-title, #spinner .card.spinner-example .card-title, .card.dummy .modal .modal-title, .modal .card.dummy .modal-title, .dummy.modal .modal-title, #spinner .modal.spinner-example .modal-title, #spinner .card.spinner-example .modal .modal-title, .modal #spinner .card.spinner-example .modal-title,
 .card.dummy .card-title *,
@@ -4865,6 +4873,9 @@ footer .footer-nav ul li {
   float: left;
   margin-left: 0;
   margin-right: 0;
+}
+.feature .icon + .description {
+  padding-left: 20px;
 }
 .feature .description {
   position: static;

@@ -4,75 +4,84 @@
 	<style></style>
 	
 	<template>
-		
-		<div class="component-intro">
-			<div class="category">Documentation</div>
-			<h1>Getting started</h1>
-		</div>
-		<div class="content" id="getting-started-notes">
-			<section>
-				<h2>Install with Bower</h2>
-				<p>
-					You can also install and manage contactlab's pattern library using <a href="http://bower.io/" target="_blank">bower</a>
-				</p>
-				<div class="component-specs">
-					<div class="tab-content">
-						<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-						<div class="copy">
-	<pre><code class="language-bash">$ bower install ui-components</code></pre>
+		<div class="wrapper">
+			<h1>Documentation</h1>
+			<!-- SUBMENU -->
+			<div class="contextual-menu">
+				<div class="mobile-nav-toggle">
+					Navigation <i class="clab clab-icon-arrow-down arrow"></i>
+				</div>
+				<ul>
+					<li><a href="#/documentation/release-notes">Release notes</a></li>
+					<li class="active"><a href="#/documentation/getting-started">Getting started</a></li>
+				</ul>
+			</div>
+			<!-- END SUBMENU -->
+			<div class="content" id="getting-started-notes">
+				<h2>Getting started</h2>
+				<section>
+					<h2>Install with Bower</h2>
+					<p>
+						You can also install and manage contactlab's pattern library using <a href="http://bower.io/" target="_blank">bower</a>
+					</p>
+					<div class="component-specs">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="language-bash">$ bower install ui-components</code></pre>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-			<section>
-				<h2>CSS inclusions</h2>
-				<div class="component-specs">
-					<div class="tab-content">
-						<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-						<div class="copy">
+				</section>
+				<section>
+					<h3>CSS inclusions</h3>
+					<div class="component-specs">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
 <pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;path/ui-components/icons.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;path/ui-components/pattern.css&quot;&gt;</code></pre>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			<section>
-				<h2>Webcomponent polyfill</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus assumenda voluptas libero ipsum minima itaque, necessitatibus in nam soluta nulla!</p>
-				<div class="component-specs">
-					<div class="tab-content">
-						<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-						<div class="copy">
+				<section>
+					<h3>Webcomponent polyfill</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus assumenda voluptas libero ipsum minima itaque, necessitatibus in nam soluta nulla!</p>
+					<div class="component-specs">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
 <pre><code class="html">&lt;script src=&quot;path/webcomponentsjs/webcomponents.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
 
-			<section>
-				<h2>Components import</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, et.</p>
-				<div class="component-specs">
-					<div class="tab-content">
-						<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-						<div class="copy">
+				<section>
+					<h3>Components import</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, et.</p>
+					<div class="component-specs">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
 <pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;path/ui-components/clab-components.html&quot;&gt;</code></pre>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			<section>
-				<h1>Basic template</h1>
-				<p>
-					Start with this basic HTML template, or modify these examples. We hope you'll customize our templates and examples, adapting them to suit your needs.
-				</p>
-				<div class="component-specs">
-					<div class="tab-content">
-						<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-						<div class="copy">
+				<section>
+					<h2>Basic template</h2>
+					<p>
+						Start with this basic HTML template, or modify these examples. We hope you'll customize our templates and examples, adapting them to suit your needs.
+					</p>
+					<div class="component-specs">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
 <pre><code class="html">&#x3C;!DOCTYPE html&#x3E;
 &#x3C;html lang=&#x22;en&#x22;&#x3E;
 &#x3C;head&#x3E;
@@ -99,10 +108,11 @@
 &#x9;&#x3C;/main&#x3E;
 &#x3C;/body&#x3E;
 &#x3C;/html&#x3E;</code></pre>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</div>
 		</div>
 
 	</template>
