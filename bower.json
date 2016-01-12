@@ -24,7 +24,8 @@
     "ui-components": "git@gitserver.tomatowin.local:contactlab/clab-ui-components",
     "highlightjs": "~8.9.1",
     "iron-pages": "PolymerElements/iron-pages#~1.0.4",
-    "clipboard": "https://github.com/lgarron/clipboard.js.git"
+    "clipboard": "https://github.com/lgarron/clipboard.js.git",
+    "jquery": "~2.2.0"
   },
   "devDependencies": {
     "compass-breakpoint": "breakpoint-sass#~2.6.1"

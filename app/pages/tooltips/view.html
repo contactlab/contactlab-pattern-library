@@ -4,81 +4,116 @@
 	<style></style>
 	
 	<template>
-		<div class="component-intro">
-			<div class="category">UI components</div>
-			<h1>Tooltips</h1>
-		</div>
-		<div class="content" id="tooltips">
-			<div class="component-description">
-				Tooltips can describe a UI element in a little bit more detail when users deliberately hover on an element.
+		<div class="wrapper">
+			<h1>UI Components</h1>
+			<!-- SUBMENU -->
+			<div class="contextual-menu">
+				<div class="mobile-nav-toggle">
+					Navigation <i class="clab clab-icon-arrow-down arrow"></i>
+				</div>
+				<ul>
+					<li><a href="#/ui/accordion">Accordion</a></li>
+					<li><a href="#/ui/alerts">Alerts</a></li>
+					<li><a href="#/ui/breadcrumb">Breadcrumb</a></li>
+					<li><a href="#/ui/buttons">Buttons</a></li>
+					<li><a href="#/ui/buttons-group">Buttons group</a></li>
+					<li><a href="#/ui/cards">Cards</a></li>
+					<li><a href="#/ui/datepicker">Datepicker</a></li>
+					<li><a href="#/ui/features">Features</a></li>
+					<li><a href="#/ui/forms">Forms</a></li>
+					<li><a href="#/ui/labels-badges">Labels & badges</a></li>
+					<li><a href="#/ui/lists">Lists</a></li>
+					<li><a href="#/ui/modals">Modals</a></li>
+					<li><a href="#/ui/pagination">Pagination</a></li>
+					<li><a href="#/ui/progress-bars">Progress bars</a></li>
+					<li><a href="#/ui/select">Select</a></li>
+					<li><a href="#/ui/spinner">Spinner</a></li>
+					<li><a href="#/ui/tables">Tables</a></li>
+					<li><a href="#/ui/tabs-pills">Tabs & Pills</a></li>
+					<li class="active"><a href="#/ui/tooltips">Tooltips</a></li>
+					<!-- <li class="submenu">
+						<a>Buttons <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<ul>
+							<li><a href="#">Buttons</a></li>
+							<li><a href="#">Buttons group</a></li>
+						</ul>
+					</li> -->
+				</ul>
 			</div>
-			<section>
-				<div class="component-example">
-					<tooltip-clab content="Default">
-						Default tooltip
-					</tooltip-clab>
-					<tooltip-clab content="Primary" tt-type="primary">
-						Primary tooltip
-					</tooltip-clab>
-					<tooltip-clab content="Secondary" tt-type="secondary">
-						Secondary tooltip
-					</tooltip-clab>
-					<tooltip-clab content="Info" tt-type="info">
-						Info tooltip
-					</tooltip-clab>
-					<tooltip-clab content="Success" tt-type="success">
-						Success tooltip
-					</tooltip-clab>
-					<tooltip-clab content="Warning" tt-type="warning">
-						Warning tooltip
-					</tooltip-clab>
-					<tooltip-clab content="Error" tt-type="error">
-						Error tooltip
-					</tooltip-clab>
+			<!-- END SUBMENU -->
+			<div class="content" id="tooltips">
+				<h1>Tooltips</h1>
+				<div class="component-description">
+					Tooltips can describe a UI element in a little bit more detail when users deliberately hover on an element.
 				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;tooltip-clab content=&quot;Tooltip content&quot; tt-type=&quot;primary&quot;&gt;&lt;/tooltip-clab&gt;</code></pre>
+				<section>
+					<div class="component-example">
+						<tooltip-clab content="Default">
+							Default tooltip
+						</tooltip-clab>
+						<tooltip-clab content="Primary" tt-type="primary">
+							Primary tooltip
+						</tooltip-clab>
+						<tooltip-clab content="Secondary" tt-type="secondary">
+							Secondary tooltip
+						</tooltip-clab>
+						<tooltip-clab content="Info" tt-type="info">
+							Info tooltip
+						</tooltip-clab>
+						<tooltip-clab content="Success" tt-type="success">
+							Success tooltip
+						</tooltip-clab>
+						<tooltip-clab content="Warning" tt-type="warning">
+							Warning tooltip
+						</tooltip-clab>
+						<tooltip-clab content="Error" tt-type="error">
+							Error tooltip
+						</tooltip-clab>
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;tooltip-clab content=&quot;Tooltip content&quot; tt-type=&quot;primary&quot;&gt;&lt;/tooltip-clab&gt;</code></pre>
+								</div>
 							</div>
-						</div>
-						<div class="tab-content">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>content</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>'The content'</td>
-									</tr>
-									<tr>
-										<td>type</td>
-										<td>string</td>
-										<td>to add a custom class for the span element</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>tt-type</td>
-										<td>string</td>
-										<td>none, 'primary', 'secondary', 'info', 'success', 'warning', 'error'</td>
-										<td>none</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
+							<div class="tab-content">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>content</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>'The content'</td>
+										</tr>
+										<tr>
+											<td>type</td>
+											<td>string</td>
+											<td>to add a custom class for the span element</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>tt-type</td>
+											<td>string</td>
+											<td>none, 'primary', 'secondary', 'info', 'success', 'warning', 'error'</td>
+											<td>none</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+			</div>
 		</div>
 	</template>
 

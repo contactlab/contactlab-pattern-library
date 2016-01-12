@@ -4,440 +4,478 @@
 	<style></style>
 	
 	<template>
-		<div class="component-intro">
-			<div class="category">UI components</div>
-			<h1>Forms</h1>
+		<div class="wrapper">
+			<h1>UI Components</h1>
+			<!-- SUBMENU -->
+			<div class="contextual-menu">
+				<div class="mobile-nav-toggle">
+					Navigation <i class="clab clab-icon-arrow-down arrow"></i>
+				</div>
+				<ul>
+					<li><a href="#/ui/accordion">Accordion</a></li>
+					<li><a href="#/ui/alerts">Alerts</a></li>
+					<li><a href="#/ui/breadcrumb">Breadcrumb</a></li>
+					<li><a href="#/ui/buttons">Buttons</a></li>
+					<li><a href="#/ui/buttons-group">Buttons group</a></li>
+					<li><a href="#/ui/cards">Cards</a></li>
+					<li><a href="#/ui/datepicker">Datepicker</a></li>
+					<li><a href="#/ui/features">Features</a></li>
+					<li class="active"><a href="#/ui/forms">Forms</a></li>
+					<li><a href="#/ui/labels-badges">Labels & badges</a></li>
+					<li><a href="#/ui/lists">Lists</a></li>
+					<li><a href="#/ui/modals">Modals</a></li>
+					<li><a href="#/ui/pagination">Pagination</a></li>
+					<li><a href="#/ui/progress-bars">Progress bars</a></li>
+					<li><a href="#/ui/select">Select</a></li>
+					<li><a href="#/ui/spinner">Spinner</a></li>
+					<li><a href="#/ui/tables">Tables</a></li>
+					<li><a href="#/ui/tabs-pills">Tabs & Pills</a></li>
+					<li><a href="#/ui/tooltips">Tooltips</a></li>
+					<!-- <li class="submenu">
+						<a>Buttons <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<ul>
+							<li><a href="#">Buttons</a></li>
+							<li><a href="#">Buttons group</a></li>
+						</ul>
+					</li> -->
+				</ul>
+			</div>
+			<!-- END SUBMENU -->
+
+			<div class="content">
+				<h1>Forms</h1>
+				<section>
+					<h2 class="component-name">
+						Text input
+					</h2>
+					<div class="component-example">
+						<article>
+							<input-clab label="label">
+								Lorem ipsum dolor sit.
+							</input-clab>
+						</article>
+						<article>
+							<input-clab label="label success" type="success">
+								Lorem ipsum dolor sit.
+							</input-clab>
+						</article>
+						<article>
+							<input-clab label="label warning" type="warning">
+								Lorem ipsum dolor sit.
+							</input-clab>
+						</article>
+						<article>
+							<input-clab label="label error" type="error">
+								Lorem ipsum dolor sit.
+							</input-clab>
+						</article>
+						<article>
+							<input-clab label="label info" type="info">
+								Lorem ipsum dolor sit.
+							</input-clab>
+						</article>
+						<article>
+							<input-clab label="label" disabled>
+								Lorem ipsum dolor sit.
+							</input-clab>
+						</article>
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&#x3C;label for=&#x22;input2&#x22; class=&#x22;success&#x22;&#x3E;Label success&#x3C;/label&#x3E;
+	&#x3C;input type=&#x22;text&#x22; id=&#x22;input2&#x22; class=&#x22;success&#x22;&#x3E;
+	&#x3C;div class=&#x22;input-note success&#x22;&#x3E;Lorem ipsum dolor sit.&#x3C;/div&#x3E;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&#x3C;input-clab label=&#x22;input label&#x22;&#x3E; optional string as caption &#x3C;/input-clab&#x3E;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<table class="striped-table">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>label</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>name</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>'textinput'</td>
+										</tr>
+										<tr>
+											<td>type</td>
+											<td>string</td>
+											<td>none, 'success', 'warning', 'error', 'info'</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>value</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>disabled</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+										<tr>
+											<td>placeholder</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>note-type</td>
+											<td>string</td>
+											<td>optional additional class for the note</td>
+											<td>none</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+
+				<section>
+					<h2 class="component-name">
+						file input
+					</h2>
+					<div class="component-example">
+						<file-clab label="Input file label">Lorem ipsum dolor sit amet</file-clab>
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;file-clab label="input label"&gt; <i class="italic">optional string as caption</i> &lt;/file-clab&gt;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>label</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>name</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>'fileinput'</td>
+										</tr>
+										<tr>
+											<td>type</td>
+											<td>string</td>
+											<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>value</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>disabled</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+										<tr>
+											<td>multiple</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+										<tr>
+											<td>note-type</td>
+											<td>string</td>
+											<td>optional additional class for the note</td>
+											<td>none</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+
+				<section>
+					<h2 class="component-name">
+						Radio
+					</h2>
+					<div class="component-example">
+						<article>
+							<radio-clab labels='["radio 1", "radio 2", "radio 3"]' name="group1"></radio-clab>
+						</article>
+						<article>
+							<radio-clab labels='["radio 4", "radio 5"]' name="group2" active="0"></radio-clab>
+						</article>
+						<article>
+							<radio-clab labels='["radio 6", "radio 7", "radio 8"]' name="group3" active="1" disabled='[1]'></radio-clab>
+						</article>
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;input id="radio" type="radio" name="radio_button"/&gt;
+	&lt;label for="radio"&gt;radio&lt;/label&gt;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;radio-clab labels='["radio 1", "radio 2"]' name="group1"&gt;&lt;/radio-clab&gt;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<table class="striped-table">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>labels</td>
+											<td>array</td>
+											<td>an array of labels for the radio inputs creation</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>name</td>
+											<td>string</td>
+											<td>the name for the group of radio inputs</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>wrapper-type</td>
+											<td>string</td>
+											<td>optional classes for the wrapper div</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>active</td>
+											<td>number</td>
+											<td>index of the active radio input</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>disabled</td>
+											<td>array</td>
+											<td>an array of indexes of the disabled radio inputs</td>
+											<td>none</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+
+				<section>
+					<h2 class="component-name">
+						Checkbox
+					</h2>
+					<div class="component-example">
+						<article>
+				        	<checkbox-clab labels='["checkbox 1", "checkbox 2", "checkbox 3"]'></checkbox-clab>
+						</article>
+						<article>
+							<checkbox-clab labels='["checkbox 4", "checkbox 5", "checkbox 6"]' active="0"></checkbox-clab>
+						</article>
+						<article>
+							<checkbox-clab labels='["checkbox 7", "checkbox 8"]' active="1" disabled='[0]'></checkbox-clab>
+						</article>
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;input id="check" type="checkbox"/&gt;
+	&lt;label for="check"&gt;checkbox&lt;/label&gt;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;checkbox-clab labels='["checkbox 1", "checkbox 2"]' name="group1"&gt;&lt;/checkbox-clab&gt;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<table class="striped-table">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>labels</td>
+											<td>array</td>
+											<td>an array of labels for the checkboxes creation</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>wrapper-type</td>
+											<td>string</td>
+											<td>optional classes for the wrapper div</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>active</td>
+											<td>number</td>
+											<td>index of the active checkbox</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>disabled</td>
+											<td>array</td>
+											<td>an array of indexes of the disabled checkboxes</td>
+											<td>none</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+
+				<section>
+					<h2 class="component-name">
+						Range input
+					</h2>
+					<div class="component-example">
+						<article>
+							<range-clab label="My wonderful range input label" value="5" min="0" max="10" step="1" disabled></range-clab>
+							<br><br>
+							<range-clab label="How old are you?" value="20" min="18" max="33" step="1" show-details></range-clab>
+						</article>
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;range-clab label="Your label" value="5" min="0" max="10" step="1"&gt;&lt;/range-clab&gt;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<table class="striped-table">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>label</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>name</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>rangeinput</td>
+										</tr>
+										<tr>
+											<td>type</td>
+											<td>string</td>
+											<td>none, 'success', 'warning', 'error', 'info'</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>value</td>
+											<td>number</td>
+											<td>any valid number inside the range you set</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>min</td>
+											<td>number</td>
+											<td>minimum value</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>max</td>
+											<td>number</td>
+											<td>maximum value</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>step</td>
+											<td>number</td>
+											<td>step value</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>disabled</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+										<tr>
+											<td>show-details</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+
+			</div>
 		</div>
-		<div class="content">
-			<section>
-				<h2 class="component-name">
-					Text input
-				</h2>
-				<div class="component-example">
-					<article>
-						<input-clab label="label">
-							Lorem ipsum dolor sit.
-						</input-clab>
-					</article>
-					<article>
-						<input-clab label="label success" type="success">
-							Lorem ipsum dolor sit.
-						</input-clab>
-					</article>
-					<article>
-						<input-clab label="label warning" type="warning">
-							Lorem ipsum dolor sit.
-						</input-clab>
-					</article>
-					<article>
-						<input-clab label="label error" type="error">
-							Lorem ipsum dolor sit.
-						</input-clab>
-					</article>
-					<article>
-						<input-clab label="label info" type="info">
-							Lorem ipsum dolor sit.
-						</input-clab>
-					</article>
-					<article>
-						<input-clab label="label" disabled>
-							Lorem ipsum dolor sit.
-						</input-clab>
-					</article>
-				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&#x3C;label for=&#x22;input2&#x22; class=&#x22;success&#x22;&#x3E;Label success&#x3C;/label&#x3E;
-&#x3C;input type=&#x22;text&#x22; id=&#x22;input2&#x22; class=&#x22;success&#x22;&#x3E;
-&#x3C;div class=&#x22;input-note success&#x22;&#x3E;Lorem ipsum dolor sit.&#x3C;/div&#x3E;</code></pre>
-							</div>
-						</div>
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&#x3C;input-clab label=&#x22;input label&#x22;&#x3E; optional string as caption &#x3C;/input-clab&#x3E;</code></pre>
-							</div>
-						</div>
-						<div class="tab-content">
-							<table class="striped-table">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>label</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>name</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>'textinput'</td>
-									</tr>
-									<tr>
-										<td>type</td>
-										<td>string</td>
-										<td>none, 'success', 'warning', 'error', 'info'</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>value</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>disabled</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-									<tr>
-										<td>placeholder</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>note-type</td>
-										<td>string</td>
-										<td>optional additional class for the note</td>
-										<td>none</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
 
-			<section>
-				<h2 class="component-name">
-					file input
-				</h2>
-				<div class="component-example">
-					<file-clab label="Input file label">Lorem ipsum dolor sit amet</file-clab>
-				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;file-clab label="input label"&gt; <i class="italic">optional string as caption</i> &lt;/file-clab&gt;</code></pre>
-							</div>
-						</div>
-						<div class="tab-content">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>label</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>name</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>'fileinput'</td>
-									</tr>
-									<tr>
-										<td>type</td>
-										<td>string</td>
-										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>value</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>disabled</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-									<tr>
-										<td>multiple</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-									<tr>
-										<td>note-type</td>
-										<td>string</td>
-										<td>optional additional class for the note</td>
-										<td>none</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
-
-			<section>
-				<h2 class="component-name">
-					Radio
-				</h2>
-				<div class="component-example">
-					<article>
-						<radio-clab labels='["radio 1", "radio 2", "radio 3"]' name="group1"></radio-clab>
-					</article>
-					<article>
-						<radio-clab labels='["radio 4", "radio 5"]' name="group2" active="0"></radio-clab>
-					</article>
-					<article>
-						<radio-clab labels='["radio 6", "radio 7", "radio 8"]' name="group3" active="1" disabled='[1]'></radio-clab>
-					</article>
-				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;input id="radio" type="radio" name="radio_button"/&gt;
-&lt;label for="radio"&gt;radio&lt;/label&gt;</code></pre>
-							</div>
-						</div>
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;radio-clab labels='["radio 1", "radio 2"]' name="group1"&gt;&lt;/radio-clab&gt;</code></pre>
-							</div>
-						</div>
-						<div class="tab-content">
-							<table class="striped-table">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>labels</td>
-										<td>array</td>
-										<td>an array of labels for the radio inputs creation</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>name</td>
-										<td>string</td>
-										<td>the name for the group of radio inputs</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>wrapper-type</td>
-										<td>string</td>
-										<td>optional classes for the wrapper div</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>active</td>
-										<td>number</td>
-										<td>index of the active radio input</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>disabled</td>
-										<td>array</td>
-										<td>an array of indexes of the disabled radio inputs</td>
-										<td>none</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
-
-			<section>
-				<h2 class="component-name">
-					Checkbox
-				</h2>
-				<div class="component-example">
-					<article>
-			        	<checkbox-clab labels='["checkbox 1", "checkbox 2", "checkbox 3"]'></checkbox-clab>
-					</article>
-					<article>
-						<checkbox-clab labels='["checkbox 4", "checkbox 5", "checkbox 6"]' active="0"></checkbox-clab>
-					</article>
-					<article>
-						<checkbox-clab labels='["checkbox 7", "checkbox 8"]' active="1" disabled='[0]'></checkbox-clab>
-					</article>
-				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;input id="check" type="checkbox"/&gt;
-&lt;label for="check"&gt;checkbox&lt;/label&gt;</code></pre>
-							</div>
-						</div>
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;checkbox-clab labels='["checkbox 1", "checkbox 2"]' name="group1"&gt;&lt;/checkbox-clab&gt;</code></pre>
-							</div>
-						</div>
-						<div class="tab-content">
-							<table class="striped-table">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>labels</td>
-										<td>array</td>
-										<td>an array of labels for the checkboxes creation</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>wrapper-type</td>
-										<td>string</td>
-										<td>optional classes for the wrapper div</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>active</td>
-										<td>number</td>
-										<td>index of the active checkbox</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>disabled</td>
-										<td>array</td>
-										<td>an array of indexes of the disabled checkboxes</td>
-										<td>none</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
-
-			<section>
-				<h2 class="component-name">
-					Range input
-				</h2>
-				<div class="component-example">
-					<article>
-						<range-clab label="My wonderful range input label" value="5" min="0" max="10" step="1" disabled></range-clab>
-						<br><br>
-						<range-clab label="How old are you?" value="20" min="18" max="33" step="1" show-details></range-clab>
-					</article>
-				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;range-clab label="Your label" value="5" min="0" max="10" step="1"&gt;&lt;/range-clab&gt;</code></pre>
-							</div>
-						</div>
-						<div class="tab-content">
-							<table class="striped-table">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>label</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>name</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>rangeinput</td>
-									</tr>
-									<tr>
-										<td>type</td>
-										<td>string</td>
-										<td>none, 'success', 'warning', 'error', 'info'</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>value</td>
-										<td>number</td>
-										<td>any valid number inside the range you set</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>min</td>
-										<td>number</td>
-										<td>minimum value</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>max</td>
-										<td>number</td>
-										<td>maximum value</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>step</td>
-										<td>number</td>
-										<td>step value</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>disabled</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-									<tr>
-										<td>show-details</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
-
-		</div>
+		
 	</template>
 
 	<script>

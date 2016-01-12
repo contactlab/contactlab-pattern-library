@@ -10,7 +10,7 @@ class LibraryClab {
 	}
 
 	attached(){
-		this.querySelector('menu-clab').menu = AppMenu;
+		/*this.querySelector('menu-clab').menu = AppMenu;*/
 
 		var n = document.querySelectorAll('pre code').length;
 		n ? hljs.highlightBlock(document.querySelector('pre code')) : null;

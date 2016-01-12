@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 	
 	<script src="assets/bower/webcomponentsjs/webcomponents.min.js"></script>
-	<script src="assets/bower/zepto/zepto.min.js"></script>
+	
+	<script src="assets/bower/jquery/dist/jquery.min.js"></script>
 	<script src="assets/bower/es6-promise/promise.min.js"></script>
 	<script src="assets/bower/fetch/fetch.js"></script>
 	<script src="assets/bower/director/build/director.min.js"></script>
@@ -29,7 +30,26 @@
 </head>
 <body>
 
-	<main-clab></main-clab>
+<main-clab></main-clab>
+<script>
+	$( document ).ready(function() {
+		$( ".main-menu li" ).click(function() {
+		  $(this).toggleClass("active");
+		});
 
+	    $( ".submenu" ).click(function() {
+		  $( ".submenu ul" ).toggle();
+		});
+
+	    $( ".menu-toggle" ).click(function() {
+		  $( ".main-menu" ).fadeToggle(75);
+		  console.log("ciao");
+		});
+
+	    $( ".mobile-nav-toggle" ).click(function() {
+		  $( ".contextual-menu > ul" ).toggle();
+		});
+	});
+</script>
 </body>
 </html>

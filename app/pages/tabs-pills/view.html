@@ -4,135 +4,170 @@
 	<style></style>
 	
 	<template>
-		<div class="component-intro">
-			<div class="category">UI components</div>
-			<h1>Tabs & pills</h1>
-		</div>
-		<div class="content">
-			<div class="component-description">
-				Tabs & pills are used for alternating between views within the same context, not to navigate to different areas. For navigation refer to the horizontal navigation guidelines.
+		<div class="wrapper">
+			<h1>UI Components</h1>
+			<!-- SUBMENU -->
+			<div class="contextual-menu">
+				<div class="mobile-nav-toggle">
+					Navigation <i class="clab clab-icon-arrow-down arrow"></i>
+				</div>
+				<ul>
+					<li><a href="#/ui/accordion">Accordion</a></li>
+					<li><a href="#/ui/alerts">Alerts</a></li>
+					<li><a href="#/ui/breadcrumb">Breadcrumb</a></li>
+					<li><a href="#/ui/buttons">Buttons</a></li>
+					<li><a href="#/ui/buttons-group">Buttons group</a></li>
+					<li><a href="#/ui/cards">Cards</a></li>
+					<li><a href="#/ui/datepicker">Datepicker</a></li>
+					<li><a href="#/ui/features">Features</a></li>
+					<li><a href="#/ui/forms">Forms</a></li>
+					<li><a href="#/ui/labels-badges">Labels & badges</a></li>
+					<li><a href="#/ui/lists">Lists</a></li>
+					<li><a href="#/ui/modals">Modals</a></li>
+					<li><a href="#/ui/pagination">Pagination</a></li>
+					<li><a href="#/ui/progress-bars">Progress bars</a></li>
+					<li><a href="#/ui/select">Select</a></li>
+					<li><a href="#/ui/spinner">Spinner</a></li>
+					<li><a href="#/ui/tables">Tables</a></li>
+					<li class="active"><a href="#/ui/tabs-pills">Tabs & Pills</a></li>
+					<li><a href="#/ui/tooltips">Tooltips</a></li>
+					<!-- <li class="submenu">
+						<a>Buttons <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<ul>
+							<li><a href="#">Buttons</a></li>
+							<li><a href="#">Buttons group</a></li>
+						</ul>
+					</li> -->
+				</ul>
 			</div>
-			<section>
-				<h2 class="component-name">
-					Tabs
-				</h2>
-				<div class="component-example">
-					<tabs-clab labels='["Tab 1", "Tab 2", "Tab 3"]'>
-						<div class="tab-content">Tab 1 content</div>
-						<div class="tab-content">Tab 2 content</div>
-						<div class="tab-content">Tab 3 content</div>
-					</tabs-clab>
-					
+			<!-- END SUBMENU -->
+			<div class="content">
+				<h1>Tabs & pills</h1>
+				<div class="component-description">
+					Tabs & pills are used for alternating between views within the same context, not to navigate to different areas. For navigation refer to the horizontal navigation guidelines.
 				</div>
+				<section>
+					<h2 class="component-name">
+						Tabs
+					</h2>
+					<div class="component-example">
+						<tabs-clab labels='["Tab 1", "Tab 2", "Tab 3"]'>
+							<div class="tab-content">Tab 1 content</div>
+							<div class="tab-content">Tab 2 content</div>
+							<div class="tab-content">Tab 3 content</div>
+						</tabs-clab>
+						
+					</div>
 
-				<div class="component-specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;tabs-clab labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
-&lt;/tabs-clab&gt;</code></pre>
+					<div class="component-specs">
+						<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;tabs-clab labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
+	&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
+	&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
+	&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
+	&lt;/tabs-clab&gt;</code></pre>
+								</div>
 							</div>
-						</div>
-						<div class="tab-content">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>labels</td>
-										<td>array</td>
-										<td>array of strings</td>
-										<td>'Tab [index]'</td>
-									</tr>
-									<tr>
-										<td>active</td>
-										<td>number</td>
-										<td>index of the tab to be displayed from the start</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>pills</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
-
-			<section>
-				<h2 class="component-name">
-					Pills
-				</h2>
-				<div class="component-example">
-					<tabs-clab pills active="1" labels='["Pill 1", "Pill 2", "Pill 3"]'>
-						<div class="tab-content">Pill 1 content</div>
-						<div class="tab-content">Pill 2 content</div>
-						<div class="tab-content">Pill 3 content</div>
-					</tabs-clab>
-					
-				</div>
-
-				<div class="component-specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;tabs-clab pills active=&quot;1&quot; labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
-&lt;/tabs-clab&gt;</code></pre>
+							<div class="tab-content">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>labels</td>
+											<td>array</td>
+											<td>array of strings</td>
+											<td>'Tab [index]'</td>
+										</tr>
+										<tr>
+											<td>active</td>
+											<td>number</td>
+											<td>index of the tab to be displayed from the start</td>
+											<td>0</td>
+										</tr>
+										<tr>
+											<td>pills</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
-						</div>
-						<div class="tab-content">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>labels</td>
-										<td>array</td>
-										<td>array of strings</td>
-										<td>'Tab [index]'</td>
-									</tr>
-									<tr>
-										<td>active</td>
-										<td>number</td>
-										<td>index of the tab to be displayed from the start</td>
-										<td>0</td>
-									</tr>
-									<tr>
-										<td>pills</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
+						</tabs-clab>
+					</div>
+				</section>
+
+				<section>
+					<h2 class="component-name">
+						Pills
+					</h2>
+					<div class="component-example">
+						<tabs-clab pills active="1" labels='["Pill 1", "Pill 2", "Pill 3"]'>
+							<div class="tab-content">Pill 1 content</div>
+							<div class="tab-content">Pill 2 content</div>
+							<div class="tab-content">Pill 3 content</div>
+						</tabs-clab>
+						
+					</div>
+
+					<div class="component-specs">
+						<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;tabs-clab pills active=&quot;1&quot; labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
+	&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
+	&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
+	&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
+	&lt;/tabs-clab&gt;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>labels</td>
+											<td>array</td>
+											<td>array of strings</td>
+											<td>'Tab [index]'</td>
+										</tr>
+										<tr>
+											<td>active</td>
+											<td>number</td>
+											<td>index of the tab to be displayed from the start</td>
+											<td>0</td>
+										</tr>
+										<tr>
+											<td>pills</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+			</div>
 		</div>
 	</template>
 

@@ -4,20 +4,54 @@
 	<style></style>
 	
 	<template>
-		<div class="component-intro">
-			<div class="category">UI components</div>
-			<h1>Pagination</h1>
-		</div>
-		<div class="content">
-			<section>
-				<div class="component-example">
-					<pagination-clab pages='["#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8"]' current-page="3"></pagination-clab>
+		<div class="wrapper">
+			<h1>UI Components</h1>
+			<!-- SUBMENU -->
+			<div class="contextual-menu">
+				<div class="mobile-nav-toggle">
+					Navigation <i class="clab clab-icon-arrow-down arrow"></i>
 				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
+				<ul>
+					<li><a href="#/ui/accordion">Accordion</a></li>
+					<li><a href="#/ui/alerts">Alerts</a></li>
+					<li><a href="#/ui/breadcrumb">Breadcrumb</a></li>
+					<li><a href="#/ui/buttons">Buttons</a></li>
+					<li><a href="#/ui/buttons-group">Buttons group</a></li>
+					<li><a href="#/ui/cards">Cards</a></li>
+					<li><a href="#/ui/datepicker">Datepicker</a></li>
+					<li><a href="#/ui/features">Features</a></li>
+					<li><a href="#/ui/forms">Forms</a></li>
+					<li><a href="#/ui/labels-badges">Labels & badges</a></li>
+					<li><a href="#/ui/lists">Lists</a></li>
+					<li><a href="#/ui/modals">Modals</a></li>
+					<li class="active"><a href="#/ui/pagination">Pagination</a></li>
+					<li><a href="#/ui/progress-bars">Progress bars</a></li>
+					<li><a href="#/ui/select">Select</a></li>
+					<li><a href="#/ui/spinner">Spinner</a></li>
+					<li><a href="#/ui/tables">Tables</a></li>
+					<li><a href="#/ui/tabs-pills">Tabs & Pills</a></li>
+					<li><a href="#/ui/tooltips">Tooltips</a></li>
+					<!-- <li class="submenu">
+						<a>Buttons <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<ul>
+							<li><a href="#">Buttons</a></li>
+							<li><a href="#">Buttons group</a></li>
+						</ul>
+					</li> -->
+				</ul>
+			</div>
+			<!-- END SUBMENU -->
+			<div class="content">
+				<h1>Pagination</h1>
+				<section>
+					<div class="component-example">
+						<pagination-clab pages='["#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8"]' current-page="3"></pagination-clab>
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
 <pre><code class="html">&lt;ul class="pagination"&gt;
 	&lt;li class="first"&gt;
 		&lt;a href="#"&gt;&lt;i class="fa fa-angle-double-left"&gt;&lt;/i&gt;&lt;/a&gt;
@@ -34,44 +68,49 @@
 		&lt;a href="#"&gt;&lt;i class="fa fa-angle-double-right"&gt;&lt;/i&gt;&lt;/a&gt;
 	&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
+								</div>
 							</div>
-						</div>
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;pagination-clab pages='["#1", "#2", "#3", "#4"]'&gt;&lt;/pagination-clab&gt;</code></pre>
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;pagination-clab pages='["#1", "#2", "#3", "#4"]'&gt;&lt;/pagination-clab&gt;</code></pre>
+								</div>
 							</div>
-						</div>
-						<div class="tab-content">
-							<table class="striped-table">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>pages</td>
-										<td>array</td>
-										<td>valid array of anchors/urls</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>current-page</td>
-										<td>number</td>
-										<td>valid page number</td>
-										<td>1</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
+							<div class="tab-content">
+								<table class="striped-table">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>pages</td>
+											<td>array</td>
+											<td>valid array of anchors/urls</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>current-page</td>
+											<td>number</td>
+											<td>valid page number</td>
+											<td>1</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+			</div>
 		</div>
+
+
+
+		
 	</template>
 
 	<script>

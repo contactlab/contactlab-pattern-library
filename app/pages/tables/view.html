@@ -4,132 +4,170 @@
 	<style></style>
 	
 	<template>
-		<div class="component-intro">
-			<div class="category">UI components</div>
-			<h1>Tables</h1>
-		</div>
-		<div class="content">
-			<div class="component-description">
-				Tables are used to make large volumes of data easy to understand and to access.
+		<div class="wrapper">
+			<h1>UI Components</h1>
+			<!-- SUBMENU -->
+			<div class="contextual-menu">
+				<div class="mobile-nav-toggle">
+					Navigation <i class="clab clab-icon-arrow-down arrow"></i>
+				</div>
+				<ul>
+					<li><a href="#/ui/accordion">Accordion</a></li>
+					<li><a href="#/ui/alerts">Alerts</a></li>
+					<li><a href="#/ui/breadcrumb">Breadcrumb</a></li>
+					<li><a href="#/ui/buttons">Buttons</a></li>
+					<li><a href="#/ui/buttons-group">Buttons group</a></li>
+					<li><a href="#/ui/cards">Cards</a></li>
+					<li><a href="#/ui/datepicker">Datepicker</a></li>
+					<li><a href="#/ui/features">Features</a></li>
+					<li><a href="#/ui/forms">Forms</a></li>
+					<li><a href="#/ui/labels-badges">Labels & badges</a></li>
+					<li><a href="#/ui/lists">Lists</a></li>
+					<li><a href="#/ui/modals">Modals</a></li>
+					<li><a href="#/ui/pagination">Pagination</a></li>
+					<li><a href="#/ui/progress-bars">Progress bars</a></li>
+					<li><a href="#/ui/select">Select</a></li>
+					<li><a href="#/ui/spinner">Spinner</a></li>
+					<li class="active"><a href="#/ui/tables">Tables</a></li>
+					<li><a href="#/ui/tabs-pills">Tabs & Pills</a></li>
+					<li><a href="#/ui/tooltips">Tooltips</a></li>
+					<!-- <li class="submenu">
+						<a>Buttons <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<ul>
+							<li><a href="#">Buttons</a></li>
+							<li><a href="#">Buttons group</a></li>
+						</ul>
+					</li> -->
+				</ul>
 			</div>
-			
-			<section>
-				<h2 class="component-name">
-					Basic table
-				</h2>
-				<div class="component-example">
-					<table>
-						<tr>
-					      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					</table>
+			<!-- END SUBMENU -->
+			<div class="content">
+				<h1>Tables</h1>
+				<div class="component-description">
+					Tables are used to make large volumes of data easy to understand and to access.
 				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["HTML"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;table&gt;
-	&lt;tr&gt;
-		&lt;th&gt;Table Header 1&lt;/th&gt;&lt;th&gt;Table Header 2&lt;/th&gt;&lt;th&gt;Table Header 3&lt;/th&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;Division 1&lt;/td&gt;&lt;td&gt;Division 2&lt;/td&gt;&lt;td&gt;Division 3&lt;/td&gt;
-	&lt;/tr&gt;
-&lt;/table&gt;</code></pre>
+				
+				<section>
+					<h2 class="component-name">
+						Basic table
+					</h2>
+					<div class="component-example">
+						<table>
+							<tr>
+						      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						</table>
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["HTML"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;table&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Table Header 1&lt;/th&gt;&lt;th&gt;Table Header 2&lt;/th&gt;&lt;th&gt;Table Header 3&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Division 1&lt;/td&gt;&lt;td&gt;Division 2&lt;/td&gt;&lt;td&gt;Division 3&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;</code></pre>
+								</div>
 							</div>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
-			
-			<section>
-				<h2 class="component-name">
-					Striped table
-				</h2>
-				<div class="component-example">
-					<table class="striped-table">
-						<tr>
-					      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					</table>
-				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["HTML"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;table class="striped-table"&gt;
-	&lt;tr&gt;
-		&lt;th&gt;Table Header 1&lt;/th&gt;&lt;th&gt;Table Header 2&lt;/th&gt;&lt;th&gt;Table Header 3&lt;/th&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;Division 1&lt;/td&gt;&lt;td&gt;Division 2&lt;/td&gt;&lt;td&gt;Division 3&lt;/td&gt;
-	&lt;/tr&gt;
-&lt;/table&gt;</code></pre>
+						</tabs-clab>
+					</div>
+				</section>
+				
+				<section>
+					<h2 class="component-name">
+						Striped table
+					</h2>
+					<div class="component-example">
+						<table class="striped-table">
+							<tr>
+						      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						</table>
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["HTML"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;table class="striped-table"&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Table Header 1&lt;/th&gt;&lt;th&gt;Table Header 2&lt;/th&gt;&lt;th&gt;Table Header 3&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Division 1&lt;/td&gt;&lt;td&gt;Division 2&lt;/td&gt;&lt;td&gt;Division 3&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;</code></pre>
+								</div>
 							</div>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
-			
-			<section>
-				<h2 class="component-name">
-					Striped table
-				</h2>
-				<div class="component-example">
-					<table class="hover-table">
-						<tr>
-					      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					</table>
-				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["HTML"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;table class="hover-table"&gt;
-	&lt;tr&gt;
-		&lt;th&gt;Table Header 1&lt;/th&gt;&lt;th&gt;Table Header 2&lt;/th&gt;&lt;th&gt;Table Header 3&lt;/th&gt;
-	&lt;/tr&gt;
-	&lt;tr&gt;
-		&lt;td&gt;Division 1&lt;/td&gt;&lt;td&gt;Division 2&lt;/td&gt;&lt;td&gt;Division 3&lt;/td&gt;
-	&lt;/tr&gt;
-&lt;/table&gt;</code></pre>
+						</tabs-clab>
+					</div>
+				</section>
+				
+				<section>
+					<h2 class="component-name">
+						Striped table
+					</h2>
+					<div class="component-example">
+						<table class="hover-table">
+							<tr>
+						      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						</table>
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["HTML"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;table class="hover-table"&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Table Header 1&lt;/th&gt;&lt;th&gt;Table Header 2&lt;/th&gt;&lt;th&gt;Table Header 3&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Division 1&lt;/td&gt;&lt;td&gt;Division 2&lt;/td&gt;&lt;td&gt;Division 3&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;</code></pre>
+								</div>
 							</div>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
+						</tabs-clab>
+					</div>
+				</section>
+			</div>
+
 		</div>
+
+		
 	</template>
 
 	<script>

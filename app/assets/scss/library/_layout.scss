@@ -1,54 +1,207 @@
 $main-sidebar-width: 200px;
 $secondary-sidebar-width: 280px;
-$header-height: 60px;
+$header-height: 66px;
+
+$user-panel-width: 280px;
+$user-panel-color: #FFFFFF;
+$notifications-size: 18px;
+
+$overlay-color: rgba($darker-gray, 0.95);
 
 html{
   height: 100%;
+	font-size: $base-font-size;
 }
 
 body {
 	min-height: 100%;
+	font-size: $base-font-size;
 }
 
-.action-bar-button {
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	text-align: center;
-	font-size: 20px;
-	@extend .faster-transition; 
+.main-actions {
+	@include full;
+}
 
-	&:active {
-		background-color: $primary-color !important;
-		color: $primary-text-color;
-		@extend .faster-transition; 
+h1 span {
+	font-size: $bigger-font-size;
+}
+
+// start products panel
+
+#product-switch {
+	position: fixed;
+	top: 24px;
+	left: 200px;
+	color: $light-gray;
+	cursor: pointer;
+	z-index: 20;
+	@extend .slow-transition;
+
+	.clab {
+		@extend .slow-transition;
+	}
+
+	@include susy-breakpoint($desktop) {
+		top: 0;
+		right: 0;
+		left: initial;
+		bottom: initial;
+		line-height: $header-height;
+		padding: 0 $base-spacing;
+
+		.clab {
+			vertical-align: middle;
+		}
+	}
+
+	&.active {
+		position: absolute;
+		top: 24px;
+		left: 50%;
+		margin-left: -50px;
+		color: $contactlab-color;
+		@extend .slow-transition;
+
+		.clab { 
+			font-size: 100px;
+			@extend .slow-transition;
+		}
+
+		@include susy-breakpoint($desktop) {
+			left: initial;
+			right: 50%;
+			margin-left: 0;
+			margin-right: -70px;
+		}
 	}
 }
 
-// MAIN SIDEBAR
+#products-panel {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 15;
+	width: 100%;
+	background: $overlay-color;
+	border: 1px solid $light-gray;
+	text-align: center;
+	padding: 3.75em 0 3.75em 0;
+	display: none;
 
-#main-sidebar { 
+	@include susy-breakpoint($desktop) {
+		left: initial;
+		right: 0;
+	}
+
+	@include susy-breakpoint($smartphone) { 
+		left: 0;
+		right: 0;
+		max-width: initial;
+	}
+
+	.title {
+		@include full;
+		border-bottom: 1px solid $light-gray;
+		padding: $smaller-spacing;
+	}
+
+	.products-list {
+		@include full;
+		padding: 100px $base-spacing $base-spacing;
+
+		.product {
+			@include gallery(4);
+			text-align: center;
+
+			@include susy-breakpoint($tablet) { 
+				@include gallery(6);
+			}
+
+			@include susy-breakpoint($smartphone) { 
+				@include gallery(12);
+				clear: both !important;
+			}
+
+			.product-logo {
+				float: none;
+				display: inline-block;
+				width: auto;
+			}
+
+			&.contacthub {
+				.sign,
+				.product-name b {
+					color: $contacthub-primary-color;
+				}
+			}
+
+			&.contactplan {
+				.sign,
+				.product-name b {
+					color: $contactplan-primary-color;
+				}
+			}
+
+			&.contactsend {
+				.sign,
+				.product-name b {
+					color: $contactsend-primary-color;
+				}					
+			}
+		}
+	}
+}
+
+// end products panel
+
+
+// overlay
+
+.close-overlay  {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: $light-gray;
+	cursor: pointer;
+
+	&:hover {
+		color: $lighter-gray;
+	}
+
+	.clab {
+		font-size: 20px; 
+	}
+}
+
+// end overlay
+
+// start header
+
+header {
 	position: fixed;
 	top: 0;
 	left: 0;
-	bottom: 0;
-	width: $main-sidebar-width;
-	background-color: $darker-gray;
+	right: 0;
+	height: $header-height;
+	padding: 0 $base-spacing;
+	background: #FFFFFF;
 	z-index: 10;
 
-	#logo {
-		@include full;
-		height: $header-height;
-		line-height: $header-height;
-		font-size: 14px;
-		text-align: center;
+	.product-logo {
+		float: left;
+		position: relative; 
+		margin: 14px $base-spacing 9px 0;
+		width: 160px;
 
 		.sign {
 			position: absolute;
-			top: 10px;
-			left: $base-spacing;
-			line-height: 1;
-			font-size: 20px;
+			top: -3px;
+			left: 0;
 			color: $primary-color;
 
 			.clab {
@@ -56,659 +209,588 @@ body {
 			}
 		}
 
-		.name {
+		.product-name {
+			float: left;
+			padding-left: 19px;
+			color: $base-text-color;
 			font-size: 25px;
-			font-weight: $light-weight;
-			color: #FFFFFF;
-			@include full;
-			padding-left: 40px;
-			text-align: left;
 
 			b {
-				font-weight: $normal-weight;
+				color: $primary-color;
+				font-weight: normal;
+			}
+		}
+	}
+
+	#main-logo {
+		@include susy-breakpoint($desktop) {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -80px;
+		}
+	}
+}
+
+.open-menu {
+	position: fixed;
+	padding: 0 $base-spacing;
+	line-height: $header-height;
+	cursor: pointer;
+	display: none;
+	top: 0;
+	left: 0;
+
+	@include susy-breakpoint($desktop) {
+		display: block;
+	}
+
+	.clab {
+		vertical-align: middle;
+	}
+}
+
+.main-menu {
+	position: absolute;
+	left: 20%;
+	right: 20%;
+	text-align: center;	
+
+	.close-overlay {
+		display: none;
+	}
+
+	.users-menu {
+		@include full;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: $base-spacing;
+		display: none;
+
+		@include susy-breakpoint($desktop) {
+			display: block;
+			background-color: rgba($dark-gray, 0.95);
+		}
+
+		.user-picture {
+			float: left;
+			display: inline-block;
+			position: relative;
+			height: 40px;
+			width: 40px;
+			font-size: 1rem;
+			border: 2px solid $gray;
+			@include border-radius(50%);
+
+			span {
+				display: block;
+				text-align: center;
+				line-height: 36px;
+				font-size: $big-font-size;
+				font-weight: $semibold-weight;
+				color: $gray;
+			}
+
+			img {
+				height: 40px;
+				@include border-radius(50%);
+				border: 2px solid transparent;
+				position: absolute;
+				top: -2px;
+				left: -2px;
+			}
+		}
+
+		.user-name {
+			float: left;
+			color: $lighter-gray;
+			line-height: 40px;
+			margin-left: $small-spacing;
+		}
+
+		ul {
+			float: right;
+		}
+
+		ul,
+		ul li {
+			font-size: 1rem;
+			width: auto;
+			clear: initial;
+			margin: 0;
+			padding: 0;
+
+			a {
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				padding: 0;
+				display: block;
+
+				.clab {
+					font-size: 16px;
+					vertical-align: middle;
+				}
+			}
+
+			.notifications {
+				background-color: $primary-color;
+				width: $notifications-size;
+				height: $notifications-size;
+				line-height: $notifications-size;
+				text-align: center;
+				display: inline-block;
+				@include border-radius(50%);
+				font-size: $small-font-size;
+			}
+		}
+	}
+
+	> ul {
+		@include full;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			margin: 0;
+
+			a {
+				color: $base-text-color;
+				padding: $base-spacing+5px $base-spacing $base-spacing $base-spacing;
+				display: block;
+				position: relative;
+
+				@include susy-breakpoint($wide-desktop) {
+					padding-left: $small-spacing;
+					padding-right: $small-spacing;
+				}
+
+				&:hover {
+					&:before {
+						content: '';
+						display: block;
+						position: absolute;
+						bottom: 0;
+						left: 40%;
+						width: 20%;
+						height: 3px;
+						background-color: $gray;
+						@extend .fast-transition;
+					}
+				}
+			}
+
+			&.active {
+				a:before {
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 3px;
+					background-color: $primary-color;
+					@extend .faster-transition;
+				}
+			}
+		}
+	}
+
+	@include susy-breakpoint($desktop) {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 20;
+		padding: 0;
+		overflow: auto;
+		display: none;
+
+		> ul {
+			background-color: $overlay-color;
+			padding: 3.75em 0 3.75em 0;
+			position: absolute;
+			top: 0;
+			bottom: 80px;
+			overflow: auto;
+		}
+
+		.close-overlay {
+			display: block;
+		}
+
+		ul li {
+			@include full;
+			font-size: $big-font-size;
+
+			a {
+				color: $lighter-gray;
+
+				&:hover:before {
+					display: none;
+				}
+			}
+
+			&.active {
+				a {
+					color: $primary-color;
+
+					&:hover:before {
+						display: block;
+					}
+				}
+
+				a:before {
+					left: 50%;
+					width: 100px;
+					margin-left: -50px;
+				}
+			}
+		}
+	}
+}
+
+// end header
+
+// start contextual menu
+
+.contextual-menu {
+	@include full;
+	margin-bottom: $base-spacing;
+	border-bottom: 1px solid $light-gray;
+
+	ul,
+	li {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul {
+		@include full;
+		border-top: 1px solid $light-gray;
+	}
+
+	li {
+		float: left;
+		position: relative;
+
+		&.active {
+			a {
 				color: $primary-color;
 			}
 		}
 
 		a {
-			padding-top: 0;
-			padding-bottom: 0;
-		}
-	}	
-
-	// MENU
-
-	%hover-menu {
-		background-color: $darker-gray;
-		
-		li a {
-			padding-left: $base-spacing;
-		}
-	}
-
-	nav {
-		position: absolute;
-		top: $header-height;
-		left: 0;
-		right: 0;
-		bottom: 40px;
-		overflow: auto;
-
-		.icon {
-			width: 20px;
-			height: 20px;
-			font-size: 20px;
-			margin-right: $base-spacing;
-		}
-
-		a {
-			border-left: 2px solid transparent;
-		}
-
-		a:active {
-			background-color: rgba(0, 0, 0, 0.3);
-		}
-
-		.active > a,
-		.active > a:hover{
-			background-color: rgba(255, 255, 255, 0.15);
-			color: #FFFFFF;
-			border-color: $primary-color;
-		}
-
-		.menu-title {
-			display: none;
-			padding: 8px $base-spacing;
-			color: #FFFFFF;
-			background-color: rgba(255, 255, 255, 0.15);
-		}
-	}
-
-	.first-level-menu,
-	.second-level-menu,
-	.third-level-menu {
-		@include full;
-		margin: 0;
-
-		li {
+			color: $base-text-color;
+			display: inline-block;
+			padding: $small-spacing $medium-spacing $small-spacing 0;
+			font-weight: $semibold-weight;
 			cursor: pointer;
-			@include full;
-			margin: 0;
-			position: relative;
-			@include user-selection(none);
-		}
 
-		a {
-			color: #FFFFFF;
-			display: block;
-			padding: 8px $base-spacing;
-			text-decoration: none;
-		}
-	}
-
-	// FIRST LEVEL
-
-	.first-level-menu {
-
-		.active {
-			> a {
-				background-color: rgba(255, 255, 255, 0.15);
-				background-color: lighten($darker-gray, 10);
-
-				&:hover {
-					background-color: lighten($darker-gray, 10);
-				}
+			&:hover {
+				color: $primary-color;
 			}
 		}
 
-		/* > .active:after {
-			width: 0; 
-			height: 0; 
-			border-top: 8px solid transparent;
-			border-bottom: 8px solid transparent;
-			content: '';
-			border-left: 8px solid lighten($darker-gray, 10);
+		.arrow {
+			font-size: 12px;
+			margin-left: $smaller-spacing;
+		}
+
+		ul {
 			position: absolute;
-			top: 13px;
-			right: -8px;
-		} */
-		
-		.active,
-		.open {
-			.second-level-menu {
-				display: block;
+			top: 41px;
+			z-index: 2;
+			left: -$base-spacing;
+			background-color: $base-background-color;
+			border: 1px solid $light-gray;
+			display: none;
+			width: auto;
+			max-height: 900px;
+			overflow: auto;
+
+			@include susy-breakpoint($tablet) {
+				width: 100%;
+			}
+
+			li {
+				width: 100%;
+
+				a {
+					padding: $small-spacing $base-spacing;
+					width: 100%;
+
+					&:hover {
+						color: $base-text-color;
+						background-color: #FFFFFF;
+					}
+				}
 			}
 		}
+
 	}
 
-	// SECOND LEVEL
-
-	.second-level-menu {
+	.mobile-nav-toggle {
+		@include full;
+		border-top: 1px solid $light-gray;
+		padding: $small-spacing;
+		font-weight: $bold-weight;
+		cursor: pointer;
 		display: none;
-		background-color: rgba(0, 0, 0, 0.3);
-		padding-bottom: $small-spacing;
 
-		a {
-			font-size: $small-font-size;
-			color: #AAA;
-			padding: $smaller-spacing $base-spacing $smaller-spacing $larger-spacing;
-		}
-
-		li:hover > a {
-			background-color: transparent;
-			color: #FFFFFF;
-		}
-
-		.active a,
-		.active a:hover {
-			background-color: transparent;
-			border-color: transparent;
-		}
-
-		li.active,
-		li.open {
-
-			> a {
-				color: #FFFFFF;
-			}
-
-			.third-level-menu  {
-				padding-bottom: $small-spacing;
-
-				&:before {
-					content: "\e614";
-				}
-
-				li {
-					display: block;
-				}
-			}
+		.arrow {
+			font-size: 12px;
+			margin-left: $smaller-spacing;
 		}
 	}
 
-	// THIRD LEVEL
+	@include susy-breakpoint($tablet) {
 
-	.third-level-menu {
-		background-color: rgba(0, 0, 0, 0.5); 
+		.mobile-nav-toggle {
+			display: block;
+		}
+
+		> ul {
+			display: none;
+		}
+
+		.arrow {
+			float: right;
+			padding-top: 5px;
+		}
 
 		li {
-			display: none;
+			@include full;
 
 			a {
-				font-size: $small-font-size;
-				color: #AAAAAA;
-				padding-left: 80px;
+				@include full;
+				padding-left: $small-spacing*2;
+				padding-right: $small-spacing;
 			}
 
-			&.active a {
-				color: #FFFFFF;
+			ul {
+				position: relative;
+				float: left;
+				margin: 0;
+				top: 0;
+				left: 0;
+				border: 0;
+				border-top: 1px solid $light-gray;
+				border-bottom: 1px solid $light-gray;
+				/* background-color: $light-gray; */
+
+				li a {
+					padding-left: $small-spacing*3;
+				}
 			}
 		}
 
-		&:before {
-			font-family: 'contactlab-icons';
-			content: "\e62b";
-			position: absolute;
-			right: 10px;
-			top: 11px;
-			color: #FFFFFF;
-			font-size: 10px;
-		}
-	}
-
-	#reduce {
-		position: absolute;
-		bottom: 0;
-		@include full;
-		text-align: right;
-
-		a {
-			padding: 0;
-			@extend .action-bar-button;
-			background-color: rgba(255, 255, 255, 0.1);
-			float: right;
-			cursor: pointer;
-			color: #FFFFFF;
-		}
-
-		.expand {
-			display: none;
-			vertical-align: middle;
-		} 
-
-		.compress {
-			display: inline-block;
-			vertical-align: middle;
-		}
 	}
 }
 
-// END MAIN SIDEBAR
+// end contextual menu
 
-main {
-	@include full;
-	padding-left: $main-sidebar-width;
-	padding-right: 0;
-	padding-top: $header-height;
-}
+// start user panel
 
-// HEADER
-
-header {
-	position: fixed;
+#user-bar {
+	position: absolute;
 	top: 0;
 	right: 0;
-	left: $main-sidebar-width;
-	background-color: #FFFFFF;
-	height: $header-height;
-	z-index: 4;
-}
-
-.app-switch {
-	position: absolute;
-	left: 0;
-	top: 0;
-
-	.btn {
-		border-left: 0;
-
-		.icon {
-			margin-right: 0;
-		}
-	}
-}
-
-// user bar
-
-#user-menu-toggle {
+	padding-right: $base-spacing;
 	cursor: pointer;
-	float: left;
-	padding-left: $base-spacing;
-	@include user-selection(none);
+	font-size: 0;
+	z-index: 12;
 
-	&:active,
+	@include susy-breakpoint($desktop) {
+		display: none;
+	}
+
 	&.active {
-		.picture img {
+		.user-picture,
+		.user-pitcure img {
 			border-color: $primary-color;
 		}
-	} 
-}
+	}
 
-.user-bar {
-	float: right;
-	height: $header-height;
-	font-size: 0;
+	.user-picture {
+		margin-top: $base-spacing/2;
+		display: inline-block;
+		position: relative;
+		height: $header-height - $base-spacing;
+		width: $header-height - $base-spacing;
+		font-size: 1rem;
+		border: 2px solid $gray;
+		@include border-radius(50%);
 
-	.name {
+		span {
+			display: block;
+			text-align: center;
+			line-height: $header-height - $base-spacing - 4px;
+			font-size: $big-font-size;
+			font-weight: $semibold-weight;
+			color: $gray;
+		}
+
+		img {
+			height: $header-height - $base-spacing;
+			@include border-radius(50%);
+			border: 2px solid transparent;
+			position: absolute;
+			top: -2px;
+			left: -2px;
+		}
+
+		.notifications {
+			position: absolute;
+			top: 0;
+			left: -$notifications-size/2;
+			background-color: $primary-color;
+			color: $primary-text-color;
+			width: $notifications-size;
+			height: $notifications-size;
+			line-height: $notifications-size;
+			text-align: center;
+			font-size: $smaller-font-size;
+			@include border-radius(50%);
+		}
+	}
+
+	.user-name {
 		line-height: $header-height;
 		display: inline-block;
 		vertical-align: top;
-		font-size: $base-font-size;
-		margin-right: $base-spacing;
-	}
- 
-	.picture {
-		width: $header-height - 26px;
-		height: $header-height - 26px;
-		display: inline-block;
-		vertical-align: top;
-		font-size: $base-font-size;
-		margin: 15px $base-spacing 0 0;
-		position: relative;
-
-		img {
-			width: 100%;
-			@include border-radius(50%);
-			border: 2px solid transparent;
-			@extend .faster-transition;
-		}
+		font-size: 1rem;
+		margin-right: $small-spacing;
 	}
 }
 
-.notifications-badge {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 15px;
-	height: 15px;
-	font-size: 12px;
-	line-height: 15px;
-	text-align: center;
-	background-color: $primary-color;
-	color: $primary-text-color;
-	@include border-radius(50%); 
-}
-
-// end user bar
-
-// END HEADER
-
-// SECONDARY SIDEBAR
-
-#secondary-sidebar {
+#user-panel {
 	position: fixed;
-	width: $secondary-sidebar-width;
-	right: -$secondary-sidebar-width - 20px;
-	top: $header-height;
+	top: 0;
+	right: 0;
 	bottom: 0;
-	background-color: #FFFFFF;
-	z-index: 2;
-	padding: 0;
-	overflow: auto;
-	@extend .depth-1;
+	z-index: 11;
+	width: $user-panel-width;
+	border-left: 1px solid $light-gray;
+	background-color: $user-panel-color;
+	display: none;
 
 	.user-actions {
-		@include full;
-		text-align: right;
-		border-bottom: 1px solid $light-gray;
-		margin-bottom: $base-spacing;
-		font-size: 0;
-		padding-right: 12px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-align: center;
 
 		.action {
-			@extend .action-bar-button;
-			width: 35px;
-			height: 35px;
-			line-height: 35px;
-			display: inline-block;
-			cursor: pointer;
-			font-size: 20px;
+			@include full;
 
-			.clab {
-				font-size: 20px;
-			}
-		}
-	}
+			a {
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				float: left;
+				font-size: 16px;
+				color: $base-text-color;
 
-	&.sidebar-open {
-		right: 0;
-	}
+				&:active {
+					color: $primary-color;
+				}
 
-	.notifications {
-		@include full;
-	}
-
-	.sidebar-tabs {
-		padding: 0 $base-spacing;
-
-		.pills .tab,
-		.tabs .tab {
-			font-size: $small-font-size;
-		}
-	}
-
-	.sidebar-block {
-		@include full;
-		padding: 0 $base-spacing $large-spacing;
-		font-size: $small-font-size;
-
-		h3 {
-			font-weight: $semibold-weight;
-		}
-
-		.feature {
-			position: relative;
-			.description {
-				padding-left: 10px;
-
-				p {
-					font-size: $small-font-size;
+				.clab {
+					font-size: 16px;
 				}
 			}
 		}
+	}
 
-		ul,
-		ul li {
-			@include full;
-		}
+	.user-panel-content {
+		@include full;
+		margin-top: $header-height;
+		padding: 0 $base-spacing;
 
-		
+		.notification {
+			position: relative;
 
-		&.notifications {
-			.highlighted:before {
-				content: '';
+			.icon {
+				width: 35px;
+				height: 35px;
+				font-size: 35px;
+
+				.clab {
+					font-size: 35px;
+				}
+			} 
+
+			p {
+				font-size: $small-font-size;
+				color: $medium-gray;
+			}
+
+			h2 {
+				font-weight: $bold-weight;
+				color: $base-text-color;
+			}
+
+			.description {
+				padding-left: $small-spacing;
+			}
+
+			&.new:before {
 				position: absolute;
-				left: -5px;
+				content: '';
+				display: block;
 				top: 0;
+				left: -5px;
 				width: 5px;
 				height: 5px;
 				background-color: $primary-color;
 				@include border-radius(50%);
 			}
-		} 
-	} 
+		}
+
+		.description:hover {
+			h2 {
+				color: $primary-color;
+			}
+		}
+	}
 }
 
-// END SECONDARY SIDEBAR
+// end user panel
 
-.content {
+// start wrappers
+
+.main-content {
+	padding: $header-height+$base-spacing $base-spacing $base-spacing $base-spacing;
 	@include full;
-	padding: $medium-spacing ;
-	position: relative;
-	max-width: 1420px;
 }
 
+.form-wrapper {
+	@include full; 
+	max-width: 620px;
+}
 
-	
-.back {
-	position: absolute;
-	top: 0;
-	left: 0;
-	@extend .action-bar-button;
-	display: inline-block;
-	color: $base-text-color;
-	font-size: 15px;
+.wrapper {
+	@include container;
+	padding-bottom: $base-spacing;
 
-	&:active {
-		background-color: $primary-color;
-		color: $primary-text-color;
+	.form-wrapper {
+		max-width: 1030px;
 	}
 }
 
+.small-wrapper {
+	@include container(960px);
+	padding-bottom: $base-spacing;
 
-
-
-
-
-body.main-sidebar-small {
-	$main-sidebar-width: 40px;
-
-	#main-sidebar {
-		width: $main-sidebar-width;
-
-		nav {
-			overflow: initial;
-		}
-
-		#reduce {
-
-			.expand {
-				display: inline-block;
-				vertical-align: middle;
-			}
-
-			.compress {
-				display: none;
-				vertical-align: middle;
-			}
-
-			@include susy-breakpoint($tablet) {
-				display: none;
-			}
-		}
-		
-
-		#logo {
-			text-align: center;
-			font-size: 35px;
-
-			.name {
-				display: none;
-			}
-
-			.sign {
-				display: block;
-				left: 8px;
-			}
-		}
-
-		// MENU
-
-		a {
-			padding: 0;
-
-			.icon {
-				width: 38px;
-				height: 40px;
-				line-height: 40px;
-				text-align: center;
-				margin-right: 0;
-			}
-
-			span {
-				display: none;
-			}
-		}
-
-		.menu-title {
-			display: block;
-		}
-
-		// FIRST LEVEL MENU
-
-		.first-level-menu li {
-			position: relative;
-			text-align: center;
-
-			@include susy-breakpoint($tablet) {
-				> ul {
-					/* max-height: 250px; */
-					/* overflow: auto; */
-				}
-			}
-
-			&.active {
-				.second-level-menu{
-					display: none;
-				}
-
-				&.open .second-level-menu {
-					display: block;
-				}
-			}
-		}
-
-		// SECOND LEVEL MENU
-
-		.second-level-menu {
-			display: none;
-			position: absolute;
-			left: $main-sidebar-width;
-			top: 0;
-			background-color: $darker-gray;
-			width: 200px;
-			max-height: 200px;
-			overflow: auto;
-
-			li {
-				text-align: left; 
-			}
-
-			li a {
-				padding: 5px $base-spacing;
-				font-size: $small-font-size;
-			}
-		}
-
-		.third-level-menu {
-			left: 200px;
-		}
-
-		#reduce .icon {
-			margin: 0;
-		}
-	}
-
-	main {
-		padding-left: $main-sidebar-width;
-	}
-
-	header
-	 {
-		left: $main-sidebar-width;
+	.form-wrapper {
+		max-width: 760px;
 	}
 }
 
-// tablet layout
-
-@include susy-breakpoint(max-width 1200px) {
-	main {
-		padding-right: 0;
-	}
-}
-
-@include susy-breakpoint($tablet) {
-	.content {
-		padding: $large-spacing;
-	}
-}
-
-// end tablet layout
 
 
-// mobile layout
 
-@include susy-breakpoint($smartphone) {
-	$header-height: 50px;
-
-	header {
-		height: $header-height;
-	}
-
-	.search {
-		line-height: $header-height;
-		margin-left: $small-spacing;
-	}
-
-	.user-bar {
-		right: -$header-height/2;
-		height: $header-height;
-		right: -80px;
-
-		.name {
-			display: none;
-		}
-
-		.picture {
-			margin-top: 5px;
-			margin-right: $small-spacing;
-			width: $header-height - 10px;
-			height: $header-height - 10px;
-			position: relative;
-		}
-
-		.actions {
-			width: 80px;
-
-			.action {
-				height: $header-height;
-				line-height: $header-height;
-				width: 40px;
-			} 
-		}
-	}
-
-	#secondary-sidebar {
-		top: $header-height;
-	}
-
-	main {
-		padding-top: $header-height;
-	}
-
-	.toolbar {
-		padding-left: $small-spacing;
-	}
-}
-
-// end mobile layout

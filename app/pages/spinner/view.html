@@ -4,180 +4,217 @@
 	<style></style>
 	
 	<template>
-		<div class="component-intro">
-			<div class="category">UI components</div>
-			<h1>Spinner</h1>
-		</div>
-		<div class="content" id="spinner">
-			<section>
-				<h2 class="component-name">
-					Base spinner
-				</h2>
-				<div class="component-example">
-					<article>
-						<div class="card spinner-example">
-							Lorem ipsum dolor sit amet
-							<spinner-clab></spinner-clab>
-						</div>
-						<div class="card spinner-example">
-							Lorem ipsum dolor sit amet
-							<spinner-clab big></spinner-clab>
-						</div>
-					</article>
-					
+		<div class="wrapper">
+			<h1>UI Components</h1>
+			<!-- SUBMENU -->
+			<div class="contextual-menu">
+				<div class="mobile-nav-toggle">
+					Navigation <i class="clab clab-icon-arrow-down arrow"></i>
 				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;!-- Base spinner --&gt;
-&lt;div class=&quot;spinner-overlay&quot;&gt;
-&#x9;&lt;div class=&quot;spinner&quot;&gt;
-&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
-&#x9;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+				<ul>
+					<li><a href="#/ui/accordion">Accordion</a></li>
+					<li><a href="#/ui/alerts">Alerts</a></li>
+					<li><a href="#/ui/breadcrumb">Breadcrumb</a></li>
+					<li><a href="#/ui/buttons">Buttons</a></li>
+					<li><a href="#/ui/buttons-group">Buttons group</a></li>
+					<li><a href="#/ui/cards">Cards</a></li>
+					<li><a href="#/ui/datepicker">Datepicker</a></li>
+					<li><a href="#/ui/features">Features</a></li>
+					<li><a href="#/ui/forms">Forms</a></li>
+					<li><a href="#/ui/labels-badges">Labels & badges</a></li>
+					<li><a href="#/ui/lists">Lists</a></li>
+					<li><a href="#/ui/modals">Modals</a></li>
+					<li><a href="#/ui/pagination">Pagination</a></li>
+					<li><a href="#/ui/progress-bars">Progress bars</a></li>
+					<li><a href="#/ui/select">Select</a></li>
+					<li class="active"><a href="#/ui/spinner">Spinner</a></li>
+					<li><a href="#/ui/tables">Tables</a></li>
+					<li><a href="#/ui/tabs-pills">Tabs & Pills</a></li>
+					<li><a href="#/ui/tooltips">Tooltips</a></li>
+					<!-- <li class="submenu">
+						<a>Buttons <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<ul>
+							<li><a href="#">Buttons</a></li>
+							<li><a href="#">Buttons group</a></li>
+						</ul>
+					</li> -->
+				</ul>
+			</div>
+			<!-- END SUBMENU -->
 
-<pre><code class="html">&lt;!-- Base big spinner --&gt;
-&lt;div class=&quot;spinner-overlay big&quot;&gt;
-&#x9;&lt;div class=&quot;spinner&quot;&gt;
-&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
-&#x9;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+			<div class="content" id="spinner">
+				<h1>Spinner</h1>
+				<section>
+					<h2 class="component-name">
+						Base spinner
+					</h2>
+					<div class="component-example">
+						<article>
+							<div class="card spinner-example">
+								Lorem ipsum dolor sit amet
+								<spinner-clab></spinner-clab>
 							</div>
-						</div>
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;!-- Base spinner --&gt;
-		&lt;spinner-clab&gt;&lt;/spinner-clab&gt;</code></pre>
-
-<pre><code class="html">&lt;!-- Base big spinner --&gt;
-		&lt;spinner-clab big&gt;&lt;/spinner-clab&gt;</code></pre>
+							<div class="card spinner-example">
+								Lorem ipsum dolor sit amet
+								<spinner-clab big></spinner-clab>
 							</div>
-						</div>
-						<div class="tab-content">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>dark</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-									<tr>
-										<td>big</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
+						</article>
+						
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;!-- Base spinner --&gt;
+	&lt;div class=&quot;spinner-overlay&quot;&gt;
+	&#x9;&lt;div class=&quot;spinner&quot;&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+	&#x9;&lt;/div&gt;
+	&lt;/div&gt;</code></pre>
 
-			<section>
-				<h2 class="component-name">
-					Dark spinner
-				</h2>
-				<div class="component-example">
-					<article>
-						<div class="card spinner-example">
-							Lorem ipsum dolor sit amet
-							<spinner-clab dark></spinner-clab>
-						</div>
-						<div class="card spinner-example">
-							Lorem ipsum dolor sit amet
-							<spinner-clab big dark></spinner-clab>
-						</div>
-					</article>
-					
-				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;!-- Dark spinner --&gt;
-&lt;div class=&quot;spinner-overlay dark&quot;&gt;
-&#x9;&lt;div class=&quot;spinner&quot;&gt;
-&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
-&#x9;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-<pre><code class="html">&lt;!-- Dark big spinner --&gt;
-&lt;div class=&quot;spinner-overlay dark big&quot;&gt;
-&#x9;&lt;div class=&quot;spinner&quot;&gt;
-&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
-&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
-&#x9;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+	<pre><code class="html">&lt;!-- Base big spinner --&gt;
+	&lt;div class=&quot;spinner-overlay big&quot;&gt;
+	&#x9;&lt;div class=&quot;spinner&quot;&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+	&#x9;&lt;/div&gt;
+	&lt;/div&gt;</code></pre>
+								</div>
 							</div>
-						</div>
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;!-- Dark spinner --&gt;
-		&lt;spinner-clab&gt;&lt;/spinner-clab&gt;</code></pre>
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;!-- Base spinner --&gt;
+			&lt;spinner-clab&gt;&lt;/spinner-clab&gt;</code></pre>
 
-<pre><code class="html">&lt;!-- Dark big spinner --&gt;
-		&lt;spinner-clab big&gt;&lt;/spinner-clab&gt;</code></pre>
+	<pre><code class="html">&lt;!-- Base big spinner --&gt;
+			&lt;spinner-clab big&gt;&lt;/spinner-clab&gt;</code></pre>
+								</div>
 							</div>
-						</div>
-						<div class="tab-content">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>dark</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-									<tr>
-										<td>big</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
+							<div class="tab-content">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>dark</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+										<tr>
+											<td>big</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+
+				<section>
+					<h2 class="component-name">
+						Dark spinner
+					</h2>
+					<div class="component-example">
+						<article>
+							<div class="card spinner-example">
+								Lorem ipsum dolor sit amet
+								<spinner-clab dark></spinner-clab>
+							</div>
+							<div class="card spinner-example">
+								Lorem ipsum dolor sit amet
+								<spinner-clab big dark></spinner-clab>
+							</div>
+						</article>
+						
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;!-- Dark spinner --&gt;
+	&lt;div class=&quot;spinner-overlay dark&quot;&gt;
+	&#x9;&lt;div class=&quot;spinner&quot;&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+	&#x9;&lt;/div&gt;
+	&lt;/div&gt;</code></pre>
+
+	<pre><code class="html">&lt;!-- Dark big spinner --&gt;
+	&lt;div class=&quot;spinner-overlay dark big&quot;&gt;
+	&#x9;&lt;div class=&quot;spinner&quot;&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect1&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect2&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect3&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect4&quot;&gt;&lt;/div&gt;
+	&#x9;&#x9;&lt;div class=&quot;rect5&quot;&gt;&lt;/div&gt;
+	&#x9;&lt;/div&gt;
+	&lt;/div&gt;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;!-- Dark spinner --&gt;
+			&lt;spinner-clab&gt;&lt;/spinner-clab&gt;</code></pre>
+
+	<pre><code class="html">&lt;!-- Dark big spinner --&gt;
+			&lt;spinner-clab big&gt;&lt;/spinner-clab&gt;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>dark</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+										<tr>
+											<td>big</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+			</div>
+
 		</div>
 	</template>
 
