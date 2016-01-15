@@ -36,7 +36,6 @@ var LibraryClab = (function () {
 	}, {
 		key: '_pageChanged',
 		value: function _pageChanged() {
-			//console.log(this.page);
 			window.scroll(0, 0);
 		}
 	}, {

@@ -35,6 +35,22 @@ var AppMenu = [
 				"url": "#/ui/alerts"
 			},
 			{
+				"label": "Dropdown",
+				"url": "#/ui/dropdown"
+			},
+			{
+				"label": "Autocomplete",
+				"url": "#/ui/autocomplete"
+			},
+			{
+				"label": "Tags",
+				"url": "#/ui/tags"
+			},
+			{
+				"label": "Multiple",
+				"url": "#/ui/multiple"
+			},
+			{
 				"label": "Breadcrumb",
 				"url": "#/ui/breadcrumb"
 			},

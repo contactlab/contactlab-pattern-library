@@ -118,6 +118,18 @@ var MainClab = (function () {
 				'/ui/alerts': function uiAlerts() {
 					_this3.handleRouting();
 				},
+				'/ui/dropdown': function uiDropdown() {
+					_this3.handleRouting();
+				},
+				'/ui/autocomplete': function uiAutocomplete() {
+					_this3.handleRouting();
+				},
+				'/ui/tags': function uiTags() {
+					_this3.handleRouting();
+				},
+				'/ui/multiple': function uiMultiple() {
+					_this3.handleRouting();
+				},
 				'/ui/panels': function uiPanels() {
 					_this3.handleRouting();
 				},

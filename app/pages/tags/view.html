@@ -1,6 +1,6 @@
 <link rel="import" href="../../assets/bower/polymer/polymer.html">
 
-<dom-module id="page-select">
+<dom-module id="page-tags">
 	<style></style>
 	
 	<template>
@@ -42,15 +42,13 @@
 					</li>
 
 					<li class="submenu">
-						<a>JavaScript <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<a>ADVANCED COMPONENTS <i class="clab clab-icon-arrow-down arrow"></i></a>
 						<ul>
-							<li><a href="#/ui/accordion">Accordion</a></li>
 							<li><a href="#/ui/datepicker">Datepicker</a></li>
-							<li><a href="#/ui/modals">Modals</a></li>
-							<li><a href="#/ui/progress-bars">Progress bars</a></li>
-							<li class="active"><a href="#/ui/select">Select</a></li>
-							<li><a href="#/ui/tabs-pills">Tabs & Pills</a></li>
-							<li><a href="#/ui/tooltips">Tooltips</a></li>
+							<li><a href="#/ui/dropdown">Dropdown</a></li>
+							<li><a href="#/ui/autocomplete">Autocomplete</a></li>
+							<li class="active"><a href="#/ui/tags">Tags</a></li>
+							<li><a href="#/ui/multiple">Multiple</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -58,8 +56,8 @@
 			<!-- END SUBMENU -->
 
 			<div class="content">
-				<h2>Select</h2>
-				<section>
+				<h2>Tags</h2>
+				<!-- <section>
 					<h3 class="component-name">
 						Elekti
 					</h3>
@@ -308,7 +306,7 @@
 							</div>
 						</tabs-clab>
 					</div>
-				</section>
+				</section> -->
 			</div>
 		</div>
 	</template>
@@ -316,7 +314,7 @@
 	<script>
 
 		Polymer({
-			is:'page-select',
+			is:'page-tags',
 			behaviors: [ClipboardBehav]
 		});
 

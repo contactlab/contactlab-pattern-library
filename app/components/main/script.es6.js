@@ -101,6 +101,18 @@ class MainClab {
 		    '/ui/alerts': ()=> {
 		    	this.handleRouting();
 		    },
+		    '/ui/dropdown': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/autocomplete': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/tags': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/multiple': ()=> {
+		    	this.handleRouting();
+		    },
 		    '/ui/panels': ()=> {
 		    	this.handleRouting();
 		    },

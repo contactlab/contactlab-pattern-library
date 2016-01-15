@@ -22,7 +22,6 @@ class LibraryClab {
 	}
 
 	_pageChanged(){
-		//console.log(this.page);
 		window.scroll(0,0);
 	}
 

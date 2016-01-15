@@ -3,6 +3,10 @@
 
 <link rel="import" href="../../pages/accordion/view.html">
 <link rel="import" href="../../pages/alerts/view.html">
+<link rel="import" href="../../pages/autocomplete/view.html">
+<link rel="import" href="../../pages/dropdown/view.html">
+<link rel="import" href="../../pages/tags/view.html">
+<link rel="import" href="../../pages/multiple/view.html">
 <link rel="import" href="../../pages/brand-book/view.html">
 <link rel="import" href="../../pages/breadcrumb/view.html">
 <link rel="import" href="../../pages/buttons/view.html">
@@ -186,6 +190,18 @@
 			</template>
 			<template is="dom-if" if="[[_isPage(page, 'alerts')]]" restamp="true">
 				<page-alerts></page-alerts>
+			</template>
+			<template is="dom-if" if="[[_isPage(page, 'dropdown')]]" restamp="true">
+				<page-dropdown></page-dropdown>
+			</template>
+			<template is="dom-if" if="[[_isPage(page, 'autocomplete')]]" restamp="true">
+				<page-autocomplete></page-autocomplete>
+			</template>
+			<template is="dom-if" if="[[_isPage(page, 'tags')]]" restamp="true">
+				<page-tags></page-tags>
+			</template>
+			<template is="dom-if" if="[[_isPage(page, 'multiple')]]" restamp="true">
+				<page-multiple></page-multiple>
 			</template>
 			<template is="dom-if" if="[[_isPage(page, 'panels')]]" restamp="true">
 				<page-panels></page-panels>
