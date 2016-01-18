@@ -7448,7 +7448,8 @@ main {
   margin-bottom: 20px;
 }
 
-.component-specs .tab-content {
+.component-specs .tab-content,
+.component-specs .code-snippet {
   background-color: #FFFFFF;
   border: 1px solid #eaeced;
   border-top: 0;
