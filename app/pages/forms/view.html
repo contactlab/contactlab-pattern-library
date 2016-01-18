@@ -495,7 +495,10 @@
 
 		Polymer({
 			is:'page-forms',
-			behaviors: [ClipboardBehav]
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 		});
 
 	</script>

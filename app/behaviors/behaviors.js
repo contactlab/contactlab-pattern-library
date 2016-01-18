@@ -11,5 +11,13 @@ var ClipboardBehav = {
 		}, function (err) {
 			console.warn('Unable to copy on clipboard', err);
 		});
+	},
+
+	_highlightCode: function _highlightCode() {
+		var n = document.querySelectorAll('pre code').length;
+		n ? hljs.highlightBlock(document.querySelector('pre code')) : null;
+		Array.prototype.map.call(document.querySelectorAll('.html'), function (el) {
+			hljs.highlightBlock(el);
+		});
 	}
 };

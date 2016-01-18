@@ -185,6 +185,8 @@
 			is:'page-datepicker',
 			behaviors: [ClipboardBehav],
 			attached:function(){
+				this._highlightCode();
+
 				var cals = document.querySelectorAll('calendar-clab');
 				for(var i=0; i<cals.length; i++){
 					cals[i].options = {time: false, inputFormat: "DD/MM/YYYY"};

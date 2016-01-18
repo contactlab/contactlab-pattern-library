@@ -134,7 +134,10 @@
 
 		Polymer({
 			is:'page-tooltips',
-			behaviors: [ClipboardBehav]
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 		});
 
 	</script>

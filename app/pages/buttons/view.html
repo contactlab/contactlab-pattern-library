@@ -771,7 +771,10 @@
 
 		Polymer({
 			is:'page-buttons',
-			behaviors: [ClipboardBehav]
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 		});
 
 	</script>

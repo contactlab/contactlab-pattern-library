@@ -309,7 +309,10 @@
 
 		Polymer({
 			is:'page-cards',
-			behaviors: [ClipboardBehav]
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 		});
 
 	</script>

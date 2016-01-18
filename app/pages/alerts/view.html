@@ -679,7 +679,10 @@
 
 		Polymer({
 			is:'page-alerts',
-			behaviors: [ClipboardBehav]
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 		});
 
 		document.addEventListener('WebComponentsReady', function(){

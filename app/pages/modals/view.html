@@ -170,6 +170,8 @@
 			is:'page-modals',
 			behaviors: [ClipboardBehav],
 			attached:function(){
+				this._highlightCode();
+				
 				var modal = document.querySelector('modal-clab');
 
 				document.querySelector('#openModal').addEventListener('click',function(){

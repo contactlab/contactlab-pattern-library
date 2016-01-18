@@ -126,7 +126,10 @@
 
 		Polymer({
 			is:'page-lists',
-			behaviors: [ClipboardBehav]
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 		});
 
 	</script>

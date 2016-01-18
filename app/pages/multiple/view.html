@@ -315,7 +315,10 @@
 
 		Polymer({
 			is:'page-multiple',
-			behaviors: [ClipboardBehav]
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 		});
 
 	</script>

@@ -130,7 +130,10 @@
 
 		Polymer({
 			is:'page-pagination',
-			behaviors: [ClipboardBehav]
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 		});
 
 	</script>

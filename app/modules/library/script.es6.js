@@ -11,13 +11,7 @@ class LibraryClab {
 
 	attached(){
 		/*this.querySelector('menu-clab').menu = AppMenu;*/
-
-		var n = document.querySelectorAll('pre code').length;
-		n ? hljs.highlightBlock(document.querySelector('pre code')) : null;
-		Array.from(document.querySelectorAll('.html')).forEach((el) => {
-			hljs.highlightBlock(el);
-		});
-
+		//this.listen(this, 'pageLoaded', this._highlightCode);
 		this.fire('libraryLoaded');
 	}
 

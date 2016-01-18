@@ -187,7 +187,10 @@
 
 		Polymer({
 			is:'page-tables',
-			behaviors: [ClipboardBehav]
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 		});
 
 	</script>

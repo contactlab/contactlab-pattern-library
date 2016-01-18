@@ -235,7 +235,10 @@
 
 		Polymer({
 			is:'page-spinner',
-			behaviors: [ClipboardBehav]
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 		});
 
 	</script>
