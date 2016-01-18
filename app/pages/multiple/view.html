@@ -57,38 +57,10 @@
 
 			<div class="content">
 				<h2>Multiple</h2>
-				<!-- <section>
-					<h3 class="component-name">
-						Elekti
-					</h3>
+				<section>
 					<div class="component-example">
 						<article>
-								<elekti-mer label="Select label" options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]'>Lorem ipsum dolor sit.</elekti-mer>
-							
-						</article>
-						<article>
-								<elekti-mer label="Select label no search" no-search options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]'>Lorem ipsum dolor sit.</elekti-mer>
-							
-						</article>
-						<article>
-								<elekti-mer label="Success select label" type="success">Lorem ipsum dolor sit.</elekti-mer>
-							
-						</article>
-						<article>
-								<elekti-mer label="Warning select label" type="warning">Lorem ipsum dolor sit.</elekti-mer>
-							
-						</article>
-						<article>
-								<elekti-mer label="Error select label" type="error">Lorem ipsum dolor sit.</elekti-mer>
-							
-						</article>
-						<article>
-								<elekti-mer label="Info select label" type="info">Lorem ipsum dolor sit.</elekti-mer>
-							
-						</article>
-						<article>
-								<elekti-mer label="Disabled select label" disabled>Lorem ipsum dolor sit.</elekti-mer>
-							
+							<multiple-clab label="Select multiple options" options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]' max-in-view="5">This is a note</multiple-clab>
 						</article>
 					</div>
 					<div class="component-specs">
@@ -96,7 +68,7 @@
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
-	<pre><code class="html">&lt;elekti-mer label="Select label" options='[{"value": "A", "label": "Option 1"}, ...]'&gt;&lt;/elekti-mer&gt;</code></pre>
+	<pre><code class="html">&lt;multiple-clab label="Select multiple options" options='...'&gt;Here goes the note&lt;/multiple-clab&gt;</code></pre>
 								</div>
 							</div>
 							<div class="tab-content">
@@ -120,47 +92,13 @@
 											<td>name</td>
 											<td>string</td>
 											<td>any valid string</td>
-											<td>'elekti'</td>
+											<td>multiple select</td>
 										</tr>
 										<tr>
 											<td>type</td>
 											<td>string</td>
 											<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>options</td>
-											<td>array</td>
-											<td>
-												[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, ...]
-											</td>
-											<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, {<b>value</b>: 'B', <b>label</b>: 'Option 2'}]</td>
-										</tr>
-										<tr>
-											<td>default</td>
-											<td>string</td>
-											<td>the label of one of the options</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>placeholder</td>
-											<td>string</td>
-											<td>any valid string</td>
-											<td>Select...</td>
-										</tr>
-										<tr>
-											<td>value</td>
-											<td>object</td>
-											<td>
-												{<b>value</b>: ' ', <b>label</b>: ' '}
-											</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>open</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
+											<td>success</td>
 										</tr>
 										<tr>
 											<td>disabled</td>
@@ -169,22 +107,38 @@
 											<td>false</td>
 										</tr>
 										<tr>
-											<td>no-search</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
+											<td>options</td>
+											<td>array</td>
+											<td>
+												[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, ...]
+											</td>
+											<td></td>
 										</tr>
 										<tr>
-											<td>no-results</td>
-											<td>string</td>
-											<td>any valid string</td>
-											<td>'No results found'</td>
-										</tr>
-										<tr>
-											<td>optionsFn</td>
+											<td>options-fn</td>
 											<td>function</td>
 											<td>a function returning a Javascript promise that returns the options array</td>
 											<td>none</td>
+										</tr>
+										<tr>
+											<td>url</td>
+											<td>string</td>
+											<td>
+												Url to fetch the options from
+											</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>selected</td>
+											<td>object</td>
+											<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}]</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>max-in-view</td>
+											<td>number</td>
+											<td>max rows in view when list is open and scrollable</td>
+											<td>4</td>
 										</tr>
 										<tr>
 											<td>note-type</td>
@@ -207,10 +161,9 @@
 									<tbody>
 										<tr>
 											<td>change</td>
-											<td>When a new value is selected from dropdown</td>
+											<td>When a new value is selected</td>
 											<td><ul>
-												<li><b>newValue:</b> the object representing the new value that has been selected</li>
-												<li><b>oldValue:</b> the object representing the previous value selected</li>
+												<li><b>selected:</b> the object representing the new value that has been selected</li>
 											</ul></td>
 										</tr>
 									</tbody>
@@ -219,94 +172,6 @@
 						</tabs-clab>
 					</div>
 				</section>
-
-				<section>
-					<h3 class="component-name">
-						Multiple select
-					</h3>
-					<div class="component-example">
-						<article>
-							<multi-sel-clab label="Multiple select label">Lorem ipsum dolor</multi-sel-clab>
-						</article>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-	<pre><code class="html">&#x3C;label for=&#x22;&#x22;&#x3E;Multiple select label&#x3C;/label&#x3E;
-	&#x3C;select multiple&#x3E;
-	&#x9;&#x3C;option value=&#x22;&#x22;&#x3E;option01&#x3C;/option&#x3E;
-	&#x9;&#x3C;option value=&#x22;&#x22;&#x3E;option02&#x3C;/option&#x3E;
-	&#x9;&#x3C;option value=&#x22;&#x22;&#x3E;option03&#x3C;/option&#x3E;
-	&#x9;&#x3C;option value=&#x22;&#x22;&#x3E;option04&#x3C;/option&#x3E;
-	&#x9;&#x3C;option value=&#x22;&#x22;&#x3E;option05&#x3C;/option&#x3E;
-	&#x9;&#x3C;option value=&#x22;&#x22;&#x3E;option06&#x3C;/option&#x3E;
-	&#x9;&#x3C;option value=&#x22;&#x22;&#x3E;option07&#x3C;/option&#x3E;
-	&#x9;&#x3C;option value=&#x22;&#x22;&#x3E;option08&#x3C;/option&#x3E;
-	&#x9;&#x3C;option value=&#x22;&#x22;&#x3E;option09&#x3C;/option&#x3E;
-	&#x9;&#x3C;option value=&#x22;&#x22;&#x3E;option10&#x3C;/option&#x3E;
-	&#x3C;/select&#x3E;</code></pre>
-								</div>
-							</div>
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-	<pre><code class="html">&lt;multi-sel-clab label="Label for the select" options='[{"value": "A", "label": "Option 1"}, ...]'&gt;&lt;/multi-sel-clab&gt;</code></pre>
-								</div>
-							</div>
-							<div class="tab-content">
-								<table class="striped-table">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Type</th>
-											<th>Values</th>
-											<th>Default</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>name</td>
-											<td>string</td>
-											<td>a name for the select</td>
-											<td>'multiple select'</td>
-										</tr>
-										<tr>
-											<td>options</td>
-											<td>array</td>
-											<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, ...]</td>
-											<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, {<b>value</b>: 'B', <b>label</b>: 'Option 2'}, ...]</td>
-										<tr>
-											<td>type</td>
-											<td>string</td>
-											<td>none, 'primary', 'secondary', 'success', 'warning', 'error', 'info', 'disabled'</td>
-											<td>'primary'</td>
-										</tr>
-										<tr>
-											<td>label</td>
-											<td>string</td>
-											<td>a label for the select</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>disabled</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>note-type</td>
-											<td>string</td>
-											<td>optional additional class for the note</td>
-											<td>none</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</tabs-clab>
-					</div>
-				</section> -->
 			</div>
 		</div>
 	</template>
