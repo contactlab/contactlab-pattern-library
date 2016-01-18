@@ -13,7 +13,7 @@
 				</div>
 				<ul>
 					<li class="submenu">
-						<a>PLAIN <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<a>BASE ELEMENTS <i class="clab clab-icon-arrow-down arrow"></i></a>
 						<ul>
 							<li><a href="#/ui/lists">Lists</a></li>
 							<li><a href="#/ui/tables">Tables</a></li>
@@ -22,7 +22,7 @@
 					</li>
 					
 					<li class="submenu">
-						<a>BASIC COMPONENTS <i class="clab clab-icon-arrow-down arrow"></i></a>
+						<a>COMPONENTS <i class="clab clab-icon-arrow-down arrow"></i></a>
 						<ul>
 							<li><a href="#/ui/alerts">Alerts</a></li>
 							<li><a href="#/ui/accordion">Accordion</a></li>
@@ -32,7 +32,7 @@
 							<li><a href="#/ui/features">Features</a></li>
 							<li><a href="#/ui/forms">Forms</a></li>
 							<li><a href="#/ui/labels-badges">Labels &amp; badges</a></li>
-							<li><a href="#/ui/modals">Modals</a></li>
+							<li class="active"><a href="#/ui/modals">Modals</a></li>
 							<li><a href="#/ui/pagination">Pagination</a></li>
 							<li><a href="#/ui/progress-bars">Progress bars</a></li>
 							<li><a href="#/ui/tabs-pills">Tabs &amp; Pills</a></li>
@@ -62,12 +62,29 @@
 				</div>
 				<section>
 					<div class="component-example">
-						<button-clab id="openModal">
-							Open modal
-						</button-clab>
-						<modal-clab title="Dummy modal" primary="Confirm" secondary="Cancel">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo iste rerum ea ipsam, sequi explicabo, et officiis maxime adipisci! Aliquid labore unde eum consequatur mollitia similique ducimus, dolor adipisci reiciendis?</p>
-						</modal-clab>
+						<article>
+							<button-clab id="open1" type="primary" appearance="full">
+								Open modal with text content
+							</button-clab>
+							<modal-clab id="modal1" title="Dummy modal" primary="Confirm" secondary="Cancel" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo iste rerum ea ipsam, sequi explicabo, et officiis maxime adipisci! Aliquid labore unde eum consequatur mollitia similique ducimus, dolor adipisci reiciendis?">
+							</modal-clab>
+						</article>
+
+						<article>
+							<button-clab id="open2" type="secondary" appearance="full">
+								Open modal with HTML content
+							</button-clab>
+							<modal-clab id="modal2" title="Dummy modal" primary="Confirm" secondary="Cancel">
+								<h2>Some HTML...</h2>
+								<hr>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo iste rerum ea ipsam, sequi explicabo, et officiis maxime adipisci! Aliquid labore unde eum consequatur mollitia similique ducimus, dolor adipisci reiciendis?</p>
+								<ul>
+									<li>ksbdfkbsdf</li>
+									<li>sdfbgsdfgsdfg</li>
+									<li>sdfgsdfgsdfg</li>
+								</ul>
+							</modal-clab>
+						</article>
 					</div>
 					<div class="component-specs">
 						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
@@ -75,25 +92,25 @@
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
 	<pre><code class="html">&lt;div class=&quot;modal-overlay&quot;&gt;
-	&#x9;&lt;div class=&quot;modal-wrapper&quot;&gt;
-	&#x9;&#x9;&lt;div class=&quot;modal&quot;&gt;
-	&#x9;&#x9;&#x9;&lt;div class=&quot;modal-title&quot;&gt;Modal title&lt;/div&gt;
-	&#x9;&#x9;&#x9;&lt;div class=&quot;modal-body&quot;&gt;Modal content&lt;/div&gt;
-	&#x9;&#x9;&#x9;&lt;div class=&quot;modal-actions&quot;&gt;
-	&#x9;&#x9;&#x9;&#x9;&lt;button class=&quot;btn flat&quot;&gt;Cancel&lt;/button&gt;
-	&#x9;&#x9;&#x9;&#x9;&lt;button class=&quot;btn primary&quot;&gt;Confirm&lt;/button&gt;
-	&#x9;&#x9;&#x9;&lt;/div&gt;
-	&#x9;&#x9;&lt;/div&gt;
-	&#x9;&lt;/div&gt;
-	&lt;/div&gt;</code></pre>
+&#x9;&lt;div class=&quot;modal-wrapper&quot;&gt;
+&#x9;&#x9;&lt;div class=&quot;modal&quot;&gt;
+&#x9;&#x9;&#x9;&lt;div class=&quot;modal-title&quot;&gt;Modal title&lt;/div&gt;
+&#x9;&#x9;&#x9;&lt;div class=&quot;modal-body&quot;&gt;Modal content&lt;/div&gt;
+&#x9;&#x9;&#x9;&lt;div class=&quot;modal-actions&quot;&gt;
+&#x9;&#x9;&#x9;&#x9;&lt;button class=&quot;btn flat&quot;&gt;Cancel&lt;/button&gt;
+&#x9;&#x9;&#x9;&#x9;&lt;button class=&quot;btn primary&quot;&gt;Confirm&lt;/button&gt;
+&#x9;&#x9;&#x9;&lt;/div&gt;
+&#x9;&#x9;&lt;/div&gt;
+&#x9;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 								</div>
 							</div>
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
 			<pre><code class="html">&lt;modal-clab primary="Confirm" secondary="Cancel"&gt; 
-				<i class="italic">Modal content</i> 
-			&lt;/modal-clab&gt;</code></pre>
+	<i class="italic">Modal content as html</i> 
+&lt;/modal-clab&gt;</code></pre>
 								</div>
 							</div>
 							<div class="tab-content">
@@ -130,6 +147,18 @@
 											<td>string</td>
 											<td>text for the secondary button</td>
 											<td>none</td>
+										</tr>
+										<tr>
+											<td>content</td>
+											<td>string</td>
+											<td>To add content as simple text</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>max-width</td>
+											<td>string</td>
+											<td>max modal window width</td>
+											<td>500px</td>
 										</tr>
 									</tbody>
 								</table>
@@ -171,21 +200,26 @@
 			behaviors: [ClipboardBehav],
 			attached:function(){
 				this._highlightCode();
+
+				document.querySelector('#open1').addEventListener('click',function(){
+					document.querySelector('#modal1').visible = true;
+				});
+				document.querySelector('#open2').addEventListener('click',function(){
+					document.querySelector('#modal2').visible = true;
+				});
 				
-				var modal = document.querySelector('modal-clab');
+				var modals = document.querySelectorAll('modal-clab');
+				Array.prototype.map.call(modals, function(modal){
+					modal.addEventListener('modal-primary',function(){
+						alert('Clicked');
+					});
 
-				document.querySelector('#openModal').addEventListener('click',function(){
-					modal.visible = true;
-				});
-
-				modal.addEventListener('modal-primary',function(){
-					alert('Clicked');
-				});
-
-				modal.addEventListener('modal-secondary',function(){
-					modal.visible = false;
+					modal.addEventListener('modal-secondary',function(){
+						modal.visible = false;
+					});
 				});
 			}
+				
 		});
 
 	</script>
