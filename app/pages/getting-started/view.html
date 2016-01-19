@@ -18,14 +18,21 @@
 			</div>
 			<!-- END SUBMENU -->
 			<div class="content" id="getting-started-notes">
-				<h2>Getting started</h2>
+				<!-- <h2>Getting started</h2> -->
+				<section>
+					<h2>Download</h2>
+					<p>
+						You can manually download the complete package from the Github repository
+					</p>
+					<button-clab type="primary"><a href="#">download</a></button-clab>	
+				</section>
 				<section>
 					<h3>Install with Bower</h3>
 					<p>
 						You can also install and manage contactlab's pattern library using <a href="http://bower.io/" target="_blank">bower</a>
 					</p>
 					<div class="component-specs">
-						<div class="tab-content">
+						<div class="code-snippet">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
 <pre><code class="language-bash">$ bower install ui-components</code></pre>
@@ -33,41 +40,63 @@
 						</div>
 					</div>
 				</section>
+
+				<h2>What's to be included</h2>
 				<section>
-					<h3>CSS inclusions</h3>
+					<h3>Web components polyfill</h3>
 					<div class="component-specs">
-						<div class="tab-content">
+						<div class="code-snippet">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
-<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;path/ui-components/icons.css&quot;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;path/ui-components/pattern.css&quot;&gt;</code></pre>
+<pre><code class="html">&lt;script src=&quot;webcomponentsjs/webcomponents.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 							</div>
 						</div>
 					</div>
-				</section>
 
-				<section>
-					<h3>Webcomponent polyfill</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus assumenda voluptas libero ipsum minima itaque, necessitatibus in nam soluta nulla!</p>
-					<div class="component-specs">
+					<h3>CLab Components</h3>
+					
+
+					<tabs-clab labels='["IMPORT ALL", "CUSTOM IMPORT"]'>
 						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;script src=&quot;path/webcomponentsjs/webcomponents.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+							<p>If you want to use all our elements just import this file</p>
+							<div class="component-specs">
+								<div class="code-snippet">
+									<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+									<div class="copy">
+		<pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;ui-components/_components/clab-components.html&quot;&gt;</code></pre>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-				</section>
-
-
-				<section>
-					<h3>Components import</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, et.</p>
-					<div class="component-specs">
 						<div class="tab-content">
+							<p>If you need only some of the elements compile them using gulp</p>
+							<div class="component-specs">
+								<div class="code-snippet">
+									<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+									<div class="copy">
+		<pre><code class="language-bash">$ gulp build -s [folder 1, folder 2, folder 3]</code></pre>
+									</div>
+								</div>
+							</div>
+							<p>Then import the generated file</p>
+							<div class="component-specs">
+								<div class="code-snippet">
+									<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+									<div class="copy">
+		<pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;ui-components/_components/clab-components-custom.html&quot;&gt;</code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</tabs-clab>
+
+					<h3>CSS</h3>
+					<div class="component-specs">
+						<div class="code-snippet">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
-<pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;path/ui-components/clab-components.html&quot;&gt;</code></pre>
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;ui-components/icons.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;ui-components/pattern.css&quot;&gt;</code></pre>
 							</div>
 						</div>
 					</div>
@@ -79,7 +108,7 @@
 						Start with this basic HTML template, or modify these examples. We hope you'll customize our templates and examples, adapting them to suit your needs.
 					</p>
 					<div class="component-specs">
-						<div class="tab-content">
+						<div class="code-snippet">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
 <pre><code class="html">&#x3C;!DOCTYPE html&#x3E;
@@ -121,7 +150,10 @@
 
 	Polymer({
 		is:'page-getting-started',
-		behaviors: [ClipboardBehav]
+		behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 	});
 
 
