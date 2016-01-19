@@ -231,6 +231,7 @@ article {
 
 p {
   margin: 0 0 $base-spacing;
+  @include full;
 }
 // Truncate
 
@@ -494,6 +495,7 @@ th {
   text-align: left;
   border-bottom: 1px solid $dark-gray;
   padding: $small-spacing;
+  font-weight: $bold-weight;
 }
 
 td {
@@ -901,6 +903,10 @@ td {
   margin-top: $base-spacing;
   @include full;
 
+  .clab {
+    font-size: 10px;
+  }
+
   li {
     color: $disabled-color;
     display: inline;
@@ -917,7 +923,7 @@ td {
     }
 
     a:hover {
-      color: $secondary-color;
+      color: $primary-color;
     }
 
     &.first {
@@ -931,7 +937,7 @@ td {
     &.active {
 
       a {
-        background: $secondary-color;
+        background: $medium-gray;
         color: #FFFFFF;
       }
     }
@@ -1008,7 +1014,7 @@ td {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: $overlay-color;
   z-index: 10;
   display: table;
   height: 100%;
@@ -1018,7 +1024,7 @@ td {
 
 .modal-wrapper {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: top;
   text-align: center;
   padding: $base-spacing;
 }
@@ -1026,9 +1032,10 @@ td {
 
 .modal {
   @extend .card;
-  background: $base-background-color;
+  /* background: $base-background-color; */
+  background: transparent;
   text-align: left;
-  @include single-box-shadow(0, 2px, 7px, 5px, rgba(0,0,0,0.22));
+  /* @include single-box-shadow(0, 2px, 7px, 5px, rgba(0,0,0,0.22)); */
   color: $dark-gray;
   width: 100%;
   max-height: 100%;
@@ -1037,18 +1044,22 @@ td {
   overflow: auto;
   float: none;
   margin-top: $base-spacing;
+  border: 0;
 
   .actions {
     text-align: right;
   }
 
   .modal-title {
-    @extend .card-title;
+    @include full;
+    padding: $base-spacing $base-spacing 0;
+    @extend h2;
+    margin: 0;
   }
 
   .modal-body {
     @extend .card-body;
-    max-height: 500px;
+    /* max-height: 500px; */
     overflow: auto;
   }
 
@@ -1122,7 +1133,7 @@ td {
 
   >ul>li, {
     display: inline-block;
-    font-size: 16px;
+    font-size: $base-font-size;
   }
 
   .ui-widget-content,

@@ -1,12 +1,12 @@
 $main-sidebar-width: 200px;
 $secondary-sidebar-width: 280px;
 $header-height: 66px;
+$main-actions-height: 56px;
 
 $user-panel-width: 280px;
 $user-panel-color: #FFFFFF;
 $notifications-size: 18px;
 
-$overlay-color: rgba($darker-gray, 0.95);
 
 html{
   height: 100%;
@@ -41,6 +41,12 @@ h1 span {
 		@extend .slow-transition;
 	}
 
+	img {
+		width: 25px;
+		@include filter(grayscale(100%) brightness(-100%));
+		@extend .slow-transition;
+	}
+
 	@include susy-breakpoint($desktop) {
 		top: 0;
 		right: 0;
@@ -60,7 +66,14 @@ h1 span {
 		left: 50%;
 		margin-left: -50px;
 		color: $contactlab-color;
+		padding: $large-spacing 0 0;
 		@extend .slow-transition;
+
+		img {
+			width: 100px;
+			@include filter(grayscale(0%));
+			@extend .slow-transition;
+		}
 
 		.clab { 
 			font-size: 100px;
@@ -166,11 +179,11 @@ h1 span {
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
-	color: $light-gray;
+	color: $dark-gray;
 	cursor: pointer;
 
 	&:hover {
-		color: $lighter-gray;
+		color: $darker-gray;
 	}
 
 	.clab {
@@ -358,7 +371,7 @@ header {
 
 			a {
 				color: $base-text-color;
-				padding: $base-spacing+5px $base-spacing $base-spacing $base-spacing;
+				padding: 35px $base-spacing 10px $base-spacing;
 				display: block;
 				position: relative;
 
@@ -409,10 +422,6 @@ header {
 		overflow: auto;
 		display: none;
 
-		a {
-			color: $lighter-gray;
-		}
-
 		> ul {
 			background-color: $overlay-color;
 			padding: 3.75em 0 3.75em 0;
@@ -426,12 +435,19 @@ header {
 			display: block;
 		}
 
+		.users-menu {
+			
+ 
+			a {
+				color: $lighter-gray;
+			}
+		}
+
 		ul li {
 			@include full;
 			font-size: $big-font-size;
 
 			a {
-				color: $lighter-gray;
 
 				&:hover:before {
 					display: none;
@@ -650,7 +666,7 @@ header {
 		.notifications {
 			position: absolute;
 			top: 0;
-			left: -$notifications-size/2;
+			right: -$notifications-size/2;
 			background-color: $primary-color;
 			color: $primary-text-color;
 			width: $notifications-size;
@@ -770,6 +786,10 @@ header {
 .main-content {
 	padding: $header-height+$base-spacing $base-spacing $base-spacing $base-spacing;
 	@include full;
+
+	&.actions-bar {
+		padding-bottom: $base-spacing+$main-actions-height;
+	}
 }
 
 .form-wrapper {
@@ -797,4 +817,33 @@ header {
 
 
 
+// MAIN ACTIONS BAR
+
+#main-actions-bar {
+	/* @include full;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	height: $main-actions-height;
+	background-color: $dark-gray;
+	padding: $small-spacing $base-spacing 0; */
+
+	@include full;
+	margin-top: $base-spacing;
+	padding-top: $large-spacing;
+	border-top: 1px solid $medium-gray;
+
+	.left {
+		@include span(6);
+	}
+
+	.right {
+		@include span(6 last);
+		text-align: right;
+	}
+}
+
+// END MAIN ACTIONS BAR
 

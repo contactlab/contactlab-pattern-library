@@ -1,5 +1,6 @@
 textarea {
   resize: vertical;
+  height: 150px !important;
 }
 
 input:focus,
@@ -38,7 +39,16 @@ input[type="reset"] {
 
 // INPUT STYLE
 
+.help-tips {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: $smaller-spacing;
+  font-size: 14px;
 
+  .clab {
+    font-size: 14px;
+  }
+}
 
 label {
   @include full;
@@ -545,5 +555,97 @@ ol.multiple-clab {
 
 // NEW
 
+.selected-values {
+  @include full;
+  margin-top: $small-spacing;
 
-  
+  span {
+    line-height: normal !important;
+    margin-bottom: $smaller-spacing;
+  }
+}
+
+.form-row {
+  @include full;
+  margin-bottom: $base-spacing;
+
+  .label-container {
+    @extend label;
+    @include span(3);
+    text-align: right;
+    padding: 0;
+    display: table;
+    height: 34px;
+    vertical-align: middle;
+
+    span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .input-container {
+    @include span(9 last);
+    position: relative;
+
+    .full-width {
+      @include full; 
+    }
+
+    .half-width {
+      @include span(6);
+    }
+
+    .one-third-width {
+      @include span(4);
+    }
+
+    .two-third-width {
+      @include span(8);
+    }
+
+    .one-fourth-width {
+      @include span(3);
+    }
+
+    .one-fifth-width {
+      @include span(2);
+    }
+
+    .full-width,
+    .half-width,
+    .one-third-width,
+    .two-third-width,
+    .one-fourth-width,
+    .one-fifth-width {
+      display: table;
+      &.last {
+        @include last;
+      }
+
+      input[type=checkbox],
+      input[type=checkbox] + label,
+      input[type=radio],
+      input[type=radio] + label {
+        margin-top: 9px;
+      }
+
+      &.label-container {
+        text-align: right;
+        padding: 0;
+        display: table;
+        height: 34px;
+        vertical-align: middle;
+
+        span {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+
+      span {
+        line-height: 34px;
+      }
+    }
+  }
+}
