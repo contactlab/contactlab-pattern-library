@@ -24,7 +24,6 @@ class MainClab {
 	}
 
 	_routing(){ 
-
 		this.handleRouting=function(){
 			let url = this.router.getRoute();
 			if(url[0]===''){
@@ -40,34 +39,8 @@ class MainClab {
 				} else {
 					this.querySelector('library-clab').page=url[1];
 				}
-				
 				//this.currentPage=this.querySelector('.library-clab.iron-selected');
 			} 
-			
-			/*console.log('current: ', this.currentPage);
-			if(oldPage){
-				console.log('old: ', oldPage);
-				/*let elSaved=oldPage.outerHTML;
-				console.log(elSaved);
-				//this.querySelector(oldPage.tagName.toLowerCase()).outerHTML=oldPage.outerHTML;
-				this.querySelector(oldPage.tagName.toLowerCase()).remove();
-				this.querySelector().createElement(oldPage.outerHTML);*/
-
-
-				// Find all the CLAB custom elements in the page and reset each one of them 
-				/*Array.from(oldPage.querySelectorAll('[class*="style-scope"]')).forEach((el)=>{
-						let name = el.tagName.toLowerCase();
-						if(name.indexOf('clab')>-1){
-							customTags.push(el);
-							let proto = this.getNativePrototype(name);
-							//console.log(name);
-							console.log(proto);
-							console.log(proto.properties);
-						}
-				});
-			}
-
-			oldPage=this.currentPage;*/
 		};
 
 		this.routes = {
@@ -181,13 +154,13 @@ class MainClab {
 		    	library.page = 'not-found';
 			},
 			on: ()=>{
-				$('menu-clab .first-level-menu>li>a').each(function(i, e){					
+				/*$('menu-clab .first-level-menu>li>a').each(function(i, e){					
 					if(location.hash.search(e.getAttribute('href')) > -1){
 						e.parentNode.classList.add('active');
 					}else{
 						e.parentNode.classList.remove('active');
 					}
-				});
+				});*/
 			}
 		});
 

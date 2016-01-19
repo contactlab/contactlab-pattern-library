@@ -23,8 +23,7 @@ var LibraryClab = (function () {
 	}, {
 		key: 'attached',
 		value: function attached() {
-			/*this.querySelector('menu-clab').menu = AppMenu;*/
-			//this.listen(this, 'pageLoaded', this._highlightCode);
+			this.querySelector('menu-clab').menu = AppMenu;
 			this.fire('libraryLoaded');
 		}
 	}, {
