@@ -72,7 +72,8 @@ label {
   }
 }
 
-.input-note {
+.input-note,
+.note-clab {
   @include full;
   font-size: $small-font-size;
 
@@ -406,7 +407,8 @@ h2 + .form-row {
 }
 
 // MULTIPLE SELECT
-select[multiple] {
+select[multiple],
+ol.multiple-clab {
     @include full;
     background-color: rgba(255,255,255,0.6);
     border: 0;
@@ -414,13 +416,30 @@ select[multiple] {
     padding: $smaller-spacing 0;
     font-size: $base-font-size;
     @extend .fast-transition;
+    margin-bottom: 0;
+
+    li {
+      padding: $smaller-spacing;
+      cursor: pointer;
+
+      &.selected {
+        background-color: $light-gray;
+        color: $primary-color;
+      }
+    }
 }
 
 
 // ELEKTI
-.elekti-wrapper {
+.elekti-wrapper,
+.options-list-wrapper {
   @include full;
   position: relative;
+
+  span {
+    @extend input[type="text"];
+    cursor: pointer;
+  }
 
   &:after {
     font-family: 'contactlab-icons';
@@ -451,7 +470,8 @@ select[multiple] {
   .filter-hidden {
     opacity: .1;
   }
-  .js-users-list{
+  .js-users-list,
+  .options-list{
     position: absolute;
     z-index: 1;
     width: 100%;

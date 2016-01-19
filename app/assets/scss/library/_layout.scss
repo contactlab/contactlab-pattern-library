@@ -409,6 +409,10 @@ header {
 		overflow: auto;
 		display: none;
 
+		a {
+			color: $lighter-gray;
+		}
+
 		> ul {
 			background-color: $overlay-color;
 			padding: 3.75em 0 3.75em 0;
