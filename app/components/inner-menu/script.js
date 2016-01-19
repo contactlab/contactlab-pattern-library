@@ -4,51 +4,38 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var LibraryClab = (function () {
-	function LibraryClab() {
-		_classCallCheck(this, LibraryClab);
+var InnerMenuClab = (function () {
+	function InnerMenuClab() {
+		_classCallCheck(this, InnerMenuClab);
 	}
 
-	_createClass(LibraryClab, [{
+	_createClass(InnerMenuClab, [{
 		key: 'beforeRegister',
 		value: function beforeRegister() {
-			this.is = "library-clab";
+			this.is = 'inner-menu-clab';
 			this.properties = {
-				page: {
-					type: String,
-					observer: '_pageChanged'
+				menu: {
+					type: Array
 				}
 			};
 		}
 	}, {
-		key: 'attached',
-		value: function attached() {
-			var _this = this;
-
-			var menu = this.querySelector('menu-clab');
-			menu.menu = AppMenu;
-			menu.addEventListener('subchange', function (evt) {
-				_this.submenu = evt.detail.links;
-				_this.async(function () {
-					_this.querySelector('inner-menu-clab').menu = _this.submenu;
-				}, 100);
-			});
-
-			this.fire('libraryLoaded');
+		key: 'ready',
+		value: function ready() {
+			this.set('menu', document.querySelector('menu-clab').submenu);
+			console.log('ready----->', this.menu);
 		}
 	}, {
-		key: '_pageChanged',
-		value: function _pageChanged() {
-			window.scroll(0, 0);
-		}
-	}, {
-		key: '_isPage',
-		value: function _isPage(cur, page) {
-			return cur === page;
+		key: '_computeActive',
+		value: function _computeActive(link) {
+			var url = location.hash;
+			var arr = [];
+			if (url.search(link) > -1) arr.push('active');
+			return arr.join(' ');
 		}
 	}]);
 
-	return LibraryClab;
+	return InnerMenuClab;
 })();
 
-Polymer(LibraryClab);
+Polymer(InnerMenuClab);

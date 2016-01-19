@@ -10,7 +10,15 @@ class LibraryClab {
 	}
 
 	attached(){
-		this.querySelector('menu-clab').menu = AppMenu;
+		var menu=this.querySelector('menu-clab');
+		menu.menu = AppMenu;
+		menu.addEventListener('subchange', (evt)=>{
+			this.submenu=evt.detail.links;
+			this.async(()=>{
+				this.querySelector('inner-menu-clab').menu=this.submenu;
+			},100);
+		});
+
 		this.fire('libraryLoaded');
 	}
 
