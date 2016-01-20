@@ -14,6 +14,9 @@ class LibraryClab {
 		menu.menu = AppMenu;
 		menu.addEventListener('subchange', (evt)=>{
 			this.submenu=evt.detail.links;
+			this.submenu.map(item=>{
+				if(item.open!=undefined) delete item.open;
+			});
 			this.async(()=>{
 				this.querySelector('inner-menu-clab').menu=this.submenu;
 			},100);

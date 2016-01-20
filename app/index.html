@@ -22,7 +22,6 @@
 	<link rel="import" href="components/main/view.html">
 	<link rel="import" href="modules/cover/view.html">
 	<link rel="import" href="modules/library/view.html">
-	<!-- <link rel="import" href="components/header/view.html"> -->
 
 	<link rel="import" href="assets/bower/ui-components/_components/clab-components.html">
 
@@ -30,28 +29,5 @@
 <body>
 
 <main-clab></main-clab>
-<script>
-	//setTimeout(function(){
-	//	$( document ).ready(function() {
-			$(document).on('click',".main-menu li", function() {
-			  $(this).toggleClass("active");
-			});
-
-			$(document).on('click',".submenu", function() {
-		    //$(".submenu").click(function() {
-			  $(this).find("ul").toggle();
-			});
-
-			$(document).on('click',".menu-toggle", function() {
-			  $(".main-menu").fadeToggle(75);
-			});
-
-	    	$(document).on('click',".mobile-nav-toggle", function() {
-			  $(".contextual-menu > ul").toggle();
-			});
-	//	});
-	//},500);
-	
-</script>
 </body>
 </html>

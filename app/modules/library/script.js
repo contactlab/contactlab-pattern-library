@@ -29,6 +29,9 @@ var LibraryClab = (function () {
 			menu.menu = AppMenu;
 			menu.addEventListener('subchange', function (evt) {
 				_this.submenu = evt.detail.links;
+				_this.submenu.map(function (item) {
+					if (item.open != undefined) delete item.open;
+				});
 				_this.async(function () {
 					_this.querySelector('inner-menu-clab').menu = _this.submenu;
 				}, 100);
