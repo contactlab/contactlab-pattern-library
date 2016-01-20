@@ -446,7 +446,7 @@ ol.multiple-clab {
   @include full;
   position: relative;
 
-  span {
+  .value_wrapper {
     @extend input[type="text"];
     cursor: pointer;
   }
@@ -507,6 +507,16 @@ ol.multiple-clab {
       &.selected {
         color: $primary-color;
       }
+    }
+
+    &.hidden{
+      display: block;
+      opacity: 0;
+    }
+    
+    &.active{
+      display: block;
+      opacity: 1;
     }
 
     &.visible {
