@@ -25,8 +25,8 @@
 						<button-clab>Button</button-clab>
 						<button-clab disabled>Button</button-clab>
 						<button-clab icon="clab clab-icon-sign">Button</button-clab>
-						<button-clab appearance="full">Button</button-clab>
-						<button-clab appearance="full" disabled>Button</button-clab>
+						<button-clab appearance="empty">Button</button-clab>
+						<button-clab appearance="empty" disabled>Button</button-clab>
 						<button-clab appearance="flat">Button</button-clab>
 					</div>
 					<div class="component-specs">
@@ -132,8 +132,8 @@
 					<div class="component-example">
 						<button-clab type="primary">Button</button-clab>
 						<button-clab type="primary"icon="clab clab-icon-sign">Button</button-clab>
-						<button-clab type="primary"appearance="full">Button</button-clab>
-						<button-clab type="primary"appearance="flat">Button</button-clab>
+						<button-clab type="primary" appearance="empty">Button</button-clab>
+						<button-clab type="primary" appearance="flat">Button</button-clab>
 					</div>
 					<div class="component-specs">
 						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
@@ -223,105 +223,6 @@
 					</div>
 				</section>
 
-				<!-- BOTTONI SECONDRY -->
-				<section>
-					<h3 class="component-name">
-						Secondary buttons
-					</h3>
-					<div class="component-example">
-						<button-clab type="secondary">Button</button-clab>
-						<button-clab type="secondary"icon="clab clab-icon-sign">Button</button-clab>
-						<button-clab type="secondary"appearance="full">Button</button-clab>
-						<button-clab type="secondary"appearance="flat">Button</button-clab>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-<pre><code class="html">&lt;!-- Secondary button --&gt;
-&lt;button class="btn secondary"&gt;content&lt;/button&gt;</code></pre>
-
-<pre><code class="html">&lt;!-- Secondary button with icon --&gt;
-&lt;button class="btn secondary"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
-
-<pre><code class="html">&lt;!-- Full secondary button --&gt;
-&lt;button class="btn secondary full"&gt;content&lt;/button&gt;</code></pre>
-
-<pre><code class="html">&lt;!-- Flat secondary button --&gt;
-&lt;button class="btn secondary flat"&gt;content&lt;/button&gt;</code></pre>
-								</div>
-							</div>
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-<pre><code class="html">&lt;!-- Secondary button --&gt;
-&lt;button-clab type="secondary"&gt;content&lt;/button-clab&gt;</code></pre>
-
-<pre><code class="html">&lt;!-- Secondary button with icon --&gt;
-&lt;button-clab type="secondary" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
-
-<pre><code class="html">&lt;!-- Full secondary button --&gt;
-&lt;button-clab type="secondary" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
-
-<pre><code class="html">&lt;!-- Flat secondary button --&gt;
-&lt;button-clab type="secondary" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
-								</div>
-							</div>
-							<div class="tab-content">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Type</th>
-											<th>Values</th>
-											<th>Default</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>type</td>
-											<td>string</td>
-											<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>appearance</td>
-											<td>string</td>
-											<td>
-												<b>none</b>: bordered button
-												<br><b>'full'</b>: button filled with background color
-												<br><b>'flat'</b>: button without borders
-											</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>icon</td>
-											<td>string</td>
-											<td>any valid icon class</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>size</td>
-											<td>string</td>
-											<td>
-												<b>none</b>: regular size button
-												<br><b>'small'</b>: smaller button</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>disabled</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-
 				<!-- BOTTONI SUCCESS -->
 				<section>
 					<h3 class="component-name">
@@ -330,7 +231,7 @@
 					<div class="component-example">
 						<button-clab type="success">Button</button-clab>
 						<button-clab type="success"icon="clab clab-icon-sign">Button</button-clab>
-						<button-clab type="success"appearance="full">Button</button-clab>
+						<button-clab type="success"appearance="empty">Button</button-clab>
 						<button-clab type="success"appearance="flat">Button</button-clab>
 					</div>
 					<div class="component-specs">
@@ -429,7 +330,7 @@
 					<div class="component-example">
 						<button-clab type="warning">Button</button-clab>
 						<button-clab type="warning"icon="clab clab-icon-sign">Button</button-clab>
-						<button-clab type="warning"appearance="full">Button</button-clab>
+						<button-clab type="warning"appearance="empty">Button</button-clab>
 						<button-clab type="warning"appearance="flat">Button</button-clab>
 					</div>
 					<div class="component-specs">
@@ -528,7 +429,7 @@
 					<div class="component-example">
 						<button-clab type="error">Button</button-clab>
 						<button-clab type="error"icon="clab clab-icon-sign">Button</button-clab>
-						<button-clab type="error"appearance="full">Button</button-clab>
+						<button-clab type="error"appearance="empty">Button</button-clab>
 						<button-clab type="error"appearance="flat">Button</button-clab>
 					</div>
 					<div class="component-specs">
@@ -627,7 +528,7 @@
 					<div class="component-example">
 						<button-clab type="info">Button</button-clab>
 						<button-clab type="info"icon="clab clab-icon-sign">Button</button-clab>
-						<button-clab type="info"appearance="full">Button</button-clab>
+						<button-clab type="info"appearance="empty">Button</button-clab>
 						<button-clab type="info"appearance="flat">Button</button-clab>
 					</div>
 					<div class="component-specs">

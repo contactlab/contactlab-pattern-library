@@ -2706,6 +2706,834 @@ table {
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+  font-size: 14px;
+}
+
+body {
+  min-height: 100%;
+  font-size: 14px;
+}
+
+.main-actions {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h1 span {
+  font-size: 1.375rem;
+}
+
+#product-switch {
+  position: fixed;
+  top: 24px;
+  left: 200px;
+  color: #dcdfe1;
+  cursor: pointer;
+  z-index: 20;
+}
+#product-switch img {
+  width: 25px;
+  -webkit-filter: grayscale(100%) brightness(-100%);
+  filter: grayscale(100%) brightness(-100%);
+}
+@media (max-width: 60em) {
+  #product-switch {
+    top: 0;
+    right: 0;
+    left: initial;
+    bottom: initial;
+    line-height: 66px;
+    padding: 0 20px;
+  }
+  #product-switch .clab {
+    vertical-align: middle;
+  }
+}
+#product-switch.active {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  margin-left: -50px;
+  color: #0072bc;
+  padding: 40px 0 0;
+}
+#product-switch.active img {
+  width: 100px;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+#product-switch.active .clab {
+  font-size: 100px;
+}
+@media (max-width: 60em) {
+  #product-switch.active {
+    left: initial;
+    right: 50%;
+    margin-left: 0;
+    margin-right: -70px;
+  }
+}
+
+#products-panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 15;
+  width: 100%;
+  background: rgba(240, 240, 240, 0.97);
+  border: 1px solid #dcdfe1;
+  text-align: center;
+  padding: 3.75em 0 3.75em 0;
+  display: none;
+}
+@media (max-width: 60em) {
+  #products-panel {
+    left: initial;
+    right: 0;
+  }
+}
+@media (max-width: 30em) {
+  #products-panel {
+    left: 0;
+    right: 0;
+    max-width: initial;
+  }
+}
+#products-panel .title {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  border-bottom: 1px solid #dcdfe1;
+  padding: 6.66667px;
+}
+#products-panel .products-list {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 100px 20px 20px;
+}
+#products-panel .products-list .product {
+  width: 32.20339%;
+  float: left;
+  text-align: center;
+}
+#products-panel .products-list .product:nth-child(3n + 1) {
+  margin-left: 0;
+  margin-right: -100%;
+  clear: both;
+  margin-left: 0;
+}
+#products-panel .products-list .product:nth-child(3n + 2) {
+  margin-left: 33.89831%;
+  margin-right: -100%;
+  clear: none;
+}
+#products-panel .products-list .product:nth-child(3n + 3) {
+  margin-left: 67.79661%;
+  margin-right: -100%;
+  clear: none;
+}
+@media (max-width: 48em) {
+  #products-panel .products-list .product {
+    width: 49.15254%;
+    float: left;
+  }
+  #products-panel .products-list .product:nth-child(2n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  #products-panel .products-list .product:nth-child(2n + 2) {
+    margin-left: 50.84746%;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+@media (max-width: 30em) {
+  #products-panel .products-list .product {
+    width: 100%;
+    float: left;
+    clear: both !important;
+  }
+  #products-panel .products-list .product:nth-child(1n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: none;
+  }
+}
+#products-panel .products-list .product .product-logo {
+  float: none;
+  display: inline-block;
+  width: auto;
+}
+#products-panel .products-list .product.contacthub .sign,
+#products-panel .products-list .product.contacthub .product-name b {
+  color: #67c6dd;
+}
+#products-panel .products-list .product.contactplan .sign,
+#products-panel .products-list .product.contactplan .product-name b {
+  color: #14C04D;
+}
+#products-panel .products-list .product.contactsend .sign,
+#products-panel .products-list .product.contactsend .product-name b {
+  color: #2C5AF5;
+}
+
+.close-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #353A3D;
+  cursor: pointer;
+}
+.close-overlay:hover {
+  color: #282c2e;
+}
+.close-overlay .clab {
+  font-size: 20px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 66px;
+  padding: 0 20px;
+  background: #FFFFFF;
+  z-index: 10;
+}
+header .product-logo {
+  float: left;
+  position: relative;
+  margin: 14px 20px 9px 0;
+  width: 160px;
+}
+header .product-logo .sign {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  color: #0072bc;
+}
+header .product-logo .sign .clab {
+  font-size: 20px;
+}
+header .product-logo .product-name {
+  float: left;
+  padding-left: 19px;
+  color: #353A3D;
+  font-size: 25px;
+}
+header .product-logo .product-name b {
+  color: #0072bc;
+  font-weight: normal;
+}
+@media (max-width: 60em) {
+  header #main-logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -80px;
+  }
+}
+
+.open-menu {
+  position: fixed;
+  padding: 0 20px;
+  line-height: 66px;
+  cursor: pointer;
+  display: none;
+  top: 0;
+  left: 0;
+}
+@media (max-width: 60em) {
+  .open-menu {
+    display: block;
+  }
+}
+.open-menu .clab {
+  vertical-align: middle;
+}
+
+.main-menu {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  text-align: center;
+}
+.main-menu .close-overlay {
+  display: none;
+}
+.main-menu .users-menu {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  display: none;
+}
+@media (max-width: 60em) {
+  .main-menu .users-menu {
+    display: block;
+    background-color: rgba(53, 58, 61, 0.95);
+  }
+}
+.main-menu .users-menu .user-picture {
+  float: left;
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  font-size: 1rem;
+  border: 2px solid #cfd3d5;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.main-menu .users-menu .user-picture span {
+  display: block;
+  text-align: center;
+  line-height: 36px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #cfd3d5;
+}
+.main-menu .users-menu .user-picture img {
+  height: 40px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+.main-menu .users-menu .user-name {
+  float: left;
+  color: #eaeced;
+  line-height: 40px;
+  margin-left: 10px;
+}
+.main-menu .users-menu ul {
+  float: right;
+}
+.main-menu .users-menu ul,
+.main-menu .users-menu ul li {
+  font-size: 1rem;
+  width: auto;
+  clear: initial;
+  margin: 0;
+  padding: 0;
+}
+.main-menu .users-menu ul a,
+.main-menu .users-menu ul li a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  display: block;
+}
+.main-menu .users-menu ul a .clab,
+.main-menu .users-menu ul li a .clab {
+  font-size: 16px;
+  vertical-align: middle;
+}
+.main-menu .users-menu ul .notifications,
+.main-menu .users-menu ul li .notifications {
+  background-color: #0072bc;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  display: inline-block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 0.8571rem;
+}
+.main-menu > ul {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin: 0;
+  padding: 0;
+}
+.main-menu > ul li {
+  display: inline-block;
+  margin: 0;
+}
+.main-menu > ul li a {
+  color: #353A3D;
+  padding: 35px 20px 10px 20px;
+  display: block;
+  position: relative;
+}
+@media (max-width: 80em) {
+  .main-menu > ul li a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.main-menu > ul li a:hover:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  width: 20%;
+  height: 3px;
+  background-color: #cfd3d5;
+}
+.main-menu > ul li.active a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #0072bc;
+}
+@media (max-width: 60em) {
+  .main-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 20;
+    padding: 0;
+    overflow: auto;
+    display: none;
+  }
+  .main-menu > ul {
+    background-color: rgba(240, 240, 240, 0.97);
+    padding: 3.75em 0 3.75em 0;
+    position: absolute;
+    top: 0;
+    bottom: 80px;
+    overflow: auto;
+  }
+  .main-menu .close-overlay {
+    display: block;
+  }
+  .main-menu .users-menu a {
+    color: #eaeced;
+  }
+  .main-menu ul li {
+    clear: both;
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1.25rem;
+  }
+  .main-menu ul li a:hover:before {
+    display: none;
+  }
+  .main-menu ul li.active a {
+    color: #0072bc;
+  }
+  .main-menu ul li.active a:hover:before {
+    display: block;
+  }
+  .main-menu ul li.active a:before {
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+  }
+}
+
+.contextual-menu {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dcdfe1;
+}
+.contextual-menu ul,
+.contextual-menu li {
+  margin: 0;
+  padding: 0;
+}
+.contextual-menu ul {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  border-top: 1px solid #dcdfe1;
+}
+.contextual-menu li {
+  float: left;
+  position: relative;
+}
+.contextual-menu li.active a {
+  color: #0072bc;
+}
+.contextual-menu li a {
+  color: #353A3D;
+  display: inline-block;
+  padding: 10px 30px 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+.contextual-menu li a:hover {
+  color: #0072bc;
+}
+.contextual-menu li .arrow {
+  font-size: 12px;
+  margin-left: 6.66667px;
+}
+.contextual-menu li ul {
+  position: absolute;
+  top: 41px;
+  z-index: 2;
+  left: -20px;
+  background-color: #F0f0f0;
+  border: 1px solid #dcdfe1;
+  display: none;
+  width: auto;
+  max-height: 900px;
+  overflow: auto;
+}
+@media (max-width: 48em) {
+  .contextual-menu li ul {
+    width: 100%;
+  }
+}
+.contextual-menu li ul li {
+  width: 100%;
+}
+.contextual-menu li ul li a {
+  padding: 10px 20px;
+  width: 100%;
+}
+.contextual-menu li ul li a:hover {
+  color: #353A3D;
+  background-color: #FFFFFF;
+}
+.contextual-menu .mobile-nav-toggle {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  border-top: 1px solid #dcdfe1;
+  padding: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  display: none;
+}
+.contextual-menu .mobile-nav-toggle .arrow {
+  font-size: 12px;
+  margin-left: 6.66667px;
+}
+@media (max-width: 48em) {
+  .contextual-menu .mobile-nav-toggle {
+    display: block;
+  }
+  .contextual-menu > ul {
+    display: none;
+  }
+  .contextual-menu .arrow {
+    float: right;
+    padding-top: 5px;
+  }
+  .contextual-menu li {
+    clear: both;
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .contextual-menu li a {
+    clear: both;
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+  .contextual-menu li ul {
+    position: relative;
+    float: left;
+    margin: 0;
+    top: 0;
+    left: 0;
+    border: 0;
+    border-top: 1px solid #dcdfe1;
+    border-bottom: 1px solid #dcdfe1;
+    /* background-color: $light-gray; */
+  }
+  .contextual-menu li ul li a {
+    padding-left: 30px;
+  }
+}
+
+#user-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 20px;
+  cursor: pointer;
+  font-size: 0;
+  z-index: 12;
+}
+@media (max-width: 60em) {
+  #user-bar {
+    display: none;
+  }
+}
+#user-bar.active .user-picture,
+#user-bar.active .user-pitcure img {
+  border-color: #0072bc;
+}
+#user-bar .user-picture {
+  margin-top: 10px;
+  display: inline-block;
+  position: relative;
+  height: 46px;
+  width: 46px;
+  font-size: 1rem;
+  border: 2px solid #cfd3d5;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#user-bar .user-picture span {
+  display: block;
+  text-align: center;
+  line-height: 42px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #cfd3d5;
+}
+#user-bar .user-picture img {
+  height: 46px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+#user-bar .user-picture .notifications {
+  position: absolute;
+  top: 0;
+  right: -9px;
+  background-color: #0072bc;
+  color: #FFFFFF;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  font-size: 0.7857rem;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#user-bar .user-name {
+  line-height: 66px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+#user-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  width: 280px;
+  border-left: 1px solid #dcdfe1;
+  background-color: #FFFFFF;
+  display: none;
+}
+#user-panel .user-actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+#user-panel .user-actions .action {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+#user-panel .user-actions .action a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  font-size: 16px;
+  color: #353A3D;
+}
+#user-panel .user-actions .action a:active {
+  color: #0072bc;
+}
+#user-panel .user-actions .action a .clab {
+  font-size: 16px;
+}
+#user-panel .user-panel-content {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 66px;
+  padding: 0 20px;
+}
+#user-panel .user-panel-content .notification {
+  position: relative;
+}
+#user-panel .user-panel-content .notification .icon {
+  width: 35px;
+  height: 35px;
+  font-size: 35px;
+}
+#user-panel .user-panel-content .notification .icon .clab {
+  font-size: 35px;
+}
+#user-panel .user-panel-content .notification p {
+  font-size: 0.8571rem;
+  color: #a6adb2;
+}
+#user-panel .user-panel-content .notification h2, #user-panel .user-panel-content .notification .modal .modal-title, .modal #user-panel .user-panel-content .notification .modal-title {
+  font-weight: 700;
+  color: #353A3D;
+}
+#user-panel .user-panel-content .notification .description {
+  padding-left: 10px;
+}
+#user-panel .user-panel-content .notification.new:before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0;
+  left: -5px;
+  width: 5px;
+  height: 5px;
+  background-color: #0072bc;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#user-panel .user-panel-content .description:hover h2, #user-panel .user-panel-content .description:hover .modal .modal-title, .modal #user-panel .user-panel-content .description:hover .modal-title {
+  color: #0072bc;
+}
+
+.main-content {
+  padding: 86px 20px 20px 20px;
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+.main-content.actions-bar {
+  padding-bottom: 76px;
+}
+
+.form-wrapper {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 620px;
+}
+
+.wrapper {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+.wrapper:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.wrapper .form-wrapper {
+  max-width: 1030px;
+}
+
+.small-wrapper {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+.small-wrapper:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+.small-wrapper .form-wrapper {
+  max-width: 760px;
+}
+
+#main-actions-bar {
+  /* @include full;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: $main-actions-height;
+  background-color: $dark-gray;
+  padding: $small-spacing $base-spacing 0; */
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 20px;
+  padding-top: 40px;
+  border-top: 1px solid #a6adb2;
+}
+#main-actions-bar .left {
+  width: 49.15254%;
+  float: left;
+  margin-right: 1.69492%;
+}
+#main-actions-bar .right {
+  width: 49.15254%;
+  float: right;
+  margin-right: 0;
+  text-align: right;
+}
+
 .faster-transition, .main-menu > ul li.active a:before {
   -moz-transition: all 50ms ease-in-out;
   -o-transition: all 50ms ease-in-out;
@@ -2713,7 +3541,7 @@ table {
   transition: all 50ms ease-in-out;
 }
 
-.fast-transition, input[type="color"],
+.fast-transition, .main-menu > ul li a:hover:before, input[type="color"],
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"],
@@ -2751,7 +3579,7 @@ ol.multiple-clab, .elekti-wrapper:after,
 .options-list-wrapper.active:after, .elekti-wrapper .js-users-list,
 .elekti-wrapper .options-list,
 .options-list-wrapper .js-users-list,
-.options-list-wrapper .options-list, .main-menu > ul li a:hover:before {
+.options-list-wrapper .options-list {
   -moz-transition: all 100ms ease-in-out;
   -o-transition: all 100ms ease-in-out;
   -webkit-transition: all 100ms ease-in-out;
@@ -3111,15 +3939,15 @@ h5 {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background: #353A3D;
-  border: 1px solid #353A3D;
+  background: #616161;
+  border: 1px solid #616161;
   font-size: 0.7em;
   color: #FFFFFF;
   display: inline-block;
 }
 .label .counter, .badge .counter {
   background: #FFFFFF;
-  color: #353A3D;
+  color: #616161;
   padding: 0 6.66667px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -3128,18 +3956,18 @@ h5 {
 }
 .label.empty, .empty.badge {
   background-color: transparent;
-  color: #353A3D;
-  border: 1px solid #353A3D;
+  color: #616161;
+  border: 1px solid #616161;
 }
 .label.empty .counter, .empty.badge .counter {
-  background-color: #353A3D;
+  background-color: #616161;
   color: #FFFFFF;
 }
 .label.empty .remove, .empty.badge .remove {
-  color: rgba(53, 58, 61, 0.6);
+  color: rgba(97, 97, 97, 0.6);
 }
 .label.empty .remove:hover, .empty.badge .remove:hover {
-  color: #353A3D;
+  color: #616161;
 }
 .label .remove, .badge .remove {
   color: rgba(255, 255, 255, 0.6);
@@ -3176,29 +4004,6 @@ h5 {
 }
 .label.primary.empty .remove:hover, .primary.empty.badge .remove:hover {
   color: #0072bc;
-}
-.label.secondary, .secondary.badge {
-  background-color: #4d9cd0;
-  border-color: #4d9cd0;
-  color: #FFFFFF;
-}
-.label.secondary .counter, .secondary.badge .counter {
-  color: #4d9cd0;
-}
-.label.secondary.empty, .secondary.empty.badge {
-  background-color: transparent;
-  color: #4d9cd0;
-  border: 1px solid #4d9cd0;
-}
-.label.secondary.empty .counter, .secondary.empty.badge .counter {
-  background-color: #4d9cd0;
-  color: #FFFFFF;
-}
-.label.secondary.empty .remove, .secondary.empty.badge .remove {
-  color: rgba(77, 156, 208, 0.6);
-}
-.label.secondary.empty .remove:hover, .secondary.empty.badge .remove:hover {
-  color: #4d9cd0;
 }
 .label.info, .info.badge {
   background-color: #6ac7f1;
@@ -3400,6 +4205,47 @@ td {
   cursor: pointer;
 }
 
+.alerts-wrapper {
+  position: fixed;
+  top: 66px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.alerts-wrapper .alert {
+  margin: 0;
+  padding: 20px;
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+.alerts-wrapper .alert p {
+  margin: 0;
+  text-align: center;
+}
+.alerts-wrapper .alert.primary {
+  background: #0072bc;
+  color: #FFFFFF;
+}
+.alerts-wrapper .alert.info {
+  background: #6ac7f1;
+  color: #FFFFFF;
+}
+.alerts-wrapper .alert.success {
+  background: #61b769;
+  color: #FFFFFF;
+}
+.alerts-wrapper .alert.warning {
+  background: #fd6b3c;
+  color: #FFFFFF;
+}
+.alerts-wrapper .alert.error {
+  background: #f3594e;
+  color: #FFFFFF;
+}
+
 .alert {
   padding: 20px;
   position: relative;
@@ -3467,46 +4313,8 @@ td {
   background: #0072bc;
   color: #FFFFFF;
 }
-.alert.secondary {
-  background: #8abee0;
-  color: #366d92;
-}
-.alert.secondary .close {
-  color: #366d92;
-}
-.alert.secondary .close:hover {
-  color: #274e68;
-}
-.alert.secondary a {
-  color: #2e5e7d;
-  text-decoration: underline;
-}
-.alert.secondary a:hover {
-  color: #1f3e53;
-}
-.alert.secondary .btn, .alert.secondary .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.secondary input[type="text"].js-users-list-filter, .alert.secondary .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.secondary span.js-users-list-filter {
-  border: 1px solid #366d92 !important;
-  color: #366d92 !important;
-}
-.alert.secondary .btn:hover, .alert.secondary .select-button .elekti-wrapper input[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper .alert.secondary input[type="text"].js-users-list-filter:hover, .alert.secondary .select-button .elekti-wrapper span.js-users-list-filter:hover, .select-button .elekti-wrapper .alert.secondary span.js-users-list-filter:hover {
-  border-color: #4185b1 !important;
-  color: #4185b1 !important;
-}
-.alert.secondary .btn:focus, .alert.secondary .select-button .elekti-wrapper input[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper .alert.secondary input[type="text"].js-users-list-filter:focus, .alert.secondary .select-button .elekti-wrapper span.js-users-list-filter:focus, .select-button .elekti-wrapper .alert.secondary span.js-users-list-filter:focus {
-  background: transparent;
-}
-.alert.secondary .btn:active, .alert.secondary .select-button .elekti-wrapper input[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .alert.secondary input[type="text"].js-users-list-filter:active, .alert.secondary .select-button .elekti-wrapper span.js-users-list-filter:active, .select-button .elekti-wrapper .alert.secondary span.js-users-list-filter:active {
-  border-color: #4d9cd0 !important;
-  background: #4d9cd0 !important;
-  color: #FFFFFF !important;
-}
-.alert.secondary .btn.flat, .alert.secondary .select-button .elekti-wrapper input.flat[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.secondary input.flat[type="text"].js-users-list-filter, .alert.secondary .select-button .elekti-wrapper span.flat.js-users-list-filter, .select-button .elekti-wrapper .alert.secondary span.flat.js-users-list-filter {
-  color: #366d92;
-  background: transparent;
-  border-color: transparent;
-}
-.alert.secondary .btn.flat:active, .alert.secondary .select-button .elekti-wrapper input.flat[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .alert.secondary input.flat[type="text"].js-users-list-filter:active, .alert.secondary .select-button .elekti-wrapper span.flat.js-users-list-filter:active, .select-button .elekti-wrapper .alert.secondary span.flat.js-users-list-filter:active {
-  background: #4d9cd0;
+.alert.primary.fixed {
+  background: #0072bc;
   color: #FFFFFF;
 }
 .alert.info {
@@ -3548,6 +4356,10 @@ td {
   border-color: transparent;
 }
 .alert.info .btn.flat:active, .alert.info .select-button .elekti-wrapper input.flat[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .alert.info input.flat[type="text"].js-users-list-filter:active, .alert.info .select-button .elekti-wrapper span.flat.js-users-list-filter:active, .select-button .elekti-wrapper .alert.info span.flat.js-users-list-filter:active {
+  background: #6ac7f1;
+  color: #FFFFFF;
+}
+.alert.info.fixed {
   background: #6ac7f1;
   color: #FFFFFF;
 }
@@ -3593,6 +4405,10 @@ td {
   background: #61b769;
   color: #FFFFFF;
 }
+.alert.success.fixed {
+  background: #61b769;
+  color: #FFFFFF;
+}
 .alert.warning {
   background: #fea488;
   color: #b14b2a;
@@ -3632,6 +4448,10 @@ td {
   border-color: transparent;
 }
 .alert.warning .btn.flat:active, .alert.warning .select-button .elekti-wrapper input.flat[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .alert.warning input.flat[type="text"].js-users-list-filter:active, .alert.warning .select-button .elekti-wrapper span.flat.js-users-list-filter:active, .select-button .elekti-wrapper .alert.warning span.flat.js-users-list-filter:active {
+  background: #fd6b3c;
+  color: #FFFFFF;
+}
+.alert.warning.fixed {
   background: #fd6b3c;
   color: #FFFFFF;
 }
@@ -3677,6 +4497,10 @@ td {
   background: #f3594e;
   color: #FFFFFF;
 }
+.alert.error.fixed {
+  background: #f3594e;
+  color: #FFFFFF;
+}
 .alert.error {
   background: #f6867e;
   color: #9e3a33;
@@ -3702,10 +4526,6 @@ td {
 }
 .panel.primary .panel-header {
   background: #0072bc;
-  color: #fff;
-}
-.panel.secondary .panel-header {
-  background: #4d9cd0;
   color: #fff;
 }
 .panel.info .panel-header {
@@ -4212,10 +5032,10 @@ td {
   padding: 6.66667px 10px;
 }
 .pills .tab a:hover {
-  color: #4d9cd0;
+  color: #0072bc;
 }
 .pills .tab.active a {
-  background: #4d9cd0;
+  background: #0072bc;
   color: #FFFFFF;
   -moz-box-shadow: 0 0 0 0 #0072bc;
   -webkit-box-shadow: 0 0 0 0 #0072bc;
@@ -4252,13 +5072,6 @@ td {
   color: #FFFFFF;
 }
 .kawo-tooltip.primary a {
-  color: #FFFFFF;
-}
-.kawo-tooltip.secondary {
-  background-color: #4d9cd0;
-  color: #FFFFFF;
-}
-.kawo-tooltip.secondary a {
   color: #FFFFFF;
 }
 .kawo-tooltip.info {
@@ -4430,9 +5243,6 @@ td {
 }
 .progress-bar.primary section article {
   background-color: #0072bc;
-}
-.progress-bar.secondary section article {
-  background-color: #4d9cd0;
 }
 .progress-bar.info section article {
   background-color: #6ac7f1;
@@ -5132,29 +5942,6 @@ label.primary + input[type="text"] + .input-note, .form-row .primary.label-conta
 .options-list-wrapper .form-row .primary.label-container + span + .input-note {
   color: #0072bc;
 }
-label.secondary, .form-row .secondary.label-container {
-  color: #4d9cd0;
-}
-label.secondary + input[type="text"], .form-row .secondary.label-container + input[type="text"], .elekti-wrapper label.secondary + span, .form-row .elekti-wrapper .secondary.label-container + span, .elekti-wrapper .form-row .secondary.label-container + span,
-.options-list-wrapper label.secondary + span,
-.form-row .options-list-wrapper .secondary.label-container + span,
-.options-list-wrapper .form-row .secondary.label-container + span {
-  border-bottom-color: #4d9cd0;
-}
-label.secondary + input[type="text"]:focus, .form-row .secondary.label-container + input[type="text"]:focus, .elekti-wrapper label.secondary + span:focus, .form-row .elekti-wrapper .secondary.label-container + span:focus, .elekti-wrapper .form-row .secondary.label-container + span:focus,
-.options-list-wrapper label.secondary + span:focus,
-.form-row .options-list-wrapper .secondary.label-container + span:focus,
-.options-list-wrapper .form-row .secondary.label-container + span:focus {
-  -moz-box-shadow: #4d9cd0 0 1px 0 0;
-  -webkit-box-shadow: #4d9cd0 0 1px 0 0;
-  box-shadow: #4d9cd0 0 1px 0 0;
-}
-label.secondary + input[type="text"] + .input-note, .form-row .secondary.label-container + input[type="text"] + .input-note, .elekti-wrapper label.secondary + span + .input-note, .form-row .elekti-wrapper .secondary.label-container + span + .input-note, .elekti-wrapper .form-row .secondary.label-container + span + .input-note,
-.options-list-wrapper label.secondary + span + .input-note,
-.form-row .options-list-wrapper .secondary.label-container + span + .input-note,
-.options-list-wrapper .form-row .secondary.label-container + span + .input-note {
-  color: #4d9cd0;
-}
 label.info, .form-row .info.label-container {
   color: #6ac7f1;
 }
@@ -5260,10 +6047,6 @@ label.error + input[type="text"] + .input-note, .form-row .error.label-container
 .input-note.primary,
 .note-clab.primary {
   color: #0072bc;
-}
-.input-note.secondary,
-.note-clab.secondary {
-  color: #4d9cd0;
 }
 .input-note.info,
 .note-clab.info {
@@ -5397,46 +6180,6 @@ textarea.primary:focus {
   -moz-box-shadow: #0072bc 0 1px 0 0;
   -webkit-box-shadow: #0072bc 0 1px 0 0;
   box-shadow: #0072bc 0 1px 0 0;
-}
-input[type="color"].secondary,
-input[type="date"].secondary,
-input[type="datetime"].secondary,
-input[type="datetime-local"].secondary,
-input[type="email"].secondary,
-input[type="month"].secondary,
-input[type="number"].secondary,
-input[type="password"].secondary,
-input[type="search"].secondary,
-input[type="tel"].secondary,
-input[type="text"].secondary,
-.elekti-wrapper span.secondary,
-.options-list-wrapper span.secondary,
-input[type="time"].secondary,
-input[type="url"].secondary,
-input[type="week"].secondary,
-textarea.secondary {
-  border-bottom-color: #4d9cd0;
-}
-input[type="color"].secondary:focus,
-input[type="date"].secondary:focus,
-input[type="datetime"].secondary:focus,
-input[type="datetime-local"].secondary:focus,
-input[type="email"].secondary:focus,
-input[type="month"].secondary:focus,
-input[type="number"].secondary:focus,
-input[type="password"].secondary:focus,
-input[type="search"].secondary:focus,
-input[type="tel"].secondary:focus,
-input[type="text"].secondary:focus,
-.elekti-wrapper span.secondary:focus,
-.options-list-wrapper span.secondary:focus,
-input[type="time"].secondary:focus,
-input[type="url"].secondary:focus,
-input[type="week"].secondary:focus,
-textarea.secondary:focus {
-  -moz-box-shadow: #4d9cd0 0 1px 0 0;
-  -webkit-box-shadow: #4d9cd0 0 1px 0 0;
-  box-shadow: #4d9cd0 0 1px 0 0;
 }
 input[type="color"].info,
 input[type="date"].info,
@@ -6222,9 +6965,9 @@ button:disabled {
   cursor: not-allowed;
 }
 
-.alert.primary .btn, .alert.primary .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.primary span.js-users-list-filter, .alert.secondary .btn, .alert.secondary .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.secondary span.js-users-list-filter, .alert.info .btn, .alert.info .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.info span.js-users-list-filter, .alert.success .btn, .alert.success .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.success span.js-users-list-filter, .alert.warning .btn, .alert.warning .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.warning span.js-users-list-filter, .alert.error .btn, .alert.error .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.error span.js-users-list-filter, .btn, .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.js-users-list-filter,
+.alert.primary .btn, .alert.primary .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.primary span.js-users-list-filter, .alert.info .btn, .alert.info .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.info span.js-users-list-filter, .alert.success .btn, .alert.success .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.success span.js-users-list-filter, .alert.warning .btn, .alert.warning .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.warning span.js-users-list-filter, .alert.error .btn, .alert.error .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .alert.error span.js-users-list-filter, .btn, .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.js-users-list-filter,
 .select-button .elekti-wrapper .options-list-wrapper span.js-users-list-filter,
-.options-list-wrapper .select-button .elekti-wrapper span.js-users-list-filter, .btn.flat, .select-button .elekti-wrapper span.flat.js-users-list-filter, .btn.full, .select-button .elekti-wrapper span.full.js-users-list-filter {
+.options-list-wrapper .select-button .elekti-wrapper span.js-users-list-filter, .btn.flat, .select-button .elekti-wrapper span.flat.js-users-list-filter, .btn.empty, .select-button .elekti-wrapper span.empty.js-users-list-filter, .buttons-group .group-item .btn, .buttons-group .group-item .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.js-users-list-filter {
   margin: 0 3px;
   padding: 9px 20px;
   cursor: pointer;
@@ -6239,16 +6982,16 @@ button:disabled {
   text-align: center;
   min-width: 100px;
 }
-.alert.primary .btn:first-of-type, .alert.secondary .btn:first-of-type, .alert.info .btn:first-of-type, .alert.success .btn:first-of-type, .alert.warning .btn:first-of-type, .alert.error .btn:first-of-type, .btn:first-of-type, .select-button .elekti-wrapper input[type="text"].js-users-list-filter:first-of-type, .select-button .elekti-wrapper span.js-users-list-filter:first-of-type {
+.alert.primary .btn:first-of-type, .alert.info .btn:first-of-type, .alert.success .btn:first-of-type, .alert.warning .btn:first-of-type, .alert.error .btn:first-of-type, .btn:first-of-type, .select-button .elekti-wrapper input[type="text"].js-users-list-filter:first-of-type, .select-button .elekti-wrapper span.js-users-list-filter:first-of-type, .buttons-group .group-item .btn:first-of-type {
   margin-left: 0;
 }
-.alert.primary .btn:last-of-type, .alert.secondary .btn:last-of-type, .alert.info .btn:last-of-type, .alert.success .btn:last-of-type, .alert.warning .btn:last-of-type, .alert.error .btn:last-of-type, .btn:last-of-type, .select-button .elekti-wrapper input[type="text"].js-users-list-filter:last-of-type, .select-button .elekti-wrapper span.js-users-list-filter:last-of-type {
+.alert.primary .btn:last-of-type, .alert.info .btn:last-of-type, .alert.success .btn:last-of-type, .alert.warning .btn:last-of-type, .alert.error .btn:last-of-type, .btn:last-of-type, .select-button .elekti-wrapper input[type="text"].js-users-list-filter:last-of-type, .select-button .elekti-wrapper span.js-users-list-filter:last-of-type, .buttons-group .group-item .btn:last-of-type {
   margin-right: 0;
 }
-.alert.primary .btn:focus, .alert.secondary .btn:focus, .alert.info .btn:focus, .alert.success .btn:focus, .alert.warning .btn:focus, .alert.error .btn:focus, .btn:focus, .select-button .elekti-wrapper input[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.js-users-list-filter:focus {
+.alert.primary .btn:focus, .alert.info .btn:focus, .alert.success .btn:focus, .alert.warning .btn:focus, .alert.error .btn:focus, .btn:focus, .select-button .elekti-wrapper input[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.js-users-list-filter:focus, .buttons-group .group-item .btn:focus {
   outline: none;
 }
-.alert.primary .btn .icon, .alert.secondary .btn .icon, .alert.info .btn .icon, .alert.success .btn .icon, .alert.warning .btn .icon, .alert.error .btn .icon, .btn .icon, .select-button .elekti-wrapper input[type="text"].js-users-list-filter .icon, .select-button .elekti-wrapper span.js-users-list-filter .icon {
+.alert.primary .btn .icon, .alert.info .btn .icon, .alert.success .btn .icon, .alert.warning .btn .icon, .alert.error .btn .icon, .btn .icon, .select-button .elekti-wrapper input[type="text"].js-users-list-filter .icon, .select-button .elekti-wrapper span.js-users-list-filter .icon, .buttons-group .group-item .btn .icon {
   margin-right: 10px;
   display: inline-block;
   font-size: 10px;
@@ -6260,10 +7003,19 @@ button:disabled {
   -webkit-transform-origin: center;
   transform-origin: center;
 }
-.alert.primary .small.btn, .alert.primary .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.primary input.small[type="text"].js-users-list-filter, .alert.primary .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .alert.primary span.small.js-users-list-filter, .alert.primary .buttons-group.small .btn, .buttons-group.small .alert.primary .btn, .alert.primary .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.primary input[type="text"].js-users-list-filter, .alert.primary .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.primary input[type="text"].js-users-list-filter, .alert.primary .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.primary span.js-users-list-filter, .alert.primary .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.primary span.js-users-list-filter, .alert.secondary .small.btn, .alert.secondary .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.secondary input.small[type="text"].js-users-list-filter, .alert.secondary .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .alert.secondary span.small.js-users-list-filter, .alert.secondary .buttons-group.small .btn, .buttons-group.small .alert.secondary .btn, .alert.secondary .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.secondary input[type="text"].js-users-list-filter, .alert.secondary .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.secondary input[type="text"].js-users-list-filter, .alert.secondary .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.secondary span.js-users-list-filter, .alert.secondary .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.secondary span.js-users-list-filter, .alert.info .small.btn, .alert.info .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.info input.small[type="text"].js-users-list-filter, .alert.info .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .alert.info span.small.js-users-list-filter, .alert.info .buttons-group.small .btn, .buttons-group.small .alert.info .btn, .alert.info .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.info input[type="text"].js-users-list-filter, .alert.info .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.info input[type="text"].js-users-list-filter, .alert.info .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.info span.js-users-list-filter, .alert.info .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.info span.js-users-list-filter, .alert.success .small.btn, .alert.success .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.success input.small[type="text"].js-users-list-filter, .alert.success .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .alert.success span.small.js-users-list-filter, .alert.success .buttons-group.small .btn, .buttons-group.small .alert.success .btn, .alert.success .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.success input[type="text"].js-users-list-filter, .alert.success .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.success input[type="text"].js-users-list-filter, .alert.success .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.success span.js-users-list-filter, .alert.success .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.success span.js-users-list-filter, .alert.warning .small.btn, .alert.warning .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.warning input.small[type="text"].js-users-list-filter, .alert.warning .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .alert.warning span.small.js-users-list-filter, .alert.warning .buttons-group.small .btn, .buttons-group.small .alert.warning .btn, .alert.warning .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.warning input[type="text"].js-users-list-filter, .alert.warning .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.warning input[type="text"].js-users-list-filter, .alert.warning .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.warning span.js-users-list-filter, .alert.warning .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.warning span.js-users-list-filter, .alert.error .small.btn, .alert.error .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.error input.small[type="text"].js-users-list-filter, .alert.error .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .alert.error span.small.js-users-list-filter, .alert.error .buttons-group.small .btn, .buttons-group.small .alert.error .btn, .alert.error .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.error input[type="text"].js-users-list-filter, .alert.error .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.error input[type="text"].js-users-list-filter, .alert.error .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.error span.js-users-list-filter, .alert.error .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.error span.js-users-list-filter, .small.btn, .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .buttons-group.small .elekti-wrapper span.js-users-list-filter.btn, .buttons-group.small .btn, .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .small.btn.flat, .select-button .elekti-wrapper input.small.flat[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.small.flat.js-users-list-filter, .select-button .buttons-group.small .elekti-wrapper span.flat.js-users-list-filter.btn, .buttons-group.small .btn.flat, .buttons-group.small .select-button .elekti-wrapper input.flat[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.flat[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.flat.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.flat.js-users-list-filter, .small.btn.full, .select-button .elekti-wrapper input.small.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.small.full.js-users-list-filter, .select-button .buttons-group.small .elekti-wrapper span.full.js-users-list-filter.btn, .buttons-group.small .btn.full, .buttons-group.small .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.full.js-users-list-filter {
+.alert.primary .small.btn, .alert.primary .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.primary input.small[type="text"].js-users-list-filter, .alert.primary .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .alert.primary span.small.js-users-list-filter, .alert.primary .buttons-group.small .btn, .buttons-group.small .alert.primary .btn, .alert.primary .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.primary input[type="text"].js-users-list-filter, .alert.primary .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.primary input[type="text"].js-users-list-filter, .alert.primary .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.primary span.js-users-list-filter, .alert.primary .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.primary span.js-users-list-filter, .alert.info .small.btn, .alert.info .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.info input.small[type="text"].js-users-list-filter, .alert.info .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .alert.info span.small.js-users-list-filter, .alert.info .buttons-group.small .btn, .buttons-group.small .alert.info .btn, .alert.info .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.info input[type="text"].js-users-list-filter, .alert.info .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.info input[type="text"].js-users-list-filter, .alert.info .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.info span.js-users-list-filter, .alert.info .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.info span.js-users-list-filter, .alert.success .small.btn, .alert.success .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.success input.small[type="text"].js-users-list-filter, .alert.success .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .alert.success span.small.js-users-list-filter, .alert.success .buttons-group.small .btn, .buttons-group.small .alert.success .btn, .alert.success .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.success input[type="text"].js-users-list-filter, .alert.success .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.success input[type="text"].js-users-list-filter, .alert.success .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.success span.js-users-list-filter, .alert.success .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.success span.js-users-list-filter, .alert.warning .small.btn, .alert.warning .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.warning input.small[type="text"].js-users-list-filter, .alert.warning .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .alert.warning span.small.js-users-list-filter, .alert.warning .buttons-group.small .btn, .buttons-group.small .alert.warning .btn, .alert.warning .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.warning input[type="text"].js-users-list-filter, .alert.warning .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.warning input[type="text"].js-users-list-filter, .alert.warning .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.warning span.js-users-list-filter, .alert.warning .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.warning span.js-users-list-filter, .alert.error .small.btn, .alert.error .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .alert.error input.small[type="text"].js-users-list-filter, .alert.error .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .alert.error span.small.js-users-list-filter, .alert.error .buttons-group.small .btn, .buttons-group.small .alert.error .btn, .alert.error .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.error input[type="text"].js-users-list-filter, .alert.error .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.error input[type="text"].js-users-list-filter, .alert.error .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .alert.error span.js-users-list-filter, .alert.error .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .alert.error span.js-users-list-filter, .small.btn, .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .buttons-group.small .elekti-wrapper span.js-users-list-filter.btn, .buttons-group.small .btn, .buttons-group.small .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.js-users-list-filter, .small.btn.flat, .select-button .elekti-wrapper input.small.flat[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.small.flat.js-users-list-filter, .select-button .buttons-group.small .elekti-wrapper span.flat.js-users-list-filter.btn, .buttons-group.small .btn.flat, .buttons-group.small .select-button .elekti-wrapper input.flat[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.flat[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.flat.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.flat.js-users-list-filter, .small.btn.empty, .select-button .elekti-wrapper input.small.empty[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.small.empty.js-users-list-filter, .select-button .buttons-group.small .elekti-wrapper span.empty.js-users-list-filter.btn, .select-button .buttons-group.small .group-item .elekti-wrapper span.js-users-list-filter.btn, .buttons-group.small .btn.empty, .buttons-group.small .select-button .elekti-wrapper input.empty[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.empty[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.empty.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.empty.js-users-list-filter, .buttons-group.small .group-item .btn, .buttons-group.small .group-item .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .group-item input[type="text"].js-users-list-filter, .buttons-group.small .group-item .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .group-item span.js-users-list-filter, .buttons-group .group-item .small.btn, .buttons-group .group-item .select-button .elekti-wrapper input.small[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.small[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.small.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.small.js-users-list-filter, .select-button .buttons-group.small .elekti-wrapper .group-item span.js-users-list-filter.btn, .buttons-group.small .select-button .elekti-wrapper .group-item input[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper .group-item span.js-users-list-filter {
   padding: 6.66667px 10px;
 }
 
+.btn, .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.js-users-list-filter,
+.select-button .elekti-wrapper .options-list-wrapper span.js-users-list-filter,
+.options-list-wrapper .select-button .elekti-wrapper span.js-users-list-filter {
+  background-color: #616161;
+  color: #FFFFFF;
+  border: 0;
+  border-bottom: 1px solid #484848;
+  padding-top: 10px;
+}
 .btn.block, .select-button .elekti-wrapper input.block[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.block.js-users-list-filter {
   clear: both;
   width: 100%;
@@ -6272,120 +7024,112 @@ button:disabled {
   margin-right: 0;
 }
 .btn:hover, .select-button .elekti-wrapper input[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.js-users-list-filter:hover {
-  border-color: #7b7b7b;
-  color: #7b7b7b;
+  background-color: dimgray;
+  color: #FFFFFF;
 }
 .btn:disabled, .select-button .elekti-wrapper input[type="text"].js-users-list-filter:disabled, .select-button .elekti-wrapper span.js-users-list-filter:disabled {
-  border-color: #C0C0C0 !important;
-  color: #C0C0C0 !important;
-  background-color: transparent;
+  color: #FFFFFF !important;
+  background-color: #C0C0C0 !important;
+  border-bottom-color: #a7a7a7 !important;
+  cursor: not-allowed;
 }
 .btn:active, .select-button .elekti-wrapper input[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.js-users-list-filter:active, .btn.active, .select-button .elekti-wrapper input.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.active.js-users-list-filter {
-  border-color: #353A3D;
   color: #FFFFFF;
-  background-color: #353A3D;
+  background-color: #595959;
+  border-bottom: 0;
+  margin-top: 1px;
 }
 .btn.primary, .select-button .elekti-wrapper input.primary[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.primary.js-users-list-filter {
-  border-color: #0072bc;
-  color: #0072bc;
+  border-bottom-color: #005389;
+  background-color: #0072bc;
+  color: #FFFFFF;
 }
 .btn.primary:hover, .select-button .elekti-wrapper input.primary[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.primary.js-users-list-filter:hover {
-  border-color: #0091ef;
-  color: #0091ef;
+  background-color: #007bcb;
+  color: #FFFFFF;
 }
 .btn.primary:focus, .select-button .elekti-wrapper input.primary[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.primary.js-users-list-filter:focus {
-  background-color: #0072bc, #FFFFFF;
-}
-.btn.primary:active, .select-button .elekti-wrapper input.primary[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.primary.js-users-list-filter:active, .btn.primary.active, .select-button .elekti-wrapper input.primary.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.primary.active.js-users-list-filter {
-  border-color: #0072bc;
-  color: #FFFFFF;
   background-color: #0072bc;
 }
-.btn.secondary, .select-button .elekti-wrapper input.secondary[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.secondary.js-users-list-filter {
-  border-color: #4d9cd0;
-  color: #4d9cd0;
-}
-.btn.secondary:hover, .select-button .elekti-wrapper input.secondary[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.secondary.js-users-list-filter:hover {
-  border-color: #75b2db;
-  color: #75b2db;
-}
-.btn.secondary:focus, .select-button .elekti-wrapper input.secondary[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.secondary.js-users-list-filter:focus {
-  background-color: #4d9cd0, #FFFFFF;
-}
-.btn.secondary:active, .select-button .elekti-wrapper input.secondary[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.secondary.js-users-list-filter:active, .btn.secondary.active, .select-button .elekti-wrapper input.secondary.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.secondary.active.js-users-list-filter {
-  border-color: #4d9cd0;
+.btn.primary:active, .select-button .elekti-wrapper input.primary[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.primary.js-users-list-filter:active, .btn.primary.active, .select-button .elekti-wrapper input.primary.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.primary.active.js-users-list-filter {
+  border-bottom: 0;
   color: #FFFFFF;
-  background-color: #4d9cd0;
+  background-color: #0069ad;
 }
 .btn.info, .select-button .elekti-wrapper input.info[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.info.js-users-list-filter {
-  border-color: #6ac7f1;
-  color: #6ac7f1;
+  border-bottom-color: #3bb5ed;
+  background-color: #6ac7f1;
+  color: #FFFFFF;
 }
 .btn.info:hover, .select-button .elekti-wrapper input.info[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.info.js-users-list-filter:hover {
-  border-color: #99d9f5;
-  color: #99d9f5;
+  background-color: #78ccf2;
+  color: #FFFFFF;
 }
 .btn.info:focus, .select-button .elekti-wrapper input.info[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.info.js-users-list-filter:focus {
-  background-color: #6ac7f1, #FFFFFF;
-}
-.btn.info:active, .select-button .elekti-wrapper input.info[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.info.js-users-list-filter:active, .btn.info.active, .select-button .elekti-wrapper input.info.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.info.active.js-users-list-filter {
-  border-color: #6ac7f1;
-  color: #FFFFFF;
   background-color: #6ac7f1;
 }
+.btn.info:active, .select-button .elekti-wrapper input.info[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.info.js-users-list-filter:active, .btn.info.active, .select-button .elekti-wrapper input.info.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.info.active.js-users-list-filter {
+  border-bottom: 0;
+  color: #FFFFFF;
+  background-color: #5cc2f0;
+}
 .btn.success, .select-button .elekti-wrapper input.success[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.success.js-users-list-filter {
-  border-color: #61b769;
-  color: #61b769;
+  border-bottom-color: #489d50;
+  background-color: #61b769;
+  color: #FFFFFF;
 }
 .btn.success:hover, .select-button .elekti-wrapper input.success[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.success.js-users-list-filter:hover {
-  border-color: #84c78a;
-  color: #84c78a;
+  background-color: #6cbc73;
+  color: #FFFFFF;
 }
 .btn.success:focus, .select-button .elekti-wrapper input.success[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.success.js-users-list-filter:focus {
-  background-color: #61b769, #FFFFFF;
-}
-.btn.success:active, .select-button .elekti-wrapper input.success[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.success.js-users-list-filter:active, .btn.success.active, .select-button .elekti-wrapper input.success.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.success.active.js-users-list-filter {
-  border-color: #61b769;
-  color: #FFFFFF;
   background-color: #61b769;
 }
+.btn.success:active, .select-button .elekti-wrapper input.success[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.success.js-users-list-filter:active, .btn.success.active, .select-button .elekti-wrapper input.success.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.success.active.js-users-list-filter {
+  border-bottom: 0;
+  color: #FFFFFF;
+  background-color: #56b25f;
+}
 .btn.warning, .select-button .elekti-wrapper input.warning[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.warning.js-users-list-filter {
-  border-color: #fd6b3c;
-  color: #fd6b3c;
+  border-bottom-color: #fc450a;
+  background-color: #fd6b3c;
+  color: #FFFFFF;
 }
 .btn.warning:hover, .select-button .elekti-wrapper input.warning[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.warning.js-users-list-filter:hover {
-  border-color: #fe916e;
-  color: #fe916e;
+  background-color: #fd764b;
+  color: #FFFFFF;
 }
 .btn.warning:focus, .select-button .elekti-wrapper input.warning[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.warning.js-users-list-filter:focus {
-  background-color: #fd6b3c, #FFFFFF;
-}
-.btn.warning:active, .select-button .elekti-wrapper input.warning[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.warning.js-users-list-filter:active, .btn.warning.active, .select-button .elekti-wrapper input.warning.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.warning.active.js-users-list-filter {
-  border-color: #fd6b3c;
-  color: #FFFFFF;
   background-color: #fd6b3c;
 }
+.btn.warning:active, .select-button .elekti-wrapper input.warning[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.warning.js-users-list-filter:active, .btn.warning.active, .select-button .elekti-wrapper input.warning.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.warning.active.js-users-list-filter {
+  border-bottom: 0;
+  color: #FFFFFF;
+  background-color: #fd602d;
+}
 .btn.error, .select-button .elekti-wrapper input.error[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.error.js-users-list-filter {
-  border-color: #f3594e;
-  color: #f3594e;
+  border-bottom-color: #f02c1e;
+  background-color: #f3594e;
+  color: #FFFFFF;
 }
 .btn.error:hover, .select-button .elekti-wrapper input.error[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.error.js-users-list-filter:hover {
-  border-color: #f6867e;
-  color: #f6867e;
+  background-color: #f4665c;
+  color: #FFFFFF;
 }
 .btn.error:focus, .select-button .elekti-wrapper input.error[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.error.js-users-list-filter:focus {
-  background-color: #f3594e, #FFFFFF;
+  background-color: #f3594e;
 }
 .btn.error:active, .select-button .elekti-wrapper input.error[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.error.js-users-list-filter:active, .btn.error.active, .select-button .elekti-wrapper input.error.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.error.active.js-users-list-filter {
-  border-color: #f3594e;
+  border-bottom: 0;
   color: #FFFFFF;
-  background-color: #f3594e;
+  background-color: #f24c40;
 }
 
 .btn.flat, .select-button .elekti-wrapper input.flat[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.flat.js-users-list-filter {
-  border: 1px solid transparent;
+  border-color: transparent;
   background: transparent;
   color: #616161;
+  padding-top: 10px;
 }
 .btn.flat:active, .select-button .elekti-wrapper input.flat[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.flat.js-users-list-filter:active, .btn.flat.active, .select-button .elekti-wrapper input.flat.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.flat.active.js-users-list-filter {
   background: #616161;
@@ -6404,18 +7148,6 @@ button:disabled {
 .btn.flat.primary:active, .select-button .elekti-wrapper input.flat.primary[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.flat.primary.js-users-list-filter:active, .btn.flat.primary.active, .select-button .elekti-wrapper input.flat.primary.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.flat.primary.active.js-users-list-filter {
   background-color: #0072bc;
   border-color: #0072bc;
-  color: #FFFFFF;
-}
-.btn.flat.secondary, .select-button .elekti-wrapper input.flat.secondary[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.flat.secondary.js-users-list-filter {
-  background-color: transparent;
-  color: #4d9cd0;
-}
-.btn.flat.secondary:hover, .select-button .elekti-wrapper input.flat.secondary[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.flat.secondary.js-users-list-filter:hover {
-  border-color: transparent;
-}
-.btn.flat.secondary:active, .select-button .elekti-wrapper input.flat.secondary[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.flat.secondary.js-users-list-filter:active, .btn.flat.secondary.active, .select-button .elekti-wrapper input.flat.secondary.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.flat.secondary.active.js-users-list-filter {
-  background-color: #4d9cd0;
-  border-color: #4d9cd0;
   color: #FFFFFF;
 }
 .btn.flat.info, .select-button .elekti-wrapper input.flat.info[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.flat.info.js-users-list-filter {
@@ -6472,139 +7204,118 @@ button:disabled {
   cursor: not-allowed;
 }
 
-.btn.full, .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.js-users-list-filter {
-  background-color: #616161;
-  color: #FFFFFF;
-  border: 0;
-  border-bottom: 1px solid #484848;
-  padding-top: 10px;
+.btn.empty, .select-button .elekti-wrapper input.empty[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.js-users-list-filter, .buttons-group .group-item .btn, .buttons-group .group-item .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.js-users-list-filter {
+  background-color: transparent;
+  color: #616161;
+  border: 1px solid #616161;
 }
-.btn.full.block, .select-button .elekti-wrapper input.full.block[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.block.js-users-list-filter {
+.btn.empty.block, .select-button .elekti-wrapper input.empty.block[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.block.js-users-list-filter, .buttons-group .group-item .block.btn, .buttons-group .group-item .select-button .elekti-wrapper input.block[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.block[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.block.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.block.js-users-list-filter {
   clear: both;
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
 }
-.btn.full:hover, .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.full.js-users-list-filter:hover {
-  background-color: dimgray;
-  color: #FFFFFF;
+.btn.empty:hover, .select-button .elekti-wrapper input.empty[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.empty.js-users-list-filter:hover, .buttons-group .group-item .btn:hover, .buttons-group .group-item .select-button .elekti-wrapper input[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item input[type="text"].js-users-list-filter:hover, .buttons-group .group-item .select-button .elekti-wrapper span.js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item span.js-users-list-filter:hover {
+  background: transparent;
+  border-color: dimgray;
+  color: dimgray;
 }
-.btn.full:disabled, .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter:disabled, .select-button .elekti-wrapper span.full.js-users-list-filter:disabled {
-  color: #FFFFFF !important;
-  background-color: #C0C0C0 !important;
-  border-bottom-color: #a7a7a7 !important;
+.btn.empty:disabled, .select-button .elekti-wrapper input.empty[type="text"].js-users-list-filter:disabled, .select-button .elekti-wrapper span.empty.js-users-list-filter:disabled, .buttons-group .group-item .btn:disabled, .buttons-group .group-item .select-button .elekti-wrapper input[type="text"].js-users-list-filter:disabled, .select-button .elekti-wrapper .buttons-group .group-item input[type="text"].js-users-list-filter:disabled, .buttons-group .group-item .select-button .elekti-wrapper span.js-users-list-filter:disabled, .select-button .elekti-wrapper .buttons-group .group-item span.js-users-list-filter:disabled {
+  background: transparent !important;
+  color: #C0C0C0 !important;
+  border-color: #C0C0C0 !important;
   cursor: not-allowed;
 }
-.btn.full:active, .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.full.js-users-list-filter:active, .btn.full.active, .select-button .elekti-wrapper input.full.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.active.js-users-list-filter {
+.btn.empty:active, .select-button .elekti-wrapper input.empty[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.empty.js-users-list-filter:active, .buttons-group .group-item .btn:active, .buttons-group .group-item .select-button .elekti-wrapper input[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item input[type="text"].js-users-list-filter:active, .buttons-group .group-item .select-button .elekti-wrapper span.js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item span.js-users-list-filter:active, .btn.empty.active, .select-button .elekti-wrapper input.empty.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.active.js-users-list-filter, .buttons-group .group-item .active.btn, .buttons-group .group-item .select-button .elekti-wrapper input.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.active[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.active.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.active.js-users-list-filter {
   color: #FFFFFF;
   background-color: #595959;
   border-bottom: 0;
-  margin-top: 1px;
 }
-.btn.full.primary, .select-button .elekti-wrapper input.full.primary[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.primary.js-users-list-filter {
-  border-bottom-color: #005389;
-  background-color: #0072bc;
-  color: #FFFFFF;
+.btn.empty.primary, .select-button .elekti-wrapper input.empty.primary[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.primary.js-users-list-filter, .buttons-group .group-item .primary.btn, .buttons-group .group-item .select-button .elekti-wrapper input.primary[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.primary[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.primary.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.primary.js-users-list-filter {
+  border-color: #0072bc;
+  color: #0072bc;
 }
-.btn.full.primary:hover, .select-button .elekti-wrapper input.full.primary[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.full.primary.js-users-list-filter:hover {
-  background-color: #007bcb;
-  color: #FFFFFF;
+.btn.empty.primary:hover, .select-button .elekti-wrapper input.empty.primary[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.empty.primary.js-users-list-filter:hover, .buttons-group .group-item .primary.btn:hover, .buttons-group .group-item .select-button .elekti-wrapper input.primary[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item input.primary[type="text"].js-users-list-filter:hover, .buttons-group .group-item .select-button .elekti-wrapper span.primary.js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item span.primary.js-users-list-filter:hover {
+  border-color: #007bcb;
+  border-color: #007bcb;
 }
-.btn.full.primary:focus, .select-button .elekti-wrapper input.full.primary[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.full.primary.js-users-list-filter:focus {
-  background-color: #0072bc;
+.btn.empty.primary:focus, .select-button .elekti-wrapper input.empty.primary[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.empty.primary.js-users-list-filter:focus, .buttons-group .group-item .primary.btn:focus, .buttons-group .group-item .select-button .elekti-wrapper input.primary[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper .buttons-group .group-item input.primary[type="text"].js-users-list-filter:focus, .buttons-group .group-item .select-button .elekti-wrapper span.primary.js-users-list-filter:focus, .select-button .elekti-wrapper .buttons-group .group-item span.primary.js-users-list-filter:focus {
+  background: transparent;
+  border-color: #0072bc;
 }
-.btn.full.primary:active, .select-button .elekti-wrapper input.full.primary[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.full.primary.js-users-list-filter:active, .btn.full.primary.active, .select-button .elekti-wrapper input.full.primary.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.primary.active.js-users-list-filter {
-  border-bottom: 0;
+.btn.empty.primary:active, .select-button .elekti-wrapper input.empty.primary[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.empty.primary.js-users-list-filter:active, .buttons-group .group-item .primary.btn:active, .buttons-group .group-item .select-button .elekti-wrapper input.primary[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item input.primary[type="text"].js-users-list-filter:active, .buttons-group .group-item .select-button .elekti-wrapper span.primary.js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item span.primary.js-users-list-filter:active, .btn.empty.primary.active, .select-button .elekti-wrapper input.empty.primary.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.primary.active.js-users-list-filter, .buttons-group .group-item .primary.active.btn, .buttons-group .group-item .select-button .elekti-wrapper input.primary.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.primary.active[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.primary.active.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.primary.active.js-users-list-filter {
   color: #FFFFFF;
   background-color: #0069ad;
 }
-.btn.full.secondary, .select-button .elekti-wrapper input.full.secondary[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.secondary.js-users-list-filter {
-  border-bottom-color: #3183b9;
-  background-color: #4d9cd0;
-  color: #FFFFFF;
+.btn.empty.info, .select-button .elekti-wrapper input.empty.info[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.info.js-users-list-filter, .buttons-group .group-item .info.btn, .buttons-group .group-item .select-button .elekti-wrapper input.info[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.info[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.info.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.info.js-users-list-filter {
+  border-color: #6ac7f1;
+  color: #6ac7f1;
 }
-.btn.full.secondary:hover, .select-button .elekti-wrapper input.full.secondary[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.full.secondary.js-users-list-filter:hover {
-  background-color: #59a3d3;
-  color: #FFFFFF;
+.btn.empty.info:hover, .select-button .elekti-wrapper input.empty.info[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.empty.info.js-users-list-filter:hover, .buttons-group .group-item .info.btn:hover, .buttons-group .group-item .select-button .elekti-wrapper input.info[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item input.info[type="text"].js-users-list-filter:hover, .buttons-group .group-item .select-button .elekti-wrapper span.info.js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item span.info.js-users-list-filter:hover {
+  border-color: #78ccf2;
+  border-color: #78ccf2;
 }
-.btn.full.secondary:focus, .select-button .elekti-wrapper input.full.secondary[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.full.secondary.js-users-list-filter:focus {
-  background-color: #4d9cd0;
+.btn.empty.info:focus, .select-button .elekti-wrapper input.empty.info[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.empty.info.js-users-list-filter:focus, .buttons-group .group-item .info.btn:focus, .buttons-group .group-item .select-button .elekti-wrapper input.info[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper .buttons-group .group-item input.info[type="text"].js-users-list-filter:focus, .buttons-group .group-item .select-button .elekti-wrapper span.info.js-users-list-filter:focus, .select-button .elekti-wrapper .buttons-group .group-item span.info.js-users-list-filter:focus {
+  background: transparent;
+  border-color: #6ac7f1;
 }
-.btn.full.secondary:active, .select-button .elekti-wrapper input.full.secondary[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.full.secondary.js-users-list-filter:active, .btn.full.secondary.active, .select-button .elekti-wrapper input.full.secondary.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.secondary.active.js-users-list-filter {
-  border-bottom: 0;
-  color: #FFFFFF;
-  background-color: #4195cd;
-}
-.btn.full.info, .select-button .elekti-wrapper input.full.info[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.info.js-users-list-filter {
-  border-bottom-color: #3bb5ed;
-  background-color: #6ac7f1;
-  color: #FFFFFF;
-}
-.btn.full.info:hover, .select-button .elekti-wrapper input.full.info[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.full.info.js-users-list-filter:hover {
-  background-color: #78ccf2;
-  color: #FFFFFF;
-}
-.btn.full.info:focus, .select-button .elekti-wrapper input.full.info[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.full.info.js-users-list-filter:focus {
-  background-color: #6ac7f1;
-}
-.btn.full.info:active, .select-button .elekti-wrapper input.full.info[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.full.info.js-users-list-filter:active, .btn.full.info.active, .select-button .elekti-wrapper input.full.info.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.info.active.js-users-list-filter {
-  border-bottom: 0;
+.btn.empty.info:active, .select-button .elekti-wrapper input.empty.info[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.empty.info.js-users-list-filter:active, .buttons-group .group-item .info.btn:active, .buttons-group .group-item .select-button .elekti-wrapper input.info[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item input.info[type="text"].js-users-list-filter:active, .buttons-group .group-item .select-button .elekti-wrapper span.info.js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item span.info.js-users-list-filter:active, .btn.empty.info.active, .select-button .elekti-wrapper input.empty.info.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.info.active.js-users-list-filter, .buttons-group .group-item .info.active.btn, .buttons-group .group-item .select-button .elekti-wrapper input.info.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.info.active[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.info.active.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.info.active.js-users-list-filter {
   color: #FFFFFF;
   background-color: #5cc2f0;
 }
-.btn.full.success, .select-button .elekti-wrapper input.full.success[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.success.js-users-list-filter {
-  border-bottom-color: #489d50;
-  background-color: #61b769;
-  color: #FFFFFF;
+.btn.empty.success, .select-button .elekti-wrapper input.empty.success[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.success.js-users-list-filter, .buttons-group .group-item .success.btn, .buttons-group .group-item .select-button .elekti-wrapper input.success[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.success[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.success.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.success.js-users-list-filter {
+  border-color: #61b769;
+  color: #61b769;
 }
-.btn.full.success:hover, .select-button .elekti-wrapper input.full.success[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.full.success.js-users-list-filter:hover {
-  background-color: #6cbc73;
-  color: #FFFFFF;
+.btn.empty.success:hover, .select-button .elekti-wrapper input.empty.success[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.empty.success.js-users-list-filter:hover, .buttons-group .group-item .success.btn:hover, .buttons-group .group-item .select-button .elekti-wrapper input.success[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item input.success[type="text"].js-users-list-filter:hover, .buttons-group .group-item .select-button .elekti-wrapper span.success.js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item span.success.js-users-list-filter:hover {
+  border-color: #6cbc73;
+  border-color: #6cbc73;
 }
-.btn.full.success:focus, .select-button .elekti-wrapper input.full.success[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.full.success.js-users-list-filter:focus {
-  background-color: #61b769;
+.btn.empty.success:focus, .select-button .elekti-wrapper input.empty.success[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.empty.success.js-users-list-filter:focus, .buttons-group .group-item .success.btn:focus, .buttons-group .group-item .select-button .elekti-wrapper input.success[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper .buttons-group .group-item input.success[type="text"].js-users-list-filter:focus, .buttons-group .group-item .select-button .elekti-wrapper span.success.js-users-list-filter:focus, .select-button .elekti-wrapper .buttons-group .group-item span.success.js-users-list-filter:focus {
+  background: transparent;
+  border-color: #61b769;
 }
-.btn.full.success:active, .select-button .elekti-wrapper input.full.success[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.full.success.js-users-list-filter:active, .btn.full.success.active, .select-button .elekti-wrapper input.full.success.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.success.active.js-users-list-filter {
-  border-bottom: 0;
+.btn.empty.success:active, .select-button .elekti-wrapper input.empty.success[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.empty.success.js-users-list-filter:active, .buttons-group .group-item .success.btn:active, .buttons-group .group-item .select-button .elekti-wrapper input.success[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item input.success[type="text"].js-users-list-filter:active, .buttons-group .group-item .select-button .elekti-wrapper span.success.js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item span.success.js-users-list-filter:active, .btn.empty.success.active, .select-button .elekti-wrapper input.empty.success.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.success.active.js-users-list-filter, .buttons-group .group-item .success.active.btn, .buttons-group .group-item .select-button .elekti-wrapper input.success.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.success.active[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.success.active.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.success.active.js-users-list-filter {
   color: #FFFFFF;
   background-color: #56b25f;
 }
-.btn.full.warning, .select-button .elekti-wrapper input.full.warning[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.warning.js-users-list-filter {
-  border-bottom-color: #fc450a;
-  background-color: #fd6b3c;
-  color: #FFFFFF;
+.btn.empty.warning, .select-button .elekti-wrapper input.empty.warning[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.warning.js-users-list-filter, .buttons-group .group-item .warning.btn, .buttons-group .group-item .select-button .elekti-wrapper input.warning[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.warning[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.warning.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.warning.js-users-list-filter {
+  border-color: #fd6b3c;
+  color: #fd6b3c;
 }
-.btn.full.warning:hover, .select-button .elekti-wrapper input.full.warning[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.full.warning.js-users-list-filter:hover {
-  background-color: #fd764b;
-  color: #FFFFFF;
+.btn.empty.warning:hover, .select-button .elekti-wrapper input.empty.warning[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.empty.warning.js-users-list-filter:hover, .buttons-group .group-item .warning.btn:hover, .buttons-group .group-item .select-button .elekti-wrapper input.warning[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item input.warning[type="text"].js-users-list-filter:hover, .buttons-group .group-item .select-button .elekti-wrapper span.warning.js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item span.warning.js-users-list-filter:hover {
+  border-color: #fd764b;
+  border-color: #fd764b;
 }
-.btn.full.warning:focus, .select-button .elekti-wrapper input.full.warning[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.full.warning.js-users-list-filter:focus {
-  background-color: #fd6b3c;
+.btn.empty.warning:focus, .select-button .elekti-wrapper input.empty.warning[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.empty.warning.js-users-list-filter:focus, .buttons-group .group-item .warning.btn:focus, .buttons-group .group-item .select-button .elekti-wrapper input.warning[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper .buttons-group .group-item input.warning[type="text"].js-users-list-filter:focus, .buttons-group .group-item .select-button .elekti-wrapper span.warning.js-users-list-filter:focus, .select-button .elekti-wrapper .buttons-group .group-item span.warning.js-users-list-filter:focus {
+  background: transparent;
+  border-color: #fd6b3c;
 }
-.btn.full.warning:active, .select-button .elekti-wrapper input.full.warning[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.full.warning.js-users-list-filter:active, .btn.full.warning.active, .select-button .elekti-wrapper input.full.warning.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.warning.active.js-users-list-filter {
-  border-bottom: 0;
+.btn.empty.warning:active, .select-button .elekti-wrapper input.empty.warning[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.empty.warning.js-users-list-filter:active, .buttons-group .group-item .warning.btn:active, .buttons-group .group-item .select-button .elekti-wrapper input.warning[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item input.warning[type="text"].js-users-list-filter:active, .buttons-group .group-item .select-button .elekti-wrapper span.warning.js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item span.warning.js-users-list-filter:active, .btn.empty.warning.active, .select-button .elekti-wrapper input.empty.warning.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.warning.active.js-users-list-filter, .buttons-group .group-item .warning.active.btn, .buttons-group .group-item .select-button .elekti-wrapper input.warning.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.warning.active[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.warning.active.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.warning.active.js-users-list-filter {
   color: #FFFFFF;
   background-color: #fd602d;
 }
-.btn.full.error, .select-button .elekti-wrapper input.full.error[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.error.js-users-list-filter {
-  border-bottom-color: #f02c1e;
-  background-color: #f3594e;
-  color: #FFFFFF;
+.btn.empty.error, .select-button .elekti-wrapper input.empty.error[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.error.js-users-list-filter, .buttons-group .group-item .error.btn, .buttons-group .group-item .select-button .elekti-wrapper input.error[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.error[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.error.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.error.js-users-list-filter {
+  border-color: #f3594e;
+  color: #f3594e;
 }
-.btn.full.error:hover, .select-button .elekti-wrapper input.full.error[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.full.error.js-users-list-filter:hover {
-  background-color: #f4665c;
-  color: #FFFFFF;
+.btn.empty.error:hover, .select-button .elekti-wrapper input.empty.error[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper span.empty.error.js-users-list-filter:hover, .buttons-group .group-item .error.btn:hover, .buttons-group .group-item .select-button .elekti-wrapper input.error[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item input.error[type="text"].js-users-list-filter:hover, .buttons-group .group-item .select-button .elekti-wrapper span.error.js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item span.error.js-users-list-filter:hover {
+  border-color: #f4665c;
+  border-color: #f4665c;
 }
-.btn.full.error:focus, .select-button .elekti-wrapper input.full.error[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.full.error.js-users-list-filter:focus {
-  background-color: #f3594e;
+.btn.empty.error:focus, .select-button .elekti-wrapper input.empty.error[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper span.empty.error.js-users-list-filter:focus, .buttons-group .group-item .error.btn:focus, .buttons-group .group-item .select-button .elekti-wrapper input.error[type="text"].js-users-list-filter:focus, .select-button .elekti-wrapper .buttons-group .group-item input.error[type="text"].js-users-list-filter:focus, .buttons-group .group-item .select-button .elekti-wrapper span.error.js-users-list-filter:focus, .select-button .elekti-wrapper .buttons-group .group-item span.error.js-users-list-filter:focus {
+  background: transparent;
+  border-color: #f3594e;
 }
-.btn.full.error:active, .select-button .elekti-wrapper input.full.error[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.full.error.js-users-list-filter:active, .btn.full.error.active, .select-button .elekti-wrapper input.full.error.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.full.error.active.js-users-list-filter {
-  border-bottom: 0;
+.btn.empty.error:active, .select-button .elekti-wrapper input.empty.error[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper span.empty.error.js-users-list-filter:active, .buttons-group .group-item .error.btn:active, .buttons-group .group-item .select-button .elekti-wrapper input.error[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item input.error[type="text"].js-users-list-filter:active, .buttons-group .group-item .select-button .elekti-wrapper span.error.js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item span.error.js-users-list-filter:active, .btn.empty.error.active, .select-button .elekti-wrapper input.empty.error.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper span.empty.error.active.js-users-list-filter, .buttons-group .group-item .error.active.btn, .buttons-group .group-item .select-button .elekti-wrapper input.error.active[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.error.active[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.error.active.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.error.active.js-users-list-filter {
   color: #FFFFFF;
   background-color: #f24c40;
 }
 
+.buttons-group.small .btn.full, .buttons-group.small .select-button .elekti-wrapper input.buttons-group[type="text"].js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small input.buttons-group[type="text"].js-users-list-filter .btn.full, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.js-users-list-filter .btn.full, .buttons-group.small .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.full.js-users-list-filter {
+  border-top: 1px solid #a6adb2;
+}
 .buttons-group .group-item:last-of-type .btn, .buttons-group .group-item:last-of-type .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item:last-of-type input[type="text"].js-users-list-filter, .buttons-group .group-item:last-of-type .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item:last-of-type span.js-users-list-filter, .buttons-group .group-item:last-of-type:active .btn, .buttons-group .group-item:last-of-type:active .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item:last-of-type:active input[type="text"].js-users-list-filter, .buttons-group .group-item:last-of-type:active .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item:last-of-type:active span.js-users-list-filter {
   border-right: 1px solid #a6adb2;
 }
@@ -6615,12 +7326,17 @@ button:disabled {
   border-color: #a6adb2;
   min-width: 40px;
 }
+.buttons-group .group-item .btn:hover, .buttons-group .group-item .select-button .elekti-wrapper input[type="text"].js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item input[type="text"].js-users-list-filter:hover, .buttons-group .group-item .select-button .elekti-wrapper span.js-users-list-filter:hover, .select-button .elekti-wrapper .buttons-group .group-item span.js-users-list-filter:hover {
+  border-color: #a6adb2;
+}
 .buttons-group .group-item .btn:active, .buttons-group .group-item .select-button .elekti-wrapper input[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item input[type="text"].js-users-list-filter:active, .buttons-group .group-item .select-button .elekti-wrapper span.js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group .group-item span.js-users-list-filter:active {
   background-color: #959ca0;
+  border-bottom: 1px solid #959ca0;
 }
 .buttons-group .group-item .btn.full, .buttons-group .group-item .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item input.full[type="text"].js-users-list-filter, .buttons-group .group-item .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group .group-item span.full.js-users-list-filter {
   background-color: #a6adb2;
   border-color: #a6adb2;
+  color: #FFFFFF;
 }
 .buttons-group.primary .group-item:last-of-type .btn, .buttons-group.primary .group-item:last-of-type .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.primary .group-item:last-of-type input[type="text"].js-users-list-filter, .buttons-group.primary .group-item:last-of-type .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.primary .group-item:last-of-type span.js-users-list-filter, .buttons-group.primary .group-item:last-of-type:active .btn, .buttons-group.primary .group-item:last-of-type:active .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.primary .group-item:last-of-type:active input[type="text"].js-users-list-filter, .buttons-group.primary .group-item:last-of-type:active .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.primary .group-item:last-of-type:active span.js-users-list-filter {
   border-right: 1px solid #0072bc;
@@ -6635,18 +7351,8 @@ button:disabled {
   background-color: #0072bc;
   border-color: #0072bc;
 }
-.buttons-group.secondary .group-item:last-of-type .btn, .buttons-group.secondary .group-item:last-of-type .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.secondary .group-item:last-of-type input[type="text"].js-users-list-filter, .buttons-group.secondary .group-item:last-of-type .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.secondary .group-item:last-of-type span.js-users-list-filter, .buttons-group.secondary .group-item:last-of-type:active .btn, .buttons-group.secondary .group-item:last-of-type:active .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.secondary .group-item:last-of-type:active input[type="text"].js-users-list-filter, .buttons-group.secondary .group-item:last-of-type:active .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.secondary .group-item:last-of-type:active span.js-users-list-filter {
-  border-right: 1px solid #4d9cd0;
-}
-.buttons-group.secondary .group-item .btn, .buttons-group.secondary .group-item .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.secondary .group-item input[type="text"].js-users-list-filter, .buttons-group.secondary .group-item .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.secondary .group-item span.js-users-list-filter {
-  border-color: #4d9cd0;
-}
-.buttons-group.secondary .group-item .btn:active, .buttons-group.secondary .group-item .select-button .elekti-wrapper input[type="text"].js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group.secondary .group-item input[type="text"].js-users-list-filter:active, .buttons-group.secondary .group-item .select-button .elekti-wrapper span.js-users-list-filter:active, .select-button .elekti-wrapper .buttons-group.secondary .group-item span.js-users-list-filter:active {
-  background-color: #458cbb;
-}
-.buttons-group.secondary .group-item .btn.full, .buttons-group.secondary .group-item .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.secondary .group-item input.full[type="text"].js-users-list-filter, .buttons-group.secondary .group-item .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.secondary .group-item span.full.js-users-list-filter {
-  background-color: #4d9cd0;
-  border-color: #4d9cd0;
+.buttons-group.primary.small .btn.full, .buttons-group.small .buttons-group.primary.btn .btn.full, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.primary[type="text"].js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.primary[type="text"].js-users-list-filter .btn.full, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.primary.js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.primary.js-users-list-filter .btn.full, .buttons-group.primary.small .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.primary.small input.full[type="text"].js-users-list-filter, .buttons-group.small .buttons-group.primary.btn .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .buttons-group.primary.btn input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.primary[type="text"].js-users-list-filter input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.primary[type="text"].js-users-list-filter input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.primary.js-users-list-filter input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.primary.js-users-list-filter input.full[type="text"].js-users-list-filter, .buttons-group.primary.small .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.primary.small span.full.js-users-list-filter, .buttons-group.small .buttons-group.primary.btn .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .buttons-group.primary.btn span.full.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.primary[type="text"].js-users-list-filter span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.primary[type="text"].js-users-list-filter span.full.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.primary.js-users-list-filter span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.primary.js-users-list-filter span.full.js-users-list-filter {
+  border-top: 1px solid #0072bc;
 }
 .buttons-group.info .group-item:last-of-type .btn, .buttons-group.info .group-item:last-of-type .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.info .group-item:last-of-type input[type="text"].js-users-list-filter, .buttons-group.info .group-item:last-of-type .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.info .group-item:last-of-type span.js-users-list-filter, .buttons-group.info .group-item:last-of-type:active .btn, .buttons-group.info .group-item:last-of-type:active .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.info .group-item:last-of-type:active input[type="text"].js-users-list-filter, .buttons-group.info .group-item:last-of-type:active .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.info .group-item:last-of-type:active span.js-users-list-filter {
   border-right: 1px solid #6ac7f1;
@@ -6661,6 +7367,9 @@ button:disabled {
   background-color: #6ac7f1;
   border-color: #6ac7f1;
 }
+.buttons-group.info.small .btn.full, .buttons-group.small .buttons-group.info.btn .btn.full, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.info[type="text"].js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.info[type="text"].js-users-list-filter .btn.full, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.info.js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.info.js-users-list-filter .btn.full, .buttons-group.info.small .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.info.small input.full[type="text"].js-users-list-filter, .buttons-group.small .buttons-group.info.btn .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .buttons-group.info.btn input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.info[type="text"].js-users-list-filter input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.info[type="text"].js-users-list-filter input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.info.js-users-list-filter input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.info.js-users-list-filter input.full[type="text"].js-users-list-filter, .buttons-group.info.small .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.info.small span.full.js-users-list-filter, .buttons-group.small .buttons-group.info.btn .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .buttons-group.info.btn span.full.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.info[type="text"].js-users-list-filter span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.info[type="text"].js-users-list-filter span.full.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.info.js-users-list-filter span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.info.js-users-list-filter span.full.js-users-list-filter {
+  border-top: 1px solid #6ac7f1;
+}
 .buttons-group.success .group-item:last-of-type .btn, .buttons-group.success .group-item:last-of-type .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.success .group-item:last-of-type input[type="text"].js-users-list-filter, .buttons-group.success .group-item:last-of-type .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.success .group-item:last-of-type span.js-users-list-filter, .buttons-group.success .group-item:last-of-type:active .btn, .buttons-group.success .group-item:last-of-type:active .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.success .group-item:last-of-type:active input[type="text"].js-users-list-filter, .buttons-group.success .group-item:last-of-type:active .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.success .group-item:last-of-type:active span.js-users-list-filter {
   border-right: 1px solid #61b769;
 }
@@ -6673,6 +7382,9 @@ button:disabled {
 .buttons-group.success .group-item .btn.full, .buttons-group.success .group-item .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.success .group-item input.full[type="text"].js-users-list-filter, .buttons-group.success .group-item .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.success .group-item span.full.js-users-list-filter {
   background-color: #61b769;
   border-color: #61b769;
+}
+.buttons-group.success.small .btn.full, .buttons-group.small .buttons-group.success.btn .btn.full, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.success[type="text"].js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.success[type="text"].js-users-list-filter .btn.full, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.success.js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.success.js-users-list-filter .btn.full, .buttons-group.success.small .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.success.small input.full[type="text"].js-users-list-filter, .buttons-group.small .buttons-group.success.btn .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .buttons-group.success.btn input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.success[type="text"].js-users-list-filter input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.success[type="text"].js-users-list-filter input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.success.js-users-list-filter input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.success.js-users-list-filter input.full[type="text"].js-users-list-filter, .buttons-group.success.small .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.success.small span.full.js-users-list-filter, .buttons-group.small .buttons-group.success.btn .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .buttons-group.success.btn span.full.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.success[type="text"].js-users-list-filter span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.success[type="text"].js-users-list-filter span.full.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.success.js-users-list-filter span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.success.js-users-list-filter span.full.js-users-list-filter {
+  border-top: 1px solid #61b769;
 }
 .buttons-group.warning .group-item:last-of-type .btn, .buttons-group.warning .group-item:last-of-type .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.warning .group-item:last-of-type input[type="text"].js-users-list-filter, .buttons-group.warning .group-item:last-of-type .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.warning .group-item:last-of-type span.js-users-list-filter, .buttons-group.warning .group-item:last-of-type:active .btn, .buttons-group.warning .group-item:last-of-type:active .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.warning .group-item:last-of-type:active input[type="text"].js-users-list-filter, .buttons-group.warning .group-item:last-of-type:active .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.warning .group-item:last-of-type:active span.js-users-list-filter {
   border-right: 1px solid #fd6b3c;
@@ -6687,6 +7399,9 @@ button:disabled {
   background-color: #fd6b3c;
   border-color: #fd6b3c;
 }
+.buttons-group.warning.small .btn.full, .buttons-group.small .buttons-group.warning.btn .btn.full, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.warning[type="text"].js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.warning[type="text"].js-users-list-filter .btn.full, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.warning.js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.warning.js-users-list-filter .btn.full, .buttons-group.warning.small .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.warning.small input.full[type="text"].js-users-list-filter, .buttons-group.small .buttons-group.warning.btn .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .buttons-group.warning.btn input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.warning[type="text"].js-users-list-filter input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.warning[type="text"].js-users-list-filter input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.warning.js-users-list-filter input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.warning.js-users-list-filter input.full[type="text"].js-users-list-filter, .buttons-group.warning.small .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.warning.small span.full.js-users-list-filter, .buttons-group.small .buttons-group.warning.btn .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .buttons-group.warning.btn span.full.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.warning[type="text"].js-users-list-filter span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.warning[type="text"].js-users-list-filter span.full.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.warning.js-users-list-filter span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.warning.js-users-list-filter span.full.js-users-list-filter {
+  border-top: 1px solid #fd6b3c;
+}
 .buttons-group.error .group-item:last-of-type .btn, .buttons-group.error .group-item:last-of-type .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.error .group-item:last-of-type input[type="text"].js-users-list-filter, .buttons-group.error .group-item:last-of-type .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.error .group-item:last-of-type span.js-users-list-filter, .buttons-group.error .group-item:last-of-type:active .btn, .buttons-group.error .group-item:last-of-type:active .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.error .group-item:last-of-type:active input[type="text"].js-users-list-filter, .buttons-group.error .group-item:last-of-type:active .select-button .elekti-wrapper span.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.error .group-item:last-of-type:active span.js-users-list-filter {
   border-right: 1px solid #f3594e;
 }
@@ -6700,833 +7415,8 @@ button:disabled {
   background-color: #f3594e;
   border-color: #f3594e;
 }
-
-html {
-  height: 100%;
-  font-size: 14px;
-}
-
-body {
-  min-height: 100%;
-  font-size: 14px;
-}
-
-.main-actions {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-h1 span {
-  font-size: 1.375rem;
-}
-
-#product-switch {
-  position: fixed;
-  top: 24px;
-  left: 200px;
-  color: #dcdfe1;
-  cursor: pointer;
-  z-index: 20;
-}
-#product-switch img {
-  width: 25px;
-  -webkit-filter: grayscale(100%) brightness(-100%);
-  filter: grayscale(100%) brightness(-100%);
-}
-@media (max-width: 60em) {
-  #product-switch {
-    top: 0;
-    right: 0;
-    left: initial;
-    bottom: initial;
-    line-height: 66px;
-    padding: 0 20px;
-  }
-  #product-switch .clab {
-    vertical-align: middle;
-  }
-}
-#product-switch.active {
-  position: absolute;
-  top: 24px;
-  left: 50%;
-  margin-left: -50px;
-  color: #0072bc;
-  padding: 40px 0 0;
-}
-#product-switch.active img {
-  width: 100px;
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-}
-#product-switch.active .clab {
-  font-size: 100px;
-}
-@media (max-width: 60em) {
-  #product-switch.active {
-    left: initial;
-    right: 50%;
-    margin-left: 0;
-    margin-right: -70px;
-  }
-}
-
-#products-panel {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 15;
-  width: 100%;
-  background: rgba(240, 240, 240, 0.97);
-  border: 1px solid #dcdfe1;
-  text-align: center;
-  padding: 3.75em 0 3.75em 0;
-  display: none;
-}
-@media (max-width: 60em) {
-  #products-panel {
-    left: initial;
-    right: 0;
-  }
-}
-@media (max-width: 30em) {
-  #products-panel {
-    left: 0;
-    right: 0;
-    max-width: initial;
-  }
-}
-#products-panel .title {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  border-bottom: 1px solid #dcdfe1;
-  padding: 6.66667px;
-}
-#products-panel .products-list {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 100px 20px 20px;
-}
-#products-panel .products-list .product {
-  width: 32.20339%;
-  float: left;
-  text-align: center;
-}
-#products-panel .products-list .product:nth-child(3n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-  margin-left: 0;
-}
-#products-panel .products-list .product:nth-child(3n + 2) {
-  margin-left: 33.89831%;
-  margin-right: -100%;
-  clear: none;
-}
-#products-panel .products-list .product:nth-child(3n + 3) {
-  margin-left: 67.79661%;
-  margin-right: -100%;
-  clear: none;
-}
-@media (max-width: 48em) {
-  #products-panel .products-list .product {
-    width: 49.15254%;
-    float: left;
-  }
-  #products-panel .products-list .product:nth-child(2n + 1) {
-    margin-left: 0;
-    margin-right: -100%;
-    clear: both;
-    margin-left: 0;
-  }
-  #products-panel .products-list .product:nth-child(2n + 2) {
-    margin-left: 50.84746%;
-    margin-right: -100%;
-    clear: none;
-  }
-}
-@media (max-width: 30em) {
-  #products-panel .products-list .product {
-    width: 100%;
-    float: left;
-    clear: both !important;
-  }
-  #products-panel .products-list .product:nth-child(1n + 1) {
-    margin-left: 0;
-    margin-right: -100%;
-    clear: none;
-  }
-}
-#products-panel .products-list .product .product-logo {
-  float: none;
-  display: inline-block;
-  width: auto;
-}
-#products-panel .products-list .product.contacthub .sign,
-#products-panel .products-list .product.contacthub .product-name b {
-  color: #00BCD4;
-}
-#products-panel .products-list .product.contactplan .sign,
-#products-panel .products-list .product.contactplan .product-name b {
-  color: #14C04D;
-}
-#products-panel .products-list .product.contactsend .sign,
-#products-panel .products-list .product.contactsend .product-name b {
-  color: #2C5AF5;
-}
-
-.close-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  color: #353A3D;
-  cursor: pointer;
-}
-.close-overlay:hover {
-  color: #282c2e;
-}
-.close-overlay .clab {
-  font-size: 20px;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 66px;
-  padding: 0 20px;
-  background: #FFFFFF;
-  z-index: 10;
-}
-header .product-logo {
-  float: left;
-  position: relative;
-  margin: 14px 20px 9px 0;
-  width: 160px;
-}
-header .product-logo .sign {
-  position: absolute;
-  top: -3px;
-  left: 0;
-  color: #0072bc;
-}
-header .product-logo .sign .clab {
-  font-size: 20px;
-}
-header .product-logo .product-name {
-  float: left;
-  padding-left: 19px;
-  color: #353A3D;
-  font-size: 25px;
-}
-header .product-logo .product-name b {
-  color: #0072bc;
-  font-weight: normal;
-}
-@media (max-width: 60em) {
-  header #main-logo {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    margin-left: -80px;
-  }
-}
-
-.open-menu {
-  position: fixed;
-  padding: 0 20px;
-  line-height: 66px;
-  cursor: pointer;
-  display: none;
-  top: 0;
-  left: 0;
-}
-@media (max-width: 60em) {
-  .open-menu {
-    display: block;
-  }
-}
-.open-menu .clab {
-  vertical-align: middle;
-}
-
-.main-menu {
-  position: absolute;
-  left: 20%;
-  right: 20%;
-  text-align: center;
-}
-.main-menu .close-overlay {
-  display: none;
-}
-.main-menu .users-menu {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 20px;
-  display: none;
-}
-@media (max-width: 60em) {
-  .main-menu .users-menu {
-    display: block;
-    background-color: rgba(53, 58, 61, 0.95);
-  }
-}
-.main-menu .users-menu .user-picture {
-  float: left;
-  display: inline-block;
-  position: relative;
-  height: 40px;
-  width: 40px;
-  font-size: 1rem;
-  border: 2px solid #cfd3d5;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-.main-menu .users-menu .user-picture span {
-  display: block;
-  text-align: center;
-  line-height: 36px;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #cfd3d5;
-}
-.main-menu .users-menu .user-picture img {
-  height: 40px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  position: absolute;
-  top: -2px;
-  left: -2px;
-}
-.main-menu .users-menu .user-name {
-  float: left;
-  color: #eaeced;
-  line-height: 40px;
-  margin-left: 10px;
-}
-.main-menu .users-menu ul {
-  float: right;
-}
-.main-menu .users-menu ul,
-.main-menu .users-menu ul li {
-  font-size: 1rem;
-  width: auto;
-  clear: initial;
-  margin: 0;
-  padding: 0;
-}
-.main-menu .users-menu ul a,
-.main-menu .users-menu ul li a {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0;
-  display: block;
-}
-.main-menu .users-menu ul a .clab,
-.main-menu .users-menu ul li a .clab {
-  font-size: 16px;
-  vertical-align: middle;
-}
-.main-menu .users-menu ul .notifications,
-.main-menu .users-menu ul li .notifications {
-  background-color: #0072bc;
-  width: 18px;
-  height: 18px;
-  line-height: 18px;
-  text-align: center;
-  display: inline-block;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  font-size: 0.8571rem;
-}
-.main-menu > ul {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  margin: 0;
-  padding: 0;
-}
-.main-menu > ul li {
-  display: inline-block;
-  margin: 0;
-}
-.main-menu > ul li a {
-  color: #353A3D;
-  padding: 35px 20px 10px 20px;
-  display: block;
-  position: relative;
-}
-@media (max-width: 80em) {
-  .main-menu > ul li a {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-.main-menu > ul li a:hover:before {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 40%;
-  width: 20%;
-  height: 3px;
-  background-color: #cfd3d5;
-}
-.main-menu > ul li.active a:before {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #0072bc;
-}
-@media (max-width: 60em) {
-  .main-menu {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 20;
-    padding: 0;
-    overflow: auto;
-    display: none;
-  }
-  .main-menu > ul {
-    background-color: rgba(240, 240, 240, 0.97);
-    padding: 3.75em 0 3.75em 0;
-    position: absolute;
-    top: 0;
-    bottom: 80px;
-    overflow: auto;
-  }
-  .main-menu .close-overlay {
-    display: block;
-  }
-  .main-menu .users-menu a {
-    color: #eaeced;
-  }
-  .main-menu ul li {
-    clear: both;
-    width: 100%;
-    float: left;
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 1.25rem;
-  }
-  .main-menu ul li a:hover:before {
-    display: none;
-  }
-  .main-menu ul li.active a {
-    color: #0072bc;
-  }
-  .main-menu ul li.active a:hover:before {
-    display: block;
-  }
-  .main-menu ul li.active a:before {
-    left: 50%;
-    width: 100px;
-    margin-left: -50px;
-  }
-}
-
-.contextual-menu {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #dcdfe1;
-}
-.contextual-menu ul,
-.contextual-menu li {
-  margin: 0;
-  padding: 0;
-}
-.contextual-menu ul {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  border-top: 1px solid #dcdfe1;
-}
-.contextual-menu li {
-  float: left;
-  position: relative;
-}
-.contextual-menu li.active a {
-  color: #0072bc;
-}
-.contextual-menu li a {
-  color: #353A3D;
-  display: inline-block;
-  padding: 10px 30px 10px 0;
-  font-weight: 600;
-  cursor: pointer;
-}
-.contextual-menu li a:hover {
-  color: #0072bc;
-}
-.contextual-menu li .arrow {
-  font-size: 12px;
-  margin-left: 6.66667px;
-}
-.contextual-menu li ul {
-  position: absolute;
-  top: 41px;
-  z-index: 2;
-  left: -20px;
-  background-color: #F0f0f0;
-  border: 1px solid #dcdfe1;
-  display: none;
-  width: auto;
-  max-height: 900px;
-  overflow: auto;
-}
-@media (max-width: 48em) {
-  .contextual-menu li ul {
-    width: 100%;
-  }
-}
-.contextual-menu li ul li {
-  width: 100%;
-}
-.contextual-menu li ul li a {
-  padding: 10px 20px;
-  width: 100%;
-}
-.contextual-menu li ul li a:hover {
-  color: #353A3D;
-  background-color: #FFFFFF;
-}
-.contextual-menu .mobile-nav-toggle {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  border-top: 1px solid #dcdfe1;
-  padding: 10px;
-  font-weight: 700;
-  cursor: pointer;
-  display: none;
-}
-.contextual-menu .mobile-nav-toggle .arrow {
-  font-size: 12px;
-  margin-left: 6.66667px;
-}
-@media (max-width: 48em) {
-  .contextual-menu .mobile-nav-toggle {
-    display: block;
-  }
-  .contextual-menu > ul {
-    display: none;
-  }
-  .contextual-menu .arrow {
-    float: right;
-    padding-top: 5px;
-  }
-  .contextual-menu li {
-    clear: both;
-    width: 100%;
-    float: left;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .contextual-menu li a {
-    clear: both;
-    width: 100%;
-    float: left;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 20px;
-    padding-right: 10px;
-  }
-  .contextual-menu li ul {
-    position: relative;
-    float: left;
-    margin: 0;
-    top: 0;
-    left: 0;
-    border: 0;
-    border-top: 1px solid #dcdfe1;
-    border-bottom: 1px solid #dcdfe1;
-    /* background-color: $light-gray; */
-  }
-  .contextual-menu li ul li a {
-    padding-left: 30px;
-  }
-}
-
-#user-bar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-right: 20px;
-  cursor: pointer;
-  font-size: 0;
-  z-index: 12;
-}
-@media (max-width: 60em) {
-  #user-bar {
-    display: none;
-  }
-}
-#user-bar.active .user-picture,
-#user-bar.active .user-pitcure img {
-  border-color: #0072bc;
-}
-#user-bar .user-picture {
-  margin-top: 10px;
-  display: inline-block;
-  position: relative;
-  height: 46px;
-  width: 46px;
-  font-size: 1rem;
-  border: 2px solid #cfd3d5;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-#user-bar .user-picture span {
-  display: block;
-  text-align: center;
-  line-height: 42px;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #cfd3d5;
-}
-#user-bar .user-picture img {
-  height: 46px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  position: absolute;
-  top: -2px;
-  left: -2px;
-}
-#user-bar .user-picture .notifications {
-  position: absolute;
-  top: 0;
-  right: -9px;
-  background-color: #0072bc;
-  color: #FFFFFF;
-  width: 18px;
-  height: 18px;
-  line-height: 18px;
-  text-align: center;
-  font-size: 0.7857rem;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-#user-bar .user-name {
-  line-height: 66px;
-  display: inline-block;
-  vertical-align: top;
-  font-size: 1rem;
-  margin-right: 10px;
-}
-
-#user-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 11;
-  width: 280px;
-  border-left: 1px solid #dcdfe1;
-  background-color: #FFFFFF;
-  display: none;
-}
-#user-panel .user-actions {
-  position: absolute;
-  top: 0;
-  left: 0;
-  text-align: center;
-}
-#user-panel .user-actions .action {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-}
-#user-panel .user-actions .action a {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  float: left;
-  font-size: 16px;
-  color: #353A3D;
-}
-#user-panel .user-actions .action a:active {
-  color: #0072bc;
-}
-#user-panel .user-actions .action a .clab {
-  font-size: 16px;
-}
-#user-panel .user-panel-content {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 66px;
-  padding: 0 20px;
-}
-#user-panel .user-panel-content .notification {
-  position: relative;
-}
-#user-panel .user-panel-content .notification .icon {
-  width: 35px;
-  height: 35px;
-  font-size: 35px;
-}
-#user-panel .user-panel-content .notification .icon .clab {
-  font-size: 35px;
-}
-#user-panel .user-panel-content .notification p {
-  font-size: 0.8571rem;
-  color: #a6adb2;
-}
-#user-panel .user-panel-content .notification h2, #user-panel .user-panel-content .notification .modal .modal-title, .modal #user-panel .user-panel-content .notification .modal-title {
-  font-weight: 700;
-  color: #353A3D;
-}
-#user-panel .user-panel-content .notification .description {
-  padding-left: 10px;
-}
-#user-panel .user-panel-content .notification.new:before {
-  position: absolute;
-  content: '';
-  display: block;
-  top: 0;
-  left: -5px;
-  width: 5px;
-  height: 5px;
-  background-color: #0072bc;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-#user-panel .user-panel-content .description:hover h2, #user-panel .user-panel-content .description:hover .modal .modal-title, .modal #user-panel .user-panel-content .description:hover .modal-title {
-  color: #0072bc;
-}
-
-.main-content {
-  padding: 86px 20px 20px 20px;
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-}
-.main-content.actions-bar {
-  padding-bottom: 76px;
-}
-
-.form-wrapper {
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 620px;
-}
-
-.wrapper {
-  max-width: 1320px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 20px;
-}
-.wrapper:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-.wrapper .form-wrapper {
-  max-width: 1030px;
-}
-
-.small-wrapper {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 20px;
-}
-.small-wrapper:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-.small-wrapper .form-wrapper {
-  max-width: 760px;
-}
-
-#main-actions-bar {
-  /* @include full;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  height: $main-actions-height;
-  background-color: $dark-gray;
-  padding: $small-spacing $base-spacing 0; */
-  clear: both;
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 20px;
-  padding-top: 40px;
-  border-top: 1px solid #a6adb2;
-}
-#main-actions-bar .left {
-  width: 49.15254%;
-  float: left;
-  margin-right: 1.69492%;
-}
-#main-actions-bar .right {
-  width: 49.15254%;
-  float: right;
-  margin-right: 0;
-  text-align: right;
+.buttons-group.error.small .btn.full, .buttons-group.small .buttons-group.error.btn .btn.full, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.error[type="text"].js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.error[type="text"].js-users-list-filter .btn.full, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.error.js-users-list-filter .btn.full, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.error.js-users-list-filter .btn.full, .buttons-group.error.small .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.error.small input.full[type="text"].js-users-list-filter, .buttons-group.small .buttons-group.error.btn .select-button .elekti-wrapper input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .buttons-group.error.btn input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.error[type="text"].js-users-list-filter input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.error[type="text"].js-users-list-filter input.full[type="text"].js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.error.js-users-list-filter input.full[type="text"].js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.error.js-users-list-filter input.full[type="text"].js-users-list-filter, .buttons-group.error.small .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.error.small span.full.js-users-list-filter, .buttons-group.small .buttons-group.error.btn .select-button .elekti-wrapper span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small .buttons-group.error.btn span.full.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper input.buttons-group.error[type="text"].js-users-list-filter span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small input.buttons-group.error[type="text"].js-users-list-filter span.full.js-users-list-filter, .buttons-group.small .select-button .elekti-wrapper span.buttons-group.error.js-users-list-filter span.full.js-users-list-filter, .select-button .elekti-wrapper .buttons-group.small span.buttons-group.error.js-users-list-filter span.full.js-users-list-filter {
+  border-top: 1px solid #f3594e;
 }
 
 .centered-wrapper {
@@ -7970,38 +7860,20 @@ main {
 .pattern-color figure.corporate-primary {
   background-color: #0072bc;
 }
-.pattern-color figure.corporate-secondary {
-  background-color: #4d9cd0;
-}
 .pattern-color figure.contactplan-primary {
   background-color: #14C04D;
 }
-.pattern-color figure.contactplan-secondary {
-  background-color: #8bc34a;
-}
 .pattern-color figure.contacthub-primary {
-  background-color: #00BCD4;
-}
-.pattern-color figure.contacthub-secondary {
-  background-color: #B2EBF2;
+  background-color: #67c6dd;
 }
 .pattern-color figure.contactsend-primary {
   background-color: #2C5AF5;
 }
-.pattern-color figure.contactsend-secondary {
-  background-color: #448AFF;
-}
 .pattern-color figure.contactscore-primary {
   background-color: #FFBF02;
 }
-.pattern-color figure.contactscore-secondary {
-  background-color: #FFEB3B;
-}
 .pattern-color figure.contactanalytics-primary {
   background-color: #F9615B;
-}
-.pattern-color figure.contactanalytics-secondary {
-  background-color: #FF9797;
 }
 .pattern-color figure.primary {
   background-color: #0072bc;
@@ -8009,13 +7881,6 @@ main {
 }
 .pattern-color figure.primary .counter {
   color: #0072bc;
-}
-.pattern-color figure.secondary {
-  background-color: #4d9cd0;
-  color: #FFFFFF;
-}
-.pattern-color figure.secondary .counter {
-  color: #4d9cd0;
 }
 .pattern-color figure.info {
   background-color: #6ac7f1;
