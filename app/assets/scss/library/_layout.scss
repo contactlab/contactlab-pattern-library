@@ -145,21 +145,21 @@ h1 span {
 			&.contacthub {
 				.sign,
 				.product-name b {
-					color: $contacthub-primary-color;
+					color: $contacthub-color;
 				}
 			}
 
 			&.contactplan {
 				.sign,
 				.product-name b {
-					color: $contactplan-primary-color;
+					color: $contactplan-color;
 				}
 			}
 
 			&.contactsend {
 				.sign,
 				.product-name b {
-					color: $contactsend-primary-color;
+					color: $contactsend-color;
 				}					
 			}
 		}
