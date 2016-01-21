@@ -501,6 +501,14 @@ header {
 			a {
 				color: $primary-color;
 			}
+
+			ul li a {
+				color: $base-text-color;
+			}
+
+			ul li.active a {
+				color: $primary-color;
+			}
 		}
 
 		a {

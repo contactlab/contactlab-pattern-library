@@ -3194,6 +3194,12 @@ header .product-logo .product-name b {
 .contextual-menu li.active a {
   color: #0072bc;
 }
+.contextual-menu li.active ul li a {
+  color: #353A3D;
+}
+.contextual-menu li.active ul li.active a {
+  color: #0072bc;
+}
 .contextual-menu li a {
   color: #353A3D;
   display: inline-block;
@@ -3641,14 +3647,14 @@ ol.multiple-clab, .elekti-wrapper:after,
 }
 
 .clab {
-  font-size: 24px;
+  /* font-size: 24px; */
   /* vertical-align: middle; */
 }
 .clab.icon-medium {
-  font-size: 36px;
+  /* font-size: 36px; */
 }
 .clab.icon-big {
-  font-size: 48px;
+  /* font-size: 48px; */
 }
 
 .spinner-overlay {
@@ -7881,6 +7887,13 @@ main {
     clear: none;
   }
 }
+.pattern-color .card-actions, .pattern-color .modal .modal-actions, .modal .pattern-color .modal-actions {
+  font-size: 0;
+}
+.pattern-color .card-actions img, .pattern-color .modal .modal-actions img, .modal .pattern-color .modal-actions img {
+  width: 25px;
+  margin-left: 6.66667px;
+}
 .pattern-color figure {
   height: 100px;
 }
@@ -8058,6 +8071,7 @@ main {
 }
 #iconography .icon-example .clab {
   vertical-align: sub;
+  font-size: 24px;
   margin-right: 5px;
 }
 
