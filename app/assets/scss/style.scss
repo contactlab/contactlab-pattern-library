@@ -184,7 +184,8 @@ main {
 }
 
 .component-specs {
-	.tab-content {
+	.tab-content,
+	.code-snippet {
 		background-color: #FFFFFF;
 		border: 1px solid $light-gray;
 		border-top: 0;

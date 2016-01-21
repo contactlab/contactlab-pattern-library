@@ -15,7 +15,7 @@
 					<p>
 						You can manually download the complete package from the Github repository
 					</p>
-					<button-clab type="primary"><a href="#">download</a></button-clab>	
+					<button-clab type="primary">download</button-clab>	
 				</section>
 				<section>
 					<h3>Install with Bower</h3>
@@ -54,7 +54,7 @@
 								<div class="code-snippet">
 									<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 									<div class="copy">
-		<pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;ui-components/_components/clab-components.html&quot;&gt;</code></pre>
+		<pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;ui-components/_components/clab-components.build.html&quot;&gt;</code></pre>
 									</div>
 								</div>
 							</div>
@@ -65,7 +65,7 @@
 								<div class="code-snippet">
 									<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 									<div class="copy">
-		<pre><code class="language-bash">$ gulp build -s [folder 1, folder 2, folder 3]</code></pre>
+		<pre><code class="language-bash">$ gulp build -s accordion_alert_buttons-group</code></pre>
 									</div>
 								</div>
 							</div>
@@ -74,7 +74,7 @@
 								<div class="code-snippet">
 									<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 									<div class="copy">
-		<pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;ui-components/_components/clab-components-custom.html&quot;&gt;</code></pre>
+		<pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;ui-components/_components/clab-components-custom.build.html&quot;&gt;</code></pre>
 									</div>
 								</div>
 							</div>
@@ -114,11 +114,11 @@
 &#x9;&#x3C;link rel=&#x22;import&#x22; href=&#x22;/assets/bower/ui-components/clab-components.html&#x22;&#x3E;
 &#x3C;/head&#x3E;
 &#x3C;body&#x3E;
-&#x9;&#x3C;aside id=&#x22;main-sidebar&#x22;&#x3E;
+&#x9;&#x3C;header id=&#x22;main-sidebar&#x22;&#x3E;
 &#x9;&#x9;&#x3C;menu-clab title-icon=&#x22;clab-icon-sign&#x22; link=&#x22;#/&#x22;&#x3E;
 &#x9;&#x9;&#x9;&#x3C;span class=&#x22;name&#x22;&#x3E;contact&#x3C;b&#x3E;lab&#x3C;/b&#x3E;&#x3C;/span&#x3E;
 &#x9;&#x9;&#x3C;/menu-clab&#x3E;
-&#x9;&#x3C;/aside&#x3E;
+&#x9;&#x3C;/header&#x3E;
 &#x9;&#x3C;main&#x3E;
 &#x9;&#x9;&#x3C;h1&#x3E;contactlab starter template&#x3C;/h1&#x3E;
 &#x9;&#x9;&#x3C;p&#x3E;
