@@ -19,8 +19,8 @@ $fa-font-path: "../bower/font-awesome/fonts";
 @import "library/layout"; 
 @import "library/pattern";
 @import "library/forms"; 
-@import "library/buttons";
-
+@import "library/_buttons";
+ 
 
 
 // COVER
@@ -325,6 +325,14 @@ main {
 
 	@include susy-breakpoint($smartphone) {
 		@include gallery(6);
+	}
+
+	.card-actions {
+		font-size: 0;
+		img {
+			width: 25px;
+			margin-left: $smaller-spacing;
+		}
 	}
 
 	figure {

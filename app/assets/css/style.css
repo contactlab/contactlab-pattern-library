@@ -3194,6 +3194,12 @@ header .product-logo .product-name b {
 .contextual-menu li.active a {
   color: #0072bc;
 }
+.contextual-menu li.active ul li a {
+  color: #353A3D;
+}
+.contextual-menu li.active ul li.active a {
+  color: #0072bc;
+}
 .contextual-menu li a {
   color: #353A3D;
   display: inline-block;
@@ -7868,6 +7874,13 @@ main {
     margin-right: -100%;
     clear: none;
   }
+}
+.pattern-color .card-actions, .pattern-color .modal .modal-actions, .modal .pattern-color .modal-actions {
+  font-size: 0;
+}
+.pattern-color .card-actions img, .pattern-color .modal .modal-actions img, .modal .pattern-color .modal-actions img {
+  width: 25px;
+  margin-left: 6.66667px;
 }
 .pattern-color figure {
   height: 100px;
