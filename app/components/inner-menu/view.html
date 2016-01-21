@@ -22,7 +22,7 @@
 							<a on-click="_handleOpen" data-index$="[[index]]">[[item.label]] <i class="clab clab-icon-arrow-down arrow"></i></a>
 							<ul class$="[[_computeShow(item.open)]]">
 								<template is="dom-repeat" items="[[item.submenu]]">
-									<li class$="[[_computeActive(item.url)]]"><a on-click="_handleOpen" href$="[[item.url]]">[[item.label]]</a></li>
+									<li class$="[[_computeActive(item)]]"><a on-click="_handleOpen" href$="[[item.url]]">[[item.label]]</a></li>
 								</template>
 							</ul>
 						</template>
