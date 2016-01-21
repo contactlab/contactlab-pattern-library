@@ -1,7 +1,7 @@
 <link rel="import" href="../../assets/bower/polymer/polymer.html">
-<link rel="import" href="../../components/inner-menu/view.html">
 <link rel="stylesheet" href="./../../assets/bower/highlightjs/styles/github.css">
 
+<link rel="import" href="../../components/inner-menu/view.html">
 <link rel="import" href="../../pages/accordion/view.html">
 <link rel="import" href="../../pages/alerts/view.html">
 <link rel="import" href="../../pages/autocomplete/view.html">
@@ -40,8 +40,7 @@
 <dom-module id="library-clab">
 	<style></style>
 	
-	<template>	
-		<!-- HEADER -->
+	<template>
 		<header>
 			<menu-clab title-icon="clab-icon-sign-full" link="#" draft="BETA" first-child>
 				<span class="product-name">
@@ -49,7 +48,6 @@
 				</span>
 			</menu-clab>
 		</header>
-		<!-- END HEADER -->
 
 		<main class="main-content">
 			<template is="dom-if" if="[[_isPage(page, 'colors')]]" restamp="true">

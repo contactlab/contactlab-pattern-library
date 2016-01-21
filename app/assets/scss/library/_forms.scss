@@ -448,6 +448,7 @@ ol.multiple-clab {
   .value_wrapper {
     @extend input[type="text"];
     cursor: pointer;
+    text-align:left;
   }
 
   &:after {
@@ -490,17 +491,21 @@ ol.multiple-clab {
     overflow: auto;
     @extend .fast-transition;
     background-color: #FFFFFF;
+    display:none;
 
     li,
     .noResults {
       background-color: white;
-      display: block;
+      display: none;
       padding: 10px;
       margin: 0;
       cursor: pointer;
 
       &.hide {
         display: none;
+      }
+      &.show {
+        display: block;
       }
 
       &.selected {

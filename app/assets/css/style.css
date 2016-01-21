@@ -6702,6 +6702,7 @@ ol.multiple-clab li.selected {
 .elekti-wrapper .value_wrapper,
 .options-list-wrapper .value_wrapper {
   cursor: pointer;
+  text-align: left;
 }
 .elekti-wrapper:after,
 .options-list-wrapper:after {
@@ -6752,6 +6753,7 @@ ol.multiple-clab li.selected {
   max-height: 200px;
   overflow: auto;
   background-color: #FFFFFF;
+  display: none;
 }
 .elekti-wrapper .js-users-list li,
 .elekti-wrapper .js-users-list .noResults,
@@ -6762,7 +6764,7 @@ ol.multiple-clab li.selected {
 .options-list-wrapper .options-list li,
 .options-list-wrapper .options-list .noResults {
   background-color: white;
-  display: block;
+  display: none;
   padding: 10px;
   margin: 0;
   cursor: pointer;
@@ -6776,6 +6778,16 @@ ol.multiple-clab li.selected {
 .options-list-wrapper .options-list li.hide,
 .options-list-wrapper .options-list .noResults.hide {
   display: none;
+}
+.elekti-wrapper .js-users-list li.show,
+.elekti-wrapper .js-users-list .noResults.show,
+.elekti-wrapper .options-list li.show,
+.elekti-wrapper .options-list .noResults.show,
+.options-list-wrapper .js-users-list li.show,
+.options-list-wrapper .js-users-list .noResults.show,
+.options-list-wrapper .options-list li.show,
+.options-list-wrapper .options-list .noResults.show {
+  display: block;
 }
 .elekti-wrapper .js-users-list li.selected,
 .elekti-wrapper .js-users-list .noResults.selected,
