@@ -3647,14 +3647,14 @@ ol.multiple-clab, .elekti-wrapper:after,
 }
 
 .clab {
-  font-size: 24px;
+  /* font-size: 24px; */
   /* vertical-align: middle; */
 }
 .clab.icon-medium {
-  font-size: 36px;
+  /* font-size: 36px; */
 }
 .clab.icon-big {
-  font-size: 48px;
+  /* font-size: 48px; */
 }
 
 .spinner-overlay {
@@ -8071,6 +8071,7 @@ main {
 }
 #iconography .icon-example .clab {
   vertical-align: sub;
+  font-size: 24px;
   margin-right: 5px;
 }
 
