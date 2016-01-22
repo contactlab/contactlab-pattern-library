@@ -23,12 +23,18 @@ var LibraryClab = (function () {
 	}, {
 		key: 'attached',
 		value: function attached() {
-			this.querySelector('menu-clab').menu = AppMenu;
+			var _this = this;
 
-			var n = document.querySelectorAll('pre code').length;
-			n ? hljs.highlightBlock(document.querySelector('pre code')) : null;
-			Array.from(document.querySelectorAll('.html')).forEach(function (el) {
-				hljs.highlightBlock(el);
+			var menu = this.querySelector('menu-clab');
+			menu.menu = AppMenu;
+			menu.addEventListener('subchange', function (evt) {
+				_this.submenu = evt.detail.links;
+				_this.submenu.map(function (item) {
+					if (item.open != undefined) delete item.open;
+				});
+				_this.async(function () {
+					_this.querySelector('inner-menu-clab').menu = _this.submenu;
+				}, 100);
 			});
 
 			this.fire('libraryLoaded');
@@ -36,7 +42,6 @@ var LibraryClab = (function () {
 	}, {
 		key: '_pageChanged',
 		value: function _pageChanged() {
-			//console.log(this.page);
 			window.scroll(0, 0);
 		}
 	}, {

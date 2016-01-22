@@ -1,0 +1,39 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="inner-menu-clab">
+	<style>
+		.submenu > a{
+			text-transform: uppercase;
+		}
+		.submenu .show{
+			display: block;
+		}
+	</style>
+	
+	<template>	
+		<div class="contextual-menu">
+			<div class="mobile-nav-toggle">
+				Navigation <i class="clab clab-icon-arrow-down arrow"></i>
+			</div>
+			<ul>
+				<template is="dom-repeat" items="[[menu]]">
+					<li class$="[[_computeActive(item)]]">
+						<template is="dom-if" if="[[item.submenu]]">
+							<a on-click="_handleOpen" data-index$="[[index]]">[[item.label]] <i class="clab clab-icon-arrow-down arrow"></i></a>
+							<ul class$="[[_computeShow(item.open)]]">
+								<template is="dom-repeat" items="[[item.submenu]]">
+									<li class$="[[_computeActive(item)]]"><a on-click="_handleOpen" href$="[[item.url]]">[[item.label]]</a></li>
+								</template>
+							</ul>
+						</template>
+						<template is="dom-if" if="[[item.url]]">
+							<a href$="[[item.url]]">[[item.label]]</a>
+						</template>
+					</li>
+				</template>
+			</ul>
+		</div>
+	</template>
+	
+	<script src="script.js"></script>
+</dom-module>

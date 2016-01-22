@@ -46,15 +46,15 @@
 // ICONOGRAPHY
 
 .clab {
-  font-size: 24px;
+  /* font-size: 24px; */
   /* vertical-align: middle; */
 
   &.icon-medium {
-    font-size: 36px;
+    /* font-size: 36px; */
   }
 
   &.icon-big {
-    font-size: 48px;
+    /* font-size: 48px; */
   }
 }
 
@@ -231,6 +231,7 @@ article {
 
 p {
   margin: 0 0 $base-spacing;
+  @include full;
 }
 // Truncate
 
@@ -260,11 +261,6 @@ p {
 }
 
 
-
-
-
-
-
 // TYPOGRAPHY
 
 h1,
@@ -279,6 +275,10 @@ h6 {
   margin-top: 0;
   font-weight: $normal-weight;
   @include full;
+
+  &.no-spacing-title {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -302,16 +302,21 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.5;
 }
 
 h3 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+h4 {
   font-size: $medium-font-size;
   font-weight: $semibold-weight;
 }
 
-h4 {
+h5 {
   font-size: $small-font-size;
 }
 
@@ -322,15 +327,15 @@ h4 {
 .label {
   padding: $smaller-spacing/2 $small-spacing;
   @include border-radius(2px);
-  background: $dark-gray;
-  border: 1px solid $dark-gray;
+  background: $default-color;
+  border: 1px solid $default-color;
   font-size: 0.7em;
   color: #FFFFFF;
   display: inline-block;
 
   .counter {
     background: #FFFFFF;
-    color: $dark-gray;
+    color: $default-color;
     padding: 0 $smaller-spacing;
     @include border-radius(10px);
     margin-left: 5px;
@@ -338,19 +343,19 @@ h4 {
 
   &.empty {
     background-color: transparent;
-    color: $dark-gray;
-    border: 1px solid $dark-gray;
+    color: $default-color;
+    border: 1px solid $default-color;
 
     .counter {
-      background-color: $dark-gray;
+      background-color: $default-color;
       color: #FFFFFF;
     }
 
     .remove {
-      color: rgba($dark-gray, 0.6);
+      color: rgba($default-color, 0.6);
 
       &:hover {
-        color: $dark-gray;
+        color: $default-color;
       }
     }
   }
@@ -490,11 +495,13 @@ th {
   text-align: left;
   border-bottom: 1px solid $dark-gray;
   padding: $small-spacing;
+  font-weight: $bold-weight;
 }
 
 td {
   border-bottom: 1px solid $light-gray;
   padding: $small-spacing $small-spacing;
+  vertical-align: top;
 }
 
 .striped-table {
@@ -520,6 +527,34 @@ td {
 
 // ALERTS
 
+// fixed alerts
+.alerts-wrapper {
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  .alert {
+    margin: 0;
+    padding: $base-spacing;
+    @include full;
+
+    p {
+      margin: 0;
+      text-align: center;
+    }
+
+    @each $type, $color in $default-status {
+      &.#{$type} {
+        background: nth($color, 1);
+        color: nth($color, 2);
+      }
+    }
+  }
+}
+// end fixed alerts
+
 .alert {
   padding: $base-spacing;
   position: relative;
@@ -538,7 +573,7 @@ td {
     right: 10px;
     cursor: pointer;
     font-size: 13px;
-
+ 
     .clab {
       font-size: 13px;
     }
@@ -597,6 +632,11 @@ td {
           background: nth($color, 1);
           color: nth($color, 2);
         }
+      }
+
+      &.fixed {
+        background: nth($color, 1);
+        color: nth($color, 2);
       }
     }
   }
@@ -698,15 +738,16 @@ td {
 // CARDS
 
 .card {
-  @extend .depth-1;
+  /* @extend .depth-1; */
   @include clearfix;
   @include full;
-  @extend .hover-effect;
+  /* @extend .hover-effect; */
   @include border-radius(0 0 3px 3px);
   background: #FFFFFF;
   margin-bottom: $base-spacing;
   position: relative;
   overflow: initial;
+  border: 1px solid $light-gray;
 
   &.dummy {
     .card-title,
@@ -895,6 +936,10 @@ td {
   margin-top: $base-spacing;
   @include full;
 
+  .clab {
+    font-size: 10px;
+  }
+
   li {
     color: $disabled-color;
     display: inline;
@@ -911,7 +956,7 @@ td {
     }
 
     a:hover {
-      color: $secondary-color;
+      color: $primary-color;
     }
 
     &.first {
@@ -925,7 +970,7 @@ td {
     &.active {
 
       a {
-        background: $secondary-color;
+        background: $medium-gray;
         color: #FFFFFF;
       }
     }
@@ -1002,7 +1047,7 @@ td {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: $overlay-color;
   z-index: 10;
   display: table;
   height: 100%;
@@ -1012,7 +1057,7 @@ td {
 
 .modal-wrapper {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: top;
   text-align: center;
   padding: $base-spacing;
 }
@@ -1020,9 +1065,10 @@ td {
 
 .modal {
   @extend .card;
-  background: $base-background-color;
+  /* background: $base-background-color; */
+  background: transparent;
   text-align: left;
-  @include single-box-shadow(0, 2px, 7px, 5px, rgba(0,0,0,0.22));
+  /* @include single-box-shadow(0, 2px, 7px, 5px, rgba(0,0,0,0.22)); */
   color: $dark-gray;
   width: 100%;
   max-height: 100%;
@@ -1031,18 +1077,22 @@ td {
   overflow: auto;
   float: none;
   margin-top: $base-spacing;
+  border: 0;
 
   .actions {
     text-align: right;
   }
 
   .modal-title {
-    @extend .card-title;
+    @include full;
+    padding: $base-spacing $base-spacing 0;
+    @extend h2;
+    margin: 0;
   }
 
   .modal-body {
     @extend .card-body;
-    max-height: 500px;
+    /* max-height: 500px; */
     overflow: auto;
   }
 
@@ -1116,7 +1166,7 @@ td {
 
   >ul>li, {
     display: inline-block;
-    font-size: 16px;
+    font-size: $base-font-size;
   }
 
   .ui-widget-content,
@@ -1163,13 +1213,13 @@ td {
       padding: $smaller-spacing $small-spacing;
 
       &:hover {
-        color: $secondary-color;
+        color: $primary-color;
       }
     }
 
     &.active a {
-      background: $secondary-color;
-      color: $secondary-text-color;
+      background: $primary-color;
+      color: $primary-text-color;
       @include single-box-shadow(0, 0, 0, 0, $primary-color);
       padding: $smaller-spacing $small-spacing;
     }
@@ -1842,6 +1892,10 @@ footer {
 
     img {
       @include full;
+    }
+
+    &+.description {
+      padding-left: $base-spacing;
     }
   }
 

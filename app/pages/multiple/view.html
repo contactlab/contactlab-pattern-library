@@ -1,0 +1,143 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="page-multiple">
+	<style></style>
+	
+	<template>
+		<div class="wrapper">
+			<h1>UI Components</h1>
+			<inner-menu-clab></inner-menu-clab>
+
+			<div class="content">
+				<h2>Multiple</h2>
+				<section>
+					<div class="component-example">
+						<article>
+							<multiple-clab label="Select multiple options" options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]' max-in-view="5">This is a note</multiple-clab>
+						</article>
+					</div>
+					<div class="component-specs">
+						<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;multiple-clab label="Select multiple options" options='...'&gt;Here goes the note&lt;/multiple-clab&gt;</code></pre>
+								</div>
+							</div>
+							<div class="tab-content">
+								<table class="striped-table">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>label</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>name</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>multiple select</td>
+										</tr>
+										<tr>
+											<td>type</td>
+											<td>string</td>
+											<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+											<td>success</td>
+										</tr>
+										<tr>
+											<td>disabled</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+										<tr>
+											<td>options</td>
+											<td>array</td>
+											<td>
+												[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, ...]
+											</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>options-fn</td>
+											<td>function</td>
+											<td>a function returning a Javascript promise that returns the options array</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>url</td>
+											<td>string</td>
+											<td>
+												Url to fetch the options from
+											</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>selected</td>
+											<td>object</td>
+											<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}]</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>max-in-view</td>
+											<td>number</td>
+											<td>max rows in view when list is open and scrollable</td>
+											<td>4</td>
+										</tr>
+										<tr>
+											<td>note-type</td>
+											<td>string</td>
+											<td>optional additional class for the note</td>
+											<td>none</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="tab-content">
+								<table class="striped-table">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Emitted when</th>
+											<th>Custom data</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>change</td>
+											<td>When a new value is selected</td>
+											<td><ul>
+												<li><b>selected:</b> the object representing the new value that has been selected</li>
+											</ul></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+			</div>
+		</div>
+	</template>
+
+	<script>
+
+		Polymer({
+			is:'page-multiple',
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
+		});
+
+	</script>
+</dom-module>

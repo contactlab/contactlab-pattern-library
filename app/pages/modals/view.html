@@ -4,30 +4,47 @@
 	<style></style>
 	
 	<template>
-		
-		<div class="component-intro">
-			<div class="category">UI components</div>
-			<h1>Modals</h1>
-		</div>
-		<div class="content">
-			<div class="component-description">
-				Modal dialog that displays additional functionality without leaving the current page.
-			</div>
-			<section>
-				<div class="component-example">
-					<button-clab id="openModal">
-						Open modal
-					</button-clab>
-					<modal-clab title="Dummy modal" primary="Confirm" secondary="Cancel">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo iste rerum ea ipsam, sequi explicabo, et officiis maxime adipisci! Aliquid labore unde eum consequatur mollitia similique ducimus, dolor adipisci reiciendis?</p>
-					</modal-clab>
+		<div class="wrapper">
+			<h1>UI Components</h1>
+			<inner-menu-clab></inner-menu-clab>
+			
+			<div class="content">
+				<h2>Modals</h2>
+				<div class="component-description">
+					Modal dialog that displays additional functionality without leaving the current page.
 				</div>
-				<div class="component-specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;div class=&quot;modal-overlay&quot;&gt;
+				<section>
+					<div class="component-example">
+						<article>
+							<button-clab id="open1" type="primary" appearance="full">
+								Open modal with text content
+							</button-clab>
+							<modal-clab id="modal1" title="Dummy modal" primary="Confirm" secondary="Cancel" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo iste rerum ea ipsam, sequi explicabo, et officiis maxime adipisci! Aliquid labore unde eum consequatur mollitia similique ducimus, dolor adipisci reiciendis?">
+							</modal-clab>
+						</article>
+
+						<article>
+							<button-clab id="open2" type="secondary" appearance="full">
+								Open modal with HTML content
+							</button-clab>
+							<modal-clab id="modal2" title="Dummy modal" primary="Confirm" secondary="Cancel">
+								<h2>Some HTML...</h2>
+								<hr>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo iste rerum ea ipsam, sequi explicabo, et officiis maxime adipisci! Aliquid labore unde eum consequatur mollitia similique ducimus, dolor adipisci reiciendis?</p>
+								<ul>
+									<li>ksbdfkbsdf</li>
+									<li>sdfbgsdfgsdfg</li>
+									<li>sdfgsdfgsdfg</li>
+								</ul>
+							</modal-clab>
+						</article>
+					</div>
+					<div class="component-specs">
+						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+	<pre><code class="html">&lt;div class=&quot;modal-overlay&quot;&gt;
 &#x9;&lt;div class=&quot;modal-wrapper&quot;&gt;
 &#x9;&#x9;&lt;div class=&quot;modal&quot;&gt;
 &#x9;&#x9;&#x9;&lt;div class=&quot;modal-title&quot;&gt;Modal title&lt;/div&gt;
@@ -39,80 +56,93 @@
 &#x9;&#x9;&lt;/div&gt;
 &#x9;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+								</div>
 							</div>
-						</div>
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-		<pre><code class="html">&lt;modal-clab primary="Confirm" secondary="Cancel"&gt; 
-			<i class="italic">Modal content</i> 
-		&lt;/modal-clab&gt;</code></pre>
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+			<pre><code class="html">&lt;modal-clab primary="Confirm" secondary="Cancel"&gt; 
+	<i class="italic">Modal content as html</i> 
+&lt;/modal-clab&gt;</code></pre>
+								</div>
 							</div>
-						</div>
-						<div class="tab-content">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>title</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>'Modal title'</td>
-									</tr>
-									<tr>
-										<td>visible</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
-									</tr>
-									<tr>
-										<td>primary</td>
-										<td>string</td>
-										<td>text for the primary button</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>secondary</td>
-										<td>string</td>
-										<td>text for the secondary button</td>
-										<td>none</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="tab-content">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Emitted when</th>
-										<th>Custom data</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>modal-primary</td>
-										<td>Click on the primary button</td>
-										<td>N/A</td>
-									</tr>
-									<tr>
-										<td>modal-secondary</td>
-										<td>Click on the secondary button</td>
-										<td>N/A</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
-			</section>
+							<div class="tab-content">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Type</th>
+											<th>Values</th>
+											<th>Default</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>title</td>
+											<td>string</td>
+											<td>any valid string</td>
+											<td>'Modal title'</td>
+										</tr>
+										<tr>
+											<td>visible</td>
+											<td>boolean</td>
+											<td>true/false</td>
+											<td>false</td>
+										</tr>
+										<tr>
+											<td>primary</td>
+											<td>string</td>
+											<td>text for the primary button</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>secondary</td>
+											<td>string</td>
+											<td>text for the secondary button</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>content</td>
+											<td>string</td>
+											<td>To add content as simple text</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>max-width</td>
+											<td>string</td>
+											<td>max modal window width</td>
+											<td>500px</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="tab-content">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Emitted when</th>
+											<th>Custom data</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>modal-primary</td>
+											<td>Click on the primary button</td>
+											<td>N/A</td>
+										</tr>
+										<tr>
+											<td>modal-secondary</td>
+											<td>Click on the secondary button</td>
+											<td>N/A</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</tabs-clab>
+					</div>
+				</section>
+			</div>
 		</div>
 	</template>
 
@@ -122,20 +152,27 @@
 			is:'page-modals',
 			behaviors: [ClipboardBehav],
 			attached:function(){
-				var modal = document.querySelector('modal-clab');
+				this._highlightCode();
 
-				document.querySelector('#openModal').addEventListener('click',function(){
-					modal.visible = true;
+				document.querySelector('#open1').addEventListener('click',function(){
+					document.querySelector('#modal1').visible = true;
 				});
-
-				modal.addEventListener('modal-primary',function(){
-					alert('Clicked');
+				document.querySelector('#open2').addEventListener('click',function(){
+					document.querySelector('#modal2').visible = true;
 				});
+				
+				var modals = document.querySelectorAll('modal-clab');
+				Array.prototype.map.call(modals, function(modal){
+					modal.addEventListener('modal-primary',function(){
+						alert('Clicked');
+					});
 
-				modal.addEventListener('modal-secondary',function(){
-					modal.visible = false;
+					modal.addEventListener('modal-secondary',function(){
+						modal.visible = false;
+					});
 				});
 			}
+				
 		});
 
 	</script>

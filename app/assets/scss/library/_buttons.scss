@@ -4,14 +4,18 @@ button:disabled {
 
 %btn-style {
   margin: 0 3px;
-  padding: $small-spacing $base-spacing;
+  padding: 9px 20px;
   cursor: pointer;
   background: transparent;
   color: $dark-gray;
-  border: 1px solid $dark-gray;
+  border: 1px solid $default-color;
   font-size: $base-font-size;
   font-family: $base-font-family;
-  @extend .faster-transition;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: center;
+  min-width: 100px;
 
   &:first-of-type {
     margin-left: 0;
@@ -40,54 +44,56 @@ button:disabled {
 
 .btn {
   @extend %btn-style;
-  line-height: 1;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
+  background-color: $default-color;
+  color: #FFFFFF;
+  border: 0;
+  border-bottom: 1px solid darken($default-color, 10%);
+  padding-top: 10px;
 
   &.block {
     @include full;
   }
 
   &:hover {
-    border-color: lighten($dark-gray, 10%);
-    color: lighten($dark-gray, 10%);
+    background-color: lighten($default-color, 3%);
+    color: #FFFFFF;
   }
 
   &:disabled {
-    border-color: $disabled-color !important;
-    color: $disabled-color !important;
-    background-color: transparent;
+    color: #FFFFFF !important; 
+    background-color: $disabled-color !important;
+    border-bottom-color: darken($disabled-color, 10%) !important;
+    cursor: not-allowed;
   }
 
   &:active,
   &.active {
-    border-color: $dark-gray;
     color: #FFFFFF;
-    background-color: $dark-gray;
-    @extend .faster-transition;
+    background-color: darken($default-color, 3%);
+    border-bottom: 0;
+    margin-top: 1px;
   }
 
   @each $type, $color in $default-status {
     &.#{$type} {
-      border-color: nth($color, 1);
-      color: nth($color, 1);
+      border-bottom-color: darken(nth($color, 1), 10%);
+      background-color: nth($color, 1);
+      color: nth($color, 2);
 
       &:hover {
-        border-color: lighten(nth($color, 1), 10%);
-        color: lighten(nth($color, 1), 10%);
+        background-color: lighten(nth($color, 1), 3%);
+        color: nth($color, 2);
       }
 
       &:focus {
-        background-color: $color;
+        background-color: nth($color, 1);
       }
 
       &:active,
       &.active {
-        border-color: nth($color, 1);
+        border-bottom: 0;
         color: nth($color, 2);
-        background-color: nth($color, 1);
-        @extend .faster-transition;
+        background-color: darken(nth($color, 1), 3%);
       }
     }
   }
@@ -97,17 +103,14 @@ button:disabled {
 
 .btn.flat {
   @extend %btn-style;
-  border: 1px solid transparent;
+  border-color: transparent;
   background: transparent;
-  color: $dark-gray;
-  line-height: 1;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
+  color: $default-color;
+  padding-top: 10px;
 
   &:active,
   &.active {
-    background: $dark-gray;
+    background: $default-color;
     color: #FFFFFF;
   }
 
@@ -140,143 +143,62 @@ button:disabled {
   }
 }
 
-// FULL BUTTONS
+// EMPTY BUTTONS
 
-.btn.full {
+.btn.empty {
   @extend %btn-style;
-  line-height: 1;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  background-color: $dark-gray;
-  color: #FFFFFF;
+  background-color: transparent;
+  color: $default-color;
+  border: 1px solid $default-color;
 
   &.block {
     @include full;
   }
 
   &:hover {
-    border-color: lighten($dark-gray, 5%);
-    background-color: lighten($dark-gray, 5%);
-    color: #FFFFFF;
+    background: transparent;
+    border-color: lighten($default-color, 3%);
+    color: lighten($default-color, 3%);
   }
 
   &:disabled {
+    background: transparent !important;
+    color: $disabled-color !important; 
     border-color: $disabled-color !important;
-    color: #FFFFFF !important; 
-    background-color: $disabled-color !important;
     cursor: not-allowed;
   }
 
   &:active,
   &.active {
-    border-color: darken($dark-gray, 5%);
     color: #FFFFFF;
-    background-color: darken($dark-gray, 5%);
+    background-color: darken($default-color, 3%);
+    border-bottom: 0;
   }
 
   @each $type, $color in $default-status {
     &.#{$type} {
       border-color: nth($color, 1);
-      background-color: nth($color, 1);
-      color: nth($color, 2);
+      color: nth($color, 1);
 
       &:hover {
-        border-color: lighten(nth($color, 1), 5%);
-        background-color: lighten(nth($color, 1), 5%);
-        color: nth($color, 2);
+        border-color: lighten(nth($color, 1), 3%);
+        border-color: lighten(nth($color, 1), 3%);
       }
 
       &:focus {
-        background-color: nth($color, 1);
+        background: transparent;
+        border-color: nth($color, 1);
       }
 
       &:active,
       &.active {
-        border-color: darken(nth($color, 1), 5%);
         color: nth($color, 2);
-        background-color: darken(nth($color, 1), 5%);
+        background-color: darken(nth($color, 1), 3%);
       }
     }
   }
 }
 
-
-// FLOATING BUTTONS
-
-.floating-button {
-  width: 56px;
-  height: 56px;
-  @include border-radius(28px);
-  line-height: 56px;
-  text-align: center;
-  font-size: 24px;
-  @include single-box-shadow(0, 2px, 7px, 0, rgba(0,0,0,0.22));
-  cursor: pointer;
-  display: inline-block;
-  border: 0;
-  @extend .faster-transition;
-
-  @each $type, $color in $default-status {
-    &.#{$type} {
-      background-color: nth($color, 1);
-      color: nth($color, 2);
-
-      &:hover {
-        background-color: lighten(nth($color, 1), 5%);
-      }
-
-      &:focus {
-        background-color: nth($color, 1);
-      }
-
-      &:active {
-        background-color: darken(nth($color, 1), 5%);
-        @extend .faster-transition;
-      }
-
-      a {
-        color: nth($color, 2);
-      }
-    }
-  }
-
-  i {
-    line-height: 56px;
-  }
-
-  &.bottom-right {
-    bottom: -28px;
-    right: $base-spacing;
-    position: absolute;
-  }
-
-  &.top-right {
-    top: -28px;
-    right: $base-spacing;
-    position: absolute;
-  }
-
-  &.small {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-
-    i {
-      line-height: 40px;
-      font-size: 20px;
-    }
-
-    &.top-right {
-      top: -20px;
-    }
-
-    &.bottom-right {
-      bottom: -20px;
-    }
-  }
-}
 
 // BUTTONS GROUP
 
@@ -284,6 +206,10 @@ button:disabled {
   
   &.small .btn {
     @extend .small;
+
+    &.full {
+      border-top: 1px solid $medium-gray;
+    }
   }
 
   .group-item {
@@ -294,18 +220,26 @@ button:disabled {
     }
 
     .btn {
+      @extend .btn.empty;
       float: left;
       margin: 0;
       border-right: 0;
       border-color: $medium-gray;
+      min-width: 40px;
+
+      &:hover {
+        border-color: $medium-gray;
+      }
 
       &:active {
         background-color: shade($medium-gray, 10);
+        border-bottom: 1px solid shade($medium-gray, 10);
       }
 
       &.full {
         background-color: $medium-gray;
         border-color: $medium-gray;
+        color: #FFFFFF;
       }
       
     }
@@ -333,8 +267,11 @@ button:disabled {
             background-color: nth($color, 1);
             border-color: nth($color, 1);
           }
-          
         }
+      }
+
+      &.small .btn.full {
+        border-top: 1px solid nth($color, 1);
       }
 
       

@@ -16,11 +16,11 @@ $fa-font-path: "../bower/font-awesome/fonts";
 @import 'compass';
 @import "library/variables";
 @import "library/mixins";  
+@import "library/layout"; 
 @import "library/pattern";
 @import "library/forms"; 
-@import "library/buttons";
-@import "library/layout"; 
-
+@import "library/_buttons";
+ 
 
 
 // COVER
@@ -128,7 +128,7 @@ $fa-font-path: "../bower/font-awesome/fonts";
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   @extend .depth-1;
-  z-index: 3;
+  z-index: 15;
 }
 
 
@@ -184,7 +184,8 @@ main {
 }
 
 .component-specs {
-	.tab-content {
+	.tab-content,
+	.code-snippet {
 		background-color: #FFFFFF;
 		border: 1px solid $light-gray;
 		border-top: 0;
@@ -326,6 +327,14 @@ main {
 		@include gallery(6);
 	}
 
+	.card-actions {
+		font-size: 0;
+		img {
+			width: 25px;
+			margin-left: $smaller-spacing;
+		}
+	}
+
 	figure {
 		height: 100px;
 
@@ -333,48 +342,24 @@ main {
 			background-color: $primary-color;
 		}
 
-		&.corporate-secondary {
-			background-color: $secondary-color;
-		}
-
 		&.contactplan-primary {
-			background-color: $contactplan-primary-color;
-		}
-
-		&.contactplan-secondary {
-			background-color: $contactplan-secondary-color;
+			background-color: $contactplan-color;
 		}
 
 		&.contacthub-primary {
-			background-color: $contacthub-primary-color;
-		}
-
-		&.contacthub-secondary {
-			background-color: $contacthub-secondary-color;
+			background-color: $contacthub-color;
 		}
 
 		&.contactsend-primary {
-			background-color: $contactsend-primary-color;
-		}
-
-		&.contactsend-secondary {
-			background-color: $contactsend-secondary-color;
+			background-color: $contactsend-color;
 		}
 
 		&.contactscore-primary {
-			background-color: $contactscore-primary-color;
-		}
-
-		&.contactscore-secondary {
-			background-color: $contactscore-secondary-color;
+			background-color: $contactscore-color;
 		}
 
 		&.contactanalytics-primary {
-			background-color: $contactanalytics-primary-color;
-		}
-
-		&.contactanalytics-secondary {
-			background-color: $contactanalytics-secondary-color;
+			background-color: $contactanalytics-color;
 		}
 
 		@each $type, $color in $default-status {
@@ -493,6 +478,7 @@ main {
 
 		.clab {
 			vertical-align: sub;
+			font-size: 24px;
 			margin-right: 5px;
 		}
 	}

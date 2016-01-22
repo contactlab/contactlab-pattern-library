@@ -10,19 +10,22 @@ class LibraryClab {
 	}
 
 	attached(){
-		this.querySelector('menu-clab').menu = AppMenu;
-
-		var n = document.querySelectorAll('pre code').length;
-		n ? hljs.highlightBlock(document.querySelector('pre code')) : null;
-		Array.from(document.querySelectorAll('.html')).forEach((el) => {
-			hljs.highlightBlock(el);
+		var menu=this.querySelector('menu-clab');
+		menu.menu = AppMenu;
+		menu.addEventListener('subchange', (evt)=>{
+			this.submenu=evt.detail.links;
+			this.submenu.map(item=>{
+				if(item.open!=undefined) delete item.open;
+			});
+			this.async(()=>{
+				this.querySelector('inner-menu-clab').menu=this.submenu;
+			},100);
 		});
 
 		this.fire('libraryLoaded');
 	}
 
 	_pageChanged(){
-		//console.log(this.page);
 		window.scroll(0,0);
 	}
 

@@ -1,5 +1,6 @@
 textarea {
   resize: vertical;
+  height: 150px !important;
 }
 
 input:focus,
@@ -11,7 +12,6 @@ input[type="submit"],
 input[type="reset"] {
   width: auto;
 }
-
 
 .input-icon-wrapper {
     @include full;
@@ -38,14 +38,23 @@ input[type="reset"] {
 
 // INPUT STYLE
 
+.help-tips {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: $smaller-spacing;
+  font-size: 14px;
 
+  .clab {
+    font-size: 14px;
+  }
+}
 
 label {
   @include full;
   font-weight: $bold-weight;
   font-size: $small-font-size;
-  padding-bottom: $smaller-spacing;
-  line-height: 1;
+  padding-bottom: 7px;
+  line-height: 14px;
   text-align: left;
 
   &.disabled {
@@ -72,7 +81,8 @@ label {
   }
 }
 
-.input-note {
+.input-note,
+.note-clab {
   @include full;
   font-size: $small-font-size;
 
@@ -81,6 +91,10 @@ label {
       color: nth($color, 1);
     }
   }
+}
+
+.no-label-input {
+  margin-top: 20px;
 }
 
 input[type="color"],
@@ -326,8 +340,16 @@ input[type=radio] {
 
   + label {
     font-weight: normal;
-    font-size: 1rem;
+    font-size: $base-font-size;
     line-height: normal;
+
+    &.inline-checkbox,
+    &.inline-radio {
+      float: left;
+      width: auto;
+      clear: none;
+      margin-right: $base-spacing;
+    }
   }
 
   + label:before {
@@ -387,12 +409,15 @@ h2 + .form-row {
 
 // FILE
 
-input[type="file"] {
-  display: none;
+.input-wrapper {
+  input[type="file"] {
+    display: none;
+  }
 }
 
 // MULTIPLE SELECT
-select[multiple] {
+select[multiple],
+ol.multiple-clab {
     @include full;
     background-color: rgba(255,255,255,0.6);
     border: 0;
@@ -400,13 +425,31 @@ select[multiple] {
     padding: $smaller-spacing 0;
     font-size: $base-font-size;
     @extend .fast-transition;
+    margin-bottom: 0;
+
+    li {
+      padding: $smaller-spacing;
+      cursor: pointer;
+
+      &.selected {
+        background-color: $light-gray;
+        color: $primary-color;
+      }
+    }
 }
 
 
 // ELEKTI
-.elekti-wrapper {
+.elekti-wrapper,
+.options-list-wrapper {
   @include full;
   position: relative;
+
+  .value_wrapper {
+    @extend input[type="text"];
+    cursor: pointer;
+    text-align:left;
+  }
 
   &:after {
     font-family: 'contactlab-icons';
@@ -437,7 +480,8 @@ select[multiple] {
   .filter-hidden {
     opacity: .1;
   }
-  .js-users-list{
+  .js-users-list,
+  .options-list{
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -447,11 +491,12 @@ select[multiple] {
     overflow: auto;
     @extend .fast-transition;
     background-color: #FFFFFF;
+    display:none;
 
     li,
     .noResults {
       background-color: white;
-      display: block;
+      display: none;
       padding: 10px;
       margin: 0;
       cursor: pointer;
@@ -459,10 +504,23 @@ select[multiple] {
       &.hide {
         display: none;
       }
+      &.show {
+        display: block;
+      }
 
       &.selected {
         color: $primary-color;
       }
+    }
+
+    &.hidden{
+      display: block;
+      opacity: 0;
+    }
+    
+    &.active{
+      display: block;
+      opacity: 1;
     }
 
     &.visible {
@@ -511,5 +569,97 @@ select[multiple] {
 
 // NEW
 
+.selected-values {
+  @include full;
+  margin-top: $small-spacing;
 
-  
+  span {
+    line-height: normal !important;
+    margin-bottom: $smaller-spacing;
+  }
+}
+
+.form-row {
+  @include full;
+  margin-bottom: $base-spacing;
+
+  .label-container {
+    @extend label;
+    @include span(3);
+    text-align: right;
+    padding: 0;
+    display: table;
+    height: 34px;
+    vertical-align: middle;
+
+    span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .input-container {
+    @include span(9 last);
+    position: relative;
+
+    .full-width {
+      @include full; 
+    }
+
+    .half-width {
+      @include span(6);
+    }
+
+    .one-third-width {
+      @include span(4);
+    }
+
+    .two-third-width {
+      @include span(8);
+    }
+
+    .one-fourth-width {
+      @include span(3);
+    }
+
+    .one-fifth-width {
+      @include span(2);
+    }
+
+    .full-width,
+    .half-width,
+    .one-third-width,
+    .two-third-width,
+    .one-fourth-width,
+    .one-fifth-width {
+      display: table;
+      &.last {
+        @include last;
+      }
+
+      input[type=checkbox],
+      input[type=checkbox] + label,
+      input[type=radio],
+      input[type=radio] + label {
+        margin-top: 9px;
+      }
+
+      &.label-container {
+        text-align: right;
+        padding: 0;
+        display: table;
+        height: 34px;
+        vertical-align: middle;
+
+        span {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+
+      span {
+        line-height: 34px;
+      }
+    }
+  }
+}
