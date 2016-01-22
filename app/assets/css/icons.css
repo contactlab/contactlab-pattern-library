@@ -23,7 +23,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-
+.clab-icon-sign-brand:before {
+	content: "\e900";
+}
 .clab-icon-sign-design:before {
 	content: "\e63f";
 }

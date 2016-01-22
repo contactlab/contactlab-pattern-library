@@ -1,0 +1,84 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="page-lists">
+	<style></style>
+	
+	<template>
+		<div class="component-intro">
+			<div class="category">UI components</div>
+			<h1>Lists</h1>
+		</div>
+		<div class="content" id="lists">
+			<section>
+				<div class="component-example">
+					<ol>
+						<li>Lorem ipsum dolor.</li>
+						<li>Deserunt, nam enim.</li>
+						<li>Vel, expedita, fuga.</li>
+						<li>Possimus iusto, repellat!</li>
+						<li>Possimus, ratione, officia!</li>
+					</ol>
+					<ol class="default">
+						<li>Lorem ipsum dolor.</li>
+						<li>Deserunt, nam enim.</li>
+						<li>Vel, expedita, fuga.</li>
+						<li>Possimus iusto, repellat!</li>
+						<li>Possimus, ratione, officia!</li>
+					</ol>
+					<ul class="default">
+						<li>Lorem ipsum dulor.</li>
+						<li>Deserunt, nam enim.</li>
+						<li>Vel, expedita, fuga.</li>
+						<li>Possimus iusto, repellat!</li>
+						<li>Possimus, ratione, officia!</li>
+					</ul>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- DEFAULT LIST --&gt;
+&lt;ol&gt;
+&#x9;&lt;li&gt;Lorem ipsum dolor.&lt;/li&gt;
+&#x9;&lt;li&gt;Deserunt, nam enim.&lt;/li&gt;
+&#x9;&lt;li&gt;Vel, expedita, fuga.&lt;/li&gt;
+&#x9;&lt;li&gt;Possimus iusto, repellat!&lt;/li&gt;
+&#x9;&lt;li&gt;Possimus, ratione, officia!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- ORDERED LIST --&gt;
+&lt;ol class=&quot;default&quot;&gt;
+&#x9;&lt;li&gt;Lorem ipsum dolor.&lt;/li&gt;
+&#x9;&lt;li&gt;Deserunt, nam enim.&lt;/li&gt;
+&#x9;&lt;li&gt;Vel, expedita, fuga.&lt;/li&gt;
+&#x9;&lt;li&gt;Possimus iusto, repellat!&lt;/li&gt;
+&#x9;&lt;li&gt;Possimus, ratione, officia!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- UNORDERED LIST --&gt;
+&lt;ul class=&quot;default&quot;&gt;
+&#x9;&lt;li&gt;Lorem ipsum dulor.&lt;/li&gt;
+&#x9;&lt;li&gt;Deserunt, nam enim.&lt;/li&gt;
+&#x9;&lt;li&gt;Vel, expedita, fuga.&lt;/li&gt;
+&#x9;&lt;li&gt;Possimus iusto, repellat!&lt;/li&gt;
+&#x9;&lt;li&gt;Possimus, ratione, officia!&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+							</div>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+		</div>
+	</template>
+
+	<script>
+
+		Polymer({
+			is:'page-lists',
+			behaviors: [ClipboardBehav]
+		});
+
+	</script>
+</dom-module>

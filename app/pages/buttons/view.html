@@ -1,0 +1,729 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="page-buttons">
+	<style></style>
+	
+	<template>
+		<div class="component-intro">
+			<div class="category">UI components</div>
+			<h1>Buttons</h1>
+		</div>
+		<div class="content">
+			<div class="component-description">
+				Buttons are used as triggers for actions. They are used in forms, toolbars, dialog footers and as stand-alone action triggers. Buttons should rarely, if ever, be used for navigation.<br/>
+				Actions are operations that are performed on objects.<br/>
+				Navigation changes the screen or view or takes you to another context in the application.
+			</div>
+
+			<!-- BOTTONE DI BASE -->
+			<section>
+				<h2 class="component-name">
+					Basic buttons
+				</h2>
+				<div class="component-example">
+					<button-clab>Button</button-clab>
+					<button-clab disabled>Button</button-clab>
+					<button-clab icon="clab clab-icon-sign">Button</button-clab>
+					<button-clab appearance="full">Button</button-clab>
+					<button-clab appearance="flat">Button</button-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre id=""><code class="html">&lt;!-- Standard button --&gt;
+&lt;button class="btn"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- disabled button --&gt;
+&lt;button class="btn" disabled&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Standard button with icon --&gt;
+&lt;button class="btn"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full button --&gt;
+&lt;button class="btn full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat button --&gt;
+&lt;button class="btn flat"&gt;content&lt;/button&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Standard button --&gt;
+&lt;button-clab&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- disabled button --&gt;
+&lt;button-clab disabled&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Standard button with icon --&gt;
+&lt;button-clab icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full button --&gt;
+&lt;button-clab appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat button --&gt;
+&lt;button-clab appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>appearance</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: bordered button
+											<br><b>'full'</b>: button filled with background color
+											<br><b>'flat'</b>: button without borders
+										</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>icon</td>
+										<td>string</td>
+										<td>any valid icon class</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>size</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: regular size button
+											<br><b>'small'</b>: smaller button</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>disabled</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+			
+
+			<!-- BOTTONI PRIMARY -->
+			<section>
+				<h2 class="component-name">
+					Primary buttons
+				</h2>
+				<div class="component-example">
+					<button-clab type="primary">Button</button-clab>
+					<button-clab type="primary"icon="clab clab-icon-sign">Button</button-clab>
+					<button-clab type="primary"appearance="full">Button</button-clab>
+					<button-clab type="primary"appearance="flat">Button</button-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Primary button --&gt;
+&lt;button class="btn primary"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Primary button with icon --&gt;
+&lt;button class="btn primary"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full primary button --&gt;
+&lt;button class="btn primary full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat primary button --&gt;
+&lt;button class="btn primary flat"&gt;content&lt;/button&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Primary button --&gt;
+&lt;button-clab type="primary"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Primary button with icon --&gt;
+&lt;button-clab type="primary" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full primary button --&gt;
+&lt;button-clab type="primary" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat primary button --&gt;
+&lt;button-clab type="primary" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>appearance</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: bordered button
+											<br><b>'full'</b>: button filled with background color
+											<br><b>'flat'</b>: button without borders
+										</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>icon</td>
+										<td>string</td>
+										<td>any valid icon class</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>size</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: regular size button
+											<br><b>'small'</b>: smaller button</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>disabled</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<!-- BOTTONI SECONDRY -->
+			<section>
+				<h2 class="component-name">
+					Secondary buttons
+				</h2>
+				<div class="component-example">
+					<button-clab type="secondary">Button</button-clab>
+					<button-clab type="secondary"icon="clab clab-icon-sign">Button</button-clab>
+					<button-clab type="secondary"appearance="full">Button</button-clab>
+					<button-clab type="secondary"appearance="flat">Button</button-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Secondary button --&gt;
+&lt;button class="btn secondary"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Secondary button with icon --&gt;
+&lt;button class="btn secondary"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full secondary button --&gt;
+&lt;button class="btn secondary full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat secondary button --&gt;
+&lt;button class="btn secondary flat"&gt;content&lt;/button&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Secondary button --&gt;
+&lt;button-clab type="secondary"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Secondary button with icon --&gt;
+&lt;button-clab type="secondary" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full secondary button --&gt;
+&lt;button-clab type="secondary" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat secondary button --&gt;
+&lt;button-clab type="secondary" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>appearance</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: bordered button
+											<br><b>'full'</b>: button filled with background color
+											<br><b>'flat'</b>: button without borders
+										</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>icon</td>
+										<td>string</td>
+										<td>any valid icon class</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>size</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: regular size button
+											<br><b>'small'</b>: smaller button</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>disabled</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<!-- BOTTONI SUCCESS -->
+			<section>
+				<h2 class="component-name">
+					Success buttons
+				</h2>
+				<div class="component-example">
+					<button-clab type="success">Button</button-clab>
+					<button-clab type="success"icon="clab clab-icon-sign">Button</button-clab>
+					<button-clab type="success"appearance="full">Button</button-clab>
+					<button-clab type="success"appearance="flat">Button</button-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Success button --&gt;
+&lt;button class="btn success"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Success button with icon --&gt;
+&lt;button class="btn success"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full success button --&gt;
+&lt;button class="btn success full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat success button --&gt;
+&lt;button class="btn success flat"&gt;content&lt;/button&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Success button --&gt;
+&lt;button-clab type="success"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Success button with icon --&gt;
+&lt;button-clab type="success" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full success button --&gt;
+&lt;button-clab type="success" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat success button --&gt;
+&lt;button-clab type="success" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>appearance</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: bordered button
+											<br><b>'full'</b>: button filled with background color
+											<br><b>'flat'</b>: button without borders
+										</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>icon</td>
+										<td>string</td>
+										<td>any valid icon class</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>size</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: regular size button
+											<br><b>'small'</b>: smaller button</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>disabled</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<!-- BOTTONI WARNING -->
+			<section>
+				<h2 class="component-name">
+					Warning buttons
+				</h2>
+				<div class="component-example">
+					<button-clab type="warning">Button</button-clab>
+					<button-clab type="warning"icon="clab clab-icon-sign">Button</button-clab>
+					<button-clab type="warning"appearance="full">Button</button-clab>
+					<button-clab type="warning"appearance="flat">Button</button-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Warning button --&gt;
+&lt;button class="btn warning"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Warning button with icon --&gt;
+&lt;button class="btn warning"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full warning button --&gt;
+&lt;button class="btn warning full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat warning button --&gt;
+&lt;button class="btn warning flat"&gt;content&lt;/button&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Warning button --&gt;
+&lt;button-clab type="warning"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Warning button with icon --&gt;
+&lt;button-clab type="warning" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full warning button --&gt;
+&lt;button-clab type="warning" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat warning button --&gt;
+&lt;button-clab type="warning" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>appearance</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: bordered button
+											<br><b>'full'</b>: button filled with background color
+											<br><b>'flat'</b>: button without borders
+										</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>icon</td>
+										<td>string</td>
+										<td>any valid icon class</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>size</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: regular size button
+											<br><b>'small'</b>: smaller button</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>disabled</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<!-- BOTTONI ERROR -->
+			<section>
+				<h2 class="component-name">
+					Error buttons
+				</h2>
+				<div class="component-example">
+					<button-clab type="error">Button</button-clab>
+					<button-clab type="error"icon="clab clab-icon-sign">Button</button-clab>
+					<button-clab type="error"appearance="full">Button</button-clab>
+					<button-clab type="error"appearance="flat">Button</button-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Error button --&gt;
+&lt;button class="btn error"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Error button with icon --&gt;
+&lt;button class="btn error"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full error button --&gt;
+&lt;button class="btn error full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat error button --&gt;
+&lt;button class="btn error flat"&gt;content&lt;/button&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Error button --&gt;
+&lt;button-clab type="error"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Error button with icon --&gt;
+&lt;button-clab type="error" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full error button --&gt;
+&lt;button-clab type="error" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat error button --&gt;
+&lt;button-clab type="error" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>appearance</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: bordered button
+											<br><b>'full'</b>: button filled with background color
+											<br><b>'flat'</b>: button without borders
+										</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>icon</td>
+										<td>string</td>
+										<td>any valid icon class</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>size</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: regular size button
+											<br><b>'small'</b>: smaller button</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>disabled</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<!-- BOTTONI INFO -->
+			<section>
+				<h2 class="component-name">
+					Info buttons
+				</h2>
+				<div class="component-example">
+					<button-clab type="info">Button</button-clab>
+					<button-clab type="info"icon="clab clab-icon-sign">Button</button-clab>
+					<button-clab type="info"appearance="full">Button</button-clab>
+					<button-clab type="info"appearance="flat">Button</button-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Info button --&gt;
+&lt;button class="btn info"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Info button with icon --&gt;
+&lt;button class="btn info"&gt;&lt;i class="clab clab-icon-sign"&gt;&lt;/i&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full info button --&gt;
+&lt;button class="btn info full"&gt;content&lt;/button&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat info button --&gt;
+&lt;button class="btn info flat"&gt;content&lt;/button&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;!-- Info button --&gt;
+&lt;button-clab type="info"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Info button with icon --&gt;
+&lt;button-clab type="info" icon="clab clab-icon-sign"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Full info button --&gt;
+&lt;button-clab type="info" appearance="full"&gt;content&lt;/button-clab&gt;</code></pre>
+
+<pre><code class="html">&lt;!-- Flat info button --&gt;
+&lt;button-clab type="info" appearance="flat"&gt;content&lt;/button-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>appearance</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: bordered button
+											<br><b>'full'</b>: button filled with background color
+											<br><b>'flat'</b>: button without borders
+										</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>icon</td>
+										<td>string</td>
+										<td>any valid icon class</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>size</td>
+										<td>string</td>
+										<td>
+											<b>none</b>: regular size button
+											<br><b>'small'</b>: smaller button</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>disabled</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+		</div>
+	</template>
+	
+	<script>
+
+		Polymer({
+			is:'page-buttons',
+			behaviors: [ClipboardBehav]
+		});
+
+	</script>
+</dom-module>

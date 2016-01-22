@@ -1,0 +1,17 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="main-clab">
+	<style></style>
+	
+	<template>	
+		<iron-pages attr-for-selected="data-route">
+			<template is="dom-if" if="[[_isPage(currentModule, 'home')]]" restamp="true">
+				<cover-clab data-route="home"></cover-clab>
+			</template>
+			<template is="dom-if" if="[[_isPage(currentModule, 'library')]]" restamp="true">
+				<library-clab data-route="library"></library-clab>
+			</template>
+		</iron-pages>
+	</template>
+	
+	<script src="script.js"></script>

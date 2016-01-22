@@ -1,4 +1,4 @@
-var AppFakeMenu = [
+var AppMenu = [
 	{
 		"label": "Design",
 		"url": "#/design",
@@ -27,6 +27,18 @@ var AppFakeMenu = [
 		"icon": "clab clab-icon-sign icon",
 		"submenu": [
 			{
+				"label": "Accordion",
+				"url": "#/ui/accordion"
+			},
+			{
+				"label": "Alerts",
+				"url": "#/ui/alerts"
+			},
+			{
+				"label": "Breadcrumb",
+				"url": "#/ui/breadcrumb"
+			},
+			{
 				"label": "Buttons",
 				"url": "#/ui/buttons"
 			},
@@ -35,68 +47,56 @@ var AppFakeMenu = [
 				"url": "#/ui/buttons-group"
 			},
 			{
-				"label": "Labels & badges",
-				"url": "#/ui/labels-badges"
-			},
-			{
-				"label": "Tables",
-				"url": "#/ui/tables"
-			},
-			{
-				"label": "Alerts",
-				"url": "#/ui/alerts"
-			},
-			{
-				"label": "Spinner",
-				"url": "#/ui/spinner"
-			},
-			{
-				"label": "Forms",
-				"url": "#/ui/forms"
-			},
-			{
-				"label": "Select",
-				"url": "#/ui/select"
+				"label": "Cards",
+				"url": "#/ui/cards"
 			},
 			{
 				"label": "Datepicker",
 				"url": "#/ui/datepicker"
 			},
 			{
-				"label": "Cards",
-				"url": "#/ui/cards"
-			},
-			{
 				"label": "Features",
 				"url": "#/ui/features"
 			},
 			{
-				"label": "Progress bars",
-				"url": "#/ui/progress-bars"
+				"label": "Forms",
+				"url": "#/ui/forms"
 			},
 			{
-				"label": "Breadcrumb",
-				"url": "#/ui/breadcrumb"
+				"label": "Labels & badges",
+				"url": "#/ui/labels-badges"
 			},
 			{
 				"label": "Lists",
 				"url": "#/ui/lists"
 			},
 			{
-				"label": "Pagination",
-				"url": "#/ui/pagination"
-			},
-			{
 				"label": "Modals",
 				"url": "#/ui/modals"
 			},
 			{
-				"label": "Tabs & pills",
-				"url": "#/ui/tabs-pills"
+				"label": "Pagination",
+				"url": "#/ui/pagination"
 			},
 			{
-				"label": "Accordion",
-				"url": "#/ui/accordion"
+				"label": "Progress bars",
+				"url": "#/ui/progress-bars"
+			},
+			{
+				"label": "Select",
+				"url": "#/ui/select"
+			},
+			{
+				"label": "Spinner",
+				"url": "#/ui/spinner"
+			},
+			{
+				"label": "Tables",
+				"url": "#/ui/tables"
+			},
+			{
+				"label": "Tabs & pills",
+				"url": "#/ui/tabs-pills"
 			},
 			{
 				"label": "Tooltips",
@@ -106,7 +106,7 @@ var AppFakeMenu = [
 	},{
 		"label": "Product brand",
 		"url": "#/product-brand",
-		"icon": "clab clab-icon-sign-resources icon",
+		"icon": "clab clab-icon-sign-brand icon",
 		"submenu": [
 			{
 				"label": "Our logo",
@@ -122,10 +122,6 @@ var AppFakeMenu = [
 		"url": "#/documentation",
 		"icon": "clab clab-icon-sign-resources icon",
 		"submenu": [
-			/*{
-				"label": "Getting started",
-				"url": "#/documentation/our-logo"
-			},*/
 			{
 				"label": "Release notes",
 				"url": "#/documentation/release-notes"

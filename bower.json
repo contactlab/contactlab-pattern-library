@@ -1,5 +1,5 @@
 {
-  "name": "project-starter-kit",
+  "name": "contactplan-pattern-library",
   "version": "1.0.0",
   "authors": [
     "ContactLab Product Team"
@@ -15,17 +15,21 @@
   "dependencies": {
     "compass": "~0.5.8",
     "font-awesome": "~4.4.0",
-    "lodash": "~3.10.1",
-    "polymer": "~1.1.3",
+    "polymer": "#^1.2.0",
     "susy": "~2.2.6",
     "zepto": "~1.1.6",
     "fetch": "~0.9.0",
     "director": "~1.2.8",
     "es6-promise": "~3.0.2",
-    "ui-components": "git@gitserver.tomatowin.local:contactlab/clab-ui-components",
-    "highlightjs": "~8.9.1"
+    "ui-components": "https://bitbucket.org/product-team/ui-components.git#develop",
+    "highlightjs": "~8.9.1",
+    "iron-pages": "PolymerElements/iron-pages#~1.0.4",
+    "clipboard": "https://github.com/lgarron/clipboard.js.git"
   },
   "devDependencies": {
     "compass-breakpoint": "breakpoint-sass#~2.6.1"
+  },
+  "resolutions": {
+    "polymer": "^1.2.0"
   }
 }

@@ -1,0 +1,147 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+<link rel="stylesheet" href="./../../assets/bower/highlightjs/styles/github.css">
+
+<link rel="import" href="../../pages/accordion/view.html">
+<link rel="import" href="../../pages/alerts/view.html">
+<link rel="import" href="../../pages/brand-book/view.html">
+<link rel="import" href="../../pages/breadcrumb/view.html">
+<link rel="import" href="../../pages/buttons/view.html">
+<link rel="import" href="../../pages/buttons-group/view.html">
+<link rel="import" href="../../pages/cards/view.html">
+<link rel="import" href="../../pages/colors/view.html">
+<link rel="import" href="../../pages/datepicker/view.html">
+<link rel="import" href="../../pages/features/view.html">
+<link rel="import" href="../../pages/forms/view.html">
+<link rel="import" href="../../pages/iconography/view.html">
+<link rel="import" href="../../pages/labels-badges/view.html">
+<link rel="import" href="../../pages/lists/view.html">
+<link rel="import" href="../../pages/modals/view.html">
+<link rel="import" href="../../pages/motion/view.html">
+<link rel="import" href="../../pages/our-logo/view.html">
+<link rel="import" href="../../pages/pagination/view.html">
+<link rel="import" href="../../pages/panels/view.html">
+<link rel="import" href="../../pages/progress-bars/view.html">
+<link rel="import" href="../../pages/select/view.html">
+<link rel="import" href="../../pages/spinner/view.html">
+<link rel="import" href="../../pages/tables/view.html">
+<link rel="import" href="../../pages/tabs-pills/view.html">
+<link rel="import" href="../../pages/toaster/view.html">
+<link rel="import" href="../../pages/tooltips/view.html">
+<link rel="import" href="../../pages/typography/view.html">
+<link rel="import" href="../../pages/release-notes/view.html">
+<link rel="import" href="../../pages/not-found/view.html">
+
+<dom-module id="library-clab">
+	<style></style>
+	
+	<template>	
+		<div id="draft-ribbon">BETA</div>
+			
+		<aside id="main-sidebar">
+			<menu-clab title-icon="clab-icon-sign" link="#/">
+				<span class="name">contact<b>lab</b></span>
+			</menu-clab>
+		</aside>
+		<!-- <header class="design">
+			<header-clab></header-clab>
+			<div id="product-switch">
+				<elekti-mer default="0" no-search label="Switch style" options='[{"label":"ContactHub", "value": 0}, {"label":"ContactPlan", "value": "1"}]' class="floating-label"></elekti-mer>
+			</div>
+		</header> -->
+		<main>
+				<template is="dom-if" if="[[_isPage(page, 'colors')]]" restamp="true">
+					<page-colors></page-colors>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'typography')]]" restamp="true">
+					<page-typography></page-typography>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'iconography')]]" restamp="true">
+					<page-iconography></page-iconography>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'motion')]]" restamp="true">
+					<page-motion></page-motion>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'buttons')]]" restamp="true">
+					<page-buttons></page-buttons>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'buttons-group')]]" restamp="true">
+					<page-buttons-group></page-buttons-group>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'labels-badges')]]" restamp="true">
+					<page-labels-badges></page-labels-badges>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'tables')]]" restamp="true">
+					<page-tables></page-tables>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'alerts')]]" restamp="true">
+					<page-alerts></page-alerts>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'panels')]]" restamp="true">
+					<page-panels></page-panels>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'spinner')]]" restamp="true">
+					<page-spinner></page-spinner>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'cards')]]" restamp="true">
+					<page-cards></page-cards>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'features')]]" restamp="true">
+					<page-features></page-features>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'breadcrumb')]]" restamp="true">
+					<page-breadcrumb></page-breadcrumb>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'lists')]]" restamp="true">
+					<page-lists></page-lists>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'forms')]]" restamp="true">
+					<page-forms></page-forms>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'select')]]" restamp="true">
+					<page-select></page-select>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'datepicker')]]" restamp="true">
+					<page-datepicker></page-datepicker>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'pagination')]]" restamp="true">
+					<page-pagination></page-pagination>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'progress-bars')]]" restamp="true">
+					<page-progress-bars></page-progress-bars>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'modals')]]" restamp="true">
+					<page-modals></page-modals>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'tabs-pills')]]" restamp="true">
+					<page-tabs-pills></page-tabs-pills>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'accordion')]]" restamp="true">
+					<page-accordion></page-accordion>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'tooltips')]]" restamp="true">
+					<page-tooltips></page-tooltips>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'toaster')]]" restamp="true">
+					<page-toaster></page-toaster>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'our-logo')]]" restamp="true">
+					<page-our-logo></page-our-logo>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'brand-book')]]" restamp="true">
+					<page-brand-book></page-brand-book>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'release-notes')]]" restamp="true">
+					<page-release-notes></page-release-notes>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'not-found')]]" restamp="true">
+					<page-not-found></page-not-found>
+				</template>
+		</main>
+	</template>
+
+	
+	<script src="./../../assets/bower/highlightjs/highlight.pack.min.js"></script>
+	<script src="./../../assets/bower/clipboard/clipboard.min.js"></script>
+	<script src="menu.js"></script>
+	<script src="script.js"></script>
+</dom-module>

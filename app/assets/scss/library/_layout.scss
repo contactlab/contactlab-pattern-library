@@ -88,7 +88,7 @@ body {
 		left: 0;
 		right: 0;
 		bottom: 40px;
-		overflow: initial;
+		overflow: auto;
 
 		.icon {
 			width: 20px;
@@ -157,7 +157,7 @@ body {
 			}
 		}
 
-		> .active:after {
+		/* > .active:after {
 			width: 0; 
 			height: 0; 
 			border-top: 8px solid transparent;
@@ -167,7 +167,7 @@ body {
 			position: absolute;
 			top: 13px;
 			right: -8px;
-		}
+		} */
 		
 		.active,
 		.open {

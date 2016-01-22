@@ -1,0 +1,646 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="page-alerts">
+	<style></style>
+	
+	<template>
+		<div class="component-intro">
+			<div class="category">UI components</div>
+			<h1>Alerts</h1>
+		</div>
+		<div class="content">
+			<div class="component-description">
+				Messages are the primary method for providing system feedback in the product user interface. Messages include notifications of various kinds: alerts, confirmations, notices, warnings, info and errors.
+			</div>
+			<section>
+				<h2 class="component-name">
+					Primary alert
+				</h2>
+				<div class="component-example">
+					<alert-clab title="Primary!" visible type="primary">
+						<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
+							Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
+			  		</alert-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;div class=&quot;alert primary &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;Primary!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+							<pre><code class="html">&lt;alert-clab title="lorem ipsum" type="primary" visible&gt; <i class="italic">content</i> &lt;/alert-clab&gt;</code></pre>
+								</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>title</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>'Title'</td>
+									</tr>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>visible</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>labels</td>
+										<td>object</td>
+										<td>
+											<b>primary</b>: any valid string
+											<br><b>secondary</b>: any valid string
+										</td>
+										<td>
+											<b>primary</b>: 'Confirm'
+											<br><b>secondary</b>: 'Cancel'
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>primary</td>
+										<td>Click on the primary (confirm) button</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>secondary</td>
+										<td>Click on the secondary (cancel) button</td>
+										<td>N/A</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="component-name">
+					Secondary alert
+				</h2>
+				<div class="component-example">
+					<alert-clab title="Secondary!" visible type="secondary">
+						<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
+							Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
+			  		</alert-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;div class=&quot;alert secondary &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;secondary!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+		<pre><code class="html">&lt;alert-clab title="lorem ipsum" type="secondary" visible&gt; <i class="italic">content</i> &lt;/alert-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>title</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>'Title'</td>
+									</tr>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>visible</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>labels</td>
+										<td>object</td>
+										<td>
+											<b>primary</b>: any valid string
+											<br><b>secondary</b>: any valid string
+										</td>
+										<td>
+											<b>primary</b>: 'Confirm'
+											<br><b>secondary</b>: 'Cancel'
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>primary</td>
+										<td>Click on the primary (confirm) button</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>secondary</td>
+										<td>Click on the secondary (cancel) button</td>
+										<td>N/A</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="component-name">
+					Success alert
+				</h2>
+				<div class="component-example">
+					<alert-clab title="Success!" visible type="success">
+						<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
+							Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
+			  		</alert-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;div class=&quot;alert success &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;success!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+		<pre><code class="html">&lt;alert-clab title="lorem ipsum" type="success" visible&gt; <i class="italic">content</i> &lt;/alert-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>title</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>'Title'</td>
+									</tr>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>visible</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>labels</td>
+										<td>object</td>
+										<td>
+											<b>primary</b>: any valid string
+											<br><b>secondary</b>: any valid string
+										</td>
+										<td>
+											<b>primary</b>: 'Confirm'
+											<br><b>secondary</b>: 'Cancel'
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>primary</td>
+										<td>Click on the primary (confirm) button</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>secondary</td>
+										<td>Click on the secondary (cancel) button</td>
+										<td>N/A</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="component-name">
+					Warning alert
+				</h2>
+				<div class="component-example">
+					<alert-clab title="Warning!" visible type="warning">
+						<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
+							Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
+			  		</alert-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;div class=&quot;alert warning &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;warning!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+		<pre><code class="html">&lt;alert-clab title="lorem ipsum" type="warning" visible&gt; <i class="italic">content</i> &lt;/alert-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>title</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>'Title'</td>
+									</tr>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>visible</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>labels</td>
+										<td>object</td>
+										<td>
+											<b>primary</b>: any valid string
+											<br><b>secondary</b>: any valid string
+										</td>
+										<td>
+											<b>primary</b>: 'Confirm'
+											<br><b>secondary</b>: 'Cancel'
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>primary</td>
+										<td>Click on the primary (confirm) button</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>secondary</td>
+										<td>Click on the secondary (cancel) button</td>
+										<td>N/A</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="component-name">
+					Error alert
+				</h2>
+				<div class="component-example">
+					<alert-clab title="Error!" visible type="error">
+						<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
+							Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
+			  		</alert-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;div class=&quot;alert error &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;error!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+		<pre><code class="html">&lt;alert-clab title="lorem ipsum" type="error" visible&gt; <i class="italic">content</i> &lt;/alert-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>title</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>'Title'</td>
+									</tr>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>visible</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>labels</td>
+										<td>object</td>
+										<td>
+											<b>primary</b>: any valid string
+											<br><b>secondary</b>: any valid string
+										</td>
+										<td>
+											<b>primary</b>: 'Confirm'
+											<br><b>secondary</b>: 'Cancel'
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>primary</td>
+										<td>Click on the primary (confirm) button</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>secondary</td>
+										<td>Click on the secondary (cancel) button</td>
+										<td>N/A</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="component-name">
+					Info alert
+				</h2>
+				<div class="component-example">
+					<alert-clab title="Info!" visible type="info">
+						<b>Lorem ipsum dolor sit amet</b> consectetur adipiscing elit. Nunc sollicitudin sit amet odio eu viverra. Donec eu ligula id odio consectetur lacinia.<br/>
+							Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
+			  		</alert-clab>
+				</div>
+				<div class="component-specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;div class=&quot;alert info &quot;&gt;
+&#x9;&lt;h3 class=&quot;&quot;&gt;info!&lt;/h3&gt;
+&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&#x9;&lt;p&gt;Content&lt;/p&gt;
+&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt; 
+&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+		<pre><code class="html">&lt;alert-clab title="lorem ipsum" type="info" visible&gt; <i class="italic">content</i> &lt;/alert-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>title</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>'Title'</td>
+									</tr>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>visible</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>labels</td>
+										<td>object</td>
+										<td>
+											<b>primary</b>: any valid string
+											<br><b>secondary</b>: any valid string
+										</td>
+										<td>
+											<b>primary</b>: 'Confirm'
+											<br><b>secondary</b>: 'Cancel'
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>primary</td>
+										<td>Click on the primary (confirm) button</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>secondary</td>
+										<td>Click on the secondary (cancel) button</td>
+										<td>N/A</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</section>
+		</div>
+
+	</template>
+
+	<script>
+
+		Polymer({
+			is:'page-alerts',
+			behaviors: [ClipboardBehav]
+		});
+
+		document.addEventListener('WebComponentsReady', function(){
+			var els = document.querySelectorAll('alert-clab');
+			function firstClick(){
+				alert('Confirm button clicked');
+			}
+			function secondClick(evt){
+				alert('Cancel button clicked');
+			}
+			for(var i = 0; i < els.length; i++){
+				els[i].addEventListener('primary',firstClick);
+				els[i].addEventListener('secondary',secondClick);
+			}
+		});
+
+	</script>
+</dom-module>

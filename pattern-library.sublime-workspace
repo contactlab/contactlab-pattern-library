@@ -1,0 +1,416 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"atelier-lakeside",
+				"atelier-lakeside.light.css"
+			],
+			[
+				"estu",
+				"atelier-estuary.light.css"
+			],
+			[
+				"atelier",
+				"atelier-dune.dark.css"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"bower",
+				"bower_components/"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 368.0,
+		"last_filter": "inst",
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"shell",
+				"Shell Exec: Open"
+			],
+			[
+				"gu",
+				"Gulp"
+			],
+			[
+				"gulp",
+				"Gulp"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"synt ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 496.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler({\"http\": \"http://192.168.242.135:8080\"})) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages"
+	],
+	"file_history":
+	[
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/toaster/toaster.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/accordion/accordion.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/features/features.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/index.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/progress-bars/progress-bars.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/forms/forms.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/bower.json",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/scss/style.scss",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/scss/library/_pattern.scss",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/css/style.scss",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/.gitignore",
+		"/C/Users/laura.santalucia/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/elekti/script.js",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/alerts/alerts.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/alert/script.es6.js",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/alert/script.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/elekti/view.html",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/elekti/script.es6.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/gulpfile.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/elekti/script.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/.gitignore",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/_css/style.css",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/message-sent.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/preview.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/channel.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/sass/style.scss",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/json/templates.json",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/email.html",
+		"/C/Users/laura.santalucia/Desktop/preview.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/css/style.css",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/contacts.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/sent.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/preview.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/customize.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/channel.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/templates.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/products.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/product.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/json/products.json",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/product-list.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/index.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/hermes.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/clienteling-ui/index.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/script.js",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/json/template.json",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/json/contacts.json",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/bower.json",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/customize.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/channel.hmtl",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/products.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/pages/home.html",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/app/components/main/routes.es6.js",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/app/components/main/script.es6.js",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/app/components/main/script.js",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/package.json",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/gulpfile.js",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/app/assets/scss/style.scss",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/app/pages/dashboard/dashboard.html",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/app/components/main/menu.es6.js",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/app/components/main/view.html",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/app/pages/error.html",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/app/utils/main.es6.js",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/app/utils/main.js",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/.gitignore",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/.babelrc",
+		"/C/Users/laura.santalucia/Work/clab-app-layout/.bowerrc",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/pagination/pagination.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/pagination/script.es6.js",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/pagination/script.js",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/radio/script.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/range/view.html",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/range/script.es6.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/range/script.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/tabs/script.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/tabs/script.es6.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/tabs/view.html",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/alert/script.es6.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/alert/script.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/alert/view.html",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/button/script.es6.js",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/wct.conf.js",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/package.json",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/node_modules/sauce-connect-launcher/package.json",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/_css/style.scss",
+		"/C/Users/laura.santalucia/Work/ng-prototype/package.json",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/products.json",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/users.json",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/product.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/user.html",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/product.json",
+		"/C/Users/laura.santalucia/Work/ng-prototype/app/user.json",
+		"/C/Users/laura.santalucia/Work/ng-prototype/bower.json",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/components/library/view.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/components/library/script.js",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/buttons/buttons.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/modals/modals.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/lists/lists.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/breadcrumb/breadcrumb.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/cards/cards.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/spinner/spinner.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/panels/panels.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/labels-badges/labels-badges.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/tables/tables.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/typography/typography.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/tooltips/tooltips.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/pages/tabs-pills/tabs-pills.html",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/calendar/script.es6.js",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/calendar/script.js",
+		"/C/Users/laura.santalucia/Work/contactlab-pattern-library/app/assets/bower/ui-components/menu-sidebar/script.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/tooltip/script.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/tooltip/script.es6.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/tooltip/view.html",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/modal/view.html",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/modal/script.es6.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/.babelrc",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/bower.json",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/menu-sidebar/script.es6.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/demo.html",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/button-group/view.html",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/button-group/script.es6.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/button/view.html",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/button/script.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/tabs - Copy/script.es6.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/tabs - Copy/script.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/spinner/script.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/spinner/script.es6.js",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/package.json",
+		"/C/Users/laura.santalucia/Work/ui-components/ui-components/starter/script.js"
+	],
+	"find":
+	{
+		"height": 73.0
+	},
+	"find_in_files":
+	{
+		"height": 157.0,
+		"where_history":
+		[
+			"C:\\Users\\laura.santalucia\\Work\\ui-components\\ui-components",
+			"C:\\Users\\laura.santalucia\\Work\\contactlab-pattern-library\\app\\components\\library",
+			"C:\\Users\\laura.santalucia\\Work\\contactlab-pattern-library",
+			"<project>",
+			"C:\\Users\\laura.santalucia\\Work\\polymer\\app\\assets\\bower\\polymer"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"input-wrapper",
+			"elekti",
+			"HEAD",
+			"liHeight",
+			"_selectElement",
+			"_computeWrapperClass",
+			"_getIndex",
+			"_setOptions",
+			"activeInput",
+			"selectElement",
+			"handleListVisibility",
+			"slideToggle",
+			"highlightedElement",
+			"searchElement",
+			"dropOnly",
+			"_viewLabel",
+			"activeInput",
+			"dashify",
+			"_searchKey",
+			"activeInput",
+			"_searchKey",
+			"activeInput",
+			"highlightedElement",
+			"update",
+			"this.input",
+			".elekti-wrapper .js-users-list",
+			"js-users-list",
+			"_setOptions",
+			"elekti",
+			"$",
+			"editable",
+			"disabled",
+			"els",
+			"example",
+			"ignore",
+			"tab 1",
+			"tab",
+			"tabs",
+			"'primary'",
+			"this.fire",
+			"hljs.initHighlightingOnLoad();",
+			".html",
+			"appearence",
+			"index",
+			"appearence",
+			"for(",
+			"scssSourcePath",
+			"indent",
+			"polymer",
+			"world"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"appearance"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 55.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.gulp_output":
+	{
+		"height": 154.0
+	},
+	"pinned_build_system": "",
+	"project": "pattern-library.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\laura.santalucia\\Work\\contactlab-pattern-library\\pattern-library.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 296.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
