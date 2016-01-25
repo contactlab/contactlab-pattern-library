@@ -16,6 +16,11 @@ var InnerMenuClab = (function () {
 			this.properties = {
 				menu: {
 					type: Array
+				},
+
+				_url: {
+					type: String,
+					observer: '_closeSubmenu'
 				}
 			};
 		}
@@ -23,6 +28,7 @@ var InnerMenuClab = (function () {
 		key: 'ready',
 		value: function ready() {
 			this.set('menu', document.querySelector('menu-clab').submenu);
+			this._url = location.hash;
 		}
 
 		/* ------------------
@@ -35,19 +41,34 @@ var InnerMenuClab = (function () {
 			var _this = this;
 
 			var i;
-			if (evt.target.tagName == 'A') {
-				i = evt.target.getAttribute('data-index');
-			} else {
-				i = evt.target.parentElement.getAttribute('data-index');
+			switch (evt.target.localName) {
+				case 'a':
+					var i = evt.target.getAttribute('data-index');
+					break;
+				case 'i':
+					var i = evt.target.parentElement.getAttribute('data-index');
+					break;
 			}
 
 			this.menu.map(function (item, n) {
 				if (item.open == undefined) _this.set('menu.' + n + '.open', false);
 				if (n == i) {
 					item.open ? _this.set('menu.' + n + '.open', false) : _this.set('menu.' + n + '.open', true);
-				} else {
-					_this.set('menu.' + n + '.open', false);
 				}
+			});
+		}
+
+		/* ------------------
+  	METHODS
+  ------------------- */
+
+	}, {
+		key: '_closeSubmenu',
+		value: function _closeSubmenu() {
+			var _this2 = this;
+
+			this.menu.map(function (item, n) {
+				if (_this2.menu[n].open) _this2.set('menu.' + n + '.open', false);
 			});
 		}
 
@@ -63,17 +84,17 @@ var InnerMenuClab = (function () {
 	}, {
 		key: '_computeActive',
 		value: function _computeActive(item) {
-			var url = location.hash;
+			this._url = location.hash;
 			var arr = [];
 
 			//se è con l'url quindi di 2° livello
-			if (item.url && url.search(item.url) > -1) arr.push('active');
+			if (item.url && this._url.search(item.url) > -1) arr.push('active');
 
 			//se è senza url quindi con 3 livelli
 			if (item.submenu) {
 				arr.push('submenu');
 				for (var i = 0; i < item.submenu.length; i++) {
-					if (url.search(item.submenu[i].url) > -1) arr.push('active');
+					if (this._url.search(item.submenu[i].url) > -1) arr.push('active');
 				}
 			}
 			return arr.join(' ');
