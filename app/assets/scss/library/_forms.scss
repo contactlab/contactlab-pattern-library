@@ -63,7 +63,7 @@ label {
 
   @each $type, $color in $default-status {
     &.#{$type} {
-        color: nth($color, 1);
+        color: nth($color, 2);
 
         + input[type="text"] {
           border-bottom-color: nth($color, 1);
@@ -73,7 +73,7 @@ label {
           }
 
           + .input-note {
-            color: nth($color, 1);
+            color: nth($color, 2);
           }
         }
 
@@ -88,7 +88,9 @@ label {
 
   @each $type, $color in $default-status {
     &.#{$type} {
-      color: nth($color, 1);
+      
+      $test: scale-lightness(nth($color, 1), -25%);
+      color: scale-saturation($test, 50%);
     }
   }
 }
@@ -135,10 +137,10 @@ textarea {
 
   @each $type, $color in $default-status {
     &.#{$type} {
-      border-bottom-color: nth($color, 1);
+      border-bottom-color: scale-saturation(nth($color, 1), 20%);
 
       &:focus {
-        @include box-shadow(nth($color, 1) 0 1px 0 0);
+        @include box-shadow(scale-saturation(nth($color, 1), 20%) 0 1px 0 0);
       }
     }
   }

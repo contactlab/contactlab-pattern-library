@@ -19,31 +19,30 @@ $base-background-color: #F0f0f0;
 $overlay-color: rgba($base-background-color, 0.97);
 $default-color: #616161;
 
-$info-color: #6ac7f1;
-$success-color: #61b769;
-$warning-color: #fd6b3c;
-$error-color: #f3594e;
+
+$base-text-color: $dark-gray;
+
+$info-color: #9edeeb;
+$info-text-color: $base-text-color;
+$success-color: #c3dfac;
+$success-text-color: $base-text-color; 
+$warning-color: #f7deab;
+$warning-text-color: $base-text-color;
+$error-color: #e1b2ba;
+$error-text-color: $base-text-color;
 $disabled-color: #C0C0C0;
 
 // product colors
+$contactlab-color: #0072bc;
 $contactplan-color: #14C04D;
 $contacthub-color: #00BCD4;
-$contactsend-color: #2C5AF5;
+$contactsend-color: #00578C;
 $contactscore-color: #FFBF02;
 $contactanalytics-color: #F9615B;
 
-
-$contactlab-color: #0072bc;
-$contacthub-color: #67c6dd;
-$smartrelay-color: #178e87;
-$hybris-color: #f7db20;
-$padiact-color: #d6951c;
-$magento-color: #ec3704; 
-
-$primary-color: #0072bc;
+$primary-color: $contactlab-color;
 $primary-color-hover:  shade($primary-color, 5%);
 $primary-text-color: #FFFFFF; 
-$secondary-text-color: #FFFFFF;
 $link-color: $primary-color;
 $link-color-hover: shade($link-color, 5%);
 
@@ -77,7 +76,6 @@ $semibold-weight: 600;
 $bold-weight: 700;
 
 // colors
-$base-text-color: $dark-gray;
 
 
 // SPACING
@@ -91,17 +89,13 @@ $larger-spacing: $base-spacing * 3;
 
 $default-status: (
   primary: ($primary-color, $primary-text-color),
-  info: ($info-color, #FFFFFF),
-  success: ($success-color, #FFFFFF),
-  warning: ($warning-color, #FFFFFF),
-  error: ($error-color, #FFFFFF)
+  info: ($info-color, $info-text-color),
+  success: ($success-color, $success-text-color),
+  warning: ($warning-color, $warning-text-color),
+  error: ($error-color, $error-text-color)
 );
 
 $product-colors: (
   contactlab: ($contactlab-color),
-  contacthub: ($contacthub-color),
-  smartrelay: ($smartrelay-color),
-  hybris: ($hybris-color),
-  padiact: ($padiact-color),
-  magento: ($magento-color)
+  contacthub: ($contacthub-color)
 );

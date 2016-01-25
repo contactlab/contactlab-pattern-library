@@ -37,7 +37,7 @@ h1 span {
 	z-index: 20;
 	@extend .slow-transition;
 
-	.clab {
+	.clab-icon {
 		@extend .slow-transition;
 	}
 
@@ -55,7 +55,7 @@ h1 span {
 		line-height: $header-height;
 		padding: 0 $base-spacing;
 
-		.clab {
+		.clab-icon {
 			vertical-align: middle;
 		}
 	}
@@ -75,7 +75,7 @@ h1 span {
 			@extend .slow-transition;
 		}
 
-		.clab { 
+		.clab-icon { 
 			font-size: 100px;
 			@extend .slow-transition;
 		}
@@ -186,7 +186,7 @@ h1 span {
 		color: $darker-gray;
 	}
 
-	.clab {
+	.clab-icon {
 		font-size: 20px; 
 	}
 }
@@ -217,7 +217,7 @@ header {
 			left: 0;
 			color: $primary-color;
 
-			.clab {
+			.clab-icon {
 				font-size: 20px;
 			}
 		}
@@ -253,12 +253,13 @@ header {
 	display: none;
 	top: 0;
 	left: 0;
+	font-size: 24px;
 
 	@include susy-breakpoint($desktop) {
 		display: block;
 	}
 
-	.clab {
+	.clab-icon {
 		vertical-align: middle;
 	}
 }
@@ -341,7 +342,7 @@ header {
 				padding: 0;
 				display: block;
 
-				.clab {
+				.clab-icon {
 					font-size: 16px;
 					vertical-align: middle;
 				}
@@ -537,7 +538,7 @@ header {
 			border: 1px solid $light-gray;
 			display: none;
 			width: auto;
-			max-height: 900px;
+			max-height: 450px;
 			overflow: auto;
 
 			@include susy-breakpoint($tablet) {
@@ -727,7 +728,7 @@ header {
 					color: $primary-color;
 				}
 
-				.clab {
+				.clab-icon {
 					font-size: 16px;
 				}
 			}
@@ -747,7 +748,7 @@ header {
 				height: 35px;
 				font-size: 35px;
 
-				.clab {
+				.clab-icon {
 					font-size: 35px;
 				}
 			} 

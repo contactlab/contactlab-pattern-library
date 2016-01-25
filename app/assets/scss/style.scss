@@ -473,12 +473,11 @@ main {
 
 #iconography {
 	.icon-example {
-		@include gallery(4);
+		@include gallery(3);
 		margin-bottom: $base-spacing;
 
-		.clab {
-			vertical-align: sub;
-			font-size: 24px;
+		.clab-icon {
+			font-size: 20px;
 			margin-right: 5px;
 		}
 	}

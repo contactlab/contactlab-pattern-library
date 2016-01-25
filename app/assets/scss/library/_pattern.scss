@@ -43,21 +43,6 @@
 }
 
 
-// ICONOGRAPHY
-
-.clab {
-  /* font-size: 24px; */
-  /* vertical-align: middle; */
-
-  &.icon-medium {
-    /* font-size: 36px; */
-  }
-
-  &.icon-big {
-    /* font-size: 48px; */
-  }
-}
-
 // SPINNER
 
 .spinner-overlay {
@@ -581,35 +566,35 @@ td {
 
   @each $type, $color in $default-status {
     &.#{$type} {
-      background: lighten(nth($color, 1), 15%);
-      color: shade(nth($color, 1), 30%);
+      background: nth($color, 1);
+      color: nth($color, 2);
 
       .close {
-        color: shade(nth($color, 1), 30%);
+        color: nth($color, 2);
 
         &:hover {
-          color: shade(nth($color, 1), 50%);
+          color: nth($color, 2);
         }
       }
 
       a {
-        color: shade(nth($color, 1), 40%);
+        color: shade(nth($color, 2), 20%);
         text-decoration: underline;
 
         &:hover {
-          color: shade(nth($color, 1), 60%);
+          color: shade(nth($color, 2), 40%);
         }
       }
 
       .btn {
         @extend %btn-style;
 
-        border: 1px solid shade(nth($color, 1), 30%) !important;
-        color: shade(nth($color, 1), 30%) !important;
+        border: 1px solid nth($color, 2) !important;
+        color: nth($color, 2) !important;
 
         &:hover {
-          border-color: shade(nth($color, 1), 15%) !important;
-          color: shade(nth($color, 1), 15%) !important;
+          border-color: lighten(nth($color, 2), 10%) !important;
+          color: lighten(nth($color, 2), 10%) !important;
         }
 
         &:focus {
@@ -617,9 +602,9 @@ td {
         }
 
         &:active {
-          border-color: nth($color, 1) !important;
-          background: nth($color, 1) !important;
-          color: nth($color, 2) !important;
+          border-color: nth($color, 2) !important;
+          background: nth($color, 2) !important;
+          color: nth($color, 1) !important;
         }
       }
 
@@ -639,11 +624,6 @@ td {
         color: nth($color, 2);
       }
     }
-  }
-
-  &.error {
-    background: lighten($error-color, 10%);
-    color: shade($error-color, 35%);
   }
 }
 
@@ -1065,10 +1045,8 @@ td {
 
 .modal {
   @extend .card;
-  /* background: $base-background-color; */
   background: transparent;
   text-align: left;
-  /* @include single-box-shadow(0, 2px, 7px, 5px, rgba(0,0,0,0.22)); */
   color: $dark-gray;
   width: 100%;
   max-height: 100%;
@@ -1092,7 +1070,6 @@ td {
 
   .modal-body {
     @extend .card-body;
-    /* max-height: 500px; */
     overflow: auto;
   }
 
@@ -1228,18 +1205,6 @@ td {
 
 
 // TOOLTIPS
-
-/* .tooltip {
-  background-color: $dark-gray;
-  display: inline-block;
-  color: #FFFFFF;
-  font-size: $small-font-size;
-  padding: $smaller-spacing;
-  line-height: 1;
-  @include border-radius(2px);
-} */
-
-
 
 .kawo-tooltip {
   background-color: $dark-gray;
@@ -1557,309 +1522,6 @@ input[type=text].slider-value {
 }
 
 
-
-// STRUCTURE
-
-
-.heading {
-  text-align: center;
-  font-size: $medium-font-size;
-  padding: $larger-spacing*1.5 $base-spacing;
-  margin-bottom: $medium-spacing;
-  color: #FFFFFF;
-  background: $primary-color none repeat center center;
-
-  h1 {
-    font-size: 2.438rem;
-    border-bottom: 0;
-    margin-bottom: $larger-spacing;
-    font-weight: 300;
-    float: none;
-
-    @include susy-breakpoint($smartphone) {
-      font-size: 2rem;
-      margin-bottom: $small-spacing;;
-
-      span {
-        display: block;
-        width: 100%;
-      }
-    }
-  }
-
-  .heading-icon {
-    margin-right: $base-spacing;
-  }
-
-  p {
-    margin: 0 auto;
-    max-width: 690px;
-    float: none;
-  }
-
-  &.internal {
-    text-align: left;
-    padding-top: $larger-spacing;
-    padding-bottom: $larger-spacing;
-
-    p {
-      max-width: 100%;
-    }
-
-    h1 {
-      margin-bottom: $medium-spacing;
-    }
-  }
-}
-
-
-
-// HEADER
-
-.fixed-header {
-  padding-top: 67px;
-
-  .header {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-  }
-}
-
-.header {
-  @include full;
-  background: $dark-gray;
-  padding: $small-spacing 0 0;
-
-  @include susy-breakpoint($tablet) {
-    padding-bottom: $small-spacing;
-  }
-
-  .logo {
-    float: left;
-    font-size: 1.8rem;
-    line-height: 1;
-    margin-top: 15px;;
-
-    a {
-      color: #FFFFFF;
-    }
-
-    img {
-      vertical-align: middle;
-    }
-  }
-
-  #mobile-menu-button {
-    display: none;
-    float: right;
-    margin-top: 20px;
-    color: #FFFFFF;
-    font-size: 1.2rem;
-    line-height: 1;
-    width: 25px;
-    text-align: right;
-
-    @include susy-breakpoint($tablet) {
-      display: block;
-    }
-  }
-
-  .main-nav {
-    float: right;
-    color: #FFFFFF;
-    padding-top: 25px;
-    text-align: right;
-
-    @include susy-breakpoint($tablet) {
-      width: 100%;
-      display: none;
-    }
-
-    > ul {
-      margin: 0;
-
-      > li {
-        display: inline-block;
-        padding: 0 $smaller-spacing 5px;
-        margin-right: $base-spacing;
-        border-bottom: 3px solid transparent;
-        position: relative;
-        float: none;
-        width: auto;
-        margin-bottom: 0;
-
-        @include susy-breakpoint($tablet) {
-          width: 100%;
-          text-align: right;
-          padding: $smaller-spacing 0;
-          border-top: 1px solid darken($dark-gray, 3);
-        }
-
-        > ul {
-          padding-left: $base-spacing;
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        &.active {
-          color: rgba(255, 255, 255, 1);
-          border-color: $primary-color;
-
-          a {
-            color: #FFFFFF;
-          }
-
-          @include susy-breakpoint($tablet) {
-            border-bottom: 0;
-            border-top-color: darken($dark-gray, 3);
-
-            a {
-              color: $primary-color;
-            }
-          }
-
-          
-        }
-
-        > ul {
-          display: none; 
-          position: absolute;
-          top: 32px;
-          left: -67px;
-          padding: $smaller-spacing 0;
-          background: $light-gray;
-          width: 200px;
-          text-align: center;
-          color: $base-text-color;
-
-          @include susy-breakpoint($tablet) {
-            position: static;
-            width: 100%;
-            text-align: right;
-            background: $dark-gray;
-
-            a {
-              color: #FFFFFF !important;
-            }
-          }
-
-          > li {
-            margin: 0;
-
-            a {
-              display: block;
-              padding: $smaller-spacing 0;
-              color: $base-text-color !important;
-
-              @include susy-breakpoint($tablet) {
-                color: #FFFFFF !important;
-              }
-
-              &:hover {
-                color: $primary-color !important;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    a {
-      color: rgba(255, 255, 255, 0.8);
-
-      
-
-      
-
-      &:hover {
-        color: rgba(255, 255, 255, 1);
-      }
-    }
-  }
-
-  .search-button {
-    float: right;
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: 25px;
-    margin-left: $base-spacing;
-    cursor: pointer;
-
-    @include susy-breakpoint($tablet) {
-      margin-top: 20px;
-      margin-right: $base-spacing;
-    }
-
-    &:hover {
-      color: rgba(255, 255, 255, 1);
-    }
-  }
-}
-
-// FOOTER
-
-footer {
-  @include full;
-  padding: $large-spacing $base-spacing $larger-spacing;
-  color: #FFFFFF;
-
-  a {
-    color: rgba(255, 255, 255, 0.8);
-
-    &:hover {
-      color: #FFFFFF;
-    }
-  }
-
-  &.site-footer {
-    background-color: $dark-gray;
-  }
-
-  &.company-footer {
-    background-color: $darker-gray;
-  }
-
-  .contacts,
-  .copyright {
-    float: left;
-  }
-
-  .footer-nav,
-  .privacy {
-    float: right;
-
-    @include susy-breakpoint($tablet) {
-      float: left;
-      margin-top: $medium-spacing;
-    }
-  }
-
-  .footer-nav ul {
-    margin: 0;
-    li {
-      display: inline-block;
-      margin-left: $base-spacing;
-
-      @include susy-breakpoint($tablet) {
-      margin-left: 0;
-      margin-right: $medium-spacing;
-    }
-    }
-  }
-
-  @include susy-breakpoint($tablet) {
-    .footer-nav,
-    .privacy,
-    .contacts,
-    .copyright {
-      @include full;
-    }
-  }
-}
-
-
 // FEATURES
 
 // basic feature
@@ -1870,12 +1532,6 @@ footer {
   &.product-index {
     padding-left: $base-spacing;
     border-left: 2px solid $light-gray;
-  }
-
-  @each $type, $color in $product-colors {
-    &.#{$type} {
-      border-color: nth($color, 1);
-    }
   }
 
   .icon {
@@ -1966,77 +1622,6 @@ footer {
     .description {
       padding: $base-spacing 0;
       @include full;
-    }
-  }
-}
-
-/* CONTENTS */
-main {
-  @include full;
-}
-
-main.with-sidebar {
-  padding-right: 220px+$base-spacing;
-
-  &.left {
-    padding-right: $base-spacing;
-    padding-left: 220px+$base-spacing;
-
-    @include susy-breakpoint($tablet) {
-      padding-left: 0;
-    }
-  }
-
-  @include susy-breakpoint($tablet) {
-    padding-right: 0;
-  }
-} 
-
-// DROPDOWN MENU
-
-.dropdown-menu {
-  position: absolute;
-  top: 30px;
-  right: 5px;
-  border: 1px solid $light-gray;
-  background: $base-background-color;
-  @include single-box-shadow(0, 2px, 5px, 0, rgba(0,0,0,0.15));
-  display: none;
-  min-width: 150px;
-  z-index: 2;
-  text-align: left;
-  white-space: nowrap;
-
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
-  }
-
-  li a{
-    padding: $smaller-spacing $small-spacing;
-    display: block;
-    @include transition(none);
-    color: $base-text-color;
-
-    &:hover {
-      background: $primary-color;
-      color: #FFFFFF;
-      @include transition(none);
-    }
-
-    .icon {
-      margin-right: $small-spacing;
-    }
-
-    &.disabled {
-      color: $disabled-color;
-      cursor: not-allowed;
-    }
-
-    &.disabled:hover {
-      color: $disabled-color;
-      background: $base-background-color;
     }
   }
 }

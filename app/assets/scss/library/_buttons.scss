@@ -91,6 +91,7 @@ button:disabled {
 
       &:active,
       &.active {
+        margin-top: 1px;
         border-bottom: 0;
         color: nth($color, 2);
         background-color: darken(nth($color, 1), 3%);
