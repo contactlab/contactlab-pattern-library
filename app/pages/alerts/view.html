@@ -4,40 +4,6 @@
 	<style></style>
 	
 	<template>
-		
-		<div class="alerts-wrapper">
-			<div class="alert primary">
-				<div class="close"><i class="fa fa-times style-scope alert-clab"></i></div>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, sit!
-				</p>
-			</div>
-			<div class="alert success">
-				<div class="close"><i class="fa fa-times style-scope alert-clab"></i></div>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, sit!
-				</p>
-			</div>
-			<div class="alert warning">
-				<div class="close"><i class="fa fa-times style-scope alert-clab"></i></div>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, sit!
-				</p>
-			</div>
-			<div class="alert error">
-				<div class="close"><i class="fa fa-times style-scope alert-clab"></i></div>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, sit!
-				</p>
-			</div>
-			<div class="alert info">
-				<div class="close"><i class="fa fa-times style-scope alert-clab"></i></div>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, sit!
-				</p>
-			</div>
-		</div>
-
 		<div class="wrapper">
 			<h1>UI Components</h1>
 			<inner-menu-clab></inner-menu-clab>
@@ -47,6 +13,17 @@
 				<div class="component-description">
 					Messages are the primary method for providing system feedback in the product user interface. Messages include notifications of various kinds: alerts, confirmations, notices, warnings, info and errors.
 				</div>
+				<section>
+					<h3 class="component-name">
+						Notification alerts
+
+						<group-clab id="notifications" on-change="_toggleNotifications">
+							<button-clab>Primary</button-clab>
+							<button-clab>Success</button-clab>
+							<button-clab>Warning</button-clab>
+						</group-clab>
+					</h3>
+				</section>
 				<section>
 					<h3 class="component-name">
 						Primary alert
@@ -579,6 +556,21 @@
 				for(var i = 0; i < els.length; i++){
 					els[i].addEventListener('primary',firstClick);
 					els[i].addEventListener('secondary',secondClick);
+				}
+
+			},
+
+			_toggleNotifications: function(evt){
+				switch(evt.detail.value){
+					case 0:
+						document.querySelector('#alert-primary').visible=true;
+						break;
+					case 1:
+						document.querySelector('#alert-success').visible=true;
+						break;
+					case 2:
+						document.querySelector('#alert-warning').visible=true;
+						break;
 				}
 			}
 		});
