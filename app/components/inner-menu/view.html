@@ -13,13 +13,13 @@
 	<template>	
 		<div class="contextual-menu">
 			<div class="mobile-nav-toggle">
-				Navigation <i class="clab-icon clab-icon-arrow-down arrow"></i>
+				Navigation <i class="clab-icon icon-arrow-down arrow"></i>
 			</div>
 			<ul>
 				<template is="dom-repeat" items="[[menu]]">
 					<li class$="[[_computeActive(item)]]" on-mouseleave="_closeSubmenu">
 						<template is="dom-if" if="[[item.submenu]]">
-							<a on-click="_handleOpen" data-index$="[[index]]">[[item.label]] <i class="clab-icon clab-icon-arrow-down arrow"></i></a>
+							<a on-click="_handleOpen" data-index$="[[index]]">[[item.label]] <i class="clab-icon icon-arrow-down arrow"></i></a>
 							<ul class$="[[_computeShow(item.open)]]">
 								<template is="dom-repeat" items="[[item.submenu]]">
 									<li class$="[[_computeActive(item)]]"><a href$="[[item.url]]">[[item.label]]</a></li>

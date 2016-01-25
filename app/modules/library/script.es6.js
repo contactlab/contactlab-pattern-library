@@ -18,7 +18,8 @@ class LibraryClab {
 				if(item.open!=undefined) delete item.open;
 			});
 			this.async(()=>{
-				this.querySelector('inner-menu-clab').menu=this.submenu;
+				var submenu =this.querySelector('inner-menu-clab');
+				if(submenu) submenu.menu=this.submenu;
 			},100);
 		});
 
