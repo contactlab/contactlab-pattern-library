@@ -17,12 +17,12 @@
 			</div>
 			<ul>
 				<template is="dom-repeat" items="[[menu]]">
-					<li class$="[[_computeActive(item)]]" on-mouseleave="_closeSubmenu">
+					<li class$="[[_computeActive(item, curUrl)]]">
 						<template is="dom-if" if="[[item.submenu]]">
 							<a on-click="_handleOpen" data-index$="[[index]]">[[item.label]] <i class="clab-icon icon-arrow-down arrow"></i></a>
 							<ul class$="[[_computeShow(item.open)]]">
 								<template is="dom-repeat" items="[[item.submenu]]">
-									<li class$="[[_computeActive(item)]]"><a href$="[[item.url]]">[[item.label]]</a></li>
+									<li class$="[[_computeActive(item, curUrl)]]"><a href$="[[item.url]]">[[item.label]]</a></li>
 								</template>
 							</ul>
 						</template>
