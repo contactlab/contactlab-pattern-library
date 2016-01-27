@@ -57,6 +57,13 @@
 		</header>
 
 		<main class="main-content">
+			<!-- INNER MENU -->
+			<div class="wrapper" style="overflow:visible;">
+				<h1>[[submenuLabel]]</h1>
+				<inner-menu-clab menu="[[submenu]]" cur-url="[[currentHash]]"></inner-menu-clab>
+			</div>
+			<!-- INNER MENU -->
+
 			<template is="dom-if" if="[[_isPage(page, 'colors')]]" restamp="true">
 				<page-colors></page-colors>
 			</template>

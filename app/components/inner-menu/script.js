@@ -17,18 +17,11 @@ var InnerMenuClab = (function () {
 				menu: {
 					type: Array
 				},
-
-				_url: {
+				curUrl: {
 					type: String,
 					observer: '_closeSubmenu'
 				}
 			};
-		}
-	}, {
-		key: 'ready',
-		value: function ready() {
-			this.set('menu', document.querySelector('menu-clab').submenu);
-			this._url = location.hash;
 		}
 
 		/* ------------------
@@ -40,6 +33,8 @@ var InnerMenuClab = (function () {
 		value: function _handleOpen(evt) {
 			var _this = this;
 
+			evt.stopPropagation();
+
 			var i;
 			switch (evt.target.localName) {
 				case 'a':
@@ -49,17 +44,27 @@ var InnerMenuClab = (function () {
 					var i = evt.target.parentElement.getAttribute('data-index');
 					break;
 			}
-
 			this.menu.map(function (item, n) {
-				if (item.open == undefined) _this.set('menu.' + n + '.open', false);
 				if (n == i) {
 					item.open ? _this.set('menu.' + n + '.open', false) : _this.set('menu.' + n + '.open', true);
+				} else {
+					_this.set('menu.' + n + '.open', false);
 				}
 			});
+
+			var windowClick = function windowClick(evt) {
+				// There isn't a conditional for the evt.target.classList.contains('inner-menu-clab') because the inner-menu has stopPropagation()
+				_this.menu.map(function (item, n) {
+					if (item.open) _this.set('menu.' + n + '.open', false);
+				});
+
+				window.removeEventListener('click', windowClick);
+			};
+			window.addEventListener('click', windowClick);
 		}
 
 		/* ------------------
-  	METHODS
+  	OBSERVERS
   ------------------- */
 
 	}, {
@@ -67,9 +72,11 @@ var InnerMenuClab = (function () {
 		value: function _closeSubmenu() {
 			var _this2 = this;
 
-			this.menu.map(function (item, n) {
-				if (_this2.menu[n].open) _this2.set('menu.' + n + '.open', false);
-			});
+			if (this.menu != undefined) {
+				this.menu.map(function (item, n) {
+					_this2.set('menu.' + n + '.open', false);
+				});
+			}
 		}
 
 		/* ------------------
@@ -79,24 +86,22 @@ var InnerMenuClab = (function () {
 	}, {
 		key: '_computeShow',
 		value: function _computeShow(open) {
-			if (open) return 'show';
+			if (open) return 'show';else return '';
 		}
 	}, {
 		key: '_computeActive',
-		value: function _computeActive(item) {
-			this._url = location.hash;
+		value: function _computeActive(item, curUrl) {
 			var arr = [];
-
 			//se è con l'url quindi di 2° livello
-			if (item.url && this._url.search(item.url) > -1) arr.push('active');
-
-			//se è senza url quindi con 3 livelli
+			if (item.url && curUrl.search(item.url) > -1) arr.push('active');
+			//se è senza url quindi con altri submenu
 			if (item.submenu) {
 				arr.push('submenu');
-				for (var i = 0; i < item.submenu.length; i++) {
-					if (this._url.search(item.submenu[i].url) > -1) arr.push('active');
-				}
+				item.submenu.map(function (el, i) {
+					if (curUrl.search(el.url) > -1) arr.push('active');
+				});
 			}
+
 			return arr.join(' ');
 		}
 	}]);

@@ -17,6 +17,16 @@ var LibraryClab = (function () {
 				page: {
 					type: String,
 					observer: '_pageChanged'
+				},
+				submenu: {
+					type: Array
+				},
+				submenuLabel: {
+					type: String
+				},
+				currentHash: {
+					type: String,
+					value: location.hash
 				}
 			};
 		}
@@ -28,14 +38,8 @@ var LibraryClab = (function () {
 			var menu = this.querySelector('menu-clab');
 			menu.menu = AppMenu;
 			menu.addEventListener('subchange', function (evt) {
-				_this.submenu = evt.detail.links;
-				_this.submenu.map(function (item) {
-					if (item.open != undefined) delete item.open;
-				});
-				_this.async(function () {
-					var submenu = _this.querySelector('inner-menu-clab');
-					if (submenu) submenu.menu = _this.submenu;
-				}, 100);
+				_this.set('submenu', evt.detail.links);
+				_this.submenuLabel = evt.detail.label;
 			});
 
 			this.fire('libraryLoaded');
@@ -43,6 +47,7 @@ var LibraryClab = (function () {
 	}, {
 		key: '_pageChanged',
 		value: function _pageChanged() {
+			this.currentHash = location.hash;
 			window.scroll(0, 0);
 		}
 	}, {
