@@ -14,12 +14,7 @@ $fa-font-path: "../bower/font-awesome/fonts";
 @import "library/reset";
 @import "library/settings";
 @import 'compass';
-@import "library/variables";
-@import "library/mixins";  
-@import "library/layout"; 
-@import "library/pattern";
-@import "library/forms"; 
-@import "library/_buttons";
+@import "contactlab-pattern";
  
 
 
@@ -205,7 +200,7 @@ main {
 			left: -1px;
 			right: -1px;
 			bottom: -1px;
-			color: #FFFFFF;
+			color: $success-text-color;
 			line-height: 29px;
 			background-color: $success-color;
 		}

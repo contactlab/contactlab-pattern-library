@@ -462,6 +462,7 @@ ol.multiple-clab {
     line-height: 1;
     font-size: 12px;
     @extend .fast-transition;
+    pointer-events: none;
   }
 
   &.active:after {
