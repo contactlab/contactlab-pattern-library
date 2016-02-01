@@ -2652,7 +2652,7 @@
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, .modal .modal-title, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, .modal-title, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -5358,7 +5358,7 @@ table {
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, .modal .modal-title, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, .modal-title, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -6495,7 +6495,7 @@ header .product-logo .product-name b {
   font-size: 0.8571rem;
   color: #a6adb2;
 }
-#user-panel .user-panel-content .notification h2, #user-panel .user-panel-content .notification .modal .modal-title, .modal #user-panel .user-panel-content .notification .modal-title {
+#user-panel .user-panel-content .notification h2, #user-panel .user-panel-content .notification .modal-title {
   font-weight: 700;
   color: #353A3D;
 }
@@ -6515,7 +6515,7 @@ header .product-logo .product-name b {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-#user-panel .user-panel-content .description:hover h2, #user-panel .user-panel-content .description:hover .modal .modal-title, .modal #user-panel .user-panel-content .description:hover .modal-title {
+#user-panel .user-panel-content .description:hover h2, #user-panel .user-panel-content .description:hover .modal-title {
   color: #0072bc;
 }
 
@@ -6905,7 +6905,7 @@ p {
   margin-right: 0;
 }
 
-.truncate, .card .card-title, .modal .card-title {
+.truncate, .card .card-title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6928,7 +6928,7 @@ p {
 
 h1,
 h2,
-.modal .modal-title,
+.modal-title,
 h3,
 h4,
 h5,
@@ -6946,7 +6946,7 @@ h6 {
 }
 h1.no-spacing-title,
 h2.no-spacing-title,
-.modal .no-spacing-title.modal-title,
+.no-spacing-title.modal-title,
 h3.no-spacing-title,
 h4.no-spacing-title,
 h5.no-spacing-title,
@@ -6971,7 +6971,7 @@ h1.page-title:before {
   background-color: #0072bc;
 }
 
-h2, .modal .modal-title {
+h2, .modal-title {
   font-size: 2rem;
   line-height: 1.5;
 }
@@ -7649,7 +7649,7 @@ td {
   transform:  scale(1, 1);
 }
 
-.card, .modal {
+.card {
   /* @extend .depth-1; */
   overflow: hidden;
   *zoom: 1;
@@ -7668,15 +7668,13 @@ td {
   overflow: initial;
   border: 1px solid #dcdfe1;
 }
-.card.dummy .card-title, .dummy.modal .card-title, #spinner .modal.spinner-example .card-title, #spinner .card.spinner-example .card-title,
+.card.dummy .card-title, #spinner .card.spinner-example .card-title,
 .card.dummy .card-title *,
-.dummy.modal .card-title *,
-#spinner .modal.spinner-example .card-title *,
 #spinner .card.spinner-example .card-title * {
   font-family: 'BLOKKRegular';
   color: #a6adb2;
 }
-.card .dropdown-menu-button, .modal .dropdown-menu-button {
+.card .dropdown-menu-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -7688,7 +7686,7 @@ td {
   cursor: pointer;
   color: #353A3D;
 }
-.card .card-loader, .modal .card-loader {
+.card .card-loader {
   position: absolute;
   top: 0;
   left: 0;
@@ -7697,23 +7695,21 @@ td {
   background-color: rgba(240, 240, 240, 0.9);
   z-index: 3;
 }
-.card .card-loader .spinner, .modal .card-loader .spinner {
+.card .card-loader .spinner {
   position: absolute;
   top: 50%;
   left: 50%;
   margin: -12px 0 0 -12px;
 }
-.card td:first-child, .modal td:first-child,
-.card th:first-child,
-.modal th:first-child {
+.card td:first-child,
+.card th:first-child {
   padding-left: 20px;
 }
-.card td:last-child, .modal td:last-child,
-.card th:last-child,
-.modal th:last-child {
+.card td:last-child,
+.card th:last-child {
   padding-right: 20px;
 }
-.card figure, .modal figure {
+.card figure {
   font-size: 0;
   clear: both;
   width: 100%;
@@ -7724,10 +7720,10 @@ td {
   overflow: hidden;
   text-align: center;
 }
-.card figure img, .modal figure img {
+.card figure img {
   width: 100%;
 }
-.card figure h2, .modal figure h2, .card figure .modal .modal-title, .modal figure .modal-title {
+.card figure h2, .card figure .modal-title {
   margin: 0;
   padding: 20px;
   position: absolute;
@@ -7740,10 +7736,10 @@ td {
   text-align: left;
   text-shadow: 0 1px 2px rgba(53, 58, 61, 0.7);
 }
-.card figure.icon, .modal figure.icon {
+.card figure.icon {
   font-size: 80px;
 }
-.card .card-title, .modal .card-title {
+.card .card-title {
   padding: 20px 20px 10px;
   font-size: 1.25rem;
   border-bottom: 1px solid #dcdfe1;
@@ -7752,37 +7748,36 @@ td {
   overflow: hidden;
   *zoom: 1;
 }
-.card .card-title .icon, .modal .card-title .icon {
+.card .card-title .icon {
   font-size: 2rem;
   margin-right: 5px;
   max-width: 30px;
   line-height: 0.5;
 }
-.card .card-title .subtitle, .modal .card-title .subtitle {
+.card .card-title .subtitle {
   font-weight: 700;
   font-size: 0.8571rem;
   line-height: 1;
 }
-.card .card-title .note, .modal .card-title .note {
+.card .card-title .note {
   font-size: 0.8571rem;
   line-height: 1;
 }
-.card .big-icon, .modal .big-icon {
+.card .big-icon {
   line-height: 105px;
 }
-.card .big-icon .icon, .modal .big-icon .icon,
-.card .big-icon .circle,
-.modal .big-icon .circle {
+.card .big-icon .icon,
+.card .big-icon .circle {
   position: absolute;
   top: 45px;
   right: 20px;
   font-size: 64px;
   line-height: 1;
 }
-.card .big-icon .circle, .modal .big-icon .circle {
+.card .big-icon .circle {
   color: #dcdfe1;
 }
-.card .big-icon .icon, .modal .big-icon .icon {
+.card .big-icon .icon {
   font-size: 50px;
   top: 25px;
   right: 40px;
@@ -7790,7 +7785,7 @@ td {
   max-width: 100%;
   color: #000000;
 }
-.card .card-body, .modal .card-body, .modal .modal-body {
+.card .card-body {
   clear: both;
   width: 100%;
   float: left;
@@ -7803,7 +7798,7 @@ td {
   position: relative;
   overflow: initial;
 }
-.card .card-actions, .modal .card-actions, .modal .modal-actions {
+.card .card-actions {
   clear: both;
   width: 100%;
   float: left;
@@ -7812,7 +7807,7 @@ td {
   padding: 10px;
   text-align: right;
 }
-.card .card-actions .btn, .modal .card-actions .btn, .modal .modal-actions .btn, .card .card-actions .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .card .card-actions input[type="text"].js-users-list-filter, .modal .card-actions .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .modal .card-actions input[type="text"].js-users-list-filter, .modal .modal-actions .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .modal .modal-actions input[type="text"].js-users-list-filter, .card .card-actions .select-button .elekti-wrapper .js-users-list-filter.value_wrapper, .select-button .elekti-wrapper .card .card-actions .js-users-list-filter.value_wrapper, .modal .card-actions .select-button .elekti-wrapper .js-users-list-filter.value_wrapper, .select-button .elekti-wrapper .modal .card-actions .js-users-list-filter.value_wrapper, .modal .modal-actions .select-button .elekti-wrapper .js-users-list-filter.value_wrapper, .select-button .elekti-wrapper .modal .modal-actions .js-users-list-filter.value_wrapper {
+.card .card-actions .btn, .card .card-actions .select-button .elekti-wrapper input[type="text"].js-users-list-filter, .select-button .elekti-wrapper .card .card-actions input[type="text"].js-users-list-filter, .card .card-actions .select-button .elekti-wrapper .js-users-list-filter.value_wrapper, .select-button .elekti-wrapper .card .card-actions .js-users-list-filter.value_wrapper {
   margin: 0;
 }
 
@@ -7936,53 +7931,45 @@ td {
   bottom: 0;
   background: rgba(240, 240, 240, 0.97);
   z-index: 10;
-  display: table;
   height: 100%;
   width: 100%;
-  display: table;
-}
-
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: top;
-  text-align: center;
-  padding: 20px;
 }
 
 .modal {
-  background: transparent;
-  text-align: left;
-  color: #353A3D;
-  width: 100%;
-  max-height: 100%;
-  max-width: 500px;
-  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow: auto;
-  float: none;
-  margin-top: 20px;
-  border: 0;
 }
-.modal .actions {
-  text-align: right;
-}
-.modal .modal-title {
+
+.modal-title {
   clear: both;
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
-  padding: 20px 20px 0;
+  padding: 2.7em 20px 0;
   margin: 0;
 }
-.modal .modal-body {
-  overflow: auto;
+
+.modal-body {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 20px;
 }
 
-.fullscreen-modal .modal {
-  max-width: 90%;
-}
-.fullscreen-modal .modal .modal-body {
-  max-height: 100%;
+.modal-actions {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: right;
 }
 
 .tabs, .pills {
@@ -8468,7 +8455,7 @@ input[type=text].slider-value {
   overflow: hidden;
   *zoom: 1;
 }
-.feature h2, .feature .modal .modal-title, .modal .feature .modal-title,
+.feature h2, .feature .modal-title,
 .feature p {
   clear: both;
   width: 100%;
@@ -8566,6 +8553,9 @@ input[type="reset"] {
 .input-icon-wrapper.calendar:after {
   content: "\e610";
 }
+.input-icon-wrapper.search:after {
+  content: "\e633";
+}
 
 .help-tips {
   display: inline-block !important;
@@ -8593,7 +8583,7 @@ label.disabled, .form-row .disabled.label-container {
   color: #C0C0C0;
 }
 label.primary, .form-row .primary.label-container {
-  color: #FFFFFF;
+  color: #00568d;
 }
 label.primary + input[type="text"], .form-row .primary.label-container + input[type="text"], .elekti-wrapper label.primary + .value_wrapper, .form-row .elekti-wrapper .primary.label-container + .value_wrapper, .elekti-wrapper .form-row .primary.label-container + .value_wrapper,
 .options-list-wrapper label.primary + .value_wrapper,
@@ -8609,14 +8599,8 @@ label.primary + input[type="text"]:focus, .form-row .primary.label-container + i
   -webkit-box-shadow: #0072bc 0 1px 0 0;
   box-shadow: #0072bc 0 1px 0 0;
 }
-label.primary + input[type="text"] + .input-note, .form-row .primary.label-container + input[type="text"] + .input-note, .elekti-wrapper label.primary + .value_wrapper + .input-note, .form-row .elekti-wrapper .primary.label-container + .value_wrapper + .input-note, .elekti-wrapper .form-row .primary.label-container + .value_wrapper + .input-note,
-.options-list-wrapper label.primary + .value_wrapper + .input-note,
-.form-row .options-list-wrapper .primary.label-container + .value_wrapper + .input-note,
-.options-list-wrapper .form-row .primary.label-container + .value_wrapper + .input-note {
-  color: #FFFFFF;
-}
 label.info, .form-row .info.label-container {
-  color: #31708f;
+  color: #3aceed;
 }
 label.info + input[type="text"], .form-row .info.label-container + input[type="text"], .elekti-wrapper label.info + .value_wrapper, .form-row .elekti-wrapper .info.label-container + .value_wrapper, .elekti-wrapper .form-row .info.label-container + .value_wrapper,
 .options-list-wrapper label.info + .value_wrapper,
@@ -8632,14 +8616,8 @@ label.info + input[type="text"]:focus, .form-row .info.label-container + input[t
   -webkit-box-shadow: #9edeeb 0 1px 0 0;
   box-shadow: #9edeeb 0 1px 0 0;
 }
-label.info + input[type="text"] + .input-note, .form-row .info.label-container + input[type="text"] + .input-note, .elekti-wrapper label.info + .value_wrapper + .input-note, .form-row .elekti-wrapper .info.label-container + .value_wrapper + .input-note, .elekti-wrapper .form-row .info.label-container + .value_wrapper + .input-note,
-.options-list-wrapper label.info + .value_wrapper + .input-note,
-.form-row .options-list-wrapper .info.label-container + .value_wrapper + .input-note,
-.options-list-wrapper .form-row .info.label-container + .value_wrapper + .input-note {
-  color: #31708f;
-}
 label.success, .form-row .success.label-container {
-  color: #3c763d;
+  color: #8de147;
 }
 label.success + input[type="text"], .form-row .success.label-container + input[type="text"], .elekti-wrapper label.success + .value_wrapper, .form-row .elekti-wrapper .success.label-container + .value_wrapper, .elekti-wrapper .form-row .success.label-container + .value_wrapper,
 .options-list-wrapper label.success + .value_wrapper,
@@ -8655,14 +8633,8 @@ label.success + input[type="text"]:focus, .form-row .success.label-container + i
   -webkit-box-shadow: #c3dfac 0 1px 0 0;
   box-shadow: #c3dfac 0 1px 0 0;
 }
-label.success + input[type="text"] + .input-note, .form-row .success.label-container + input[type="text"] + .input-note, .elekti-wrapper label.success + .value_wrapper + .input-note, .form-row .elekti-wrapper .success.label-container + .value_wrapper + .input-note, .elekti-wrapper .form-row .success.label-container + .value_wrapper + .input-note,
-.options-list-wrapper label.success + .value_wrapper + .input-note,
-.form-row .options-list-wrapper .success.label-container + .value_wrapper + .input-note,
-.options-list-wrapper .form-row .success.label-container + .value_wrapper + .input-note {
-  color: #3c763d;
-}
 label.warning, .form-row .warning.label-container {
-  color: #8a6d3b;
+  color: #f6bb43;
 }
 label.warning + input[type="text"], .form-row .warning.label-container + input[type="text"], .elekti-wrapper label.warning + .value_wrapper, .form-row .elekti-wrapper .warning.label-container + .value_wrapper, .elekti-wrapper .form-row .warning.label-container + .value_wrapper,
 .options-list-wrapper label.warning + .value_wrapper,
@@ -8678,14 +8650,8 @@ label.warning + input[type="text"]:focus, .form-row .warning.label-container + i
   -webkit-box-shadow: #f7deab 0 1px 0 0;
   box-shadow: #f7deab 0 1px 0 0;
 }
-label.warning + input[type="text"] + .input-note, .form-row .warning.label-container + input[type="text"] + .input-note, .elekti-wrapper label.warning + .value_wrapper + .input-note, .form-row .elekti-wrapper .warning.label-container + .value_wrapper + .input-note, .elekti-wrapper .form-row .warning.label-container + .value_wrapper + .input-note,
-.options-list-wrapper label.warning + .value_wrapper + .input-note,
-.form-row .options-list-wrapper .warning.label-container + .value_wrapper + .input-note,
-.options-list-wrapper .form-row .warning.label-container + .value_wrapper + .input-note {
-  color: #8a6d3b;
-}
 label.error, .form-row .error.label-container {
-  color: #a94442;
+  color: #e24c66;
 }
 label.error + input[type="text"], .form-row .error.label-container + input[type="text"], .elekti-wrapper label.error + .value_wrapper, .form-row .elekti-wrapper .error.label-container + .value_wrapper, .elekti-wrapper .form-row .error.label-container + .value_wrapper,
 .options-list-wrapper label.error + .value_wrapper,
@@ -8700,12 +8666,6 @@ label.error + input[type="text"]:focus, .form-row .error.label-container + input
   -moz-box-shadow: #e1b2ba 0 1px 0 0;
   -webkit-box-shadow: #e1b2ba 0 1px 0 0;
   box-shadow: #e1b2ba 0 1px 0 0;
-}
-label.error + input[type="text"] + .input-note, .form-row .error.label-container + input[type="text"] + .input-note, .elekti-wrapper label.error + .value_wrapper + .input-note, .form-row .elekti-wrapper .error.label-container + .value_wrapper + .input-note, .elekti-wrapper .form-row .error.label-container + .value_wrapper + .input-note,
-.options-list-wrapper label.error + .value_wrapper + .input-note,
-.form-row .options-list-wrapper .error.label-container + .value_wrapper + .input-note,
-.options-list-wrapper .form-row .error.label-container + .value_wrapper + .input-note {
-  color: #a94442;
 }
 
 .input-note,
@@ -9040,82 +9000,46 @@ textarea.error:focus {
   width: 250px;
 }
 
-.card .input-wrapper input[type="color"], .modal .input-wrapper input[type="color"],
+.card .input-wrapper input[type="color"],
 .card .input-wrapper input[type="date"],
-.modal .input-wrapper input[type="date"],
 .card .input-wrapper input[type="datetime"],
-.modal .input-wrapper input[type="datetime"],
 .card .input-wrapper input[type="datetime-local"],
-.modal .input-wrapper input[type="datetime-local"],
 .card .input-wrapper input[type="email"],
-.modal .input-wrapper input[type="email"],
 .card .input-wrapper input[type="month"],
-.modal .input-wrapper input[type="month"],
 .card .input-wrapper input[type="number"],
-.modal .input-wrapper input[type="number"],
 .card .input-wrapper input[type="password"],
-.modal .input-wrapper input[type="password"],
 .card .input-wrapper input[type="search"],
-.modal .input-wrapper input[type="search"],
 .card .input-wrapper input[type="tel"],
-.modal .input-wrapper input[type="tel"],
 .card .input-wrapper input[type="text"],
-.modal .input-wrapper input[type="text"],
 .card .input-wrapper .elekti-wrapper .value_wrapper,
 .elekti-wrapper .card .input-wrapper .value_wrapper,
-.modal .input-wrapper .elekti-wrapper .value_wrapper,
-.elekti-wrapper .modal .input-wrapper .value_wrapper,
 .card .input-wrapper .options-list-wrapper .value_wrapper,
 .options-list-wrapper .card .input-wrapper .value_wrapper,
-.modal .input-wrapper .options-list-wrapper .value_wrapper,
-.options-list-wrapper .modal .input-wrapper .value_wrapper,
 .card .input-wrapper input[type="time"],
-.modal .input-wrapper input[type="time"],
 .card .input-wrapper input[type="url"],
-.modal .input-wrapper input[type="url"],
 .card .input-wrapper input[type="week"],
-.modal .input-wrapper input[type="week"],
-.card .input-wrapper textarea,
-.modal .input-wrapper textarea {
+.card .input-wrapper textarea {
   background-color: #fafafa;
 }
-.card .input-wrapper input[type="color"]:focus, .modal .input-wrapper input[type="color"]:focus,
+.card .input-wrapper input[type="color"]:focus,
 .card .input-wrapper input[type="date"]:focus,
-.modal .input-wrapper input[type="date"]:focus,
 .card .input-wrapper input[type="datetime"]:focus,
-.modal .input-wrapper input[type="datetime"]:focus,
 .card .input-wrapper input[type="datetime-local"]:focus,
-.modal .input-wrapper input[type="datetime-local"]:focus,
 .card .input-wrapper input[type="email"]:focus,
-.modal .input-wrapper input[type="email"]:focus,
 .card .input-wrapper input[type="month"]:focus,
-.modal .input-wrapper input[type="month"]:focus,
 .card .input-wrapper input[type="number"]:focus,
-.modal .input-wrapper input[type="number"]:focus,
 .card .input-wrapper input[type="password"]:focus,
-.modal .input-wrapper input[type="password"]:focus,
 .card .input-wrapper input[type="search"]:focus,
-.modal .input-wrapper input[type="search"]:focus,
 .card .input-wrapper input[type="tel"]:focus,
-.modal .input-wrapper input[type="tel"]:focus,
 .card .input-wrapper input[type="text"]:focus,
-.modal .input-wrapper input[type="text"]:focus,
 .card .input-wrapper .elekti-wrapper .value_wrapper:focus,
 .elekti-wrapper .card .input-wrapper .value_wrapper:focus,
-.modal .input-wrapper .elekti-wrapper .value_wrapper:focus,
-.elekti-wrapper .modal .input-wrapper .value_wrapper:focus,
 .card .input-wrapper .options-list-wrapper .value_wrapper:focus,
 .options-list-wrapper .card .input-wrapper .value_wrapper:focus,
-.modal .input-wrapper .options-list-wrapper .value_wrapper:focus,
-.options-list-wrapper .modal .input-wrapper .value_wrapper:focus,
 .card .input-wrapper input[type="time"]:focus,
-.modal .input-wrapper input[type="time"]:focus,
 .card .input-wrapper input[type="url"]:focus,
-.modal .input-wrapper input[type="url"]:focus,
 .card .input-wrapper input[type="week"]:focus,
-.modal .input-wrapper input[type="week"]:focus,
-.card .input-wrapper textarea:focus,
-.modal .input-wrapper textarea:focus {
+.card .input-wrapper textarea:focus {
   background-color: #eaeced;
 }
 
@@ -9324,7 +9248,7 @@ input[type=checkbox]:disabled + label:before,
   cursor: not-allowed;
 }
 
-h2 + .form-row, .modal .modal-title + .form-row {
+h2 + .form-row, .modal-title + .form-row {
   margin-top: 20px;
 }
 
@@ -9539,9 +9463,9 @@ ol.multiple-clab li.selected {
   vertical-align: middle;
 }
 .form-row .input-container {
-  width: 74.57627%;
-  float: right;
-  margin-right: 0;
+  width: 66.10169%;
+  float: left;
+  margin-right: 1.69492%;
   position: relative;
 }
 .form-row .input-container .full-width {
@@ -9571,16 +9495,22 @@ ol.multiple-clab li.selected {
   float: left;
   margin-right: 1.69492%;
 }
-.form-row .input-container .one-fifth-width {
-  width: 15.25424%;
+.form-row .input-container .three-fourth-width {
+  width: 74.57627%;
   float: left;
   margin-right: 1.69492%;
+}
+.form-row .input-container .one-fifth-width {
+  width: 18.36735%;
+  float: left;
+  margin-right: 2.04082%;
 }
 .form-row .input-container .full-width,
 .form-row .input-container .half-width,
 .form-row .input-container .one-third-width,
 .form-row .input-container .two-third-width,
 .form-row .input-container .one-fourth-width,
+.form-row .input-container .three-fourth-width,
 .form-row .input-container .one-fifth-width {
   display: table;
 }
@@ -9589,6 +9519,7 @@ ol.multiple-clab li.selected {
 .form-row .input-container .one-third-width.last,
 .form-row .input-container .two-third-width.last,
 .form-row .input-container .one-fourth-width.last,
+.form-row .input-container .three-fourth-width.last,
 .form-row .input-container .one-fifth-width.last {
   float: right;
   margin-right: 0;
@@ -9623,6 +9554,12 @@ ol.multiple-clab li.selected {
 .form-row .input-container .one-fourth-width input[type=radio],
 .form-row .input-container .one-fourth-width input[type=radio] + label,
 .form-row .input-container .one-fourth-width input[type=radio] + .label-container,
+.form-row .input-container .three-fourth-width input[type=checkbox],
+.form-row .input-container .three-fourth-width input[type=checkbox] + label,
+.form-row .input-container .three-fourth-width input[type=checkbox] + .label-container,
+.form-row .input-container .three-fourth-width input[type=radio],
+.form-row .input-container .three-fourth-width input[type=radio] + label,
+.form-row .input-container .three-fourth-width input[type=radio] + .label-container,
 .form-row .input-container .one-fifth-width input[type=checkbox],
 .form-row .input-container .one-fifth-width input[type=checkbox] + label,
 .form-row .input-container .one-fifth-width input[type=checkbox] + .label-container,
@@ -9636,6 +9573,7 @@ ol.multiple-clab li.selected {
 .form-row .input-container .one-third-width.label-container,
 .form-row .input-container .two-third-width.label-container,
 .form-row .input-container .one-fourth-width.label-container,
+.form-row .input-container .three-fourth-width.label-container,
 .form-row .input-container .one-fifth-width.label-container {
   text-align: right;
   padding: 0;
@@ -9648,6 +9586,7 @@ ol.multiple-clab li.selected {
 .form-row .input-container .one-third-width.label-container span,
 .form-row .input-container .two-third-width.label-container span,
 .form-row .input-container .one-fourth-width.label-container span,
+.form-row .input-container .three-fourth-width.label-container span,
 .form-row .input-container .one-fifth-width.label-container span {
   display: table-cell;
   vertical-align: middle;
@@ -9657,6 +9596,7 @@ ol.multiple-clab li.selected {
 .form-row .input-container .one-third-width span,
 .form-row .input-container .two-third-width span,
 .form-row .input-container .one-fourth-width span,
+.form-row .input-container .three-fourth-width span,
 .form-row .input-container .one-fifth-width span {
   line-height: 34px;
 }
@@ -9681,6 +9621,10 @@ button:disabled {
   vertical-align: bottom;
   text-align: center;
   min-width: 100px;
+  text-shadow: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 .alert.primary .btn:first-of-type, .alert.info .btn:first-of-type, .alert.success .btn:first-of-type, .alert.warning .btn:first-of-type, .alert.error .btn:first-of-type, .btn:first-of-type, .select-button .elekti-wrapper input[type="text"].js-users-list-filter:first-of-type, .select-button .elekti-wrapper .js-users-list-filter.value_wrapper:first-of-type, .buttons-group .group-item .btn:first-of-type {
   margin-left: 0;
@@ -10193,37 +10137,37 @@ button:disabled {
 .cover-content .sections {
   margin-top: 60px;
 }
-.cover-content .sections .card, .cover-content .sections .modal {
+.cover-content .sections .card {
   width: 32.20339%;
   float: left;
   text-align: center;
 }
-.cover-content .sections .card:nth-child(3n + 1), .cover-content .sections .modal:nth-child(3n + 1) {
+.cover-content .sections .card:nth-child(3n + 1) {
   margin-left: 0;
   margin-right: -100%;
   clear: both;
   margin-left: 0;
 }
-.cover-content .sections .card:nth-child(3n + 2), .cover-content .sections .modal:nth-child(3n + 2) {
+.cover-content .sections .card:nth-child(3n + 2) {
   margin-left: 33.89831%;
   margin-right: -100%;
   clear: none;
 }
-.cover-content .sections .card:nth-child(3n + 3), .cover-content .sections .modal:nth-child(3n + 3) {
+.cover-content .sections .card:nth-child(3n + 3) {
   margin-left: 67.79661%;
   margin-right: -100%;
   clear: none;
 }
-.cover-content .sections .card figure, .cover-content .sections .modal figure {
+.cover-content .sections .card figure {
   padding: 20px 0;
 }
-.cover-content .sections .card .card-body, .cover-content .sections .modal .card-body, .modal .cover-content .sections .card .modal-body, .cover-content .sections .modal .modal-body {
+.cover-content .sections .card .card-body {
   color: #0072bc;
   font-size: 2.5rem;
   line-height: 1;
   font-weight: 300;
 }
-.cover-content .sections .card .card-actions, .cover-content .sections .modal .card-actions, .modal .cover-content .sections .card .modal-actions, .cover-content .sections .modal .modal-actions {
+.cover-content .sections .card .card-actions {
   text-align: center;
 }
 
@@ -10560,10 +10504,10 @@ main {
     clear: none;
   }
 }
-.pattern-color .card-actions, .pattern-color .modal .modal-actions, .modal .pattern-color .modal-actions {
+.pattern-color .card-actions {
   font-size: 0;
 }
-.pattern-color .card-actions img, .pattern-color .modal .modal-actions img, .modal .pattern-color .modal-actions img {
+.pattern-color .card-actions img {
   width: 25px;
   margin-left: 6.66667px;
 }
@@ -10681,23 +10625,22 @@ main {
   font-size: 1.2rem;
   word-break: break-all;
 }
-.typography-card.light .card-body, .typography-card.light .modal .modal-body, .modal .typography-card.light .modal-body {
+.typography-card.light .card-body {
   font-weight: 300;
 }
-.typography-card.semibold .card-body, .typography-card.semibold .modal .modal-body, .modal .typography-card.semibold .modal-body {
+.typography-card.semibold .card-body {
   font-weight: 600;
 }
-.typography-card.bold .card-body, .typography-card.bold .modal .modal-body, .modal .typography-card.bold .modal-body {
+.typography-card.bold .card-body {
   font-weight: 700;
 }
-.typography-card.italic .card-body, .typography-card.italic .modal .modal-body, .modal .typography-card.italic .modal-body {
+.typography-card.italic .card-body {
   font-style: italic;
 }
 
 .text-styles-card h1,
 .text-styles-card h2,
-.text-styles-card .modal .modal-title,
-.modal .text-styles-card .modal-title,
+.text-styles-card .modal-title,
 .text-styles-card h3,
 .text-styles-card h4 {
   margin-bottom: 0;

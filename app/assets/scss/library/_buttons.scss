@@ -16,6 +16,8 @@ button:disabled {
   vertical-align: bottom;
   text-align: center;
   min-width: 100px;
+  @include text-shadow(none);
+  @include border-radius(0);
 
   &:first-of-type {
     margin-left: 0;

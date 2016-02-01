@@ -34,6 +34,10 @@ input[type="reset"] {
     &.calendar:after {
       content: "\e610";
     }
+
+    &.search:after {
+      content: "\e633";
+    }
 }
 
 // INPUT STYLE
@@ -63,17 +67,15 @@ label {
 
   @each $type, $color in $default-status {
     &.#{$type} {
-        color: nth($color, 2);
+
+      $text-color: scale-lightness(nth($color, 1), -25%);
+      color: scale-saturation($text-color, 50%);
 
         + input[type="text"] {
           border-bottom-color: nth($color, 1);
 
           &:focus {
             @include box-shadow(nth($color, 1) 0 1px 0 0);
-          }
-
-          + .input-note {
-            color: nth($color, 2);
           }
         }
 
@@ -88,9 +90,9 @@ label {
 
   @each $type, $color in $default-status {
     &.#{$type} {
-      
-      $test: scale-lightness(nth($color, 1), -25%);
-      color: scale-saturation($test, 50%);
+
+      $text-color: scale-lightness(nth($color, 1), -25%);
+      color: scale-saturation($text-color, 50%);
     }
   }
 }
@@ -602,11 +604,11 @@ ol.multiple-clab {
   }
 
   .input-container {
-    @include span(9 last);
+    @include span(8);
     position: relative;
 
     .full-width {
-      @include full; 
+      @include full;
     }
 
     .half-width {
@@ -625,8 +627,12 @@ ol.multiple-clab {
       @include span(3);
     }
 
+    .three-fourth-width {
+      @include span(9);
+    }
+
     .one-fifth-width {
-      @include span(2);
+      @include span(2 of 10);
     }
 
     .full-width,
@@ -634,6 +640,7 @@ ol.multiple-clab {
     .one-third-width,
     .two-third-width,
     .one-fourth-width,
+    .three-fourth-width,
     .one-fifth-width {
       display: table;
       &.last {

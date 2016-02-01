@@ -1029,63 +1029,34 @@ td {
   bottom: 0;
   background: $overlay-color;
   z-index: 10;
-  display: table;
   height: 100%;
   width: 100%;
-  display: table;
 }
 
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: top;
-  text-align: center;
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+.modal-title {
+  @include full;
+  padding: 2.7em $base-spacing 0;
+  @extend h2;
+  margin: 0; 
+}
+
+.modal-body {
+  @include full;
   padding: $base-spacing;
 }
 
-
-.modal {
-  @extend .card;
-  background: transparent;
-  text-align: left;
-  color: $dark-gray;
-  width: 100%;
-  max-height: 100%;
-  max-width: 500px;
-  display: inline-block;
-  overflow: auto;
-  float: none;
-  margin-top: $base-spacing;
-  border: 0;
-
-  .actions {
-    text-align: right;
-  }
-
-  .modal-title {
-    @include full;
-    padding: $base-spacing $base-spacing 0;
-    @extend h2;
-    margin: 0;
-  }
-
-  .modal-body {
-    @extend .card-body;
-    overflow: auto;
-  }
-
-  .modal-actions {
-    @extend .card-actions;
-  }
-}
-
-.fullscreen-modal {
-  .modal {
-    max-width: 90%;
-
-    .modal-body {
-      max-height: 100%;
-    }
-  }
+.modal-actions {
+  @include full;
+  text-align: right;
 }
 
 // TABS
