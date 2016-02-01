@@ -1,6 +1,6 @@
 var ClipboardBehav = {
 	_copyToClipboard: evt=>{
-		let textToCopy = evt.target._composedParent.nextElementSibling.innerText;
+		let textToCopy = evt.target.parentElement.nextElementSibling.innerText;
 		clipboard.copy(textToCopy).then(
 				()=>{
 					evt.target.classList.add('copied');

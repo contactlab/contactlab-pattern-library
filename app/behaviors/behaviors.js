@@ -2,7 +2,7 @@
 
 var ClipboardBehav = {
 	_copyToClipboard: function _copyToClipboard(evt) {
-		var textToCopy = evt.target._composedParent.nextElementSibling.innerText;
+		var textToCopy = evt.target.parentElement.nextElementSibling.innerText;
 		clipboard.copy(textToCopy).then(function () {
 			evt.target.classList.add('copied');
 			setTimeout(function () {
