@@ -7206,6 +7206,24 @@ ol.default {
   overflow: auto;
 }
 
+.sorting-arrow {
+  position: absolute;
+  right: 6.66667px;
+  font-size: 10px;
+  padding: 3px;
+  cursor: pointer;
+  color: #C0C0C0;
+}
+.sorting-arrow.top {
+  top: 6.66667px;
+}
+.sorting-arrow.bottom {
+  bottom: 6.66667px;
+}
+.sorting-arrow.active {
+  color: #353A3D;
+}
+
 table {
   width: 100%;
   margin-bottom: 20px;
@@ -7233,6 +7251,7 @@ table + .pagination {
 hr, td, th {
   padding-left: 6.66667px;
   padding-right: 6.66667px;
+  position: relative;
 }
 
 th {
@@ -7259,6 +7278,43 @@ td {
   background: #0072bc;
   color: #FFFFFF;
   cursor: pointer;
+}
+
+.full-table {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+.full-table .entries-number {
+  float: left;
+  margin-bottom: 20px;
+}
+.full-table .entries-number ~ span {
+  line-height: 36px;
+}
+.full-table .entries-select {
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 6.66667px;
+}
+.full-table .table-search {
+  float: right;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+.full-table .total-entries {
+  width: 23.72881%;
+  float: left;
+  margin-right: 1.69492%;
+}
+.full-table .pagination {
+  width: 74.57627%;
+  float: right;
+  margin-right: 0;
 }
 
 .alerts-wrapper {
@@ -7833,7 +7889,6 @@ td {
 
 .pagination {
   text-align: right;
-  margin-top: 20px;
   clear: both;
   width: 100%;
   float: left;

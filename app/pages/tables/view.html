@@ -18,7 +18,13 @@
 					<div class="component-example">
 						<table>
 							<tr>
-						      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
+						      <th>Table Header 1</th>
+						      <th>
+						      	Table Header 2
+						      	<i class="clab-icon icon-arrow-top sorting-arrow top active"></i>
+						      	<i class="clab-icon icon-arrow-down sorting-arrow bottom"></i>
+						      </th>
+						      <th>Table Header 3</th>
 						    </tr>
 						    <tr>
 						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
@@ -125,6 +131,63 @@
 								</div>
 							</div>
 						</tabs-clab>
+					</div>
+				</section>
+
+				<section>
+					<h3 class="component-name">
+						Full table
+					</h3>
+					<div class="component-example">
+						<div class="full-table">
+							<div class="entries-number">
+								<span>Show </span>
+								<span class="entries-select">
+									<dropdown-clab label="" options='[{value:'10',label: '10'}, {value:'20',label: '20'}, {value:'50',label: '50'}]'></dropdown-clab>
+								</span>
+								<span> entries</span>
+							</div>
+							<div class="table-search">
+								<div class="input-icon-wrapper search">
+									<input type="text">
+								</div>
+							</div>
+						</div>
+						<table>
+							<tr>
+								<th>
+									Table Header 1
+									<i class="clab-icon icon-arrow-top sorting-arrow top"></i>
+									<i class="clab-icon icon-arrow-down sorting-arrow bottom active"></i>
+								</th>
+								<th>
+									Table Header 2
+									<i class="clab-icon icon-arrow-top sorting-arrow top active"></i>
+									<i class="clab-icon icon-arrow-down sorting-arrow bottom"></i>
+								</th>
+								<th>
+									Table Header 3
+									<i class="clab-icon icon-arrow-top sorting-arrow top"></i>
+									<i class="clab-icon icon-arrow-down sorting-arrow bottom"></i>
+								</th>
+							</tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						    <tr>
+						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+						    </tr>
+						</table>
+						<div class="total-entries">
+							Showing 1 to 10 of 145 entries
+						</div>
+						<pagination-clab pages='["#1", "#2", "#3", "#4"]'></pagination-clab>
 					</div>
 				</section>
 			</div>

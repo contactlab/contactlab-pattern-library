@@ -447,6 +447,27 @@ ol.default {
   overflow: auto;
 }
 
+.sorting-arrow {
+  position: absolute;
+  right: $smaller-spacing;
+  font-size: 10px;
+  padding: 3px;
+  cursor: pointer;
+  color: $disabled-color;
+
+  &.top {
+    top: $smaller-spacing;
+  }
+
+  &.bottom {
+    bottom: $smaller-spacing;
+  }
+
+  &.active {
+    color: $base-text-color;
+  }
+}
+
 table {
   width: 100%;
   margin-bottom: $base-spacing;
@@ -474,6 +495,7 @@ table {
 hr, td, th {
   padding-left: $smaller-spacing;
   padding-right: $smaller-spacing;
+  position: relative;
 }
 
 th {
@@ -507,6 +529,46 @@ td {
     cursor: pointer;
   }
 }
+
+// full table component
+
+.full-table {
+  @include full;
+
+  .entries-number {
+    float: left;
+    margin-bottom: $base-spacing;
+    
+    ~ span {
+      line-height: 36px;
+    }
+  }
+
+  .entries-select {
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 $smaller-spacing;
+  }
+
+  .table-search {
+    float: right;
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: $base-spacing;
+  }
+
+  .total-entries {
+    @include span(3);
+    font-size: $small-font-size;
+  }
+
+  .pagination {
+    @include span(9 last);
+  }
+}
+
+// end full table component
 
 
 
@@ -913,7 +975,6 @@ td {
 
 .pagination {
   text-align: right;
-  margin-top: $base-spacing;
   @include full;
 
   .clab {
