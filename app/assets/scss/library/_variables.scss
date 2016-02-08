@@ -16,7 +16,7 @@ $dark-gray: $base-gray;
 $darker-gray: shade($base-gray, 25);
 
 $base-background-color: #F0f0f0;
-$overlay-color: rgba($base-background-color, 0.97);
+$overlay-color: $base-background-color;
 $default-color: #616161;
 
 

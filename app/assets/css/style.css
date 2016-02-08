@@ -5846,7 +5846,7 @@ h1 span {
   bottom: 0;
   z-index: 15;
   width: 100%;
-  background: rgba(240, 240, 240, 0.97);
+  background: #F0f0f0;
   border: 1px solid #dcdfe1;
   text-align: center;
   padding: 3.75em 0 3.75em 0;
@@ -6189,7 +6189,7 @@ header .product-logo .product-name b {
     display: none;
   }
   .main-menu > ul {
-    background-color: rgba(240, 240, 240, 0.97);
+    background-color: #F0f0f0;
     padding: 3.75em 0 3.75em 0;
     position: absolute;
     top: 0;
@@ -6570,7 +6570,7 @@ header .product-logo .product-name b {
   max-width: 760px;
 }
 
-#main-actions-bar {
+.main-actions-bar {
   /* @include full;
   position: fixed;
   bottom: 0;
@@ -6589,12 +6589,12 @@ header .product-logo .product-name b {
   padding-top: 40px;
   border-top: 1px solid #a6adb2;
 }
-#main-actions-bar .left {
+.main-actions-bar .left {
   width: 49.15254%;
   float: left;
   margin-right: 1.69492%;
 }
-#main-actions-bar .right {
+.main-actions-bar .right {
   width: 49.15254%;
   float: right;
   margin-right: 0;
@@ -6867,33 +6867,6 @@ article {
 }
 article:last-child {
   padding-bottom: 0;
-}
-
-.wrapper {
-  max-width: 1320px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-  overflow: hidden;
-  *zoom: 1;
-  position: relative;
-}
-.wrapper:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-@media (max-width: 1320px) {
-  .wrapper {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .wrapper:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
 }
 
 p {
@@ -7310,6 +7283,7 @@ td {
   width: 23.72881%;
   float: left;
   margin-right: 1.69492%;
+  font-size: 0.8571rem;
 }
 .full-table .pagination {
   width: 74.57627%;
@@ -7984,7 +7958,7 @@ td {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(240, 240, 240, 0.97);
+  background: #F0f0f0;
   z-index: 10;
   height: 100%;
   width: 100%;
@@ -7997,6 +7971,7 @@ td {
   right: 0;
   bottom: 0;
   overflow: auto;
+  padding: 0 20px;
 }
 
 .modal-title {
@@ -8005,7 +7980,7 @@ td {
   float: left;
   margin-left: 0;
   margin-right: 0;
-  padding: 2.7em 20px 0;
+  padding: 2.7em 0 0;
   margin: 0;
 }
 
@@ -8015,7 +7990,7 @@ td {
   float: left;
   margin-left: 0;
   margin-right: 0;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .modal-actions {

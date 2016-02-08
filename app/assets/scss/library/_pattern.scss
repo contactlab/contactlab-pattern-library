@@ -203,17 +203,6 @@ article {
   }
 }
 
-.wrapper {
-  @include container;
-  padding: 0 $base-spacing;
-  @include clearfix;
-  position: relative;
-
-  @include susy-breakpoint(max-width 1320px) {
-    @include container(1200px);
-  }
-}
-
 p {
   margin: 0 0 $base-spacing;
   @include full;
@@ -1086,7 +1075,7 @@ td {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right: 0; 
   bottom: 0;
   background: $overlay-color;
   z-index: 10;
@@ -1101,18 +1090,19 @@ td {
   right: 0;
   bottom: 0;
   overflow: auto;
+  padding: 0 $base-spacing;
 }
 
 .modal-title {
   @include full;
-  padding: 2.7em $base-spacing 0;
+  padding: 2.7em 0 0;
   @extend h2;
   margin: 0; 
 }
 
 .modal-body {
   @include full;
-  padding: $base-spacing;
+  padding: $base-spacing 0;
 }
 
 .modal-actions {
