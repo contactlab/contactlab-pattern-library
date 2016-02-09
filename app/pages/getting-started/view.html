@@ -41,12 +41,20 @@
 						</div>
 					</div>
 
-					<h3>CLab Components</h3>
-					
+					<h3>Web animations polyfill</h3>
+					<p>If you are going to use components that depend on this polyfill (Es: &lt;alert-clab&gt; and &lt;modal-clab&gt;)</p>
+					<div class="component-specs">
+						<div class="code-snippet">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;script src=&quot;web-animations-js/web-animations-next.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+							</div>
+						</div>
+					</div>
 
+					<h3>CLab Components</h3>
 					<tabs-clab labels='["IMPORT ALL", "CUSTOM IMPORT"]'>
 						<div class="tab-content">
-							<p>If you want to use all our elements just import this file</p>
 							<div class="component-specs">
 								<div class="code-snippet">
 									<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
@@ -62,7 +70,7 @@
 								<div class="code-snippet">
 									<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 									<div class="copy">
-		<pre><code class="language-bash">$ gulp build -s accordion_alert_buttons-group</code></pre>
+		<pre><code class="language-bash">$ gulp build -c accordion_alert_buttons-group</code></pre>
 									</div>
 								</div>
 							</div>
@@ -105,15 +113,16 @@
 &#x9;&#x3C;meta http-equiv=&#x22;Content-Type&#x22; content=&#x22;text/html; charset=UTF-8&#x22; /&#x3E;
 &#x9;&#x3C;title&#x3E;Title&#x3C;/title&#x3E;
 &#x9;&#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0&#x22;&#x3E;
-&#x9;&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;assets/css/icons.css&#x22;&#x3E;
-&#x9;&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;assets/css/style.css&#x22;&#x3E;
-&#x9;&#x3C;script src=&#x22;assets/bower/webcomponentsjs/webcomponents.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-&#x9;&#x3C;link rel=&#x22;import&#x22; href=&#x22;/assets/bower/ui-components/clab-components.html&#x22;&#x3E;
+&#x9;&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;css/icons.css&#x22;&#x3E;
+&#x9;&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;css/style.css&#x22;&#x3E;
+&#x9;&#x3C;script src=&#x22;bower/webcomponentsjs/webcomponents.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x9;&#x3C;script src=&#x22;bower/web-animations-js/web-animations-next.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x9;&#x3C;link rel=&#x22;import&#x22; href=&#x22;bower/ui-components/clab-components.build.html&#x22;&#x3E;
 &#x3C;/head&#x3E;
 &#x3C;body&#x3E;
 &#x9;&#x3C;header id=&#x22;main-sidebar&#x22;&#x3E;
-&#x9;&#x9;&#x3C;menu-clab title-icon=&#x22;clab-icon-sign&#x22; link=&#x22;#/&#x22;&#x3E;
-&#x9;&#x9;&#x9;&#x3C;span class=&#x22;name&#x22;&#x3E;contact&#x3C;b&#x3E;lab&#x3C;/b&#x3E;&#x3C;/span&#x3E;
+&#x9;&#x9;&#x3C;menu-clab title-icon=&#x22;icon-sign-full&#x22; link=&#x22;#/&#x22; first-child&#x3E;
+&#x9;&#x9;&#x9;&#x3C;span class=&#x22;product-name&#x22;&#x3E;contact&#x3C;b&#x3E;lab&#x3C;/b&#x3E;&#x3C;/span&#x3E;
 &#x9;&#x9;&#x3C;/menu-clab&#x3E;
 &#x9;&#x3C;/header&#x3E;
 &#x9;&#x3C;main&#x3E;
