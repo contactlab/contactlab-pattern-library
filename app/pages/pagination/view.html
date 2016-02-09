@@ -12,7 +12,7 @@
 						<pagination-clab pages='["#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8"]' current-page="3"></pagination-clab>
 					</div>
 					<div class="component-specs">
-						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
@@ -62,6 +62,29 @@
 											<td>number</td>
 											<td>valid page number</td>
 											<td>1</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="tab-content">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Emitted when</th>
+											<th>Custom data</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>change</td>
+											<td>Click on page number or arrows</td>
+											<td>index of the current page</td>
+										</tr>
+										<tr>
+											<td>update</td>
+											<td>Change the value of 'pages' attribute</td>
+											<td>N/A</td>
 										</tr>
 									</tbody>
 								</table>

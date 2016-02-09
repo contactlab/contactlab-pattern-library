@@ -71,9 +71,29 @@
 											<td>none</td>
 										</tr>
 										<tr>
+											<td>label-field</td>
+											<td>string</td>
+											<td>custom name for the label property of the single option object</td>
+											<td>'label'</td>
+										</tr>
+										<tr>
+											<td>value-field</td>
+											<td>string</td>
+											<td>custom name for the value property of the single option object</td>
+											<td>'value'</td>
+										</tr>
+										<tr>
 											<td>options-fn</td>
 											<td>function</td>
 											<td>a function returning a Javascript promise that returns the options array</td>
+											<td>none</td>
+										</tr>
+										<tr>
+											<td>url</td>
+											<td>string</td>
+											<td>
+												Url to fetch the options from
+											</td>
 											<td>none</td>
 										</tr>
 										<tr>
@@ -87,6 +107,12 @@
 											<td>boolean</td>
 											<td>true/false</td>
 											<td>false</td>
+										</tr>
+										<tr>
+											<td>disable-option</td>
+											<td>array</td>
+											<td>array of indexes of the options to be disabled</td>
+											<td>[]</td>
 										</tr>
 										<tr>
 											<td>result-as-obj</td>
@@ -142,22 +168,47 @@
 										<tr>
 											<td>getSelectedLabel()</td>
 											<td>N/A</td>
-											<td>returns the label of the selected option</td>
+											<td>label of the selected option</td>
 										</tr>
 										<tr>
 											<td>getSelectedValue()</td>
 											<td>N/A</td>
-											<td>returns the value of the selected option</td>
+											<td>value of the selected option</td>
 										</tr>
 										<tr>
 											<td>setByLabel(label)</td>
 											<td>string</td>
-											<td>Sets the right option as selected</td>
+											<td>N/A</td>
 										</tr>
 										<tr>
 											<td>setByValue(value)</td>
 											<td>string</td>
-											<td>Sets the right option as selected</td>
+											<td>N/A</td>
+										</tr>
+										<tr>
+											<td>isValorized()</td>
+											<td>N/A</td>
+											<td>boolean</td>
+										</tr>
+										<tr>
+											<td>isNotValorized()</td>
+											<td>N/A</td>
+											<td>boolean</td>
+										</tr>
+										<tr>
+											<td>setValue(option, preventChange)</td>
+											<td>object, boolean</td>
+											<td>N/A</td>
+										</tr>
+										<tr>
+											<td>getValue()</td>
+											<td>N/A</td>
+											<td>selected option value</td>
+										</tr>
+										<tr>
+											<td>getValueObject()</td>
+											<td>N/A</td>
+											<td>selected option</td>
 										</tr>
 									</tbody>
 								</table>

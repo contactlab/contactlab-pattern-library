@@ -17,6 +17,7 @@
 					</h3>
 					<div class="component-example">
 						<group-clab id="notifications" on-change="_toggleNotifications">
+							<button-clab>None</button-clab>
 							<button-clab>Primary</button-clab>
 							<button-clab>Success</button-clab>
 							<button-clab>Warning</button-clab>
@@ -38,7 +39,7 @@
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
-								<pre><code class="html">&lt;alert-clab notify type="primary" visible&gt; <i class="italic">content</i> &lt;/alert-clab&gt;</code></pre>
+								<pre><code class="html">&lt;alert-clab notify type="primary"&gt; <i class="italic">content</i> &lt;/alert-clab&gt;</code></pre>
 									</div>
 							</div>
 							<div class="tab-content">
@@ -633,18 +634,20 @@
 			_toggleNotifications: function(evt){
 				switch(evt.detail.value){
 					case 0:
-						document.querySelector('#alert-primary').visible=true;
 						break;
 					case 1:
-						document.querySelector('#alert-success').visible=true;
+						document.querySelector('#alert-primary').visible=true;
 						break;
 					case 2:
-						document.querySelector('#alert-warning').visible=true;
+						document.querySelector('#alert-success').visible=true;
 						break;
 					case 3:
-						document.querySelector('#alert-error').visible=true;
+						document.querySelector('#alert-warning').visible=true;
 						break;
 					case 4:
+						document.querySelector('#alert-error').visible=true;
+						break;
+					case 5:
 						document.querySelector('#alert-info').visible=true;
 						break;
 				}
