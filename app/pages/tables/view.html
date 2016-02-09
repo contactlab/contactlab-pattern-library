@@ -143,7 +143,7 @@
 							<div class="entries-number">
 								<span>Show </span>
 								<span class="entries-select">
-									<dropdown-clab id="dc-table" options='[{"value":"10","label": "10"}, {"value":"20","label": "20"}, {"value":"50","label": "50"}]'></dropdown-clab>
+									<dropdown-clab id="dd-table" options='[{"value":"5","label": "5"}, {"value":"10","label": "10"}, {"value":"15","label": "15"}]' selected='{"value":"5", "label":"5"}' on-change="_setPagesAndRange"></dropdown-clab>
 								</span>
 								<span> entries</span>
 							</div>
@@ -153,7 +153,7 @@
 								</div>
 							</div>
 						</div>
-						<table>
+						<table id="full-table">
 							<tr>
 								<th>
 									Table Header 1
@@ -171,23 +171,17 @@
 									<i class="clab-icon icon-arrow-down sorting-arrow bottom"></i>
 								</th>
 							</tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
+						    <template is="dom-repeat" items="[[visibleContent]]">
+						    	<tr>
+							      <td>[[item.row1]]</td><td>[[item.row2]]</td><td>[[item.row3]]</td>
+							    </tr>
+						    </template>
+						    
 						</table>
 						<div class="total-entries">
-							Showing 1 to 10 of 145 entries
+							[[tableEntries]]
 						</div>
-						<pagination-clab pages='["#1", "#2", "#3", "#4"]'></pagination-clab>
+						<pagination-clab id="pages-table" pages="[[tablePages]]" on-change="_setVisibleContent"></pagination-clab>
 					</div>
 				</section>
 			</div>
@@ -202,8 +196,65 @@
 		Polymer({
 			is:'page-tables',
 			behaviors: [ClipboardBehav],
+			properties: {
+				tableContent:{
+					type:Array,
+					value: function(){
+						var items=[];
+						for(var i=0; i<70; i++){
+							var obj={
+								"row1": "Division 1 of data "+(i+1),
+								"row2": "Division 2 of data "+(i+1),
+								"row3": "Division 3 of data "+(i+1)
+							}
+							items.push(obj);
+						}
+						return items;
+					}
+				},
+				visibleContent:{
+					type:Array,
+					value:[]
+				},
+				tablePages:{
+					type:Array,
+					value:[]
+				},
+				tableEntries:{
+					type:String
+				}
+			},
+			ready:function(){
+				this._setPagesAndRange();
+			},
 			attached:function(){
 				this._highlightCode();
+				
+			},
+
+
+
+			_setPagesAndRange:function(){
+				var value = this.$['dd-table'].selected.value;
+				var totPages = this.tableContent.length/value;
+				var pages=[];
+				for(var i=1; i<=totPages; i++){
+					var end=value*i;
+					var start=(end-1)-(value-1);
+					pages.push(start+'#'+end);
+				}
+				this.set('tablePages', pages);
+
+				this.async(this._setVisibleContent, 100);
+			},
+
+			_setVisibleContent:function(){
+				var str=this.$['pages-table'].pages[this.$['pages-table'].currentPage-1];
+				var range=str.split('#');
+				var visible=this.tableContent.slice( Number(range[0]), Number(range[1]) );
+
+				this.set('visibleContent', visible);
+				this.tableEntries = 'Showing '+(Number(range[0])+1)+' to '+range[1]+' of '+this.tableContent.length+' entries';
 			}
 		});
 
