@@ -149,7 +149,7 @@
 							</div>
 							<div class="table-search">
 								<div class="input-icon-wrapper search">
-									<input type="text">
+									<input-clab value="{{inputText}}" on-keyup="_search"></input-clab>
 								</div>
 							</div>
 						</div>
@@ -178,10 +178,13 @@
 						    </template>
 						    
 						</table>
-						<div class="total-entries">
-							[[tableEntries]]
-						</div>
-						<pagination-clab id="pages-table" pages="[[tablePages]]" on-change="_setVisibleContent"></pagination-clab>
+						<template is="dom-if" if="[[pagination]]">
+							<div class="total-entries">
+								[[tableEntries]]
+							</div>
+						
+							<pagination-clab id="pages-table" pages="[[tablePages]]" on-change="_setVisibleContent"></pagination-clab>
+						</template>
 					</div>
 				</section>
 			</div>
@@ -201,7 +204,7 @@
 					type:Array,
 					value: function(){
 						var items=[];
-						for(var i=0; i<70; i++){
+						for(var i=0; i<74; i++){
 							var obj={
 								"row1": "Division 1 of data "+(i+1),
 								"row2": "Division 2 of data "+(i+1),
@@ -211,6 +214,9 @@
 						}
 						return items;
 					}
+				},
+				workableContent:{
+					type:Array
 				},
 				visibleContent:{
 					type:Array,
@@ -222,9 +228,17 @@
 				},
 				tableEntries:{
 					type:String
+				},
+				inputText:{
+					type:String
+				},
+				pagination:{
+					type:Boolean,
+					value:true
 				}
 			},
 			ready:function(){
+				this.set('workableContent', this.tableContent);
 				this._setPagesAndRange();
 			},
 			attached:function(){
@@ -236,9 +250,18 @@
 
 			_setPagesAndRange:function(){
 				var value = this.$['dd-table'].selected.value;
-				var totPages = this.tableContent.length/value;
+				var totPages = this.workableContent.length/value;
+
+				if(this.workableContent.length<value){
+					this.set('visibleContent', this.workableContent);
+					this.pagination=false;
+					return;
+				} else {
+					this.pagination=true;
+				}
+
 				var pages=[];
-				for(var i=1; i<=totPages; i++){
+				for(var i=1; i<=Math.ceil(totPages); i++){
 					var end=value*i;
 					var start=(end-1)-(value-1);
 					pages.push(start+'#'+end);
@@ -249,12 +272,29 @@
 			},
 
 			_setVisibleContent:function(){
-				var str=this.$['pages-table'].pages[this.$['pages-table'].currentPage-1];
+				var str=this.$$('#pages-table').pages[this.$$('#pages-table').currentPage-1];
 				var range=str.split('#');
-				var visible=this.tableContent.slice( Number(range[0]), Number(range[1]) );
+				var visible=this.workableContent.slice( Number(range[0]), Number(range[1]) );
 
 				this.set('visibleContent', visible);
-				this.tableEntries = 'Showing '+(Number(range[0])+1)+' to '+range[1]+' of '+this.tableContent.length+' entries';
+				this.tableEntries = 'Showing '+(Number(range[0])+1)+' to '+range[1]+' of '+this.workableContent.length+' entries';
+			},
+
+
+
+			_search:function(evt){
+				var str=this.inputText;
+				var res=[];
+				this.tableContent.map(function(obj){
+					for(prop in obj){
+						if(obj[prop].toLowerCase().search(str)>-1) {
+							res.push(obj);
+							return;
+						}
+					}
+				});
+				this.set('workableContent', res);
+				this._setPagesAndRange();
 			}
 		});
 
