@@ -1644,6 +1644,7 @@ input[type=text].slider-value {
     .description {
       padding: $base-spacing 0;
       @include full;
+      text-align: center;
     }
   }
 }

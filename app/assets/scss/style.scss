@@ -14,9 +14,14 @@ $fa-font-path: "../bower/font-awesome/fonts";
 @import "library/reset";
 @import "library/settings";
 @import 'compass';
-@import "contactlab-pattern";
+@import "contactlab-pattern"; 
  
+// HEADER
 
+header .product-logo .product-name {
+	padding-left: 0;
+	font-size: 23px;
+}
 
 // COVER
 
@@ -39,7 +44,7 @@ $fa-font-path: "../bower/font-awesome/fonts";
 	.logo {
 		float: left;
 		max-width: 150px;
-		margin: $large-spacing 0 0 $large-spacing;
+		margin: $base-spacing 0 0 $base-spacing;
 
 		img {
 			width: 100%;
@@ -75,7 +80,7 @@ $fa-font-path: "../bower/font-awesome/fonts";
 	}
 
 	.sections .card {
-		@include gallery(4);
+		@include gallery(3);
 		text-align: center;
 
 		figure {
@@ -332,9 +337,9 @@ main {
 
 	figure {
 		height: 100px;
-
+ 
 		&.corporate-primary {
-			background-color: $primary-color;
+			background-color: $primary-color; 
 		}
 
 		&.contactplan-primary {
@@ -349,12 +354,8 @@ main {
 			background-color: $contactsend-color;
 		}
 
-		&.contactscore-primary {
-			background-color: $contactscore-color;
-		}
-
-		&.contactanalytics-primary {
-			background-color: $contactanalytics-color;
+		&.contactcontent-primary {
+			background-color: $contactcontent-color;
 		}
 
 		@each $type, $color in $default-status {
@@ -504,4 +505,10 @@ main {
 		float: left;
 		margin-bottom: $base-spacing;
 	}
+}
+
+// SPINNERS
+
+.page-spinner .spinner-overlay {
+	z-index: 1;
 }

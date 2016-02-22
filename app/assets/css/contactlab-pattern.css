@@ -3059,6 +3059,10 @@ table {
   content: "";
 }
 
+.icon-contactlab:before {
+  content: "";
+}
+
 html {
   height: 100%;
   font-size: 14px;
@@ -3232,15 +3236,15 @@ h1 span {
 }
 #products-panel .products-list .product.contacthub .sign,
 #products-panel .products-list .product.contacthub .product-name b {
-  color: #00BCD4;
+  color: #0EE6FF;
 }
 #products-panel .products-list .product.contactplan .sign,
 #products-panel .products-list .product.contactplan .product-name b {
-  color: #14C04D;
+  color: #05C5FF;
 }
 #products-panel .products-list .product.contactsend .sign,
 #products-panel .products-list .product.contactsend .product-name b {
-  color: #00578C;
+  color: #0072BC;
 }
 
 .close-overlay {
@@ -3284,7 +3288,7 @@ header .product-logo .sign {
   color: #0072bc;
 }
 header .product-logo .sign .clab-icon {
-  font-size: 20px;
+  font-size: 7px;
 }
 header .product-logo .product-name {
   float: left;
@@ -5835,6 +5839,7 @@ input[type=text].slider-value {
   float: left;
   margin-left: 0;
   margin-right: 0;
+  text-align: center;
 }
 
 textarea {
