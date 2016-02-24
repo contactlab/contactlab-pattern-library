@@ -93,7 +93,11 @@ var InnerMenuClab = (function () {
 		value: function _computeActive(item, curUrl) {
 			var arr = [];
 			//se è con l'url quindi di 2° livello
-			if (item.url && curUrl.search(item.url) > -1) arr.push('active');
+			if (item.url) {
+				var urlArr = item.url.split('/');
+				var curUrlArr = curUrl.split('/');
+				if (urlArr[urlArr.length - 1] == curUrlArr[curUrlArr.length - 1]) arr.push('active');
+			}
 			//se è senza url quindi con altri submenu
 			if (item.submenu) {
 				arr.push('submenu');
