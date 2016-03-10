@@ -1,84 +1,53 @@
-button:disabled {
-  cursor: not-allowed;
-}
+$btn-border-thickness: 1px;
 
-%btn-style {
-  margin: 0 3px;
-  padding: 9px 20px;
+//////////////// BUTTONS ////////////////
+
+// DEFAULT BUTTONS
+
+.btn {
+  border: 0;
+  padding: $small-spacing $base-spacing;
+  background-color: $default-color;
   cursor: pointer;
-  background: transparent;
-  color: $dark-gray;
-  border: 1px solid $default-color;
-  font-size: $base-font-size;
-  font-family: $base-font-family;
-  line-height: 1;
-  display: inline-block;
+  border-bottom: $btn-border-thickness solid darken($default-color, 15%);
+  color: #FFFFFF;
+  line-height: 1.2;
   vertical-align: bottom;
-  text-align: center;
-  min-width: 100px;
-  @include text-shadow(none);
-  @include border-radius(0);
+  font-size: $base-font-size;
+  line-height: 1;
 
-  &:first-of-type {
-    margin-left: 0;
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $disabled-color !important;
+    border-color: darken($disabled-color, 15%) !important;
+    color: darken($disabled-color, 15%) !important;
   }
 
-  &:last-of-type {
-    margin-right: 0;
+  &:hover {
+    background-color: lighten($default-color, 3%);
   }
 
-  &:focus {
-    outline: none;
-  }
-
-  .icon {
-    margin-right: $small-spacing;
-    display: inline-block;
-    font-size: 10px;
-    @include scale(2);
-    @include apply-origin(center, center);
+  &:active {
+    background-color: darken($default-color, 3%);
+    border-bottom: 0;
+    margin-top: $btn-border-thickness;
   }
 
   &.small {
     padding: $smaller-spacing $small-spacing;
   }
-}
 
-.btn {
-  @extend %btn-style;
-  background-color: $default-color;
-  color: #FFFFFF;
-  border: 0;
-  border-bottom: 1px solid darken($default-color, 10%);
-  padding-top: 10px;
+  .icon {
+    display: inline-block;
 
-  &.block {
-    @include full;
-  }
-
-  &:hover {
-    background-color: lighten($default-color, 3%);
-    color: #FFFFFF;
-  }
-
-  &:disabled {
-    color: #FFFFFF !important; 
-    background-color: $disabled-color !important;
-    border-bottom-color: darken($disabled-color, 10%) !important;
-    cursor: not-allowed;
-  }
-
-  &:active,
-  &.active {
-    color: #FFFFFF;
-    background-color: darken($default-color, 3%);
-    border-bottom: 0;
-    margin-top: 1px;
+    + span {
+      padding-left: $smaller-spacing;
+    }
   }
 
   @each $type, $color in $default-status {
     &.#{$type} {
-      border-bottom-color: darken(nth($color, 1), 10%);
+      border-bottom-color: darken(nth($color, 1), 15%);
       background-color: nth($color, 1);
       color: nth($color, 2);
 
@@ -93,191 +62,138 @@ button:disabled {
 
       &:active,
       &.active {
-        margin-top: 1px;
-        border-bottom: 0;
         color: nth($color, 2);
         background-color: darken(nth($color, 1), 3%);
       }
     }
   }
-}
 
-// FLAT BUTTONS
+  // EMPTY BUTTONS
 
-.btn.flat {
-  @extend %btn-style;
-  border-color: transparent;
-  background: transparent;
-  color: $default-color;
-  padding-top: 10px;
+  &.empty {
+    background: transparent;
+    padding-top: $small-spacing - 1px;
+    border: $btn-border-thickness solid $default-color;
+    color: $default-color;
 
-  &:active,
-  &.active {
-    background: $default-color;
-    color: #FFFFFF;
-  }
+    &:disabled {
+      background-color: transparent !important;
+    }
 
-  &:disabled {
-    border-color: transparent !important;
-  }
+    &:active {
+      margin-top: 0;
+      padding-top: $small-spacing - 1px;
+      color: #FFFFFF;
+      background-color: $default-color;
+    }
 
-  @each $type, $color in $default-status {
-    &.#{$type} {
-      background-color: transparent;
-      color: nth($color, 1);
+    &.small {
+      padding-top: $smaller-spacing - 1px;
+    }
 
-      &:hover {
-        border-color: transparent;
-      }
-
-      &:active,
-      &.active {
-        background-color: nth($color, 1);
+    @each $type, $color in $default-status {
+      &.#{$type} {
         border-color: nth($color, 1);
-        color: nth($color, 2);
+        color: nth($color, 1);
+
+        &:hover {
+          background: transparent;
+          border-color: lighten(nth($color, 1), 3%);
+          border-color: lighten(nth($color, 1), 3%);
+        }
+
+        &:focus {
+          background: transparent;
+          border-color: nth($color, 1);
+        }
+
+        &:active,
+        &.active {
+          color: nth($color, 2);
+          background-color: darken(nth($color, 1), 3%);
+        }
       }
     }
   }
 
-  &:disabled {
+  // FLAT BUTTONS
+
+  &.flat {
+    border-color: transparent;
     background: transparent;
-    color: $disabled-color; 
-    cursor: not-allowed;
-  }
-}
+    color: $default-color;
 
-// EMPTY BUTTONS
+    &:disabled {
+      background-color: transparent !important;
+    }
 
-.btn.empty {
-  @extend %btn-style;
-  background-color: transparent;
-  color: $default-color;
-  border: 1px solid $default-color;
+    &:active,
+    &.active {
+      background: $default-color;
+      color: #FFFFFF;
+    }
 
-  &.block {
-    @include full;
-  }
+    &:disabled {
+      border-color: transparent !important;
+    }
 
-  &:hover {
-    background: transparent;
-    border-color: lighten($default-color, 3%);
-    color: lighten($default-color, 3%);
-  }
+    @each $type, $color in $default-status {
+      &.#{$type} {
+        background-color: transparent;
+        color: nth($color, 1);
 
-  &:disabled {
-    background: transparent !important;
-    color: $disabled-color !important; 
-    border-color: $disabled-color !important;
-    cursor: not-allowed;
-  }
+        &:hover {
+          border-color: transparent;
+        }
 
-  &:active,
-  &.active {
-    color: #FFFFFF;
-    background-color: darken($default-color, 3%);
-    border-bottom: 0;
-  }
-
-  @each $type, $color in $default-status {
-    &.#{$type} {
-      border-color: nth($color, 1);
-      color: nth($color, 1);
-
-      &:hover {
-        border-color: lighten(nth($color, 1), 3%);
-        border-color: lighten(nth($color, 1), 3%);
-      }
-
-      &:focus {
-        background: transparent;
-        border-color: nth($color, 1);
-      }
-
-      &:active,
-      &.active {
-        color: nth($color, 2);
-        background-color: darken(nth($color, 1), 3%);
+        &:active,
+        &.active {
+          background-color: nth($color, 1);
+          border-color: nth($color, 1);
+          color: nth($color, 2);
+        }
       }
     }
   }
 }
 
+//////////////// END BUTTONS ////////////////
 
-// BUTTONS GROUP
+
+
+//////////////// BUTTONS GROUP ////////////////
 
 .buttons-group {
-  
-  &.small .btn {
-    @extend .small;
+  display: flex;
 
-    &.full {
-      border-top: 1px solid $medium-gray;
+  &.small {
+    .btn {
+      @extend .small;
     }
   }
 
-  .group-item {
+  .btn {
+    margin: 0;
+    border-right-width: 0;
 
-    &:last-of-type .btn,
-    &:last-of-type:active .btn {
-      border-right: 1px solid $medium-gray;
-    }
-
-    .btn {
-      @extend .btn.empty;
-      float: left;
-      margin: 0;
-      border-right: 0;
-      border-color: $medium-gray;
-      min-width: 40px;
-
-      &:hover {
-        border-color: $medium-gray;
-      }
-
-      &:active {
-        background-color: shade($medium-gray, 10);
-        border-bottom: 1px solid shade($medium-gray, 10);
-      }
-
-      &.full {
-        background-color: $medium-gray;
-        border-color: $medium-gray;
-        color: #FFFFFF;
-      }
-      
+    &:last-of-type {
+      border-right-width: 1px;
     }
   }
 
   @each $type, $color in $default-status {
     &.#{$type} {
+      .btn {
+        @extend .#{$type};
+        border-color: nth($color, 1);
 
-      
-      .group-item {
-
-        &:last-of-type .btn,
-        &:last-of-type:active .btn {
-           border-right: 1px solid nth($color, 1);
-        }
-
-        .btn {
-          border-color: nth($color, 1);
-
-          &:active {
-            background-color: shade(nth($color, 1), 10);
-          }
-
-          &.full {
-            background-color: nth($color, 1);
-            border-color: nth($color, 1);
-          }
+        &.empty {
+          background-color: transparent;
         }
       }
-
-      &.small .btn.full {
-        border-top: 1px solid nth($color, 1);
-      }
-
-      
     }
   }
 }
+
+
+//////////////// END BUTTONS GROUP ////////////////

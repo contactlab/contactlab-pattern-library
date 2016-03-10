@@ -18,6 +18,10 @@ $fa-font-path: "../bower/font-awesome/fonts";
  
 // HEADER
 
+header .main-nav {
+	padding-right: 250px;
+}
+
 header .product-logo .product-name {
 	padding-left: 0;
 	font-size: 23px;
@@ -144,10 +148,10 @@ header .product-logo .product-name {
 	color: $gray;
 }
 
-main {
+/* main {
 	padding-right: 0;
 	padding-top: 0;
-}
+} */
 
 /* #main-sidebar {
 	background-color: #FFFFFF;
@@ -316,139 +320,161 @@ main {
 
 // COLORS
 
-.pattern-color {
-	@include gallery(3);
 
-	@include susy-breakpoint($tablet) {
-		@include gallery(4);
-	}
+.pattern-colors {
+	.pattern-color {
+		width: 200px;
+		margin-right: $base-spacing;
+		padding-bottom: $base-spacing;
 
-	@include susy-breakpoint($smartphone) {
-		@include gallery(6);
-	}
+		.color-sample {
+			height: 200px;
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: $small-spacing;
 
-	.card-actions {
-		font-size: 0;
-		img {
-			width: 25px;
-			margin-left: $smaller-spacing;
-		}
-	}
+			&.corporate-primary {
+				background-color: $primary-color; 
+			}
 
-	figure {
-		height: 100px;
- 
-		&.corporate-primary {
-			background-color: $primary-color; 
-		}
+			&.corporate-neutral {
+				background-color: #5C6970; 
+			}
 
-		&.contactplan-primary {
-			background-color: $contactplan-color;
-		}
+			&.lighter-gray {
+				background-color: $lighter-gray; 
+			}
 
-		&.contacthub-primary {
-			background-color: $contacthub-color;
-		}
+			&.light-gray {
+				background-color: $light-gray; 
+			}
 
-		&.contactsend-primary {
-			background-color: $contactsend-color;
-		}
+			&.gray {
+				background-color: $gray; 
+			}
 
-		&.contactcontent-primary {
-			background-color: $contactcontent-color;
-		}
+			&.medium-gray {
+				background-color: $medium-gray; 
+			}
 
-		@each $type, $color in $default-status {
-			&.#{$type} {
-				background-color: nth($color, 1);
-				color: nth($color, 2);
+			&.dark-gray {
+				background-color: $dark-gray; 
+			}
 
-				.counter {
-					color: nth($color, 1);
+			&.darker-gray {
+				background-color: $darker-gray; 
+			}
+
+			@each $type, $color in $default-status {
+				&.#{$type} {
+					background-color: nth($color, 1);
+				}
+			}
+
+			.swatches {
+				visibility: hidden;
+				opacity: 0;
+				@extend .default-transition;
+
+				img {
+					width: 40px;
+					margin: $smaller-spacing;
+				}
+			}
+
+			&:hover {
+				.swatches {
+					visibility: visible;
+					opacity: 1;
+					@extend .default-transition;
 				}
 			}
 		}
 
-		&.lighter-gray {
-			background: $lighter-gray;
-		}
+		.details {
+			ul {
+				li {
+					margin-bottom: 0;
+					font-size: $small-font-size;
+				}
 
-		&.light-gray {
-			background: $light-gray;
-		}
-
-		&.gray {
-			background: $gray;
-		}
-
-		&.medium-gray {
-			background: $medium-gray;
-		}
-
-		&.dark-gray {
-			background: $dark-gray;
-			color: #FFFFFF;
-		}
-
-		&.darker-gray {
-			background: $darker-gray;
-			color: #FFFFFF;
-		}
-
-		&.disabled-color {
-			background: $disabled-color;
+				li:first-child {
+					font-weight: $bold-weight;
+					font-size: $base-font-size;
+				}
+			}
 		}
 	}
 }
+ 
+
 
 
 // TYPOGRAPHY
 
-.typography-card {
-	@include gallery(6);
+.typo-weights {
+	flex-wrap: nowrap;
 
-	.big-letter {
-		font-size: 5rem;
+	.font-weight {
+		flex-grow: 1;
+		font-size: 100px;
 		line-height: 1;
-		margin-right: $base-spacing;
-		position: absolute;
-		left: $base-spacing;
-		top: $base-spacing;
-		width: 100px;
-	}
 
-	.font-demo {
-		@include full;
-		padding-left: 120px;
-		font-size: 1.2rem;
-		word-break: break-all;
-	}
+		.name {
+			font-size: $small-font-size;
+			font-weight: $normal-weight;
+		}
 
-	&.light .card-body {
-		font-weight: 300;
-	}
+		&.light {
+			font-weight: $light-weight;
+		}
 
-	&.semibold .card-body {
-		font-weight: 600;
-	}
+		&.semibold {
+			font-weight: $semibold-weight;
+		}
 
-	&.bold .card-body {
-		font-weight: 700;
-	}
-
-	&.italic .card-body {
-		font-style: italic;
+		&.bold {
+			font-weight: $bold-weight;
+		}
 	}
 }
 
-.text-styles-card {
-	h1,
-	h2,
-	h3,
-	h4 {
-		margin-bottom: 0;
+.typo-examples {
+	.example {
+		flex-grow: 1;
+		flex-basis: 50%;
+		margin: $base-spacing 0;
+		font-size: $big-font-size;
+		padding-right: $base-spacing;
+
+		.name {
+			font-size: $small-font-size;
+			font-weight: $normal-weight;
+			border-bottom: 1px solid $gray;
+			padding-bottom: $smaller-spacing;
+			margin-bottom: $smaller-spacing;
+		}
+
+		&.italic {
+			font-style: italic;
+		}
+
+		&.light {
+			font-weight: $light-weight;
+		}
+
+		&.semibold {
+			font-weight: $semibold-weight;
+		}
+
+		&.bold {
+			font-weight: $bold-weight;
+		}
 	}
 }
+
 
 // SPINNERS
 
@@ -466,6 +492,31 @@ main {
 }
 
 // ICONOGRAPHY
+
+.iconography {
+	.icon-example {
+		flex-grow: 1;
+		flex-basis: calc(100% / 3);
+		display: flex;
+		padding-bottom: $base-spacing;
+		align-items: center;
+
+		.clab-icon {
+			font-size: 25px;
+			padding-right: $small-spacing;
+			width: 50px;
+			text-align: center;
+		}
+	}
+
+	&.corporate {
+		.clab-icon {
+			width: auto;
+			font-size: 15px;
+		}
+	}
+}
+
 
 #iconography {
 	.icon-example {

@@ -139,7 +139,7 @@
 						Full table
 					</h3>
 					<div class="component-example">
-						<div class="full-table">
+						<div class="table-tools">
 							<div class="entries-number">
 								<span>Show </span>
 								<span class="entries-select">
@@ -148,9 +148,7 @@
 								<span> entries</span>
 							</div>
 							<div class="table-search">
-								<div class="input-icon-wrapper search">
-									<input-clab value="{{inputText}}" on-keyup="_search"></input-clab>
-								</div>
+								<input-clab value="{{inputText}}" on-keyup="_search"></input-clab>
 							</div>
 						</div>
 						<table id="full-table">
@@ -178,13 +176,17 @@
 						    </template>
 						    
 						</table>
-						<template is="dom-if" if="[[pagination]]">
-							<div class="total-entries">
-								[[tableEntries]]
-							</div>
+						<div class="table-recap">
+							<template is="dom-if" if="[[pagination]]">
+								<div class="total-entries">
+									[[tableEntries]]
+								</div>
+								<div class="pagination">
+									<pagination-clab id="pages-table" pages="[[tablePages]]" on-change="_setVisibleContent"></pagination-clab>
+								</div>
+							</template>
+						</div>
 						
-							<pagination-clab id="pages-table" pages="[[tablePages]]" on-change="_setVisibleContent"></pagination-clab>
-						</template>
 					</div>
 				</section>
 			</div>

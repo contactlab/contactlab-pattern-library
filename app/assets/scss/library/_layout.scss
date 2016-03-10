@@ -1,388 +1,90 @@
-$main-sidebar-width: 200px;
-$secondary-sidebar-width: 280px;
-$header-height: 66px;
-$main-actions-height: 56px;
-
-$user-panel-width: 280px;
-$user-panel-color: #FFFFFF;
-$notifications-size: 18px;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
 
-html{
-  height: 100%;
-	font-size: $base-font-size;
-}
-
-body {
-	min-height: 100%;
-	font-size: $base-font-size;
-}
-
-.main-actions {
-	@include full;
-}
-
-h1 span {
-	font-size: $bigger-font-size;
-}
-
-// start products panel
-
-#product-switch {
-	position: fixed;
-	top: 24px;
-	left: 200px;
-	color: $light-gray;
-	cursor: pointer;
-	z-index: 20;
-	@extend .slow-transition;
-
-	.clab-icon {
-		@extend .slow-transition;
-	}
-
-	img {
-		width: 25px;
-		@include filter(grayscale(100%) brightness(-100%));
-		@extend .slow-transition;
-	}
-
-	@include susy-breakpoint($desktop) {
-		top: 0;
-		right: 0;
-		left: initial;
-		bottom: initial;
-		line-height: $header-height;
-		padding: 0 $base-spacing;
-
-		.clab-icon {
-			vertical-align: middle;
-		}
-	}
-
-	&.active {
-		position: absolute;
-		top: 24px;
-		left: 50%;
-		margin-left: -50px;
-		color: $contactlab-color;
-		padding: $large-spacing 0 0;
-		@extend .slow-transition;
-
-		img {
-			width: 100px;
-			@include filter(grayscale(0%));
-			@extend .slow-transition;
-		}
-
-		.clab-icon { 
-			font-size: 100px;
-			@extend .slow-transition;
-		}
-
-		@include susy-breakpoint($desktop) {
-			left: initial;
-			right: 50%;
-			margin-left: 0;
-			margin-right: -70px;
-		}
-	}
-}
-
-#products-panel {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	z-index: 15;
-	width: 100%;
-	background: $overlay-color;
-	border: 1px solid $light-gray;
-	text-align: center;
-	padding: 3.75em 0 3.75em 0;
-	display: none;
-
-	@include susy-breakpoint($desktop) {
-		left: initial;
-		right: 0;
-	}
-
-	@include susy-breakpoint($smartphone) { 
-		left: 0;
-		right: 0;
-		max-width: initial;
-	}
-
-	.title {
-		@include full;
-		border-bottom: 1px solid $light-gray;
-		padding: $smaller-spacing;
-	}
-
-	.products-list {
-		@include full;
-		padding: 100px $base-spacing $base-spacing;
-
-		.product {
-			@include gallery(4);
-			text-align: center;
-
-			@include susy-breakpoint($tablet) { 
-				@include gallery(6);
-			}
-
-			@include susy-breakpoint($smartphone) { 
-				@include gallery(12);
-				clear: both !important;
-			}
-
-			.product-logo {
-				float: none;
-				display: inline-block;
-				width: auto;
-			}
-
-			&.contacthub {
-				.sign,
-				.product-name b {
-					color: $contacthub-color;
-				}
-			}
-
-			&.contactplan {
-				.sign,
-				.product-name b {
-					color: $contactplan-color;
-				}
-			}
-
-			&.contactsend {
-				.sign,
-				.product-name b {
-					color: $contactsend-color;
-				}					
-			}
-		}
-	}
-}
-
-// end products panel
-
-
-// overlay
-
-.close-overlay  {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	color: $dark-gray;
-	cursor: pointer;
-
-	&:hover {
-		color: $darker-gray;
-	}
-
-	.clab-icon {
-		font-size: 20px; 
-	}
-}
-
-// end overlay
-
-// start header
+$header-height: 64px;
 
 header {
+	padding: 0 $base-spacing;
+	background-color: $header-color;
+	color: set-text-color($header-color);
+	display: flex;
+	align-items: center;
 	position: fixed;
-	top: 0;
 	left: 0;
 	right: 0;
-	height: $header-height;
-	padding: 0 $base-spacing;
-	background: #FFFFFF;
-	z-index: 10;
-
-	.product-logo {
-		float: left;
-		position: relative; 
-		margin: 14px $base-spacing 9px 0;
-		width: 160px;
-
-		.sign {
-			position: absolute;
-			top: -3px;
-			left: 0;
-			color: $primary-color;
-
-			.clab-icon {
-				font-size: 7px;
-			}
-		}
-
-		.product-name {
-			float: left;
-			padding-left: 19px;
-			color: $base-text-color;
-			font-size: 25px;
-
-			b {
-				color: $primary-color;
-				font-weight: normal;
-			}
-		}
-	}
-
-	#main-logo {
-		@include susy-breakpoint($desktop) {
-			position: absolute;
-			top: 0;
-			left: 50%;
-			margin-left: -80px;
-		}
-	}
-}
-
-.open-menu {
-	position: fixed;
-	padding: 0 $base-spacing;
-	line-height: $header-height;
-	cursor: pointer;
-	display: none;
-	top: 0;
-	left: 0;
-	font-size: 24px;
-
-	@include susy-breakpoint($desktop) {
-		display: block;
-	}
-
-	.clab-icon {
-		vertical-align: middle;
-	}
-}
-
-.main-menu {
-	position: absolute;
-	left: 20%;
-	right: 20%;
-	text-align: center;	
-
-	.close-overlay {
-		display: none;
-	}
-
-	.users-menu {
-		@include full;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		padding: $base-spacing;
-		display: none;
-
-		@include susy-breakpoint($desktop) {
-			display: block;
-			background-color: rgba($dark-gray, 0.95);
-		}
-
-		.user-picture {
-			float: left;
-			display: inline-block;
-			position: relative;
-			height: 40px;
-			width: 40px;
-			font-size: 1rem;
-			border: 2px solid $gray;
-			@include border-radius(50%);
-
-			span {
-				display: block;
-				text-align: center;
-				line-height: 36px;
-				font-size: $big-font-size;
-				font-weight: $semibold-weight;
-				color: $gray;
-			}
-
-			img {
-				height: 40px;
-				@include border-radius(50%);
-				border: 2px solid transparent;
-				position: absolute;
-				top: -2px;
-				left: -2px;
-			}
-		}
-
-		.user-name {
-			float: left;
-			color: $lighter-gray;
-			line-height: 40px;
-			margin-left: $small-spacing;
-		}
-
-		ul {
-			float: right;
-		}
-
-		ul,
-		ul li {
-			font-size: 1rem;
-			width: auto;
-			clear: initial;
-			margin: 0;
-			padding: 0;
-
-			a {
-				width: 40px;
-				height: 40px;
-				line-height: 40px;
-				padding: 0;
-				display: block;
-
-				.clab-icon {
-					font-size: 16px;
-					vertical-align: middle;
-				}
-			}
-
-			.notifications {
-				background-color: $primary-color;
-				width: $notifications-size;
-				height: $notifications-size;
-				line-height: $notifications-size;
-				text-align: center;
-				display: inline-block;
-				@include border-radius(50%);
-				font-size: $small-font-size;
-			}
-		}
-	}
-
-	> ul {
-		@include full;
+	z-index: 5;
+	min-height: $header-height;
+	line-height: 1;
+	
+	ul,
+	ol {
 		margin: 0;
 		padding: 0;
 
 		li {
-			display: inline-block;
 			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.logo {
+		width: 250px;
+		font-size: 20px;
+		color: $text-color;
+
+		a {
+			color: $text-color;
+		}
+
+		.sign {
+			color: $primary-color;
+			font-size: 13px;
+			vertical-align: super;
+		}
+
+		b {
+			color: $primary-color;
+			font-weight: $normal-weight;
+		}
+	}
+
+	.mobile-menu-icon {
+		font-size: 20px;
+		cursor: pointer;
+		padding: $base-spacing;
+		display: none;
+	}
+
+	.main-nav {
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+
+		@media (min-width: 60em) {
+			display: flex !important;
+		}
+
+		> ul {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: flex-end;
+
+			li {
+				flex-grow: 0;
+				padding: 0;
+			}
 
 			a {
-				color: $base-text-color;
-				padding: 35px $base-spacing 10px $base-spacing;
-				display: block;
+				padding: $large-spacing $base-spacing $small-spacing;
+				text-decoration: none;
+				color: set-text-color($header-color);
 				position: relative;
-
-				@include susy-breakpoint($wide-desktop) {
-					padding-left: $small-spacing;
-					padding-right: $small-spacing;
-				}
+				display: block;
 
 				&:hover {
-					&:before {
+					&:after {
 						content: '';
 						display: block;
 						position: absolute;
@@ -391,13 +93,13 @@ header {
 						width: 20%;
 						height: 3px;
 						background-color: $gray;
-						@extend .fast-transition;
+						@extend .slow-transition;
 					}
 				}
 			}
 
-			&.active {
-				a:before {
+			li.active {
+				a:after {
 					content: '';
 					display: block;
 					position: absolute;
@@ -406,166 +108,222 @@ header {
 					width: 100%;
 					height: 3px;
 					background-color: $primary-color;
-					@extend .faster-transition;
+					@extend .slow-transition;
 				}
 			}
 		}
 	}
 
-	@include susy-breakpoint($desktop) {
-		position: fixed;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		z-index: 20;
-		padding: 0;
-		overflow: auto;
-		display: none;
+	.user {
+		width: 250px;
+		text-align: right;
+		display: flex;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+		@include user-selection;
 
-		> ul {
-			background-color: $overlay-color;
-			padding: 3.75em 0 3.75em 0;
+		.user-picture {
+			margin: 0;
+			padding: 0; 
+			width: 45px;
+			height: 45px;
+			position: relative;
+			@include border-radius(50%);
+			border: 2px solid $gray;
+			font-size: 18px;
+			color: $gray;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 41px;
+				height: 41px;
+				@include border-radius(50%);
+			}
+
+			.notifications {
+				position: absolute;
+				top: 0;
+				right: -9px;
+				width: 18px;
+				height: 18px;
+				background-color: $primary-color;
+				color: $primary-text-color;
+				line-height: 18px;
+				text-align: center;
+				@include border-radius(50%);
+				font-size: $small-font-size;
+			}
+		}
+
+		.user-details {
+			flex-grow: 1;
+			padding: 0 10px;
+			text-align: right;
+			@include user-selection(none);
+
+			.company {
+				font-size: $small-font-size; 
+			}
+		}
+
+		.user-panel {
 			position: absolute;
-			top: 0;
-			bottom: 80px;
-			overflow: auto;
+			right: 0;
+			top: 100%;
+			width: 150px;
+			margin-top: $small-spacing - 1px;
+			background-color: $header-color;
+			border: 1px solid $gray;
+			border-bottom: 0;
+			text-align: left;
+			display: none;
+
+			a {
+				display: block;
+				padding: $small-spacing $small-spacing;
+				border-bottom: 1px solid $gray;
+
+				@extend %default-link-effect;
+			}
+		}
+
+		&.active {
+
+			.user-picture {
+				border-color: $primary-color;
+			}
+
+			.user-panel{
+				display: block;
+			}
+		} 
+	} // END USERS
+
+	// MOBILE HEADER
+	@media (max-width: $desktop) {
+		padding: 0;
+
+		.mobile-menu-icon {
+			display: block;
 		}
 
 		.close-overlay {
 			display: block;
 		}
 
-		.users-menu {
-			
- 
-			a {
-				color: $lighter-gray;
-			}
-		}
-
-		ul li {
-			@include full;
-			font-size: $big-font-size;
-
-			a {
-
-				&:hover:before {
-					display: none;
-				}
-			}
-
-			&.active {
-				a {
-					color: $primary-color;
-
-					&:hover:before {
-						display: block;
-					}
-				}
-
-				a:before {
-					left: 50%;
-					width: 100px;
-					margin-left: -50px;
-				}
-			}
-		}
-	}
-}
-
-// end header
-
-// start contextual menu
-
-.contextual-menu {
-	@include full;
-	margin-bottom: $base-spacing;
-	border-bottom: 1px solid $light-gray;
-
-	ul,
-	li {
-		margin: 0;
-		padding: 0;
-	}
-
-	ul {
-		@include full;
-		border-top: 1px solid $light-gray;
-	}
-
-	li {
-		float: left;
-		position: relative;
-
-		&.active {
-			a {
-				color: $primary-color;
-			}
-
-			ul li a {
-				color: $base-text-color;
-			}
-
-			ul li.active a {
-				color: $primary-color;
-			}
-		}
-
-		a {
-			color: $base-text-color;
-			display: inline-block;
-			padding: $small-spacing $medium-spacing $small-spacing 0;
-			font-weight: $semibold-weight;
-			cursor: pointer;
-
-			&:hover {
-				color: $primary-color;
-			}
-		}
-
-		.arrow {
-			font-size: 12px;
-			margin-left: $smaller-spacing;
-		}
-
-		ul {
-			position: absolute;
-			top: 41px;
+		.main-nav {
+			order: 1;
+			position: fixed;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
 			z-index: 2;
-			left: -$base-spacing;
-			background-color: $base-background-color;
-			border: 1px solid $light-gray;
+			background-color: $overlay-color;
+			padding-top: 3.75em;
 			display: none;
-			width: auto;
-			max-height: 450px;
-			overflow: auto;
+			flex-direction: column;
 
-			@include susy-breakpoint($tablet) {
-				width: 100%;
+			ul {
+				flex-direction: column;
+				align-content: center;
+				justify-content: flex-start;
+				align-items: center;
 			}
 
 			li {
+				flex-grow: 0;
+				display: flex;
+				text-align: center;
+				justify-content: center;
+				font-size: $big-font-size;
+			}
+		}
+		
+		.logo {
+			order: 2;
+			flex-grow: 1;
+			text-align: center;
+			padding-right: 60px;
+		}
+
+		.user {
+			order: 3;
+			width: auto;
+			background-color: $darker-gray;
+			color: set-text-color($darker-gray);
+			padding: $base-spacing;
+
+			.user-picture {
+				order: 0;
+			}
+
+			.user-details {
+				order: 1;
+				text-align: left;
+			}
+
+			.user-panel {
+				background-color: $darker-gray;
+				color: set-text-color($darker-gray);
+				bottom: 100%;
+				top: initial;
 				width: 100%;
+				border-color: rgba(255, 255, 255, 0.2);
 
 				a {
-					padding: $small-spacing $base-spacing;
-					width: 100%;
-
-					&:hover {
-						color: $base-text-color;
-						background-color: #FFFFFF;
-					}
+					color: set-text-color($darker-gray);
+					border-color: rgba(255, 255, 255, 0.2);
 				}
 			}
 		}
 
 	}
 
+	// END MOBILE HEADER
+
+} // END HEADER
+
+main {
+	padding: $header-height+$base-spacing $base-spacing $base-spacing;
+	flex-grow: 1;
+}
+
+aside {
+	width: 250px;
+	padding: $base-spacing;
+	border-left: 3px solid $secondary-color;
+	flex-shrink: 0;
+	display: none;
+}
+
+footer {
+	padding: $base-spacing;
+	background-color: $secondary-color;
+}
+
+// CONTEXTUAL MENU
+
+.contextual-menu {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	border-top: 1px solid $gray;
+	font-weight: $semibold-weight;
+	margin-bottom: $base-spacing;
+	@include user-selection;
+
 	.mobile-nav-toggle {
-		@include full;
-		border-top: 1px solid $light-gray;
-		padding: $small-spacing;
+		padding: $small-spacing $small-spacing;
+		border-bottom: 1px solid $gray; 
 		font-weight: $bold-weight;
 		cursor: pointer;
 		display: none;
@@ -573,286 +331,141 @@ header {
 		.arrow {
 			font-size: 12px;
 			margin-left: $smaller-spacing;
+			float: right;
 		}
 	}
 
-	@include susy-breakpoint($tablet) {
+	> ul {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-content: flex-start;
+		border-bottom: 1px solid $gray;
+		margin: 0;
+		padding: 0;
+
+		@media (min-width: 48em) {
+			display: flex !important;
+		}
+
+
+		li {
+			flex-grow: 0;
+			padding: 0;
+			position: relative;
+			margin: 0;
+
+			&.active > a {
+				color: $primary-color;
+			}
+
+			a {
+				display: block;
+				padding: $small-spacing $medium-spacing $small-spacing 0;
+				@extend %default-link-effect;
+				cursor: pointer;
+			}
+
+			.arrow {
+				font-size: 12px;
+				margin-left: $smaller-spacing;
+			}
+		}
+
+		ul {
+			display: none; 
+			position: absolute;
+			top: 100%;
+			left: -$base-spacing;
+			right: $small-spacing;
+			border: 1px solid $gray;
+			background-color: $background-color;
+			max-height: 450px;
+			overflow: auto;
+			z-index: 2;
+
+			> li a {
+				padding: $small-spacing $base-spacing;
+				text-transform: none;
+
+				&:hover {
+					background-color: #FFFFFF;
+				}
+			}
+		}
+	}
+
+	// MOBILE
+	@media (max-width: $tablet) {
+		flex-direction: column;
 
 		.mobile-nav-toggle {
 			display: block;
 		}
 
 		> ul {
+			flex-direction: column;
 			display: none;
-		}
 
-		.arrow {
-			float: right;
-			padding-top: 5px;
-		}
+			li {
 
-		li {
-			@include full;
+				a {
+					padding-left: $base-spacing;
+					padding-right: $small-spacing;
+				}
 
-			a {
-				@include full;
-				padding-left: $small-spacing*2;
-				padding-right: $small-spacing;
+				.arrow {
+					float: right;
+				}
 			}
 
 			ul {
-				position: relative;
-				float: left;
-				margin: 0;
-				top: 0;
-				left: 0;
-				border: 0;
-				border-top: 1px solid $light-gray;
-				border-bottom: 1px solid $light-gray;
-				/* background-color: $light-gray; */
+				position: static;
+				border-left: 0;
+				border-right: 0;
 
-				li a {
-					padding-left: $small-spacing*3;
+				> li a {
+					padding-left: $medium-spacing;
+					padding-right: $small-spacing;
 				}
 			}
 		}
-
 	}
 }
 
-// end contextual menu
+// END CONTEXTUAL MENU
 
-// start user panel
+// CLOSE OVERLAY
 
-#user-bar {
-	position: absolute;
-	top: 0;
-	right: 0;
-	padding-right: $base-spacing;
-	cursor: pointer;
-	font-size: 0;
-	z-index: 12;
-
-	@include susy-breakpoint($desktop) {
-		display: none;
-	}
-
-	&.active {
-		.user-picture,
-		.user-pitcure img {
-			border-color: $primary-color;
-		}
-	}
-
-	.user-picture {
-		margin-top: $base-spacing/2;
-		display: inline-block;
-		position: relative;
-		height: $header-height - $base-spacing;
-		width: $header-height - $base-spacing;
-		font-size: 1rem;
-		border: 2px solid $gray;
-		@include border-radius(50%);
-
-		span {
-			display: block;
-			text-align: center;
-			line-height: $header-height - $base-spacing - 4px;
-			font-size: $big-font-size;
-			font-weight: $semibold-weight;
-			color: $gray;
-		}
-
-		img {
-			height: $header-height - $base-spacing;
-			@include border-radius(50%);
-			border: 2px solid transparent;
-			position: absolute;
-			top: -2px;
-			left: -2px;
-		}
-
-		.notifications {
-			position: absolute;
-			top: 0;
-			right: -$notifications-size/2;
-			background-color: $primary-color;
-			color: $primary-text-color;
-			width: $notifications-size;
-			height: $notifications-size;
-			line-height: $notifications-size;
-			text-align: center;
-			font-size: $smaller-font-size;
-			@include border-radius(50%);
-		}
-	}
-
-	.user-name {
-		line-height: $header-height;
-		display: inline-block;
-		vertical-align: top;
-		font-size: 1rem;
-		margin-right: $small-spacing;
-	}
-}
-
-#user-panel {
+.close-overlay {
 	position: fixed;
 	top: 0;
 	right: 0;
-	bottom: 0;
-	z-index: 11;
-	width: $user-panel-width;
-	border-left: 1px solid $light-gray;
-	background-color: $user-panel-color;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	z-index: 3;
+	font-size: 20px;
+	cursor: pointer;
 	display: none;
 
-	.user-actions {
-		position: absolute;
-		top: 0;
-		left: 0;
-		text-align: center;
-
-		.action {
-			@include full;
-
-			a {
-				width: 30px;
-				height: 30px;
-				line-height: 30px;
-				float: left;
-				font-size: 16px;
-				color: $base-text-color;
-
-				&:active {
-					color: $primary-color;
-				}
-
-				.clab-icon {
-					font-size: 16px;
-				}
-			}
-		}
-	}
-
-	.user-panel-content {
-		@include full;
-		margin-top: $header-height;
-		padding: 0 $base-spacing;
-
-		.notification {
-			position: relative;
-
-			.icon {
-				width: 35px;
-				height: 35px;
-				font-size: 35px;
-
-				.clab-icon {
-					font-size: 35px;
-				}
-			} 
-
-			p {
-				font-size: $small-font-size;
-				color: $medium-gray;
-			}
-
-			h2 {
-				font-weight: $bold-weight;
-				color: $base-text-color;
-			}
-
-			.description {
-				padding-left: $small-spacing;
-			}
-
-			&.new:before {
-				position: absolute;
-				content: '';
-				display: block;
-				top: 0;
-				left: -5px;
-				width: 5px;
-				height: 5px;
-				background-color: $primary-color;
-				@include border-radius(50%);
-			}
-		}
-
-		.description:hover {
-			h2 {
-				color: $primary-color;
-			}
-		}
+	.icon-close {
+		line-height: 40px;
 	}
 }
 
-// end user panel
 
-// start wrappers
 
-.main-content {
-	padding: $header-height+$base-spacing $base-spacing $base-spacing $base-spacing;
-	@include full;
-
-	&.actions-bar {
-		padding-bottom: $base-spacing+$main-actions-height;
-	}
-}
-
-.form-wrapper {
-	@include full; 
-	max-width: 620px;
-}
+// WRAPPERS
 
 .wrapper {
-	@include container;
-	padding-bottom: $base-spacing;
-
-	.form-wrapper {
-		max-width: 1030px;
-	}
+	max-width: 1320px;
+	margin: 0 auto;
 }
 
 .small-wrapper {
-	@include container(960px);
-	padding-bottom: $base-spacing;
-
-	.form-wrapper {
-		max-width: 760px;
-	}
+	max-width: 960px;
+	margin: 0 auto;
 }
-
-
-
-// MAIN ACTIONS BAR
-
-.main-actions-bar {
-	/* @include full;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 2;
-	height: $main-actions-height;
-	background-color: $dark-gray;
-	padding: $small-spacing $base-spacing 0; */
-
-	@include full;
-	margin-top: $base-spacing;
-	padding-top: $large-spacing;
-	border-top: 1px solid $medium-gray;
-
-	.left {
-		@include span(6);
-	}
-
-	.right {
-		@include span(6 last);
-		text-align: right;
-	}
-}
-
-// END MAIN ACTIONS BAR
-
