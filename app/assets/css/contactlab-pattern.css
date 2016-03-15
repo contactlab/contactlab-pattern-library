@@ -1057,7 +1057,7 @@ footer {
   background-color: #F0f0f0;
   max-height: 450px;
   overflow: auto;
-  z-index: 2;
+  z-index: 3;
 }
 .contextual-menu > ul ul > li a {
   padding: 10px 20px;
@@ -1122,6 +1122,13 @@ footer {
   margin: 0 auto;
 }
 
+button-clab {
+  margin-right: 5px;
+}
+button-clab:last-tof-type {
+  margin-right: 0;
+}
+
 .btn {
   border: 0;
   padding: 10px 20px;
@@ -1132,7 +1139,6 @@ footer {
   line-height: 1.2;
   vertical-align: bottom;
   font-size: 14px;
-  line-height: 1;
 }
 .btn:disabled {
   cursor: not-allowed;
@@ -1419,11 +1425,17 @@ footer {
 .buttons-group {
   display: flex;
 }
+.buttons-group button-clab {
+  margin: 0;
+}
 .buttons-group .btn {
   margin: 0;
   border-right-width: 0;
+  /* &:last-of-type {
+    border-right-width: 1px;
+  } */
 }
-.buttons-group .btn:last-of-type {
+.buttons-group .group-item:last-of-type .btn {
   border-right-width: 1px;
 }
 .buttons-group.primary .btn {
@@ -1821,6 +1833,25 @@ input[type="week"]:focus,
 textarea:focus {
   border-bottom-color: #0072bc;
 }
+input[type="color"]:disabled,
+input[type="date"]:disabled,
+input[type="datetime"]:disabled,
+input[type="datetime-local"]:disabled,
+input[type="email"]:disabled,
+input[type="month"]:disabled,
+input[type="number"]:disabled,
+input[type="password"]:disabled,
+input[type="search"]:disabled,
+input[type="tel"]:disabled,
+input[type="text"]:disabled,
+.dropdown-clab .value_wrapper:disabled,
+input[type="time"]:disabled,
+input[type="url"]:disabled,
+input[type="week"]:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  color: #C0C0C0;
+}
 
 input[type=checkbox],
 input[type=radio] {
@@ -2007,6 +2038,13 @@ input[type=range]:focus::-ms-fill-lower {
 
 input[type=range]:focus::-ms-fill-upper {
   background: #0072bc;
+}
+
+.tags-wrapper {
+  padding-bottom: 20px;
+}
+.tags-wrapper .input-wrapper {
+  padding-bottom: 5px;
 }
 
 .alerts-wrapper {
@@ -2774,6 +2812,7 @@ input[type=range]:focus::-ms-fill-upper {
   white-space: nowrap;
   font-size: 0.8571rem;
   display: block;
+  width: 100%;
 }
 
 .spinner-overlay {
@@ -3313,6 +3352,7 @@ ol.default {
   margin-bottom: 0;
   min-width: 50px;
   text-align: center;
+  z-index: 2;
 }
 .tabs .tab a, .pills .tab a {
   padding: 10px 10px 12px;
@@ -3404,13 +3444,18 @@ ol.default {
 .dropdown-clab .value_wrapper.active {
   border-bottom-color: #0072bc;
 }
+.autocomplete-clab .value_wrapper.disabled,
+.dropdown-clab .value_wrapper.disabled {
+  cursor: not-allowed;
+  color: #C0C0C0;
+}
 .autocomplete-clab .options-list,
 .dropdown-clab .options-list {
   position: absolute;
   top: 30px;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 3;
   background-color: #FFFFFF;
   margin-bottom: 0;
   overflow: auto;
@@ -3486,111 +3531,6 @@ input-clab.autocomplete-clab {
   pointer-events: none;
 }
 
-/* 
-.options-list-wrapper {
-  position: relative;
-
-  .value_wrapper {
-    @extend input[type="text"];
-    cursor: pointer;
-    text-align:left;
-  }
-
-  &:after {
-    font-family: 'contactlab-icons';
-    content: "\e60c";
-    position: absolute;
-    top: 9px;
-    right: $smaller-spacing;
-    line-height: 1;
-    font-size: 12px;
-    @extend .fast-transition;
-    pointer-events: none;
-  }
-
-  input[type="text"].js-users-list-filter {
-    padding-right: 25px;
-  }
-
-  .js-users-list-filter-message,
-  .js-users-list-filter-counter,
-  .js-users-list {
-    display: none;  
-  }
-
-  .filter-hidden {
-    opacity: .1;
-  }
-
-  .js-users-list,
-  .options-list{
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    top: 30px;
-    @extend .depth-1;
-    max-height: 200px;
-    overflow: auto;
-    @extend .fast-transition;
-    background-color: #FFFFFF;
-    display:none;
-
-    li,
-    .noResults {
-      background-color: white;
-      display: none;
-      padding: 10px;
-      margin: 0;
-      cursor: pointer;
-
-      &.hide {
-        display: none;
-      }
-      &.show {
-        display: block;
-      }
-
-      &.selected {
-        color: $primary-color;
-      }
-    }
-
-    &.hidden{
-      display: block;
-      opacity: 0;
-    }
-    
-    &.active{
-      display: block;
-      opacity: 1;
-    }
-
-    &.visible {
-      display: block;
-    }
-
-    .noResults {
-      cursor: initial;
-    }
-  }
-}
- */
-/* 
-.select-button .elekti-wrapper {
-  width: auto;
-
-  input[type="text"].js-users-list-filter {
-    @extend .btn;
-    width: auto;
-  }
-}
-
-
-// AUTOCOMPLETE
-
-.autocomplete-clab .options-list-wrapper:after {
-  display: none;
-} */
 select[multiple],
 ol.multiple-clab {
   background-color: rgba(255, 255, 255, 0.6);

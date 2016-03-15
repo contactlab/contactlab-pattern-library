@@ -104,7 +104,7 @@ class MainClab {
 		    '/ui/lists': ()=> {
 		    	this.handleRouting();
 		    },
-		    '/ui/forms': ()=> {
+		    '/ui/form-elements': ()=> {
 		    	this.handleRouting();
 		    },
 		    '/ui/select': ()=> {
@@ -129,6 +129,9 @@ class MainClab {
 		    	this.handleRouting();
 		    },
 		    '/ui/tooltips': ()=> {
+		    	this.handleRouting();
+		    },
+		    '/ui/text-inputs': ()=> {
 		    	this.handleRouting();
 		    },
 		    '/ui/toaster': ()=> {

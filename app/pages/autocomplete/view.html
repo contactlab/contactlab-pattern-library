@@ -4,160 +4,155 @@
 	<style></style>
 	
 	<template>
-		<div class="wrapper">
-			<div class="content">
-				<h2>Autocomplete</h2>
-				<section>
-					<div class="component-example">
-						<article>
-							<autocomplete-clab label="Normal autocomplete" options='[{"label":"Abruzzo", "value":"Abruzzo"},{"label":"Aosta", "value":"Aosta"},{"label":"Puglia", "value":"Puglia"},{"label":"Basilicata", "value":"Basilicata"},{"label":"Calabria", "value":"Calabria"},{"label":"Campania", "value":"Campania"},{"label":"Emilia-Romagna", "value":"Emilia-Romagna"},{"label":"Friuli-Venezia-Giulia", "value":"Friuli-Venezia-Giulia"},{"label":"Lazio", "value":"Lazio"},{"label":"Liguria", "value":"Liguria"},{"label":"Lombardia", "value":"Lombardia"},{"label":"Marche", "value":"Marche"},{"label":"Molise", "value":"Molise"},{"label":"Piemonte", "value":"Piemonte"},{"label":"Sardegna", "value":"Sardegna"},{"label":"Sicilia", "value":"Sicilia"},{"label":"Trentino-Alto Adige", "value":"Trentino-Alto Adige"},{"label":"Toscana", "value":"Toscana"},{"label":"Umbria", "value":"Umbria"},{"label":"Veneto", "value":"Veneto"}]' min-char="1">Start typing an Italian region, hints will appear</autocomplete-clab>
-						</article>
 
-						<article>
-							<autocomplete-clab label="AJAX autocomplete" url="http://localhost:3000/options" min-char="1">Type here to get hints</autocomplete-clab>
-						</article>
-					</div>
-					<div class="component-specs">
-						<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-	<pre><code class="html">&lt;autocomplete-clab label="autocomplete" options='...'&gt;Here goes the note&lt;/autocomplete-clab&gt;</code></pre>
-								</div>
+		<h2>Autocomplete</h2>
+		<section>
+			<article class="component autocomplete-comp">
+				<div class="example">
+					<autocomplete-clab label="Normal autocomplete" options='[{"label":"Abruzzo", "value":"Abruzzo"},{"label":"Aosta", "value":"Aosta"},{"label":"Puglia", "value":"Puglia"},{"label":"Basilicata", "value":"Basilicata"},{"label":"Calabria", "value":"Calabria"},{"label":"Campania", "value":"Campania"},{"label":"Emilia-Romagna", "value":"Emilia-Romagna"},{"label":"Friuli-Venezia-Giulia", "value":"Friuli-Venezia-Giulia"},{"label":"Lazio", "value":"Lazio"},{"label":"Liguria", "value":"Liguria"},{"label":"Lombardia", "value":"Lombardia"},{"label":"Marche", "value":"Marche"},{"label":"Molise", "value":"Molise"},{"label":"Piemonte", "value":"Piemonte"},{"label":"Sardegna", "value":"Sardegna"},{"label":"Sicilia", "value":"Sicilia"},{"label":"Trentino-Alto Adige", "value":"Trentino-Alto Adige"},{"label":"Toscana", "value":"Toscana"},{"label":"Umbria", "value":"Umbria"},{"label":"Veneto", "value":"Veneto"}]' min-char="1">Start typing an Italian region, hints will appear</autocomplete-clab>
+
+					<autocomplete-clab label="AJAX autocomplete" url="http://localhost:3000/options" min-char="1">Type here to get hints</autocomplete-clab>
+				</div>
+				<div class="specs">
+					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;autocomplete-clab label="autocomplete" options='...'&gt;Here goes the note&lt;/autocomplete-clab&gt;</code></pre>
 							</div>
-							<div class="tab-content">
-								<table class="striped-table">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Type</th>
-											<th>Values</th>
-											<th>Default</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>label</td>
-											<td>string</td>
-											<td>any valid string</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>name</td>
-											<td>string</td>
-											<td>any valid string</td>
-											<td>auto complete</td>
-										</tr>
-										<tr>
-											<td>input-type</td>
-											<td>string</td>
-											<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-											<td>success</td>
-										</tr>
-										<tr>
-											<td>options</td>
-											<td>array</td>
-											<td>
-												[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, ...]
-											</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>url</td>
-											<td>string</td>
-											<td>
-												Url to fetch the options from
-											</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>filter</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>value</td>
-											<td>object</td>
-											<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}]</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>options-fn</td>
-											<td>function</td>
-											<td>a function returning a Javascript promise that returns the options array</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>placeholder</td>
-											<td>string</td>
-											<td>any valid string</td>
-											<td>Type..</td>
-										</tr>
-										<tr>
-											<td>disabled</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>result-as-obj</td>
-											<td>boolean</td>
-											<td>Whether to return the entire object or only the value</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>max-in-view</td>
-											<td>number</td>
-											<td>max rows in view when list is open and scrollable</td>
-											<td>4</td>
-										</tr>
-										<tr>
-											<td>min-char</td>
-											<td>number</td>
-											<td>Amount of typed characters after which start fetching/searching for hints</td>
-											<td>3</td>
-										</tr>
-										<tr>
-											<td>hide-hints</td>
-											<td>boolean</td>
-											<td>Whether to show a list of hints</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>note-type</td>
-											<td>string</td>
-											<td>optional additional class for the note tag</td>
-											<td>none</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="tab-content">
-								<table class="striped-table">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Emitted when</th>
-											<th>Custom data</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>change</td>
-											<td>When a new value is selected</td>
-											<td><ul>
-												<li><b>selected:</b> the object representing the new value that has been selected</li>
-											</ul></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-			</div>
-		</div>
+						</div>
+						<div class="tab-content">
+							<table class="striped-table">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>label</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>name</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>auto complete</td>
+									</tr>
+									<tr>
+										<td>input-type</td>
+										<td>string</td>
+										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
+										<td>success</td>
+									</tr>
+									<tr>
+										<td>options</td>
+										<td>array</td>
+										<td>
+											[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, ...]
+										</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>url</td>
+										<td>string</td>
+										<td>
+											Url to fetch the options from
+										</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>filter</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>value</td>
+										<td>object</td>
+										<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}]</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>options-fn</td>
+										<td>function</td>
+										<td>a function returning a Javascript promise that returns the options array</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>placeholder</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>Type..</td>
+									</tr>
+									<tr>
+										<td>disabled</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>result-as-obj</td>
+										<td>boolean</td>
+										<td>Whether to return the entire object or only the value</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>max-in-view</td>
+										<td>number</td>
+										<td>max rows in view when list is open and scrollable</td>
+										<td>4</td>
+									</tr>
+									<tr>
+										<td>min-char</td>
+										<td>number</td>
+										<td>Amount of typed characters after which start fetching/searching for hints</td>
+										<td>3</td>
+									</tr>
+									<tr>
+										<td>hide-hints</td>
+										<td>boolean</td>
+										<td>Whether to show a list of hints</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>note-type</td>
+										<td>string</td>
+										<td>optional additional class for the note tag</td>
+										<td>none</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-content">
+							<table class="striped-table">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>change</td>
+										<td>When a new value is selected</td>
+										<td><ul>
+											<li><b>selected:</b> the object representing the new value that has been selected</li>
+										</ul></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</article>
+		</section>
 	</template>
 
 	<script>

@@ -54,8 +54,8 @@ var AppMenu = [{
 			"label": "Features",
 			"url": "#/ui/features"
 		}, {
-			"label": "Forms",
-			"url": "#/ui/forms"
+			"label": "Form elements",
+			"url": "#/ui/form-elements"
 		}, {
 			"label": "Labels & badges",
 			"url": "#/ui/labels-badges"
@@ -74,6 +74,9 @@ var AppMenu = [{
 		}, {
 			"label": "Tabs & pills",
 			"url": "#/ui/tabs-pills"
+		}, {
+			"label": "Text inputs",
+			"url": "#/ui/text-inputs"
 		}, {
 			"label": "Tooltips",
 			"url": "#/ui/tooltips"

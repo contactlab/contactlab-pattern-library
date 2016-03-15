@@ -4,278 +4,242 @@
 	<style></style>
 	
 	<template>
-		<div class="wrapper">
-			<div class="content" id="cards">
-				<h2>Cards</h2>
-				<section>
-					<h3 class="component-name">
-						Textual cards
-					</h3>
-					<div class="component-example">
-						<div class="card-example">
-							<card-clab title="Card title" primary-label="Accept" secondary-label="Decline">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
-							</card-clab>
-						</div>
-						<div class="card-example">
-							<card-clab title="Card title with icon" icon="fa fa-twitter icon" primary-label="Accept" secondary-label="Decline">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
-							</card-clab>
-						</div>
-						<div class="card-example">
-							<card-clab big title="Card big title" icon="fa fa-twitter icon" primary-label="Accept" secondary-label="Decline">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
-							</card-clab>
-						</div>
-						
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-	<pre><code class="html">&lt;div class=&quot;card&quot;&gt;
-	&#x9;&lt;div class=&quot;card-title&quot;&gt;Card title&lt;/div&gt;
-	&#x9;&lt;div class=&quot;card-body &quot;&gt;
-	&#x9;&#x9;Content
-	&#x9;&lt;/div&gt;
-	&#x9;&lt;div class=&quot;card-actions &quot;&gt;
-	&#x9;&#x9;&lt;button class=&quot;btn flat&quot;&gt;Decline&lt;/button&gt;
-	&#x9;&#x9;&lt;button class=&quot;btn primary flat&quot;&gt;Accept&lt;/button&gt;
-	&#x9;&lt;/div&gt;
-	&lt;/div&gt;</code></pre>
-								</div>
-							</div>
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-	<pre><code class="html">&lt;card-clab title=&quot;Card title&quot; primary-label=&quot;Accept&quot; secondary-label=&quot;Decline&quot;&gt; 
-	&#x9;Card content 
-	&lt;/card-clab&gt;</code></pre>
-								</div>
-							</div>
-							<div class="tab-content">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Type</th>
-											<th>Values</th>
-											<th>Default</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>title</td>
-											<td>string</td>
-											<td>any valid string</td>
-											<td>Title</td>
-										</tr>
-										<tr>
-											<td>primary-label</td>
-											<td>string</td>
-											<td>any valid string</td>
-											<td>Ok</td>
-										</tr>
-										<tr>
-											<td>secondary-label</td>
-											<td>string</td>
-											<td>any valid string</td>
-											<td>Cancel</td>
-										</tr>
-										<tr>
-											<td>icon</td>
-											<td>string</td>
-											<td>any valid icon class</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>big</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>table</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>figure</td>
-											<td>string</td>
-											<td>path to an image</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>effect</td>
-											<td>string</td>
-											<td>none, 'blur', 'saturation', 'zoom-in', 'zoom-out'</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>no-actions</td>
-											<td>boolean</td>
-											<td>Whether to show primary and secondary action buttons</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>link</td>
-											<td>object</td>
-											<td>'{"text":"my website", "href":"www.mywebsite.com"}'</td>
-											<td>none</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
 
-				<section>
-					<h3 class="component-name">
-						Images cards
-					</h3>
-					<div class="component-example">
-						<div class="card-example">
-							<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" 
-							title="Basic" primary-label="Explore" secondary-label="Share">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
-							</card-clab>
-						</div>
-						<div class="card-example">
-							<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" 
-							effect="blur" title="Blur effect" primary-label="Explore" secondary-label="Share">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
-							</card-clab>
-						</div>
-						<div class="card-example">
-							<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" 
-							effect="saturation" title="Saturation effect" primary-label="Explore" secondary-label="Share">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
-							</card-clab>
-						</div>
-
-						<div class="card-example">
-							<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" 
-							effect="zoom-in" title="Zoom-in effect" primary-label="Explore" secondary-label="Share">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
-							</card-clab>
-						</div>
-						<div class="card-example">
-							<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" 
-							effect="zoom-out" title="Zoom-out effect" primary-label="Explore" secondary-label="Share">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
-							</card-clab>
-						</div>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-	<pre><code class="html">&lt;div class=&quot;card&quot;&gt;
-	&#x9;&lt;figure&gt;
-	&#x9;&#x9;&lt;img src=&quot;img-path&quot;&gt;
-	&#x9;&#x9;&lt;h3&gt;Title&lt;/h3&gt;
-	&#x9;&lt;/figure&gt;
-	&#x9;&lt;div class=&quot;card-body&quot;&gt;Content&lt;/div&gt;
-	&#x9;&lt;div class=&quot;card-actions&quot;&gt;
-	&#x9;&#x9;&lt;button class=&quot;btn flat&quot;&gt;Share&lt;/button&gt;
-	&#x9;&#x9;&lt;button class=&quot;btn primary flat&quot;&gt;Explore&lt;/button&gt;
-	&#x9;&lt;/div&gt;
-	&lt;/div&gt;</code></pre>
-								</div>
+		<h2>Cards</h2>
+		<section>
+			<h3>Textual cards</h3>
+			<article class="component cards">
+				<div class="example">
+					<card-clab title="Card title" primary-label="Accept" secondary-label="Decline">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
+					</card-clab>
+					<card-clab title="Card title with icon" icon="fa fa-twitter icon" primary-label="Accept" secondary-label="Decline">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
+					</card-clab>
+					<card-clab title="Card big title" icon="fa fa-twitter icon" primary-label="Accept" secondary-label="Decline">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
+					</card-clab>
+				</div>
+				<div class="specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;div class=&quot;card&quot;&gt;
+&#x9;&lt;div class=&quot;card-title&quot;&gt;Card title&lt;/div&gt;
+&#x9;&lt;div class=&quot;card-body &quot;&gt;
+&#x9;&#x9;Content
+&#x9;&lt;/div&gt;
+&#x9;&lt;div class=&quot;card-actions &quot;&gt;
+&#x9;&#x9;&lt;button class=&quot;btn flat&quot;&gt;Decline&lt;/button&gt;
+&#x9;&#x9;&lt;button class=&quot;btn primary flat&quot;&gt;Accept&lt;/button&gt;
+&#x9;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 							</div>
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-	<pre><code class="html">&lt;card-clab figure=&quot;img-path&quot; title=&quot;Basic&quot; primary-label=&quot;Explore&quot; secondary-label=&quot;Share&quot;&gt;
-	&#x9;&#x9;Content
-	&lt;/card-clab&gt;</code></pre>
-								</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;card-clab title=&quot;Card title&quot; primary-label=&quot;Accept&quot; secondary-label=&quot;Decline&quot;&gt; 
+&#x9;Card content 
+&lt;/card-clab&gt;</code></pre>
 							</div>
-							<div class="tab-content">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Type</th>
-											<th>Values</th>
-											<th>Default</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>title</td>
-											<td>string</td>
-											<td>any valid string</td>
-											<td>Title</td>
-										</tr>
-										<tr>
-											<td>primary-label</td>
-											<td>string</td>
-											<td>any valid string</td>
-											<td>Ok</td>
-										</tr>
-										<tr>
-											<td>secondary-label</td>
-											<td>string</td>
-											<td>any valid string</td>
-											<td>Cancel</td>
-										</tr>
-										<tr>
-											<td>icon</td>
-											<td>string</td>
-											<td>any valid icon class</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>big</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>table</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>figure</td>
-											<td>string</td>
-											<td>path to an image</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>effect</td>
-											<td>string</td>
-											<td>none, 'blur', 'saturation', 'zoom-in', 'zoom-out'</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>no-actions</td>
-											<td>boolean</td>
-											<td>Whether to show primary and secondary action buttons</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>link</td>
-											<td>object</td>
-											<td>'{"text":"my website", "href":"www.mywebsite.com"}'</td>
-											<td>none</td>
-										</tr>
-									</tbody>
-								</table>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>title</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>Title</td>
+									</tr>
+									<tr>
+										<td>primary-label</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>Ok</td>
+									</tr>
+									<tr>
+										<td>secondary-label</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>Cancel</td>
+									</tr>
+									<tr>
+										<td>icon</td>
+										<td>string</td>
+										<td>any valid icon class</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>big</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>table</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>figure</td>
+										<td>string</td>
+										<td>path to an image</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>effect</td>
+										<td>string</td>
+										<td>none, 'blur', 'saturation', 'zoom-in', 'zoom-out'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>no-actions</td>
+										<td>boolean</td>
+										<td>Whether to show primary and secondary action buttons</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>link</td>
+										<td>object</td>
+										<td>'{"text":"my website", "href":"www.mywebsite.com"}'</td>
+										<td>none</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</article>
+			
+			<h3>Image cards</h3>
+			<article class="component cards">
+				<div class="example">
+					<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" title="Basic" primary-label="Explore" secondary-label="Share">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
+					</card-clab>
+					<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" effect="blur" title="Blur effect" primary-label="Explore" secondary-label="Share">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
+					</card-clab>
+					<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" effect="grayscale" title="Saturation effect" primary-label="Explore" secondary-label="Share">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
+					</card-clab>
+				</div>
+				<div class="specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;div class=&quot;card&quot;&gt;
+&#x9;&lt;figure&gt;
+&#x9;&#x9;&lt;img src=&quot;img-path&quot;&gt;
+&#x9;&#x9;&lt;h3&gt;Title&lt;/h3&gt;
+&#x9;&lt;/figure&gt;
+&#x9;&lt;div class=&quot;card-body&quot;&gt;Content&lt;/div&gt;
+&#x9;&lt;div class=&quot;card-actions&quot;&gt;
+&#x9;&#x9;&lt;button class=&quot;btn flat&quot;&gt;Share&lt;/button&gt;
+&#x9;&#x9;&lt;button class=&quot;btn primary flat&quot;&gt;Explore&lt;/button&gt;
+&#x9;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 							</div>
-						</tabs-clab>
-					</div>
-				</section>
-			</div>
-		</div>
-
-
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;card-clab figure=&quot;img-path&quot; title=&quot;Basic&quot; primary-label=&quot;Explore&quot; secondary-label=&quot;Share&quot;&gt;
+&#x9;&#x9;Content
+&lt;/card-clab&gt;</code></pre>
+							</div>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>title</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>Title</td>
+									</tr>
+									<tr>
+										<td>primary-label</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>Ok</td>
+									</tr>
+									<tr>
+										<td>secondary-label</td>
+										<td>string</td>
+										<td>any valid string</td>
+										<td>Cancel</td>
+									</tr>
+									<tr>
+										<td>icon</td>
+										<td>string</td>
+										<td>any valid icon class</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>big</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>table</td>
+										<td>boolean</td>
+										<td>true/false</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>figure</td>
+										<td>string</td>
+										<td>path to an image</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>effect</td>
+										<td>string</td>
+										<td>none, 'blur', 'saturation', 'zoom-in', 'zoom-out'</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>no-actions</td>
+										<td>boolean</td>
+										<td>Whether to show primary and secondary action buttons</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>link</td>
+										<td>object</td>
+										<td>'{"text":"my website", "href":"www.mywebsite.com"}'</td>
+										<td>none</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</article>
+		</section>
 		
 	</template>
 

@@ -4,401 +4,95 @@
 	<style></style>
 	
 	<template>
-		<div class="wrapper">
-			<div class="content">
-				<h2 id="title1">Buttons group</h2>
-				<section>
-					<h3 class="component-name">
-						Basic buttons group
-					</h3>
-					<div class="component-example">
-						<article>
-							<group-clab>
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-						<article>
-							<group-clab small value="1">
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-<pre><code class="html">&#x3C;group-clab&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Left&#x3C;/button-clab&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Middle&#x3C;/button-clab&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Right&#x3C;/button-clab&#x3E;
-&#x3C;/group-clab&#x3E;</code></pre>
-								</div>
-							</div>
-							<div class="tab-content">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Type</th>
-											<th>Values</th>
-											<th>Default</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>small</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>type</td>
-											<td>string</td>
-											<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>disabled</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>value</td>
-											<td>number</td>
-											<td>index of the button to activate from the start</td>
-											<td>0</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-
-				<section>
-					<h3 class="component-name">
-						Primary buttons group
-					</h3>
-					<div class="component-example">
-						<article>
-							<group-clab type="primary">
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-						<article>
-							<group-clab small type="primary" value="1">
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-<pre><code class="html">&#x3C;group-clab type="primary"&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Left&#x3C;/button-clab&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Middle&#x3C;/button-clab&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Right&#x3C;/button-clab&#x3E;
-&#x3C;/group-clab&#x3E;</code></pre>
-								</div>
-							</div>
-							<div class="tab-content">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Type</th>
-											<th>Values</th>
-											<th>Default</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>small</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>type</td>
-											<td>string</td>
-											<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>disabled</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>value</td>
-											<td>number</td>
-											<td>index of the button to activate from the start</td>
-											<td>0</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-
-				<section>
-					<h3 class="component-name">
-						Success buttons group
-					</h3>
-					<div class="component-example">
-						<article>
-							<group-clab type="success">
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-						<article>
-							<group-clab small type="success" value="1">
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-<pre><code class="html">&#x3C;group-clab type="success"&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Left&#x3C;/button-clab&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Middle&#x3C;/button-clab&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Right&#x3C;/button-clab&#x3E;
-&#x3C;/group-clab&#x3E;</code></pre>
-								</div>
-							</div>
-							<div class="tab-content">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Type</th>
-											<th>Values</th>
-											<th>Default</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>small</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>type</td>
-											<td>string</td>
-											<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>disabled</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>value</td>
-											<td>number</td>
-											<td>index of the button to activate from the start</td>
-											<td>0</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-
-				<section>
-					<h3 class="component-name">
-						Warning buttons group
-					</h3>
-					<div class="component-example">
-						<article>
-							<group-clab type="warning">
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-						<article>
-							<group-clab small type="warning" value="1">
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-<pre><code class="html">&#x3C;group-clab type="warning"&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Left&#x3C;/button-clab&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Middle&#x3C;/button-clab&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Right&#x3C;/button-clab&#x3E;
-&#x3C;/group-clab&#x3E;</code></pre>
-								</div>
-							</div>
-							<div class="tab-content">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Type</th>
-											<th>Values</th>
-											<th>Default</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>small</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>type</td>
-											<td>string</td>
-											<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>disabled</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>value</td>
-											<td>number</td>
-											<td>index of the button to activate from the start</td>
-											<td>0</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-
-				<section>
-					<h3 class="component-name">
-						Error buttons group
-					</h3>
-					<div class="component-example">
-						<article>
-							<group-clab type="error">
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-						<article>
-							<group-clab small type="error" value="1">
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-<pre><code class="html">&#x3C;group-clab type="error"&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Left&#x3C;/button-clab&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Middle&#x3C;/button-clab&#x3E;
-&#x9;&#x3C;button-clab&#x3E;Right&#x3C;/button-clab&#x3E;
-&#x3C;/group-clab&#x3E;</code></pre>
-								</div>
-							</div>
-							<div class="tab-content">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Type</th>
-											<th>Values</th>
-											<th>Default</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>small</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>type</td>
-											<td>string</td>
-											<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>disabled</td>
-											<td>boolean</td>
-											<td>true/false</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>value</td>
-											<td>number</td>
-											<td>index of the button to activate from the start</td>
-											<td>0</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-
-				<section>
-					<h3 class="component-name">
-						info buttons group
-					</h3>
-					<div class="component-example">
-						<article>
-							<group-clab type="info">
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-						<article>
-							<group-clab small type="info" value="1">
-								<button-clab>Left</button-clab>
-								<button-clab>Middle</button-clab>
-								<button-clab>Right</button-clab>
-							</group-clab>
-						</article>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+		<h2>Buttons group</h2>
+		<section>
+			<article class="component">
+				<div class="example">
+					<group-clab>
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="example">
+					<group-clab small value="1">
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="example">
+					<group-clab type="primary">
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="example">
+					<group-clab small value="1" type="primary">
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="example">
+					<group-clab type="success">
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="example">
+					<group-clab small value="1" type="success">
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="example">
+					<group-clab type="warning">
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="example">
+					<group-clab small value="1" type="warning">
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="example">
+					<group-clab type="error">
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="example">
+					<group-clab small value="1" type="error">
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="example">
+					<group-clab type="info">
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="example">
+					<group-clab small value="1" type="info">
+						<button-clab>Left</button-clab>
+						<button-clab>Middle</button-clab>
+						<button-clab>Right</button-clab>
+					</group-clab>
+				</div>
+				<div class="specs">
+					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
@@ -448,12 +142,9 @@
 								</table>
 							</div>
 						</tabs-clab>
-					</div>
-				</section>
-			</div>
-		</div>
-
-		
+				</div>
+			</article>
+		</section>
 	</template>
 
 	<script>

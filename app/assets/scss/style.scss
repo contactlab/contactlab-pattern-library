@@ -143,49 +143,8 @@ header .product-logo .product-name {
 
 
  
-.dummy {
-	font-family: 'BLOKKRegular' !important;
-	color: $gray;
-}
-
-/* main {
-	padding-right: 0;
-	padding-top: 0;
-} */
-
-/* #main-sidebar {
-	background-color: #FFFFFF;
-
-	.first-level-menu a {
-		color: $base-text-color;
-	}
-}
- */
-.component-intro { 
-	background-color: $primary-color;
-	color: $primary-text-color;
-	@include full;
-	padding: $large-spacing $base-spacing;
-
-	.category {
-		color: rgba(255,255,255,0.8);
-	}
-
-	h1 {
-		line-height: 1;
-		margin-bottom: 0;
-	}
-}
 
 // STRUTTURA PATTERN LIBRARY PAGES
-
-.component-name,
-.component-description,
-.component-example,
-.component-specs {
-	@include full;
-	margin-bottom: $base-spacing;
-}
 
 .component-specs {
 	.tab-content,
@@ -231,6 +190,42 @@ header .product-logo .product-name {
 }
 
 
+.component-description {
+	margin-bottom: $base-spacing;
+}
+
+.component {
+	flex-direction: column;
+
+	
+
+	.example {
+		display: flex;
+		margin-bottom: $base-spacing;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		} 
+	}
+
+	.specs {
+		.tab-content {
+			padding: 0;
+			position: relative;
+		}
+
+		button-clab {
+			margin: 0;
+		}
+
+		.clipboard {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 0;
+		}
+	}
+} 
 
 
 // FINE STRUTTURA PATTERN LIBRARY PAGES
@@ -266,57 +261,6 @@ header .product-logo .product-name {
 
 // END RELEASE NOTES
 
-
-#lists {
-  ol,
-  ul {
-    @include gallery(4);
-  }
-}
-
-#cards {
-  .card-example {
-    @include gallery(4);
-
-    @include susy-breakpoint($desktop) {
-    	@include gallery(6);
-    }
-
-    @include susy-breakpoint($tablet) {
-    	@include gallery(12);
-    	clear: both !important;
-    }
-  }
-}
-
-#test-modal {
-  display: none;
-}
-
-#tooltips {
-
-	.component-example {
-		li {
-		    @include gallery(4);
-
-		    span {
-		      @include full;
-		      line-height: 50px;
-		      text-align: center;
-		      background: $light-gray;
-		    }
-	  	}
-	}
-  
-}
-
-#page-features {
-	
-}
-
-.feature-item {
-		@include gallery(4);
-	}
 
 // COLORS
 
@@ -478,18 +422,36 @@ header .product-logo .product-name {
 
 // SPINNERS
 
-#spinner .spinner-example {
-	@include gallery(6);
+.spinner-comp {
+	.example {
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+}
+
+.spinner-container {
+	position: relative;
+	justify-content: space-between;
 	height: 200px;
-	padding: $base-spacing;
-	@extend .dummy;
+	flex-basis: calc((100% / 2) - 10px);
 }
 
 // PROGRESS BARS
 
-#progress-bars {
-	
+.component.prog-bars-comp {
+	.example {
+		margin-bottom: 0;
+	}
 }
+
+// TAB PILLS
+
+.component.tab-pills {
+	tabs-clab {
+		flex-grow: 1;
+	}
+}
+
 
 // ICONOGRAPHY
 
@@ -517,16 +479,15 @@ header .product-logo .product-name {
 	}
 }
 
+// LISTS
 
-#iconography {
-	.icon-example {
-		@include gallery(3);
-		margin-bottom: $base-spacing;
+.example.lists {
+	display: flex;
 
-		.clab-icon {
-			font-size: 20px;
-			margin-right: 5px;
-		}
+	ul,
+	ol {
+		flex-grow: 1;
+		flex-basis: calc(100% / 3);
 	}
 }
 
@@ -558,8 +519,113 @@ header .product-logo .product-name {
 	}
 }
 
-// SPINNERS
+// CARDS
 
-.page-spinner .spinner-overlay {
-	z-index: 1;
+.cards {
+
+	.example {
+		justify-content: space-between;
+	}
+
+	card-clab {
+		width: calc((100% / 3) - 14px); 
+	}
+}
+
+// FEATURES
+
+.features {
+
+	.example {
+		justify-content: space-between;
+	}
+
+	feature-clab {
+		width: calc((100% / 3) - 14px); 
+	}
+}
+
+// RANGE
+
+range-clab {
+	flex-grow: 1;
+}
+
+// LABEL & BADGES
+
+.component {
+	label-clab,
+	badge-clab {
+		margin-right: $smaller-spacing;
+	}
+}
+
+// PROGRESS BARS
+
+.component {
+	progress-clab {
+		flex-grow: 1; 
+	}
+}
+
+// TEXT INPUTS
+
+.text-inputs-comp {
+
+	.example {
+		justify-content: space-between;
+		flex-flow: row wrap;
+	}
+
+	input-clab {
+		width: calc((100% / 2) - 10px); 
+		flex-shrink: 0;
+	}
+} 
+
+// AUTOCOMPLETE
+
+.autocomplete-comp {
+
+	.example {
+		justify-content: space-between;
+		flex-flow: row wrap;
+	}
+
+	autocomplete-clab {
+		width: calc((100% / 2) - 10px); 
+		flex-shrink: 0;
+	}
+}
+
+// DROPDOWN
+
+.dropdown-comp {
+
+	.example {
+		justify-content: space-between;
+		flex-flow: row wrap;
+	}
+
+	dropdown-clab {
+		width: calc((100% / 2) - 10px); 
+		flex-shrink: 0;
+	}
+}
+
+// MULTIPLE
+
+.multiple-comp {
+	multiple-clab {
+		flex-grow: 1;
+	}
+}
+
+
+// TAGS
+
+.tags-comp {
+	tags-clab {
+		flex-grow: 1;
+	}
 }

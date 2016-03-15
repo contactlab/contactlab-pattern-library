@@ -124,7 +124,7 @@ var MainClab = (function () {
 				'/ui/lists': function uiLists() {
 					_this3.handleRouting();
 				},
-				'/ui/forms': function uiForms() {
+				'/ui/form-elements': function uiFormElements() {
 					_this3.handleRouting();
 				},
 				'/ui/select': function uiSelect() {
@@ -149,6 +149,9 @@ var MainClab = (function () {
 					_this3.handleRouting();
 				},
 				'/ui/tooltips': function uiTooltips() {
+					_this3.handleRouting();
+				},
+				'/ui/text-inputs': function uiTextInputs() {
 					_this3.handleRouting();
 				},
 				'/ui/toaster': function uiToaster() {

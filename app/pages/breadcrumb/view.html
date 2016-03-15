@@ -4,64 +4,39 @@
 	<style></style>
 	
 	<template>
-		<div class="wrapper">
-			<div class="content">
-				<h2>Breadcrumb</h2>
-				<section>
-					<h3 class="component-name">
-						Basic breadcrumb
-					</h3>
-					<div class="component-example">
-						<ol class="breadcrumb">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Library</a></li>
-							<li class="active">Data</li>
-						</ol>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["HTML"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-<pre><code class="html">&lt;ol class="breadcrumb"&gt;
-	&lt;li&gt;&lt;a href="#"&gt;item1&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="#"&gt;item2&lt;/a&gt;&lt;/li&gt;
-	&lt;li class="active"&gt;item3&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-								</div>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-
-				<section>
-					<h3 class="component-name">
-						Icons breadcrumb
-					</h3>
-					<div class="component-example">
-						<ol class="breadcrumb">
-							<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-							<li><a href="#"><i class="fa fa-book"></i> Library</a></li>
-							<li class="active"><i class="fa fa-cog"></i> Data</li>
-						</ol>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["HTML"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
+		<h2>Breadcrumb</h2>
+		<section>
+			<article class="component">
+				<div class="example">
+					<ol class="breadcrumb">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Library</a></li>
+						<li class="active">Data</li>
+					</ol>
+				</div>
+				<div class="example">
+					<ol class="breadcrumb">
+						<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+						<li><a href="#"><i class="fa fa-book"></i> Library</a></li>
+						<li class="active"><i class="fa fa-cog"></i> Data</li>
+					</ol>
+				</div>
+				<div class="specs">
+					<tabs-clab  labels='["HTML"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
 <pre><code class="html">&lt;ol class="breadcrumb"&gt;
 	&lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt; item1 &lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-book"&gt;&lt;/i&gt; item2 &lt;/a&gt;&lt;/li&gt;
 	&lt;li class="active"&gt;&lt;i class="fa fa-cog"&gt;&lt;/i&gt; item3 &lt;/li&gt;
 &lt;/ol&gt;</code></pre>
-								</div>
 							</div>
-						</tabs-clab>
-					</div>
-				</section>
-			</div>
-		</div>
+						</div>
+					</tabs-clab>
+				</div>
+			</article>
+		</section>
 	</template>
 
 	<script>

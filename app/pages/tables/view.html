@@ -4,195 +4,135 @@
 	<style></style>
 	
 	<template>
-		<div class="wrapper">
-			<div class="content">
-				<h2>Tables</h2>
-				<div class="component-description">
-					Tables are used to make large volumes of data easy to understand and to access.
-				</div>
-				
-				<section>
-					<h3 class="component-name">
-						Basic table
-					</h3>
-					<div class="component-example">
-						<table>
-							<tr>
-						      <th>Table Header 1</th>
-						      <th>
-						      	Table Header 2
-						      	<i class="clab-icon icon-arrow-top sorting-arrow top active"></i>
-						      	<i class="clab-icon icon-arrow-down sorting-arrow bottom"></i>
-						      </th>
-						      <th>Table Header 3</th>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						</table>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["HTML"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-	<pre><code class="html">&lt;table&gt;
-		&lt;tr&gt;
-			&lt;th&gt;Table Header 1&lt;/th&gt;&lt;th&gt;Table Header 2&lt;/th&gt;&lt;th&gt;Table Header 3&lt;/th&gt;
-		&lt;/tr&gt;
-		&lt;tr&gt;
-			&lt;td&gt;Division 1&lt;/td&gt;&lt;td&gt;Division 2&lt;/td&gt;&lt;td&gt;Division 3&lt;/td&gt;
-		&lt;/tr&gt;
-	&lt;/table&gt;</code></pre>
-								</div>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-				
-				<section>
-					<h3 class="component-name">
-						Striped table
-					</h3>
-					<div class="component-example">
-						<table class="striped-table">
-							<tr>
-						      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						</table>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["HTML"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-	<pre><code class="html">&lt;table class="striped-table"&gt;
-		&lt;tr&gt;
-			&lt;th&gt;Table Header 1&lt;/th&gt;&lt;th&gt;Table Header 2&lt;/th&gt;&lt;th&gt;Table Header 3&lt;/th&gt;
-		&lt;/tr&gt;
-		&lt;tr&gt;
-			&lt;td&gt;Division 1&lt;/td&gt;&lt;td&gt;Division 2&lt;/td&gt;&lt;td&gt;Division 3&lt;/td&gt;
-		&lt;/tr&gt;
-	&lt;/table&gt;</code></pre>
-								</div>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-				
-				<section>
-					<h3 class="component-name">
-						Striped table
-					</h3>
-					<div class="component-example">
-						<table class="hover-table">
-							<tr>
-						      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						    <tr>
-						      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-						    </tr>
-						</table>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["HTML"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-	<pre><code class="html">&lt;table class="hover-table"&gt;
-		&lt;tr&gt;
-			&lt;th&gt;Table Header 1&lt;/th&gt;&lt;th&gt;Table Header 2&lt;/th&gt;&lt;th&gt;Table Header 3&lt;/th&gt;
-		&lt;/tr&gt;
-		&lt;tr&gt;
-			&lt;td&gt;Division 1&lt;/td&gt;&lt;td&gt;Division 2&lt;/td&gt;&lt;td&gt;Division 3&lt;/td&gt;
-		&lt;/tr&gt;
-	&lt;/table&gt;</code></pre>
-								</div>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-
-				<section>
-					<h3 class="component-name">
-						Full table
-					</h3>
-					<div class="component-example">
-						<div class="table-tools">
-							<div class="entries-number">
-								<span>Show </span>
-								<span class="entries-select">
-									<dropdown-clab id="dd-table" options='[{"value":"5","label": "5"}, {"value":"10","label": "10"}, {"value":"15","label": "15"}]' selected='{"value":"5", "label":"5"}' on-change="_setPagesAndRange"></dropdown-clab>
-								</span>
-								<span> entries</span>
-							</div>
-							<div class="table-search">
-								<input-clab value="{{inputText}}" on-keyup="_search"></input-clab>
-							</div>
-						</div>
-						<table id="full-table">
-							<tr>
-								<th>
-									Table Header 1
-									<i class="clab-icon icon-arrow-top sorting-arrow top"></i>
-									<i class="clab-icon icon-arrow-down sorting-arrow bottom active"></i>
-								</th>
-								<th>
-									Table Header 2
-									<i class="clab-icon icon-arrow-top sorting-arrow top active"></i>
-									<i class="clab-icon icon-arrow-down sorting-arrow bottom"></i>
-								</th>
-								<th>
-									Table Header 3
-									<i class="clab-icon icon-arrow-top sorting-arrow top"></i>
-									<i class="clab-icon icon-arrow-down sorting-arrow bottom"></i>
-								</th>
-							</tr>
-						    <template is="dom-repeat" items="[[visibleContent]]">
-						    	<tr>
-							      <td>[[item.row1]]</td><td>[[item.row2]]</td><td>[[item.row3]]</td>
-							    </tr>
-						    </template>
-						    
-						</table>
-						<div class="table-recap">
-							<template is="dom-if" if="[[pagination]]">
-								<div class="total-entries">
-									[[tableEntries]]
-								</div>
-								<div class="pagination">
-									<pagination-clab id="pages-table" pages="[[tablePages]]" on-change="_setVisibleContent"></pagination-clab>
-								</div>
-							</template>
-						</div>
-						
-					</div>
-				</section>
+		<h2>Tables</h2>
+		<section>
+			<div class="component-description">
+				Tables are used to make large volumes of data easy to understand and to access.
 			</div>
-
-		</div>
-
+			<article class="component">
+				<div class="example">
+					<table>
+						<tr>
+					      <th>Table Header 1</th>
+					      <th>
+					      	Table Header 2
+					      	<i class="clab-icon icon-arrow-top sorting-arrow top active"></i>
+					      	<i class="clab-icon icon-arrow-down sorting-arrow bottom"></i>
+					      </th>
+					      <th>Table Header 3</th>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					</table>
+				</div>
+				<div class="example">
+					<table class="striped-table">
+						<tr>
+					      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					</table>
+				</div>
+				<div class="example">
+					<table class="hover-table">
+						<tr>
+					      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					</table>
+				</div>
+				<div class="example">
+					<div class="table-tools">
+						<div class="entries-number">
+							<span>Show </span>
+							<span class="entries-select">
+								<dropdown-clab id="dd-table" options='[{"value":"5","label": "5"}, {"value":"10","label": "10"}, {"value":"15","label": "15"}]' selected='{"value":"5", "label":"5"}' on-change="_setPagesAndRange"></dropdown-clab>
+							</span>
+							<span> entries</span>
+						</div>
+						<div class="table-search">
+							<input-clab value="{{inputText}}" on-keyup="_search"></input-clab>
+						</div>
+					</div>
+					<table id="full-table">
+						<tr>
+							<th>
+								Table Header 1
+								<i class="clab-icon icon-arrow-top sorting-arrow top"></i>
+								<i class="clab-icon icon-arrow-down sorting-arrow bottom active"></i>
+							</th>
+							<th>
+								Table Header 2
+								<i class="clab-icon icon-arrow-top sorting-arrow top active"></i>
+								<i class="clab-icon icon-arrow-down sorting-arrow bottom"></i>
+							</th>
+							<th>
+								Table Header 3
+								<i class="clab-icon icon-arrow-top sorting-arrow top"></i>
+								<i class="clab-icon icon-arrow-down sorting-arrow bottom"></i>
+							</th>
+						</tr>
+					    <template is="dom-repeat" items="[[visibleContent]]">
+					    	<tr>
+						      <td>[[item.row1]]</td><td>[[item.row2]]</td><td>[[item.row3]]</td>
+						    </tr>
+					    </template>
+					    
+					</table>
+					<div class="table-recap">
+						<template is="dom-if" if="[[pagination]]">
+							<div class="total-entries">
+								[[tableEntries]]
+							</div>
+							<div class="pagination">
+								<pagination-clab id="pages-table" pages="[[tablePages]]" on-change="_setVisibleContent"></pagination-clab>
+							</div>
+						</template>
+					</div>
+				</div>
+				<div class="specs">
+					<tabs-clab  labels='["HTML"]' active="0">
+							<div class="tab-content">
+								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+								<div class="copy">
+<pre><code class="html">&lt;!-- Add class striped-table or hover-table to table tag --&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;th&gt;Table Header 1&lt;/th&gt;&lt;th&gt;Table Header 2&lt;/th&gt;&lt;th&gt;Table Header 3&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Division 1&lt;/td&gt;&lt;td&gt;Division 2&lt;/td&gt;&lt;td&gt;Division 3&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+								</div>
+							</div>
+						</tabs-clab>
+				</div>
+			</article>
+		</section>
 		
 	</template>
 

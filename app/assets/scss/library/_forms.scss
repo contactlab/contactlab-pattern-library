@@ -214,6 +214,11 @@ textarea {
 	&:focus {
 		border-bottom-color: $primary-color;
 	}
+
+	&:disabled {
+		cursor: not-allowed;
+		color: $disabled-color;
+	}
 }
 
 /////////////////// END TEXT INPUT ///////////////////
@@ -402,3 +407,17 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 /////////////////// END CUSTOM RANGE ///////////////////
+
+
+
+/////////////////// TAGS ///////////////////
+
+.tags-wrapper {
+	padding-bottom: $base-spacing;
+
+	.input-wrapper {
+		padding-bottom: $smaller-spacing;
+	}
+}
+
+/////////////////// END TAGS ///////////////////

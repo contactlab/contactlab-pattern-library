@@ -16,7 +16,7 @@
 <link rel="import" href="../../pages/colors/view.html">
 <link rel="import" href="../../pages/datepicker/view.html">
 <link rel="import" href="../../pages/features/view.html">
-<link rel="import" href="../../pages/forms/view.html">
+<link rel="import" href="../../pages/form-elements/view.html">
 <link rel="import" href="../../pages/iconography/view.html">
 <link rel="import" href="../../pages/labels-badges/view.html">
 <link rel="import" href="../../pages/lists/view.html">
@@ -30,6 +30,7 @@
 <link rel="import" href="../../pages/spinner/view.html">
 <link rel="import" href="../../pages/tables/view.html">
 <link rel="import" href="../../pages/tabs-pills/view.html">
+<link rel="import" href="../../pages/text-inputs/view.html">
 <link rel="import" href="../../pages/toaster/view.html">
 <link rel="import" href="../../pages/tooltips/view.html">
 <link rel="import" href="../../pages/typography/view.html">
@@ -132,7 +133,7 @@
 				<template is="dom-if" if="[[_isPage(page, 'lists')]]" restamp="true">
 					<page-lists></page-lists>
 				</template>
-				<template is="dom-if" if="[[_isPage(page, 'forms')]]" restamp="true">
+				<template is="dom-if" if="[[_isPage(page, 'form-elements')]]" restamp="true">
 					<page-forms></page-forms>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'select')]]" restamp="true">
@@ -155,6 +156,9 @@
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'accordion')]]" restamp="true">
 					<page-accordion></page-accordion>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'text-inputs')]]" restamp="true">
+					<page-text-inputs></page-text-inputs>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'tooltips')]]" restamp="true">
 					<page-tooltips></page-tooltips>

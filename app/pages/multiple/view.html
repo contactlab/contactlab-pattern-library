@@ -4,17 +4,14 @@
 	<style></style>
 	
 	<template>
-		<div class="wrapper">
-			<div class="content">
-				<h2>Multiple</h2>
-				<section>
-					<div class="component-example">
-						<article>
-							<multiple-clab label="Select multiple options" options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]' max-in-view="5">This is a note</multiple-clab>
-						</article>
-					</div>
-					<div class="component-specs">
-						<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+		<h2>Multiple</h2>
+		<section>
+			<article class="component multiple-comp">
+				<div class="example">
+					<multiple-clab label="Select multiple options" options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]' max-in-view="5">This is a note</multiple-clab>
+				</div>
+				<div class="specs">
+					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
@@ -120,10 +117,10 @@
 								</table>
 							</div>
 						</tabs-clab>
-					</div>
-				</section>
-			</div>
-		</div>
+				</div>
+			</article>
+		</section>
+
 	</template>
 
 	<script>

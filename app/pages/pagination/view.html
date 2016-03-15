@@ -4,100 +4,95 @@
 	<style></style>
 	
 	<template>
-		<div class="wrapper">
-			<div class="content">
-				<h2>Pagination</h2>
-				<section>
-					<div class="component-example">
-						<pagination-clab pages='["#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8"]' current-page="3"></pagination-clab>
-					</div>
-					<div class="component-specs">
-						<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
+
+		<h2>Pagination</h2>
+		<section>
+			<article class="component">
+				<div class="example">
+					<pagination-clab pages='["#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8"]' current-page="3"></pagination-clab>
+				</div>
+				<div class="specs">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
 <pre><code class="html">&lt;ul class="pagination"&gt;
-	&lt;li class="first"&gt;
-		&lt;a href="#"&gt;&lt;i class="fa fa-angle-double-left"&gt;&lt;/i&gt;&lt;/a&gt;
-	&lt;/li&gt;
-	&lt;li&gt;
-		&lt;a href="#"&gt;&lt;i class="fa fa-angle-left"&gt;&lt;/i&gt;&lt;/a&gt;
-	&lt;/li&gt;
-	&lt;li class="active"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
-		&lt;a href="#"&gt;&lt;i class="fa fa-angle-right"&gt;&lt;/i&gt;&lt;/a&gt;
-	&lt;/li&gt;
-	&lt;li class="last"&gt;
-		&lt;a href="#"&gt;&lt;i class="fa fa-angle-double-right"&gt;&lt;/i&gt;&lt;/a&gt;
-	&lt;/li&gt;
+&lt;li class="first"&gt;
+	&lt;a href="#"&gt;&lt;i class="fa fa-angle-double-left"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+	&lt;a href="#"&gt;&lt;i class="fa fa-angle-left"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li class="active"&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+	&lt;a href="#"&gt;&lt;i class="fa fa-angle-right"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li class="last"&gt;
+	&lt;a href="#"&gt;&lt;i class="fa fa-angle-double-right"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
-								</div>
 							</div>
-							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-	<pre><code class="html">&lt;pagination-clab pages='["#1", "#2", "#3", "#4"]'&gt;&lt;/pagination-clab&gt;</code></pre>
-								</div>
+						</div>
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+<pre><code class="html">&lt;pagination-clab pages='["#1", "#2", "#3", "#4"]'&gt;&lt;/pagination-clab&gt;</code></pre>
 							</div>
-							<div class="tab-content">
-								<table class="striped-table">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Type</th>
-											<th>Values</th>
-											<th>Default</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>pages</td>
-											<td>array</td>
-											<td>valid array of anchors/urls</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>current-page</td>
-											<td>number</td>
-											<td>valid page number</td>
-											<td>1</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="tab-content">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Emitted when</th>
-											<th>Custom data</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>change</td>
-											<td>Click on page number or arrows</td>
-											<td>index of the current page</td>
-										</tr>
-										<tr>
-											<td>update</td>
-											<td>Change the value of 'pages' attribute</td>
-											<td>N/A</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</tabs-clab>
-					</div>
-				</section>
-			</div>
-		</div>
-
-
-
-		
+						</div>
+						<div class="tab-content">
+							<table class="striped-table">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Values</th>
+										<th>Default</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>pages</td>
+										<td>array</td>
+										<td>valid array of anchors/urls</td>
+										<td>none</td>
+									</tr>
+									<tr>
+										<td>current-page</td>
+										<td>number</td>
+										<td>valid page number</td>
+										<td>1</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-content">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>change</td>
+										<td>Click on page number or arrows</td>
+										<td>index of the current page</td>
+									</tr>
+									<tr>
+										<td>update</td>
+										<td>Change the value of 'pages' attribute</td>
+										<td>N/A</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</tabs-clab>
+				</div>
+			</article>
+		</section>
 	</template>
 
 	<script>
