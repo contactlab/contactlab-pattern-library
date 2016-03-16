@@ -22,6 +22,11 @@ button-clab {
   line-height: 1.2;
   vertical-align: bottom;
   font-size: $base-font-size;
+  display: inline-block;
+
+  &.block {
+    width: 100%;
+  }
 
   &:disabled {
     cursor: not-allowed;
@@ -185,15 +190,9 @@ button-clab {
 
   .btn {
     margin: 0;
-    border-right-width: 0;
-
-    /* &:last-of-type {
-      border-right-width: 1px;
-    } */
-  }
-
-  .group-item:last-of-type .btn {
-      border-right-width: 1px;
+    border-left: 1px solid $default-color;
+    border-right: 1px solid $default-color;
+    margin-left: -1px;
   }
 
   @each $type, $color in $default-status {

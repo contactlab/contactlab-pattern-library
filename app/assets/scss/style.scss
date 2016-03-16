@@ -1,19 +1,10 @@
-@font-face {
-    font-family: 'BLOKKRegular';
-    src: url('../fonts/BLOKKRegular.eot');
-    src: url('../fonts/BLOKKRegular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/BLOKKRegular.woff') format('woff'),
-         url('../fonts/BLOKKRegular.svg#BLOKKRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-@import "../bower/susy/sass/susy";
+/* @import "../bower/susy/sass/susy"; */
 $fa-font-path: "../bower/font-awesome/fonts";
 @import "../bower/font-awesome/scss/font-awesome";
-@import "library/reset";
-@import "library/settings";
-@import 'compass';
+/* @import "library/reset"; */
+/* @import "library/settings"; */
+/* @import 'compass'; */
 @import "contactlab-pattern"; 
  
 // HEADER
@@ -37,55 +28,64 @@ header .product-logo .product-name {
 }
 
 #cover-heading {
-	@include full;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
 	background-color: $primary-color;
 	color: #FFFFFF;
-	@include clearfix;
 	background-image: url("../img/bg-cover.png");
-	background-position: right bottom;
+	background-position: right top;
 	background-repeat: no-repeat;
+	height: 594px;
 
 	.logo {
-		float: left;
 		max-width: 150px;
-		margin: $base-spacing 0 0 $base-spacing;
+		padding: $base-spacing 0 0 $base-spacing;
+		position: absolute;
+		top: 0;
 
 		img {
 			width: 100%;
 		}
 	} 
 
-	.cover-title {
-		margin-top: $larger-spacing*2;
-		@include full;
-		max-width: 50%;
-		font-size: 5rem;
-		font-weight: $light-weight;
-	}
-
 	.cover-description {
-		margin: $larger-spacing 0 $larger-spacing*2;
-		@include full;
-		max-width: 50%;
+		width: 100%;
+		max-width: 1200px;
+		flex-grow: 0;
+		margin: 0 auto;
+		align-self: center;
+		padding: 0 $base-spacing;
+
+		h1 {
+			font-size: 5rem;
+		}
+
+		h1,
+		p {
+			width: 100%;
+			max-width: 50%;
+		}
 	}
 }
 
 .cover-content {
-	@include full;
 	padding: $larger-spacing 0;
 
 	.intro,
 	.sections {
-		@include full;
 	}
 
 	.sections {
 		margin-top: $larger-spacing;
+		display: flex;
+		justify-content: space-between;
 	}
 
 	.sections .card {
-		@include gallery(3);
 		text-align: center;
+		width: calc((100% / 4) - 14px);
 
 		figure {
 			padding: $base-spacing 0;
@@ -99,13 +99,12 @@ header .product-logo .product-name {
 		}
 
 		.card-actions {
-			text-align: center;
+			text-align: center; 
 		}
 	}
 }
 
 .cover-footer {
-	@include full;
 	padding-bottom: $base-spacing;
 
 	.powered {
@@ -182,11 +181,25 @@ header .product-logo .product-name {
 		}
 	}
 
-	.hljs {
-		padding: 0 !important;
-		background: transparent;
-		padding-bottom: $small-spacing;
-	}
+	
+}
+
+.hljs {
+	padding: $small-spacing;
+	background: $darker-gray;
+	padding-bottom: $small-spacing;
+}
+
+.hljs-tag .hljs-title {
+	color: #ef5350;
+}
+
+.hljs-attribute {
+	color: #80DEEA;
+}
+
+.hljs-tag .hljs-value {
+	color: #FFF176;
 }
 
 
@@ -194,10 +207,12 @@ header .product-logo .product-name {
 	margin-bottom: $base-spacing;
 }
 
+.hljs-comment {
+	color: $dark-gray;
+}
+
 .component {
 	flex-direction: column;
-
-	
 
 	.example {
 		display: flex;
@@ -235,7 +250,6 @@ header .product-logo .product-name {
 
 #release-notes {
 	.release {
-		@include full;
 		padding: $base-spacing 0;
 		border-bottom: 1px solid $light-gray;
 
@@ -278,7 +292,7 @@ header .product-logo .product-name {
 			align-items: center;
 			justify-content: center;
 			margin-bottom: $small-spacing;
-
+ 
 			&.corporate-primary {
 				background-color: $primary-color; 
 			}
@@ -493,16 +507,17 @@ header .product-logo .product-name {
 
 // MOTION
 
-#shadow {
-	.shadow-container {
-		@include gallery(2);
-		margin-bottom: $base-spacing;
+.motion-examples {
 
-		.shadow {
-			width: 100px;
-			height: 100px;
-			background-color: $gray;
-		}
+	.shadow-container {
+		display: flex;
+	}
+
+	.shadow {
+		width: 100px;
+		height: 100px;
+		background-color: $gray;
+		margin-right: $base-spacing;
 	}
 }
 

@@ -281,6 +281,23 @@ input[type=checkbox]:disabled + label:before {
   cursor: not-allowed;
 }
 
+checkbox-clab,
+radio-clab {
+	&.inline {
+		display: flex;
+
+		input[type=checkbox],
+		input[type=radio] {
+
+			+ label {
+				margin-right: $base-spacing;
+			}
+		}
+	}
+
+	
+}
+
 /////////////////// END RADIO & CHECKBOX ///////////////////
 
 
