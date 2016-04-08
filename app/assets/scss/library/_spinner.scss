@@ -7,7 +7,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba($background-color, 0.9);
   @include user-selection(none);
 
   &.dark {
@@ -53,7 +53,7 @@
     width: 2px;
     display: inline-block;
     margin: 0 1px;
-    
+
     -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
     animation: sk-stretchdelay 1.2s infinite ease-in-out;
   }
@@ -80,15 +80,15 @@
 }
 
 @-webkit-keyframes sk-stretchdelay {
-  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
   20% { -webkit-transform: scaleY(1.0) }
 }
 
 @keyframes sk-stretchdelay {
-  0%, 40%, 100% { 
+  0%, 40%, 100% {
     transform: scaleY(0.4);
     -webkit-transform: scaleY(0.4);
-  }  20% { 
+  }  20% {
     transform: scaleY(1.0);
     -webkit-transform: scaleY(1.0);
   }

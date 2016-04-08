@@ -6,16 +6,21 @@
 	<template>
 		<h2>Iconography</h2>
 		<section>
-			<div class="component-specs">
-				<tabs-clab  labels='["HTML"]' active="0">
-					<div class="tab-content">
-						<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-						<div class="copy">
-<pre><code class="html">&lt;span class=&quot;clab-icon icon-<b>name</b>&quot;&gt;&lt;/span&gt;</code></pre>
+			<article class="component">
+				<div class="specs">
+					<tabs-clab  labels='["HTML"]' active="0">
+						<div class="tab-content">
+							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+							<div class="copy">
+	<pre><code class="html">&lt;span class=&quot;clab-icon icon-<b>name</b>&quot;&gt;&lt;/span&gt;</code></pre>
+							</div>
 						</div>
-					</div>
-				</tabs-clab>
-			</div>
+					</tabs-clab>
+				</div>
+				<div class="example">
+					
+				</div>
+			</article>
 		</section>
 		<h3>Web Application Icons</h3>
 		<section>
@@ -146,7 +151,11 @@
 	<script>
 
 		Polymer({
-			is:'page-iconography'
+			is:'page-iconography',
+			behaviors: [ClipboardBehav],
+			attached:function(){
+				this._highlightCode();
+			}
 		});
 
 	</script>

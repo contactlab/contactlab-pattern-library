@@ -6,8 +6,9 @@ $btn-border-thickness: 1px;
 
 button-clab {
   margin-right: $smaller-spacing;
+  display: inline-block;
 
-  &:last-tof-type {
+  &:last-of-type {
     margin-right: 0;
   }
 }
@@ -180,6 +181,10 @@ button-clab {
 
   button-clab {
     margin: 0;
+
+    &:first-of-type .btn {
+        margin-left: 0;
+    }
   }
 
   &.small {
@@ -188,11 +193,23 @@ button-clab {
     }
   }
 
+  &.smaller {
+      .btn {
+          padding: 3px 5px;
+          font-size: $small-font-size;
+          border-top: 1px solid $default-color;
+      }
+  }
+
   .btn {
     margin: 0;
     border-left: 1px solid $default-color;
     border-right: 1px solid $default-color;
     margin-left: -1px;
+
+    &:active {
+      border-bottom: 1px solid $default-color;
+    }
   }
 
   @each $type, $color in $default-status {
