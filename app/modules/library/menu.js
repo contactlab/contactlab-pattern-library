@@ -3,7 +3,6 @@
 var AppMenu = [{
 	"label": "Design",
 	"url": "#/design",
-	"icon": "clab clab-icon-sign-design icon",
 	"submenu": [{
 		"label": "Colors",
 		"url": "#/design/colors"
@@ -20,7 +19,6 @@ var AppMenu = [{
 }, {
 	"label": "UI Components",
 	"url": "#/ui",
-	"icon": "clab clab-icon-sign icon",
 	"submenu": [{
 		"label": "Base Elements",
 		"submenu": [{
@@ -103,7 +101,6 @@ var AppMenu = [{
 }, {
 	"label": "Product brand",
 	"url": "#/product-brand",
-	"icon": "clab clab-icon-sign-brand icon",
 	"submenu": [{
 		"label": "Our logo",
 		"url": "#/product-brand/our-logo"
@@ -114,7 +111,6 @@ var AppMenu = [{
 }, {
 	"label": "Documentation",
 	"url": "#/documentation",
-	"icon": "clab clab-icon-sign-resources icon",
 	"submenu": [{
 		"label": "Release notes",
 		"url": "#/documentation/release-notes"
