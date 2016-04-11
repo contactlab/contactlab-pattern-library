@@ -112,10 +112,10 @@ var AppMenu = [{
 	"label": "Documentation",
 	"url": "#/documentation",
 	"submenu": [{
-		"label": "Release notes",
-		"url": "#/documentation/release-notes"
-	}, {
 		"label": "Getting started",
 		"url": "#/documentation/getting-started"
+	}, {
+		"label": "Release notes",
+		"url": "#/documentation/release-notes"
 	}]
 }];

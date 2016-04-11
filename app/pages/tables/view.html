@@ -2,7 +2,7 @@
 
 <dom-module id="page-tables">
 	<style></style>
-	
+
 	<template>
 		<h2>Tables</h2>
 		<section>
@@ -64,6 +64,7 @@
 					    </tr>
 					</table>
 				</div>
+
 				<div class="example">
 					<div class="full-table-wrapper">
 						<div class="table-tools">
@@ -101,7 +102,7 @@
 							      <td>[[item.row1]]</td><td>[[item.row2]]</td><td>[[item.row3]]</td>
 							    </tr>
 						    </template>
-						    
+
 						</table>
 						<div class="table-recap">
 							<template is="dom-if" if="[[pagination]]">
@@ -114,7 +115,7 @@
 							</template>
 						</div>
 					</div>
-					
+
 				</div>
 				<div class="specs">
 					<tabs-clab  labels='["HTML"]' active="0">
@@ -136,7 +137,7 @@
 				</div>
 			</article>
 		</section>
-		
+
 	</template>
 
 	<script>
@@ -183,12 +184,11 @@
 				}
 			},
 			ready:function(){
-				this.set('workableContent', this.tableContent);
-				this._setPagesAndRange();
+				// this.set('workableContent', this.tableContent);
+				// this._setPagesAndRange();
 			},
 			attached:function(){
 				this._highlightCode();
-				
 			},
 
 

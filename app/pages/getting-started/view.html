@@ -2,7 +2,7 @@
 
 <dom-module id="page-getting-started">
 	<style></style>
-	
+
 	<template>
 		<div class="wrapper">
 			<div class="content" id="getting-started-notes">
@@ -12,59 +12,79 @@
 					<p>
 						You can manually download the complete package from the Github repository
 					</p>
-					<button-clab type="primary">download</button-clab>	
+					<button-clab on-click="_goToZip" type="primary">Download</button-clab>
 				</section>
 				<section>
 					<h3>Install with Bower</h3>
 					<p>
-						You can also install and manage contactlab's pattern library using <a href="http://bower.io/" target="_blank">bower</a>
+						It is <b>strongly reccomended</b> to install and manage the ContactLab's Pattern Library using <a href="http://bower.io/" target="_blank">Bower</a>.
+						<br>In a next realease it will be available as a registereb public Bower package.
 					</p>
 					<div class="component-specs">
 						<div class="code-snippet">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
+							<!-- <div class="copy">
 <pre><code class="language-bash">$ bower install ui-components</code></pre>
+							</div> -->
+							<div class="copy">
+<pre><code class="language-bash">$ bower install https://github.com/contactlab/contactlab-pattern-library</code></pre>
 							</div>
 						</div>
 					</div>
 				</section>
 
-				<h2>What's to be included</h2>
+				<h2>What needs to be included</h2>
 				<section>
 					<h3>Web components polyfill</h3>
 					<div class="component-specs">
 						<div class="code-snippet">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
-<pre><code class="html">&lt;script src=&quot;webcomponentsjs/webcomponents.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+<pre><code class="html">&lt;script src=&quot;./[your-bower-folder]/webcomponentsjs/webcomponents.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 							</div>
 						</div>
 					</div>
+				</section>
 
+				<section>
 					<h3>Web animations polyfill</h3>
 					<p>If you are going to use components that depend on this polyfill (Es: &lt;alert-clab&gt; and &lt;modal-clab&gt;)</p>
 					<div class="component-specs">
 						<div class="code-snippet">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
-<pre><code class="html">&lt;script src=&quot;web-animations-js/web-animations-next.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+<pre><code class="html">&lt;script src=&quot;./[your-bower-folder]/web-animations-js/web-animations-next.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 							</div>
 						</div>
 					</div>
+				</section>
 
-					<h3>CLab Components</h3>
+				<section>
+					<h3>Components collection</h3>
 					<tabs-clab labels='["IMPORT ALL", "CUSTOM IMPORT"]'>
 						<div class="tab-content">
+							<p>This will import <b>all of</b> the components included with the ContactLab Pattern Library</p>
 							<div class="component-specs">
 								<div class="code-snippet">
 									<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 									<div class="copy">
-		<pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;ui-components/_components/clab-components.build.html&quot;&gt;</code></pre>
+		<pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;./[your-bower-folder]/clab-ui-components/_components/clab-components.build.html&quot;&gt;</code></pre>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="tab-content">
+							<p>You can import one component at time, for example if you want to import only the &lt;alert-clab&gt; component </p>
+							<div class="component-specs">
+								<div class="code-snippet">
+									<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
+									<div class="copy">
+		<pre><code class="html">&lt;link rel=&quot;import&quot; href=&quot;./[your-bower-folder]/clab-ui-components/alert/view.html&quot;&gt;</code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="tab-content">
 							<p>If you need only some of the elements compile them using gulp</p>
 							<div class="component-specs">
 								<div class="code-snippet">
@@ -83,7 +103,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</tabs-clab>
 
 					<h3>CSS</h3>
@@ -91,7 +111,7 @@
 						<div class="code-snippet">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
-<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;ui-components/_assets/css/contactlab-pattern.css&quot;&gt;</code></pre>
+<pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;./[your-bower-folder]/clab-ui-components/_assets/css/contactlab-pattern.css&quot;&gt;</code></pre>
 							</div>
 						</div>
 					</div>
@@ -112,10 +132,10 @@
 &#x9;&#x3C;meta http-equiv=&#x22;Content-Type&#x22; content=&#x22;text/html; charset=UTF-8&#x22; /&#x3E;
 &#x9;&#x3C;title&#x3E;Title&#x3C;/title&#x3E;
 &#x9;&#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0&#x22;&#x3E;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;ui-components/_assets/css/contactlab-pattern.css&quot;&gt;
-&#x9;&#x3C;script src=&#x22;bower/webcomponentsjs/webcomponents.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-&#x9;&#x3C;script src=&#x22;bower/web-animations-js/web-animations-next.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-&#x9;&#x3C;link rel=&#x22;import&#x22; href=&#x22;bower/ui-components/_components/clab-components.build.html&#x22;&#x3E;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;./[your-bower-folder]/clab-ui-components/_assets/css/contactlab-pattern.css&quot;&gt;
+&#x9;&#x3C;script src=&#x22;./[your-bower-folder]/webcomponentsjs/webcomponents.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x9;&#x3C;script src=&#x22;./[your-bower-folder]/web-animations-js/web-animations-next.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x9;&#x3C;link rel=&#x22;import&#x22; href=&#x22;./[your-bower-folder]/clab-ui-components/_components/clab-components.build.html&#x22;&#x3E;
 &#x3C;/head&#x3E;
 &#x3C;body&#x3E;
 &#x9;&#x3C;header id=&#x22;main-sidebar&#x22;&#x3E;
@@ -124,7 +144,7 @@
 &#x9;&#x9;&#x3C;/menu-clab&#x3E;
 &#x9;&#x3C;/header&#x3E;
 &#x9;&#x3C;main&#x3E;
-&#x9;&#x9;&#x3C;h1&#x3E;contactlab starter template&#x3C;/h1&#x3E;
+&#x9;&#x9;&#x3C;h1&#x3E;ContactLab Pattern Library starter template&#x3C;/h1&#x3E;
 &#x9;&#x9;&#x3C;p&#x3E;
 &#x9;&#x9;&#x9;Use this document as a way to quickly start any new project.&#x3C;br/&#x3E;
 &#x9;&#x9;&#x9;All you get is this text and a mostly barebones HTML document.
@@ -148,6 +168,10 @@
 		behaviors: [ClipboardBehav],
 			attached:function(){
 				this._highlightCode();
+			},
+
+			_goToZip(evt){
+				window.location.href = "https://github.com/contactlab/contactlab-pattern-library/archive/master.zip";
 			}
 	});
 
