@@ -1,7 +1,7 @@
 {
   "name": "contactplan-pattern-library",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is the documentation website for the ContactLab Pattern Library components designed and built by the Product team.",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://salvatore_laisa@bitbucket.org/uy-scuti/project-starter-kit.git"
+    "url": "https://github.com/contactlab/contactlab-pattern-library"
   },
   "author": "ContactLab Product Team",
   "license": "Apache-2.0",
-  "homepage": "https://bitbucket.org/uy-scuti/project-starter-kit#readme",
+  "homepage": "https://github.com/contactlab/contactlab-pattern-library#readme",
   "devDependencies": {
     "babel-core": "^5.8.23",
     "babel-loader": "^5.3.2",
@@ -28,10 +28,6 @@
     "gulp-watch": "^4.3.5",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
-    "web-component-tester": "^3.3.30",
-    "webpack": "^1.12.1"
-  },
-  "dependencies": {
-    "gulp-compass": "^2.1.0"
+    "web-component-tester": "^3.3.30"
   }
 }

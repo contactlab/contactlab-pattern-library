@@ -1,4 +1,6 @@
-# ContactLab Pattern Library
+# ContactLab Pattern Library Website
+
+This is the documentation website for the ContactLab Pattern Library components designed and built by the Product team.
 
 ### Install
 Install development and runtime dependencies with
@@ -6,9 +8,6 @@ Install development and runtime dependencies with
 	bower install
 
 	npm install
-
-### UI-Components by ContactLab Product Team
-The custom UI Components are hosted on a Bitbucket private repository, if the Bower installation of this package fails, you must add a SSH key in your Bitbucket account, documentation [here](https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html).
 
 ### Run the project
 Just type
@@ -19,16 +18,21 @@ to start the webserver at localhost:3000 , if the port is already in use you can
 
 	gulp -p 3003
 
-In case that the Compass action breaks the script and you don't want/have to install the needed Ruby gem you can start only the webserver without the watch action with
-
-	gulp connect
-
-and if needed pass the -p parameter.
-
 ### Development
-The project is built with Polymer components following the Mediator Pattern, everything regarding the UI Components should not be edited in this repo, while everything related to this specific project (routing, navigation links, global actions) can be edited inside the **library-clab** component located in
+You can use
 
-	app/components/library
+	gulp dev
+
+to work with Javascript files, compiling ES6 to ES5 on every .es6.js file save, or
+
+	gulp ux
+
+to compile SASS to CSS o every .scss file save.
+
+**Both** actions starts a webserver as explained above.
+
+### Code styleguide
+This project follows the code styleguide explained [here](https://gitlab.contactlab.com/product-devs/clab-app-components#styleguide).
 
 ### Build
 Work in progress
