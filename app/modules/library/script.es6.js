@@ -22,10 +22,10 @@ class LibraryClab {
 	attached(){
 		var menu=this.querySelector('menu-clab');
 		menu.menu = AppMenu;
-		menu.addEventListener('subchange', (evt)=>{
-			this.set('submenu', evt.detail.links);
-			this.submenuLabel=evt.detail.label;
-		});
+		// menu.addEventListener('subchange', (evt)=>{
+		// 	this.set('submenu', evt.detail.links);
+		// 	this.submenuLabel=evt.detail.label;
+		// });
 
 		this.fire('libraryLoaded');
 	}

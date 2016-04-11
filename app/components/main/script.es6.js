@@ -12,18 +12,9 @@ class MainClab {
 
 	attached(){
 		this._routing();
-
-		window.addEventListener('resize', ()=> {
-		    this._layoutManager();
-		});
-		window.addEventListener('orientationchange', ()=> {
-		    this._layoutManager();
-		});
-
-		this._layoutManager();
 	}
 
-	_routing(){ 
+	_routing(){
 		this.handleRouting=function(){
 			let url = this.router.getRoute();
 			if(url[0]===''){
@@ -33,14 +24,14 @@ class MainClab {
 
 				if(!this.querySelector('library-clab')){
 					window.addEventListener('libraryLoaded',(evt)=>{
-						this.querySelector('library-clab').page=url[1];
-						window.removeEventListener('libraryLoaded');
+						this.querySelector('library-clab').page = url[1];
+						// window.removeEventListener('libraryLoaded');
 					});
 				} else {
-					this.querySelector('library-clab').page=url[1];
+					this.querySelector('library-clab').page = url[1];
 				}
 				//this.currentPage=this.querySelector('.library-clab.iron-selected');
-			} 
+			}
 		};
 
 		this.routes = {
@@ -149,15 +140,15 @@ class MainClab {
 		    '/documentation/getting-started': ()=> {
 		    	this.handleRouting();
 		    }
-		};	
+		};
 
 		this.router = Router(this.routes).configure({
 			notfound: ()=>{
 				pages.selected='library';
 		    	library.page = 'not-found';
 			},
-			on: ()=>{
-				/*$('menu-clab .first-level-menu>li>a').each(function(i, e){					
+			on: () => {
+				/*$('menu-clab .first-level-menu>li>a').each(function(i, e){
 					if(location.hash.search(e.getAttribute('href')) > -1){
 						e.parentNode.classList.add('active');
 					}else{
@@ -172,20 +163,6 @@ class MainClab {
 
 	_isPage(cur, page){
 		return cur === page;
-	}
-
-	_layoutManager(){
-	  if ($(window).width() < 1024) {
-	    document.querySelector('body').classList.add('main-sidebar-small');
-	  } else if ($(window).width() > 1780){
-		document.querySelector('body').classList.add('secondary-sidebar-open');
-		//document.querySelector('#secondary-sidebar').classList.add('sidebar-open');
-		//document.querySelector('#user-menu-toggle').classList.add('active');
-	  } else {
-	    document.querySelector('body').classList.remove('main-sidebar-small')
-	    //document.querySelector('#secondary-sidebar').classList.remove('sidebar-open');
-	    //document.querySelector('#user-menu-toggle').classList.remove('active');
-	  }
 	}
 }
 
