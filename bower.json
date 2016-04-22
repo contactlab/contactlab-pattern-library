@@ -19,7 +19,7 @@
     "fetch": "~0.11.0",
     "director": "~1.2.8",
     "es6-promise": "^3.1.2",
-    "ui-components": "https://github.com/contactlab/contactlab-ui-components.git#develop",
+    "ui-components": "git@gitserver.tomatowin.local:contactlab/clab-ui-components#develop",
     "highlightjs": "~8.9.1",
     "iron-pages": "PolymerElements/iron-pages#~1.0.4",
     "clipboard": "https://github.com/lgarron/clipboard.js.git",
