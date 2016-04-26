@@ -1,4 +1,4 @@
-/* 
+/*
 Configuration parameters
 ========================
 */
@@ -12,7 +12,7 @@ var conf = {
 }
 
 
-/* 
+/*
 Imports
 ========================
 */
@@ -31,8 +31,8 @@ var gulp = require('gulp-param')(require('gulp'), process.argv),
     plumber = require('gulp-plumber');
 
 
-/* 
-Taks definitions 
+/*
+Taks definitions
 ========================
 */
 
@@ -85,14 +85,19 @@ gulp.task('connect', function (port) {
 });
 
 // Compiles SASS to CSS
+// gulp.task('sass', function () {
+//   gulp.src(conf.scssSourcePath)
+//   	.pipe(sourcemaps.init())
+//     .pipe(sass({
+//       compass: true,
+//       errLogToConsole: true
+//     }))
+//     .pipe(sourcemaps.write())
+//     .pipe(gulp.dest(conf.cssOutputPath));
+// });
 gulp.task('sass', function () {
-  gulp.src(conf.scssSourcePath)
-  	.pipe(sourcemaps.init())
-    .pipe(sass({
-      compass: true,
-      errLogToConsole: true
-    }))
-    .pipe(sourcemaps.write())
+  return gulp.src(conf.scssSourcePath)
+    .pipe(sass.sync().on('error', sass.logError))
     .pipe(gulp.dest(conf.cssOutputPath));
 });
 
@@ -111,7 +116,7 @@ gulp.task('compass', function() {
 
 
 gulp.task('watch-sass', function() {
-  gulp.watch([conf.scssSourcePath], ['compass'])
+  gulp.watch([conf.scssSourcePath], ['sass']);
 });
 
 gulp.task('watch-es6', function() {
@@ -127,12 +132,12 @@ gulp.task('watch-es6', function() {
 });
 
 
-/* 
+/*
 Actions
 ========================
 */
 
 // Launch a webserver and watch for *.scss, *.js, *.jsx changes and recompiles in plain .css or .js in the /dist folder
-gulp.task('default', ['connect']); 
+gulp.task('default', ['connect']);
 gulp.task('ux', ['connect', 'watch-sass']);
 gulp.task('dev', ['connect', 'watch-es6']);

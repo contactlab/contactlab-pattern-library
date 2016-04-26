@@ -1,11 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-/* @import "../bower/susy/sass/susy"; */
 $fa-font-path: "../bower/font-awesome/fonts";
 @import "../bower/font-awesome/scss/font-awesome";
-/* @import "library/reset"; */
-/* @import "library/settings"; */
-/* @import 'compass'; */
 @import "contactlab-pattern";
+
+// COMPONENTS
+@import "../bower/ui-components/_assets/scss/contactlab-pattern";
 
 // HEADER
 
