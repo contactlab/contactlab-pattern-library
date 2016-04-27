@@ -1,9 +1,13 @@
 <link rel="import" href="../../assets/bower/polymer/polymer.html">
+<link rel="import" href="../../assets/bower/clab-ui-components/_components/clab-components.html">
+<link rel="import" href="../../assets/bower/iron-pages/iron-pages.html">
+<link rel="import" href="./../../modules/cover/view.html">
+<link rel="import" href="./../../modules/library/view.html">
 
 <dom-module id="main-clab">
 	<style></style>
-	
-	<template>	
+
+	<template>
 		<iron-pages attr-for-selected="data-route">
 			<template is="dom-if" if="[[_isPage(currentModule, 'home')]]" restamp="true">
 				<cover-clab data-route="home"></cover-clab>
@@ -13,6 +17,6 @@
 			</template>
 		</iron-pages>
 	</template>
-	
+
 	<script src="script.js"></script>
 </dom-module>

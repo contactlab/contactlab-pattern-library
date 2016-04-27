@@ -10,9 +10,10 @@
 				<section>
 					<h2>Download</h2>
 					<p>
-						You can manually download the complete package from the <a target="_blank" href="https://github.com/contactlab/contactlab-ui-components/releases/tag/0.8">Github repository</a>
+						You can manually download the complete package from the
+						<a target="_blank" href="https://github.com/contactlab/contactlab-ui-components/releases/tag/0.8"><strike>Github repository</strike></a>. (at the moment is a <b>private</b> repo)
 					</p>
-					<button-clab on-click="_goToZip" type="primary">Download</button-clab>
+					<button-clab on-click="_goToZip" type="primary">Download ZIP</button-clab>
 				</section>
 				<section>
 					<h3>Install with Bower</h3>
@@ -26,8 +27,11 @@
 							<!-- <div class="copy">
 <pre><code class="language-bash">$ bower install ui-components</code></pre>
 							</div> -->
-							<div class="copy">
+							<!-- <div class="copy">
 <pre><code class="language-bash">$ bower install https://github.com/contactlab/contactlab-pattern-library#0.8</code></pre>
+							</div> -->
+							<div class="copy">
+<pre><code class="language-bash">$ bower install git@gitserver.tomatowin.local:contactlab/clab-ui-components#0.8</code></pre>
 							</div>
 						</div>
 					</div>
@@ -171,7 +175,8 @@
 			},
 
 			_goToZip(evt){
-				window.location.href = "https://github.com/contactlab/contactlab-ui-components/archive/0.8.zip";
+				// window.location.href = "https://github.com/contactlab/contactlab-ui-components/archive/0.8.zip";
+				window.location.href = "assets/resources/contactlab-ui-components-0.8.zip";
 			}
 	});
 

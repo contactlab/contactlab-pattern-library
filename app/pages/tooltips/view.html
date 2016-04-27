@@ -2,7 +2,7 @@
 
 <dom-module id="page-tooltips">
 	<style></style>
-	
+
 	<template>
 
 		<h2>Tooltips</h2>
@@ -13,32 +13,32 @@
 			<article class="component">
 				<div class="example">
 					<tooltip-clab wait="0">
-		                <button-clab class="tt-label">Primary</button-clab>
+		        <button-clab class="tt-label">Default</button-clab>
 						<span class="tt-content">Lorem ipsum dolor sit amet.</span>
 					</tooltip-clab>
 
 					<tooltip-clab type="primary" wait="0">
-		                <button-clab class="tt-label">Primary</button-clab>
+		        <button-clab class="tt-label">Primary</button-clab>
 						<span class="tt-content">Lorem ipsum dolor sit amet.</span>
 					</tooltip-clab>
 
 					<tooltip-clab type="success" wait="0">
-		                <button-clab class="tt-label">Success</button-clab>
+		        <button-clab class="tt-label">Success</button-clab>
 						<span class="tt-content">Lorem ipsum dolor sit amet.</span>
 					</tooltip-clab>
 
 					<tooltip-clab type="warning" wait="0">
-		                <button-clab class="tt-label">Warning</button-clab>
+		        <button-clab class="tt-label">Warning</button-clab>
 						<span class="tt-content">Lorem ipsum dolor sit amet.</span>
 					</tooltip-clab>
 
 					<tooltip-clab type="error" wait="0">
-		                <button-clab class="tt-label">Error</button-clab>
+		        <button-clab class="tt-label">Error</button-clab>
 						<span class="tt-content">Lorem ipsum dolor sit amet.</span>
 					</tooltip-clab>
 
 					<tooltip-clab type="info" wait="0">
-		                <button-clab class="tt-label">Info</button-clab>
+		        <button-clab class="tt-label">Info</button-clab>
 						<span class="tt-content">Lorem ipsum dolor sit amet.</span>
 					</tooltip-clab>
 				</div>
@@ -47,7 +47,15 @@
 						<div class="tab-content">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
-<pre><code class="html">&lt;tooltip-clab content=&quot;Tooltip content&quot; tt-type=&quot;primary&quot;&gt;&lt;/tooltip-clab&gt;</code></pre>
+<pre><code class="html">&lt;!-- Without DOM content --&gt;
+&lt;tooltip-clab content=&quot;Tooltip content&quot;&gt;&lt;/tooltip-clab&gt;
+
+&lt;!-- With DOM content --&gt;
+&lt;tooltip-clab content=&quot;Tooltip content&quot; tt-type=&quot;primary&quot;&gt;
+	&lt;div class="tt-label"&gt;My content&lt;/div&gt;
+	&lt;span class="tt-content"&gt;Lorem ipsum dolor sit amet.&lt;/span&gt;
+&lt;/tooltip-clab&gt;
+</code></pre>
 							</div>
 						</div>
 						<div class="tab-content">
