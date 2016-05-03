@@ -17,7 +17,7 @@
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px / 1 FontAwesome;
+  font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -5556,6 +5556,8 @@ body {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box; }
+  body.no-scroll {
+    overflow: hidden; }
 
 * {
   font-family: "Open Sans", sans-serif;
@@ -6042,7 +6044,9 @@ header {
         order: 2;
         flex-grow: 1;
         text-align: center;
-        padding-right: 60px; }
+        padding-right: 60px;
+        display: flex;
+        justify-content: center; }
       header .user {
         order: 3;
         width: 100%;
@@ -7709,8 +7713,9 @@ alert-clab {
     color: #434A5A;
     display: inline-block;
     margin: 0;
-    width: 25px;
+    min-width: 25px;
     line-height: 25px;
+    padding: 0 5px;
     text-align: center;
     cursor: pointer; }
     .pagination li.page.active {
@@ -8435,6 +8440,11 @@ header .product-logo .product-name {
   background-position: right top;
   background-repeat: no-repeat;
   height: 594px; }
+  @media (max-width: 48em) {
+    #cover-heading {
+      background-image: none;
+      height: auto;
+      padding: 80px 0; } }
   #cover-heading .logo {
     max-width: 150px;
     padding: 20px 0 0 20px;
@@ -8455,16 +8465,33 @@ header .product-logo .product-name {
     #cover-heading .cover-description p {
       width: 100%;
       max-width: 50%; }
+    @media (max-width: 48em) {
+      #cover-heading .cover-description h1,
+      #cover-heading .cover-description p {
+        max-width: 100%; } }
 
 .cover-content {
   padding: 80px 0; }
   .cover-content .sections {
     margin-top: 80px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between; }
   .cover-content .sections .card {
     text-align: center;
-    width: calc((100% / 4) - 14px); }
+    flex: 1 1 20%;
+    margin-right: 20px; }
+    .cover-content .sections .card:last-of-type {
+      margin-right: 0; }
+    @media (max-width: 48em) {
+      .cover-content .sections .card {
+        flex: 1 1 40%; }
+        .cover-content .sections .card:nth-child(2n) {
+          margin-right: 0; } }
+    @media (max-width: 30em) {
+      .cover-content .sections .card {
+        flex: 1 1 100%;
+        margin-right: 0; } }
     .cover-content .sections .card figure {
       padding: 20px 0; }
     .cover-content .sections .card .card-body {
@@ -8550,7 +8577,8 @@ header .product-logo .product-name {
   flex-direction: column; }
   .component .example {
     display: flex;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    flex-wrap: wrap; }
     .component .example:last-of-type {
       margin-bottom: 0; }
   .component .specs .tab-content {
@@ -8633,7 +8661,7 @@ header .product-logo .product-name {
     font-size: 14px; }
 
 .typo-weights {
-  flex-wrap: nowrap; }
+  flex-wrap: wrap; }
   .typo-weights .font-weight {
     flex-grow: 1;
     font-size: 100px;
@@ -8691,6 +8719,12 @@ header .product-logo .product-name {
   display: flex;
   padding-bottom: 20px;
   align-items: center; }
+  @media (max-width: 48em) {
+    .iconography .icon-example {
+      flex-basis: 50%; } }
+  @media (max-width: 30em) {
+    .iconography .icon-example {
+      flex-basis: 100%; } }
   .iconography .icon-example .clab-icon {
     font-size: 25px;
     padding-right: 10px;
@@ -8724,11 +8758,25 @@ header .product-logo .product-name {
   float: left;
   margin-bottom: 20px; }
 
-.cards .example {
-  justify-content: space-between; }
+@media (max-width: 30em) {
+  .cards {
+    display: block; } }
 
 .cards card-clab {
-  width: calc((100% / 3) - 14px); }
+  flex: 1 1 30%;
+  margin-right: 20px;
+  max-width: 352px; }
+  .cards card-clab:last-of-type {
+    margin-right: 0; }
+  @media (max-width: 48em) {
+    .cards card-clab {
+      flex: 1 1 40%; }
+      .cards card-clab:nth-child(2n) {
+        margin-right: 0; } }
+  @media (max-width: 30em) {
+    .cards card-clab {
+      flex: 1 1 100%;
+      margin-right: 0; } }
 
 .features .example {
   justify-content: space-between; }

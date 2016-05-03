@@ -38,6 +38,12 @@ header .product-logo .product-name {
 	background-repeat: no-repeat;
 	height: 594px;
 
+	@media (max-width: $tablet) {
+		background-image: none;
+		height: auto;
+		padding: $larger-spacing 0;
+	}
+
 	.logo {
 		max-width: 150px;
 		padding: $base-spacing 0 0 $base-spacing;
@@ -66,6 +72,13 @@ header .product-logo .product-name {
 			width: 100%;
 			max-width: 50%;
 		}
+
+		@media (max-width: $tablet) {
+			h1,
+			p {
+				max-width: 100%;
+			}
+		}
 	}
 }
 
@@ -79,12 +92,31 @@ header .product-logo .product-name {
 	.sections {
 		margin-top: $larger-spacing;
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 	}
 
 	.sections .card {
 		text-align: center;
-		width: calc((100% / 4) - 14px);
+		flex: 1 1 20%;
+		margin-right: $base-spacing;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		@media (max-width: $tablet) {
+			flex: 1 1 40%;
+
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+
+		@media (max-width: $smartphone) {
+			flex: 1 1 100%;
+			margin-right: 0;
+		}
 
 		figure {
 			padding: $base-spacing 0;
@@ -215,6 +247,7 @@ header .product-logo .product-name {
 	.example {
 		display: flex;
 		margin-bottom: $base-spacing;
+		flex-wrap: wrap;
 
 		&:last-of-type {
 			margin-bottom: 0;
@@ -372,7 +405,7 @@ header .product-logo .product-name {
 // TYPOGRAPHY
 
 .typo-weights {
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 
 	.font-weight {
 		flex-grow: 1;
@@ -476,6 +509,14 @@ header .product-logo .product-name {
 		padding-bottom: $base-spacing;
 		align-items: center;
 
+		@media (max-width: $tablet) {
+			flex-basis: 50%;
+		}
+
+		@media (max-width: $smartphone) {
+			flex-basis: 100%;
+		}
+
 		.clab-icon {
 			font-size: 25px;
 			padding-right: $small-spacing;
@@ -536,13 +577,31 @@ header .product-logo .product-name {
 // CARDS
 
 .cards {
-
-	.example {
-		justify-content: space-between;
-	}
+		@media (max-width: $smartphone) {
+			display: block;
+		}
 
 	card-clab {
-		width: calc((100% / 3) - 14px);
+		flex: 1 1 30%;
+		margin-right: $base-spacing;
+		max-width: 352px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		@media (max-width: $tablet) {
+			flex: 1 1 40%;
+
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+
+		@media (max-width: $smartphone) {
+			flex: 1 1 100%;
+			margin-right: 0;
+		}
 	}
 }
 
