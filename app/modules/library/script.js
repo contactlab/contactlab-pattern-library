@@ -31,21 +31,16 @@ var LibraryClab = function () {
 				beta: {
 					type: Boolean,
 					value: false
+				},
+				menu: {
+					type: Array,
+					value: AppMenu
 				}
 			};
 		}
 	}, {
 		key: 'attached',
 		value: function attached() {
-			var _this = this;
-
-			var menu = this.querySelector('menu-clab');
-			menu.addEventListener('menuchange', function (evt) {
-				_this.set('submenu', evt.detail.links);
-				_this.submenuLabel = evt.detail.label;
-			});
-			menu.menu = AppMenu;
-
 			this.fire('libraryLoaded');
 		}
 	}, {
@@ -71,6 +66,12 @@ var LibraryClab = function () {
 				scrollTo(element, to, duration - 10);
 			}, 10);
 		})
+	}, {
+		key: '_menuChange',
+		value: function _menuChange(evt) {
+			this.set('submenu', evt.detail.links);
+			this.submenuLabel = evt.detail.label;
+		}
 	}, {
 		key: '_pageChanged',
 		value: function _pageChanged() {

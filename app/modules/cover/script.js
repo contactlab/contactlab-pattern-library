@@ -17,8 +17,18 @@ var CoverClab = function () {
 				beta: {
 					type: Boolean,
 					value: false
+				},
+				version: {
+					type: String,
+					value: '0.0.0'
 				}
 			};
+		}
+	}, {
+		key: "_computeYear",
+		value: function _computeYear() {
+			var date = new Date();
+			return date.getFullYear();
 		}
 	}]);
 

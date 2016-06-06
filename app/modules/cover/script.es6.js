@@ -5,8 +5,17 @@ class CoverClab {
 			beta: {
 				type: Boolean,
 				value: false
+			},
+			version: {
+				type: String,
+				value: '0.0.0'
 			}
 		}
+	}
+
+	_computeYear(){
+		let date = new Date();
+		return date.getFullYear();
 	}
 }
 

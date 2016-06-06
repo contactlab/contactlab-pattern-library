@@ -19,18 +19,15 @@ class LibraryClab {
 			beta: {
 				type: Boolean,
 				value: false
+			},
+			menu: {
+				type: Array,
+				value: AppMenu
 			}
 		}
 	}
 
 	attached(){
-		var menu=this.querySelector('menu-clab');
-		menu.addEventListener('menuchange', (evt)=>{
-			this.set('submenu', evt.detail.links);
-			this.submenuLabel=evt.detail.label;
-		});
-		menu.menu = AppMenu;
-
 		this.fire('libraryLoaded');
 	}
 
@@ -44,6 +41,11 @@ class LibraryClab {
         if (element.scrollTop === to) return;
         scrollTo(element, to, duration - 10);
     }, 10);
+	}
+
+	_menuChange(evt){
+		this.set('submenu', evt.detail.links);
+		this.submenuLabel=evt.detail.label;
 	}
 
 
