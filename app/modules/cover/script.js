@@ -13,6 +13,12 @@ var CoverClab = function () {
 		key: "beforeRegister",
 		value: function beforeRegister() {
 			this.is = "cover-clab";
+			this.properties = {
+				beta: {
+					type: Boolean,
+					value: false
+				}
+			};
 		}
 	}]);
 

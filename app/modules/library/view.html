@@ -41,6 +41,9 @@
 	<style></style>
 
 	<template>
+		<template is="dom-if" if="[[beta]]">
+			<div id="draft-ribbon">BETA</div>
+		</template>
 		<!-- <header>
 			<menu-clab title-icon="" link="#" draft="BETA" first-child>
 				<span class="product-name">
@@ -56,7 +59,7 @@
 			</menu-clab>
 		</header> -->
 
-		<menu-clab title-icon="" link="#/" draft="BETA" first-child>
+		<menu-clab title-icon="" link="#/" first-child>
             <span class="product-name"><i class="clab-icon icon-contactlab"></i></span>
 
             <div class="alerts">

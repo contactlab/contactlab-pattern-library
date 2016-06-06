@@ -27,6 +27,10 @@ var LibraryClab = function () {
 				currentHash: {
 					type: String,
 					value: location.hash
+				},
+				beta: {
+					type: Boolean,
+					value: false
 				}
 			};
 		}
@@ -45,10 +49,34 @@ var LibraryClab = function () {
 			this.fire('libraryLoaded');
 		}
 	}, {
+		key: 'scrollTo',
+		value: function (_scrollTo) {
+			function scrollTo(_x, _x2, _x3) {
+				return _scrollTo.apply(this, arguments);
+			}
+
+			scrollTo.toString = function () {
+				return _scrollTo.toString();
+			};
+
+			return scrollTo;
+		}(function (element, to, duration) {
+			if (duration <= 0) return;
+			var difference = to - element.scrollTop;
+			var perTick = difference / duration * 10;
+
+			setTimeout(function () {
+				element.scrollTop = element.scrollTop + perTick;
+				if (element.scrollTop === to) return;
+				scrollTo(element, to, duration - 10);
+			}, 10);
+		})
+	}, {
 		key: '_pageChanged',
 		value: function _pageChanged() {
 			this.currentHash = location.hash;
-			window.scroll(0, 0);
+			// window.scroll(0,0);
+			this.scrollTo(document.body, 0, 600);
 		}
 	}, {
 		key: '_isPage',

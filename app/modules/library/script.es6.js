@@ -15,6 +15,10 @@ class LibraryClab {
 			currentHash:{
 				type:String,
 				value:location.hash
+			},
+			beta: {
+				type: Boolean,
+				value: false
 			}
 		}
 	}
@@ -30,9 +34,23 @@ class LibraryClab {
 		this.fire('libraryLoaded');
 	}
 
+	scrollTo(element, to, duration) {
+    if (duration <= 0) return;
+    var difference = to - element.scrollTop;
+    var perTick = difference / duration * 10;
+
+    setTimeout(function() {
+        element.scrollTop = element.scrollTop + perTick;
+        if (element.scrollTop === to) return;
+        scrollTo(element, to, duration - 10);
+    }, 10);
+	}
+
+
 	_pageChanged(){
 		this.currentHash=location.hash;
-		window.scroll(0,0);
+		// window.scroll(0,0);
+		this.scrollTo(document.body, 0, 600);
 	}
 
 	_isPage(cur, page){

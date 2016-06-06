@@ -10,10 +10,10 @@
 	<template>
 		<iron-pages attr-for-selected="data-route">
 			<template is="dom-if" if="[[_isPage(currentModule, 'home')]]" restamp="true">
-				<cover-clab data-route="home"></cover-clab>
+				<cover-clab data-route="home" beta></cover-clab>
 			</template>
 			<template is="dom-if" if="[[_isPage(currentModule, 'library')]]" restamp="true">
-				<library-clab data-route="library"></library-clab>
+				<library-clab data-route="library" beta></library-clab>
 			</template>
 		</iron-pages>
 	</template>
