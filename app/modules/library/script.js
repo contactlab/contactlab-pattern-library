@@ -26,7 +26,7 @@ var LibraryClab = function () {
 				},
 				currentHash: {
 					type: String,
-					value: location.hash
+					value: window.location.hash
 				},
 				beta: {
 					type: Boolean,
@@ -44,28 +44,50 @@ var LibraryClab = function () {
 			this.fire('libraryLoaded');
 		}
 	}, {
-		key: 'scrollTo',
-		value: function (_scrollTo) {
-			function scrollTo(_x, _x2, _x3) {
-				return _scrollTo.apply(this, arguments);
-			}
+		key: 'scrollToY',
+		value: function scrollToY(scrollTargetY, speed, easing) {
+			// scrollTargetY: the target scrollY property of the window
+			// speed: time in pixels per second
+			// easing: easing equation to use
+			var scrollY = window.scrollY,
+			    scrollTargetY = scrollTargetY || 0,
+			    speed = speed || 2000,
+			    easing = easing || 'easeOutSine',
+			    currentTime = 0;
 
-			scrollTo.toString = function () {
-				return _scrollTo.toString();
+			var time = Math.max(.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, .8));
+
+			// easing equations from https://github.com/danro/easing-js/blob/master/easing.js
+			var PI_D2 = Math.PI / 2,
+			    easingEquations = {
+				easeOutSine: function easeOutSine(pos) {
+					return Math.sin(pos * (Math.PI / 2));
+				},
+				easeInOutSine: function easeInOutSine(pos) {
+					return -0.5 * (Math.cos(Math.PI * pos) - 1);
+				},
+				easeInOutQuint: function easeInOutQuint(pos) {
+					if ((pos /= 0.5) < 1) {
+						return 0.5 * Math.pow(pos, 5);
+					}
+					return 0.5 * (Math.pow(pos - 2, 5) + 2);
+				}
 			};
 
-			return scrollTo;
-		}(function (element, to, duration) {
-			if (duration <= 0) return;
-			var difference = to - element.scrollTop;
-			var perTick = difference / duration * 10;
+			function tick() {
+				currentTime += 1 / 60;
+				var p = currentTime / time;
+				var t = easingEquations[easing](p);
+				if (p < 1) {
+					requestAnimFrame(tick);
+					window.scrollTo(0, scrollY + (scrollTargetY - scrollY) * t);
+				} else {
+					window.scrollTo(0, scrollTargetY);
+				}
+			}
 
-			setTimeout(function () {
-				element.scrollTop = element.scrollTop + perTick;
-				if (element.scrollTop === to) return;
-				scrollTo(element, to, duration - 10);
-			}, 10);
-		})
+			tick();
+		}
 	}, {
 		key: '_menuChange',
 		value: function _menuChange(evt) {
@@ -75,9 +97,8 @@ var LibraryClab = function () {
 	}, {
 		key: '_pageChanged',
 		value: function _pageChanged() {
-			this.currentHash = location.hash;
-			// window.scroll(0,0);
-			this.scrollTo(document.body, 0, 600);
+			this.currentHash = window.location.hash;
+			this.scrollToY(0, 1500, 'easeInOutQuint');
 		}
 	}, {
 		key: '_isPage',
@@ -90,3 +111,9 @@ var LibraryClab = function () {
 }();
 
 Polymer(LibraryClab);
+
+window.requestAnimFrame = function () {
+	return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
+		window.setTimeout(callback, 1000 / 60);
+	};
+}();
