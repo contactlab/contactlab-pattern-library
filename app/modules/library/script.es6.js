@@ -84,6 +84,7 @@ class LibraryClab {
 	_pageChanged(){
 		this.currentHash = window.location.hash;
 		this.scrollToY(0, 1500, 'easeInOutQuint');
+		// this.querySelector('nav.main-nav').classList.remove('show');
 	}
 
 	_isPage(cur, page){

@@ -7,14 +7,13 @@
 		<div class="wrapper">
 			<div class="content" id="release-notes">
 				<h2>Release notes</h2>
-				<div class="release">
-					<div class="number">0.8</div>
-					<div class="date">26/04/2016</div>
-					<div class="description">
-						First <b>private</b> beta release
+				<template is="dom-repeat" items="[[notes]]">
+					<div class="release">
+						<div class="number">[[item.number]]</div>
+						<div class="date">[[item.date]]</div>
+						<div class="description">[[item.description]]</div>
 					</div>
-				</div>
-
+				</template>
 			</div>
 		</div>
 
@@ -25,7 +24,15 @@
 	<script>
 
 	Polymer({
-		is:'page-release-notes'
+		is:'page-release-notes',
+		properties: {
+			notes:{
+				type: Array,
+				value: [
+					{ number: '0.8' , date: '26/04/2016', description: 'First private beta release'}
+				]
+			}
+		}
 	});
 
 	</script>

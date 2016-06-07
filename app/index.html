@@ -4,15 +4,32 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Pattern library</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<link rel="SHORTCUT ICON" href="assets/img/favicon.png" />
+	<link rel="icon" href="assets/img/favicon.png" />
 
-	<!-- <link rel="stylesheet" href="assets/css/icons.css"> -->
+	<!-- Android -->
+	<meta name="theme-color" content="#0072bc">
+	<!-- iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#0072bc">
+
+	<!-- Styles -->
 	<link rel="stylesheet" href="./../../assets/bower/highlightjs/styles/monokai_sublime.css">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<!-- <link rel="stylesheet" href="assets/css/contactlab-pattern.css"> -->
 
+	<!-- Scripts -->
 	<script src="assets/bower/webcomponentsjs/webcomponents.min.js"></script>
+	<script>
+		/* Polymer global settings (laziregister, shadowdom) */
+		window.Polymer = {
+		//  dom: 'shadow',
+		 lazyRegister: true
+		};
+
+		/* Remove loading spinner when WebComponents polyfill is fully loaded */
+		window.addEventListener('WebComponentsReady', function(e) {
+			document.querySelector('.spinner-overlay.app-load').style.display = 'none';
+		});
+	</script>
 	<script src="assets/bower/web-animations-js/web-animations-next-lite.min.js"></script>
 	<script src="assets/bower/jquery/dist/jquery.min.js"></script>
 	<script src="assets/bower/es6-promise/promise.min.js"></script>
@@ -20,10 +37,24 @@
 	<script src="assets/bower/director/build/director.min.js"></script>
 	<script src="behaviors/behaviors.js"></script>
 
+	<!-- Components -->
 	<link rel="import" href="components/main/view.html">
 
 </head>
 <body>
+	<!-- APP PRELOADER -->
+	<div class="spinner-overlay app-load">
+		<span>Loading application</span>
+		<div class="spinner">
+			<div class="rect1"></div>
+			<div class="rect2"></div>
+			<div class="rect3"></div>
+			<div class="rect4"></div>
+			<div class="rect5"></div>
+		</div>
+	</div>
+
+	<!-- Main Application -->
 	<main-clab></main-clab>
 </body>
 </html>
