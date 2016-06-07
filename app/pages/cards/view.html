@@ -10,19 +10,19 @@
 			<h3>Textual cards</h3>
 			<article class="component cards">
 				<div class="example">
-					<card-clab title="Card title" primary-label="Accept" secondary-label="Decline">
+					<card-clab title="Card title" primary="Accept" secondary="Decline">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
 					</card-clab>
-					<card-clab title="Card title with icon" icon="fa fa-twitter icon" primary-label="Accept" secondary-label="Decline">
+					<card-clab title="Card title with icon" icon="fa fa-twitter icon" primary="Accept" secondary="Decline">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
 					</card-clab>
-					<card-clab title="Card big title" icon="fa fa-twitter icon" primary-label="Accept" secondary-label="Decline">
+					<card-clab big title="Card big title" icon="fa fa-twitter icon" primary="Accept" secondary="Decline">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper. Donec metus sapien, pulvinar non volutpat sed, ultricies vitae ligula. Vivamus vel varius urna. Etiam vitae lorem luctus ipsum imperdiet semper in ut dolor. Vestibulum placerat lorem ut nisi semper fringilla non at tortor. Maecenas sed luctus nibh. Duis vitae ullamcorper libero.
 					</card-clab>
 				</div>
 				<div class="specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
+						<div>
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
 <pre><code class="html">&lt;div class=&quot;card&quot;&gt;
@@ -37,15 +37,15 @@
 &lt;/div&gt;</code></pre>
 							</div>
 						</div>
-						<div class="tab-content">
+						<div>
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
-<pre><code class="html">&lt;card-clab title=&quot;Card title&quot; primary-label=&quot;Accept&quot; secondary-label=&quot;Decline&quot;&gt;
+<pre><code class="html">&lt;card-clab title=&quot;Card title&quot; primary=&quot;Accept&quot; secondary=&quot;Decline&quot;&gt;
 &#x9;Card content
 &lt;/card-clab&gt;</code></pre>
 							</div>
 						</div>
-						<div class="tab-content">
+						<div>
 							<table>
 								<thead>
 									<tr>
@@ -53,68 +53,88 @@
 										<th>Type</th>
 										<th>Values</th>
 										<th>Default</th>
+										<th>Required</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>title</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>Title</td>
+										<td>any string</td>
+										<td>"Title"</td>
+										<td></td>
 									</tr>
 									<tr>
-										<td>primary-label</td>
+										<td>primary</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>Ok</td>
+										<td>any string</td>
+										<td>"Ok"</td>
+										<td></td>
 									</tr>
 									<tr>
-										<td>secondary-label</td>
+										<td>secondary</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>Cancel</td>
+										<td>any string</td>
+										<td>"Cancel"</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>icon</td>
 										<td>string</td>
-										<td>any valid icon class</td>
-										<td>none</td>
+										<td>an icon-[name] class</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>big</td>
 										<td>boolean</td>
-										<td>true/false</td>
+										<td>true: icon size big</td>
 										<td>false</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>table</td>
 										<td>boolean</td>
-										<td>true/false</td>
+										<td>true: notify to the card the content is in table format</td>
 										<td>false</td>
-									</tr>
-									<tr>
-										<td>figure</td>
-										<td>string</td>
-										<td>path to an image</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>effect</td>
-										<td>string</td>
-										<td>none, 'blur', 'saturation', 'zoom-in', 'zoom-out'</td>
-										<td>none</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>no-actions</td>
 										<td>boolean</td>
-										<td>Whether to show primary and secondary action buttons</td>
+										<td>true: hide primary and secondary buttons</td>
 										<td>false</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>link</td>
 										<td>object</td>
 										<td>'{"text":"my website", "href":"www.mywebsite.com"}'</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div>
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>primary</td>
+										<td>Click on the primary (Ok) button</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>secondary</td>
+										<td>Click on the secondary (Cancel) button</td>
+										<td>N/A</td>
 									</tr>
 								</tbody>
 							</table>
@@ -126,19 +146,19 @@
 			<h3>Image cards</h3>
 			<article class="component cards">
 				<div class="example">
-					<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" title="Basic" primary-label="Explore" secondary-label="Share">
+					<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" title="Basic" primary="Explore" secondary="Share">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
 					</card-clab>
-					<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" effect="blur" title="Blur effect" primary-label="Explore" secondary-label="Share">
+					<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" effect="blur" title="Blur effect" primary="Explore" secondary="Share">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
 					</card-clab>
-					<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" effect="grayscale" title="Saturation effect" primary-label="Explore" secondary-label="Share">
+					<card-clab figure="https://unsplash.imgix.net/photo-1423683249427-8ca22bd873e0?q=75&fm=jpg&s=5e57c661d0f772ce269188a6f5325708" effect="grayscale" title="Saturation effect" primary="Explore" secondary="Share">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus magna nulla, non sollicitudin tortor tempor ullamcorper.
 					</card-clab>
 				</div>
 				<div class="specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
+						<div>
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
 <pre><code class="html">&lt;div class=&quot;card&quot;&gt;
@@ -154,15 +174,15 @@
 &lt;/div&gt;</code></pre>
 							</div>
 						</div>
-						<div class="tab-content">
+						<div>
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
-<pre><code class="html">&lt;card-clab figure=&quot;img-path&quot; title=&quot;Basic&quot; primary-label=&quot;Explore&quot; secondary-label=&quot;Share&quot;&gt;
+<pre><code class="html">&lt;card-clab figure=&quot;img-path&quot; title=&quot;Basic&quot; primary=&quot;Explore&quot; secondary=&quot;Share&quot;&gt;
 &#x9;&#x9;Content
 &lt;/card-clab&gt;</code></pre>
 							</div>
 						</div>
-						<div class="tab-content">
+						<div>
 							<table>
 								<thead>
 									<tr>
@@ -170,68 +190,102 @@
 										<th>Type</th>
 										<th>Values</th>
 										<th>Default</th>
+										<th>Required</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>title</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>Title</td>
+										<td>any string</td>
+										<td>"Title"</td>
+										<td></td>
 									</tr>
 									<tr>
-										<td>primary-label</td>
+										<td>primary</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>Ok</td>
+										<td>any string</td>
+										<td>"Ok"</td>
+										<td></td>
 									</tr>
 									<tr>
-										<td>secondary-label</td>
+										<td>secondary</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>Cancel</td>
+										<td>any string</td>
+										<td>"Cancel"</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>icon</td>
 										<td>string</td>
-										<td>any valid icon class</td>
-										<td>none</td>
+										<td>an icon-[name] class</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>big</td>
 										<td>boolean</td>
-										<td>true/false</td>
+										<td>true: icon size big</td>
 										<td>false</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>table</td>
 										<td>boolean</td>
-										<td>true/false</td>
+										<td>true: notify to the card the content is in table format</td>
 										<td>false</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>figure</td>
 										<td>string</td>
-										<td>path to an image</td>
-										<td>none</td>
+										<td>"path/to/image.jpg"</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>effect</td>
 										<td>string</td>
-										<td>none, 'blur', 'saturation', 'zoom-in', 'zoom-out'</td>
-										<td>none</td>
+										<td>"blur", "saturation", "zoom-in", "zoom-out"</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>no-actions</td>
 										<td>boolean</td>
-										<td>Whether to show primary and secondary action buttons</td>
+										<td>true: hide primary and secondary buttons</td>
 										<td>false</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>link</td>
 										<td>object</td>
 										<td>'{"text":"my website", "href":"www.mywebsite.com"}'</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div>
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>primary</td>
+										<td>Click on the primary (Ok) button</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>secondary</td>
+										<td>Click on the secondary (Cancel) button</td>
+										<td>N/A</td>
 									</tr>
 								</tbody>
 							</table>

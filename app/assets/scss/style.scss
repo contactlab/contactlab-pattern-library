@@ -4,7 +4,7 @@ $fa-font-path: "../bower/font-awesome/fonts";
 @import "contactlab-pattern";
 
 // COMPONENTS
-@import "../bower/ui-components/_assets/scss/contactlab-pattern";
+@import "../bower/clab-ui-components/_assets/scss/contactlab-pattern";
 
 // HEADER
 
@@ -708,4 +708,13 @@ range-clab {
 .example.text-inputs-comp {
 	display: flex;
 	align-items: flex-end;
+}
+
+
+
+
+
+.var_type{
+	font-style:italic;
+	color:rgb(180, 180, 180);
 }

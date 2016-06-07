@@ -2,7 +2,7 @@
 
 <dom-module id="page-buttons">
 	<style></style>
-	
+
 	<template>
 		<h2>Buttons</h2>
 		<section>
@@ -79,20 +79,20 @@
 				</div>
 
 				<div class="specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
+						<div>
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
 <pre><code class="html">&lt;button class="btn"&gt;content&lt;/button&gt;</code></pre>
 							</div>
 						</div>
-						<div class="tab-content">
+						<div>
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
 <pre><code class="html">&lt;button-clab&gt;content&lt;/button-clab&gt;</code></pre>
 							</div>
 						</div>
-						<div class="tab-content">
+						<div>
 							<table>
 								<thead>
 									<tr>
@@ -100,44 +100,62 @@
 										<th>Type</th>
 										<th>Values</th>
 										<th>Default</th>
+										<th>Required</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>type</td>
 										<td>string</td>
-										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-										<td>none</td>
+										<td>"primary", "secondary", "success", "warning", "error", "info"</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>appearance</td>
 										<td>string</td>
-										<td>
-											<b>none</b>: bordered button
-											<br><b>'full'</b>: button filled with background color
-											<br><b>'flat'</b>: button without borders
-										</td>
-										<td>none</td>
+										<td>"empty", "flat"</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>icon</td>
 										<td>string</td>
-										<td>any valid icon class</td>
-										<td>none</td>
+										<td>an icon-[name] class</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>size</td>
 										<td>string</td>
-										<td>
-											<b>none</b>: regular size button
-											<br><b>'small'</b>: smaller button</td>
-										<td>none</td>
+										<td>"small"</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>disabled</td>
 										<td>boolean</td>
 										<td>true/false</td>
 										<td>false</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div>
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>btnclick</td>
+										<td>Click on the button</td>
+										<td>N/A</td>
 									</tr>
 								</tbody>
 							</table>
@@ -147,7 +165,7 @@
 			</article>
 		</section>
 	</template>
-	
+
 	<script>
 
 		Polymer({
