@@ -22,8 +22,8 @@
 					</div>
 				</div>
 				<div class="specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0" on-change="_highlightCode">
+						<div>
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
 <pre><code class="html">&lt;div class=&quot;accordion&quot;&gt;
@@ -38,14 +38,14 @@
 &lt;/div&gt;</code></pre>
 							</div>
 						</div>
-						<div class="tab-content">
+						<div>
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
 <pre><code class="html">&lt;accordion-clab title="accordion title"&gt; <i class="italic">accordion content</i> &lt;/accordion-clab&gt;</code></pre>
 							</div>
 						</div>
-						<div class="tab-content">
-							<table class="striped-table">
+						<div>
+							<table>
 								<thead>
 									<tr>
 										<th>Name</th>
