@@ -5,33 +5,39 @@ class InnerMenuClab {
 			menu:{
 				type:Array
 			},
+			mobileToggle: {
+				type: Boolean,
+				value: false,
+				observer: '_mobileToggle'
+			},
 			curUrl:{
 				type:String,
 				observer:'_closeSubmenu'
 			}
 		}
 	}
-	
+
 
 
 	/* ------------------
 		EVENT HANDLERS
 	------------------- */
 	_handleOpen(evt){
+		evt.preventDefault();
 		evt.stopPropagation();
 
 		var i;
 		switch(evt.target.localName){
 			case 'a':
-				var i=evt.target.getAttribute('data-index');
+				var i = evt.target.getAttribute('data-index');
 				break;
 			case 'i':
-				var i=evt.target.parentElement.getAttribute('data-index');
+				var i = evt.target.parentElement.getAttribute('data-index');
 				break;
 		}
-		this.menu.map((item, n)=>{
+		this.menu.map((item, n) => {
 			if(n==i){
-				(item.open)? this.set('menu.'+n+'.open', false) : this.set('menu.'+n+'.open', true);
+				(item.open) ? this.set('menu.'+n+'.open', false) : this.set('menu.'+n+'.open', true);
 			} else {
 				this.set('menu.'+n+'.open', false)
 			}
@@ -48,6 +54,19 @@ class InnerMenuClab {
 		window.addEventListener('click', windowClick);
 	}
 
+	_toggleMobileNav(evt){
+		console.log('_toggleMobileNav', evt);
+		this.mobileToggle = !this.mobileToggle;
+	}
+
+	_mobileToggle(newVal, oldVal){
+		let elem = this.querySelector('ul.first-level');
+		if(newVal){
+			elem.style.display = 'block';
+		} else {
+			elem.style.display = 'none';
+		}
+	}
 
 
 	/* ------------------
@@ -68,7 +87,7 @@ class InnerMenuClab {
 		COMPUTED
 	------------------- */
 	_computeShow(open){
-		if(open) 
+		if(open)
 			return 'show';
 		else
 			return '';
@@ -92,7 +111,7 @@ class InnerMenuClab {
 
 		return arr.join(' ');
 	}
-	
+
 }
 
 Polymer(InnerMenuClab);

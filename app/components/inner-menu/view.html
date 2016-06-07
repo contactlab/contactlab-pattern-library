@@ -9,13 +9,13 @@
 			display: block;
 		}
 	</style>
-	
-	<template>	
+
+	<template>
 		<div class="contextual-menu">
-			<div class="mobile-nav-toggle">
+			<div class="mobile-nav-toggle" on-tap="_toggleMobileNav">
 				Navigation <i class="clab-icon icon-arrow-down arrow"></i>
 			</div>
-			<ul>
+			<ul class="first-level">
 				<template is="dom-repeat" items="[[menu]]">
 					<li class$="[[_computeActive(item, curUrl)]]">
 						<template is="dom-if" if="[[item.submenu]]">
@@ -36,6 +36,6 @@
 
 
 	</template>
-	
+
 	<script src="script.js"></script>
 </dom-module>

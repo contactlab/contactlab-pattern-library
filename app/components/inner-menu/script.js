@@ -17,6 +17,11 @@ var InnerMenuClab = function () {
 				menu: {
 					type: Array
 				},
+				mobileToggle: {
+					type: Boolean,
+					value: false,
+					observer: '_mobileToggle'
+				},
 				curUrl: {
 					type: String,
 					observer: '_closeSubmenu'
@@ -33,6 +38,7 @@ var InnerMenuClab = function () {
 		value: function _handleOpen(evt) {
 			var _this = this;
 
+			evt.preventDefault();
 			evt.stopPropagation();
 
 			var i;
@@ -61,6 +67,22 @@ var InnerMenuClab = function () {
 				window.removeEventListener('click', windowClick);
 			};
 			window.addEventListener('click', windowClick);
+		}
+	}, {
+		key: '_toggleMobileNav',
+		value: function _toggleMobileNav(evt) {
+			console.log('_toggleMobileNav', evt);
+			this.mobileToggle = !this.mobileToggle;
+		}
+	}, {
+		key: '_mobileToggle',
+		value: function _mobileToggle(newVal, oldVal) {
+			var elem = this.querySelector('ul.first-level');
+			if (newVal) {
+				elem.style.display = 'block';
+			} else {
+				elem.style.display = 'none';
+			}
 		}
 
 		/* ------------------
