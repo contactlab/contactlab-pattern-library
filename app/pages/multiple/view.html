@@ -2,7 +2,7 @@
 
 <dom-module id="page-multiple">
 	<style></style>
-	
+
 	<template>
 		<h2>Multiple</h2>
 		<section>
@@ -11,7 +11,7 @@
 					<multiple-clab label="Select multiple options" options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]' max-in-view="5">This is a note</multiple-clab>
 				</div>
 				<div class="specs">
-					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
+					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
 							<div class="tab-content">
 								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 								<div class="copy">
@@ -19,85 +19,92 @@
 								</div>
 							</div>
 							<div class="tab-content">
-								<table class="striped-table">
+								<table>
 									<thead>
 										<tr>
 											<th>Name</th>
 											<th>Type</th>
 											<th>Values</th>
 											<th>Default</th>
+											<th>Required</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td>label</td>
 											<td>string</td>
-											<td>any valid string</td>
-											<td>none</td>
+											<td>any string</td>
+											<td></td>
+											<td></td>
 										</tr>
 										<tr>
 											<td>name</td>
 											<td>string</td>
-											<td>any valid string</td>
-											<td>multiple select</td>
+											<td>any string</td>
+											<td>"multiple select"</td>
+											<td></td>
 										</tr>
 										<tr>
 											<td>type</td>
 											<td>string</td>
-											<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-											<td>success</td>
+											<td>"primary", "success", "warning", "error", "info"</td>
+											<td>"success"</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>selected</td>
+											<td>object</td>
+											<td>'[{"value": "A", "label": "Option 1"}]'</td>
+											<td></td>
+											<td></td>
 										</tr>
 										<tr>
 											<td>disabled</td>
 											<td>boolean</td>
-											<td>true/false</td>
+											<td>true: is disabled</td>
 											<td>false</td>
+											<td></td>
 										</tr>
 										<tr>
 											<td>options</td>
 											<td>array</td>
-											<td>
-												[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, ...]
-											</td>
+											<td>array of option objects</td>
+											<td>'[{"value": "A"}, {"label": "Option 1"}]'</td>
+											<td><i class="clab-icon icon-check"></i></td>
+										</tr>
+										<tr>
+											<td>url</td>
+											<td>string</td>
+											<td>endpoint for fetching the array of options</td>
+											<td></td>
 											<td></td>
 										</tr>
 										<tr>
 											<td>options-fn</td>
 											<td>function</td>
 											<td>a function returning a Javascript promise that returns the options array</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>url</td>
-											<td>string</td>
-											<td>
-												Url to fetch the options from
-											</td>
-											<td>none</td>
-										</tr>
-										<tr>
-											<td>selected</td>
-											<td>object</td>
-											<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}]</td>
-											<td>none</td>
+											<td></td>
+											<td></td>
 										</tr>
 										<tr>
 											<td>max-in-view</td>
 											<td>number</td>
 											<td>max rows in view when list is open and scrollable</td>
 											<td>4</td>
+											<td></td>
 										</tr>
 										<tr>
 											<td>note-type</td>
 											<td>string</td>
-											<td>optional additional class for the note</td>
-											<td>none</td>
+											<td>classes for the note</td>
+											<td></td>
+											<td></td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
 							<div class="tab-content">
-								<table class="striped-table">
+								<table>
 									<thead>
 										<tr>
 											<th>Name</th>
@@ -108,10 +115,8 @@
 									<tbody>
 										<tr>
 											<td>change</td>
-											<td>When a new value is selected</td>
-											<td><ul>
-												<li><b>selected:</b> the object representing the new value that has been selected</li>
-											</ul></td>
+											<td>an option is selected</td>
+											<td>{ selected: <span class="var_type">Object</span>}</td>
 										</tr>
 									</tbody>
 								</table>

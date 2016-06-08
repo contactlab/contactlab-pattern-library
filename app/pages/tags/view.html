@@ -2,7 +2,7 @@
 
 <dom-module id="page-tags">
 	<style></style>
-	
+
 	<template>
 		<h2>Tags</h2>
 		<section>
@@ -11,7 +11,7 @@
 					<tags-clab label="Add tag" btn="Add"></tags-clab>
 				</div>
 				<div class="specs">
-					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS", "METHODS"]' active="0">
+					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS", "METHODS"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
@@ -19,93 +19,106 @@
 							</div>
 						</div>
 						<div class="tab-content">
-							<table class="striped-table">
+							<table>
 								<thead>
 									<tr>
 										<th>Name</th>
 										<th>Type</th>
 										<th>Values</th>
 										<th>Default</th>
+										<th>Required</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>label</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>none</td>
+										<td>any string</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>name</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>tags input</td>
+										<td>any string</td>
+										<td>"tags input"</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>input-string</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>none</td>
+										<td>any string</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>input-type</td>
 										<td>string</td>
-										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-										<td>success</td>
+										<td>"primary", "success", "warning", "error", "info"</td>
+										<td>"success"</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>disabled</td>
 										<td>boolean</td>
-										<td>true/false</td>
+										<td>true: is disabled</td>
 										<td>false</td>
+										<td></td>
 									</tr>
 									<tr>
-										<td>stacked</td>
-										<td>boolean</td>
-										<td>true/false</td>
-										<td>false</td>
+										<td>placeholder</td>
+										<td>string</td>
+										<td>any string</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>tags</td>
 										<td>array</td>
-										<td>'['value1', 'value2', ...]'</td>
-										<td>none</td>
+										<td>'["value1", "value2", "value3"]'</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>btn</td>
 										<td>string</td>
 										<td>text inside button tag</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>btn-appearance</td>
 										<td>string</td>
 										<td>button-clab appearance attribute</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>btn-size</td>
 										<td>string</td>
 										<td>button-clab size attribute</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>btn-icon</td>
 										<td>string</td>
 										<td>button-clab icon attribute</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>hide-input</td>
 										<td>boolean</td>
-										<td>true/false</td>
+										<td>true: hides the input</td>
 										<td>false</td>
+										<td></td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
 						<div class="tab-content">
-							<table class="striped-table">
+							<table>
 								<thead>
 									<tr>
 										<th>Name</th>
@@ -116,10 +129,8 @@
 								<tbody>
 									<tr>
 										<td>change</td>
-										<td>When a value is added or removed from the array of tags</td>
-										<td><ul>
-											<li><b>tags:</b> the array of tags updated</li>
-										</ul></td>
+										<td>a tag is added or removed</td>
+										<td>{ tags: <span class="var_type">Array</span>}</td>
 									</tr>
 								</tbody>
 							</table>
@@ -135,7 +146,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>setTags(newTags)</td>
+										<td>setTags(<span class="var_type">Array</span>)</td>
 										<td>array</td>
 										<td>N/A</td>
 									</tr>
