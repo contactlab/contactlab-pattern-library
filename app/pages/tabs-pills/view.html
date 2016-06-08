@@ -2,9 +2,9 @@
 
 <dom-module id="page-tabs-pills">
 	<style></style>
-	
+
 	<template>
-		
+
 		<h2>Tabs & pills</h2>
 		<section>
 			<div class="component-description">
@@ -26,7 +26,7 @@
 					</tabs-clab>
 				</div>
 				<div class="specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+					<tabs-clab  labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
@@ -45,6 +45,7 @@
 										<th>Type</th>
 										<th>Values</th>
 										<th>Default</th>
+										<th>Required</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -52,19 +53,40 @@
 										<td>labels</td>
 										<td>array</td>
 										<td>array of strings</td>
-										<td>'Tab [index]'</td>
+										<td></td>
+										<td><i class="clab-icon icon-check"></i></td>
 									</tr>
 									<tr>
 										<td>active</td>
 										<td>number</td>
 										<td>index of the tab to be displayed from the start</td>
 										<td>0</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>pills</td>
 										<td>boolean</td>
-										<td>true/false</td>
+										<td>true: pills appearance</td>
 										<td>false</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div>
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>change</td>
+										<td>Selected tab changes</td>
+										<td>{ active: <span class="var_type">Number</span> }</td>
 									</tr>
 								</tbody>
 							</table>
@@ -91,7 +113,7 @@
 					</tabs-clab>
 				</div>
 				<div class="specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+					<tabs-clab  labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
@@ -110,6 +132,7 @@
 										<th>Type</th>
 										<th>Values</th>
 										<th>Default</th>
+										<th>Required</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -117,19 +140,40 @@
 										<td>labels</td>
 										<td>array</td>
 										<td>array of strings</td>
-										<td>'Tab [index]'</td>
+										<td></td>
+										<td><i class="clab-icon icon-check"></i></td>
 									</tr>
 									<tr>
 										<td>active</td>
 										<td>number</td>
 										<td>index of the tab to be displayed from the start</td>
 										<td>0</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>pills</td>
 										<td>boolean</td>
-										<td>true/false</td>
+										<td>true: pills appearance</td>
 										<td>false</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div>
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Emitted when</th>
+										<th>Custom data</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>change</td>
+										<td>Selected tab changes</td>
+										<td>{ active: <span class="var_type">Number</span> }</td>
 									</tr>
 								</tbody>
 							</table>
