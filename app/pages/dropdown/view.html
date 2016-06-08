@@ -2,7 +2,7 @@
 
 <dom-module id="page-dropdown">
 	<style></style>
-	
+
 	<template>
 		<h2>Dropdown</h2>
 		<section>
@@ -18,7 +18,7 @@
 
 				</div>
 				<div class="specs">
-					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS", "METHODS"]' active="0">
+					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS", "METHODS"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
@@ -26,109 +26,141 @@
 							</div>
 						</div>
 						<div class="tab-content">
-							<table class="striped-table">
+							<table>
 								<thead>
 									<tr>
 										<th>Name</th>
 										<th>Type</th>
 										<th>Values</th>
 										<th>Default</th>
+										<th>Required</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>label</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>none</td>
+										<td>any string</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
-										<td>type</td>
+										<td>icon</td>
 										<td>string</td>
-										<td>none, 'primary', secondary', 'success', 'warning', 'error', 'info'</td>
-										<td>success</td>
-									</tr>
-									<tr>
-										<td>options</td>
-										<td>array</td>
-										<td>
-											[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, ...]
-										</td>
-										<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}, {<b>value</b>: 'B', <b>label</b>: 'Option 2'}]</td>
+										<td>a valid icon class</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>selected</td>
 										<td>object</td>
-										<td>[{<b>value</b>: 'A', <b>label</b>: 'Option 1'}]</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>label-field</td>
-										<td>string</td>
-										<td>custom name for the label property of the single option object</td>
-										<td>'label'</td>
+										<td>'[{"value": "A", "label": "Option 1"}]'</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>value-field</td>
 										<td>string</td>
-										<td>custom name for the value property of the single option object</td>
-										<td>'value'</td>
+										<td>the name of the option property where the option value is set or is get</td>
+										<td>"value"</td>
+										<td><i class="clab-icon icon-check"></i></td>
+									</tr>
+									<tr>
+										<td>label-field</td>
+										<td>string</td>
+										<td>the name of the option property where the option label is set or is get</td>
+										<td>"label"</td>
+										<td><i class="clab-icon icon-check"></i></td>
+									</tr>
+									<tr>
+										<td>placeholder</td>
+										<td>string</td>
+										<td>any string</td>
+										<td>"Type.."</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>disabled</td>
+										<td>boolean</td>
+										<td>true: is disabled</td>
+										<td>false</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>prevent-change</td>
+										<td>boolean</td>
+										<td>true: prevent from firing events</td>
+										<td>false</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>options</td>
+										<td>array</td>
+										<td>array of option objects</td>
+										<td>'[{"value": "A"}, {"label": "Option 1"}]'</td>
+										<td><i class="clab-icon icon-check"></i></td>
+									</tr>
+									<tr>
+										<td>url</td>
+										<td>string</td>
+										<td>endpoint for fetching the array of options</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>options-fn</td>
 										<td>function</td>
 										<td>a function returning a Javascript promise that returns the options array</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
-										<td>url</td>
-										<td>string</td>
-										<td>
-											Url to fetch the options from
-										</td>
-										<td>none</td>
-									</tr>
-									<tr>
-										<td>placeholder</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>Select..</td>
-									</tr>
-									<tr>
-										<td>disabled</td>
+										<td>inline</td>
 										<td>boolean</td>
-										<td>true/false</td>
+										<td>true: label and input on the same line</td>
 										<td>false</td>
+										<td></td>
 									</tr>
 									<tr>
-										<td>disable-option</td>
-										<td>array</td>
-										<td>array of indexes of the options to be disabled</td>
-										<td>[]</td>
+										<td>label-size</td>
+										<td>string</td>
+										<td>"smaller", "small", "large", "larger"</td>
+										<td>null</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>result-as-obj</td>
 										<td>boolean</td>
-										<td>Whether to return the entire object or only the value</td>
+										<td>true: returns the entire object of the selected option</td>
 										<td>false</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>max-in-view</td>
 										<td>number</td>
 										<td>max rows in view when list is open and scrollable</td>
 										<td>4</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>type</td>
+										<td>string</td>
+										<td>"primary", "success", "warning", "error", "info"</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>note-type</td>
 										<td>string</td>
-										<td>optional additional class for the note</td>
-										<td>none</td>
+										<td>classes for the note</td>
+										<td></td>
+										<td></td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
 						<div class="tab-content">
-							<table class="striped-table">
+							<table>
 								<thead>
 									<tr>
 										<th>Name</th>
@@ -139,10 +171,8 @@
 								<tbody>
 									<tr>
 										<td>change</td>
-										<td>When a new value is selected</td>
-										<td><ul>
-											<li><b>selected:</b> the object representing the new value that has been selected</li>
-										</ul></td>
+										<td>an option is selected</td>
+										<td>{ selected: <span class="var_type">Object</span>/<span class="var_type">String</span>, newValue: <span class="var_type">Object</span>, oldValue: <span class="var_type">Object</span> }</td>
 									</tr>
 								</tbody>
 							</table>
