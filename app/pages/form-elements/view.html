@@ -2,7 +2,7 @@
 
 <dom-module id="page-forms">
 	<style></style>
-	
+
 	<template>
 
 		<h2>Form elements</h2>
@@ -19,7 +19,7 @@
 					<radio-clab labels='["radio 6", "radio 7", "radio 8"]' name="group3" active="1" disabled='[1]'></radio-clab>
 				</div>
 				<div class="specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
@@ -34,45 +34,51 @@
 							</div>
 						</div>
 						<div class="tab-content">
-							<table class="striped-table">
+							<table>
 								<thead>
 									<tr>
 										<th>Name</th>
 										<th>Type</th>
 										<th>Values</th>
 										<th>Default</th>
+										<th>Required</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>labels</td>
 										<td>array</td>
-										<td>an array of labels for the radio inputs creation</td>
-										<td>none</td>
+										<td>'["radio 1", "radio 2"]'</td>
+										<td></td>
+										<td><i class="clab-icon icon-check"></i></td>
 									</tr>
 									<tr>
 										<td>name</td>
 										<td>string</td>
-										<td>the name for the group of radio inputs</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>wrapper-type</td>
 										<td>string</td>
 										<td>optional classes for the wrapper div</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>active</td>
 										<td>number</td>
 										<td>index of the active radio input</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>disabled</td>
 										<td>array</td>
-										<td>an array of indexes of the disabled radio inputs</td>
-										<td>none</td>
+										<td>indexes of the disabled radio inputs</td>
+										<td></td>
+										<td></td>
 									</tr>
 								</tbody>
 							</table>
@@ -94,7 +100,7 @@
 					<checkbox-clab labels='["checkbox 7", "checkbox 8"]' active="1" disabled='[0]'></checkbox-clab>
 				</div>
 				<div class="specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
@@ -109,39 +115,51 @@
 							</div>
 						</div>
 						<div class="tab-content">
-							<table class="striped-table">
+							<table>
 								<thead>
 									<tr>
 										<th>Name</th>
 										<th>Type</th>
 										<th>Values</th>
 										<th>Default</th>
+										<th>Required</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>labels</td>
 										<td>array</td>
-										<td>an array of labels for the checkboxes creation</td>
-										<td>none</td>
+										<td>'["checkbox 1", "checkbox 2"]'</td>
+										<td></td>
+										<td><i class="clab-icon icon-check"></i></td>
+									</tr>
+									<tr>
+										<td>name</td>
+										<td>string</td>
+										<td></td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>wrapper-type</td>
 										<td>string</td>
 										<td>optional classes for the wrapper div</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>active</td>
 										<td>number</td>
 										<td>index of the active checkbox</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>disabled</td>
 										<td>array</td>
-										<td>an array of indexes of the disabled checkboxes</td>
-										<td>none</td>
+										<td>indexes of the disabled checkboxes</td>
+										<td></td>
+										<td></td>
 									</tr>
 								</tbody>
 							</table>
@@ -161,7 +179,7 @@
 					<range-clab label="How old are you?" value="20" min="18" max="33" step="1" show-details></range-clab>
 				</div>
 				<div class="specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
+					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
@@ -169,69 +187,79 @@
 							</div>
 						</div>
 						<div class="tab-content">
-							<table class="striped-table">
+							<table>
 								<thead>
 									<tr>
 										<th>Name</th>
 										<th>Type</th>
 										<th>Values</th>
 										<th>Default</th>
+										<th>Required</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>label</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>none</td>
+										<td>any string</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>name</td>
 										<td>string</td>
-										<td>any valid string</td>
-										<td>rangeinput</td>
+										<td>any string</td>
+										<td>"rangeinput"</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>type</td>
 										<td>string</td>
-										<td>none, 'success', 'warning', 'error', 'info'</td>
-										<td>none</td>
+										<td>"success", "warning", "error", "info"</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>value</td>
 										<td>number</td>
-										<td>any valid number inside the range you set</td>
-										<td>none</td>
+										<td>any valid number inside the declared range</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>min</td>
 										<td>number</td>
 										<td>minimum value</td>
-										<td>none</td>
+										<td></td>
+										<td><i class="clab-icon icon-check"></i></td>
 									</tr>
 									<tr>
 										<td>max</td>
 										<td>number</td>
 										<td>maximum value</td>
-										<td>none</td>
+										<td></td>
+										<td><i class="clab-icon icon-check"></i></td>
 									</tr>
 									<tr>
 										<td>step</td>
 										<td>number</td>
 										<td>step value</td>
-										<td>none</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>disabled</td>
 										<td>boolean</td>
-										<td>true/false</td>
+										<td>true: is disabled</td>
 										<td>false</td>
+										<td></td>
 									</tr>
 									<tr>
 										<td>show-details</td>
 										<td>boolean</td>
-										<td>true/false</td>
+										<td>true: shows selected value</td>
 										<td>false</td>
+										<td></td>
 									</tr>
 								</tbody>
 							</table>
