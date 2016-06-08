@@ -44,16 +44,12 @@
 				</div>
 				<div class="specs">
 					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
+						<div class="tab-content" on-change="_highlightCode">
 							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
 							<div class="copy">
-<pre><code class="html">&lt;!-- Without DOM content --&gt;
-&lt;tooltip-clab content=&quot;Tooltip content&quot;&gt;&lt;/tooltip-clab&gt;
-
-&lt;!-- With DOM content --&gt;
-&lt;tooltip-clab content=&quot;Tooltip content&quot; tt-type=&quot;primary&quot;&gt;
-	&lt;div class="tt-label"&gt;My content&lt;/div&gt;
-	&lt;span class="tt-content"&gt;Lorem ipsum dolor sit amet.&lt;/span&gt;
+<pre><code class="html">&lt;tooltip-clab type=&quot;primary&quot;&gt;
+	&lt;button-clab class="tt-label"&gt;Primary&lt;/button-clab&gt;
+	&lt;span class="tt-content"&gt;My content&lt;/span&gt;
 &lt;/tooltip-clab&gt;
 </code></pre>
 							</div>
@@ -66,26 +62,30 @@
 										<th>Type</th>
 										<th>Values</th>
 										<th>Default</th>
+										<th>Required</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>content</td>
-										<td>string</td>
-										<td>any valid string</td>
-										<td>'The content'</td>
-									</tr>
-									<tr>
 										<td>type</td>
 										<td>string</td>
-										<td>to add a custom class for the span element</td>
-										<td>none</td>
+										<td>"primary", "info", "success", "warning", "error"</td>
+										<td></td>
+										<td></td>
 									</tr>
 									<tr>
-										<td>tt-type</td>
-										<td>string</td>
-										<td>none, 'primary', 'secondary', 'info', 'success', 'warning', 'error'</td>
-										<td>none</td>
+										<td>visible</td>
+										<td>boolean</td>
+										<td>true: is visible</td>
+										<td>false</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>wait</td>
+										<td>number</td>
+										<td>wait time before tooltip shows (in milliseconds)</td>
+										<td>500</td>
+										<td></td>
 									</tr>
 								</tbody>
 							</table>
