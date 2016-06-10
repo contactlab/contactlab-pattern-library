@@ -5432,6 +5432,24 @@ header .product-logo .product-name {
 .hljs-comment {
   color: #656D78; }
 
+.import-snippet {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  align-items: center; }
+  .import-snippet h2, .import-snippet .modal-title {
+    width: auto;
+    margin-bottom: 0; }
+  .import-snippet label-clab > span {
+    font-size: .8rem;
+    height: 25px;
+    display: flex;
+    align-items: center; }
+  .import-snippet pre {
+    line-height: .1rem; }
+  .import-snippet > * {
+    margin-right: 10px; }
+
 .component {
   flex-direction: column; }
   .component .example {

@@ -240,6 +240,33 @@ header .product-logo .product-name {
 	color: $dark-gray;
 }
 
+.import-snippet{
+	display:flex;
+	flex-wrap: wrap;
+	margin-bottom: $base-spacing;
+	align-items: center;
+
+	h2{
+		width: auto;
+		margin-bottom: 0;
+	}
+
+	label-clab > span{
+		font-size:.8rem;
+		height: 25px;
+    display: flex;
+    align-items: center;
+	}
+
+	pre{
+		line-height: .1rem;
+	}
+
+	& > *{
+		margin-right: 10px;
+	}
+}
+
 .component {
 	flex-direction: column;
 
