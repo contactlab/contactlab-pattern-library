@@ -5277,6 +5277,9 @@ ol.multiple-clab {
 
 header .main-nav {
   padding-right: 250px; }
+  @media (max-width: 60em) {
+    header .main-nav {
+      padding-right: 0; } }
 
 header .product-logo .product-name {
   padding-left: 0;
@@ -5382,6 +5385,11 @@ header .product-logo .product-name {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   z-index: 15; }
+  @media (max-width: 30em) {
+    #draft-ribbon {
+      line-height: 25px;
+      top: 15px;
+      padding-left: 30px; } }
 
 .specs .tab-content,
 .specs .code-snippet {
@@ -5620,6 +5628,10 @@ header .product-logo .product-name {
   .example.lists ol {
     flex-grow: 1;
     flex-basis: calc(100% / 3); }
+    @media (max-width: 30em) {
+      .example.lists ul,
+      .example.lists ol {
+        flex-basis: 100%; } }
 
 .motion-examples .shadow-container {
   display: flex; }

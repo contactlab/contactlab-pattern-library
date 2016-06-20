@@ -9,6 +9,10 @@ $fa-font-path: "../bower/font-awesome/fonts";
 
 header .main-nav {
 	padding-right: 250px;
+
+	@media (max-width: $desktop) {
+		padding-right: 0;
+	}
 }
 
 header .product-logo .product-name {
@@ -162,6 +166,12 @@ header .product-logo .product-name {
   -webkit-transform: rotate(45deg);
   @extend .depth-1;
   z-index: 15;
+
+  @media (max-width: $smartphone) {
+	  line-height: 25px;
+	  top: 15px;
+	  padding-left: 30px;
+  }
 }
 
 
@@ -576,6 +586,10 @@ header .product-logo .product-name {
 	ol {
 		flex-grow: 1;
 		flex-basis: calc(100% / 3);
+
+		@media(max-width: $smartphone) {
+			flex-basis: 100%;	
+		}
 	}
 }
 
