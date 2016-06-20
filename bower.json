@@ -21,6 +21,6 @@
     "highlightjs": "~8.9.1",
     "iron-pages": "PolymerElements/iron-pages#~1.0.4",
     "clipboard": "https://github.com/lgarron/clipboard.js.git",
-    "clab-ui-components": "https://github.com/contactlab/contactlab-ui-components.git#develop"
+    "clab-ui-components": "http://gitlab.contactlab.com/product-devs/clab-ui-components.git#develop"
   }
 }

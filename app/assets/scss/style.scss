@@ -178,8 +178,8 @@ header .product-logo .product-name {
 .specs {
 	.tab-content,
 	.code-snippet {
-		background-color: #FFFFFF;
-		border: 1px solid $light-gray;
+		// background-color: #FFFFFF;
+		// border: 1px solid $light-gray;
 		border-top: 0;
 		padding: $base-spacing;
 		position: relative;
@@ -284,6 +284,10 @@ header .product-logo .product-name {
 		.tab-content {
 			padding: 0;
 			position: relative;
+
+			table {
+				margin-top: $base-spacing;
+			}
 		}
 
 		button-clab {
@@ -339,12 +343,12 @@ header .product-logo .product-name {
 
 .pattern-colors {
 	.pattern-color {
-		width: 200px;
+		width: 230px;
 		margin-right: $base-spacing;
 		padding-bottom: $base-spacing;
 
 		.color-sample {
-			height: 200px;
+			height: 230px;
 			display: flex;
 			flex-flow: row nowrap;
 			align-items: center;
@@ -414,10 +418,14 @@ header .product-logo .product-name {
 				li {
 					margin-bottom: 0;
 					font-size: $small-font-size;
+					display: flex;
 				}
 
 				li:first-child {
-					font-weight: $bold-weight;
+					span {
+						font-weight: $bold-weight;
+					}
+
 					font-size: $base-font-size;
 				}
 			}
@@ -673,12 +681,13 @@ range-clab {
 
 	.example {
 		justify-content: space-between;
-		flex-flow: row wrap;
+		flex-flow: row nowrap;
 	}
 
 	input-clab {
 		width: calc((100% / 2) - 10px);
 		flex-shrink: 0;
+		margin-right: $base-spacing;
 	}
 }
 
@@ -688,12 +697,13 @@ range-clab {
 
 	.example {
 		justify-content: space-between;
-		flex-flow: row wrap;
+		flex-flow: row nowrap;
 	}
 
 	autocomplete-clab {
 		width: calc((100% / 2) - 10px);
 		flex-shrink: 0;
+		margin-right: $base-spacing;
 	}
 }
 
