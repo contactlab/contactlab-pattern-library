@@ -79,8 +79,7 @@ class LibraryClab {
 		this.set('submenu', evt.detail.links);
 		this.submenuLabel=evt.detail.label;
 	}
-
-
+	
 	_pageChanged(){
 		this.currentHash = window.location.hash;
 		this.scrollToY(0, 1500, 'easeInOutQuint');

@@ -46,8 +46,8 @@ var MainClab = function () {
 							// window.removeEventListener('libraryLoaded');
 						});
 					} else {
-							this.querySelector('library-clab').page = url[1];
-						}
+						this.querySelector('library-clab').page = url[1];
+					}
 					//this.currentPage=this.querySelector('.library-clab.iron-selected');
 				}
 			};
