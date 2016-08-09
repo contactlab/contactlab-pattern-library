@@ -1,8 +1,9 @@
 <link rel="import" href="../../assets/bower/polymer/polymer.html">
-<link rel="import" href="../../assets/bower/clab-ui-components/_components/clab-components.html">
+<link rel="import" href="../../assets/bower/clab-ui-components/clab-ui-components.html">
 <link rel="import" href="../../assets/bower/iron-pages/iron-pages.html">
 <link rel="import" href="./../../modules/cover/view.html">
 <link rel="import" href="./../../modules/library/view.html">
+<link rel="import" href="./../gist-embed/gist-embed.html">
 
 <dom-module id="main-clab">
 	<style></style>
@@ -10,7 +11,7 @@
 	<template>
 		<iron-pages attr-for-selected="data-route">
 			<template is="dom-if" if="[[_isPage(currentModule, 'home')]]" restamp="true">
-				<cover-clab data-route="home" beta version="0.9.2"></cover-clab>
+				<cover-clab data-route="home" beta version="1.0.0"></cover-clab>
 			</template>
 			<template is="dom-if" if="[[_isPage(currentModule, 'library')]]" restamp="true">
 				<library-clab data-route="library" beta></library-clab>

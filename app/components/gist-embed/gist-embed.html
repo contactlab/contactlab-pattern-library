@@ -1,0 +1,44 @@
+<link rel="import" href="../../assets/bower/polymer/polymer.html">
+
+<dom-module id="gist-embed">
+	<style></style>
+
+	<template>
+    <link rel="stylesheet" href="[[_css]]">
+    <div id="embed"></div>
+	</template>
+
+	<script>
+
+	Polymer({
+		is: 'gist-embed',
+    properties: {
+      user: {
+        type: String,
+        value: ''
+      },
+      uuid: {
+        type: String,
+        value: ''
+      },
+      _css: {
+        type: String
+      }
+    },
+
+		attached:function(){
+      var url = 'https://gist.github.com/';
+      url += this.user + '/' + this.uuid + '.json';
+
+      fetchJsonp(url).then(function(response){
+        return response.json();
+      }).then(function(json){
+        this._css = json.stylesheet;
+        this.$.embed.innerHTML = json.div;
+      }.bind(this));
+		}
+	});
+
+
+	</script>
+</dom-module>
