@@ -18,9 +18,9 @@ class MainClab {
 		this.handleRouting=function(){
 			let url = this.router.getRoute();
 			if(url[0]===''){
-				this.querySelector('iron-pages').selected=this.currentModule='home';
+				this.currentModule = 'home';
 			} else {
-				this.querySelector('iron-pages').selected=this.currentModule='library';
+				this.currentModule = 'library';
 
 				if(!this.querySelector('library-clab')){
 					window.addEventListener('libraryLoaded',(evt)=>{

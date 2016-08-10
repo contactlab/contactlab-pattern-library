@@ -36,9 +36,9 @@ var MainClab = function () {
 
 				var url = this.router.getRoute();
 				if (url[0] === '') {
-					this.querySelector('iron-pages').selected = this.currentModule = 'home';
+					this.currentModule = 'home';
 				} else {
-					this.querySelector('iron-pages').selected = this.currentModule = 'library';
+					this.currentModule = 'library';
 
 					if (!this.querySelector('library-clab')) {
 						window.addEventListener('libraryLoaded', function (evt) {
@@ -46,8 +46,8 @@ var MainClab = function () {
 							// window.removeEventListener('libraryLoaded');
 						});
 					} else {
-						this.querySelector('library-clab').page = url[1];
-					}
+							this.querySelector('library-clab').page = url[1];
+						}
 					//this.currentPage=this.querySelector('.library-clab.iron-selected');
 				}
 			};
