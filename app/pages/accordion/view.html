@@ -2,14 +2,15 @@
 	<style></style>
 
 	<template>
-		<div class="import-snippet">
-			<h2>Accordion</h2>
+		<h2 class="no-spacing-title">Accordion</h2>
+		<div class="requirements">
 			<tooltip-clab wait="0">
 				<label-clab class="tt-label" type="info">web-animations</label-clab>
 				<span class="tt-content">The web animation polyfill is required for this component to work!</span>
 			</tooltip-clab>
 		</div>
 		<gist-embed user="clab-gist" uuid="b74d7a5770dbbd16fd8c63d21d278da7" no-meta></gist-embed>
+		<hr class="dashed">
 		<section>
 			<article class="component">
 				<div class="example">
@@ -22,6 +23,7 @@
 						</accordion-clab>
 					</div>
 				</div>
+				<hr class="dashed">
 				<div class="specs">
 					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">

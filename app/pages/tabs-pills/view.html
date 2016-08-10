@@ -3,14 +3,15 @@
 
 	<template>
 
-		<h2>Tabs & pills</h2>
+		<h2>Tabs</h2>
 		<gist-embed user="clab-gist" uuid="c92b8d89af549d73bbe9d25fe6218a4d" no-meta></gist-embed>
 		<section>
 			<div class="component-description">
 				Tabs & pills are used for alternating between views within the same context, not to navigate to different areas. For navigation refer to the horizontal navigation guidelines.
 			</div>
+			<hr class="dashed">
 			<article class="component tab-pills">
-				<h3>Tabs</h3>
+				<h3>Default tabs</h3>
 				<div class="example">
 					<tabs-clab labels='["Tab 1", "Tab 2", "Tab 3"]'>
 						<div class="tab-content">
@@ -24,6 +25,52 @@
 						</div>
 					</tabs-clab>
 				</div>
+				<hr class="dashed">
+				<h3>Centered tabs</h3>
+				<div class="example">
+					<tabs-clab centered labels='["Tab 1", "Tab 2", "Tab 3"]'>
+						<div class="tab-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quo placeat, quibusdam, quae suscipit, adipisci modi vitae repellendus aspernatur ut nemo, laudantium quasi! Vitae ullam, vero reiciendis debitis laudantium culpa, sit, corporis reprehenderit incidunt molestias odio libero unde ratione, nam.
+						</div>
+						<div class="tab-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro quisquam, ad omnis numquam voluptatem eos aliquid facilis nesciunt veritatis reprehenderit alias architecto assumenda quam molestiae sit in recusandae veniam!
+						</div>
+						<div class="tab-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae praesentium temporibus consequuntur magni modi velit dignissimos eos magnam aspernatur. Reiciendis asperiores, error? Voluptate eum, ipsum sint maiores! Deserunt eos, aperiam praesentium fugit magni ea, incidunt distinctio, velit, repudiandae culpa nostrum debitis perspiciatis itaque delectus accusantium laboriosam mollitia voluptas. Ipsa, aspernatur.
+						</div>
+					</tabs-clab>
+				</div>
+				<hr class="dashed">
+				<h3>Full-width tabs</h3>
+				<div class="example">
+					<tabs-clab full-width labels='["Tab 1", "Tab 2", "Tab 3"]'>
+						<div class="tab-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quo placeat, quibusdam, quae suscipit, adipisci modi vitae repellendus aspernatur ut nemo, laudantium quasi! Vitae ullam, vero reiciendis debitis laudantium culpa, sit, corporis reprehenderit incidunt molestias odio libero unde ratione, nam.
+						</div>
+						<div class="tab-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro quisquam, ad omnis numquam voluptatem eos aliquid facilis nesciunt veritatis reprehenderit alias architecto assumenda quam molestiae sit in recusandae veniam!
+						</div>
+						<div class="tab-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae praesentium temporibus consequuntur magni modi velit dignissimos eos magnam aspernatur. Reiciendis asperiores, error? Voluptate eum, ipsum sint maiores! Deserunt eos, aperiam praesentium fugit magni ea, incidunt distinctio, velit, repudiandae culpa nostrum debitis perspiciatis itaque delectus accusantium laboriosam mollitia voluptas. Ipsa, aspernatur.
+						</div>
+					</tabs-clab>
+				</div>
+				<hr class="dashed">
+				<h3>Vertical tabs</h3>
+				<div class="example">
+					<tabs-clab vertical labels='["Tab 1", "Tab 2", "Tab 3"]'>
+						<div class="tab-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quo placeat, quibusdam, quae suscipit, adipisci modi vitae repellendus aspernatur ut nemo, laudantium quasi! Vitae ullam, vero reiciendis debitis laudantium culpa, sit, corporis reprehenderit incidunt molestias odio libero unde ratione, nam.
+						</div>
+						<div class="tab-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro quisquam, ad omnis numquam voluptatem eos aliquid facilis nesciunt veritatis reprehenderit alias architecto assumenda quam molestiae sit in recusandae veniam!
+						</div>
+						<div class="tab-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae praesentium temporibus consequuntur magni modi velit dignissimos eos magnam aspernatur. Reiciendis asperiores, error? Voluptate eum, ipsum sint maiores! Deserunt eos, aperiam praesentium fugit magni ea, incidunt distinctio, velit, repudiandae culpa nostrum debitis perspiciatis itaque delectus accusantium laboriosam mollitia voluptas. Ipsa, aspernatur.
+						</div>
+					</tabs-clab>
+				</div>
+				<hr class="dashed">
 				<div class="specs">
 					<tabs-clab  labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">
@@ -94,23 +141,69 @@
 				</div>
 			</article>
 		</section>
-
+		<hr>
+		<h2>Pills</h2>
 		<section>
-			<h3>Pills</h3>
-			<article class="component tab-pills">
-				<div class="example">
-					<tabs-clab pills active="1" labels='["Pill 1", "Pill 2", "Pill 3"]'>
-						<div class="tab-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quo placeat, quibusdam, quae suscipit, adipisci modi vitae repellendus aspernatur ut nemo, laudantium quasi! Vitae ullam, vero reiciendis debitis laudantium culpa, sit, corporis reprehenderit incidunt molestias odio libero unde ratione, nam.
-						</div>
-						<div class="tab-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro quisquam, ad omnis numquam voluptatem eos aliquid facilis nesciunt veritatis reprehenderit alias architecto assumenda quam molestiae sit in recusandae veniam!
-						</div>
-						<div class="tab-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae praesentium temporibus consequuntur magni modi velit dignissimos eos magnam aspernatur. Reiciendis asperiores, error? Voluptate eum, ipsum sint maiores! Deserunt eos, aperiam praesentium fugit magni ea, incidunt distinctio, velit, repudiandae culpa nostrum debitis perspiciatis itaque delectus accusantium laboriosam mollitia voluptas. Ipsa, aspernatur.
-						</div>
-					</tabs-clab>
-				</div>
+			<h3>Default pills</h3>
+			<div class="example">
+				<tabs-clab pills labels='["Tab 1", "Tab 2", "Tab 3"]'>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quo placeat, quibusdam, quae suscipit, adipisci modi vitae repellendus aspernatur ut nemo, laudantium quasi! Vitae ullam, vero reiciendis debitis laudantium culpa, sit, corporis reprehenderit incidunt molestias odio libero unde ratione, nam.
+					</div>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro quisquam, ad omnis numquam voluptatem eos aliquid facilis nesciunt veritatis reprehenderit alias architecto assumenda quam molestiae sit in recusandae veniam!
+					</div>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae praesentium temporibus consequuntur magni modi velit dignissimos eos magnam aspernatur. Reiciendis asperiores, error? Voluptate eum, ipsum sint maiores! Deserunt eos, aperiam praesentium fugit magni ea, incidunt distinctio, velit, repudiandae culpa nostrum debitis perspiciatis itaque delectus accusantium laboriosam mollitia voluptas. Ipsa, aspernatur.
+					</div>
+				</tabs-clab>
+			</div>
+			<hr class="dashed">
+			<h3>Centered pills</h3>
+			<div class="example">
+				<tabs-clab pills centered labels='["Tab 1", "Tab 2", "Tab 3"]'>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quo placeat, quibusdam, quae suscipit, adipisci modi vitae repellendus aspernatur ut nemo, laudantium quasi! Vitae ullam, vero reiciendis debitis laudantium culpa, sit, corporis reprehenderit incidunt molestias odio libero unde ratione, nam.
+					</div>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro quisquam, ad omnis numquam voluptatem eos aliquid facilis nesciunt veritatis reprehenderit alias architecto assumenda quam molestiae sit in recusandae veniam!
+					</div>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae praesentium temporibus consequuntur magni modi velit dignissimos eos magnam aspernatur. Reiciendis asperiores, error? Voluptate eum, ipsum sint maiores! Deserunt eos, aperiam praesentium fugit magni ea, incidunt distinctio, velit, repudiandae culpa nostrum debitis perspiciatis itaque delectus accusantium laboriosam mollitia voluptas. Ipsa, aspernatur.
+					</div>
+				</tabs-clab>
+			</div>
+			<hr class="dashed">
+			<h3>Full-width pills</h3>
+			<div class="example">
+				<tabs-clab pills full-width labels='["Tab 1", "Tab 2", "Tab 3"]'>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quo placeat, quibusdam, quae suscipit, adipisci modi vitae repellendus aspernatur ut nemo, laudantium quasi! Vitae ullam, vero reiciendis debitis laudantium culpa, sit, corporis reprehenderit incidunt molestias odio libero unde ratione, nam.
+					</div>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro quisquam, ad omnis numquam voluptatem eos aliquid facilis nesciunt veritatis reprehenderit alias architecto assumenda quam molestiae sit in recusandae veniam!
+					</div>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae praesentium temporibus consequuntur magni modi velit dignissimos eos magnam aspernatur. Reiciendis asperiores, error? Voluptate eum, ipsum sint maiores! Deserunt eos, aperiam praesentium fugit magni ea, incidunt distinctio, velit, repudiandae culpa nostrum debitis perspiciatis itaque delectus accusantium laboriosam mollitia voluptas. Ipsa, aspernatur.
+					</div>
+				</tabs-clab>
+			</div>
+			<hr class="dashed">
+			<h3>Vertical pills</h3>
+			<div class="example">
+				<tabs-clab pills vertical labels='["Tab 1", "Tab 2", "Tab 3"]'>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quo placeat, quibusdam, quae suscipit, adipisci modi vitae repellendus aspernatur ut nemo, laudantium quasi! Vitae ullam, vero reiciendis debitis laudantium culpa, sit, corporis reprehenderit incidunt molestias odio libero unde ratione, nam.
+					</div>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat porro quisquam, ad omnis numquam voluptatem eos aliquid facilis nesciunt veritatis reprehenderit alias architecto assumenda quam molestiae sit in recusandae veniam!
+					</div>
+					<div class="tab-content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae praesentium temporibus consequuntur magni modi velit dignissimos eos magnam aspernatur. Reiciendis asperiores, error? Voluptate eum, ipsum sint maiores! Deserunt eos, aperiam praesentium fugit magni ea, incidunt distinctio, velit, repudiandae culpa nostrum debitis perspiciatis itaque delectus accusantium laboriosam mollitia voluptas. Ipsa, aspernatur.
+					</div>
+				</tabs-clab>
+			</div>
+			<hr class="dashed">
 				<div class="specs">
 					<tabs-clab  labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">

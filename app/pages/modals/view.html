@@ -3,17 +3,19 @@
 	<style></style>
 
 	<template>
-		<h2>Modals
+		<h2>Modals</h2>
+		<div class="requirements">
 			<tooltip-clab wait="0">
 				<label-clab class="tt-label" type="info">web-animations</label-clab>
 				<span class="tt-content">The web animation polyfill is required for this component to work!</span>
 			</tooltip-clab>
-		</h2>
+		</div>
 		<gist-embed user="clab-gist" uuid="02842232b11aafcd602ff62421f9b4cb" no-meta></gist-embed>
 		<section>
 			<div class="component-description">
 				Modal dialog that displays additional functionality without leaving the current page.
 			</div>
+			<hr class="dashed">
 			<article class="component">
 				<div class="example">
 					<button-clab id="open1" type="primary" appearance="full">
@@ -37,6 +39,7 @@
 						</ul>
 					</modal-clab>
 				</div>
+				<hr class="dashed">
 				<div class="specs">
 					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">

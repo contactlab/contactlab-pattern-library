@@ -3,17 +3,20 @@
 
 	<template>
 
-		<h2>Alerts
+		<h2 class="no-spacing-title">Alerts</h2>
+		<div class="requirements">
 			<tooltip-clab wait="0">
 				<label-clab class="tt-label" type="info">web-animations</label-clab>
 				<span class="tt-content">The web animation polyfill is required for this component to work!</span>
 			</tooltip-clab>
-		</h2>
+		</div>
+
 		<gist-embed user="clab-gist" uuid="6d68e683425902e5be162e28827fbc74" no-meta></gist-embed>
 		<section>
 			<div class="component-description">
 				Messages are the primary method for providing system feedback in the product user interface. Messages include notifications of various kinds: alerts, confirmations, notices, warnings, info and errors.
 			</div>
+			<hr class="dashed">
 			<h3>Notification alerts</h3>
 			<article class="component">
 				<div class="example">
@@ -98,8 +101,7 @@
 						</tabs-clab>
 				</div>
 			</article>
-		</section>
-		<section>
+			<hr>
 			<h3>Alert blocks</h3>
 			<article class="component">
 				<div class="example">
@@ -132,6 +134,7 @@
 							Fusce vel sapien ut dolor auctor fermentum. <a href="#">Nunc ut fringilla neque</a>. Quisque iaculis, ipsum at scelerisque tempus, eros tortor viverra dolor
 			  		</alert-clab>
 				</div>
+				<hr class="dashed">
 				<div class="specs">
 					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
 							<div class="tab-content">
