@@ -19,6 +19,10 @@
         type: String,
         value: ''
       },
+			noMeta: {
+				type: Boolean,
+				value: false
+			},
       _css: {
         type: String
       }
@@ -33,8 +37,12 @@
       }).then(function(json){
         this._css = json.stylesheet;
         this.$.embed.innerHTML = json.div;
+				if(this.noMeta){
+					this.querySelector('.gist-meta').style.display = 'none';
+				}
       }.bind(this));
 		}
+
 	});
 
 

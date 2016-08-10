@@ -9,6 +9,7 @@
 				<span class="tt-content">The web animation polyfill is required for this component to work!</span>
 			</tooltip-clab>
 		</h2>
+		<gist-embed user="clab-gist" uuid="02842232b11aafcd602ff62421f9b4cb" no-meta></gist-embed>
 		<section>
 			<div class="component-description">
 				Modal dialog that displays additional functionality without leaving the current page.
@@ -184,9 +185,7 @@
 
 		Polymer({
 			is:'page-modals',
-			behaviors: [ClipboardBehav],
 			attached:function(){
-				this._highlightCode();
 
 				document.querySelector('#open1').addEventListener('click',function(){
 					document.querySelector('#modal1').visible = true;

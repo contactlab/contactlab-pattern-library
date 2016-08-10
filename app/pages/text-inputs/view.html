@@ -3,6 +3,7 @@
 
 	<template>
 		<h2>Text inputs</h2>
+		<gist-embed user="clab-gist" uuid="c83fea5ef3e29215801c276e8ed0f852" no-meta></gist-embed>
 		<section>
 			<h3>Styles</h3>
 			<article class="component text-inputs-comp">
@@ -266,11 +267,7 @@
 	<script>
 
 		Polymer({
-			is:'page-text-inputs',
-			behaviors: [ClipboardBehav],
-			attached:function(){
-				this._highlightCode();
-			}
+			is:'page-text-inputs'
 		});
 
 	</script>

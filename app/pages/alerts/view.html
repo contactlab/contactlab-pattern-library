@@ -9,6 +9,7 @@
 				<span class="tt-content">The web animation polyfill is required for this component to work!</span>
 			</tooltip-clab>
 		</h2>
+		<gist-embed user="clab-gist" uuid="6d68e683425902e5be162e28827fbc74" no-meta></gist-embed>
 		<section>
 			<div class="component-description">
 				Messages are the primary method for providing system feedback in the product user interface. Messages include notifications of various kinds: alerts, confirmations, notices, warnings, info and errors.
@@ -28,19 +29,10 @@
 				<div class="specs">
 					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
 							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-<pre><code class="html">&lt;div class=&quot;alert primary &quot;&gt;
-&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
-&#x9;&lt;p&gt;Content&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-								</div>
+								<gist-embed user="clab-gist" uuid="c707ed99ad2a32fef203f7da5cb8b2db" no-meta></gist-embed>
 							</div>
 							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-								<pre><code class="html">&lt;alert-clab notify type="primary"&gt; <i class="italic">content</i> &lt;/alert-clab&gt;</code></pre>
-									</div>
+								<gist-embed user="clab-gist" uuid="d3d3e31e72566e3b455ac773a082421f" no-meta></gist-embed>
 							</div>
 							<div class="tab-content">
 								<table class="striped-table">
@@ -143,22 +135,10 @@
 				<div class="specs">
 					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
 							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-<pre><code class="html">&lt;div class=&quot;alert primary &quot;&gt;
-&#x9;&lt;h3 class=&quot;&quot;&gt;Primary!&lt;/h3&gt;
-&#x9;&lt;div class=&quot;close&quot;&gt;&lt;i class=&quot;clab clab-icon-close &quot;&gt;&lt;/i&gt;&lt;/div&gt;
-&#x9;&lt;p&gt;Content&lt;/p&gt;
-&#x9;&lt;button class=&quot;btn flat default &quot;&gt;Confirm&lt;/button&gt;
-&#x9;&lt;button class=&quot;btn default &quot;&gt;Cancel&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-								</div>
+								<gist-embed user="clab-gist" uuid="aea011eba44cdfa229f72ceadae7100b"></gist-embed>
 							</div>
 							<div class="tab-content">
-								<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-								<div class="copy">
-								<pre><code class="html">&lt;alert-clab title="lorem ipsum" type="primary" visible&gt; <i class="italic">content</i> &lt;/alert-clab&gt;</code></pre>
-									</div>
+								<gist-embed user="clab-gist" uuid="6b57e008b2a1e673d0e6ade5db51b15d"></gist-embed>
 							</div>
 							<div class="tab-content">
 								<table class="striped-table">
@@ -262,9 +242,7 @@
 
 		Polymer({
 			is:'page-alerts',
-			behaviors: [ClipboardBehav],
 			attached:function(){
-				this._highlightCode();
 
 				var els = document.querySelectorAll('alert-clab');
 				function firstClick(){

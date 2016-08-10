@@ -4,6 +4,7 @@
 
 	<template>
 		<h2>Multiple</h2>
+		<gist-embed user="clab-gist" uuid="a03ef412720dbbc75c859f31db330561" no-meta></gist-embed>
 		<section>
 			<article class="component multiple-comp">
 				<div class="example">
@@ -130,11 +131,7 @@
 	<script>
 
 		Polymer({
-			is:'page-multiple',
-			behaviors: [ClipboardBehav],
-			attached:function(){
-				this._highlightCode();
-			}
+			is:'page-multiple'
 		});
 
 	</script>

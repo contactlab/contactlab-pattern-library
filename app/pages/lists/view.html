@@ -1,4 +1,3 @@
-
 <dom-module id="page-lists">
 	<style></style>
 
@@ -32,36 +31,7 @@
 				<div class="specs">
 					<tabs-clab  labels='["HTML"]' active="0">
 						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;!-- DEFAULT LIST --&gt;
-&lt;ol&gt;
-&#x9;&lt;li&gt;Lorem ipsum dolor.&lt;/li&gt;
-&#x9;&lt;li&gt;Deserunt, nam enim.&lt;/li&gt;
-&#x9;&lt;li&gt;Vel, expedita, fuga.&lt;/li&gt;
-&#x9;&lt;li&gt;Possimus iusto, repellat!&lt;/li&gt;
-&#x9;&lt;li&gt;Possimus, ratione, officia!&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;!-- ORDERED LIST --&gt;
-&lt;ol class=&quot;default&quot;&gt;
-&#x9;&lt;li&gt;Lorem ipsum dolor.&lt;/li&gt;
-&#x9;&lt;li&gt;Deserunt, nam enim.&lt;/li&gt;
-&#x9;&lt;li&gt;Vel, expedita, fuga.&lt;/li&gt;
-&#x9;&lt;li&gt;Possimus iusto, repellat!&lt;/li&gt;
-&#x9;&lt;li&gt;Possimus, ratione, officia!&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;!-- UNORDERED LIST --&gt;
-&lt;ul class=&quot;default&quot;&gt;
-&#x9;&lt;li&gt;Lorem ipsum dulor.&lt;/li&gt;
-&#x9;&lt;li&gt;Deserunt, nam enim.&lt;/li&gt;
-&#x9;&lt;li&gt;Vel, expedita, fuga.&lt;/li&gt;
-&#x9;&lt;li&gt;Possimus iusto, repellat!&lt;/li&gt;
-&#x9;&lt;li&gt;Possimus, ratione, officia!&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-							</div>
+							<gist-embed user="clab-gist" uuid="7609946dc29611a8b5c306a5541d667b"></gist-embed>
 						</div>
 					</tabs-clab>
 				</div>
@@ -72,11 +42,7 @@
 	<script>
 
 		Polymer({
-			is:'page-lists',
-			behaviors: [ClipboardBehav],
-			attached:function(){
-				this._highlightCode();
-			}
+			is:'page-lists'
 		});
 
 	</script>

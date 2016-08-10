@@ -168,15 +168,10 @@
 
 	Polymer({
 		is:'page-getting-started',
-		behaviors: [ClipboardBehav],
-			attached:function(){
-				this._highlightCode();
-			},
-
-			_goToZip(evt){
-				window.location.href = "https://github.com/contactlab/contactlab-ui-components/archive/0.9.2.zip";
-				// window.location.href = "assets/resources/contactlab-ui-components-0.8.zip";
-			}
+		_goToZip(evt){
+			window.location.href = "https://github.com/contactlab/contactlab-ui-components/archive/0.9.2.zip";
+			// window.location.href = "assets/resources/contactlab-ui-components-0.8.zip";
+		}
 	});
 
 

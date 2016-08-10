@@ -1,12 +1,11 @@
-
 <dom-module id="page-forms">
 	<style></style>
 
 	<template>
-
 		<h2>Form elements</h2>
 		<section>
 			<h3>Radio</h3>
+			<gist-embed user="clab-gist" uuid="a1bc4cb0a99ac7064bad13a313f84d79" no-meta></gist-embed>
 			<article class="component">
 				<div class="example">
 					<radio-clab labels='["radio 1", "radio 2", "radio 3"]' name="group1" class="inline"></radio-clab>
@@ -88,6 +87,7 @@
 		</section>
 		<section>
 			<h3>Checkboxes</h3>
+			<gist-embed user="clab-gist" uuid="7339023b25251acf44f8837405d715d8" no-meta></gist-embed>
 			<article class="component">
 				<div class="example">
 					<checkbox-clab labels='["checkbox 1", "checkbox 2", "checkbox 3"]'></checkbox-clab>
@@ -170,6 +170,7 @@
 
 		<section>
 			<h3>Range input</h3>
+			<gist-embed user="clab-gist" uuid="5bcdbc1834e4ceea40666cf96386096e" no-meta></gist-embed>
 			<article class="component">
 				<div class="example">
 					<range-clab label="My wonderful range input label" value="5" min="0" max="10" step="1" disabled></range-clab>
@@ -272,11 +273,7 @@
 	<script>
 
 		Polymer({
-			is:'page-forms',
-			behaviors: [ClipboardBehav],
-			attached:function(){
-				this._highlightCode();
-			}
+			is:'page-forms'
 		});
 
 	</script>
