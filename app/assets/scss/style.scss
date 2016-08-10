@@ -20,6 +20,10 @@ header .product-logo .product-name {
 	font-size: 23px;
 }
 
+.requirements {
+	padding-bottom: $base-spacing;
+}
+
 // COVER
 
 .centered-wrapper {
@@ -352,6 +356,14 @@ header .product-logo .product-name {
 
 
 .pattern-colors {
+	display: flex;
+	flex-direction: column;
+
+	article {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
 	.pattern-color {
 		width: 230px;
 		margin-right: $base-spacing;
@@ -449,6 +461,7 @@ header .product-logo .product-name {
 // TYPOGRAPHY
 
 .typo-weights {
+	display: flex;
 	flex-wrap: wrap;
 
 	.font-weight {
@@ -476,6 +489,9 @@ header .product-logo .product-name {
 }
 
 .typo-examples {
+	display: flex;
+	flex-wrap: wrap;
+
 	.example {
 		flex-grow: 1;
 		flex-basis: 50%;
@@ -527,10 +543,10 @@ header .product-logo .product-name {
 }
 
 // PROGRESS BARS
-
+ 
 .component.prog-bars-comp {
 	.example {
-		margin-bottom: 0;
+		margin-bottom: 20px;
 	}
 }
 
@@ -543,9 +559,12 @@ header .product-logo .product-name {
 }
 
 
-// ICONOGRAPHY 
+// ICONOGRAPHY
 
 .iconography {
+	display: flex;
+	flex-wrap: wrap;
+
 	.icon-example {
 		flex-grow: 1;
 		flex-basis: calc(100% / 3);
@@ -609,6 +628,15 @@ header .product-logo .product-name {
 	}
 }
 
+
+// TABLES
+
+.tables {
+	.example {
+		padding-bottom: $base-spacing;
+	}
+}
+
 // TOOLTIPS
 
 #tooltips {
@@ -620,6 +648,12 @@ header .product-logo .product-name {
 		float: left;
 		margin-bottom: $base-spacing;
 	}
+}
+
+// BUTTONS GROUPS
+
+.buttons-groups article {
+	display: flex;
 }
 
 // CARDS

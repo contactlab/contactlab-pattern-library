@@ -4,11 +4,33 @@
 
 	<template>
 		<h2>Tables</h2>
-		<section>
+		<section tables>
 			<div class="component-description">
 				Tables are used to make large volumes of data easy to understand and to access.
 			</div>
+			<hr class="dashed">
 			<article class="component">
+				<h3>Default table</h3>
+				<div class="example">
+					<table>
+						<tr>
+					      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					    <tr>
+					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+					    </tr>
+					</table>
+				</div>
+			</article>
+			<hr class="dashed">
+			<article class="component">
+				<h3>Striped table</h3>
 				<div class="example">
 					<table class="striped-table">
 						<tr>
@@ -31,22 +53,10 @@
 					    </tr>
 					</table>
 				</div>
-				<div class="example">
-					<table class="striped-table">
-						<tr>
-					      <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					    <tr>
-					      <td>Division 1</td><td>Division 2</td><td>Division 3</td>
-					    </tr>
-					</table>
-				</div>
+			</article>
+			<hr class="dashed">
+			<article class="component">
+				<h3>Hover table</h3>
 				<div class="example">
 					<table class="hover-table">
 						<tr>
@@ -63,7 +73,52 @@
 					    </tr>
 					</table>
 				</div>
-
+			</article>
+			<hr class="dashed">
+			<article class="component">
+				<h3>Responsive table</h3>
+				<div class="example">
+					<div class="table striped-table responsive-table">
+	                    <div class="thead">
+	                        <div class="tr">
+	                            <div class="th">Id</div>
+	                            <div class="th">Nome</div>
+	                            <div class="th">Data</div>
+	                        </div>
+	                    </div>
+	                    <div class="tbody">
+	                        <div class="tr">
+	                            <div class="td" data-th="Id">01</div>
+	                            <div class="td" data-th="Nome">Lorem ipsum dolor</div>
+	                            <div class="td" data-th="Data">01-06-2016</div>
+	                        </div>
+	                        <div class="tr">
+	                            <div class="td" data-th="Id">02</div>
+	                            <div class="td" data-th="Nome">Lorem ipsum</div>
+	                            <div class="td" data-th="Data">02-06-2016</div>
+	                        </div>
+	                        <div class="tr">
+	                            <div class="td" data-th="Id">03</div>
+	                            <div class="td" data-th="Nome">Lorem ipsum dolor</div>
+	                            <div class="td" data-th="Data">03-06-2016</div>
+	                        </div>
+	                        <div class="tr">
+	                            <div class="td" data-th="Id">04</div>
+	                            <div class="td" data-th="Nome">Lorem ipsum</div>
+	                            <div class="td" data-th="Data">04-06-2016</div>
+	                        </div>
+	                        <div class="tr">
+	                            <div class="td" data-th="Id">05</div>
+	                            <div class="td" data-th="Nome">Lorem ipsum dolor</div>
+	                            <div class="td" data-th="Data">05-06-2016</div>
+	                        </div>
+	                    </div>
+	                </div>
+				</div>
+			</article>
+			<hr class="dashed">
+			<article class="component">
+				<h3>Full table</h3>
 				<div class="example">
 					<div class="full-table-wrapper">
 						<div class="table-tools">
@@ -114,14 +169,14 @@
 							</template>
 						</div>
 					</div>
-
 				</div>
+				<hr class="dashed">
 				<div class="specs">
 					<tabs-clab  labels='["HTML"]' active="0">
-							<div class="tab-content">
-								<gist-embed user="clab-gist" uuid="a7423487cf646bf45539d7731901d053"></gist-embed>
-							</div>
-						</tabs-clab>
+						<div class="tab-content">
+							<gist-embed user="clab-gist" uuid="a7423487cf646bf45539d7731901d053"></gist-embed>
+						</div>
+					</tabs-clab>
 				</div>
 			</article>
 		</section>

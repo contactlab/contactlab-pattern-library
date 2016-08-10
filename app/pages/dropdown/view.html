@@ -5,18 +5,21 @@
 	<template>
 		<h2>Dropdown</h2>
 		<gist-embed user="clab-gist" uuid="a1a5d6d5365f83880dbad53f10d674ae" no-meta></gist-embed>
+		<hr class="dashed">
 		<section>
 			<article class="component dropdown-comp">
 				<div class="example">
 					<dropdown-clab max-in-view="5" label="Simple Dropdown with note" options='[{"label":"Abruzzo", "value":"Abruzzo"},{"label":"Aosta", "value":"Aosta"},{"label":"Puglia", "value":"Puglia"},{"label":"Basilicata", "value":"Basilicata"},{"label":"Calabria", "value":"Calabria"},{"label":"Campania", "value":"Campania"},{"label":"Emilia-Romagna", "value":"Emilia-Romagna"},{"label":"Friuli-Venezia-Giulia", "value":"Friuli-Venezia-Giulia"},{"label":"Lazio", "value":"Lazio"},{"label":"Liguria", "value":"Liguria"},{"label":"Lombardia", "value":"Lombardia"},{"label":"Marche", "value":"Marche"},{"label":"Molise", "value":"Molise"},{"label":"Piemonte", "value":"Piemonte"},{"label":"Sardegna", "value":"Sardegna"},{"label":"Sicilia", "value":"Sicilia"},{"label":"Trentino-Alto Adige", "value":"Trentino-Alto Adige"},{"label":"Toscana", "value":"Toscana"},{"label":"Umbria", "value":"Umbria"},{"label":"Veneto", "value":"Veneto"}]'>This is my note</dropdown-clab>
 
 					<dropdown-clab max-in-view="5" label="First option already selected" options='[{"label":"Abruzzo", "value":"Abruzzo"},{"label":"Aosta", "value":"Aosta"},{"label":"Puglia", "value":"Puglia"},{"label":"Basilicata", "value":"Basilicata"},{"label":"Calabria", "value":"Calabria"},{"label":"Campania", "value":"Campania"},{"label":"Emilia-Romagna", "value":"Emilia-Romagna"},{"label":"Friuli-Venezia-Giulia", "value":"Friuli-Venezia-Giulia"},{"label":"Lazio", "value":"Lazio"},{"label":"Liguria", "value":"Liguria"},{"label":"Lombardia", "value":"Lombardia"},{"label":"Marche", "value":"Marche"},{"label":"Molise", "value":"Molise"},{"label":"Piemonte", "value":"Piemonte"},{"label":"Sardegna", "value":"Sardegna"},{"label":"Sicilia", "value":"Sicilia"},{"label":"Trentino-Alto Adige", "value":"Trentino-Alto Adige"},{"label":"Toscana", "value":"Toscana"},{"label":"Umbria", "value":"Umbria"},{"label":"Veneto", "value":"Veneto"}]' selected='{"label":"Campania", "value":"Campania"}'></dropdown-clab>
-
+				</div>
+				<div class="example">
 					<dropdown-clab max-in-view="5" label="Changed placeholder" options='[{"label":"Abruzzo", "value":"Abruzzo"},{"label":"Aosta", "value":"Aosta"},{"label":"Puglia", "value":"Puglia"},{"label":"Basilicata", "value":"Basilicata"},{"label":"Calabria", "value":"Calabria"},{"label":"Campania", "value":"Campania"},{"label":"Emilia-Romagna", "value":"Emilia-Romagna"},{"label":"Friuli-Venezia-Giulia", "value":"Friuli-Venezia-Giulia"},{"label":"Lazio", "value":"Lazio"},{"label":"Liguria", "value":"Liguria"},{"label":"Lombardia", "value":"Lombardia"},{"label":"Marche", "value":"Marche"},{"label":"Molise", "value":"Molise"},{"label":"Piemonte", "value":"Piemonte"},{"label":"Sardegna", "value":"Sardegna"},{"label":"Sicilia", "value":"Sicilia"},{"label":"Trentino-Alto Adige", "value":"Trentino-Alto Adige"},{"label":"Toscana", "value":"Toscana"},{"label":"Umbria", "value":"Umbria"},{"label":"Veneto", "value":"Veneto"}]' placeholder="Just select something"></dropdown-clab>
 
 					<dropdown-clab max-in-view="5" label="Disabled dropdown" options='[{"label":"Abruzzo", "value":"Abruzzo"},{"label":"Aosta", "value":"Aosta"},{"label":"Puglia", "value":"Puglia"},{"label":"Basilicata", "value":"Basilicata"},{"label":"Calabria", "value":"Calabria"},{"label":"Campania", "value":"Campania"},{"label":"Emilia-Romagna", "value":"Emilia-Romagna"},{"label":"Friuli-Venezia-Giulia", "value":"Friuli-Venezia-Giulia"},{"label":"Lazio", "value":"Lazio"},{"label":"Liguria", "value":"Liguria"},{"label":"Lombardia", "value":"Lombardia"},{"label":"Marche", "value":"Marche"},{"label":"Molise", "value":"Molise"},{"label":"Piemonte", "value":"Piemonte"},{"label":"Sardegna", "value":"Sardegna"},{"label":"Sicilia", "value":"Sicilia"},{"label":"Trentino-Alto Adige", "value":"Trentino-Alto Adige"},{"label":"Toscana", "value":"Toscana"},{"label":"Umbria", "value":"Umbria"},{"label":"Veneto", "value":"Veneto"}]' disabled></dropdown-clab>
 
 				</div>
+				<hr class="dashed">
 				<div class="specs">
 					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS", "METHODS"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">
