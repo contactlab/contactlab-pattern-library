@@ -9,13 +9,16 @@
 		<section>
 			<article class="component autocomplete-comp">
 				<div class="example">
-					<autocomplete-clab label="Normal autocomplete" options='[{"label":"Abruzzo", "value":"Abruzzo"},{"label":"Aosta", "value":"Aosta"},{"label":"Puglia", "value":"Puglia"},{"label":"Basilicata", "value":"Basilicata"},{"label":"Calabria", "value":"Calabria"},{"label":"Campania", "value":"Campania"},{"label":"Emilia-Romagna", "value":"Emilia-Romagna"},{"label":"Friuli-Venezia-Giulia", "value":"Friuli-Venezia-Giulia"},{"label":"Lazio", "value":"Lazio"},{"label":"Liguria", "value":"Liguria"},{"label":"Lombardia", "value":"Lombardia"},{"label":"Marche", "value":"Marche"},{"label":"Molise", "value":"Molise"},{"label":"Piemonte", "value":"Piemonte"},{"label":"Sardegna", "value":"Sardegna"},{"label":"Sicilia", "value":"Sicilia"},{"label":"Trentino-Alto Adige", "value":"Trentino-Alto Adige"},{"label":"Toscana", "value":"Toscana"},{"label":"Umbria", "value":"Umbria"},{"label":"Veneto", "value":"Veneto"}]' min-char="1">Start typing an Italian region, hints will appear</autocomplete-clab>
+					<autocomplete-clab label="Normal autocomplete"
+					options='[{"label":"Abruzzo", "value":"abruzzo"},{"label":"Aosta", "value":"aosta"},{"label":"Puglia", "value":"puglia"},{"label":"Basilicata", "value":"basilicata"},{"label":"Calabria", "value":"calabria"},{"label":"Campania", "value":"campania"},{"label":"Emilia-Romagna", "value":"emilia-romagna"},{"label":"Friuli-Venezia-Giulia", "value":"friuli-venezia-giulia"},{"label":"Lazio", "value":"lazio"},{"label":"Liguria", "value":"liguria"},{"label":"Lombardia", "value":"lombardia"},{"label":"Marche", "value":"marche"},{"label":"Molise", "value":"molise"},{"label":"Piemonte", "value":"piemonte"},{"label":"Sardegna", "value":"sardegna"},{"label":"Sicilia", "value":"sicilia"},{"label":"Trentino-Alto Adige", "value":"trentino-alto adige"},{"label":"Toscana", "value":"toscana"},{"label":"Umbria", "value":"umbria"},{"label":"Veneto", "value":"veneto"}]'
+					placeholder="Start typing an Italian region, hints will appear"
+					min-char="1"></autocomplete-clab>
 
-					<autocomplete-clab label="AJAX autocomplete" url="http://localhost:3000/options" min-char="1">Type here to get hints</autocomplete-clab>
+					<!-- <autocomplete-clab label="AJAX autocomplete" url="http://localhost:3000/options" min-char="1">Type here to get hints</autocomplete-clab> -->
 				</div>
 				<hr class="dashed">
 				<div class="specs">
-					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
+					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS", "METHODS"]' active="0" on-change="_highlightCode">
 						<div class="tab-content">
 							<gist-embed user="clab-gist" uuid="4a23a3ea6f6a08df378ed6c0e85ecf14"></gist-embed>
 						</div>
@@ -94,13 +97,13 @@
 										<td></td>
 										<td></td>
 									</tr>
-									<tr>
+									<!-- <tr>
 										<td>options-fn</td>
 										<td>function</td>
 										<td>a function returning a Javascript promise that returns the options array</td>
 										<td></td>
 										<td></td>
-									</tr>
+									</tr> -->
 									<tr>
 										<td>filter</td>
 										<td>boolean</td>
@@ -187,12 +190,30 @@
 									<tr>
 										<td>change</td>
 										<td>an option is selected</td>
-										<td>{ selected: <span class="var_type">Object</span> }</td>
+										<td>{ selected: <span class="var_type">Object</span>, value: <span class="var_type">Object || String</span> }</td>
 									</tr>
 									<tr>
 										<td>typing</td>
 										<td>typing inside input</td>
 										<td>N/A</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-content">
+							<table class="striped-table">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Arguments</th>
+										<th>Returns</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>setSelected()</td>
+										<td>Object</td>
+										<td>set the argument as current selected item</td>
 									</tr>
 								</tbody>
 							</table>
