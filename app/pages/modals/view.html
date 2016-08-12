@@ -41,7 +41,7 @@
 				</div>
 				<hr class="dashed">
 				<div class="specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS", "METHODS"]' active="0">
 						<div class="tab-content">
 							<gist-embed user="clab-gist" uuid="95295f0941305874ee4dbdb52b84aca6"></gist-embed>
 						</div>
@@ -110,16 +110,23 @@
 										<td></td>
 									</tr>
 									<tr>
-										<td>max-width</td>
-										<td>string</td>
-										<td>max modal window width</td>
-										<td>500px</td>
-										<td></td>
-									</tr>
-									<tr>
 										<td>no-animation</td>
 										<td>boolean</td>
 										<td>true: animation's disabled</td>
+										<td>false</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>width</td>
+										<td>string</td>
+										<td>modal window width</td>
+										<td>840</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>stop-close</td>
+										<td>boolean</td>
+										<td>true: prevents the modal from closing</td>
 										<td>false</td>
 										<td></td>
 									</tr>
@@ -155,6 +162,29 @@
 										<td>close</td>
 										<td>Click on the close button</td>
 										<td>N/A</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-content">
+							<table class="striped-table">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Arguments</th>
+										<th>Returns</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>hide()</td>
+										<td>N/A</td>
+										<td>Hides the modal</td>
+									</tr>
+									<tr>
+										<td>show()</td>
+										<td>N/A</td>
+										<td>Shows the modal</td>
 									</tr>
 								</tbody>
 							</table>

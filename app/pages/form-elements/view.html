@@ -19,7 +19,7 @@
 				</div>
 				<hr class="dashed">
 				<div class="specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0" on-change="_highlightCode">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
 						<div class="tab-content">
 							<gist-embed user="clab-gist" uuid="98fccfa36776b45b70ccecb572d8b2ec"></gist-embed>
 						</div>
@@ -89,14 +89,14 @@
 					<checkbox-clab labels='["checkbox 1", "checkbox 2", "checkbox 3"]'></checkbox-clab>
 				</div>
 				<div class="example">
-					<checkbox-clab labels='["checkbox 4", "checkbox 5", "checkbox 6"]' active="0"></checkbox-clab>
+					<checkbox-clab labels='["checkbox 4", "checkbox 5", "checkbox 6"]' active='[0, 2]'></checkbox-clab>
 				</div>
 				<div class="example">
-					<checkbox-clab labels='["checkbox 7", "checkbox 8"]' active="1" disabled='[0]'></checkbox-clab>
+					<checkbox-clab labels='["checkbox 7", "checkbox 8"]' active='[1]' disabled='[0]'></checkbox-clab>
 				</div>
 				<hr class="dashed">
 				<div class="specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0" on-change="_highlightCode">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
 						<div class="tab-content">
 							<gist-embed user="clab-gist" uuid="3e0b42b081807082eb61af8e4422efc8"></gist-embed>
 						</div>
@@ -138,15 +138,15 @@
 									</tr>
 									<tr>
 										<td>active</td>
-										<td>number</td>
-										<td>index of the active checkbox</td>
+										<td>array</td>
+										<td>list of indexes of the active checkboxes</td>
 										<td></td>
 										<td></td>
 									</tr>
 									<tr>
 										<td>disabled</td>
 										<td>array</td>
-										<td>indexes of the disabled checkboxes</td>
+										<td>list of indexes of the disabled checkboxes</td>
 										<td></td>
 										<td></td>
 									</tr>
@@ -170,7 +170,7 @@
 				</div>
 				<hr class="dashed">
 				<div class="specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0" on-change="_highlightCode">
+					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
 						<div class="tab-content">
 							<gist-embed user="clab-gist" uuid="9cffa09ef4d2c68536ae5fe1f7d8db13"></gist-embed>
 						</div>
