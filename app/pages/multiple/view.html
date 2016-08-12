@@ -9,11 +9,17 @@
 		<section>
 			<article class="component multiple-comp">
 				<div class="example">
-					<multiple-clab label="Select multiple options" options='[{"label":"option 1", "value":"option 1"},{"label":"option 2", "value":"option 2"},{"label":"option 3", "value":"option 3"},{"label":"option 4", "value":"option 4"},{"label":"option 5", "value":"option 5"}]' max-in-view="5">This is a note</multiple-clab>
+					<multiple-clab
+				    label="Select multiple options"
+				    options='[{"label":"USA", "value": "1"},{"label":"Canada", "value":"2"},{"label":"Japan", "value":"3"},{"label":"Russia", "value":"4"},{"label":"China", "value":"5"}]'
+				    max-in-view="5"
+						selected="{{selected::change}}">
+				  </multiple-clab>
 				</div>
+				<!-- <p>Selected items: <b>[[_printValue(selected)]]</b></p> -->
 				<hr class="dashed">
 				<div class="specs">
-					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
+					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
 							<div class="tab-content">
 								<gist-embed user="clab-gist" uuid="fd3d0055fcce5749bf5438c0d03ff4d8"></gist-embed>
 							</div>
@@ -78,13 +84,13 @@
 											<td></td>
 											<td></td>
 										</tr>
-										<tr>
+										<!-- <tr>
 											<td>options-fn</td>
 											<td>function</td>
 											<td>a function returning a Javascript promise that returns the options array</td>
 											<td></td>
 											<td></td>
-										</tr>
+										</tr> -->
 										<tr>
 											<td>max-in-view</td>
 											<td>number</td>
@@ -130,7 +136,17 @@
 	<script>
 
 		Polymer({
-			is:'page-multiple'
+			is:'page-multiple',
+			properties: {
+				selected: {
+					type: Array,
+					value: [{"label":"USA", "value": "1"}],
+					notify: true,
+				}
+			},
+			_printValue(selected){
+				return JSON.stringify(selected);
+			}
 		});
 
 	</script>

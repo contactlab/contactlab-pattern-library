@@ -95,20 +95,12 @@
 				</div>
 				<hr class="dashed">
 				<div class="specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" on-change="_highlightCode">
+					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
 						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&#x3C;label for=&#x22;input2&#x22; class=&#x22;success&#x22;&#x3E;Label success&#x3C;/label&#x3E;
-&#x3C;input type=&#x22;text&#x22; id=&#x22;input2&#x22; class=&#x22;success&#x22;&#x3E;
-&#x3C;div class=&#x22;input-note success&#x22;&#x3E;Lorem ipsum dolor sit.&#x3C;/div&#x3E;</code></pre>
-							</div>
+							<gist-embed user="clab-gist" uuid="94b8dde846c5ff247dad58929f987b42"></gist-embed>
 						</div>
 						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&#x3C;input-clab label=&#x22;input label&#x22;&#x3E; optional string as caption &#x3C;/input-clab&#x3E;</code></pre>
-							</div>
+							<gist-embed user="clab-gist" uuid="f526c3fd9975f5766d768badd0ecaa03"></gist-embed>
 						</div>
 						<div class="tab-content">
 							<table class="striped-table">
@@ -190,6 +182,13 @@
 										<td>string</td>
 										<td>any string</td>
 										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>required</td>
+										<td>boolean</td>
+										<td>true: enable HTML5 validation</td>
+										<td>false</td>
 										<td></td>
 									</tr>
 									<tr>
