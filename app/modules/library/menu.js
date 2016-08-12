@@ -116,6 +116,6 @@ var AppMenu = [{
 		"url": "#/documentation/getting-started"
 	}, {
 		"label": "Release notes",
-		"url": "#/documentation/release-notes"
+		"url": "https://github.com/contactlab/contactlab-ui-components/releases"
 	}]
 }];

@@ -6,17 +6,27 @@
 		<h2>Datepicker</h2>
 		<gist-embed user="clab-gist" uuid="7e192e68294f641adb81a8491686ce18" no-meta></gist-embed>
 		<hr class="dashed">
+		<p>This component extends the
+			<a href="https://github.com/bevacqua/rome" target="_blank">Rome</a> Javascript module developed by
+			<a href="https://github.com/bevacqua" target="_blank">Nicolás Bevacqua</a> and released under the
+			<a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>.
+		</p>
 		<section>
 			<article class="component">
-				<div class="example">
-					<calendar-clab>This is the note for the calendar</calendar-clab>
+				<div class="example one">
+					<h4>Default datepicker</h4>
+					<calendar-clab
+						placeholder="Click to open"
+						options='{"inputFormat": "DD/MM/YYYY"}' >
+					</calendar-clab>
 				</div>
-				<div class="example">
+				<div class="example two">
+					<h4>Inline datepicker</h4>
 					<calendar-clab inline></calendar-clab>
 				</div>
 				<hr class="dashed">
 				<div class="specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES", "EVENTS", "METHODS"]' active="0" on-change="_highlightCode">
+					<tabs-clab  labels='["POLYMER", "ATTRIBUTES", "EVENTS", "METHODS"]' active="0">
 						<div class="tab-content">
 							<gist-embed user="clab-gist" uuid="b3984f48b8fb46cffd78030f15df8ed5"></gist-embed>
 						</div>
@@ -63,7 +73,7 @@
 									<tr>
 										<td>options</td>
 										<td>object</td>
-										<td>a <a href="https://github.com/bevacqua/rome" target="_blank">Rome options</a> object</td>
+										<td>a <a href="https://github.com/bevacqua/rome#default-options" target="_blank">Rome options</a> object</td>
 										<td></td>
 										<td></td>
 									</tr>
@@ -104,10 +114,7 @@
 									<tr>
 										<td>datechange</td>
 										<td>Date is changed from the widget or in the linked text input</td>
-										<td><ul>
-											<li><b>date:</b> the value of the linked text input</li>
-											<li><b>dateISO:</b> the value of the linked text input formatted as ISO</li>
-										</ul></td>
+										<td>{ date: <span class="var_type">String</span>, dateISO: <span class="var_type">String</span> }</td>
 									</tr>
 								</tbody>
 							</table>
@@ -125,7 +132,22 @@
 									<tr>
 										<td>getRomeInstance()</td>
 										<td>N/A</td>
-										<td>the Rome instance for the current component</td>
+										<td><span class="var_type">Object</span> - the Rome instance for the current component</td>
+									</tr>
+									<tr>
+										<td>getValue()</td>
+										<td>N/A</td>
+										<td><span class="var_type">String</span> - the ISO date string of the current value</td>
+									</tr>
+									<tr>
+										<td>setValue()</td>
+										<td><span class="var_type">String</span> - an ISO date string</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>clear()</td>
+										<td>N/A</td>
+										<td>N/A</td>
 									</tr>
 								</tbody>
 							</table>
@@ -140,10 +162,11 @@
 		Polymer({
 			is:'page-datepicker',
 			attached:function(){
-				var cals = document.querySelectorAll('calendar-clab');
-				for(var i=0; i<cals.length; i++){
-					cals[i].options = {time: false, inputFormat: "DD/MM/YYYY"};
-				}
+				var opts = {inputFormat: "DD/MM/YYYY"};
+				var opts2 = Object.assign({}, opts, {time: false});
+
+				// document.querySelector('.example.one calendar-clab').options = opts;
+				document.querySelector('.example.two calendar-clab').options = opts2;
 			}
 		});
 
