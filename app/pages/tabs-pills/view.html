@@ -70,75 +70,6 @@
 						</div>
 					</tabs-clab>
 				</div>
-				<hr class="dashed">
-				<div class="specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" >
-						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;tabs-clab labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
-&lt;/tabs-clab&gt;</code></pre>
-							</div>
-						</div>
-						<div class="tab-content">
-							<table class="striped-table">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Values</th>
-										<th>Default</th>
-										<th>Required</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>labels</td>
-										<td>array</td>
-										<td>array of strings</td>
-										<td></td>
-										<td><i class="clab-icon icon-check"></i></td>
-									</tr>
-									<tr>
-										<td>active</td>
-										<td>number</td>
-										<td>index of the tab to be displayed from the start</td>
-										<td>0</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>pills</td>
-										<td>boolean</td>
-										<td>true: pills appearance</td>
-										<td>false</td>
-										<td></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="tab-content">
-							<table class="striped-table">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Emitted when</th>
-										<th>Custom data</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>change</td>
-										<td>Selected tab changes</td>
-										<td>{ active: <span class="var_type">Number</span> }</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</tabs-clab>
-				</div>
 			</article>
 		</section>
 		<hr>
@@ -205,16 +136,9 @@
 			</div>
 			<hr class="dashed">
 				<div class="specs">
-					<tabs-clab  labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0" >
+					<tabs-clab labels='["POLYMER", "ATTRIBUTES", "EVENTS"]' active="0">
 						<div class="tab-content">
-							<button-clab type="secondary clipboard" appearance="full" size="small" on-click="_copyToClipboard">copy to clipboard</button-clab>
-							<div class="copy">
-<pre><code class="html">&lt;tabs-clab pills active=&quot;1&quot; labels=&apos;[&quot;Tab 1&quot;, &quot;Tab 2&quot;, &quot;Tab 3&quot;]&apos;&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 1 content&lt;/div&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 2 content&lt;/div&gt;
-&#x9;&lt;div class=&quot;tab-content&quot;&gt;Tab 3 content&lt;/div&gt;
-&lt;/tabs-clab&gt;</code></pre>
-							</div>
+							<gist-embed user="clab-gist" uuid="5f1146b4180effc216b6cfc3183ea2dd"></gist-embed>
 						</div>
 						<div class="tab-content">
 							<table class="striped-table">
@@ -246,6 +170,27 @@
 										<td>pills</td>
 										<td>boolean</td>
 										<td>true: pills appearance</td>
+										<td>false</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>vertical</td>
+										<td>boolean</td>
+										<td>true: enable vertical layout</td>
+										<td>false</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>centered</td>
+										<td>boolean</td>
+										<td>true: tabs on the horizontal center of container</td>
+										<td>false</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>full-width</td>
+										<td>boolean</td>
+										<td>true: tabs adapts on container width</td>
 										<td>false</td>
 										<td></td>
 									</tr>
