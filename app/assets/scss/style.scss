@@ -6,7 +6,6 @@ $fa-font-path: "../bower/font-awesome/fonts";
 @import "../bower/clab-ui-components/_assets/scss/contactlab-pattern";
 
 // HEADER
-
 header .main-nav {
 	padding-right: 250px;
 
@@ -298,10 +297,6 @@ header .product-logo .product-name {
 		.tab-content {
 			padding: 0;
 			position: relative;
-
-			table {
-				margin-top: $base-spacing;
-			}
 		}
 
 		button-clab {
