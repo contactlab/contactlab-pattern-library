@@ -1,6 +1,6 @@
-# ContactLab Pattern Library Website
+# Contactlab Pattern Library Website
 
-This is the documentation website for the ContactLab Pattern Library components designed and built by the Product team.
+This is the documentation website for the Contactlab Pattern Library components designed and built by the Product team.
 
 ### Install
 Install development and runtime dependencies with

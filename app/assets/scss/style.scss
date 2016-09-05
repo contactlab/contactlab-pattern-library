@@ -11,13 +11,13 @@ header .main-nav {
 
 	@media (max-width: $desktop) {
 		padding-right: 0;
-	} 
+	}
 }
 
 header .product-logo .product-name {
 	padding-left: 0;
 	font-size: 23px;
-}
+} 
 
 .requirements {
 	padding-bottom: $base-spacing;
@@ -291,7 +291,7 @@ header .product-logo .product-name {
 		&:last-of-type {
 			margin-bottom: 0;
 		}
-	}  
+	}
 
 	.specs {
 		.tab-content {

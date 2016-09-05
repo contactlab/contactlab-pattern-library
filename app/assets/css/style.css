@@ -2092,13 +2092,13 @@ table, .table {
 .icon-equal-circle-full:before {
   content: ""; }
 
-.icon-arrow-full-left:before {
+.icon-full-arrow-left:before {
   content: ""; }
 
-.icon-arrow-full-right:before {
+.icon-full-arrow-right:before {
   content: ""; }
 
-.icon-arrow-full-top:before {
+.icon-full-arrow-top:before {
   content: ""; }
 
 .icon-equal:before {
@@ -2107,7 +2107,7 @@ table, .table {
 .icon-equal-circle:before {
   content: ""; }
 
-.icon-arrow-full-down:before {
+.icon-full-arrow-down:before {
   content: ""; }
 
 .icon-gender:before {
@@ -2440,10 +2440,10 @@ table, .table {
 .icon-settings:before {
   content: ""; }
 
-.icon-sign:before {
+.icon-product-sign:before {
   content: ""; }
 
-.icon-sign-full:before {
+.icon-engagement-marketing-sign:before {
   content: ""; }
 
 .icon-switch-off:before {

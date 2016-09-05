@@ -2,7 +2,7 @@
   "name": "contactplan-pattern-library",
   "version": "1.0.0",
   "authors": [
-    "ContactLab Product Team"
+    "Contactlab Product Team"
   ],
   "license": "Apache",
   "ignore": [
@@ -19,7 +19,7 @@
     "fetch": "~0.11.0",
     "director": "~1.2.8",
     "es6-promise": "^3.1.2",
-    "clab-ui-components": "http://gitlab.contactlab.com/product-devs/clab-ui-components.git#feature/css-spacing",
+    "clab-ui-components": "http://gitlab.contactlab.com/product-devs/clab-ui-components.git#develop",
     "fetch-jsonp": "^0.9.2"
   }
 }
