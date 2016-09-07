@@ -1,0 +1,33 @@
+/////////////////// PAGINATION ///////////////////
+
+.pagination {
+  text-align: right;
+
+  .clab-icon {
+    font-size: 10px;
+  }
+
+  li {
+    color: $text-color;
+    display: inline-block;
+    margin: 0;
+    min-width: 25px;
+    line-height: 25px;
+    padding: 0 $smaller-spacing;
+    text-align: center;
+    cursor: pointer;
+
+    &.page {
+      &.active {
+        background-color: $gray;
+      }
+    }
+
+    &.unactive{
+        opacity:.3;
+        pointer-events: none;
+    }
+  }
+}
+
+/////////////////// END PAGINATION ///////////////////

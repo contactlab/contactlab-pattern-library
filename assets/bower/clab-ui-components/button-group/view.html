@@ -1,0 +1,14 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../button/view.html">
+
+<dom-module id="group-clab">
+	<style></style>
+	
+	<template>		
+		<div class$="[[_computeGroupClass(type,small,smaller)]]">
+			<content></content>
+		</div>
+	</template>
+
+	<script src="script.js"></script>
+</dom-module>

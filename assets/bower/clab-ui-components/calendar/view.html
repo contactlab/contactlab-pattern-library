@@ -1,0 +1,36 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../note/view.html">
+
+<dom-module id="calendar-clab">
+	<style>
+		input[type=text]::-ms-clear{
+			display: none;
+		}
+	</style>
+
+	<template>
+		<template is="dom-if" if="[[!inline]]">
+			<div class$="[[_computeType('calendar', type)]]">
+				<template is="dom-if" if="[[_viewLabel(label)]]">
+					<label class$="[[type]]" for$="[[_dashify(name)]]">[[label]]</label>
+				</template>
+				<div class="input">
+					<div class="input-icon-wrapper calendar" on-click="_focusElement"></div>
+					<input class$="[[type]]" on-keyup="_checkClear" type="text" disabled="[[disabled]]" placeholder="[[placeholder]]" value="[[valueStr]]">
+					<note-clab type="[[noteType]]">
+						<content select=".note"></content>
+					</note-clab>
+				</div>
+			</div>
+		</template>
+
+		<template is="dom-if" if="[[inline]]">
+			<div class="inline-cal"></div>
+		</template>
+	</template>
+
+	<script src="./../_behaviors/behaviors.js"></script>
+	<script src="../../moment/min/moment.min.js"></script>
+	<script src="../../rome/dist/rome.min.js"></script>
+	<script src="script.js"></script>
+</dom-module>

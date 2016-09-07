@@ -1,0 +1,56 @@
+{
+  "name": "clab-ui-components",
+  "description": "Polymer UI components of the CLAB Pattern Library",
+  "main": "",
+  "dependencies": {
+    "polymer": "^1.6.0",
+    "rome": "moebiusmania/rome#highlighting_v2_1_22",
+    "moment": "2.12.0",
+    "web-animations-js": "^2.1.4",
+    "fetch": "^0.11.0",
+    "es6-promise": "^3.1.2",
+    "lodash": "^4.13.1"
+  },
+  "devDependencies": {
+    "hydrolysis": "https://github.com/Arual90/hydrolysis.git",
+    "web-component-tester": "Polymer/web-component-tester#~4.1.0"
+  },
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "polymer",
+    "components",
+    "ui",
+    "pattern",
+    "library",
+    "contactlab",
+    "clab",
+    "webcomponents"
+  ],
+  "authors": [
+    "Salvatore Laisa <moebiusmania@gmail.com>",
+    "Meroni Raoul <raoul.meroni@gmail.com>",
+    "Santalucia Laura <laura.dreamrain@gmail.com>",
+    "Alessio Occhipinti <alessio.occhipinti@contactlab.com>",
+    "Carlo Audino <carlo.audino@contactlab.com>"
+  ],
+  "license": "Apache-2.0",
+  "ignore": [
+    "**/.*",
+    "_test",
+    "_tests",
+    "node_modules",
+    "toaster_",
+    "panel_",
+    "starter_",
+    "pagination_",
+    "_demo-server"
+  ],
+  "private": false,
+  "homepage": "https://ux.contactlab.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contactlab/contactlab-ui-components"
+  }
+}

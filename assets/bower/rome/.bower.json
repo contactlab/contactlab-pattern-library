@@ -1,0 +1,39 @@
+{
+  "name": "rome",
+  "description": "Customizable date (and time) picker. Opt-in UI, no jQuery!",
+  "homepage": "https://github.com/bevacqua/rome",
+  "author": {
+    "name": "Nicolas Bevacqua",
+    "email": "hello@bevacqua.io",
+    "url": "http://ponyfoo.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bevacqua/rome.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bevacqua/rome/issues"
+  },
+  "main": "dist/rome.js",
+  "ignore": [
+    ".*",
+    "package.json",
+    "node_modules",
+    "src",
+    "index.html",
+    "example",
+    "resources",
+    "gulpfile.js"
+  ],
+  "dependencies": {},
+  "_release": "d13158c367",
+  "_resolution": {
+    "type": "branch",
+    "branch": "highlighting_v2_1_22",
+    "commit": "d13158c3672b75856d3b3305d8440eb993b3424b"
+  },
+  "_source": "git://github.com/moebiusmania/rome.git",
+  "_target": "highlighting_v2_1_22",
+  "_originalSource": "moebiusmania/rome"
+}
