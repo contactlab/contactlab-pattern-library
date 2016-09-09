@@ -2,10 +2,17 @@ class MainClab {
 	beforeRegister(){
 		this.is = "main-clab";
 		this.properties = {
-			currentModule:{
-				type:String,
-				value:null,
-				readonly:true
+			currentModule: {
+				type: String,
+				value: null,
+				readonly: true
+			},
+			ribbon: {
+				type: Object,
+				value: {
+					visible: true,
+					repo: 'https://github.com/contactlab/contactlab-ui-components'
+				}
 			}
 		}
 	}
