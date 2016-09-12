@@ -5602,12 +5602,13 @@ header .product-logo .product-name {
   .cover-content .sections {
     margin-top: 80px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; }
+    flex-wrap: wrap; }
   .cover-content .sections .card {
     text-align: center;
-    flex: 1 1 20%;
-    margin-right: 20px; }
+    flex: 0 1 275px;
+    width: calc((100% / 4) - 19px);
+    margin-right: 20px;
+    margin-bottom: 20px; }
     .cover-content .sections .card:last-of-type {
       margin-right: 0; }
     @media (max-width: 48em) {
@@ -5620,10 +5621,11 @@ header .product-logo .product-name {
         flex: 1 1 100%;
         margin-right: 0; } }
     .cover-content .sections .card figure {
-      padding: 20px 0; }
+      padding: 20px 0;
+      max-height: 153px; }
     .cover-content .sections .card .card-body {
       color: #0072bc;
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       line-height: 1;
       font-weight: 300; }
     .cover-content .sections .card .card-actions {
