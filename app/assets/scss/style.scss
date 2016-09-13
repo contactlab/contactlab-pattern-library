@@ -589,6 +589,10 @@ header .product-logo .product-name {
 		padding-bottom: $base-spacing;
 		align-items: center;
 
+        &.small .clab-icon {
+            font-size: 15px;
+        }
+
 		@media (max-width: $tablet) {
 			flex-basis: 50%;
 		}

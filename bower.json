@@ -20,6 +20,6 @@
     "director": "~1.2.8",
     "es6-promise": "^3.1.2",
     "fetch-jsonp": "^0.9.2",
-    "clab-ui-components": "^1.0.1"
+    "clab-ui-components": "http://gitlab.contactlab.com/product-devs/clab-ui-components.git#develop"
   }
 }

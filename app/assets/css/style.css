@@ -2089,6 +2089,27 @@ table, .table {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-fast-backward:before {
+  content: ""; }
+
+.icon-backward:before {
+  content: ""; }
+
+.icon-fast-forward:before {
+  content: ""; }
+
+.icon-forward:before {
+  content: ""; }
+
+.icon-play:before {
+  content: ""; }
+
+.icon-stop:before {
+  content: ""; }
+
+.icon-pause:before {
+  content: ""; }
+
 .icon-equal-circle-full:before {
   content: ""; }
 
@@ -4903,6 +4924,10 @@ td, .table .th,
 
 .table {
   display: table; }
+  .table .thead {
+    display: table-header-group; }
+  .table .tbody {
+    display: table-row-group; }
   .table .thead .tr {
     border-bottom: 0; }
   .table .clab-icon {
@@ -4911,8 +4936,7 @@ td, .table .th,
   .table .tr {
     display: table-row;
     border-bottom: 1px solid #CCD1D9;
-    width: 100%;
-    display: flex; }
+    width: 100%; }
   .table .th,
   .table .td {
     display: table-cell;
@@ -5225,7 +5249,7 @@ ol {
   list-style: none;
   padding-left: 0;
   margin: 0;
-  padding-bottom: 20px; }
+  margin-bottom: 20px; }
   ul li,
   ol li {
     margin-bottom: 5px;
@@ -5884,6 +5908,8 @@ header .product-logo .product-name {
     display: flex;
     padding-bottom: 20px;
     align-items: center; }
+    .iconography .icon-example.small .clab-icon, .iconography .buttons-group.small .icon-example.btn .clab-icon, .buttons-group.small .iconography .icon-example.btn .clab-icon {
+      font-size: 15px; }
     @media (max-width: 48em) {
       .iconography .icon-example {
         flex-basis: 50%; } }
