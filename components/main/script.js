@@ -18,6 +18,13 @@ var MainClab = function () {
 					type: String,
 					value: null,
 					readonly: true
+				},
+				ribbon: {
+					type: Object,
+					value: {
+						visible: true,
+						repo: 'https://github.com/contactlab/contactlab-ui-components'
+					}
 				}
 			};
 		}
@@ -46,8 +53,8 @@ var MainClab = function () {
 							// window.removeEventListener('libraryLoaded');
 						});
 					} else {
-							this.querySelector('library-clab').page = url[1];
-						}
+						this.querySelector('library-clab').page = url[1];
+					}
 					//this.currentPage=this.querySelector('.library-clab.iron-selected');
 				}
 			};
