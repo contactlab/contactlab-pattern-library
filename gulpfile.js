@@ -28,6 +28,7 @@ var gulp = require('gulp-param')(require('gulp'), process.argv),
     babel = require("gulp-babel"),
     watch = require('gulp-watch'),
     rename = require("gulp-rename"),
+    ghPages = require('gulp-gh-pages')
     plumber = require('gulp-plumber');
 
 
@@ -129,6 +130,11 @@ gulp.task('watch-es6', function() {
         console.log('updated: '+path.basename);
     }))
     .pipe(gulp.dest('./app'));
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./app/**/*')
+    .pipe(ghPages());
 });
 
 
