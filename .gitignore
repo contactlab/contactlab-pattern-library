@@ -5,3 +5,4 @@ app/assets/bower
 **/*.sublime-project
 **/*.sublime-workspace
 .bowerrc
+.publish
