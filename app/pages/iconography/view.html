@@ -217,18 +217,24 @@
 		<h3>Charts Icons</h3>
 		<section>
 			<article class="iconography">
-				<div class="icon-example"><span class="clab-icon icon-chart-area"></span> chart-area</div>
+				<template is="dom-repeat" items="[[charts]]" filter="[[_computeFilter(query)]]">
+		      		<icon-demo name="[[item]]"></icon-demo>
+				</template>
+				<!-- <div class="icon-example"><span class="clab-icon icon-chart-area"></span> chart-area</div>
 				<div class="icon-example"><span class="clab-icon icon-chart-bars"></span> chart-bars</div>
-				<div class="icon-example"><span class="clab-icon icon-chart-pie"></span> chart-pie</div>
+				<div class="icon-example"><span class="clab-icon icon-chart-pie"></span> chart-pie</div> -->
 			</article>
 		</section>
 		<hr class="dashed">
 		<h3>Corporate icons</h3>
 		<section>
 			<article class="iconography corporate">
-				<div class="icon-example"><span class="clab-icon icon-contactlab"></span> contactlab</div>
+				<template is="dom-repeat" items="[[corporate]]" filter="[[_computeFilter(query)]]">
+		      		<icon-demo name="[[item]]"></icon-demo>
+				</template>
+				<!-- <div class="icon-example"><span class="clab-icon icon-contactlab"></span> contactlab</div>
 				<div class="icon-example"><span class="clab-icon icon-product-sign"></span> product-sign</div>
-				<div class="icon-example"><span class="clab-icon icon-engagement-marketing-sign"></span> engagement-marketing-sign</div>
+				<div class="icon-example"><span class="clab-icon icon-engagement-marketing-sign"></span> engagement-marketing-sign</div> -->
 			</article>
 		</section>
 	</template>
@@ -259,24 +265,32 @@
         },
 				form: {
 					type: Array,
-          value: ['checkbox', 'checkbox-select', 'radio', 'radio-select' ]
+          			value: ['checkbox', 'checkbox-select', 'radio', 'radio-select' ]
 				},
 				file: {
 					type: Array,
-          value: ['file', 'file-code', 'file-csv', 'file-doc', 'file-log', 'file-pdf', 'file-ppt', 'file-xls', 'file-zip' ]
+     			 	value: ['file', 'file-code', 'file-csv', 'file-doc', 'file-log', 'file-pdf', 'file-ppt', 'file-xls', 'file-zip' ]
 				},
 				directional: {
 					type: Array,
-          value: ['arrow-down', 'arrow-left', 'arrow-right', 'arrow-top', 'double-arrow-left', 'double-arrow-right', 'full-arrow-down',
+      	 	 	  	value: ['arrow-down', 'arrow-left', 'arrow-right', 'arrow-top', 'double-arrow-left', 'double-arrow-right', 'full-arrow-down',
 									'full-arrow-left', 'full-arrow-right', 'full-arrow-top' ]
 				},
 				devices: {
 					type: Array,
-          value: ['desktop', 'devices', 'laptop', 'smartphone', 'smartwacth', 'tablet']
+   	  	  	   		value: ['desktop', 'devices', 'laptop', 'smartphone', 'smartwacth', 'tablet']
 				},
 				player: {
 					type: Array,
-          value: ['fast-backward', 'backward', 'play', 'pause', 'stop', 'forward', 'fast-forward']
+          			value: ['fast-backward', 'backward', 'play', 'pause', 'stop', 'forward', 'fast-forward']
+				},
+				charts: {
+					type: Array,
+          			value: ['chart-area', 'chart-pie', 'chart-bars']
+				},
+				corporate: {
+					type: Array,
+          			value: ['contactlab', 'product-sign', 'engagement-marketing-sign']
 				}
       },
 
