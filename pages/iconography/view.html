@@ -1,3 +1,5 @@
+<link rel="import" href="./icon-demo.html">
+
 
 <dom-module id="page-iconography">
 	<style></style>
@@ -18,11 +20,23 @@
 				</div>
 			</article>
 		</section>
+		<section>
+			<article>
+				<input-clab
+		      label="Search"
+		      placeholder="Type an icon to search"
+		      value="{{query::keyup}}">
+		    </input-clab>
+			</article>
+		</section>
 		<hr class="dashed">
 		<h3>Web Application Icons</h3>
 		<section>
 			<article class="iconography">
-				<div class="icon-example"><span class="clab-icon icon-agenda"></span> agenda</div>
+				<template is="dom-repeat" items="[[webapp]]" filter="[[_computeFilter(query)]]">
+		      <icon-demo name="[[item]]"></icon-demo>
+		    </template>
+				<!-- <div class="icon-example"><span class="clab-icon icon-agenda"></span> agenda</div>
 				<div class="icon-example"><span class="clab-icon icon-analytics"></span> analytics</div>
 				<div class="icon-example"><span class="clab-icon icon-attachment"></span> attachment</div>
 				<div class="icon-example"><span class="clab-icon icon-bulb"></span> bulb</div>
@@ -102,34 +116,43 @@
 				<div class="icon-example"><span class="clab-icon icon-users"></span> users</div>
 				<div class="icon-example"><span class="clab-icon icon-wand"></span> wand</div>
 				<div class="icon-example"><span class="clab-icon icon-warning"></span> warning</div>
-				<div class="icon-example"><span class="clab-icon icon-warning-full"></span> warning-full</div>
+				<div class="icon-example"><span class="clab-icon icon-warning-full"></span> warning-full</div> -->
 			</article>
 		</section>
 		<hr class="dashed">
 		<h3>Social</h3>
 		<section>
 			<article class="iconography">
-				<div class="icon-example"><span class="clab-icon icon-facebook-circle"></span> facebook-circle</div>
+				<template is="dom-repeat" items="[[social]]" filter="[[_computeFilter(query)]]">
+		      <icon-demo name="[[item]]"></icon-demo>
+		    </template>
+				<!-- <div class="icon-example"><span class="clab-icon icon-facebook-circle"></span> facebook-circle</div>
 				<div class="icon-example"><span class="clab-icon icon-google-plus-circle"></span> google-plus-circle</div>
 				<div class="icon-example"><span class="clab-icon icon-linkedin-circle"></span> linkedin-circle</div>
-				<div class="icon-example"><span class="clab-icon icon-twitter-circle"></span> twitter-circle</div>
+				<div class="icon-example"><span class="clab-icon icon-twitter-circle"></span> twitter-circle</div> -->
 			</article>
 		</section>
 		<hr class="dashed">
 		<h3>Form Control Icons</h3>
 		<section>
 			<article class="iconography">
-				<div class="icon-example"><span class="clab-icon icon-checkbox"></span> checkbox</div>
+				<template is="dom-repeat" items="[[form]]" filter="[[_computeFilter(query)]]">
+		      <icon-demo name="[[item]]"></icon-demo>
+		    </template>
+				<!-- <div class="icon-example"><span class="clab-icon icon-checkbox"></span> checkbox</div>
 				<div class="icon-example"><span class="clab-icon icon-checkbox-select"></span> checkbox-select</div>
 				<div class="icon-example"><span class="clab-icon icon-radio"></span> radio</div>
-				<div class="icon-example"><span class="clab-icon icon-radio-select"></span> radio-select</div>
+				<div class="icon-example"><span class="clab-icon icon-radio-select"></span> radio-select</div> -->
 			</article>
 		</section>
 		<hr class="dashed">
 		<h3>File Type Icons</h3>
 		<section>
 			<article class="iconography">
-				<div class="icon-example"><span class="clab-icon icon-file"></span> file</div>
+				<template is="dom-repeat" items="[[file]]" filter="[[_computeFilter(query)]]">
+		      <icon-demo name="[[item]]"></icon-demo>
+		    </template>
+				<!-- <div class="icon-example"><span class="clab-icon icon-file"></span> file</div>
 				<div class="icon-example"><span class="clab-icon icon-file-code"></span> file-code</div>
 				<div class="icon-example"><span class="clab-icon icon-file-csv"></span> file-csv</div>
 				<div class="icon-example"><span class="clab-icon icon-file-doc"></span> file-doc</div>
@@ -137,14 +160,17 @@
 				<div class="icon-example"><span class="clab-icon icon-file-pdf"></span> file-pdf</div>
 				<div class="icon-example"><span class="clab-icon icon-file-ppt"></span> file-ppt</div>
 				<div class="icon-example"><span class="clab-icon icon-file-xls"></span> file-xls</div>
-				<div class="icon-example"><span class="clab-icon icon-file-zip"></span> file-zip</div>
+				<div class="icon-example"><span class="clab-icon icon-file-zip"></span> file-zip</div> -->
 			</article>
 		</section>
 		<hr class="dashed">
 		<h3>Directional Icons</h3>
 		<section>
 			<article class="iconography">
-				<div class="icon-example"><span class="clab-icon icon-arrow-down"></span> arrow-down</div>
+				<template is="dom-repeat" items="[[directional]]" filter="[[_computeFilter(query)]]">
+		      <icon-demo name="[[item]]"></icon-demo>
+		    </template>
+				<!-- <div class="icon-example"><span class="clab-icon icon-arrow-down"></span> arrow-down</div>
 				<div class="icon-example"><span class="clab-icon icon-arrow-left"></span> arrow-left</div>
 				<div class="icon-example"><span class="clab-icon icon-arrow-right"></span> arrow-right</div>
 				<div class="icon-example"><span class="clab-icon icon-arrow-top"></span> arrow-top</div>
@@ -153,50 +179,62 @@
 				<div class="icon-example"><span class="clab-icon icon-full-arrow-down"></span> full-arrow-down</div>
 				<div class="icon-example"><span class="clab-icon icon-full-arrow-left"></span> full-arrow-left</div>
 				<div class="icon-example"><span class="clab-icon icon-full-arrow-right"></span> full-arrow-right</div>
-				<div class="icon-example"><span class="clab-icon icon-full-arrow-top"></span> full-arrow-top</div>
+				<div class="icon-example"><span class="clab-icon icon-full-arrow-top"></span> full-arrow-top</div> -->
 			</article>
 		</section>
 		<hr class="dashed">
 		<h3>Devices Icons</h3>
 		<section>
 			<article class="iconography">
-				<div class="icon-example"><span class="clab-icon icon-desktop"></span> desktop</div>
+				<template is="dom-repeat" items="[[devices]]" filter="[[_computeFilter(query)]]">
+		      <icon-demo name="[[item]]"></icon-demo>
+		    </template>
+				<!-- <div class="icon-example"><span class="clab-icon icon-desktop"></span> desktop</div>
 				<div class="icon-example"><span class="clab-icon icon-devices"></span> devices</div>
 				<div class="icon-example"><span class="clab-icon icon-laptop"></span> laptop</div>
 				<div class="icon-example"><span class="clab-icon icon-smartphone"></span> smartphone</div>
 				<div class="icon-example"><span class="clab-icon icon-smartwatch"></span> smartwatch</div>
-				<div class="icon-example"><span class="clab-icon icon-tablet"></span> tablet</div>
+				<div class="icon-example"><span class="clab-icon icon-tablet"></span> tablet</div> -->
 			</article>
 		</section>
 		<hr class="dashed">
 		<h3>Video players Icons</h3>
 		<section>
 			<article class="iconography">
-				<div class="icon-example small"><span class="clab-icon icon-fast-backward"></span> fast-backward</div>
+				<template is="dom-repeat" items="[[player]]" filter="[[_computeFilter(query)]]">
+		      <icon-demo name="[[item]]"></icon-demo>
+		    </template>
+				<!-- <div class="icon-example small"><span class="clab-icon icon-fast-backward"></span> fast-backward</div>
 				<div class="icon-example small"><span class="clab-icon icon-backward"></span> backward</div>
 				<div class="icon-example"><span class="clab-icon icon-play"></span> play</div>
 				<div class="icon-example"><span class="clab-icon icon-pause"></span> pause</div>
 				<div class="icon-example"><span class="clab-icon icon-stop"></span> stop</div>
 				<div class="icon-example small"><span class="clab-icon icon-forward"></span> forward</div>
-				<div class="icon-example small"><span class="clab-icon icon-fast-forward"></span> fast-forward</div>
+				<div class="icon-example small"><span class="clab-icon icon-fast-forward"></span> fast-forward</div> -->
 			</article>
 		</section>
 		<hr class="dashed">
 		<h3>Charts Icons</h3>
 		<section>
 			<article class="iconography">
-				<div class="icon-example"><span class="clab-icon icon-chart-area"></span> chart-area</div>
+				<template is="dom-repeat" items="[[charts]]" filter="[[_computeFilter(query)]]">
+		      		<icon-demo name="[[item]]"></icon-demo>
+				</template>
+				<!-- <div class="icon-example"><span class="clab-icon icon-chart-area"></span> chart-area</div>
 				<div class="icon-example"><span class="clab-icon icon-chart-bars"></span> chart-bars</div>
-				<div class="icon-example"><span class="clab-icon icon-chart-pie"></span> chart-pie</div>
+				<div class="icon-example"><span class="clab-icon icon-chart-pie"></span> chart-pie</div> -->
 			</article>
 		</section>
 		<hr class="dashed">
 		<h3>Corporate icons</h3>
 		<section>
 			<article class="iconography corporate">
-				<div class="icon-example"><span class="clab-icon icon-contactlab"></span> contactlab</div>
+				<template is="dom-repeat" items="[[corporate]]" filter="[[_computeFilter(query)]]">
+		      		<icon-demo name="[[item]]"></icon-demo>
+				</template>
+				<!-- <div class="icon-example"><span class="clab-icon icon-contactlab"></span> contactlab</div>
 				<div class="icon-example"><span class="clab-icon icon-product-sign"></span> product-sign</div>
-				<div class="icon-example"><span class="clab-icon icon-engagement-marketing-sign"></span> engagement-marketing-sign</div>
+				<div class="icon-example"><span class="clab-icon icon-engagement-marketing-sign"></span> engagement-marketing-sign</div> -->
 			</article>
 		</section>
 	</template>
@@ -204,7 +242,68 @@
 	<script>
 
 		Polymer({
-			is:'page-iconography'
+			is:'page-iconography',
+			properties: {
+        query: {
+          type: String,
+          notify: true,
+        },
+        webapp: {
+          type: Array,
+          value: ['agenda', 'analytics', 'attachment', 'bulb', 'calendar', 'cards', 'chat', 'check', 'clock', 'close', 'close-cirlce',
+									'close-circle-full', 'code', 'copy', 'dashboard', 'diamond', 'digital-campaign', 'documentation', 'dots', 'download',
+									'drag', 'ecommerce', 'edit', 'email', 'equal', 'equal-circle', 'equal-circle-full', 'erase', 'expand', 'eye', 'eye-hide',
+									'faq', 'filter', 'filter-2', 'filter-full', 'folder', 'gear', 'gender', 'gift', 'hamburger-menu', 'heart', 'heart-full',
+									'image', 'info', 'info-full', 'link', 'list', 'lock', 'minus', 'minus-circle', 'minus-circle-full', 'news', 'phone',
+									'pin', 'plus', 'plus-circle', 'plus-circle-full', 'power', 'refresh', 'resize', 'retail', 'save', 'search', 'segment',
+									'send', 'settings', 'smile', 'support', 'system', 'switch-off', 'switch-on', 'tag', 'tag-full', 'trash', 'unlink',
+									'upload', 'user', 'users', 'wand', 'warning', 'warning-full']
+        },
+        social: {
+          type: Array,
+          value: ['facebook-circle', 'google-plus-circle', 'linkedin-circle', 'twitter-circle' ]
+        },
+				form: {
+					type: Array,
+          			value: ['checkbox', 'checkbox-select', 'radio', 'radio-select' ]
+				},
+				file: {
+					type: Array,
+     			 	value: ['file', 'file-code', 'file-csv', 'file-doc', 'file-log', 'file-pdf', 'file-ppt', 'file-xls', 'file-zip' ]
+				},
+				directional: {
+					type: Array,
+      	 	 	  	value: ['arrow-down', 'arrow-left', 'arrow-right', 'arrow-top', 'double-arrow-left', 'double-arrow-right', 'full-arrow-down',
+									'full-arrow-left', 'full-arrow-right', 'full-arrow-top' ]
+				},
+				devices: {
+					type: Array,
+   	  	  	   		value: ['desktop', 'devices', 'laptop', 'smartphone', 'smartwacth', 'tablet']
+				},
+				player: {
+					type: Array,
+          			value: ['fast-backward', 'backward', 'play', 'pause', 'stop', 'forward', 'fast-forward']
+				},
+				charts: {
+					type: Array,
+          			value: ['chart-area', 'chart-pie', 'chart-bars']
+				},
+				corporate: {
+					type: Array,
+          			value: ['contactlab', 'product-sign', 'engagement-marketing-sign']
+				}
+      },
+
+			_computeFilter: function(string){
+        if (!string || string === '') {
+          return null;
+        } else {
+          string = string.toLowerCase();
+          return function(elem){
+            return elem.search(string) > -1;
+          }
+        }
+      }
 		});
 
 	</script>

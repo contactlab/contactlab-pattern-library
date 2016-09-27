@@ -5149,22 +5149,25 @@ td, .table .th,
 
 .rd-container .rd-back:after,
 .rd-container .rd-next:after {
-  font: normal normal normal 20px/1 FontAwesome;
+  font: normal normal normal 12px/1 contactlab-icons;
   position: absolute;
   top: 10px;
   left: 10px;
   width: 20px;
   height: 20px;
   color: #eaeced;
-  cursor: pointer; }
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .rd-container .rd-next:after {
-  content: "\f105";
+  content: "\e60e";
   right: 0;
   left: auto; }
 
 .rd-container .rd-back:after {
-  content: "\f104";
+  content: "\e60d";
   left: 0; }
 
 .rd-container .rd-month-label {
@@ -5902,21 +5905,21 @@ header .product-logo .product-name {
 .iconography {
   display: flex;
   flex-wrap: wrap; }
-  .iconography .icon-example {
+  .iconography icon-demo {
     flex-grow: 1;
     flex-basis: calc(100% / 3);
     display: flex;
     padding-bottom: 20px;
     align-items: center; }
-    .iconography .icon-example.small .clab-icon, .iconography .buttons-group.small .icon-example.btn .clab-icon, .buttons-group.small .iconography .icon-example.btn .clab-icon {
+    .iconography icon-demo.small .clab-icon, .iconography .buttons-group.small icon-demo.btn .clab-icon, .buttons-group.small .iconography icon-demo.btn .clab-icon {
       font-size: 15px; }
     @media (max-width: 48em) {
-      .iconography .icon-example {
+      .iconography icon-demo {
         flex-basis: 50%; } }
     @media (max-width: 30em) {
-      .iconography .icon-example {
+      .iconography icon-demo {
         flex-basis: 100%; } }
-    .iconography .icon-example .clab-icon {
+    .iconography icon-demo .clab-icon {
       font-size: 25px;
       padding-right: 10px;
       width: 50px;
