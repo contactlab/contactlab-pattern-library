@@ -186,6 +186,15 @@ var MainClab = function () {
 			this.router.init('/');
 		}
 	}, {
+		key: '_computeRibbon',
+		value: function _computeRibbon(visible, module) {
+			if (visible && module === 'home') {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}, {
 		key: '_isPage',
 		value: function _isPage(cur, page) {
 			return cur === page;

@@ -151,8 +151,8 @@ class MainClab {
 
 		this.router = Router(this.routes).configure({
 			notfound: ()=>{
-				pages.selected='library';
-		    	library.page = 'not-found';
+				pages.selected = 'library';
+		    library.page = 'not-found';
 			},
 			on: () => {
 				/*$('menu-clab .first-level-menu>li>a').each(function(i, e){
@@ -166,6 +166,15 @@ class MainClab {
 		});
 
 		this.router.init('/');
+	}
+
+	_computeRibbon(visible, module){
+		if(visible && module === 'home'){
+			return true;
+		}else{
+			return false;
+		}
+
 	}
 
 	_isPage(cur, page){
