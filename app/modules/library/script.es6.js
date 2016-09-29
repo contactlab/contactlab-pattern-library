@@ -1,4 +1,14 @@
-class LibraryClab {
+'use strict';
+
+// Main library
+import {Polymer} from './../../polymer';
+// components
+import {MenuClabCust} from './../../components/menu/script.es6';
+import {InnerMenuClab} from './../../components/menu/script.es6';
+// Menu
+import AppMenu from './menu.es6';
+
+export class LibraryClab {
 	beforeRegister(){
 		this.is="library-clab";
 		this.properties = {
@@ -79,7 +89,7 @@ class LibraryClab {
 		this.set('submenu', evt.detail.links);
 		this.submenuLabel=evt.detail.label;
 	}
-	
+
 	_pageChanged(){
 		this.currentHash = window.location.hash;
 		this.scrollToY(0, 1500, 'easeInOutQuint');

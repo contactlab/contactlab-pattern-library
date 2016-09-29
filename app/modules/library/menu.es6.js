@@ -1,4 +1,6 @@
-var AppMenu = [
+'use strict';
+
+export const AppMenu = [
 	{
 		"label": "Design",
 		"url": "#/design",
