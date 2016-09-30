@@ -26,16 +26,16 @@
 				</div>
 				<div class="example">
 					<button-clab id="open2" type="secondary" appearance="full">
-						Open modal with HTML content
+						Open modal with HTML content and classic layout
 					</button-clab>
-					<modal-clab id="modal2" title="Dummy modal" primary="Confirm" secondary="Cancel" warning="Warning">
+					<modal-clab id="modal2" classic title="Dummy modal" primary="Confirm" secondary="Cancel" warning="Warning">
 						<h2>Some HTML...</h2>
 						<hr>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo iste rerum ea ipsam, sequi explicabo, et officiis maxime adipisci! Aliquid labore unde eum consequatur mollitia similique ducimus, dolor adipisci reiciendis?</p>
 						<ul class="default">
-							<li>Una</li>
-							<li>semplice</li>
-							<li>lista</li>
+							<li>One</li>
+							<li>simple</li>
+							<li>list</li>
 						</ul>
 					</modal-clab>
 				</div>
@@ -127,6 +127,13 @@
 										<td>stop-close</td>
 										<td>boolean</td>
 										<td>true: prevents the modal from closing</td>
+										<td>false</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>classic</td>
+										<td>boolean</td>
+										<td>false: fullscreen modal<br>true: classic modal layout</td>
 										<td>false</td>
 										<td></td>
 									</tr>

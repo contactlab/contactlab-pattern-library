@@ -4,7 +4,7 @@
 import {Polymer} from './../../polymer';
 // components
 import {MenuClabCust} from './../../components/menu/script.es6';
-import {InnerMenuClab} from './../../components/menu/script.es6';
+import {InnerMenuClab} from './../../components/inner-menu/script.es6';
 // Menu
 import {AppMenu} from './menu.es6';
 
