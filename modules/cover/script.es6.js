@@ -1,4 +1,9 @@
-class CoverClab {
+'use strict';
+
+// Main library
+import {Polymer} from './../../polymer';
+
+export class CoverClab {
 	beforeRegister(){
 		this.is = "cover-clab";
 		this.properties = {

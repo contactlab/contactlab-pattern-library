@@ -1,4 +1,13 @@
-class MainClab {
+'use strict';
+
+// Main library
+import {Polymer} from './../../polymer';
+// Modules
+import {CoverClab} from './../../modules/cover/script.es6';
+import {LibraryClab} from './../../modules/library/script.es6';
+
+
+export class MainClab {
 	beforeRegister(){
 		this.is = "main-clab";
 		this.properties = {
@@ -151,8 +160,8 @@ class MainClab {
 
 		this.router = Router(this.routes).configure({
 			notfound: ()=>{
-				pages.selected='library';
-		    	library.page = 'not-found';
+				pages.selected = 'library';
+		    library.page = 'not-found';
 			},
 			on: () => {
 				/*$('menu-clab .first-level-menu>li>a').each(function(i, e){
@@ -166,6 +175,15 @@ class MainClab {
 		});
 
 		this.router.init('/');
+	}
+
+	_computeRibbon(visible, module){
+		if(visible && module === 'home'){
+			return true;
+		}else{
+			return false;
+		}
+
 	}
 
 	_isPage(cur, page){

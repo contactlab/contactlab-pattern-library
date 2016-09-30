@@ -1,4 +1,9 @@
-class MenuClabCust{
+'use strict';
+
+// Main library
+import {Polymer} from './../../polymer';
+
+export class MenuClabCust{
 
 	beforeRegister(){
 		this.is = 'menu-clab-cust';

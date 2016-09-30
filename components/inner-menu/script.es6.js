@@ -1,4 +1,9 @@
-class InnerMenuClab {
+'use strict';
+
+// Main library
+import {Polymer} from './../../polymer';
+
+export class InnerMenuClab {
 	beforeRegister(){
 		this.is = 'inner-menu-clab';
 		this.properties={
