@@ -6,7 +6,7 @@ import {Polymer} from './../../polymer';
 import {MenuClabCust} from './../../components/menu/script.es6';
 import {InnerMenuClab} from './../../components/menu/script.es6';
 // Menu
-import AppMenu from './menu.es6';
+import {AppMenu} from './menu.es6';
 
 export class LibraryClab {
 	beforeRegister(){

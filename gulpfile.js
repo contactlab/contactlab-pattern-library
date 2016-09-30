@@ -62,6 +62,14 @@ gulp.task('watch-sass', function() {
   gulp.watch([conf.scssSourcePath], ['sass']);
 });
 
+// Watch every .js file for changes except bundle.js and run the Webpack action, plus it prints out on the terminal which files has changed
+gulp.task('watch-js', function(){
+  gulp.watch(['./app/**/*.js','!./app/bundle.js'], ['webpack']);
+  gulp.watch(['./app/**/*.js','!./app/bundle.js'], function(arg){
+    console.log('something changend', arg)
+  });
+});
+
 
 gulp.task('deploy', function() {
   return gulp.src('./app/**/*')
@@ -77,4 +85,4 @@ Actions
 // Launch a webserver and watch for *.scss, *.js, *.jsx changes and recompiles in plain .css or .js in the /dist folder
 gulp.task('default', ['connect']);
 gulp.task('ux', ['connect', 'watch-sass']);
-gulp.task('dev', ['connect', 'watch-es6']);
+gulp.task('dev', ['connect', 'watch-js']);
