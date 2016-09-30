@@ -72,7 +72,7 @@ gulp.task('watch-js', function(){
 
 
 gulp.task('deploy', function() {
-  return gulp.src('./app/**/*')
+  return gulp.src(['./app/**/*', 'CNAME'])
     .pipe(ghPages());
 });
 
