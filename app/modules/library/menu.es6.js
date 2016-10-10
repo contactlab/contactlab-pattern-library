@@ -2,6 +2,19 @@
 
 export const AppMenu = [
 	{
+		"label": "Product brand",
+		"url": "#/product-brand",
+		"submenu": [
+			{
+				"label": "Our logo",
+				"url": "#/product-brand/our-logo"
+			},
+			{
+				"label": "Brand Book",
+				"url": "#/product-brand/brand-book"
+			}
+		]
+	},{
 		"label": "Design",
 		"url": "#/design",
 		"submenu": [
@@ -135,19 +148,6 @@ export const AppMenu = [
 			}
 		]
 	},{
-		"label": "Product brand",
-		"url": "#/product-brand",
-		"submenu": [
-			{
-				"label": "Our logo",
-				"url": "#/product-brand/our-logo"
-			},
-			{
-				"label": "Brand Book",
-				"url": "#/product-brand/brand-book"
-			}
-		]
-	},{
 		"label": "Documentation",
 		"url": "#/documentation",
 		"submenu": [
@@ -155,6 +155,14 @@ export const AppMenu = [
 				"label": "Getting started",
 				"url": "#/documentation/getting-started"
 			},
+			{
+				"label": "Using with...",
+				"url": "#/documentation/using-with"
+			},
+			// {
+			// 	"label": "Compatibility",
+			// 	"url": "#/documentation/compatibility"
+			// },
 			{
 				"label": "Release notes",
 				"url": "https://github.com/contactlab/contactlab-ui-components/releases"

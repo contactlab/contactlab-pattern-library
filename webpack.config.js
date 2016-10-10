@@ -16,7 +16,7 @@ module.exports = {
         exclude: ['node_modules','app/assets/bower','app/bundle.js'],
         loader: 'babel', // 'babel-loader' is also a legal name to reference
         query: {
-          // presets: ['es2015']
+          presets: ['es2015']
           // plugins: ["lodash"]
         }
       }

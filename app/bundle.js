@@ -46,7 +46,7 @@
 
 	'use strict';
 	
-	var _componentsMainScriptEs6 = __webpack_require__(1);
+	var _script = __webpack_require__(1);
 
 /***/ },
 /* 1 */
@@ -55,23 +55,25 @@
 	'use strict';
 	
 	// Main library
-	Object.defineProperty(exports, '__esModule', {
+	
+	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.MainClab = undefined;
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	// Modules
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
 	var _polymer = __webpack_require__(2);
 	
-	// Modules
+	var _script = __webpack_require__(3);
 	
-	var _modulesCoverScriptEs6 = __webpack_require__(3);
+	var _script2 = __webpack_require__(4);
 	
-	var _modulesLibraryScriptEs6 = __webpack_require__(4);
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	var MainClab = (function () {
+	var MainClab = exports.MainClab = function () {
 		function MainClab() {
 			_classCallCheck(this, MainClab);
 		}
@@ -120,8 +122,8 @@
 								// window.removeEventListener('libraryLoaded');
 							});
 						} else {
-								this.querySelector('library-clab').page = url[1];
-							}
+							this.querySelector('library-clab').page = url[1];
+						}
 						//this.currentPage=this.querySelector('.library-clab.iron-selected');
 					}
 				};
@@ -226,7 +228,10 @@
 					'/product-brand/brand-book': function productBrandBrandBook() {
 						_this2.handleRouting();
 					},
-					'/documentation/release-notes': function documentationReleaseNotes() {
+					'/documentation/compatibility': function documentationCompatibility() {
+						_this2.handleRouting();
+					},
+					'/documentation/using-with': function documentationUsingWith() {
 						_this2.handleRouting();
 					},
 					'/documentation/getting-started': function documentationGettingStarted() {
@@ -269,9 +274,7 @@
 		}]);
 	
 		return MainClab;
-	})();
-	
-	exports.MainClab = MainClab;
+	}();
 	
 	(0, _polymer.Polymer)(MainClab);
 
@@ -281,11 +284,10 @@
 
 	'use strict';
 	
-	Object.defineProperty(exports, '__esModule', {
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var Polymer = window.Polymer;
-	exports.Polymer = Polymer;
+	var Polymer = exports.Polymer = window.Polymer;
 
 /***/ },
 /* 3 */
@@ -294,17 +296,19 @@
 	'use strict';
 	
 	// Main library
-	Object.defineProperty(exports, '__esModule', {
+	
+	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.CoverClab = undefined;
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _polymer = __webpack_require__(2);
 	
-	var CoverClab = (function () {
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var CoverClab = exports.CoverClab = function () {
 		function CoverClab() {
 			_classCallCheck(this, CoverClab);
 		}
@@ -333,9 +337,7 @@
 		}]);
 	
 		return CoverClab;
-	})();
-	
-	exports.CoverClab = CoverClab;
+	}();
 	
 	(0, _polymer.Polymer)(CoverClab);
 
@@ -346,27 +348,29 @@
 	'use strict';
 	
 	// Main library
-	Object.defineProperty(exports, '__esModule', {
+	
+	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.LibraryClab = undefined;
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	var _polymer = __webpack_require__(2);
-	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	// components
-	
-	var _componentsMenuScriptEs6 = __webpack_require__(5);
-	
-	var _componentsInnerMenuScriptEs6 = __webpack_require__(6);
 	
 	// Menu
 	
-	var _menuEs6 = __webpack_require__(7);
 	
-	var LibraryClab = (function () {
+	var _polymer = __webpack_require__(2);
+	
+	var _script = __webpack_require__(5);
+	
+	var _script2 = __webpack_require__(6);
+	
+	var _menu = __webpack_require__(7);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var LibraryClab = exports.LibraryClab = function () {
 		function LibraryClab() {
 			_classCallCheck(this, LibraryClab);
 		}
@@ -396,7 +400,7 @@
 					},
 					menu: {
 						type: Array,
-						value: _menuEs6.AppMenu
+						value: _menu.AppMenu
 					}
 				};
 			}
@@ -471,17 +475,15 @@
 		}]);
 	
 		return LibraryClab;
-	})();
-	
-	exports.LibraryClab = LibraryClab;
+	}();
 	
 	(0, _polymer.Polymer)(LibraryClab);
 	
-	window.requestAnimFrame = (function () {
+	window.requestAnimFrame = function () {
 		return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
 			window.setTimeout(callback, 1000 / 60);
 		};
-	})();
+	}();
 
 /***/ },
 /* 5 */
@@ -490,17 +492,21 @@
 	'use strict';
 	
 	// Main library
-	Object.defineProperty(exports, '__esModule', {
+	
+	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.MenuClabCust = undefined;
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _polymer = __webpack_require__(2);
 	
-	var MenuClabCust = (function () {
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var MenuClabCust = exports.MenuClabCust = function () {
 		function MenuClabCust() {
 			_classCallCheck(this, MenuClabCust);
 		}
@@ -554,6 +560,7 @@
 			/*----------
 	  EVENT HANDLERS
 	  ----------*/
+	
 		}, {
 			key: '_toggleMenu',
 			value: function _toggleMenu(evt) {
@@ -591,6 +598,7 @@
 			/*----------
 	  METHODS
 	  ----------*/
+	
 		}, {
 			key: '_iosMenu',
 			value: function _iosMenu() {
@@ -615,6 +623,7 @@
 			/*----------
 	  OBSERVERS
 	  ----------*/
+	
 		}, {
 			key: '_updateCurrent',
 			value: function _updateCurrent(menu, currentHash) {
@@ -639,11 +648,12 @@
 			/*----------
 	  COMPUTE
 	  ----------*/
+	
 		}, {
 			key: '_visibleMenu',
 			value: function _visibleMenu(menu) {
 				if (menu != undefined) {
-					var _ret = (function () {
+					var _ret = function () {
 						var arr = [];
 						menu.map(function (obj) {
 							if (obj.visible || obj.visible == undefined) arr.push(obj);
@@ -651,9 +661,9 @@
 						return {
 							v: arr
 						};
-					})();
+					}();
 	
-					if (typeof _ret === 'object') return _ret.v;
+					if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
 				}
 			}
 		}, {
@@ -668,7 +678,7 @@
 		}, {
 			key: '_computeUrl',
 			value: function _computeUrl(item) {
-				var url = undefined;
+				var url = void 0;
 				if (this.firstChild && item.submenu) {
 					if (item.submenu[0].submenu) // 3 levels
 						url = item.submenu[0].submenu[0].url;else // 2 levels
@@ -700,9 +710,7 @@
 		}]);
 	
 		return MenuClabCust;
-	})();
-	
-	exports.MenuClabCust = MenuClabCust;
+	}();
 	
 	(0, _polymer.Polymer)(MenuClabCust);
 
@@ -713,17 +721,19 @@
 	'use strict';
 	
 	// Main library
-	Object.defineProperty(exports, '__esModule', {
+	
+	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.InnerMenuClab = undefined;
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _polymer = __webpack_require__(2);
 	
-	var InnerMenuClab = (function () {
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var InnerMenuClab = exports.InnerMenuClab = function () {
 		function InnerMenuClab() {
 			_classCallCheck(this, InnerMenuClab);
 		}
@@ -751,6 +761,7 @@
 			/* ------------------
 	  	EVENT HANDLERS
 	  ------------------- */
+	
 		}, {
 			key: '_handleOpen',
 			value: function _handleOpen(evt) {
@@ -806,6 +817,7 @@
 			/* ------------------
 	  	OBSERVERS
 	  ------------------- */
+	
 		}, {
 			key: '_closeSubmenu',
 			value: function _closeSubmenu() {
@@ -821,6 +833,7 @@
 			/* ------------------
 	  	COMPUTED
 	  ------------------- */
+	
 		}, {
 			key: '_computeShow',
 			value: function _computeShow(open) {
@@ -849,9 +862,7 @@
 		}]);
 	
 		return InnerMenuClab;
-	})();
-	
-	exports.InnerMenuClab = InnerMenuClab;
+	}();
 	
 	(0, _polymer.Polymer)(InnerMenuClab);
 
@@ -864,7 +875,17 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	var AppMenu = [{
+	var AppMenu = exports.AppMenu = [{
+		"label": "Product brand",
+		"url": "#/product-brand",
+		"submenu": [{
+			"label": "Our logo",
+			"url": "#/product-brand/our-logo"
+		}, {
+			"label": "Brand Book",
+			"url": "#/product-brand/brand-book"
+		}]
+	}, {
 		"label": "Design",
 		"url": "#/design",
 		"submenu": [{
@@ -963,27 +984,24 @@
 			}]
 		}]
 	}, {
-		"label": "Product brand",
-		"url": "#/product-brand",
-		"submenu": [{
-			"label": "Our logo",
-			"url": "#/product-brand/our-logo"
-		}, {
-			"label": "Brand Book",
-			"url": "#/product-brand/brand-book"
-		}]
-	}, {
 		"label": "Documentation",
 		"url": "#/documentation",
 		"submenu": [{
 			"label": "Getting started",
 			"url": "#/documentation/getting-started"
 		}, {
+			"label": "Using with...",
+			"url": "#/documentation/using-with"
+		},
+		// {
+		// 	"label": "Compatibility",
+		// 	"url": "#/documentation/compatibility"
+		// },
+		{
 			"label": "Release notes",
 			"url": "https://github.com/contactlab/contactlab-ui-components/releases"
 		}]
 	}];
-	exports.AppMenu = AppMenu;
 
 /***/ }
 /******/ ]);
