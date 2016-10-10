@@ -150,7 +150,10 @@ export class MainClab {
 		    '/product-brand/brand-book': ()=> {
 		    	this.handleRouting();
 		    },
-		    '/documentation/release-notes': ()=> {
+				'/documentation/compatibility': ()=> {
+		    	this.handleRouting();
+		    },
+				'/documentation/using-with': ()=> {
 		    	this.handleRouting();
 		    },
 		    '/documentation/getting-started': ()=> {

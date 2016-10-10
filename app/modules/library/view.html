@@ -33,6 +33,7 @@
 <link rel="import" href="../../pages/typography/view.html">
 <link rel="import" href="../../pages/release-notes/view.html">
 <link rel="import" href="../../pages/getting-started/view.html">
+<link rel="import" href="../../pages/using-with/view.html">
 <link rel="import" href="../../pages/not-found/view.html">
 
 <dom-module id="library-clab">
@@ -161,6 +162,9 @@
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'getting-started')]]" restamp="true">
 					<page-getting-started></page-getting-started>
+				</template>
+				<template is="dom-if" if="[[_isPage(page, 'using-with')]]" restamp="true">
+					<page-using-with></page-using-with>
 				</template>
 				<template is="dom-if" if="[[_isPage(page, 'not-found')]]" restamp="true">
 					<page-not-found></page-not-found>
