@@ -4,7 +4,12 @@ Configuration parameters
 */
 var conf = {
   scssSourcePath: './app/assets/scss/**/*.{scss,sass}',
-  cssOutputPath: './app/assets/css/'
+  cssOutputPath: './app/assets/css/',
+  cssMinifyPAth: './app/assets/css/*.css',
+  jsMinifyPath: './app/modules/library/src/*.js',
+  jsOutputPath: './app/modules/library/',
+  polymerSourcePath: './app/components/**/*.html',
+  dist: './app/dist'
 }
 
 
@@ -21,7 +26,15 @@ var gulp = require('gulp-param')(require('gulp'), process.argv),
     webpackConfig = require('./webpack.config.js'),
     connect = require('gulp-connect'),
     watch = require('gulp-watch'),
-    ghPages = require('gulp-gh-pages');
+    ghPages = require('gulp-gh-pages'),
+    concat = require('gulp-concat'),
+    minifyCSS = require('gulp-minify-css'),
+    merge = require('merge2'),
+    autoprefixer = require('gulp-autoprefixer'),
+    sourcemap = require('gulp-sourcemaps'),
+    es = require('event-stream'),
+    uglify =require('gulp-uglify'),
+    vulcanize = require('gulp-vulcanize');
 
 
 /*
@@ -58,8 +71,9 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(conf.cssOutputPath));
 });
 
+// Added build-sass task to watch-sass task, css will be built every time a sass file has been changed
 gulp.task('watch-sass', function() {
-  gulp.watch([conf.scssSourcePath], ['sass']);
+  gulp.watch([conf.scssSourcePath], ['sass'], ['build-sass']);
 });
 
 // Watch every .js file for changes except bundle.js and run the Webpack action, plus it prints out on the terminal which files has changed
@@ -70,6 +84,37 @@ gulp.task('watch-js', function(){
   });
 });
 
+// Compile every SASS and SCSS files into in build min css
+gulp.task('build-sass', function() {
+    var vendorFiles = gulp.src(conf.cssOutputPath);
+    var appFiles = gulp.src(conf.scssSourcePath)
+        .pipe(sass({ style: 'compressed' }).on('error', gutil.log));
+
+    return es.concat(vendorFiles, appFiles)
+        .pipe(concat('build.css'))
+        .pipe(autoprefixer('last 10 version'))
+        .pipe(gulp.dest(conf.cssOutputPath))
+        .pipe(minifyCSS(conf.cssMinifyPAth))
+        .pipe(gulp.dest(conf.cssOutputPath));
+});
+
+// Concatnates all global js files to 1 compiled-build file
+gulp.task('build-scripts', function() {
+  gulp.src([conf.jsMinifyPath])
+    .pipe(concat('compiled-build.js'))
+    .pipe(gulp.dest(conf.jsOutputPath))
+});
+
+// Vulcanizes all of the Polymer components in the directory
+gulp.task('build-vulcanize', function () {
+    return gulp.src(conf.polymerSourcePath)
+        .pipe(vulcanize({
+            abspath: '',
+            excludes: [],
+            stripExcludes: false
+        }))
+        .pipe(gulp.dest(conf.dist));
+});
 
 gulp.task('deploy', function() {
   return gulp.src(['./app/**/*', 'CNAME'])
@@ -86,3 +131,4 @@ Actions
 gulp.task('default', ['connect']);
 gulp.task('ux', ['connect', 'watch-sass']);
 gulp.task('dev', ['connect', 'watch-js']);
+gulp.task('update',['build-sass','build-scripts','build-vulcanize','connect'])

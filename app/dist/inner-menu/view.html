@@ -1,0 +1,39 @@
+<html><head><meta charset="UTF-8"></head><body><dom-module id="inner-menu-clab">
+	<style>
+		.submenu > a{
+			text-transform: uppercase;
+		}
+		.submenu .show{
+			display: block;
+		}
+	</style>
+
+	<template>
+		<div class="contextual-menu">
+			<div class="mobile-nav-toggle" on-tap="_toggleMobileNav">
+				Navigation <i class="clab-icon icon-arrow-down arrow"></i>
+			</div>
+			<ul class="first-level">
+				<template is="dom-repeat" items="[[menu]]">
+					<li class$="[[_computeActive(item, curUrl)]]">
+						<template is="dom-if" if="[[item.submenu]]">
+							<a on-click="_handleOpen" data-index$="[[index]]">[[item.label]] <i class="clab-icon icon-arrow-down arrow"></i></a>
+							<ul class$="[[_computeShow(item.open)]]">
+								<template is="dom-repeat" items="[[item.submenu]]">
+									<li class$="[[_computeActive(item, curUrl)]]"><a href$="[[item.url]]">[[item.label]]</a></li>
+								</template>
+							</ul>
+						</template>
+						<template is="dom-if" if="[[item.url]]">
+							<a href$="[[item.url]]">[[item.label]]</a>
+						</template>
+					</li>
+				</template>
+			</ul>
+		</div>
+
+
+	</template>
+
+</dom-module>
+</body></html>
