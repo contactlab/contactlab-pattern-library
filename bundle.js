@@ -243,15 +243,6 @@
 					notfound: function notfound() {
 						pages.selected = 'library';
 						library.page = 'not-found';
-					},
-					on: function on() {
-						/*$('menu-clab .first-level-menu>li>a').each(function(i, e){
-	     	if(location.hash.search(e.getAttribute('href')) > -1){
-	     		e.parentNode.classList.add('active');
-	     	}else{
-	     		e.parentNode.classList.remove('active');
-	     	}
-	     });*/
 					}
 				});
 	

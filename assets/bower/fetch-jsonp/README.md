@@ -4,7 +4,7 @@ JSONP is NOT supported in standard Fetch API, https://fetch.spec.whatwg.org.
 fetch-jsonp provides you same API to fetch JSONP like naive Fetch, also comes
 with global `fetchJsonp` function.
 
-If you need a `fetch` polyfill for old browsers, try [github/fetch](github.com/github/fetch).
+If you need a `fetch` polyfill for old browsers, try [github/fetch](http://github.com/github/fetch).
 
 ## Installation
 
@@ -12,18 +12,6 @@ You can install with `npm`.
 
 ```
 npm install fetch-jsonp
-```
-
-You'll also need a Promise polyfill for [old browsers](http://caniuse.com/#feat=promises).
-
-```
-npm install es6-promise
-```
-
-Also available on [Bower](http://bower.io) as **fetch-jsonp**
-
-```sh
-$ bower install fetch-jsonp
 ```
 
 ## Usage
@@ -63,6 +51,7 @@ fetchJsonp('/users.jsonp', {
 
 ```javascript
 fetchJsonp('/users.jsonp', {
+    timeout: 3000,
     jsonpCallback: 'custom_callback'
   })
   .then(function(response) {
@@ -76,14 +65,14 @@ fetchJsonp('/users.jsonp', {
 
 ### Caveats
 
-You need to call `.then(function(respons) { return respons.json(); })` in order
+You need to call `.then(function(response) { return response.json(); })` in order
 to keep consistent with Fetch API.
 
 ## Browser Support
 
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png)
 --- | --- | --- | --- | --- |
-Latest ✔ | Latest ✔ | 9+ ✔ | Latest ✔ | 6.1+ ✔ |
+Latest ✔ | Latest ✔ | 8+ ✔ | Latest ✔ | 6.1+ ✔ |
 
 # License
 

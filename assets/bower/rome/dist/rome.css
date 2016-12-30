@@ -1,6 +1,6 @@
 /**
  * rome - Customizable date (and time) picker. Opt-in UI, no jQuery!
- * @version v2.1.23
+ * @version v2.1.22
  * @link https://github.com/bevacqua/rome
  * @license MIT
  */
@@ -58,9 +58,6 @@
   cursor: pointer;
   background-color: #333;
   color: #fff;
-}
-.rd-day-highlight {
-  background-color: #e0e0e0;
 }
 .rd-day-prev-month,
 .rd-day-next-month {

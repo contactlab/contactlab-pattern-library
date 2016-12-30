@@ -6,7 +6,6 @@ import {Polymer} from './../../polymer';
 import {CoverClab} from './../../modules/cover/script.es6';
 import {LibraryClab} from './../../modules/library/script.es6';
 
-
 export class MainClab {
 	beforeRegister(){
 		this.is = "main-clab";
@@ -165,15 +164,6 @@ export class MainClab {
 			notfound: ()=>{
 				pages.selected = 'library';
 		    library.page = 'not-found';
-			},
-			on: () => {
-				/*$('menu-clab .first-level-menu>li>a').each(function(i, e){
-					if(location.hash.search(e.getAttribute('href')) > -1){
-						e.parentNode.classList.add('active');
-					}else{
-						e.parentNode.classList.remove('active');
-					}
-				});*/
 			}
 		});
 
@@ -192,6 +182,7 @@ export class MainClab {
 	_isPage(cur, page){
 		return cur === page;
 	}
+
 }
 
 Polymer(MainClab);
