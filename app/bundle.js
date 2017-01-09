@@ -867,7 +867,7 @@
 		value: true
 	});
 	var AppMenu = exports.AppMenu = [{
-		"label": "Product brand",
+		"label": "Brand",
 		"url": "#/product-brand",
 		"submenu": [{
 			"label": "Our logo",
@@ -877,7 +877,7 @@
 			"url": "#/product-brand/brand-book"
 		}]
 	}, {
-		"label": "Design",
+		"label": "Visual Design",
 		"url": "#/design",
 		"submenu": [{
 			"label": "Colors",

@@ -2,7 +2,7 @@
 
 export const AppMenu = [
 	{
-		"label": "Product brand",
+		"label": "Brand",
 		"url": "#/product-brand",
 		"submenu": [
 			{
@@ -15,7 +15,7 @@ export const AppMenu = [
 			}
 		]
 	},{
-		"label": "Design",
+		"label": "Visual Design",
 		"url": "#/design",
 		"submenu": [
 			{
