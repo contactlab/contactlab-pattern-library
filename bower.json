@@ -13,12 +13,11 @@
     "tests"
   ],
   "dependencies": {
-    "clab-ui-components": "^1.1.0",
-    "lodash": "^4.17.3",
-    "polymer": "^1.7.1",
-    "font-awesome": "fontawesome#^4.7.0",
+    "clab-ui-components": "^1.1.6",
+    "lodash": "^4.17.4",
+    "polymer": "^1.8.1",
     "director": "^1.2.8",
-    "fetch": "^2.0.1",
+    "fetch": "^2.0.3",
     "es6-promise": "^4.0.5",
     "fetch-jsonp": "^1.0.2"
   }

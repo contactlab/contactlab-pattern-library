@@ -17,15 +17,15 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/contactlab/contactlab-pattern-library#readme",
   "devDependencies": {
-    "babel-core": "^6.17.0",
-    "babel-loader": "^6.2.5",
-    "babel-preset-es2015": "^6.16.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
     "process-nextick-args": "^1.0.7",
-    "web-component-tester": "^3.3.30"
+    "web-component-tester": "^5.0.1"
   },
   "dependencies": {
     "gh-pages": "^0.12.0",
     "http-server": "^0.9.0",
-    "webpack": "^1.14.0"
+    "webpack": "^2.3.2"
   }
 }
