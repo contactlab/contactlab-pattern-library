@@ -51,12 +51,19 @@ export class ButtonClab {
         type: Boolean,
         value: false,
         reflectToAttribute: true
+      },
+      /**
+       * Default HTML button type (submit, reset, button)
+       */
+      buttonType: {
+        type: String,
+        value: 'button',
       }
     }
   }
 
   _click(evt) {
-    this.fire('btnclick');
+    this.dispatchEvent(new CustomEvent('btnclick'), {bubbles: true});
   }
 
   /**

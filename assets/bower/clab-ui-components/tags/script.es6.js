@@ -61,6 +61,7 @@ export class TagsClab {
   EVENT HANDLERS
   ----------*/
   _handleKeyUp(evt) {
+    evt.preventDefault();
     switch(evt.keyCode) {
       case 188:
         // if comma
@@ -68,7 +69,8 @@ export class TagsClab {
         break;
       case 13:
         // if enter
-        this.querySelector('button-clab').fire('btnclick');
+        const elem = this.querySelector('button-clab');
+        elem.dispatchEvent(new CustomEvent('btnclick'), {bubbles: true});
         break;
     }
   }
@@ -83,10 +85,10 @@ export class TagsClab {
     this.push('tags', newTag);
     this.inputString = '';
 
-    this.fire('change', {
-      'tags': this.tags,
-      'new': newTag
-    });
+    this.dispatchEvent(new CustomEvent('change', {detail: {
+      tags: this.tags,
+      new: newTag
+    }}), {bubbles: true});
   }
 
   _removeTag(evt) {
@@ -100,10 +102,10 @@ export class TagsClab {
     });
     if(i != undefined) this.splice('tags', i, 1);
 
-    this.fire('change', {
-      'tags': this.tags,
-      'removed': i
-    });
+    this.dispatchEvent(new CustomEvent('change', {detail: {
+      tags: this.tags,
+      removed: i
+    }}), {bubbles: true});
   }
 
   _computeStacked(stacked) {
@@ -113,7 +115,6 @@ export class TagsClab {
       return '';
     }
   }
-
 
 
   /*----------
@@ -127,10 +128,10 @@ export class TagsClab {
         this.push('tags', item);
       });
     }
-    this.fire('change', {
-      'tags': this.tags,
-      'new': array
-    });
+    this.dispatchEvent(new CustomEvent('change', {detail: {
+      tags: this.tags,
+      new: array
+    }}), {bubbles: true});
 
     return this.tags;
   }

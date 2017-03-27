@@ -86,20 +86,18 @@
 			<gist-embed user="clab-gist" uuid="7339023b25251acf44f8837405d715d8" no-meta></gist-embed>
 			<article class="component">
 				<div class="example">
-					<checkbox-clab labels='["checkbox 1", "checkbox 2", "checkbox 3"]'></checkbox-clab>
+					<checkbox-clab label="Normal checkbox"></checkbox-clab>
 				</div>
 				<div class="example">
-					<checkbox-clab labels='["checkbox 4", "checkbox 5", "checkbox 6"]' active='[0, 2]'></checkbox-clab>
+					<checkbox-clab label="Flagged checkbox" active></checkbox-clab>
 				</div>
 				<div class="example">
-					<checkbox-clab labels='["checkbox 7", "checkbox 8"]' active='[1]' disabled='[0]'></checkbox-clab>
+					<checkbox-clab label="Disabled checkbox" active disabled></checkbox-clab>
 				</div>
 				<hr class="dashed">
 				<div class="specs">
-					<tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0">
-						<div class="tab-content">
-							<gist-embed user="clab-gist" uuid="3e0b42b081807082eb61af8e4422efc8"></gist-embed>
-						</div>
+					<!-- <tabs-clab  labels='["HTML", "POLYMER", "ATTRIBUTES"]' active="0"> -->
+					<tabs-clab  labels='["POLYMER", "ATTRIBUTES"]' active="0">
 						<div class="tab-content">
 							<gist-embed user="clab-gist" uuid="19e2e663f60c95a05dd67751f16911be"></gist-embed>
 						</div>
@@ -116,19 +114,19 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>labels</td>
-										<td>array</td>
-										<td>'["checkbox 1", "checkbox 2"]'</td>
+										<td>label</td>
+										<td>string</td>
+										<td>"checkbox 1"</td>
 										<td></td>
 										<td><i class="clab-icon icon-check"></i></td>
 									</tr>
-									<tr>
+									<!-- <tr>
 										<td>name</td>
 										<td>string</td>
 										<td></td>
 										<td></td>
 										<td></td>
-									</tr>
+									</tr> -->
 									<tr>
 										<td>wrapper-type</td>
 										<td>string</td>
@@ -138,16 +136,16 @@
 									</tr>
 									<tr>
 										<td>active</td>
-										<td>array</td>
-										<td>list of indexes of the active checkboxes</td>
-										<td></td>
+										<td>boolean</td>
+										<td>if checkbox is selected</td>
+										<td>false</td>
 										<td></td>
 									</tr>
 									<tr>
 										<td>disabled</td>
-										<td>array</td>
-										<td>list of indexes of the disabled checkboxes</td>
-										<td></td>
+										<td>boolean</td>
+										<td>if checkbox is disabled</td>
+										<td>false</td>
 										<td></td>
 									</tr>
 								</tbody>
