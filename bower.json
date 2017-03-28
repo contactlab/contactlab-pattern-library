@@ -16,9 +16,9 @@
     "clab-ui-components": "^1.1.6",
     "lodash": "^4.17.4",
     "polymer": "^1.8.1",
-    "director": "^1.2.8",
     "fetch": "^2.0.3",
     "es6-promise": "^4.0.5",
-    "fetch-jsonp": "^1.0.2"
+    "fetch-jsonp": "^1.0.2",
+    "app-route": "PolymerElements/app-route#^0.9.3"
   }
 }
