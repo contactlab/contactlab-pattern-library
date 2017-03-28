@@ -1,6 +1,6 @@
 {
   "name": "contactplan-pattern-library",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "This is the documentation website for the Contactlab Pattern Library components designed and built by the Product team.",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
   "dependencies": {
     "gh-pages": "^0.12.0",
     "http-server": "^0.9.0",
-    "webpack": "^2.3.2"
+    "webpack": "^2.3.2",
+    "webpack-notifier": "^1.5.0"
   }
 }

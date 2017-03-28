@@ -1,11 +1,22 @@
+const path = require('path');
+const webpack = require('webpack');
+const WebpackNotifierPlugin = require('webpack-notifier');
+
 module.exports = {
   entry: {
      PatternLibraryWebsite: "./app/index.js"
   },
   output: {
-     filename: "./app/bundle.js",
+    path: path.join(__dirname, 'app'),
+    filename: "bundle.js",
   },
   devtool: 'source-map',
+  plugins: [
+		new WebpackNotifierPlugin({
+			title: 'Pattern Library Website',
+			alwaysNotify: true
+		})
+  ],
   module: {
     loaders: [
       {
@@ -17,5 +28,8 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve: {
+    mainFields: ['browserify', 'browser', 'module', 'main']
   }
 };
