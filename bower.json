@@ -13,7 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "clab-ui-components": "^1.1.6",
+    "clab-ui-components": "^1.2.0",
     "lodash": "^4.17.4",
     "polymer": "^1.8.1",
     "fetch": "^2.0.3",
