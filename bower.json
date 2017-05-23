@@ -19,6 +19,7 @@
     "fetch": "^2.0.3",
     "es6-promise": "^4.0.5",
     "fetch-jsonp": "^1.0.2",
-    "app-route": "PolymerElements/app-route#^0.9.3"
+    "app-route": "PolymerElements/app-route#^0.9.3",
+    "ikonograph3": "git://github.com/contactlab/ikonograph.git#develop"
   }
 }
