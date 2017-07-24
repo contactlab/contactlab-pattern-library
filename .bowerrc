@@ -1,3 +1,5 @@
 {
-	"directory": "app/assets/bower"
+	"directory": "app/assets/bower",
+	"save": true,
+	"save-exact": true
 }
