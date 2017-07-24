@@ -76,7 +76,7 @@
         <h3>Charts Icons</h3>
         <section>
           <article class="iconography">
-            <template is="dom-repeat" items="[[charts]]" filter="[[_computeFilter(query)]]">
+            <template is="dom-repeat" items="[[charts3]]" filter="[[_computeFilter(query)]]">
               <icon-demo-v3 name="[[item]]"></icon-demo-v3>
             </template>
           </article>
@@ -252,7 +252,7 @@
         },
         devices3: {
           type: Array,
-           value: ['desktop', 'devices', 'laptop', 'smartphone', 'smartwatch', 'tablet']
+           value: ['desktop', 'desktop-full', 'devices', 'devices-full', 'laptop', 'laptop-full', 'smartphone', 'smartphone-full', 'smartwatch', 'smartwatch-full', 'tablet', 'tablet-full']
         },
         player: {
           type: Array,
@@ -260,7 +260,7 @@
         },
         player3: {
           type: Array,
-          value: ['fast-backward', 'backward', 'play', 'pause', 'stop', 'forward', 'fast-forward']
+          value: ['fast-backward', 'fast-backward-full', 'backward', 'backward-full', 'play', 'play-full', 'pause', 'pause-full', 'stop', 'stop-full', 'forward', 'forward-full', 'fast-forward', 'fast-forward-full']
         },
         charts: {
           type: Array,
@@ -268,7 +268,7 @@
         },
         charts3: {
           type: Array,
-          value: ['chart-area', 'chart-pie', 'chart-bars']
+          value: ['chart-area', 'chart-area-full', 'chart-pie', 'chart-pie-full', 'chart-bars', 'chart-bars-full']
         },
         corporate: {
           type: Array,
