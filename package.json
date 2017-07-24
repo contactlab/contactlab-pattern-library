@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "http-server ./app -s -p 3000",
+    "predeploy": "webpack",
     "deploy": "gh-pages -d app",
     "dev": "yarn start & webpack -w",
     "test": "wct"
