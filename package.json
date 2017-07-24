@@ -2,7 +2,7 @@
   "name": "contactplan-pattern-library",
   "version": "1.2.0",
   "description": "This is the documentation website for the Contactlab Pattern Library components designed and built by the Product team.",
-  "main": "index.js",
+  "main": "./app/index.js",
   "engines": {
     "node": ">=6.0.0",
     "yarn": ">=0.27"
