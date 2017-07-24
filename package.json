@@ -7,7 +7,7 @@
     "start": "http-server ./app -s -p 3000",
     "deploy": "gh-pages -d app",
     "dev": "npm start & webpack -w",
-    "test": "node node_modules/web-component-tester/bin/wct"
+    "test": "wct"
   },
   "repository": {
     "type": "git",
