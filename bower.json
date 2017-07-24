@@ -13,13 +13,10 @@
     "tests"
   ],
   "dependencies": {
-    "clab-ui-components": "^1.2.0",
-    "lodash": "^4.17.4",
-    "polymer": "^1.8.1",
-    "fetch": "^2.0.3",
-    "es6-promise": "^4.0.5",
-    "fetch-jsonp": "^1.0.2",
-    "app-route": "PolymerElements/app-route#^0.9.3",
+    "clab-ui-components": "1.2.0",
+    "lodash": "4.17.4",
+    "fetch-jsonp": "1.1.1",
+    "app-route": "PolymerElements/app-route#0.9.3",
     "ikonograph3": "git://github.com/contactlab/ikonograph.git#master"
   }
 }
