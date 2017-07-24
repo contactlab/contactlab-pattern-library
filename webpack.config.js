@@ -18,16 +18,14 @@ module.exports = {
 		})
   ],
   module: {
-    use: [
-      {
-        test: /\.jsx?$/,
-        exclude: ['node_modules','app/assets/bower','app/bundle.js'],
-        loader: 'babel-loader',
-        options: {
-          presets: ['es2015']
-        }
+    rules: [{
+      test: /\.jsx?$/,
+      exclude: ['node_modules','app/assets/bower','app/bundle.js'],
+      loader: 'babel-loader',
+      options: {
+        presets: ['es2015']
       }
-    ]
+    }]
   },
   resolve: {
     mainFields: ['browserify', 'browser', 'module', 'main']
