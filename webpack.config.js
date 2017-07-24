@@ -4,11 +4,11 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
   entry: {
-     PatternLibraryWebsite: "./app/index.js"
+     PatternLibraryWebsite: './app/index.js'
   },
   output: {
     path: path.join(__dirname, 'app'),
-    filename: "bundle.js",
+    filename: 'bundle.js',
   },
   devtool: 'source-map',
   plugins: [
@@ -18,16 +18,14 @@ module.exports = {
 		})
   ],
   module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: ['node_modules','app/assets/bower','app/bundle.js'],
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
-        }
+    rules: [{
+      test: /\.jsx?$/,
+      exclude: ['node_modules','app/assets/bower','app/bundle.js'],
+      loader: 'babel-loader',
+      options: {
+        presets: ['es2015']
       }
-    ]
+    }]
   },
   resolve: {
     mainFields: ['browserify', 'browser', 'module', 'main']
