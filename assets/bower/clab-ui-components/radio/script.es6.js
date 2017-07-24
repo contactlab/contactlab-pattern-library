@@ -12,31 +12,14 @@ export class RadioClab {
   beforeRegister() {
     this.is = "radio-clab";
     this.properties = {
-      labels: {
-        type: Array,
-        value: []
-      },
-      name: {
-        type: String
-      },
+      labels: Array,
+      name: String,
       wrapperType: {
         type: String,
         value: ''
       },
-      active: {
-        type: Number,
-        value: 0
-      },
-      disabled: {
-        type: Array,
-        value: []
-      },
-      inline: {
-        type: Boolean,
-        value: false,
-        observer: '_computeInline',
-        reflectToAttribute: true
-      }
+      active: Number,
+      disabled: Array
     }
   }
 
@@ -47,10 +30,6 @@ export class RadioClab {
   ----------*/
   _computeType(wt) {
     return ['row', wt].join(' ');
-  }
-
-  _computeInline(inline){
-    inline ? this.classList.add('inline') : this.classList.remove('inline');
   }
 
   /*----------

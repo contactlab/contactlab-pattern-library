@@ -1,37 +1,35 @@
 <link rel="import" href="./../note/view.html">
 
 <dom-module id="file-clab">
-  <style>
-    input[type=file] {
-      display: none;
-    }
+	<style>
+		input[type=file]{
+			display: none;
+		}
+		input[type=text]::-ms-clear{
+			display: none;
+		}
+	</style>
 
-    input[type=text]::-ms-clear {
-      display: none;
-    }
+	<template>
+		<div class$="[[_compWrapperClass('input-wrapper', type)]]">
+			<template is="dom-if" if="[[_viewLabel(label)]]">
+				<label class$="[[type]]" for$="[[_dashify(name)]]">[[label]]</label>
+			</template>
 
-  </style>
+			<div class="input" on-click="_selection">
+				<input class$="[[type]]" type="text" name$="[[_dashify(name)]]" disabled="[[disabled]]" value="{{value}}" on-change="_checkIfResetPreview">
+				<button class="btn"><i class="clab-icon icon-folder"></i></button>
+			</div>
 
-  <template>
-    <div class$="[[_compWrapperClass('input-wrapper', type)]]">
-      <template is="dom-if" if="[[_viewLabel(label)]]">
-        <label class$="[[type]]" for$="[[_dashify(name)]]">[[label]]</label>
-      </template>
+			<note-clab type="[[noteType]]">
+				<content select=".note"></content>
+			</note-clab>
 
-      <div class="input" on-click="_selection">
-        <input class$="[[type]]" type="text" name$="[[_dashify(name)]]" disabled="[[disabled]]" value="{{value}}" on-change="_checkIfResetPreview">
-        <button class="btn"><i class="clab-icon icon-folder"></i></button>
-      </div>
+			<input id="input_file" type="file" multiple$="[[multiple]]" disabled="[[disabled]]" on-change="_updateValue">
 
-      <note-clab type="[[noteType]]">
-        <slot name="note"></slot>
-      </note-clab>
+			<div id="preview"></div>
+		</div>
+	</template>
 
-      <input id="input_file" type="file" multiple$="[[multiple]]" disabled="[[disabled]]" on-change="_updateValue">
-
-      <div id="preview"></div>
-    </div>
-  </template>
-
-  <!-- <script src="./../bundle.js"></script> -->
+	<!-- <script src="./../bundle.js"></script> -->
 </dom-module>

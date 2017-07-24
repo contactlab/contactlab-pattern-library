@@ -2,15 +2,9 @@
 
 import rome from 'rome';
 import moment from 'moment';
-import {
-  Polymer
-} from "./../_assets/js/polymer";
-import {
-  UtilBehavior
-} from "./../_behaviors/behaviors.es6";
-import {
-  NoteClab
-} from "./../note/script.es6";
+import {Polymer} from "./../_assets/js/polymer";
+import {UtilBehavior} from "./../_behaviors/behaviors.es6";
+import {NoteClab} from "./../note/script.es6";
 
 export class CalendarClab {
 
@@ -51,7 +45,7 @@ export class CalendarClab {
     }, 50);
   }
 
-  detached() {
+  detached(){
     const calendar = rome.find(this.querySelector('input'));
     calendar ? calendar.destroy() : null;
   }
@@ -63,26 +57,7 @@ export class CalendarClab {
   EVENT HANDLERS
   ----------*/
   _checkClear(evt) {
-    const newDate = evt.target.value;
-    if (newDate === this.valueStr) return;
-
-    if (evt.keyCode === 13) {
-      if (newDate !== "") {
-        this.valueStr = newDate;
-
-        this.dispatchEvent(new CustomEvent('datechange', {
-          bubbles: true,
-          composed: true,
-          detail: {
-            date: newDate,
-            dateISO: moment(new Date(newDate)).format()
-          }
-        }));
-      }
-      this.getRomeInstance().hide();
-    }
-
-    if (newDate === "" && this.valueStr !== null) {
+    if(evt.target.value == "") {
       this.clear();
       this.dispatchEvent(new CustomEvent('datechange', {
         bubbles: true,
@@ -90,14 +65,16 @@ export class CalendarClab {
         detail: {
           date: undefined,
           dateISO: undefined
-        }
+  			}
       }));
     }
+
   }
 
   _focusElement(evt) {
-    if (!this.disabled) {
+    if(!this.disabled) {
       evt.stopPropagation();
+      console.log(this.getRomeInstance());
       this.getRomeInstance().show();
     }
   }
@@ -109,18 +86,10 @@ export class CalendarClab {
   ----------*/
   _createInstance(selector) {
     this.setLocale();
-    const obj = typeof this.options === 'object' ? this.options : this.getRomeInstance().options();
+    const obj = typeof this.options == 'object' ? this.options : this.getRomeInstance().options();
     const currentCalendar = this.$$(selector);
-    const cal = rome(currentCalendar, obj);
-
-    cal.on('data', this._changeDate.bind(this))
-    cal.on('next', evt => {
-      this.cancelAsync(this._fireDate);
-    })
-    cal.on('back', evt => {
-      this.cancelAsync(this._fireDate);
-    })
-
+    rome(currentCalendar, obj)
+      .on('data', this._changeDate.bind(this));
     this.dispatchEvent(new CustomEvent('instance-created', {
       bubbles: true,
       composed: true,
@@ -128,21 +97,16 @@ export class CalendarClab {
     }));
   }
 
-  _changeDate(newDate) {
-    if (newDate === this.valueStr) return;
-
-    this.cancelAsync(this._fireDate);
-    this._fireDate = this.async(() => {
-      this.valueStr = newDate;
-      this.dispatchEvent(new CustomEvent('datechange', {
-        bubbles: true,
-        composed: true,
-        detail: {
-          date: newDate,
-          dateISO: moment(new Date(newDate)).format()
-        }
-      }));
-    }, 250);
+  _changeDate(evt) {
+    this.valueStr = evt;
+    this.dispatchEvent(new CustomEvent('datechange', {
+      bubbles: true,
+      composed: true,
+      detail: {
+        date: evt,
+        dateISO: moment(new Date(evt)).format()
+      }
+    }));
   }
 
 

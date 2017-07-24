@@ -5145,11 +5145,6 @@ var InputClab = exports.InputClab = function () {
           value: 'textinput',
           reflectToAttribute: true
         },
-        inputType: {
-          type: String,
-          value: null,
-          reflectToAttribute: true
-        },
         type: {
           type: String,
           value: null,
@@ -5226,6 +5221,18 @@ var InputClab = exports.InputClab = function () {
         }
       };
     }
+  }, {
+    key: "attached",
+    value: function attached() {
+      var _this = this;
+
+      Array.prototype.map.call(this.getEffectiveChildren(), function (node) {
+        if (node.classList.contains('note')) {
+          _polymer.Polymer.dom(_this.$$('note-clab')).appendChild(node);
+          _polymer.Polymer.dom.flush();
+        }
+      });
+    }
 
     /*----------
     EVENT HANDLERS
@@ -5299,12 +5306,9 @@ var InputClab = exports.InputClab = function () {
     }
   }, {
     key: "_computeInputType",
-    value: function _computeInputType(password, inputType) {
+    value: function _computeInputType(password) {
       if (password) {
         return 'password';
-      }
-      if (inputType) {
-        return inputType;
       } else {
         return 'text';
       }
@@ -19004,26 +19008,7 @@ var CalendarClab = exports.CalendarClab = function () {
   }, {
     key: '_checkClear',
     value: function _checkClear(evt) {
-      var newDate = evt.target.value;
-      if (newDate === this.valueStr) return;
-
-      if (evt.keyCode === 13) {
-        if (newDate !== "") {
-          this.valueStr = newDate;
-
-          this.dispatchEvent(new CustomEvent('datechange', {
-            bubbles: true,
-            composed: true,
-            detail: {
-              date: newDate,
-              dateISO: (0, _moment2.default)(new Date(newDate)).format()
-            }
-          }));
-        }
-        this.getRomeInstance().hide();
-      }
-
-      if (newDate === "" && this.valueStr !== null) {
+      if (evt.target.value == "") {
         this.clear();
         this.dispatchEvent(new CustomEvent('datechange', {
           bubbles: true,
@@ -19040,6 +19025,7 @@ var CalendarClab = exports.CalendarClab = function () {
     value: function _focusElement(evt) {
       if (!this.disabled) {
         evt.stopPropagation();
+        console.log(this.getRomeInstance());
         this.getRomeInstance().show();
       }
     }
@@ -19051,21 +19037,10 @@ var CalendarClab = exports.CalendarClab = function () {
   }, {
     key: '_createInstance',
     value: function _createInstance(selector) {
-      var _this2 = this;
-
       this.setLocale();
-      var obj = _typeof(this.options) === 'object' ? this.options : this.getRomeInstance().options();
+      var obj = _typeof(this.options) == 'object' ? this.options : this.getRomeInstance().options();
       var currentCalendar = this.$$(selector);
-      var cal = (0, _rome2.default)(currentCalendar, obj);
-
-      cal.on('data', this._changeDate.bind(this));
-      cal.on('next', function (evt) {
-        _this2.cancelAsync(_this2._fireDate);
-      });
-      cal.on('back', function (evt) {
-        _this2.cancelAsync(_this2._fireDate);
-      });
-
+      (0, _rome2.default)(currentCalendar, obj).on('data', this._changeDate.bind(this));
       this.dispatchEvent(new CustomEvent('instance-created', {
         bubbles: true,
         composed: true,
@@ -19074,23 +19049,16 @@ var CalendarClab = exports.CalendarClab = function () {
     }
   }, {
     key: '_changeDate',
-    value: function _changeDate(newDate) {
-      var _this3 = this;
-
-      if (newDate === this.valueStr) return;
-
-      this.cancelAsync(this._fireDate);
-      this._fireDate = this.async(function () {
-        _this3.valueStr = newDate;
-        _this3.dispatchEvent(new CustomEvent('datechange', {
-          bubbles: true,
-          composed: true,
-          detail: {
-            date: newDate,
-            dateISO: (0, _moment2.default)(new Date(newDate)).format()
-          }
-        }));
-      }, 250);
+    value: function _changeDate(evt) {
+      this.valueStr = evt;
+      this.dispatchEvent(new CustomEvent('datechange', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          date: evt,
+          dateISO: (0, _moment2.default)(new Date(evt)).format()
+        }
+      }));
     }
 
     /*----------
@@ -20066,7 +20034,7 @@ var FileClab = exports.FileClab = function () {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 exports.ModalClab = undefined;
 
@@ -20081,215 +20049,217 @@ var _script = __webpack_require__(4);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var ModalClab = exports.ModalClab = function () {
-  function ModalClab() {
-    _classCallCheck(this, ModalClab);
-  }
+	function ModalClab() {
+		_classCallCheck(this, ModalClab);
+	}
 
-  _createClass(ModalClab, [{
-    key: "beforeRegister",
-    value: function beforeRegister() {
-      this.is = 'modal-clab';
-      this.properties = {
-        title: {
-          type: String,
-          value: 'Modal title'
-        },
-        visible: {
-          type: Boolean,
-          value: false,
-          observer: '_animateShowHide'
-        },
-        primary: {
-          type: String,
-          value: null
-        },
-        secondary: {
-          type: String,
-          value: null
-        },
-        warning: {
-          type: String,
-          value: null
-        },
-        primaryDisabled: {
-          type: Boolean,
-          value: false
-        },
-        content: {
-          type: String,
-          value: null
-        },
-        stopClose: {
-          type: Boolean,
-          value: false
-        },
-        width: {
-          type: Number,
-          value: 840
-        },
-        noAnimation: {
-          type: Boolean,
-          value: false
-        },
-        noActions: {
-          type: Boolean,
-          value: false
-        }
-      };
-    }
-  }, {
-    key: "attached",
-    value: function attached() {
-      var _this = this;
+	_createClass(ModalClab, [{
+		key: "beforeRegister",
+		value: function beforeRegister() {
+			this.is = 'modal-clab';
+			this.properties = {
+				title: {
+					type: String,
+					value: 'Modal title'
+				},
+				visible: {
+					type: Boolean,
+					value: false,
+					observer: '_animateShowHide'
+				},
+				primary: {
+					type: String,
+					value: null
+				},
+				secondary: {
+					type: String,
+					value: null
+				},
+				warning: {
+					type: String,
+					value: null
+				},
+				primaryDisabled: {
+					type: Boolean,
+					value: false
+				},
+				content: {
+					type: String,
+					value: null
+				},
+				stopClose: {
+					type: Boolean,
+					value: false
+				},
+				width: {
+					type: Number,
+					value: 840
+				},
+				noAnimation: {
+					type: Boolean,
+					value: false
+				},
+				noActions: {
+					type: Boolean,
+					value: false
+				}
+			};
+		}
+	}, {
+		key: "attached",
+		value: function attached() {
+			var _this = this;
 
-      // Preparing the animations
-      if (!this.noAnimation) {
-        var opacity = [{
-          opacity: 0
-        }, {
-          opacity: 1
-        }];
-        var scale = [{
-          transform: 'scale(.95)'
-        }, {
-          transform: 'scale(1)'
-        }];
+			// Preparing the animations
+			if (!this.noAnimation) {
+				var opacity = [{
+					opacity: 0
+				}, {
+					opacity: 1
+				}];
+				var scale = [{
+					transform: 'scale(.95)'
+				}, {
+					transform: 'scale(1)'
+				}];
 
-        this.modalEnter = function (target) {
-          return new GroupEffect([new KeyframeEffect(target, opacity, {
-            duration: 190,
-            fill: 'forwards',
-            direction: 'normal'
-          }), new KeyframeEffect(_this.querySelector('.modal'), scale, {
-            duration: 190,
-            fill: 'forwards',
-            direction: 'normal'
-          })]);
-        };
-        this.modalExit = function (target) {
-          return new GroupEffect([new KeyframeEffect(target, opacity, {
-            duration: 150,
-            fill: 'forwards',
-            direction: 'reverse'
-          }), new KeyframeEffect(_this.querySelector('.modal'), scale, {
-            duration: 150,
-            fill: 'forwards',
-            direction: 'reverse'
-          })]);
-        };
-      }
-    }
-  }, {
-    key: "detached",
-    value: function detached() {
-      document.querySelector('body').classList.remove('no-scroll');
-    }
-  }, {
-    key: "_computeWidth",
-    value: function _computeWidth(width) {
-      var str = 'max-width:' + width + 'px';
-      return str;
-    }
+				this.modalEnter = function (target) {
+					return new GroupEffect([new KeyframeEffect(target, opacity, {
+						duration: 190,
+						fill: 'forwards',
+						direction: 'normal'
+					}), new KeyframeEffect(_this.querySelector('.modal'), scale, {
+						duration: 190,
+						fill: 'forwards',
+						direction: 'normal'
+					})]);
+				};
+				this.modalExit = function (target) {
+					return new GroupEffect([new KeyframeEffect(target, opacity, {
+						duration: 150,
+						fill: 'forwards',
+						direction: 'reverse'
+					}), new KeyframeEffect(_this.querySelector('.modal'), scale, {
+						duration: 150,
+						fill: 'forwards',
+						direction: 'reverse'
+					})]);
+				};
+			}
+		}
+	}, {
+		key: "detached",
+		value: function detached() {
+			document.querySelector('body').classList.remove('no-scroll');
+		}
+	}, {
+		key: "_computeWidth",
+		value: function _computeWidth(width) {
+			var str = 'max-width:' + width + 'px';
+			return str;
+		}
 
-    /*----------
-    	EVENT HANDLERS
-    ----------*/
+		/*----------
+  	EVENT HANDLERS
+  ----------*/
 
-  }, {
-    key: "_closeModal",
-    value: function _closeModal(evt) {
-      evt.stopPropagation();
-      if (!this.stopClose) this.visible = false;
-      this.dispatchEvent(new CustomEvent('close', {
-        bubbles: true,
-        composed: true
-      }));
-    }
-  }, {
-    key: "_block",
-    value: function _block(evt) {
-      evt.stopPropagation();
-    }
-  }, {
-    key: "_primaryAction",
-    value: function _primaryAction(evt) {
-      this.dispatchEvent(new CustomEvent('modal-primary', {
-        bubbles: true,
-        composed: true
-      }));
-    }
-  }, {
-    key: "_secondaryAction",
-    value: function _secondaryAction(evt) {
-      this.dispatchEvent(new CustomEvent('modal-secondary', {
-        bubbles: true,
-        composed: true
-      }));
-    }
-  }, {
-    key: "_warningAction",
-    value: function _warningAction(evt) {
-      this.dispatchEvent(new CustomEvent('modal-warning', {
-        bubbles: true,
-        composed: true
-      }));
-    }
+	}, {
+		key: "_closeModal",
+		value: function _closeModal(evt) {
+			evt.stopPropagation();
+			if (!this.stopClose) this.visible = false;
+			this.dispatchEvent(new CustomEvent('close', {
+				bubbles: true,
+				composed: true
+			}));
+		}
+	}, {
+		key: "_block",
+		value: function _block(evt) {
+			evt.stopPropagation();
+		}
+	}, {
+		key: "_primaryAction",
+		value: function _primaryAction(evt) {
+			this.dispatchEvent(new CustomEvent('modal-primary', {
+				bubbles: true,
+				composed: true
+			}));
+		}
+	}, {
+		key: "_secondaryAction",
+		value: function _secondaryAction(evt) {
+			this.dispatchEvent(new CustomEvent('modal-secondary', {
+				bubbles: true,
+				composed: true
+			}));
+		}
+	}, {
+		key: "_warningAction",
+		value: function _warningAction(evt) {
+			this.dispatchEvent(new CustomEvent('modal-warning', {
+				bubbles: true,
+				composed: true
+			}));
+		}
 
-    /*----------
-    	OBSERVERS
-    ----------*/
+		/*----------
+  	OBSERVERS
+  ----------*/
 
-  }, {
-    key: "_animateShowHide",
-    value: function _animateShowHide(val, oldval) {
-      var target = this.querySelector('.modal-overlay');
+	}, {
+		key: "_animateShowHide",
+		value: function _animateShowHide(val, oldval) {
+			var target = this.querySelector('.modal-overlay');
 
-      if (val) {
-        document.querySelector('body').classList.add('no-scroll');
-        target.style.display = 'block';
-        if (!this.noAnimation && this.modalEnter) {
-          var animation = this.modalEnter(target);
-          var player = document.timeline.play(animation);
-        } else {
-          target.style.opacity = 1;
-        }
-      } else {
-        document.querySelector('body').classList.remove('no-scroll');
-        if (!this.noAnimation && this.modalExit) {
-          var _animation = this.modalExit(target);
-          var _player = document.timeline.play(_animation);
-          this._onAnimationComplete(_player, function () {
-            target.style.display = 'none';
-          });
-        } else {
-          target.style.display = 'none';
-          target.style.opacity = 0;
-        }
-      }
-    }
+			if (oldval != undefined) {
+				if (val) {
+					document.querySelector('body').classList.add('no-scroll');
+					target.style.display = 'block';
+					if (!this.noAnimation) {
+						var animation = this.modalEnter(target);
+						var player = document.timeline.play(animation);
+					} else {
+						target.style.opacity = 1;
+					}
+				} else {
+					document.querySelector('body').classList.remove('no-scroll');
+					if (!this.noAnimation) {
+						var _animation = this.modalExit(target);
+						var _player = document.timeline.play(_animation);
+						this._onAnimationComplete(_player, function () {
+							target.style.display = 'none';
+						});
+					} else {
+						target.style.display = 'none';
+						target.style.opacity = 0;
+					}
+				}
+			}
+		}
 
-    /*----------
-    	PUBLIC
-    ----------*/
+		/*----------
+  	PUBLIC
+  ----------*/
 
-  }, {
-    key: "show",
-    value: function show() {
-      this.visible = true;
-    }
-  }, {
-    key: "hide",
-    value: function hide() {
-      this.visible = false;
-    }
-  }, {
-    key: "behaviors",
-    get: function get() {
-      return [_behaviors.AnimationsBehavior];
-    }
-  }]);
+	}, {
+		key: "show",
+		value: function show() {
+			this.visible = true;
+		}
+	}, {
+		key: "hide",
+		value: function hide() {
+			this.visible = false;
+		}
+	}, {
+		key: "behaviors",
+		get: function get() {
+			return [_behaviors.AnimationsBehavior];
+		}
+	}]);
 
-  return ModalClab;
+	return ModalClab;
 }();
 
 (0, _polymer.Polymer)(ModalClab);
@@ -20835,9 +20805,7 @@ var PaginationClab = exports.PaginationClab = function () {
     }
   }, {
     key: "_getStart",
-    value: function _getStart(_c, _pages) {
-      var pages = parseInt(_pages);
-      var c = parseInt(_c);
+    value: function _getStart(c, pages) {
       var last = pages.length - 1;
       if (c >= last - this.range / 2) {
         return last - this.range;
@@ -20849,9 +20817,7 @@ var PaginationClab = exports.PaginationClab = function () {
     }
   }, {
     key: "_getEnd",
-    value: function _getEnd(_c, _pages) {
-      var pages = parseInt(_pages);
-      var c = parseInt(_c);
+    value: function _getEnd(c, pages) {
       var last = pages.length - 1;
       if (c >= last - this.range / 2) {
         return last;
@@ -21002,31 +20968,14 @@ var RadioClab = exports.RadioClab = function () {
     value: function beforeRegister() {
       this.is = "radio-clab";
       this.properties = {
-        labels: {
-          type: Array,
-          value: []
-        },
-        name: {
-          type: String
-        },
+        labels: Array,
+        name: String,
         wrapperType: {
           type: String,
           value: ''
         },
-        active: {
-          type: Number,
-          value: 0
-        },
-        disabled: {
-          type: Array,
-          value: []
-        },
-        inline: {
-          type: Boolean,
-          value: false,
-          observer: '_computeInline',
-          reflectToAttribute: true
-        }
+        active: Number,
+        disabled: Array
       };
     }
 
@@ -21038,11 +20987,6 @@ var RadioClab = exports.RadioClab = function () {
     key: "_computeType",
     value: function _computeType(wt) {
       return ['row', wt].join(' ');
-    }
-  }, {
-    key: "_computeInline",
-    value: function _computeInline(inline) {
-      inline ? this.classList.add('inline') : this.classList.remove('inline');
     }
 
     /*----------
