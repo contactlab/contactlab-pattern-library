@@ -1,0 +1,12 @@
+<dom-module id="curtain-clab">
+
+	<template>
+		<ol id="list" class="options-list" style$="[[_computedStyles]]">
+			<template is="dom-repeat" items="[[options]]" as="option">
+				<li class$="[[_compHighlight(highlighted, option)]]" data-i$="[[index]]" on-mouseover="doHighlight">[[_compLabel(option)]]</li>
+			</template>
+		</ol>
+    </template>
+
+	<!-- <script src="./../bundle.js"></script> -->
+</dom-module>
