@@ -10,7 +10,7 @@
   "scripts": {
     "start": "http-server ./app -s -p 3000",
     "deploy": "gh-pages -d app",
-    "dev": "npm start & webpack -w",
+    "dev": "yarn start & webpack -w",
     "test": "wct"
   },
   "repository": {
