@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -32,9 +32,6 @@
 /******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
 /******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
@@ -63,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -85,6 +82,15 @@ var Polymer = exports.Polymer = window.Polymer;
 "use strict";
 
 
+var _script = __webpack_require__(2);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 // Main library
 
 Object.defineProperty(exports, "__esModule", {
@@ -98,9 +104,9 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _polymer = __webpack_require__(0);
 
-var _script = __webpack_require__(5);
+var _script = __webpack_require__(3);
 
-var _script2 = __webpack_require__(7);
+var _script2 = __webpack_require__(4);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -184,7 +190,7 @@ var MainClab = exports.MainClab = function () {
 (0, _polymer.Polymer)(MainClab);
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -195,7 +201,7 @@ var MainClab = exports.MainClab = function () {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.InnerMenuClab = undefined;
+exports.CoverClab = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -203,141 +209,186 @@ var _polymer = __webpack_require__(0);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var InnerMenuClab = exports.InnerMenuClab = function () {
-	function InnerMenuClab() {
-		_classCallCheck(this, InnerMenuClab);
+var CoverClab = exports.CoverClab = function () {
+	function CoverClab() {
+		_classCallCheck(this, CoverClab);
 	}
 
-	_createClass(InnerMenuClab, [{
+	_createClass(CoverClab, [{
 		key: 'beforeRegister',
 		value: function beforeRegister() {
-			this.is = 'inner-menu-clab';
+			this.is = "cover-clab";
 			this.properties = {
-				menu: {
-					type: Array
-				},
-				mobileToggle: {
+				beta: {
 					type: Boolean,
-					value: false,
-					observer: '_mobileToggle'
+					value: false
 				},
-				curUrl: {
+				version: {
 					type: String,
-					observer: '_closeSubmenu'
+					value: '0.0.0'
 				}
 			};
 		}
-
-		/* ------------------
-  	EVENT HANDLERS
-  ------------------- */
-
 	}, {
-		key: '_handleOpen',
-		value: function _handleOpen(evt) {
-			var _this = this;
-
-			evt.preventDefault();
-			evt.stopPropagation();
-
-			var i;
-			switch (evt.target.localName) {
-				case 'a':
-					var i = evt.target.getAttribute('data-index');
-					break;
-				case 'i':
-					var i = evt.target.parentElement.getAttribute('data-index');
-					break;
-			}
-			this.menu.map(function (item, n) {
-				if (n == i) {
-					item.open ? _this.set('menu.' + n + '.open', false) : _this.set('menu.' + n + '.open', true);
-				} else {
-					_this.set('menu.' + n + '.open', false);
-				}
-			});
-
-			var windowClick = function windowClick(evt) {
-				// There isn't a conditional for the evt.target.classList.contains('inner-menu-clab') because the inner-menu has stopPropagation()
-				_this.menu.map(function (item, n) {
-					if (item.open) _this.set('menu.' + n + '.open', false);
-				});
-
-				window.removeEventListener('click', windowClick);
-			};
-			window.addEventListener('click', windowClick);
-		}
-	}, {
-		key: '_toggleMobileNav',
-		value: function _toggleMobileNav(evt) {
-			console.log('_toggleMobileNav', evt);
-			this.mobileToggle = !this.mobileToggle;
-		}
-	}, {
-		key: '_mobileToggle',
-		value: function _mobileToggle(newVal, oldVal) {
-			var elem = this.querySelector('ul.first-level');
-			if (newVal) {
-				elem.style.display = 'block';
-			} else {
-				elem.style.display = 'none';
-			}
-		}
-
-		/* ------------------
-  	OBSERVERS
-  ------------------- */
-
-	}, {
-		key: '_closeSubmenu',
-		value: function _closeSubmenu() {
-			var _this2 = this;
-
-			if (this.menu != undefined) {
-				this.menu.map(function (item, n) {
-					_this2.set('menu.' + n + '.open', false);
-				});
-			}
-		}
-
-		/* ------------------
-  	COMPUTED
-  ------------------- */
-
-	}, {
-		key: '_computeShow',
-		value: function _computeShow(open) {
-			if (open) return 'show';else return '';
-		}
-	}, {
-		key: '_computeActive',
-		value: function _computeActive(item, curUrl) {
-			var arr = [];
-			//se è con l'url quindi di 2° livello
-			if (item.url) {
-				var urlArr = item.url.split('/');
-				var curUrlArr = curUrl.split('/');
-				if (urlArr[urlArr.length - 1] == curUrlArr[curUrlArr.length - 1]) arr.push('active');
-			}
-			//se è senza url quindi con altri submenu
-			if (item.submenu) {
-				arr.push('submenu');
-				item.submenu.map(function (el, i) {
-					if (curUrl.search(el.url) > -1) arr.push('active');
-				});
-			}
-
-			return arr.join(' ');
+		key: '_computeYear',
+		value: function _computeYear() {
+			var date = new Date();
+			return date.getFullYear();
 		}
 	}]);
 
-	return InnerMenuClab;
+	return CoverClab;
 }();
 
-(0, _polymer.Polymer)(InnerMenuClab);
+(0, _polymer.Polymer)(CoverClab);
 
 /***/ }),
-/* 3 */
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Main library
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.LibraryClab = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+// components
+
+// Menu
+
+
+var _polymer = __webpack_require__(0);
+
+var _script = __webpack_require__(5);
+
+var _script2 = __webpack_require__(6);
+
+var _menu = __webpack_require__(7);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var LibraryClab = exports.LibraryClab = function () {
+	function LibraryClab() {
+		_classCallCheck(this, LibraryClab);
+	}
+
+	_createClass(LibraryClab, [{
+		key: 'beforeRegister',
+		value: function beforeRegister() {
+			this.is = "library-clab";
+			this.properties = {
+				page: {
+					type: String,
+					observer: '_pageChanged'
+				},
+				submenu: {
+					type: Array
+				},
+				submenuLabel: {
+					type: String
+				},
+				currentHash: {
+					type: String,
+					value: window.location.hash
+				},
+				beta: {
+					type: Boolean,
+					value: false
+				},
+				menu: {
+					type: Array,
+					value: _menu.AppMenu
+				}
+			};
+		}
+	}, {
+		key: 'attached',
+		value: function attached() {
+			this.fire('libraryLoaded');
+		}
+	}, {
+		key: 'scrollToY',
+		value: function scrollToY(scrollTargetY, speed, easing) {
+			// scrollTargetY: the target scrollY property of the window
+			// speed: time in pixels per second
+			// easing: easing equation to use
+			var scrollY = window.scrollY,
+			    scrollTargetY = scrollTargetY || 0,
+			    speed = speed || 2000,
+			    easing = easing || 'easeOutSine',
+			    currentTime = 0;
+
+			var time = Math.max(.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, .8));
+
+			// easing equations from https://github.com/danro/easing-js/blob/master/easing.js
+			var PI_D2 = Math.PI / 2,
+			    easingEquations = {
+				easeOutSine: function easeOutSine(pos) {
+					return Math.sin(pos * (Math.PI / 2));
+				},
+				easeInOutSine: function easeInOutSine(pos) {
+					return -0.5 * (Math.cos(Math.PI * pos) - 1);
+				},
+				easeInOutQuint: function easeInOutQuint(pos) {
+					if ((pos /= 0.5) < 1) {
+						return 0.5 * Math.pow(pos, 5);
+					}
+					return 0.5 * (Math.pow(pos - 2, 5) + 2);
+				}
+			};
+
+			function tick() {
+				currentTime += 1 / 60;
+				var p = currentTime / time;
+				var t = easingEquations[easing](p);
+				if (p < 1) {
+					requestAnimFrame(tick);
+					window.scrollTo(0, scrollY + (scrollTargetY - scrollY) * t);
+				} else {
+					window.scrollTo(0, scrollTargetY);
+				}
+			}
+
+			tick();
+		}
+	}, {
+		key: '_menuChange',
+		value: function _menuChange(evt) {
+			this.set('submenu', evt.detail.links);
+			this.submenuLabel = evt.detail.label;
+		}
+	}, {
+		key: '_pageChanged',
+		value: function _pageChanged() {
+			this.currentHash = window.location.hash;
+			this.scrollToY(0, 1500, 'easeInOutQuint');
+			// this.querySelector('nav.main-nav').classList.remove('show');
+		}
+	}, {
+		key: '_isPage',
+		value: function _isPage(cur, page) {
+			return cur === page;
+		}
+	}]);
+
+	return LibraryClab;
+}();
+
+(0, _polymer.Polymer)(LibraryClab);
+
+window.requestAnimFrame = function () {
+	return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
+		window.setTimeout(callback, 1000 / 60);
+	};
+}();
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -559,16 +610,7 @@ var MenuClabCust = exports.MenuClabCust = function () {
 (0, _polymer.Polymer)(MenuClabCust);
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _script = __webpack_require__(1);
-
-/***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -579,7 +621,7 @@ var _script = __webpack_require__(1);
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.CoverClab = undefined;
+exports.InnerMenuClab = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -587,41 +629,141 @@ var _polymer = __webpack_require__(0);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var CoverClab = exports.CoverClab = function () {
-	function CoverClab() {
-		_classCallCheck(this, CoverClab);
+var InnerMenuClab = exports.InnerMenuClab = function () {
+	function InnerMenuClab() {
+		_classCallCheck(this, InnerMenuClab);
 	}
 
-	_createClass(CoverClab, [{
+	_createClass(InnerMenuClab, [{
 		key: 'beforeRegister',
 		value: function beforeRegister() {
-			this.is = "cover-clab";
+			this.is = 'inner-menu-clab';
 			this.properties = {
-				beta: {
-					type: Boolean,
-					value: false
+				menu: {
+					type: Array
 				},
-				version: {
+				mobileToggle: {
+					type: Boolean,
+					value: false,
+					observer: '_mobileToggle'
+				},
+				curUrl: {
 					type: String,
-					value: '0.0.0'
+					observer: '_closeSubmenu'
 				}
 			};
 		}
+
+		/* ------------------
+  	EVENT HANDLERS
+  ------------------- */
+
 	}, {
-		key: '_computeYear',
-		value: function _computeYear() {
-			var date = new Date();
-			return date.getFullYear();
+		key: '_handleOpen',
+		value: function _handleOpen(evt) {
+			var _this = this;
+
+			evt.preventDefault();
+			evt.stopPropagation();
+
+			var i;
+			switch (evt.target.localName) {
+				case 'a':
+					var i = evt.target.getAttribute('data-index');
+					break;
+				case 'i':
+					var i = evt.target.parentElement.getAttribute('data-index');
+					break;
+			}
+			this.menu.map(function (item, n) {
+				if (n == i) {
+					item.open ? _this.set('menu.' + n + '.open', false) : _this.set('menu.' + n + '.open', true);
+				} else {
+					_this.set('menu.' + n + '.open', false);
+				}
+			});
+
+			var windowClick = function windowClick(evt) {
+				// There isn't a conditional for the evt.target.classList.contains('inner-menu-clab') because the inner-menu has stopPropagation()
+				_this.menu.map(function (item, n) {
+					if (item.open) _this.set('menu.' + n + '.open', false);
+				});
+
+				window.removeEventListener('click', windowClick);
+			};
+			window.addEventListener('click', windowClick);
+		}
+	}, {
+		key: '_toggleMobileNav',
+		value: function _toggleMobileNav(evt) {
+			console.log('_toggleMobileNav', evt);
+			this.mobileToggle = !this.mobileToggle;
+		}
+	}, {
+		key: '_mobileToggle',
+		value: function _mobileToggle(newVal, oldVal) {
+			var elem = this.querySelector('ul.first-level');
+			if (newVal) {
+				elem.style.display = 'block';
+			} else {
+				elem.style.display = 'none';
+			}
+		}
+
+		/* ------------------
+  	OBSERVERS
+  ------------------- */
+
+	}, {
+		key: '_closeSubmenu',
+		value: function _closeSubmenu() {
+			var _this2 = this;
+
+			if (this.menu != undefined) {
+				this.menu.map(function (item, n) {
+					_this2.set('menu.' + n + '.open', false);
+				});
+			}
+		}
+
+		/* ------------------
+  	COMPUTED
+  ------------------- */
+
+	}, {
+		key: '_computeShow',
+		value: function _computeShow(open) {
+			if (open) return 'show';else return '';
+		}
+	}, {
+		key: '_computeActive',
+		value: function _computeActive(item, curUrl) {
+			var arr = [];
+			//se è con l'url quindi di 2° livello
+			if (item.url) {
+				var urlArr = item.url.split('/');
+				var curUrlArr = curUrl.split('/');
+				if (urlArr[urlArr.length - 1] == curUrlArr[curUrlArr.length - 1]) arr.push('active');
+			}
+			//se è senza url quindi con altri submenu
+			if (item.submenu) {
+				arr.push('submenu');
+				item.submenu.map(function (el, i) {
+					if (curUrl.search(el.url) > -1) arr.push('active');
+				});
+			}
+
+			return arr.join(' ');
 		}
 	}]);
 
-	return CoverClab;
+	return InnerMenuClab;
 }();
 
-(0, _polymer.Polymer)(CoverClab);
+(0, _polymer.Polymer)(InnerMenuClab);
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -757,151 +899,6 @@ var AppMenu = exports.AppMenu = [{
 		"url": "https://github.com/contactlab/contactlab-ui-components/releases"
 	}]
 }];
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Main library
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.LibraryClab = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-// components
-
-// Menu
-
-
-var _polymer = __webpack_require__(0);
-
-var _script = __webpack_require__(3);
-
-var _script2 = __webpack_require__(2);
-
-var _menu = __webpack_require__(6);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var LibraryClab = exports.LibraryClab = function () {
-	function LibraryClab() {
-		_classCallCheck(this, LibraryClab);
-	}
-
-	_createClass(LibraryClab, [{
-		key: 'beforeRegister',
-		value: function beforeRegister() {
-			this.is = "library-clab";
-			this.properties = {
-				page: {
-					type: String,
-					observer: '_pageChanged'
-				},
-				submenu: {
-					type: Array
-				},
-				submenuLabel: {
-					type: String
-				},
-				currentHash: {
-					type: String,
-					value: window.location.hash
-				},
-				beta: {
-					type: Boolean,
-					value: false
-				},
-				menu: {
-					type: Array,
-					value: _menu.AppMenu
-				}
-			};
-		}
-	}, {
-		key: 'attached',
-		value: function attached() {
-			this.fire('libraryLoaded');
-		}
-	}, {
-		key: 'scrollToY',
-		value: function scrollToY(scrollTargetY, speed, easing) {
-			// scrollTargetY: the target scrollY property of the window
-			// speed: time in pixels per second
-			// easing: easing equation to use
-			var scrollY = window.scrollY,
-			    scrollTargetY = scrollTargetY || 0,
-			    speed = speed || 2000,
-			    easing = easing || 'easeOutSine',
-			    currentTime = 0;
-
-			var time = Math.max(.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, .8));
-
-			// easing equations from https://github.com/danro/easing-js/blob/master/easing.js
-			var PI_D2 = Math.PI / 2,
-			    easingEquations = {
-				easeOutSine: function easeOutSine(pos) {
-					return Math.sin(pos * (Math.PI / 2));
-				},
-				easeInOutSine: function easeInOutSine(pos) {
-					return -0.5 * (Math.cos(Math.PI * pos) - 1);
-				},
-				easeInOutQuint: function easeInOutQuint(pos) {
-					if ((pos /= 0.5) < 1) {
-						return 0.5 * Math.pow(pos, 5);
-					}
-					return 0.5 * (Math.pow(pos - 2, 5) + 2);
-				}
-			};
-
-			function tick() {
-				currentTime += 1 / 60;
-				var p = currentTime / time;
-				var t = easingEquations[easing](p);
-				if (p < 1) {
-					requestAnimFrame(tick);
-					window.scrollTo(0, scrollY + (scrollTargetY - scrollY) * t);
-				} else {
-					window.scrollTo(0, scrollTargetY);
-				}
-			}
-
-			tick();
-		}
-	}, {
-		key: '_menuChange',
-		value: function _menuChange(evt) {
-			this.set('submenu', evt.detail.links);
-			this.submenuLabel = evt.detail.label;
-		}
-	}, {
-		key: '_pageChanged',
-		value: function _pageChanged() {
-			this.currentHash = window.location.hash;
-			this.scrollToY(0, 1500, 'easeInOutQuint');
-			// this.querySelector('nav.main-nav').classList.remove('show');
-		}
-	}, {
-		key: '_isPage',
-		value: function _isPage(cur, page) {
-			return cur === page;
-		}
-	}]);
-
-	return LibraryClab;
-}();
-
-(0, _polymer.Polymer)(LibraryClab);
-
-window.requestAnimFrame = function () {
-	return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
-		window.setTimeout(callback, 1000 / 60);
-	};
-}();
 
 /***/ })
 /******/ ]);
