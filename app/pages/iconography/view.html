@@ -3,194 +3,193 @@
 
 
 <dom-module id="page-iconography">
-	<style></style>
+  <style></style>
 
-	<template>
-		<h2>Ikonograph</h2>
-		<section>
-			<article class="component">
-				<div class="specs">
-					<p>We have built our own icon library <strong>Ikonograph</strong>, as an open source project meant to be used both itself alone or in conjunction with the rest of the Contactlab Pattern Library tools. You can fin the installation instructions on <a href="https://github.com/contactlab/ikonograph" target="_blank">the repo's readme</a>.</p>
-				</div>
-				<div class="example">
-				</div>
-			</article>
-		</section>
+  <template>
+    <h2>Ikonograph</h2>
+    <section>
+      <article class="component">
+        <div class="specs">
+          <p>We have built our own icon library <strong>Ikonograph</strong>, as an open source project meant to be used both itself alone or in conjunction with the rest of the Contactlab Pattern Library tools. You can fin the installation instructions on <a href="https://github.com/contactlab/ikonograph" target="_blank">the repo's readme</a>.</p>
+        </div>
+        <div class="example">
+        </div>
+      </article>
+    </section>
 
-		<tabs-clab labels='["v3", "v2"]'>
-			<div class="tab-content">
+    <tabs-clab labels='["Latest", "v2"]'>
+      <div class="tab-content">
 
-				<section>
-					<input-clab
-						label="Search"
-						placeholder="Type an icon to search"
-						value="{{query::keyup}}">
-					</input-clab>
-				</section>
+        <section>
+          <input-clab
+            label="Search"
+            placeholder="Type an icon to search"
+            value="{{query::keyup}}">
+          </input-clab>
+        </section>
 
-				<h3>Web Application Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[webapp3]]" filter="[[_computeFilter(query)]]">
-							<icon-demo-v3 name="[[item]]"></icon-demo-v3>
-						</template>
-					</article>
-				</section>
+        <h3>Web Application Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[webapp3]]" filter="[[_computeFilter(query)]]">
+              <icon-demo-v3 name="[[item]]"></icon-demo-v3>
+            </template>
+          </article>
+        </section>
 
-				<h3>Social</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[social3]]" filter="[[_computeFilter(query)]]">
-							<icon-demo-v3 name="[[item]]"></icon-demo-v3>
-						</template>
-					</article>
-				</section>
+        <h3>Social</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[social3]]" filter="[[_computeFilter(query)]]">
+              <icon-demo-v3 name="[[item]]"></icon-demo-v3>
+            </template>
+          </article>
+        </section>
 
-				<h3>File Type Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[file3]]" filter="[[_computeFilter(query)]]">
-							<icon-demo-v3 name="[[item]]"></icon-demo-v3>
-						</template>
-					</article>
-				</section>
+        <h3>File Type Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[file3]]" filter="[[_computeFilter(query)]]">
+              <icon-demo-v3 name="[[item]]"></icon-demo-v3>
+            </template>
+          </article>
+        </section>
 
-				<h3>Directional Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[directional3]]" filter="[[_computeFilter(query)]]">
-							<icon-demo-v3 name="[[item]]"></icon-demo-v3>
-						</template>
-					</article>
-				</section>
+        <h3>Directional Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[directional3]]" filter="[[_computeFilter(query)]]">
+              <icon-demo-v3 name="[[item]]"></icon-demo-v3>
+            </template>
+          </article>
+        </section>
 
-				<h3>Devices Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[devices3]]" filter="[[_computeFilter(query)]]">
-							<icon-demo-v3 name="[[item]]"></icon-demo-v3>
-						</template>
-					</article>
-				</section>
+        <h3>Devices Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[devices3]]" filter="[[_computeFilter(query)]]">
+              <icon-demo-v3 name="[[item]]"></icon-demo-v3>
+            </template>
+          </article>
+        </section>
 
-				<h3>Charts Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[charts]]" filter="[[_computeFilter(query)]]">
-							<icon-demo-v3 name="[[item]]"></icon-demo-v3>
-						</template>
-					</article>
-				</section>
+        <h3>Charts Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[charts3]]" filter="[[_computeFilter(query)]]">
+              <icon-demo-v3 name="[[item]]"></icon-demo-v3>
+            </template>
+          </article>
+        </section>
 
-				<h3>Video players Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[player3]]" filter="[[_computeFilter(query)]]">
-							<icon-demo-v3 name="[[item]]"></icon-demo-v3>
-						</template>
-					</article>
-				</section>
+        <h3>Video players Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[player3]]" filter="[[_computeFilter(query)]]">
+              <icon-demo-v3 name="[[item]]"></icon-demo-v3>
+            </template>
+          </article>
+        </section>
+      </div>
 
-			</div>
+      <div class="tab-content">
+        <section>
+          <input-clab
+            label="Search"
+            placeholder="Type an icon to search"
+            value="{{query::keyup}}">
+          </input-clab>
+        </section>
 
-			<div class="tab-content">
-				<section>
-					<input-clab
-						label="Search"
-						placeholder="Type an icon to search"
-						value="{{query::keyup}}">
-					</input-clab>
-				</section>
+        <h3>Web Application Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[webapp]]" filter="[[_computeFilter(query)]]">
+              <icon-demo name="[[item]]"></icon-demo>
+            </template>
+          </article>
+        </section>
+        <hr class="dashed">
+        <h3>Social</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[social]]" filter="[[_computeFilter(query)]]">
+              <icon-demo name="[[item]]"></icon-demo>
+            </template>
+          </article>
+        </section>
+        <hr class="dashed">
+        <h3>Form Control Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[form]]" filter="[[_computeFilter(query)]]">
+              <icon-demo name="[[item]]"></icon-demo>
+            </template>
+          </article>
+        </section>
+        <hr class="dashed">
+        <h3>File Type Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[file]]" filter="[[_computeFilter(query)]]">
+              <icon-demo name="[[item]]"></icon-demo>
+            </template>
+          </article>
+        </section>
+        <hr class="dashed">
+        <h3>Directional Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[directional]]" filter="[[_computeFilter(query)]]">
+              <icon-demo name="[[item]]"></icon-demo>
+            </template>
+          </article>
+        </section>
+        <hr class="dashed">
+        <h3>Devices Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[devices]]" filter="[[_computeFilter(query)]]">
+              <icon-demo name="[[item]]"></icon-demo>
+            </template>
+          </article>
+        </section>
+        <hr class="dashed">
+        <h3>Video players Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[player]]" filter="[[_computeFilter(query)]]">
+              <icon-demo name="[[item]]"></icon-demo>
+            </template>
+          </article>
+        </section>
+        <hr class="dashed">
+        <h3>Charts Icons</h3>
+        <section>
+          <article class="iconography">
+            <template is="dom-repeat" items="[[charts]]" filter="[[_computeFilter(query)]]">
+                  <icon-demo name="[[item]]"></icon-demo>
+            </template>
+          </article>
+        </section>
+        <hr class="dashed">
+        <h3>Corporate icons</h3>
+        <section>
+          <article class="iconography corporate">
+            <template is="dom-repeat" items="[[corporate]]" filter="[[_computeFilter(query)]]">
+                  <icon-demo name="[[item]]"></icon-demo>
+            </template>
+          </article>
+        </section>
+      </div>
+    </tabs-clab>
+  </template>
 
-				<h3>Web Application Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[webapp]]" filter="[[_computeFilter(query)]]">
-							<icon-demo name="[[item]]"></icon-demo>
-						</template>
-					</article>
-				</section>
-				<hr class="dashed">
-				<h3>Social</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[social]]" filter="[[_computeFilter(query)]]">
-							<icon-demo name="[[item]]"></icon-demo>
-						</template>
-					</article>
-				</section>
-				<hr class="dashed">
-				<h3>Form Control Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[form]]" filter="[[_computeFilter(query)]]">
-							<icon-demo name="[[item]]"></icon-demo>
-						</template>
-					</article>
-				</section>
-				<hr class="dashed">
-				<h3>File Type Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[file]]" filter="[[_computeFilter(query)]]">
-							<icon-demo name="[[item]]"></icon-demo>
-						</template>
-					</article>
-				</section>
-				<hr class="dashed">
-				<h3>Directional Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[directional]]" filter="[[_computeFilter(query)]]">
-							<icon-demo name="[[item]]"></icon-demo>
-						</template>
-					</article>
-				</section>
-				<hr class="dashed">
-				<h3>Devices Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[devices]]" filter="[[_computeFilter(query)]]">
-							<icon-demo name="[[item]]"></icon-demo>
-						</template>
-					</article>
-				</section>
-				<hr class="dashed">
-				<h3>Video players Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[player]]" filter="[[_computeFilter(query)]]">
-							<icon-demo name="[[item]]"></icon-demo>
-						</template>
-					</article>
-				</section>
-				<hr class="dashed">
-				<h3>Charts Icons</h3>
-				<section>
-					<article class="iconography">
-						<template is="dom-repeat" items="[[charts]]" filter="[[_computeFilter(query)]]">
-									<icon-demo name="[[item]]"></icon-demo>
-						</template>
-					</article>
-				</section>
-				<hr class="dashed">
-				<h3>Corporate icons</h3>
-				<section>
-					<article class="iconography corporate">
-						<template is="dom-repeat" items="[[corporate]]" filter="[[_computeFilter(query)]]">
-									<icon-demo name="[[item]]"></icon-demo>
-						</template>
-					</article>
-				</section>
-			</div>
-		</tabs-clab>
-	</template>
+  <script>
 
-	<script>
-
-		Polymer({
-			is:'page-iconography',
-			properties: {
+    Polymer({
+      is:'page-iconography',
+      properties: {
         query: {
           type: String,
           notify: true,
@@ -198,24 +197,24 @@
         webapp: {
           type: Array,
           value: ['agenda', 'analytics', 'attachment', 'bulb', 'calendar', 'cards', 'chat', 'check', 'clock', 'close', 'close-circle',
-									'close-circle-full', 'code', 'copy', 'dashboard', 'diamond', 'digital-campaign', 'documentation', 'dots', 'download',
-									'drag', 'ecommerce', 'edit', 'email', 'equal', 'equal-circle', 'equal-circle-full', 'erase', 'expand', 'eye', 'eye-hide',
-									'faq', 'filter', 'filter-2', 'filter-full', 'folder', 'gear', 'gender', 'gift', 'hamburger-menu', 'heart', 'heart-full',
-									'image', 'info', 'info-full', 'link', 'list', 'lock', 'minus', 'minus-circle', 'minus-circle-full', 'news', 'phone',
-									'pin', 'plus', 'plus-circle', 'plus-circle-full', 'power', 'refresh', 'resize', 'retail', 'save', 'search', 'segment',
-									'send', 'settings', 'smile', 'support', 'system', 'switch-off', 'switch-on', 'tag', 'tag-full', 'trash', 'unlink',
-									'upload', 'user', 'users', 'wand', 'warning', 'warning-full']
+                  'close-circle-full', 'code', 'copy', 'dashboard', 'diamond', 'digital-campaign', 'documentation', 'dots', 'download',
+                  'drag', 'ecommerce', 'edit', 'email', 'equal', 'equal-circle', 'equal-circle-full', 'erase', 'expand', 'eye', 'eye-hide',
+                  'faq', 'filter', 'filter-2', 'filter-full', 'folder', 'gear', 'gender', 'gift', 'hamburger-menu', 'heart', 'heart-full',
+                  'image', 'info', 'info-full', 'link', 'list', 'lock', 'minus', 'minus-circle', 'minus-circle-full', 'news', 'phone',
+                  'pin', 'plus', 'plus-circle', 'plus-circle-full', 'power', 'refresh', 'resize', 'retail', 'save', 'search', 'segment',
+                  'send', 'settings', 'smile', 'support', 'system', 'switch-off', 'switch-on', 'tag', 'tag-full', 'trash', 'unlink',
+                  'upload', 'user', 'users', 'wand', 'warning', 'warning-full']
         },
         webapp3: {
           type: Array,
-          value: ['agenda', 'analytics', 'attachment', 'bulb', 'calendar', 'cards', 'chat', 'check', 'clock', 'close', 'close-circle',
-									'close-circle-full', 'code', 'copy', 'dashboard', 'diamond', 'bell', 'documentation', 'dots', 'download',
-									'drag', 'ecommerce', 'edit', 'email', 'equal', 'equal-circle', 'equal-circle-full', 'erase', 'expand', 'eye', 'eye-hide',
-									'faq', 'filter', 'order', 'filter-full', 'folder', 'gear', 'gender', 'gift', 'hamburger-menu', 'heart', 'heart-full',
-									'image', 'info', 'info-full', 'link', 'list', 'lock', 'minus', 'minus-circle', 'minus-circle-full', 'news', 'phone',
-									'pin', 'plus', 'plus-circle', 'plus-circle-full', 'power', 'refresh', 'resize', 'retail', 'save', 'search', 'segment',
-									'send', 'settings', 'smile', 'support', 'system', 'tag', 'tag-full', 'trash', 'unlink',
-									'upload', 'user', 'users', 'wand', 'warning']
+          value: ['agenda', 'agenda-full', 'analytics', 'attachment', 'bulb', 'bulb-full', 'calendar', 'calendar-full', 'cards', 'cards-full', 'chat', 'chat-full', 'check', 'clock', 'clock-full', 'close', 'close-circle',
+                  'close-circle-full', 'code', 'copy', 'copy-full', 'dashboard', 'dashboard-full', 'diamond', 'diamond-full', 'bell', 'bell-full', 'documentation', 'documentation-full', 'dots', 'download', 'download-full',
+                  'drag', 'ecommerce', 'ecommerce-full', 'edit', 'edit-full', 'email', 'email-full', 'equal', 'equal-circle', 'equal-circle-full', 'erase', 'erase-full', 'expand', 'expand-full', 'eye', 'eye-full', 'eye-hide', 'eye-hide-full',
+                  'faq', 'faq-full', 'filter', 'filter-full', 'order', 'folder', 'folder-full', 'gear', 'gear-full', 'gender', 'gift', 'gift-full', 'hamburger-menu', 'heart', 'heart-full',
+                  'image', 'image-full', 'info', 'info-full', 'link', 'list', 'list-full', 'lock', 'lock-full', 'minus', 'minus-circle', 'minus-circle-full', 'news', 'news-full', 'phone', 'phone-full',
+                  'pin', 'pin-full', 'plus', 'plus-circle', 'plus-circle-full', 'power', 'refresh', 'resize', 'retail', 'retail-full', 'save', 'save-full', 'search', 'search-full', 'segment', 'segment-full',
+                  'send', 'send-full', 'settings', 'settings-full', 'smile', 'smile-full', 'support', 'support-full', 'system', 'system-full', 'tag', 'tag-full', 'trash', 'trash-full', 'unlink',
+                  'upload', 'upload-full', 'user', 'user-full', 'users', 'users-full', 'wand', 'wand-full', 'warning', 'warning-full']
         },
         social: {
           type: Array,
@@ -223,61 +222,61 @@
         },
         social3: {
           type: Array,
-          value: ['facebook', 'google-plus', 'linkedin', 'twitter' ]
+          value: ['facebook', 'google-plus', 'linkedin', 'twitter', 'github', 'youtube', 'pinterest' ]
         },
-				form: {
-					type: Array,
+        form: {
+          type: Array,
           value: ['checkbox', 'checkbox-select', 'radio', 'radio-select' ]
-				},
-				file: {
-					type: Array,
-     			value: ['file', 'file-code', 'file-csv', 'file-doc', 'file-log', 'file-pdf', 'file-ppt', 'file-xls', 'file-zip' ]
-				},
-				file3: {
-					type: Array,
-     			value: ['file', 'file-code', 'file-csv', 'file-doc', 'file-log', 'file-pdf', 'file-ppt', 'file-xls', 'file-zip' ]
-				},
-				directional: {
-					type: Array,
-      	 	value: ['arrow-down', 'arrow-left', 'arrow-right', 'arrow-top', 'double-arrow-left', 'double-arrow-right', 'arrow-full-down',
-									'arrow-full-left', 'arrow-full-right', 'arrow-full-top' ]
-				},
-				directional3: {
-					type: Array,
-      	 	value: ['angle-down', 'angle-left', 'angle-right', 'angle-top', 'double-arrow-left', 'double-arrow-right', 'arrow-down',
-									'arrow-left', 'arrow-right', 'arrow-top' ]
-				},
-				devices: {
-					type: Array,
-   	  	  value: ['desktop', 'devices', 'laptop', 'smartphone', 'smartwatch', 'tablet']
-				},
-				devices3: {
-					type: Array,
-   	  	  value: ['desktop', 'devices', 'laptop', 'smartphone', 'smartwatch', 'tablet']
-				},
-				player: {
-					type: Array,
+        },
+        file: {
+          type: Array,
+           value: ['file', 'file-code', 'file-csv', 'file-doc', 'file-log', 'file-pdf', 'file-ppt', 'file-xls', 'file-zip' ]
+        },
+        file3: {
+          type: Array,
+           value: ['file', 'file-full', 'file-code', 'file-code-full', 'file-csv', 'file-csv-full', 'file-doc', 'file-doc-full', 'file-log', 'file-log-full', 'file-pdf', 'file-pdf-full', 'file-ppt', 'file-ppt-full', 'file-xls', 'file-xls-full', 'file-zip', 'file-zip-full' ]
+        },
+        directional: {
+          type: Array,
+           value: ['arrow-down', 'arrow-left', 'arrow-right', 'arrow-top', 'double-arrow-left', 'double-arrow-right', 'arrow-full-down',
+                  'arrow-full-left', 'arrow-full-right', 'arrow-full-top' ]
+        },
+        directional3: {
+          type: Array,
+           value: ['angle-down', 'angle-left', 'angle-right', 'angle-top', 'double-arrow-left', 'double-arrow-right', 'arrow-down',
+                  'arrow-left', 'arrow-right', 'arrow-top' ]
+        },
+        devices: {
+          type: Array,
+           value: ['desktop', 'devices', 'laptop', 'smartphone', 'smartwatch', 'tablet']
+        },
+        devices3: {
+          type: Array,
+           value: ['desktop', 'desktop-full', 'devices', 'devices-full', 'laptop', 'laptop-full', 'smartphone', 'smartphone-full', 'smartwatch', 'smartwatch-full', 'tablet', 'tablet-full']
+        },
+        player: {
+          type: Array,
           value: ['previous', 'rewind', 'play', 'pause', 'stop', 'forward', 'skip']
-				},
-				player3: {
-					type: Array,
-          value: ['fast-backward', 'backward', 'play', 'pause', 'stop', 'forward', 'fast-forward']
-				},
-				charts: {
-					type: Array,
+        },
+        player3: {
+          type: Array,
+          value: ['fast-backward', 'fast-backward-full', 'backward', 'backward-full', 'play', 'play-full', 'pause', 'pause-full', 'stop', 'stop-full', 'forward', 'forward-full', 'fast-forward', 'fast-forward-full']
+        },
+        charts: {
+          type: Array,
           value: ['chart-area', 'chart-pie', 'chart-bars']
-				},
-				charts3: {
-					type: Array,
-          value: ['chart-area', 'chart-pie', 'chart-bars']
-				},
-				corporate: {
-					type: Array,
+        },
+        charts3: {
+          type: Array,
+          value: ['chart-area', 'chart-area-full', 'chart-pie', 'chart-pie-full', 'chart-bars', 'chart-bars-full']
+        },
+        corporate: {
+          type: Array,
           value: ['contactlab', 'sign', 'sign-full']
-				}
+        }
       },
 
-			_computeFilter: function(string){
+      _computeFilter: function(string){
         if (!string || string === '') {
           return null;
         } else {
@@ -287,7 +286,7 @@
           }
         }
       }
-		});
+    });
 
-	</script>
+  </script>
 </dom-module>
