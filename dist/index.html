@@ -14,32 +14,24 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="#0072bc">
 
 	<!-- Styles -->
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/bower/ikonograph3/dist/ikonograph.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/ikonograph/ikonograph.css">
 
 	<!-- Scripts -->
-	<script src="assets/bower/webcomponentsjs/webcomponents-lite.min.js"></script>
+	<script src="./assets/webcomponents-lite.min.js"></script>
+	<script src="./polyfills.js"></script>
 	<script>
-		/* Polymer global settings (laziregister, shadowdom) */
-		window.Polymer = {
-		//  dom: 'shadow',
-		//  lazyRegister: true
-		};
-
 		/* Remove loading spinner when WebComponents polyfill is fully loaded */
 		window.addEventListener('WebComponentsReady', function(e) {
 			document.querySelector('.spinner-overlay.app-load').style.display = 'none';
 			var script = document.createElement('script');
-			script.src = 'bundle.js';
+			script.src = 'main.js';
 			document.body.appendChild(script);
 		});
 	</script>
-	<script src="assets/bower/es6-promise/es6-promise.min.js"></script>
-	<script src="assets/bower/fetch/fetch.js"></script>
-	<script src="assets/bower/fetch-jsonp/build/fetch-jsonp.js"></script>
 
 	<!-- Components -->
-	<link rel="import" href="./components/main/view.html">
+	<link rel="import" href="./assets/polymer.html">
 
 	<!-- FB metadata -->
 	<meta property="og:title" content="Contactlab Pattern Library"/>

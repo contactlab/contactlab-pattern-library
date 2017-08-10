@@ -19,7 +19,7 @@ export class CoverClab {
 	}
 
 	_computeYear(){
-		let date = new Date();
+		const date = new Date();
 		return date.getFullYear();
 	}
 }

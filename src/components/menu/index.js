@@ -1,6 +1,6 @@
 'use strict';
 
-// Main library
+import './view.html';
 import {Polymer} from './../../polymer';
 
 export class MenuClabCust{

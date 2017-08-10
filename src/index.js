@@ -1,3 +1,3 @@
 'use strict';
 
-import {MainClab} from './components/main/script.es6';
+import './components/main';

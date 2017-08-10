@@ -3,10 +3,10 @@
 // Main library
 import {Polymer} from './../../polymer';
 // components
-import {MenuClabCust} from './../../components/menu/script.es6';
-import {InnerMenuClab} from './../../components/inner-menu/script.es6';
+import './../../components/menu';
+import './../../components/inner-menu';
 // Menu
-import {AppMenu} from './menu.es6';
+import {AppMenu} from './menu';
 
 export class LibraryClab {
 	beforeRegister(){

@@ -1,10 +1,10 @@
 'use strict';
 
-// Main library
+import './view.html';
 import {Polymer} from './../../polymer';
 // Modules
-import {CoverClab} from './../../modules/cover/script.es6';
-import {LibraryClab} from './../../modules/library/script.es6';
+import './../../modules/cover';
+import './../../modules/library';
 
 export class MainClab {
 	beforeRegister(){
@@ -51,7 +51,6 @@ export class MainClab {
 	}
 
 	_isPage(data,cur, page){
-		//console.log(this.route.path, cur, page);
 		if(this.route.path.length < 2){
 			this.currentModule = 'home';
 		} else {
