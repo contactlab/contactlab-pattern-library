@@ -1,10 +1,14 @@
 'use strict';
 
+import 'contactlab-ui-components';
 import './view.html';
 import {Polymer} from './../../polymer';
+import router from './../../routing';
+import {routes} from './routes';
 // Modules
-import './../../modules/cover';
-import './../../modules/library';
+import './../cover';
+import './../library';
+
 
 export class MainClab {
 	beforeRegister(){
@@ -24,22 +28,26 @@ export class MainClab {
 			},
 			route: {
 				type: Object,
-				notify: true
-			},
-			pageData: {
-				type: Object,
-				notify: true
-			},
-			pageTail: {
-				type: Object,
-				notify: true
+				value: {
+					name: '',
+					path: ''
+				}
 			}
 		}
 	}
 
 	attached(){
-		let hash = window.location.hash;
+		const hash = window.location.hash;
 		!hash.length ? window.location.hash = '#/' : null;
+
+		router.add(routes).addListener((to, from) => {
+			console.log('router:', to, from);
+			this.route = Object.assign({}, to);
+			console.log(this.route);
+		}).start('test');
+
+		router.navigate('mytest');
+		console.log(router, router.isStarted());
 	}
 
 	_computeRibbon(visible, module){
@@ -51,6 +59,7 @@ export class MainClab {
 	}
 
 	_isPage(data,cur, page){
+		console.log(data, cur, page);
 		if(this.route.path.length < 2){
 			this.currentModule = 'home';
 		} else {
@@ -64,6 +73,7 @@ export class MainClab {
 				this.querySelector('library-clab').page = url[1];
 			}
 		}
+		console.log(this.currentModule);
 		return cur === page;
 	}
 
