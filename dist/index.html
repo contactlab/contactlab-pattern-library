@@ -19,9 +19,8 @@
 
 	<!-- Scripts -->
 	<script src="./assets/webcomponents-lite.min.js"></script>
-	<script src="./polyfills.js"></script>
 	<script>
-		const title = 'Pattern Library:';
+		var title = 'Pattern Library:';
 		console.log(title, 'polyfills loaded');
 		/* Remove loading spinner when WebComponents polyfill is fully loaded */
 		window.addEventListener('WebComponentsReady', function(e) {
@@ -33,6 +32,7 @@
 			document.body.appendChild(script);
 		});
 	</script>
+	<script src="./polyfills.js"></script>
 
 	<!-- Components -->
 	<link rel="import" href="./assets/polymer.html">

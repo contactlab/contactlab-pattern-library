@@ -22,7 +22,7 @@ export class MenuClabCust{
 			},
 			link: {
 				type:String,
-				value: '/'
+				value: '#/'
 			},
 			draft:{
 				type:String,
