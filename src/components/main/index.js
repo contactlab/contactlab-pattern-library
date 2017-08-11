@@ -8,6 +8,7 @@ import {routes} from './routes';
 // Modules
 import './../cover';
 import './../library';
+import './../gist-embed/';
 
 
 export class MainClab {
@@ -16,8 +17,7 @@ export class MainClab {
 		this.properties = {
 			currentModule: {
 				type: String,
-				value: null,
-				readonly: true
+				value: null
 			},
 			ribbon: {
 				type: Object,
@@ -32,6 +32,14 @@ export class MainClab {
 					name: '',
 					path: ''
 				}
+			},
+			libPage: {
+				type: String,
+				value: ''
+			},
+			cover: {
+				type: Boolean,
+				value: true
 			}
 		}
 	}
@@ -41,13 +49,9 @@ export class MainClab {
 		!hash.length ? window.location.hash = '#/' : null;
 
 		router.add(routes).addListener((to, from) => {
-			console.log('router:', to, from);
 			this.route = Object.assign({}, to);
-			console.log(this.route);
-		}).start('test');
+		}).start('/');
 
-		router.navigate('mytest');
-		console.log(router, router.isStarted());
 	}
 
 	_computeRibbon(visible, module){
@@ -58,22 +62,15 @@ export class MainClab {
 		}
 	}
 
-	_isPage(data,cur, page){
-		console.log(data, cur, page);
-		if(this.route.path.length < 2){
+	_isPage(data ,cur, page){
+		if (this.route.name === 'home'){
 			this.currentModule = 'home';
 		} else {
 			const url = this.route.path.replace('/').split('/');
 			this.currentModule = 'library';
-			if(!this.querySelector('library-clab')){
-				window.addEventListener('libraryLoaded',(evt)=>{
-					this.querySelector('library-clab').page = url[1];
-				});
-			} else {
-				this.querySelector('library-clab').page = url[1];
-			}
+			this.libPage = url[1];
 		}
-		console.log(this.currentModule);
+		console.log(cur, page, cur === page, this.route);
 		return cur === page;
 	}
 

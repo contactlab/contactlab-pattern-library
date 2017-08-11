@@ -11,7 +11,7 @@
 			<div class="content">
 				<header>
 					<div class="logo">
-						<a href$="[[link]]" on-tap="_linkClicked">
+						<a href$="[[link]]" on-click="_linkClicked">
 							<i class$="[[_computeTitleIcon(titleIcon)]]"></i>
 							<content select="span.product-name"></content>
 						</a>
@@ -25,7 +25,7 @@
 							<ul>
 								<template is="dom-repeat" items="[[_visibleMenu(menu)]]">
 									<li class$="[[_computeActive(currentHash, item.url)]]">
-										<a href$="[[_computeUrl(item)]]" on-tap="_linkClicked">[[item.label]]</a>
+										<a href$="[[_computeUrl(item)]]" on-click="_linkClicked">[[item.label]]</a>
 									</li>
 								</template>
 							</ul>
