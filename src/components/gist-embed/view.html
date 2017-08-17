@@ -1,0 +1,28 @@
+<dom-module id="gist-embed">
+	<style>
+	:host {
+	   display: block;
+		 /*background-color: white;*/
+	 }
+
+	:host .loading{
+		text-align: center;
+		color: #444;
+	}
+
+	:host,
+	:host .loading{
+		min-height: 24px;
+		line-height: 24px;
+	}
+
+	</style>
+
+	<template>
+		<template is="dom-if" if="[[_loading]]">
+			<div class="loading">Loading Gist from server...</div>
+		</template>
+    <link rel="stylesheet" href="[[_css]]">
+    <div id="embed"></div>
+	</template>
+</dom-module>

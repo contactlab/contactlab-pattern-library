@@ -6,8 +6,7 @@ This is the documentation website for the [Contactlab](http://www.contactlab.com
 
 ### Required tools
 
-- [NodeJS](https://nodejs.org/)
-- [Bower](https://bower.io/) (```$ npm install -g bower```)
+- [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com)
 
 ### Repository clone and dependencies installation
@@ -16,7 +15,6 @@ From the command line, run
 
 ```
 $ yarn install
-$ bower install
 ```
 
 to install required dependencies.
