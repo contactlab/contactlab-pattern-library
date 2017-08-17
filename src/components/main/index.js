@@ -46,8 +46,7 @@ export class MainClab {
 
 	attached(){
 		const hash = window.location.hash;
-		// !hash.length ? window.location.hash = '#/' : null;
-		const first = hash.split('#')[1] || '#/';
+		const first = hash.split('#')[1] || '/';
 
 		router.add(routes).addListener((to, from) => {
 			this.route = Object.assign({}, to);
@@ -64,7 +63,6 @@ export class MainClab {
 	}
 
 	_isPage(data ,cur, page){
-		console.log(cur, page, cur === page, this.route);
 		if (this.route.name === 'home'){
 			this.currentModule = 'home';
 			return true;
@@ -73,9 +71,7 @@ export class MainClab {
 			this.currentModule = 'library';
 			this.libPage = url[1];
 			return false;
-		}
-		
-		// return cur === page;
+		}		
 	}
 
 }

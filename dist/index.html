@@ -17,25 +17,9 @@
 	<link rel="stylesheet" href="./assets/css/style.css">
 	<link rel="stylesheet" href="./assets/ikonograph/ikonograph.css">
 
-	<!-- Scripts -->
-	<script src="./assets/webcomponents-lite.min.js"></script>
-	<script>
-		var title = 'Pattern Library:';
-		console.log(title, 'polyfills loaded');
-		/* Remove loading spinner when WebComponents polyfill is fully loaded */
-		window.addEventListener('WebComponentsReady', function(e) {
-			console.log(title, 'WebComponentsReady');
-			document.querySelector('.spinner-overlay.app-load').style.display = 'none';
-			var script = document.createElement('script');
-			script.async = true;
-			script.src = 'main.js';
-			document.body.appendChild(script);
-		});
-	</script>
-	<script src="./polyfills.js"></script>
-
-	<!-- Components -->
-	<link rel="import" href="./assets/polymer.html">
+	
+	<!-- Polymer -->
+	<link rel="import" href="./assets/polymer/polymer.html">
 
 	<!-- FB metadata -->
 	<meta property="og:title" content="Contactlab Pattern Library"/>
@@ -60,5 +44,28 @@
 
 	<!-- Main Application -->
 	<main-clab></main-clab>
+
+	<!-- Polyfills (fetch API, Promises, Web Components v0) -->
+	<script src="./polyfills.js"></script>
+	<script src="./assets/web-animations-next.min.js"></script>
+	<script src="./assets/webcomponents-lite.min.js"></script>
+
+	<script>
+		var title = 'Pattern Library:';
+
+		console.log(title, 'polyfills loaded');
+		/* Remove loading spinner when WebComponents polyfill is fully loaded */
+		window.addEventListener('WebComponentsReady', function (e) {
+			console.log(title, 'WebComponentsReady');
+
+			var main = document.createElement('script');
+				main.async = true;
+				main.src = 'main.js';
+				document.body.appendChild(main);
+				
+			document.querySelector('.spinner-overlay.app-load').style.display = 'none';
+		});
+	</script>
+
 </body>
 </html>

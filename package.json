@@ -10,7 +10,7 @@
   "scripts": {
     "start": "npm run serve",
     "serve": "http-server ./dist -s -p 3000",
-    "preserve": "npm run move:polymer & npm run move:vendors",
+    "preserve": "npm run move:vendors",
     "move:polymer": "polymer-bundler ./node_modules/@polymer/polymer/polymer.html > ./dist/assets/polymer.html",
     "move:vendors": "node ./scripts/move.js",
     "predeploy": "webpack",
@@ -33,7 +33,6 @@
     "file-loader": "0.11.2",
     "gh-pages": "1.0.0",
     "http-server": "0.10.0",
-    "polymer-bundler": "3.0.1",
     "process-nextick-args": "1.0.7",
     "recursive-copy": "2.0.6",
     "uglifyjs-webpack-plugin": "0.4.6",
@@ -49,6 +48,7 @@
     "ikonograph": "3.0.0",
     "promise-polyfill": "6.0.2",
     "router5": "5.1.5",
+    "web-animations-js": "2.3.1",
     "webcomponents.js": "0.7.24",
     "whatwg-fetch": "2.0.3"
   }
