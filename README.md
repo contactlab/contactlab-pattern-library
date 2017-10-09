@@ -14,7 +14,7 @@ This is the documentation website for the [Contactlab](http://www.contactlab.com
 From the command line, run
 
 ```
-$ yarn install
+$ yarn 
 ```
 
 to install required dependencies.
@@ -30,7 +30,7 @@ $ yarn start
 Running the command
 
 ```
-$ yarn run dev
+$ yarn dev
 ```
 
 you can work with Javascript files. This command automatically compiles ES6 to ES5 via Babel and Webpack.
@@ -42,7 +42,7 @@ you can work with Javascript files. This command automatically compiles ES6 to E
 Deploy on `gh-pages` by running:
 
 ```
-$ yarn run deploy
+$ yarn deploy
 ```
 
 ### Git branching policies

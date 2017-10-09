@@ -13,14 +13,31 @@
 					</p>
 					<button-clab on-click="_goToZip" type="primary">Download ZIP</button-clab>
 				</section>
+
 				<section>
-					<h3>Install with Bower</h3>
+					<h3>Install with Yarn</h3>
 					<p>
-						It is <b>strongly reccomended</b> to install and manage the Contactlab's Pattern Library using <a href="http://bower.io/" target="_blank">Bower</a>.
+						It is <b>strongly reccomended</b> to install and manage the Contactlab's Pattern Library using
+						<a href="https://yarnpkg.com/lang/en/" target="_blank">Yarn</a> as a package manager.
+					</p>
+					<div class="component-specs">
+						<gist-embed user="clab-gist" uuid="dfe8d1beb1a2a90bf6cd8dfa2a0be0bf" no-meta></gist-embed>
+					</div>
+				</section>
+				<section>
+					<h3>Legacy version</h3>
+					<p>
+						In case you need the <b>legacy</b> on <a href="http://bower.io/" target="_blank">Bower</a> 
+						you can still install it as:
 					</p>
 					<div class="component-specs">
 						<gist-embed user="clab-gist" uuid="019e41f3671de4a83fc0c2a11ff476a8" no-meta></gist-embed>
 					</div>
+
+					<label-clab type="info">
+						<i class="ikn ikn-info-full"></i> 
+							Please note that versions above 1.3.7 will not work on Bower environment.
+					</label-clab>	
 				</section>
 
 				<h2>What needs to be included</h2>
@@ -56,13 +73,16 @@
 						</div>
 					</tabs-clab>
 
-					<h3>CSS</h3>
+					<h3>Shady DOM + global CSS</h3>
+					<p>The current version of the Contactlab Pattern Library make use of the <b>Shady DOM</b> instead of the Shadow DOM and styles are applied
+					via a global CSS file, so after the package installation you should move, (manually or with an automation tool) the ./_assets/css/contactlab-pattern.min.css
+					file in a distributable folder and link to it.</p>
 					<div class="component-specs">
 						<gist-embed user="clab-gist" uuid="813470b467dae3bc640e24b51c657cd3" no-meta></gist-embed>
 					</div>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Starter templates</h3>
 					<p>
 						Start with this basic HTML template, or modify these examples. We hope you'll customize our templates and examples, adapting them to suit your needs.
@@ -75,7 +95,7 @@
 							<gist-embed user="clab-gist" uuid="867760823082c1cb2a94cb7ec495ab73" no-meta></gist-embed>
 						</div>
 					</tabs-clab>
-				</section>
+				</section> -->
 			</div>
 		</div>
 
