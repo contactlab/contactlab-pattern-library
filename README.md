@@ -6,8 +6,7 @@ This is the documentation website for the [Contactlab](http://www.contactlab.com
 
 ### Required tools
 
-- [NodeJS](https://nodejs.org/)
-- [Bower](https://bower.io/) (```$ npm install -g bower```)
+- [Node.js](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com)
 
 ### Repository clone and dependencies installation
@@ -15,8 +14,7 @@ This is the documentation website for the [Contactlab](http://www.contactlab.com
 From the command line, run
 
 ```
-$ yarn install
-$ bower install
+$ yarn 
 ```
 
 to install required dependencies.
@@ -32,7 +30,7 @@ $ yarn start
 Running the command
 
 ```
-$ yarn run dev
+$ yarn dev
 ```
 
 you can work with Javascript files. This command automatically compiles ES6 to ES5 via Babel and Webpack.
@@ -44,7 +42,7 @@ you can work with Javascript files. This command automatically compiles ES6 to E
 Deploy on `gh-pages` by running:
 
 ```
-$ yarn run deploy
+$ yarn deploy
 ```
 
 ### Git branching policies
