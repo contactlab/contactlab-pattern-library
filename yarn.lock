@@ -1584,9 +1584,9 @@ constants-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
 
-"contactlab-ui-components@https://github.com/contactlab/contactlab-ui-components#4e6442c5a3718a8f4878cbf981d583494589f99a":
-  version "1.3.6"
-  resolved "https://github.com/contactlab/contactlab-ui-components#4e6442c5a3718a8f4878cbf981d583494589f99a"
+contactlab-ui-components@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/contactlab-ui-components/-/contactlab-ui-components-1.4.0.tgz#d261381ac9ecefe165d01267e09f5cc8e684b344"
   dependencies:
     ikonograph "2.0.0"
     moment "2.17.1"
