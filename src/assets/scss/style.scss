@@ -1,9 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-$fa-font-path: "../bower/font-awesome/fonts";
-@import "../bower/font-awesome/scss/font-awesome";
-
 // COMPONENTS
-@import "../bower/clab-ui-components/_assets/scss/contactlab-pattern";
+@import "./../../../node_modules/contactlab-ui-components/_assets/scss/contactlab-pattern";
 
 @keyframes scroll-arrow-anim {
     0% {bottom: 10px;}

@@ -15,7 +15,7 @@ const options = {
 /* Polymer v1.x */
 copy('./node_modules/@polymer/polymer/', './dist/assets/polymer/', options, cb);
 
-/* Ikonograph v2 */
+/* Ikonograph v3 */
 copy('./node_modules/ikonograph/dist/', './dist/assets/ikonograph', options, cb);
 
 /* WebComponents v0 polyfill */

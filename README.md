@@ -19,31 +19,34 @@ $ yarn
 
 to install required dependencies.
 
-### Run
+
+
+### Available tasks
+
+Expose `./dist` folder on `localhost:3000`
 
 ```
 $ yarn start
 ```
 
-### Development
-
-Running the command
+Bundle and transpiles `.js` files in watch mode plus the `yarn start` action
 
 ```
 $ yarn dev
 ```
 
-you can work with Javascript files. This command automatically compiles ES6 to ES5 via Babel and Webpack.
+Compiles `.scss` files in the `./src` folder to `.css` file in `./dist` folder
 
-**Both** actions starts a webserver as explained above.
+```
+$ yarn css
+```
 
-### Deploy
-
-Deploy on `gh-pages` by running:
+Deploy `./dist` folder on remote `gh-pages` branch
 
 ```
 $ yarn deploy
 ```
+
 
 ### Git branching policies
 
