@@ -10,14 +10,14 @@
  */
 @charset "UTF-8";
 @font-face {
-  font-family: 'ikonograph-v2';
+  font-family: 'ikonograph';
   src: url("../fonts/ikonograph-v2.woff2?nlksfa") format("woff2"), url("../fonts/ikonograph-v2.woff?nlksfa") format("woff"), url("../fonts/ikonograph-v2.ttf?nlksfa") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 .clab-icon {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'ikonograph-v2' !important;
+  font-family: 'ikonograph' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
