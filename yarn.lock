@@ -1640,9 +1640,9 @@ constants-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
 
-contactlab-ui-components@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/contactlab-ui-components/-/contactlab-ui-components-1.4.0.tgz#d261381ac9ecefe165d01267e09f5cc8e684b344"
+contactlab-ui-components@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/contactlab-ui-components/-/contactlab-ui-components-1.4.2.tgz#c0b2f727d00fd57840d6f0b2bb23499ddac01390"
   dependencies:
     ikonograph "2.0.0"
     moment "2.17.1"
@@ -4896,7 +4896,7 @@ replace-ext@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-0.0.1.tgz#29bbd92078a739f0bcce2b4ee41e837953522924"
 
-request@2, request@2.81.0, request@^2.79.0:
+request@2, request@2.81.0, request@^2.53.0, request@^2.79.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:
@@ -4923,7 +4923,7 @@ request@2, request@2.81.0, request@^2.79.0:
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
-request@2.79.0, request@^2.53.0:
+request@2.79.0:
   version "2.79.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
   dependencies:

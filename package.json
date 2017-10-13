@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@polymer/polymer": "https://github.com/contactlab/polymer#87078d75f56d6c01f4a7c5a8863afb5f664d4639",
-    "contactlab-ui-components": "1.4.0",
+    "contactlab-ui-components": "1.4.2",
     "fetch-jsonp": "1.1.1",
     "ikonograph": "3.1.0",
     "promise-polyfill": "6.0.2",
