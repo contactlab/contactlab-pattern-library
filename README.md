@@ -1,4 +1,4 @@
-# Contactlab Pattern Library website
+# Contactlab Pattern Library website - :warning: Deprecated
 
 This is the documentation website for the [Contactlab](http://www.contactlab.com/) Pattern Library ([https://ux.contactlab.com/](https://ux.contactlab.com/#/)) styleguide and components designed and built by the Contactlab Product team.
 
